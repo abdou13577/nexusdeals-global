@@ -2,7 +2,7 @@
 <html lang="de" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title id="pageTitle">NexusDeals Global | Preisvergleich auf 12 weltweiten Plattformen (Amazon • OTTO • Kaufland • Zalando • eBay • Temu)</title>
   <script>
     (function() {
@@ -80,11 +80,11 @@
     <!-- Collapsible Filter & Sort Popover Drawer -->
     <div class="dropdown-drawer" id="filterDrawer">
       <div class="drawer-card">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-          <strong style="color:#38bdf8; font-size:0.9rem;" data-i18n="filterDrawerTitle">🎛️ Erweiterte Filter & Sortierung (12 globale Plattformen)</strong>
-          <div style="display:flex; gap:8px;">
-            <button type="button" class="btn-action" style="padding:4px 10px; font-size:0.76rem;" onclick="resetAllFilters()" data-i18n="resetFiltersBtn">Zurücksetzen ↺</button>
-            <button type="button" class="btn-action" style="padding:4px 10px; font-size:0.76rem;" onclick="toggleFilterDrawer()" data-i18n="closeBtn">Schließen ✕</button>
+        <div class="filter-drawer-header">
+          <strong style="color:#38bdf8; font-size:0.92rem;" data-i18n="filterDrawerTitle">🎛️ Filter & Sortierung</strong>
+          <div class="filter-drawer-actions">
+            <button type="button" class="btn-action btn-sm" onclick="resetAllFilters()" data-i18n="resetFiltersBtn">Zurücksetzen ↺</button>
+            <button type="button" class="btn-action btn-sm" onclick="toggleFilterDrawer()" data-i18n="closeBtn">✕</button>
           </div>
         </div>
 
@@ -236,9 +236,9 @@
       <span class="nav-icon">🤖</span>
       <span class="nav-label" data-i18n="navAi">KI-Berater</span>
     </button>
-    <button type="button" class="bottom-nav-item" onclick="toggleFlashDealsFilter()">
+    <button type="button" class="bottom-nav-item deals-btn" id="bottomNavDealsBtn" onclick="toggleFlashDealsFilter(event)">
       <span class="nav-icon">🔥</span>
-      <span class="nav-label" data-i18n="navDeals">Deals</span>
+      <span class="nav-label" data-i18n="navDeals">Deals 🔥</span>
     </button>
   </nav>
 

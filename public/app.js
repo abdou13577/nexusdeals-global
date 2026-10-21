@@ -371,13 +371,22 @@ function focusMobileSearch() {
   }
 }
 
-function toggleFlashDealsFilter() {
+function toggleFlashDealsFilter(e) {
+  if (e) e.preventDefault();
   const cb = document.getElementById('flashOnlyCheckbox');
+  const navBtn = document.getElementById('bottomNavDealsBtn');
   if (cb) {
     cb.checked = !cb.checked;
-    filterAndSortProducts();
-    const btn = event && event.currentTarget;
-    if (btn) btn.classList.toggle('active', cb.checked);
+    if (navBtn) navBtn.classList.toggle('active', cb.checked);
+    const sortSelect = document.getElementById('sortSelect');
+    if (cb.checked && sortSelect) {
+      sortSelect.value = 'discount';
+    }
+    loadProducts();
+    const grid = document.getElementById('productsGrid');
+    if (grid) {
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }
 
@@ -548,8 +557,7 @@ function renderProductsGrid(products, containerId) {
     return `
       <article class="product-card" onclick="handleCardClick(event, '${p.id}')">
         <div class="card-badges">
-          <span class="badge-deal">${escapeHtml(badgeLeft)}</span>
-          <span class="badge-Savings">${escapeHtml(badgeRight)}</span>
+          ${savingPct > 0 ? `<span class="badge-discount">-${savingPct}%</span>` : ''}
         </div>
 
         <div class="card-image-wrap" onclick="openProductModal('${p.id}')">
@@ -834,7 +842,7 @@ async function openProductModal(productId) {
   const catLocalized = getCategoryLabel(product.category).replace(/^[^\s]+\s/, '');
 
   bodyEl.innerHTML = `
-    <div style="display:grid; grid-template-columns: 380px 1fr; gap:24px; margin-bottom:20px;">
+    <div class="modal-product-top-grid">
       <div class="modal-gallery-box" id="modalGalleryContainer"></div>
       <div>
         <div style="color:#38bdf8; font-weight:700; font-size:0.82rem; margin-bottom:4px;">${escapeHtml(product.brand)} • ${escapeHtml(catLocalized)}</div>
@@ -996,4 +1004,16 @@ function escapeHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+// Prevent browser viewport zooming on mobile for native app experience
+if (typeof document !== 'undefined') {
+  document.addEventListener('gesturestart', function(e) {
+    e.preventDefault();
+  });
+  document.addEventListener('dblclick', function(e) {
+    if (!e.target.closest('#imageLightboxModal')) {
+      e.preventDefault();
+    }
+  }, { passive: false });
 }

@@ -23,7 +23,7 @@ const DEFAULT_SETTINGS = {
     OTTO: '3130490',
     Kaufland: '',
     eBay: '',
-    Zalando: '3130490',
+    Zalando: '',
     MediaMarkt: '',
     Galaxus: '',
     Douglas: '3130490',
@@ -31,6 +31,20 @@ const DEFAULT_SETTINGS = {
     AliExpress: '',
     Temu: '',
     SHEIN: ''
+  },
+  storeModes: {
+    Amazon: 'affiliate',
+    OTTO: 'affiliate',
+    Douglas: 'affiliate',
+    Zalando: 'direct',
+    MediaMarkt: 'direct',
+    Kaufland: 'direct',
+    Galaxus: 'direct',
+    eBay: 'direct',
+    IKEA: 'direct',
+    AliExpress: 'direct',
+    Temu: 'direct',
+    SHEIN: 'direct'
   },
   payoutSettings: {
     primaryMethod: 'bank_1',
@@ -186,8 +200,20 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
   const minPrice = numPrice > 20 ? Math.floor(numPrice * 0.85) : Math.max(5, Math.floor(numPrice * 0.7));
   const maxPrice = numPrice > 20 ? Math.ceil(numPrice * 1.15) : Math.ceil(numPrice * 1.3);
 
-  // If a direct product page URL is already known, append affiliate tag and redirect directly!
+  const storeModes = (settings && settings.storeModes) || {};
+  const isDirectMode = storeModes[store] === 'direct';
+
+  // Sanitize any legacy closed Awin mid=8686 links
+  if (directUrl && typeof directUrl === 'string' && directUrl.includes('awinmid=8686')) {
+    const uedMatch = directUrl.match(/ued=([^&]+)/);
+    directUrl = uedMatch ? decodeURIComponent(uedMatch[1]) : '';
+  }
+
+  // If a direct product page URL is already known, apply rules and redirect directly!
   if (directUrl && typeof directUrl === 'string' && directUrl.startsWith('http')) {
+    if (isDirectMode) {
+      return directUrl;
+    }
     if (store === 'Amazon') {
       const tag = tags.Amazon || 'nexusdeals08-21';
       return directUrl.includes('tag=') ? directUrl : (directUrl.includes('?') ? `${directUrl}&tag=${encodeURIComponent(tag)}` : `${directUrl}?tag=${encodeURIComponent(tag)}`);
@@ -197,9 +223,6 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
     }
     if (store === 'OTTO' && tags.OTTO) {
       return `https://www.awin1.com/cread.php?awinmid=14336&awinaffid=${encodeURIComponent(tags.OTTO)}&ued=${encodeURIComponent(directUrl)}`;
-    }
-    if (store === 'Zalando' && tags.Zalando) {
-      return `https://www.awin1.com/cread.php?awinmid=8686&awinaffid=${encodeURIComponent(tags.Zalando)}&ued=${encodeURIComponent(directUrl)}`;
     }
     if (store === 'Douglas' && tags.Douglas) {
       return `https://www.awin1.com/cread.php?awinmid=10046&awinaffid=${encodeURIComponent(tags.Douglas)}&ued=${encodeURIComponent(directUrl)}`;
@@ -226,59 +249,55 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
       return `https://www.amazon.de/s?k=${q}&tag=${encodeURIComponent(tags.Amazon || 'nexusdeals08-21')}`;
     }
     case 'eBay': {
-      const tagParam = tags.eBay ? `&mkcid=1&mkrid=707-53477-19255-0&campid=${encodeURIComponent(tags.eBay)}` : '';
-      // Direct Buy-It-Now (Sofort-Kaufen), sorted by best match to bring up exact matching product
+      const tagParam = (tags.eBay && !isDirectMode) ? `&mkcid=1&mkrid=707-53477-19255-0&campid=${encodeURIComponent(tags.eBay)}` : '';
       const priceFilter = numPrice > 15 ? `&_udlo=${minPrice}&_udhi=${maxPrice}` : '';
       return `https://www.ebay.de/sch/i.html?_nkw=${q}&LH_BIN=1${priceFilter}&_sop=12${tagParam}`;
     }
     case 'OTTO': {
       const rawUrl = `https://www.otto.de/suche/${q}/`;
-      if (tags.OTTO) {
+      if (tags.OTTO && !isDirectMode) {
         return `https://www.awin1.com/cread.php?awinmid=14336&awinaffid=${encodeURIComponent(tags.OTTO)}&ued=${encodeURIComponent(rawUrl)}`;
       }
       return rawUrl;
     }
     case 'Kaufland': {
-      const tagParam = tags.Kaufland ? `&utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}` : '';
+      const tagParam = (tags.Kaufland && !isDirectMode) ? `&utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}` : '';
       return `https://www.kaufland.de/item/search/?search_value=${q}${tagParam}`;
     }
     case 'MediaMarkt': {
-      const tagParam = tags.MediaMarkt ? `?partnerId=${encodeURIComponent(tags.MediaMarkt)}` : '';
+      const tagParam = (tags.MediaMarkt && !isDirectMode) ? `?partnerId=${encodeURIComponent(tags.MediaMarkt)}` : '';
       return `https://www.mediamarkt.de/de/search.html?query=${q}${tagParam}`;
     }
     case 'Zalando': {
-      const rawUrl = `https://www.zalando.de/katalog/?q=${q}`;
-      if (tags.Zalando) {
-        return `https://www.awin1.com/cread.php?awinmid=8686&awinaffid=${encodeURIComponent(tags.Zalando)}&ued=${encodeURIComponent(rawUrl)}`;
-      }
-      return rawUrl;
+      // 100% direct official Zalando - safe from inactive Awin merchant errors
+      return `https://www.zalando.de/katalog/?q=${q}`;
     }
     case 'Galaxus': {
-      const tagParam = tags.Galaxus ? `&tag=${encodeURIComponent(tags.Galaxus)}` : '';
+      const tagParam = (tags.Galaxus && !isDirectMode) ? `&tag=${encodeURIComponent(tags.Galaxus)}` : '';
       return `https://www.galaxus.de/de/search?q=${q}${tagParam}`;
     }
     case 'Douglas': {
       const rawUrl = `https://www.douglas.de/de/search?q=${q}`;
-      if (tags.Douglas) {
+      if (tags.Douglas && !isDirectMode) {
         return `https://www.awin1.com/cread.php?awinmid=10046&awinaffid=${encodeURIComponent(tags.Douglas)}&ued=${encodeURIComponent(rawUrl)}`;
       }
       return rawUrl;
     }
     case 'IKEA': {
-      const tagParam = tags.IKEA ? `&affId=${encodeURIComponent(tags.IKEA)}` : '';
+      const tagParam = (tags.IKEA && !isDirectMode) ? `&affId=${encodeURIComponent(tags.IKEA)}` : '';
       return `https://www.ikea.com/de/de/search/?q=${q}${tagParam}`;
     }
     case 'AliExpress': {
-      const tagParam = tags.AliExpress ? `?aff_fcid=${encodeURIComponent(tags.AliExpress)}` : '';
+      const tagParam = (tags.AliExpress && !isDirectMode) ? `?aff_fcid=${encodeURIComponent(tags.AliExpress)}` : '';
       const priceFilter = numPrice > 15 ? `&minPrice=${minPrice}&maxPrice=${maxPrice}` : '';
       return `https://www.aliexpress.com/w/wholesale-${q.replace(/%20/g, '-')}.html${priceFilter}${tagParam}`;
     }
     case 'Temu': {
-      const tagParam = tags.Temu ? `&_x_ads_channel=affiliate&aff_id=${encodeURIComponent(tags.Temu)}` : '';
+      const tagParam = (tags.Temu && !isDirectMode) ? `&_x_ads_channel=affiliate&aff_id=${encodeURIComponent(tags.Temu)}` : '';
       return `https://www.temu.com/de/search_result.html?search_key=${q}&search_type=1000${tagParam}`;
     }
     case 'SHEIN': {
-      const tagParam = tags.SHEIN ? `?url_from=${encodeURIComponent(tags.SHEIN)}` : '';
+      const tagParam = (tags.SHEIN && !isDirectMode) ? `?url_from=${encodeURIComponent(tags.SHEIN)}` : '';
       return `https://de.shein.com/pdsearch/${q}/${tagParam}`;
     }
     default:
@@ -1019,6 +1038,7 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
               ...current,
               ...incoming,
               affiliateIds: { ...current.affiliateIds, ...(incoming.affiliateIds || {}) },
+              storeModes: { ...current.storeModes, ...(incoming.storeModes || {}) },
               payoutSettings: { ...current.payoutSettings, ...(incoming.payoutSettings || {}) }
             };
             saveJson(SETTINGS_PATH, updated);

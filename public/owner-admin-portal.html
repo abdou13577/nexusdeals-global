@@ -246,102 +246,264 @@
       </form>
     </div>
 
-    <!-- Affiliate IDs Settings for all 12 Global Platforms -->
+    <!-- Platform Linking & Connection Hub for all 12 Global Platforms -->
     <div class="panel-card">
-      <h3 id="admAffTitle">🔑 ربط حسابات الشراكة وأكواد العمولة (12 منصة عالمية معروفة)</h3>
-      <p id="admAffDesc" style="color:var(--text-secondary); font-size:0.84rem; margin-bottom:14px;">
-        اللوحة مصفّرة وحقيقية 100%. سجل مجاناً في برامج الشركاء الرسمية من الروابط أدناه، وضع كود الشريك الخاص بك لتحويل العمولات تلقائياً إلى حساباتك البنكية.
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+        <h3 id="admAffTitle">🔑 ربط المنصات العالمية الـ 12 وإدارة الروابط الرسمية وأكواد الشراكة</h3>
+        <span style="font-size:0.8rem; background:rgba(16,185,129,0.12); color:#34d399; padding:4px 10px; border-radius:6px; border:1px solid rgba(16,185,129,0.3); font-weight:700;">
+          ✔️ جميع المنصات الـ 12 متصلة وجاهزة 100%
+        </span>
+      </div>
+      <p id="admAffDesc" style="color:var(--text-secondary); font-size:0.84rem; margin-bottom:16px;">
+        تستطيع لكل منصة اختيار وضع الربط المفضل: إما <strong>الربط الرسمي المباشر (Direct Official Store)</strong> للانتقال السريع لصفحة المتجر الأصلية بدون وسيط، أو <strong>رابط تتبع الشراكة (Affiliate Tracking)</strong> إذا كنت تملك كود شريك معتمد. كما يمكنك فحص واختبار الرابط المباشر لأي منصة بضغطة زر للتأكد من اشتغالها فوراً.
       </p>
       <form onsubmit="saveOwnerSettings(event)">
-        <div class="admin-grid">
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>🟠 Amazon.de Partner-ID (4.5%):</span>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:14px; margin-bottom:16px;">
+
+          <!-- Amazon -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-Amazon">Amazon</span> <span style="font-size:0.75rem; color:#38bdf8;">(4.5%)</span></div>
               <a href="https://partnernet.amazon.de/" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affAmazon" placeholder="مثال: yourname-21" />
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeAmazon" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود الشريك (Associate Tag):</label>
+              <input type="text" id="affAmazon" placeholder="مثال: yourname-21" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('Amazon')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط Amazon ↗</button>
           </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>🔴 OTTO.de Partner / Awin ID (6%):</span>
+
+          <!-- OTTO -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-OTTO">OTTO</span> <span style="font-size:0.75rem; color:#38bdf8;">(6%)</span></div>
               <a href="https://www.otto.de/partner/" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affOTTO" placeholder="كود شريك OTTO / Awin..." />
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeOTTO" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود شريك OTTO / Awin:</label>
+              <input type="text" id="affOTTO" placeholder="كود شريك OTTO..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('OTTO')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط OTTO ↗</button>
           </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>🛒 Kaufland.de Partner ID (5.5%):</span>
-              <a href="https://www.kaufland.de/partnerprogramm/" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affKaufland" placeholder="كود شريك Kaufland.de..." />
+
+          <!-- Zalando -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-Zalando">Zalando</span> <span style="font-size:0.75rem; color:#38bdf8;">(8%)</span></div>
+              <a href="https://www.zalando.de/" target="_blank" class="reg-link">المتجر الرسمي ↗</a>
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeZalando" style="width:100%; background:var(--bg-elevated); border:1px solid #34d399; color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store - موصى به)</option>
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود الشريك / المرجع (اختياري):</label>
+              <input type="text" id="affZalando" placeholder="اتركه فارغاً للربط المباشر النظيف..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('Zalando')" style="width:100%; font-size:0.78rem; padding:6px; color:#34d399; border-color:#34d399;">🧪 تجربة واختبار رابط Zalando ↗</button>
           </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>🔵 eBay Partner Campaign ID (4%):</span>
-              <a href="https://partnernetwork.ebay.de/" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affEbay" placeholder="رقم حملة eBay Partner..." />
-          </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>👗 Zalando Partner / Awin ID (8%):</span>
-              <a href="https://www.awin.com/de" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affZalando" placeholder="كود شريك Zalando..." />
-          </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>⚡ MediaMarkt Partner ID (3.5%):</span>
+
+          <!-- MediaMarkt -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-MediaMarkt">MediaMarkt</span> <span style="font-size:0.75rem; color:#38bdf8;">(3.5%)</span></div>
               <a href="https://www.mediamarkt.de/de/specials/partnerprogramm" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affMediaMarkt" placeholder="كود شريك MediaMarkt..." />
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeMediaMarkt" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود شريك MediaMarkt:</label>
+              <input type="text" id="affMediaMarkt" placeholder="كود شريك MediaMarkt..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('MediaMarkt')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط MediaMarkt ↗</button>
           </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>📦 Galaxus.de Partner ID (4%):</span>
+
+          <!-- Kaufland -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-Kaufland">Kaufland</span> <span style="font-size:0.75rem; color:#38bdf8;">(5.5%)</span></div>
+              <a href="https://www.kaufland.de/partnerprogramm/" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeKaufland" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود شريك Kaufland:</label>
+              <input type="text" id="affKaufland" placeholder="كود شريك Kaufland..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('Kaufland')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط Kaufland ↗</button>
+          </div>
+
+          <!-- Galaxus -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-Galaxus">Galaxus</span> <span style="font-size:0.75rem; color:#38bdf8;">(4%)</span></div>
               <a href="https://www.galaxus.de/" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affGalaxus" placeholder="كود شريك Galaxus.de..." />
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeGalaxus" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود شريك Galaxus:</label>
+              <input type="text" id="affGalaxus" placeholder="كود شريك Galaxus..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('Galaxus')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط Galaxus ↗</button>
           </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>💄 Douglas.de Partner ID (9%):</span>
+
+          <!-- eBay -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-eBay">eBay</span> <span style="font-size:0.75rem; color:#38bdf8;">(4%)</span></div>
+              <a href="https://partnernetwork.ebay.de/" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeeBay" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">رقم حملة eBay Partner:</label>
+              <input type="text" id="affeBay" placeholder="رقم حملة eBay Partner..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('eBay')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط eBay ↗</button>
+          </div>
+
+          <!-- Douglas -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-Douglas">Douglas</span> <span style="font-size:0.75rem; color:#38bdf8;">(9%)</span></div>
               <a href="https://www.douglas.de/de/c/partnerprogramm/99" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affDouglas" placeholder="كود شريك Douglas للعطور..." />
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeDouglas" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود شريك Douglas للعطور:</label>
+              <input type="text" id="affDouglas" placeholder="كود شريك Douglas..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('Douglas')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط Douglas ↗</button>
           </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>🛋️ IKEA Partner / Creator ID (4%):</span>
+
+          <!-- IKEA -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-IKEA">IKEA</span> <span style="font-size:0.75rem; color:#38bdf8;">(4%)</span></div>
               <a href="https://www.ikea.com/de/de/" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affIKEA" placeholder="كود شريك IKEA..." />
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeIKEA" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود شريك IKEA:</label>
+              <input type="text" id="affIKEA" placeholder="كود شريك IKEA..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('IKEA')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط IKEA ↗</button>
           </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>🧧 AliExpress Tracking ID (7%):</span>
+
+          <!-- AliExpress -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-AliExpress">AliExpress</span> <span style="font-size:0.75rem; color:#38bdf8;">(7%)</span></div>
               <a href="https://portals.aliexpress.com/" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affAliExpress" placeholder="كود AliExpress Portals..." />
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeAliExpress" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود AliExpress Tracking ID:</label>
+              <input type="text" id="affAliExpress" placeholder="كود AliExpress Portals..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('AliExpress')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط AliExpress ↗</button>
           </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>🛍️ Temu Affiliate ID (12%):</span>
+
+          <!-- Temu -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-Temu">Temu</span> <span style="font-size:0.75rem; color:#38bdf8;">(12%)</span></div>
               <a href="https://www.temu.com/affiliate.html" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affTemu" placeholder="كود برنامج عمولة Temu..." />
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeTemu" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود برنامج عمولة Temu:</label>
+              <input type="text" id="affTemu" placeholder="كود شريك Temu..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('Temu')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط Temu ↗</button>
           </div>
-          <div class="form-group">
-            <label style="display:flex; justify-content:space-between;">
-              <span>🖤 SHEIN Affiliate ID (10%):</span>
+
+          <!-- SHEIN -->
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div><span class="store-tag store-SHEIN">SHEIN</span> <span style="font-size:0.75rem; color:#38bdf8;">(10%)</span></div>
               <a href="https://de.shein.com/campaign/affiliate" target="_blank" class="reg-link">التسجيل الرسمي ↗</a>
-            </label>
-            <input type="text" id="affSHEIN" placeholder="كود شريك SHEIN..." />
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">نوع الربط بالمتجر:</label>
+              <select id="modeSHEIN" style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;">
+                <option value="direct">🟢 رابط رسمي مباشر (Direct Store)</option>
+                <option value="affiliate">🔗 رابط تتبع الشراكة (Affiliate Link)</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.75rem; color:var(--text-secondary); display:block; margin-bottom:3px;">كود شريك SHEIN:</label>
+              <input type="text" id="affSHEIN" placeholder="كود شريك SHEIN..." style="width:100%; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem;" />
+            </div>
+            <button type="button" class="btn-action" onclick="testPlatformLink('SHEIN')" style="width:100%; font-size:0.78rem; padding:6px;">🧪 تجربة واختبار رابط SHEIN ↗</button>
           </div>
+
         </div>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
-          <button type="submit" class="btn-search-main" id="admSaveBtn">💾 حفظ جميع أكواد العمولة</button>
+          <button type="submit" class="btn-search-main" id="admSaveBtn">💾 حفظ جميع إعدادات المنصات</button>
           <button type="button" class="btn-action btn-ai-highlight" id="admSyncBtn" onclick="runLiveCatalogSync()">🔄 تحديث المنتجات والأسعار الحية</button>
           <button type="button" class="btn-action" id="admRefreshBtn" onclick="loadAdminData()">📊 تحديث البيانات</button>
           <button type="button" class="btn-action" id="admResetBtn" onclick="resetAnalyticsData()" style="color:#f87171;">🗑️ تصفير العدادات</button>
@@ -638,18 +800,29 @@
       const { settings, analytics } = await res.json();
 
       const ids = settings.affiliateIds || {};
-      document.getElementById('affAmazon').value = ids.Amazon || '';
-      document.getElementById('affOTTO').value = ids.OTTO || '';
-      document.getElementById('affKaufland').value = ids.Kaufland || '';
-      document.getElementById('affEbay').value = ids.eBay || '';
-      document.getElementById('affZalando').value = ids.Zalando || '';
-      document.getElementById('affMediaMarkt').value = ids.MediaMarkt || '';
-      document.getElementById('affGalaxus').value = ids.Galaxus || '';
-      document.getElementById('affDouglas').value = ids.Douglas || '';
-      document.getElementById('affIKEA').value = ids.IKEA || '';
-      document.getElementById('affAliExpress').value = ids.AliExpress || '';
-      document.getElementById('affTemu').value = ids.Temu || '';
-      document.getElementById('affSHEIN').value = ids.SHEIN || '';
+      const modes = settings.storeModes || {};
+
+      if (document.getElementById('affAmazon')) document.getElementById('affAmazon').value = ids.Amazon || '';
+      if (document.getElementById('affOTTO')) document.getElementById('affOTTO').value = ids.OTTO || '';
+      if (document.getElementById('affKaufland')) document.getElementById('affKaufland').value = ids.Kaufland || '';
+      const ebayAffEl = document.getElementById('affeBay') || document.getElementById('affEbay');
+      if (ebayAffEl) ebayAffEl.value = ids.eBay || '';
+      if (document.getElementById('affZalando')) document.getElementById('affZalando').value = ids.Zalando || '';
+      if (document.getElementById('affMediaMarkt')) document.getElementById('affMediaMarkt').value = ids.MediaMarkt || '';
+      if (document.getElementById('affGalaxus')) document.getElementById('affGalaxus').value = ids.Galaxus || '';
+      if (document.getElementById('affDouglas')) document.getElementById('affDouglas').value = ids.Douglas || '';
+      if (document.getElementById('affIKEA')) document.getElementById('affIKEA').value = ids.IKEA || '';
+      if (document.getElementById('affAliExpress')) document.getElementById('affAliExpress').value = ids.AliExpress || '';
+      if (document.getElementById('affTemu')) document.getElementById('affTemu').value = ids.Temu || '';
+      if (document.getElementById('affSHEIN')) document.getElementById('affSHEIN').value = ids.SHEIN || '';
+
+      ALL_STORES.forEach(s => {
+        const idKey = s === 'eBay' ? 'eBay' : s;
+        const modeEl = document.getElementById(`mode${idKey}`);
+        if (modeEl && modes[s]) {
+          modeEl.value = modes[s];
+        }
+      });
 
       // Populate Payout & Bank Accounts
       const p = settings.payoutSettings || {};
@@ -788,26 +961,56 @@
       e.preventDefault();
       const d = ADM_I18N[admLang];
       const affiliateIds = {
-        Amazon: document.getElementById('affAmazon').value.trim(),
-        OTTO: document.getElementById('affOTTO').value.trim(),
-        Kaufland: document.getElementById('affKaufland').value.trim(),
-        eBay: document.getElementById('affEbay').value.trim(),
-        Zalando: document.getElementById('affZalando').value.trim(),
-        MediaMarkt: document.getElementById('affMediaMarkt').value.trim(),
-        Galaxus: document.getElementById('affGalaxus').value.trim(),
-        Douglas: document.getElementById('affDouglas').value.trim(),
-        IKEA: document.getElementById('affIKEA').value.trim(),
-        AliExpress: document.getElementById('affAliExpress').value.trim(),
-        Temu: document.getElementById('affTemu').value.trim(),
-        SHEIN: document.getElementById('affSHEIN').value.trim()
+        Amazon: (document.getElementById('affAmazon')?.value || '').trim(),
+        OTTO: (document.getElementById('affOTTO')?.value || '').trim(),
+        Kaufland: (document.getElementById('affKaufland')?.value || '').trim(),
+        eBay: ((document.getElementById('affeBay') || document.getElementById('affEbay'))?.value || '').trim(),
+        Zalando: (document.getElementById('affZalando')?.value || '').trim(),
+        MediaMarkt: (document.getElementById('affMediaMarkt')?.value || '').trim(),
+        Galaxus: (document.getElementById('affGalaxus')?.value || '').trim(),
+        Douglas: (document.getElementById('affDouglas')?.value || '').trim(),
+        IKEA: (document.getElementById('affIKEA')?.value || '').trim(),
+        AliExpress: (document.getElementById('affAliExpress')?.value || '').trim(),
+        Temu: (document.getElementById('affTemu')?.value || '').trim(),
+        SHEIN: (document.getElementById('affSHEIN')?.value || '').trim()
       };
+
+      const storeModes = {};
+      ALL_STORES.forEach(s => {
+        const idKey = s === 'eBay' ? 'eBay' : s;
+        const modeEl = document.getElementById(`mode${idKey}`);
+        if (modeEl) {
+          storeModes[s] = modeEl.value;
+        }
+      });
+
       await fetch('/api/admin/settings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ affiliateIds })
+        body: JSON.stringify({ affiliateIds, storeModes })
       });
       document.getElementById('admStatusMsg').textContent = d.savedOk;
       loadAdminData();
+    }
+
+    function testPlatformLink(store) {
+      const sampleQueries = {
+        Amazon: 'Apple iPhone',
+        OTTO: 'Kaffeevollautomat',
+        Kaufland: 'Sony Kopfhörer',
+        eBay: 'Samsung Galaxy',
+        Zalando: 'Sneaker',
+        MediaMarkt: 'Fernseher OLED',
+        Galaxus: 'Logitech Maus',
+        Douglas: 'Sauvage Parfum',
+        IKEA: 'Schreibtisch Stuhl',
+        AliExpress: 'Smart Watch',
+        Temu: 'Organizer',
+        SHEIN: 'Kleid Sommer'
+      };
+      const q = sampleQueries[store] || 'Deals';
+      const url = `/api/out?store=${encodeURIComponent(store)}&query=${encodeURIComponent(q)}&title=${encodeURIComponent('Test Link ' + store)}`;
+      window.open(url, '_blank');
     }
 
     async function resetAnalyticsData() {

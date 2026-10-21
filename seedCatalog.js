@@ -184,28 +184,53 @@ function getDistributedMultipliers(hash, cat) {
   }
 }
 
-function getStoreVariantInfo(store, categoryId, smartQuery, index, asin) {
-  const hash = (asin || smartQuery).split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
-  
-  let colorList = ['Schwarz', 'Weiß', 'Silber / Grau', 'Dunkelblau', 'Waldgrün'];
-  if (categoryId === 'smartphones' || categoryId === 'tv_audio' || categoryId === 'gaming' || categoryId === 'laptops_tablets') {
-    colorList = ['Schwarz', 'Weiß', 'Mitternachtsblau', 'Titan / Grau', 'Waldgrün', 'Rosa / Pink'];
-  } else if (categoryId === 'fashion_shoes') {
-    colorList = ['Schwarz', 'Dunkelblau', 'Anthrazit', 'Khaki', 'Beige', 'Weiß'];
-  } else if (categoryId === 'perfumes_beauty') {
-    colorList = ['100ml Eau de Parfum', '50ml Eau de Parfum', '100ml Eau de Toilette', '50ml Intense'];
-  } else if (categoryId === 'furniture_decor' || categoryId === 'home_kitchen') {
-    colorList = ['Weiß / Matt', 'Anthrazit', 'Eicheneffekt / Holz', 'Schwarzbraun', 'Edelstahl gebürstet'];
-  } else if (categoryId === 'auto_car' || categoryId === 'tools_garden') {
-    colorList = ['Schwarz / Metallic', 'Anthrazit', 'Rot / Schwarz', 'Profi Edition'];
+function detectColorFromTitle(title) {
+  const t = (title || '').toLowerCase();
+  const colorMap = [
+    { re: /\b(schwarz|black)\b/i, name: 'Schwarz' },
+    { re: /\b(wei[ßs]|white)\b/i, name: 'Weiß' },
+    { re: /\b(pink|rosa|rose)\b/i, name: 'Pink / Rosa' },
+    { re: /\b(ultramarin)\b/i, name: 'Ultramarin' },
+    { re: /\b(blau|blue|marine|navy|dunkelblau)\b/i, name: 'Blau' },
+    { re: /\b(grün|green|waldgrün|olive)\b/i, name: 'Grün' },
+    { re: /\b(rot|red)\b/i, name: 'Rot' },
+    { re: /\b(grau|grey|gray|anthrazit|titan)\b/i, name: 'Grau / Titan' },
+    { re: /\b(silber|silver)\b/i, name: 'Silber' },
+    { re: /\b(gold)\b/i, name: 'Gold' },
+    { re: /\b(beige|khaki|creme|braun|brown)\b/i, name: 'Beige / Braun' },
+    { re: /\b(bunt|multicolor|mehrfarbig)\b/i, name: 'Multicolor' }
+  ];
+  for (const c of colorMap) {
+    if (c.re.test(t)) return c.name;
+  }
+  return null;
+}
+
+function getStoreVariantInfo(store, categoryId, smartQuery, index, asin, fullTitle = '') {
+  // If the product title genuinely contains a color, use it accurately
+  const detected = detectColorFromTitle(fullTitle || smartQuery);
+  if (detected) {
+    return {
+      variantColor: detected,
+      variantTitle: `${smartQuery} (${detected})`
+    };
   }
 
-  const variantColor = colorList[(hash + index) % colorList.length];
-  const variantTitle = `${smartQuery} - ${variantColor}`;
-  
+  // For perfumes / cosmetics, authentic volume/strength applies
+  if (categoryId === 'perfumes_beauty') {
+    const perfumeSizes = ['100ml Eau de Parfum', '50ml Eau de Parfum', '100ml Eau de Toilette', '50ml Intense'];
+    const hash = (asin || smartQuery).split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
+    const size = perfumeSizes[(hash + index) % perfumeSizes.length];
+    return {
+      variantColor: size,
+      variantTitle: `${smartQuery} - ${size}`
+    };
+  }
+
+  // Never invent a fake contradicting color for generic products
   return {
-    variantColor,
-    variantTitle
+    variantColor: '',
+    variantTitle: smartQuery
   };
 }
 
@@ -234,7 +259,7 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
     const isAmazon = store === 'Amazon';
     const mult = storeMultipliers[store] || 1.04;
     const price = +(amazonLivePrice * mult).toFixed(2);
-    const { variantColor, variantTitle } = getStoreVariantInfo(store, categoryId, smartQuery, idx, asin);
+    const { variantColor, variantTitle } = getStoreVariantInfo(store, categoryId, smartQuery, idx, asin, title);
 
     let directUrl;
     if (isAmazon) {
@@ -242,7 +267,8 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
     } else if (store === 'OTTO') {
       directUrl = `https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=${encodeURIComponent(`https://www.otto.de/suche/${encodeURIComponent(smartQuery)}/`)}`;
     } else if (store === 'Zalando') {
-      directUrl = `https://www.awin1.com/cread.php?awinmid=8686&awinaffid=3130490&ued=${encodeURIComponent(`https://www.zalando.de/katalog/?q=${encodeURIComponent(smartQuery)}`)}`;
+      // 100% direct official Zalando search - bypass dead Awin mid=8686
+      directUrl = `https://www.zalando.de/katalog/?q=${encodeURIComponent(smartQuery)}`;
     } else if (store === 'Douglas') {
       directUrl = `https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=${encodeURIComponent(`https://www.douglas.de/de/search?q=${encodeURIComponent(smartQuery)}`)}`;
     } else if (store === 'MediaMarkt') {

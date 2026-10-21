@@ -7,7 +7,7 @@
     "OTTO": "3130490",
     "Kaufland": "",
     "eBay": "",
-    "Zalando": "3130490",
+    "Zalando": "",
     "MediaMarkt": "",
     "Galaxus": "",
     "Douglas": "3130490",
@@ -15,6 +15,20 @@
     "AliExpress": "",
     "Temu": "",
     "SHEIN": ""
+  },
+  "storeModes": {
+    "Amazon": "affiliate",
+    "OTTO": "affiliate",
+    "Douglas": "affiliate",
+    "Zalando": "direct",
+    "MediaMarkt": "direct",
+    "Kaufland": "direct",
+    "Galaxus": "direct",
+    "eBay": "direct",
+    "IKEA": "direct",
+    "AliExpress": "direct",
+    "Temu": "direct",
+    "SHEIN": "direct"
   },
   "payoutSettings": {
     "primaryMethod": "bank_1",

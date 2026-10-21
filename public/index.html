@@ -8,22 +8,26 @@
     (function() {
       try {
         localStorage.removeItem('nexus_deals_lang');
-        var manual = sessionStorage.getItem('nexus_deals_lang_manual');
+        sessionStorage.removeItem('nexus_deals_lang_manual');
+        var manual = sessionStorage.getItem('nexus_deals_user_clicked_lang');
         var lang = manual;
         if (!lang) {
-          var primary = (navigator.language || '').toLowerCase().split('-')[0];
-          if (primary === 'de' || primary === 'ar' || primary === 'en') {
-            lang = primary;
+          var primary = (navigator.language || navigator.userLanguage || '').toLowerCase();
+          if (primary.indexOf('de') === 0) {
+            lang = 'de';
+          } else if (primary.indexOf('ar') === 0) {
+            lang = 'ar';
+          } else if (primary.indexOf('en') === 0) {
+            lang = 'en';
           } else if (window.__DETECTED_DEVICE_LANG__) {
             lang = window.__DETECTED_DEVICE_LANG__;
           } else {
             var navLangs = navigator.languages || [];
             for (var i = 0; i < navLangs.length; i++) {
-              var code = (navLangs[i] || '').toLowerCase().split('-')[0];
-              if (code === 'de' || code === 'ar' || code === 'en') {
-                lang = code;
-                break;
-              }
+              var code = (navLangs[i] || '').toLowerCase();
+              if (code.indexOf('de') === 0) { lang = 'de'; break; }
+              if (code.indexOf('ar') === 0) { lang = 'ar'; break; }
+              if (code.indexOf('en') === 0) { lang = 'en'; break; }
             }
           }
         }
@@ -51,9 +55,9 @@
 
         <!-- 3-Language Switcher -->
         <div class="lang-switcher">
-          <button type="button" class="lang-btn active" id="langBtn-de" onclick="setLanguage('de')">DE</button>
-          <button type="button" class="lang-btn" id="langBtn-en" onclick="setLanguage('en')">EN</button>
-          <button type="button" class="lang-btn" id="langBtn-ar" onclick="setLanguage('ar')">AR</button>
+          <button type="button" class="lang-btn active" id="langBtn-de" onclick="setLanguage('de', true)">DE</button>
+          <button type="button" class="lang-btn" id="langBtn-en" onclick="setLanguage('en', true)">EN</button>
+          <button type="button" class="lang-btn" id="langBtn-ar" onclick="setLanguage('ar', true)">AR</button>
         </div>
       </div>
 

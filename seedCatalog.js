@@ -27,35 +27,51 @@ function dumpDomWithChrome(url) {
   }
 }
 
-// Select the most relevant global & European platforms per category (in addition to Amazon, OTTO, Kaufland, eBay)
+// Select the most authentic global & European platforms per category (in addition to Amazon, OTTO, Kaufland, eBay)
 function getStoresForCategory(categoryId) {
   switch (categoryId) {
     case 'fashion_shoes':
-      return ['Amazon', 'Zalando', 'OTTO', 'SHEIN', 'eBay', 'Kaufland', 'Temu'];
+      // Authentic fashion platforms (No Temu/SHEIN for branded items)
+      return ['Amazon', 'Zalando', 'OTTO', 'eBay', 'Kaufland'];
     case 'perfumes_beauty':
       return ['Amazon', 'Douglas', 'OTTO', 'Zalando', 'Kaufland', 'eBay'];
     case 'furniture_decor':
-      return ['Amazon', 'IKEA', 'OTTO', 'Kaufland', 'eBay', 'Temu'];
+      return ['Amazon', 'IKEA', 'OTTO', 'Kaufland', 'eBay'];
     case 'tools_garden':
     case 'auto_car':
       return ['Amazon', 'Kaufland', 'OTTO', 'eBay', 'Galaxus', 'AliExpress', 'Temu'];
     case 'sports_fitness':
     case 'kids_toys':
     case 'travel_luggage':
-      return ['Amazon', 'OTTO', 'Kaufland', 'Zalando', 'eBay', 'Galaxus', 'Temu', 'AliExpress'];
+      return ['Amazon', 'OTTO', 'Kaufland', 'eBay', 'Galaxus', 'Temu', 'AliExpress'];
+    case 'smartphones':
+    case 'tv_audio':
+    case 'gaming':
+      // High-end electronics & smartphones (No Temu/SHEIN/AliExpress)
+      return ['Amazon', 'MediaMarkt', 'OTTO', 'Kaufland', 'Galaxus', 'eBay'];
     default:
-      // Electronics, Home & Kitchen, Gaming, TV, Smartphones
-      return ['Amazon', 'OTTO', 'MediaMarkt', 'Kaufland', 'Galaxus', 'eBay', 'AliExpress', 'Temu'];
+      return ['Amazon', 'OTTO', 'MediaMarkt', 'Kaufland', 'Galaxus', 'eBay'];
   }
 }
 
 function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId) {
-  const shortQuery = title
-    .replace(/[,()–|-]/g, ' ')
-    .split(/\s+/)
-    .filter(w => w.length > 1)
-    .slice(0, 6)
-    .join(' ');
+  const modelMatch = title.match(/\b(KOW\s*\d+|[A-Z]{1,3}-\d{2,4}|iPhone\s*\d{1,2}|Galaxy\s*S\d{2}|WH-1000XM\d)\b/i);
+  let cleaned = title
+    .replace(/\(.*?\)/g, '')
+    .replace(/\[.*?\]/g, '')
+    .replace(/Generalüberholt|Refurbished|Gebraucht|Neu/gi, '')
+    .replace(/\bmit\s+Kapuze\b/gi, '')
+    .replace(/\b(Mn|Wmn|Prk|Qltd|Jckt|Flx|Cs|Prc|Atmungsaktiv|Wasserdicht|Outdoor|Camping|Schwarz|Blau|Grün|Rot|Weiß|Herren|Damen|Kinder)\b/gi, '')
+    .replace(/Funktionsparka|Steppparka|Winterjacke|Steppmantel|Regenjacke|Übergangsjacke/gi, ' ')
+    .split(/[:|–—,]/)[0]
+    .replace(/[^\w\sÄÖÜäöüß.-]/g, ' ')
+    .trim();
+  const words = cleaned.split(/\s+/).filter(Boolean);
+  let shortQuery = words.slice(0, 4).join(' ');
+  if (modelMatch && !shortQuery.toLowerCase().includes(modelMatch[1].toLowerCase().replace(/\s+/g, ''))) {
+    shortQuery += ' ' + modelMatch[1];
+  }
+  if (!shortQuery) shortQuery = title.slice(0, 30);
 
   const hash = asin.split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
   const storeList = getStoresForCategory(categoryId);

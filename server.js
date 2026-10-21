@@ -124,17 +124,63 @@ function saveJson(filePath, data) {
 
 function extractCleanModelQuery(title, brand) {
   if (!title) return 'Product';
+  const modelMatch = title.match(/\b(KOW\s*\d+|[A-Z]{1,3}-\d{2,4}|iPhone\s*\d{1,2}|Galaxy\s*S\d{2}|WH-1000XM\d)\b/i);
   let cleaned = title
     .replace(/\(.*?\)/g, '')
     .replace(/\[.*?\]/g, '')
     .replace(/Generalüberholt|Refurbished|Gebraucht|Neu/gi, '')
-    .replace(/mit\s+[^\s,]+/gi, '')
-    .replace(/Wasserdicht|Atmungsaktiv|Outdoor|Camping/gi, '')
+    .replace(/\bmit\s+Kapuze\b/gi, '')
+    .replace(/\b(Mn|Wmn|Prk|Qltd|Jckt|Flx|Cs|Prc|Atmungsaktiv|Wasserdicht|Outdoor|Camping|Schwarz|Blau|Grün|Rot|Weiß|Herren|Damen|Kinder)\b/gi, '')
+    .replace(/Funktionsparka|Steppparka|Winterjacke|Steppmantel|Regenjacke|Übergangsjacke/gi, ' ')
     .split(/[:|–—,]/)[0]
     .replace(/[^\w\sÄÖÜäöüß.-]/g, ' ')
     .trim();
   const words = cleaned.split(/\s+/).filter(Boolean);
-  return words.slice(0, 5).join(' ');
+  let res = words.slice(0, 4).join(' ');
+  if (modelMatch && !res.toLowerCase().includes(modelMatch[1].toLowerCase().replace(/\s+/g, ''))) {
+    res += ' ' + modelMatch[1];
+  }
+  return res || title.slice(0, 30);
+}
+
+function interleaveDiverseProducts(products) {
+  const groups = {};
+  for (const p of products) {
+    if (!groups[p.category]) groups[p.category] = [];
+    groups[p.category].push(p);
+  }
+
+  const preferredOrder = [
+    'smartphones',
+    'fashion_shoes',
+    'tv_audio',
+    'home_kitchen',
+    'perfumes_beauty',
+    'sports_fitness',
+    'gaming',
+    'furniture_decor',
+    'auto_car',
+    'tools_garden',
+    'travel_luggage',
+    'kids_toys'
+  ];
+
+  const allCatKeys = Array.from(new Set([...preferredOrder, ...Object.keys(groups)]));
+  const interleaved = [];
+  let hasMore = true;
+  let round = 0;
+
+  while (hasMore) {
+    hasMore = false;
+    for (const cat of allCatKeys) {
+      if (groups[cat] && round < groups[cat].length) {
+        interleaved.push(groups[cat][round]);
+        hasMore = true;
+      }
+    }
+    round++;
+  }
+  return interleaved;
 }
 
 // Build real direct destination URL across all 12 Global & European Platforms
@@ -154,6 +200,9 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
     }
     if (store === 'OTTO' && tags.OTTO) {
       return directUrl.includes('?') ? `${directUrl}&awc=${encodeURIComponent(tags.OTTO)}` : `${directUrl}?awc=${encodeURIComponent(tags.OTTO)}`;
+    }
+    if (store === 'Kaufland' && tags.Kaufland) {
+      return directUrl.includes('?') ? `${directUrl}&utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}` : `${directUrl}?utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}`;
     }
     if (store === 'Temu' && tags.Temu) {
       return directUrl.includes('?') ? `${directUrl}&aff_id=${encodeURIComponent(tags.Temu)}` : `${directUrl}?aff_id=${encodeURIComponent(tags.Temu)}`;
@@ -175,19 +224,17 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
     }
     case 'eBay': {
       const tagParam = tags.eBay ? `&mkcid=1&mkrid=707-53477-19255-0&campid=${encodeURIComponent(tags.eBay)}` : '';
-      // Direct Buy-It-Now (Sofort-Kaufen), bounded to exact price range to eliminate all phone cases & cheap accessories
+      // Direct Buy-It-Now (Sofort-Kaufen), sorted by best match to bring up exact matching product
       const priceFilter = numPrice > 15 ? `&_udlo=${minPrice}&_udhi=${maxPrice}` : '';
-      return `https://www.ebay.de/sch/i.html?_nkw=${q}&LH_BIN=1${priceFilter}&_sop=15${tagParam}`;
+      return `https://www.ebay.de/sch/i.html?_nkw=${q}&LH_BIN=1${priceFilter}&_sop=12${tagParam}`;
     }
     case 'OTTO': {
       const tagParam = tags.OTTO ? `?awc=${encodeURIComponent(tags.OTTO)}` : '';
-      const priceFilter = numPrice > 15 ? `?filter_preis_von=${minPrice}&filter_preis_bis=${maxPrice}` : '';
-      return `https://www.otto.de/suche/${q}/${priceFilter}${tagParam}`;
+      return `https://www.otto.de/suche/${q}/${tagParam}`;
     }
     case 'Kaufland': {
       const tagParam = tags.Kaufland ? `&utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}` : '';
-      const priceFilter = numPrice > 15 ? `&price_min=${minPrice}&price_max=${maxPrice}` : '';
-      return `https://www.kaufland.de/item/search/?search_value=${q}${priceFilter}${tagParam}`;
+      return `https://www.kaufland.de/item/search/?search_value=${q}${tagParam}`;
     }
     case 'MediaMarkt': {
       const tagParam = tags.MediaMarkt ? `?partnerId=${encodeURIComponent(tags.MediaMarkt)}` : '';
@@ -724,7 +771,7 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
             const scoredAsins = new Set(scored.map(s => s.product.asin));
             for (const item of liveScraped) {
               if (!existingAsins.has(item.asin)) {
-                catalog.products.unshift(item);
+                catalog.products.push(item);
                 existingAsins.add(item.asin);
               }
               if (!scoredAsins.has(item.asin)) {
@@ -756,6 +803,9 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
         list.sort((a, b) => ((b.msrp - b.offers[0].price) / b.msrp) - ((a.msrp - a.offers[0].price) / a.msrp));
       } else if (sort === 'rating') {
         list.sort((a, b) => b.rating - a.rating);
+      } else if (!rawQ && category === 'all') {
+        // Default homepage catalog view: ALWAYS provide a diverse, mixed showcase across categories!
+        list = interleaveDiverseProducts(list);
       }
 
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });

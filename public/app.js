@@ -1,42 +1,43 @@
 function detectPreferredLanguage() {
-  // 1. If user explicitly switched language during current session via switcher
+  // 1. If user explicitly tapped a language button during this session
   try {
-    const manual = sessionStorage.getItem('nexus_deals_lang_manual');
+    const manual = sessionStorage.getItem('nexus_deals_user_clicked_lang');
     if (manual && ['de', 'en', 'ar'].includes(manual)) {
       return manual;
     }
   } catch (e) {}
 
-  // 2. Direct primary system language of the phone/device
+  // 2. Direct primary system/browser language of the phone or device
   try {
-    const primary = (navigator.language || '').toLowerCase().split('-')[0];
-    if (primary === 'de') return 'de';
-    if (primary === 'ar') return 'ar';
-    if (primary === 'en') return 'en';
+    const primary = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    if (primary.indexOf('de') === 0) return 'de';
+    if (primary.indexOf('ar') === 0) return 'ar';
+    if (primary.indexOf('en') === 0) return 'en';
   } catch (e) {}
 
-  // 3. Injected server detected language from HTTP Accept-Language
+  // 3. Fallback: injected server detected language from HTTP Accept-Language
   if (typeof window !== 'undefined' && window.__DETECTED_DEVICE_LANG__) {
     return window.__DETECTED_DEVICE_LANG__;
   }
 
-  // 4. Secondary fallback checking navigator.languages
+  // 4. Secondary fallback checking navigator.languages list
   try {
     const navLangs = navigator.languages || [];
     for (const l of navLangs) {
-      const code = (l || '').toLowerCase().split('-')[0];
-      if (code === 'de') return 'de';
-      if (code === 'ar') return 'ar';
-      if (code === 'en') return 'en';
+      const code = (l || '').toLowerCase();
+      if (code.indexOf('de') === 0) return 'de';
+      if (code.indexOf('ar') === 0) return 'ar';
+      if (code.indexOf('en') === 0) return 'en';
     }
   } catch (e) {}
 
   return 'de'; // Default to German for DE/EU marketplace
 }
 
-// Remove legacy localStorage that locked users into Arabic on refresh
+// Remove legacy storage that locked users into stale language on refresh
 try {
   localStorage.removeItem('nexus_deals_lang');
+  sessionStorage.removeItem('nexus_deals_lang_manual');
 } catch (e) {}
 
 let allProducts = [];
@@ -349,7 +350,7 @@ const I18N = {
 };
 
 function t() {
-  return I18N[currentLang] || I18N.ar;
+  return I18N[currentLang] || I18N.de;
 }
 
 function getCategoryLabel(catId) {
@@ -413,12 +414,13 @@ function toggleAiDrawer() {
   }
 }
 
-function setLanguage(lang) {
+function setLanguage(lang, isManualClick = false) {
   currentLang = ['ar', 'de', 'en'].includes(lang) ? lang : 'de';
-  try {
-    sessionStorage.setItem('nexus_deals_lang_manual', currentLang);
-    localStorage.removeItem('nexus_deals_lang');
-  } catch (e) {}
+  if (isManualClick) {
+    try {
+      sessionStorage.setItem('nexus_deals_user_clicked_lang', currentLang);
+    } catch (e) {}
+  }
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
   const activeBtn = document.getElementById(`langBtn-${currentLang}`);
   if (activeBtn) activeBtn.classList.add('active');

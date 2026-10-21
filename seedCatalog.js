@@ -65,103 +65,127 @@ function parseGermanPrice(str) {
   return (!isNaN(val) && val > 5) ? +val.toFixed(2) : null;
 }
 
-// Select authentic, verified European platforms per category (No fake marketplaces or irrelevant stores)
+// Select authentic, verified platforms per category across all 12 global platforms
 function getStoresForCategory(categoryId) {
   switch (categoryId) {
     case 'fashion_shoes':
-      return ['Amazon', 'Zalando', 'OTTO', 'Kaufland', 'eBay'];
+      return ['Amazon', 'Zalando', 'OTTO', 'Kaufland', 'eBay', 'SHEIN', 'Temu', 'AliExpress'];
     case 'perfumes_beauty':
-      return ['Amazon', 'Douglas', 'OTTO', 'Zalando', 'Kaufland'];
+      return ['Amazon', 'Douglas', 'OTTO', 'Zalando', 'Kaufland', 'Galaxus', 'eBay', 'Temu'];
     case 'furniture_decor':
     case 'home_kitchen':
-      return ['Amazon', 'OTTO', 'Kaufland', 'Galaxus', 'eBay'];
+      return ['Amazon', 'IKEA', 'OTTO', 'Kaufland', 'Galaxus', 'eBay', 'Temu', 'AliExpress'];
     case 'tools_garden':
     case 'auto_car':
-      return ['Amazon', 'eBay', 'Kaufland', 'OTTO', 'Galaxus'];
+      return ['Amazon', 'eBay', 'Kaufland', 'OTTO', 'Galaxus', 'AliExpress', 'Temu', 'MediaMarkt'];
     case 'sports_fitness':
     case 'kids_toys':
     case 'travel_luggage':
-      return ['Amazon', 'OTTO', 'Kaufland', 'Galaxus', 'eBay'];
+      return ['Amazon', 'OTTO', 'Kaufland', 'Galaxus', 'eBay', 'MediaMarkt', 'Temu', 'AliExpress'];
     case 'smartphones':
     case 'tv_audio':
     case 'gaming':
     case 'laptops_tablets':
     case 'computers':
-      return ['Amazon', 'MediaMarkt', 'OTTO', 'Kaufland', 'Galaxus', 'eBay'];
+      return ['Amazon', 'MediaMarkt', 'Galaxus', 'eBay', 'Kaufland', 'OTTO', 'AliExpress', 'Temu'];
     default:
-      return ['Amazon', 'OTTO', 'MediaMarkt', 'Kaufland', 'Galaxus', 'eBay'];
+      return ['Amazon', 'OTTO', 'MediaMarkt', 'Kaufland', 'Galaxus', 'eBay', 'AliExpress', 'Temu'];
   }
 }
 
-function extractSmartModelQuery(title) {
+function extractSmartModelQuery(title, brand) {
   if (!title) return 'Produkt';
-  const coreMatch = title.match(/^(Apple iPhone \w+|Samsung Galaxy \w+|Sony WH-\w+|Bose \w+|Acer \w+|Lenovo \w+|MSW \w+|VEVOR \w+|Bosch \w+|Dyson \w+|Ninja \w+|Emma \w+|Mirage \w+|[A-Z0-9-]+\s+[A-Z0-9-]+)/i);
-  let base = coreMatch ? coreMatch[0].trim() : title.split(/[:|–—,]/)[0].trim();
   
-  const storageMatch = title.match(/\b(\d{2,4}\s*(GB|TB|ml|cm|Zoll))\b/i);
-  const storage = storageMatch ? storageMatch[1].replace(/\s+/g, '') : '';
+  // Specific model codes / numbers: e.g. WF-1000XM5, iPhone 16, V15, etc.
+  const modelPattern = title.match(/\b(WF-\d{3,4}\w*|WH-\d{3,4}\w*|iPhone\s*\d+\w*|Galaxy\s*S\d+\w*|[A-Z]{1,4}-\d{3,5}\w*|Nitro\s*V?\d*|PlayStation\s*5|Xbox\s*Series\s*[XS]|Switch|iPad\s*\w*|MacBook\s*\w*)\b/i);
+  const b = brand || (title.match(/\b(Sony|Apple|Samsung|Bosch|Bose|Acer|Lenovo|MSW|VEVOR|DeLonghi|Ninja|Emma|Nike|Adidas|Puma|Lattafa|Dior|Chanel|Kärcher|Tretmann|Philips|CENXINY|Podofo|Hikity)\b/i) || [])[1] || '';
   
-  const colorMatch = title.match(/\b(Schwarz|Black|Weiß|White|Silber|Silver|Gold|Titan|Titanium|Blau|Blue|Rot|Red|Grün|Green|Hellrosa|Rosa|Pink|Grau|Grey)\b/i);
-  const color = colorMatch ? colorMatch[1] : '';
+  if (modelPattern && b && !modelPattern[1].toLowerCase().includes(b.toLowerCase())) {
+    return (b + ' ' + modelPattern[1]).replace(/\s+/g, ' ').trim();
+  }
   
-  const parts = [base];
-  if (storage && !base.toLowerCase().includes(storage.toLowerCase())) parts.push(storage);
-  if (color && !base.toLowerCase().includes(color.toLowerCase())) parts.push(color);
-  return parts.join(' ').replace(/\s+/g, ' ').trim();
+  let clean = title
+    .replace(/\(.*?\)/g, '')
+    .replace(/\[.*?\]/g, '')
+    .replace(/Generalüberholt|Refurbished|Gebraucht|Neu|Premium|Professional|Original/gi, '')
+    .split(/[:|;–—]/)[0]
+    .replace(/[^\w\sÄÖÜäöüß.-]/g, ' ')
+    .trim();
+    
+  let rawWords = clean.split(/\s+/).filter(w => !/^(mit|für|in|den|und|die|der|das|ein|eine|ear|true|wireless|noise|cancelling|kabellose)$/i.test(w));
+  
+  const seen = new Set();
+  const words = [];
+  if (b) {
+    seen.add(b.toLowerCase());
+    words.push(b);
+  }
+  for (const w of rawWords) {
+    if (!seen.has(w.toLowerCase())) {
+      seen.add(w.toLowerCase());
+      words.push(w);
+    }
+  }
+  return words.slice(0, 3).join(' ');
 }
 
 function getDistributedMultipliers(hash, cat) {
-  const mod = hash % 10;
+  const mod = hash % 12;
   
   if (cat === 'smartphones' || cat === 'tv_audio' || cat === 'gaming' || cat === 'laptops_tablets' || cat === 'computers') {
     if (mod < 4) {
-      return { Amazon: 1.00, MediaMarkt: 1.025, Galaxus: 1.035, eBay: 1.04, OTTO: 1.055, Kaufland: 1.06 };
+      return { Amazon: 1.00, MediaMarkt: 1.02, Galaxus: 1.03, eBay: 1.035, Kaufland: 1.045, OTTO: 1.05, AliExpress: 0.985, Temu: 0.98 };
     } else if (mod < 7) {
-      return { MediaMarkt: 0.975, Amazon: 1.00, Galaxus: 1.015, eBay: 1.03, OTTO: 1.045, Kaufland: 1.05 };
-    } else if (mod < 85) {
-      return { Galaxus: 0.98, Amazon: 1.00, MediaMarkt: 1.02, eBay: 1.03, OTTO: 1.04, Kaufland: 1.05 };
+      return { MediaMarkt: 0.975, Amazon: 1.00, Galaxus: 1.015, eBay: 1.03, Kaufland: 1.04, OTTO: 1.05, AliExpress: 0.99, Temu: 0.985 };
+    } else if (mod < 9) {
+      return { Galaxus: 0.98, Amazon: 1.00, MediaMarkt: 1.015, eBay: 1.025, Kaufland: 1.04, OTTO: 1.05, AliExpress: 0.99, Temu: 0.985 };
     } else {
-      return { eBay: 0.975, Amazon: 1.00, MediaMarkt: 1.015, Galaxus: 1.025, OTTO: 1.04, Kaufland: 1.05 };
+      return { eBay: 0.975, Amazon: 1.00, MediaMarkt: 1.015, Galaxus: 1.025, Kaufland: 1.035, OTTO: 1.045, AliExpress: 0.985, Temu: 0.98 };
     }
   } else if (cat === 'fashion_shoes') {
     if (mod < 3) {
-      return { Amazon: 1.00, Zalando: 1.03, OTTO: 1.04, Kaufland: 1.06, eBay: 1.05 };
+      return { Amazon: 1.00, Zalando: 1.025, OTTO: 1.035, Kaufland: 1.05, eBay: 1.04, SHEIN: 0.96, Temu: 0.955, AliExpress: 0.97 };
     } else if (mod < 6) {
-      return { Zalando: 0.965, OTTO: 1.01, Amazon: 1.025, Kaufland: 1.05, eBay: 1.04 };
+      return { Zalando: 0.965, OTTO: 1.01, Amazon: 1.02, Kaufland: 1.04, eBay: 1.035, SHEIN: 0.975, Temu: 0.97, AliExpress: 0.98 };
+    } else if (mod < 9) {
+      return { OTTO: 0.97, Zalando: 1.01, Amazon: 1.02, Kaufland: 1.04, eBay: 1.035, SHEIN: 0.98, Temu: 0.975, AliExpress: 0.985 };
     } else {
-      return { OTTO: 0.97, Zalando: 1.01, Amazon: 1.02, Kaufland: 1.04, eBay: 1.05 };
+      return { SHEIN: 0.95, Zalando: 1.01, OTTO: 1.02, Amazon: 1.025, Kaufland: 1.04, eBay: 1.035, Temu: 0.965, AliExpress: 0.97 };
     }
   } else if (cat === 'perfumes_beauty') {
-    if (mod < 3) {
-      return { Amazon: 1.00, Douglas: 1.025, OTTO: 1.04, Zalando: 1.05, Kaufland: 1.06 };
-    } else if (mod < 7) {
-      return { Douglas: 0.965, Amazon: 1.015, OTTO: 1.03, Zalando: 1.045, Kaufland: 1.05 };
+    if (mod < 4) {
+      return { Amazon: 1.00, Douglas: 1.02, OTTO: 1.035, Zalando: 1.04, Kaufland: 1.05, Galaxus: 1.045, eBay: 1.05, Temu: 0.97 };
+    } else if (mod < 8) {
+      return { Douglas: 0.965, Amazon: 1.015, OTTO: 1.03, Zalando: 1.04, Kaufland: 1.045, Galaxus: 1.04, eBay: 1.045, Temu: 0.975 };
     } else {
-      return { OTTO: 0.975, Douglas: 1.01, Amazon: 1.02, Zalando: 1.04, Kaufland: 1.05 };
+      return { OTTO: 0.975, Douglas: 1.01, Amazon: 1.02, Zalando: 1.035, Kaufland: 1.045, Galaxus: 1.04, eBay: 1.045, Temu: 0.98 };
     }
   } else if (cat === 'auto_car' || cat === 'tools_garden') {
-    if (mod < 5) {
-      return { Amazon: 1.00, eBay: 1.03, Kaufland: 1.05, OTTO: 1.06, Galaxus: 1.045 };
+    if (mod < 4) {
+      return { Amazon: 1.00, eBay: 1.025, Kaufland: 1.04, OTTO: 1.05, Galaxus: 1.035, AliExpress: 0.97, Temu: 0.965, MediaMarkt: 1.04 };
     } else if (mod < 7) {
-      return { eBay: 0.97, Amazon: 1.00, Kaufland: 1.035, Galaxus: 1.04, OTTO: 1.05 };
-    } else if (mod < 9) {
-      return { Kaufland: 0.975, Amazon: 1.00, eBay: 1.02, Galaxus: 1.035, OTTO: 1.045 };
+      return { eBay: 0.97, Amazon: 1.00, Kaufland: 1.03, Galaxus: 1.035, OTTO: 1.045, AliExpress: 0.975, Temu: 0.97, MediaMarkt: 1.035 };
+    } else if (mod < 10) {
+      return { Kaufland: 0.975, Amazon: 1.00, eBay: 1.02, Galaxus: 1.03, OTTO: 1.04, AliExpress: 0.98, Temu: 0.975, MediaMarkt: 1.035 };
     } else {
-      return { Galaxus: 0.98, Amazon: 1.00, eBay: 1.02, Kaufland: 1.03, OTTO: 1.04 };
+      return { Galaxus: 0.98, Amazon: 1.00, eBay: 1.015, Kaufland: 1.025, OTTO: 1.035, AliExpress: 0.98, Temu: 0.975, MediaMarkt: 1.03 };
     }
   } else {
+    // Furniture, home, sports, toys
     if (mod < 4) {
-      return { Amazon: 1.00, OTTO: 1.03, Kaufland: 1.05, Galaxus: 1.04, eBay: 1.045 };
+      return { Amazon: 1.00, IKEA: 1.02, OTTO: 1.03, Kaufland: 1.045, Galaxus: 1.035, eBay: 1.04, Temu: 0.97, AliExpress: 0.975 };
     } else if (mod < 7) {
-      return { OTTO: 0.97, Amazon: 1.00, Kaufland: 1.03, Galaxus: 1.04, eBay: 1.045 };
+      return { OTTO: 0.97, Amazon: 1.00, IKEA: 1.015, Kaufland: 1.03, Galaxus: 1.035, eBay: 1.04, Temu: 0.975, AliExpress: 0.98 };
+    } else if (mod < 9) {
+      return { IKEA: 0.975, OTTO: 1.01, Amazon: 1.015, Kaufland: 1.03, Galaxus: 1.035, eBay: 1.04, Temu: 0.98, AliExpress: 0.985 };
     } else {
-      return { Kaufland: 0.975, OTTO: 1.01, Amazon: 1.015, Galaxus: 1.03, eBay: 1.035 };
+      return { Kaufland: 0.975, OTTO: 1.01, Amazon: 1.015, IKEA: 1.02, Galaxus: 1.03, eBay: 1.035, Temu: 0.98, AliExpress: 0.985 };
     }
   }
 }
 
-function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId) {
-  const smartQuery = extractSmartModelQuery(title);
+function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, brand) {
+  const smartQuery = extractSmartModelQuery(title, brand);
   const hash = asin.split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
   const storeList = getStoresForCategory(categoryId);
   const storeMultipliers = getDistributedMultipliers(hash, categoryId);
@@ -174,7 +198,11 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId) {
     MediaMarkt: 4.8,
     Galaxus: 4.8,
     Zalando: 4.9,
-    Douglas: 4.9
+    Douglas: 4.9,
+    IKEA: 4.8,
+    AliExpress: 4.6,
+    Temu: 4.5,
+    SHEIN: 4.6
   };
 
   const offers = storeList.map(store => {
@@ -199,6 +227,14 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId) {
       directUrl = `https://www.galaxus.de/de/search?q=${encodeURIComponent(smartQuery)}`;
     } else if (store === 'Kaufland') {
       directUrl = `https://www.kaufland.de/item/search/?search_value=${encodeURIComponent(smartQuery)}`;
+    } else if (store === 'IKEA') {
+      directUrl = `https://www.ikea.com/de/de/search/?q=${encodeURIComponent(smartQuery)}`;
+    } else if (store === 'AliExpress') {
+      directUrl = `https://www.aliexpress.com/w/wholesale-${encodeURIComponent(smartQuery)}.html`;
+    } else if (store === 'Temu') {
+      directUrl = `https://www.temu.com/de/search_result.html?search_key=${encodeURIComponent(smartQuery)}`;
+    } else if (store === 'SHEIN') {
+      directUrl = `https://de.shein.com/pdsearch/${encodeURIComponent(smartQuery)}/`;
     }
 
     return {

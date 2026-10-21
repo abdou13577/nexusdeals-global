@@ -1,0 +1,72 @@
+{
+  "siteName": "NexusDeals Global",
+  "currency": "EUR (€)",
+  "country": "Germany / EU",
+  "affiliateIds": {
+    "Amazon": "",
+    "OTTO": "",
+    "Kaufland": "",
+    "eBay": "",
+    "Zalando": "",
+    "MediaMarkt": "",
+    "Galaxus": "",
+    "Douglas": "",
+    "IKEA": "",
+    "AliExpress": "",
+    "Temu": "",
+    "SHEIN": ""
+  },
+  "payoutSettings": {
+    "primaryMethod": "bank_1",
+    "paypalEmail": "",
+    "wiseOrPayoneerEmail": "",
+    "bankAccounts": [
+      {
+        "slot": 1,
+        "region": "EU",
+        "label": "الحساب البنكي الأول (أوروبا / ألمانيا - SEPA EUR)",
+        "holderName": "",
+        "bankName": "",
+        "ibanOrRib": "",
+        "bicSwift": "",
+        "currency": "EUR"
+      },
+      {
+        "slot": 2,
+        "region": "MA",
+        "label": "الحساب البنكي الثاني (المغرب - RIB / IBAN MA)",
+        "holderName": "",
+        "bankName": "",
+        "ibanOrRib": "",
+        "bicSwift": "",
+        "currency": "MAD / EUR"
+      },
+      {
+        "slot": 3,
+        "region": "US",
+        "label": "الحساب البنكي الثالث (أمريكا / دولي - ACH / SWIFT USD)",
+        "holderName": "",
+        "bankName": "",
+        "ibanOrRib": "",
+        "bicSwift": "",
+        "routingNumber": "",
+        "currency": "USD"
+      }
+    ]
+  },
+  "commissionRates": {
+    "Amazon": 0.045,
+    "OTTO": 0.06,
+    "Kaufland": 0.055,
+    "eBay": 0.04,
+    "Zalando": 0.08,
+    "MediaMarkt": 0.035,
+    "Galaxus": 0.04,
+    "Douglas": 0.09,
+    "IKEA": 0.04,
+    "AliExpress": 0.07,
+    "Temu": 0.12,
+    "SHEIN": 0.10
+  },
+  "autoSyncEnabled": true
+}

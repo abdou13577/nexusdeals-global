@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">NexusDeals Global | Preisvergleich auf 12 weltweiten Plattformen (Amazon • OTTO • Kaufland • Zalando • eBay • Temu)</title>
+  <script>
+    (function() {
+      try {
+        localStorage.removeItem('nexus_deals_lang');
+        var navLangs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'de'];
+        var lang = 'de';
+        for (var i = 0; i < navLangs.length; i++) {
+          var code = (navLangs[i] || '').toLowerCase().split('-')[0];
+          if (code === 'de' || code === 'en' || code === 'ar') {
+            lang = code;
+            break;
+          }
+        }
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <!-- Sleek Compact Header -->
+  <header class="main-header">
+    <div class="header-inner">
+      <div class="brand-logo" onclick="resetAllFilters()">
+        <div class="logo-icon">N</div>
+        <div class="brand-text">
+          <h1>NexusDeals</h1>
+          <span data-i18n="subBrandText">Amazon • OTTO • Kaufland • Zalando • eBay • MediaMarkt • Temu • AliExpress</span>
+        </div>
+      </div>
+
+      <form class="header-search" onsubmit="handleMainSearch(event)">
+        <input type="text" id="mainSearchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Beliebiges Produkt suchen (Smartphones, Kleidung, Parfüm, Möbel, Werkzeug, Gaming...)" />
+        <button type="submit" class="btn-search-main">
+          <span data-i18n="searchBtn">🔍 Suchen</span>
+        </button>
+      </form>
+
+      <div class="header-actions">
+        <!-- Collapsible Filter & Sort Dropdown Trigger -->
+        <button type="button" class="btn-action" id="filterToggleBtn" onclick="toggleFilterDrawer()">
+          <span data-i18n="filterMenuBtn">🎛️ Filter & Sortierung ▾</span>
+        </button>
+
+        <!-- Collapsible AI Assistant Trigger -->
+        <button type="button" class="btn-action btn-ai-highlight" id="aiToggleBtn" onclick="toggleAiDrawer()">
+          <span data-i18n="aiHeaderBtn">🤖 KI-Kaufberater ▾</span>
+        </button>
+
+        <!-- 3-Language Switcher -->
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn active" id="langBtn-de" onclick="setLanguage('de')">DE</button>
+          <button type="button" class="lang-btn" id="langBtn-en" onclick="setLanguage('en')">EN</button>
+          <button type="button" class="lang-btn" id="langBtn-ar" onclick="setLanguage('ar')">AR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible Filter & Sort Popover Drawer -->
+    <div class="dropdown-drawer" id="filterDrawer">
+      <div class="drawer-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <strong style="color:#38bdf8; font-size:0.9rem;" data-i18n="filterDrawerTitle">🎛️ Erweiterte Filter & Sortierung (12 globale Plattformen)</strong>
+          <div style="display:flex; gap:8px;">
+            <button type="button" class="btn-action" style="padding:4px 10px; font-size:0.76rem;" onclick="resetAllFilters()" data-i18n="resetFiltersBtn">Zurücksetzen ↺</button>
+            <button type="button" class="btn-action" style="padding:4px 10px; font-size:0.76rem;" onclick="toggleFilterDrawer()" data-i18n="closeBtn">Schließen ✕</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <label style="display:block; font-size:0.8rem; color:var(--text-secondary); font-weight:600; margin-bottom:6px;" data-i18n="filterStoreLabel">Shop / Globale Plattform:</label>
+          <div class="store-filter-pills">
+            <button type="button" class="store-filter-btn active" data-store="all" onclick="selectStoreFilter('all', this)" data-i18n="storeAll">Alle (12 Plattformen)</button>
+            <button type="button" class="store-filter-btn" data-store="Amazon" onclick="selectStoreFilter('Amazon', this)">Amazon</button>
+            <button type="button" class="store-filter-btn" data-store="OTTO" onclick="selectStoreFilter('OTTO', this)">OTTO</button>
+            <button type="button" class="store-filter-btn" data-store="Kaufland" onclick="selectStoreFilter('Kaufland', this)">Kaufland</button>
+            <button type="button" class="store-filter-btn" data-store="eBay" onclick="selectStoreFilter('eBay', this)">eBay</button>
+            <button type="button" class="store-filter-btn" data-store="Zalando" onclick="selectStoreFilter('Zalando', this)">Zalando</button>
+            <button type="button" class="store-filter-btn" data-store="MediaMarkt" onclick="selectStoreFilter('MediaMarkt', this)">MediaMarkt</button>
+            <button type="button" class="store-filter-btn" data-store="Galaxus" onclick="selectStoreFilter('Galaxus', this)">Galaxus</button>
+            <button type="button" class="store-filter-btn" data-store="Douglas" onclick="selectStoreFilter('Douglas', this)">Douglas</button>
+            <button type="button" class="store-filter-btn" data-store="IKEA" onclick="selectStoreFilter('IKEA', this)">IKEA</button>
+            <button type="button" class="store-filter-btn" data-store="AliExpress" onclick="selectStoreFilter('AliExpress', this)">AliExpress</button>
+            <button type="button" class="store-filter-btn" data-store="Temu" onclick="selectStoreFilter('Temu', this)">Temu</button>
+            <button type="button" class="store-filter-btn" data-store="SHEIN" onclick="selectStoreFilter('SHEIN', this)">SHEIN</button>
+          </div>
+        </div>
+
+        <div class="filter-grid-popover">
+          <div class="filter-col">
+            <label><span data-i18n="maxPriceTitle">Maximalpreis:</span> <strong id="maxPriceLabel" style="color:#38bdf8;"></strong></label>
+            <input type="range" id="maxPriceSlider" min="20" max="2500" step="20" value="2500" oninput="handlePriceSlider(this.value)" style="width:100%; accent-color:#38bdf8; cursor:pointer;" />
+          </div>
+
+          <div class="filter-col">
+            <label data-i18n="sortLabelTitle">Sortierung nach:</label>
+            <select id="sortSelect" class="filter-select" onchange="applyFilters()">
+              <option value="popular" data-i18n="sortPopular">Beliebteste Angebote</option>
+              <option value="discount" data-i18n="sortDiscount">Höchster Rabatt & Ersparnis %</option>
+              <option value="price_asc" data-i18n="sortPriceAsc">Preis: Niedrigster zuerst</option>
+              <option value="price_desc" data-i18n="sortPriceDesc">Preis: Höchster zuerst</option>
+              <option value="rating" data-i18n="sortRating">Beste Kundenbewertung ⭐</option>
+            </select>
+          </div>
+
+          <div class="filter-col">
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer; background:var(--bg-elevated); padding:9px 12px; border-radius:8px; border:1px solid var(--border-color); margin:0;">
+              <input type="checkbox" id="flashOnlyCheckbox" onchange="applyFilters()" style="accent-color:#10b981; width:16px; height:16px;" />
+              <span data-i18n="flashDealsOnly" style="color:#fff;">🔥 Nur Blitz-Deals & Top-Ersparnis</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible AI Shopping Assistant Drawer -->
+    <div class="dropdown-drawer" id="aiDrawer">
+      <div class="drawer-card" style="border-color:rgba(16, 185, 129, 0.45);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <strong style="color:#34d399; font-size:0.92rem;" data-i18n="aiPromptLabel">🤖 Frage den KI-Einkaufsberater (Budget oder Wunschprodukt eingeben):</strong>
+          <button type="button" class="btn-action" style="padding:4px 10px; font-size:0.76rem;" onclick="toggleAiDrawer()" data-i18n="closeBtn">Schließen ✕</button>
+        </div>
+        <form style="display:flex; gap:8px;" onsubmit="handleAiSearch(event)">
+          <input type="text" id="aiPromptInput" data-i18n-placeholder="aiPlaceholder" placeholder="Z. B.: Nike Sneaker, Herrenparfüm, Bürostuhl oder Kaffeemaschine..." style="flex:1; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:9px 14px; border-radius:8px; outline:none;" />
+          <button type="submit" class="btn-search-main" style="background:linear-gradient(135deg,#10b981,#059669);" data-i18n="aiSubmitBtn">KI-Analyse ⚡</button>
+        </form>
+        <div class="quick-chips" id="quickChipsContainer"></div>
+
+        <div id="aiResponsePanel" style="display:none; margin-top:14px; padding-top:14px; border-top:1px solid var(--border-color);">
+          <div id="aiResponseText" style="white-space:pre-line; font-size:0.88rem; color:#e2e8f0; margin-bottom:12px;"></div>
+          <div class="products-grid" id="aiRecommendationsGrid"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Compact Horizontal Category Strip (12 Comprehensive Life Categories) -->
+  <div class="categories-strip-wrap">
+    <nav class="categories-bar" id="categoriesBar">
+      <button class="cat-btn active" data-cat="all" onclick="selectCategory('all', this)" data-i18n="cat_all">🌐 Alle</button>
+      <button class="cat-btn" data-cat="smartphones" onclick="selectCategory('smartphones', this)" data-i18n="cat_smartphones">📱 Smartphones & Tablets</button>
+      <button class="cat-btn" data-cat="gaming" onclick="selectCategory('gaming', this)" data-i18n="cat_gaming">💻 Laptops & Gaming</button>
+      <button class="cat-btn" data-cat="tv_audio" onclick="selectCategory('tv_audio', this)" data-i18n="cat_tv_audio">📺 TV & Audio</button>
+      <button class="cat-btn" data-cat="home_kitchen" onclick="selectCategory('home_kitchen', this)" data-i18n="cat_home_kitchen">☕ Küche & Haushalt</button>
+      <button class="cat-btn" data-cat="fashion_shoes" onclick="selectCategory('fashion_shoes', this)" data-i18n="cat_fashion_shoes">👟 Mode & Schuhe</button>
+      <button class="cat-btn" data-cat="perfumes_beauty" onclick="selectCategory('perfumes_beauty', this)" data-i18n="cat_perfumes_beauty">💄 Parfüm & Beauty</button>
+      <button class="cat-btn" data-cat="furniture_decor" onclick="selectCategory('furniture_decor', this)" data-i18n="cat_furniture_decor">🛋️ Möbel & Wohnen</button>
+      <button class="cat-btn" data-cat="sports_fitness" onclick="selectCategory('sports_fitness', this)" data-i18n="cat_sports_fitness">🏋️ Sport & Fitness</button>
+      <button class="cat-btn" data-cat="kids_toys" onclick="selectCategory('kids_toys', this)" data-i18n="cat_kids_toys">🧸 Kinder & Spielzeug</button>
+      <button class="cat-btn" data-cat="tools_garden" onclick="selectCategory('tools_garden', this)" data-i18n="cat_tools_garden">🛠️ Werkzeug & Garten</button>
+      <button class="cat-btn" data-cat="auto_car" onclick="selectCategory('auto_car', this)" data-i18n="cat_auto_car">🚗 Autozubehör & Elektronik</button>
+      <button class="cat-btn" data-cat="travel_luggage" onclick="selectCategory('travel_luggage', this)" data-i18n="cat_travel_luggage">🧳 Reise & Smartwatches</button>
+    </nav>
+  </div>
+
+  <!-- Main Products Catalog Grid -->
+  <main class="catalog-container">
+    <div class="catalog-status-bar">
+      <div id="resultsCounterText"></div>
+      <div data-i18n="catalogTip" style="font-size:0.8rem; color:#94a3b8;"></div>
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+  </main>
+
+  <!-- Product Detail, Price History & Alternatives Modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalProductTitle" style="font-size:1.05rem;"></h3>
+        <button class="btn-close-modal" onclick="closeProductModal()">✕</button>
+      </div>
+      <div id="modalProductBody"></div>
+    </div>
+  </div>
+
+  <!-- High-Resolution Full-Screen Image Lightbox Modal -->
+  <div class="lightbox-overlay" id="imageLightboxModal" onclick="handleLightboxBackdropClick(event)">
+    <div class="lightbox-topbar">
+      <div class="lightbox-counter" id="lightboxCounter">1 / 1</div>
+      <div class="lightbox-tools">
+        <button type="button" class="lightbox-tool-btn" onclick="zoomLightboxImage(0.25)" title="Zoom In">➕</button>
+        <button type="button" class="lightbox-tool-btn" onclick="zoomLightboxImage(-0.25)" title="Zoom Out">➖</button>
+        <button type="button" class="lightbox-tool-btn" onclick="resetLightboxZoom()" title="Reset Zoom">1:1</button>
+        <button type="button" class="lightbox-close-btn" onclick="closeImageLightbox()" title="Close">✕</button>
+      </div>
+    </div>
+
+    <div class="lightbox-viewport" id="lightboxViewport" onclick="toggleLightboxZoom(event)">
+      <button type="button" class="lightbox-nav-btn lightbox-prev" onclick="navigateLightbox(-1, event)">‹</button>
+      <div class="lightbox-img-wrapper" id="lightboxImgWrapper">
+        <img id="lightboxMainImg" src="" alt="High-Resolution Preview" />
+      </div>
+      <button type="button" class="lightbox-nav-btn lightbox-next" onclick="navigateLightbox(1, event)">›</button>
+    </div>
+
+    <div class="lightbox-thumbs-bar" id="lightboxThumbsBar"></div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

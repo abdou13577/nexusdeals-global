@@ -1,0 +1,955 @@
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const url = require('url');
+const { generateInitialCatalog, scrapeRealAmazonProducts, scrapeProductGalleryByAsin, detectCategoryFromText } = require('./seedCatalog');
+
+const PORT = process.env.PORT || 3080;
+const DATA_DIR = path.join(__dirname, 'data');
+const CATALOG_PATH = path.join(DATA_DIR, 'catalog.json');
+const SETTINGS_PATH = path.join(DATA_DIR, 'settings.json');
+const ANALYTICS_PATH = path.join(DATA_DIR, 'analytics.json');
+
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+const DEFAULT_SETTINGS = {
+  siteName: 'NexusDeals Global',
+  currency: 'EUR (€)',
+  country: 'Germany / EU',
+  affiliateIds: {
+    Amazon: '',
+    OTTO: '',
+    Kaufland: '',
+    eBay: '',
+    Zalando: '',
+    MediaMarkt: '',
+    Galaxus: '',
+    Douglas: '',
+    IKEA: '',
+    AliExpress: '',
+    Temu: '',
+    SHEIN: ''
+  },
+  payoutSettings: {
+    primaryMethod: 'bank_1',
+    paypalEmail: '',
+    wiseOrPayoneerEmail: '',
+    bankAccounts: [
+      {
+        slot: 1,
+        region: 'EU',
+        label: 'الحساب البنكي الأول (أوروبا / ألمانيا - SEPA EUR)',
+        holderName: '',
+        bankName: '',
+        ibanOrRib: '',
+        bicSwift: '',
+        currency: 'EUR'
+      },
+      {
+        slot: 2,
+        region: 'MA',
+        label: 'الحساب البنكي الثاني (المغرب - RIB / IBAN MA)',
+        holderName: '',
+        bankName: '',
+        ibanOrRib: '',
+        bicSwift: '',
+        currency: 'MAD / EUR'
+      },
+      {
+        slot: 3,
+        region: 'US',
+        label: 'الحساب البنكي الثالث (أمريكا / دولي - ACH / SWIFT USD)',
+        holderName: '',
+        bankName: '',
+        ibanOrRib: '',
+        bicSwift: '',
+        routingNumber: '',
+        currency: 'USD'
+      }
+    ]
+  },
+  commissionRates: {
+    Amazon: 0.045,
+    OTTO: 0.06,
+    Kaufland: 0.055,
+    eBay: 0.04,
+    Zalando: 0.08,
+    MediaMarkt: 0.035,
+    Galaxus: 0.04,
+    Douglas: 0.09,
+    IKEA: 0.04,
+    AliExpress: 0.07,
+    Temu: 0.12,
+    SHEIN: 0.10
+  },
+  autoSyncEnabled: true
+};
+
+const DEFAULT_ANALYTICS = {
+  totalClicks: 0,
+  estimatedCommissionEur: 0.00,
+  storeBreakdown: {
+    Amazon: { clicks: 0, estRevenue: 0 },
+    OTTO: { clicks: 0, estRevenue: 0 },
+    Kaufland: { clicks: 0, estRevenue: 0 },
+    eBay: { clicks: 0, estRevenue: 0 },
+    Zalando: { clicks: 0, estRevenue: 0 },
+    MediaMarkt: { clicks: 0, estRevenue: 0 },
+    Galaxus: { clicks: 0, estRevenue: 0 },
+    Douglas: { clicks: 0, estRevenue: 0 },
+    IKEA: { clicks: 0, estRevenue: 0 },
+    AliExpress: { clicks: 0, estRevenue: 0 },
+    Temu: { clicks: 0, estRevenue: 0 },
+    SHEIN: { clicks: 0, estRevenue: 0 }
+  },
+  recentClicks: [],
+  priceAlerts: []
+};
+
+function loadJson(filePath, fallback) {
+  try {
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    }
+  } catch (e) {}
+  fs.writeFileSync(filePath, JSON.stringify(fallback, null, 2), 'utf8');
+  return fallback;
+}
+
+function saveJson(filePath, data) {
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+}
+
+function extractCleanModelQuery(title, brand) {
+  if (!title) return 'Product';
+  let cleaned = title
+    .replace(/\(.*?\)/g, '')
+    .replace(/\[.*?\]/g, '')
+    .replace(/Generalüberholt|Refurbished|Gebraucht|Neu/gi, '')
+    .replace(/mit\s+[^\s,]+/gi, '')
+    .replace(/Wasserdicht|Atmungsaktiv|Outdoor|Camping/gi, '')
+    .split(/[:|–—,]/)[0]
+    .replace(/[^\w\sÄÖÜäöüß.-]/g, ' ')
+    .trim();
+  const words = cleaned.split(/\s+/).filter(Boolean);
+  return words.slice(0, 5).join(' ');
+}
+
+// Build real direct destination URL across all 12 Global & European Platforms
+function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUrl) {
+  const tags = (settings && settings.affiliateIds) || {};
+  const numPrice = parseFloat(price) || 0;
+  const minPrice = numPrice > 20 ? Math.floor(numPrice * 0.85) : Math.max(5, Math.floor(numPrice * 0.7));
+  const maxPrice = numPrice > 20 ? Math.ceil(numPrice * 1.15) : Math.ceil(numPrice * 1.3);
+
+  // If a direct product page URL is already known, append affiliate tag and redirect directly!
+  if (directUrl && typeof directUrl === 'string' && directUrl.startsWith('http')) {
+    if (store === 'Amazon' && tags.Amazon) {
+      return directUrl.includes('?') ? `${directUrl}&tag=${encodeURIComponent(tags.Amazon)}` : `${directUrl}?tag=${encodeURIComponent(tags.Amazon)}`;
+    }
+    if (store === 'eBay' && tags.eBay) {
+      return directUrl.includes('?') ? `${directUrl}&campid=${encodeURIComponent(tags.eBay)}` : `${directUrl}?campid=${encodeURIComponent(tags.eBay)}`;
+    }
+    if (store === 'OTTO' && tags.OTTO) {
+      return directUrl.includes('?') ? `${directUrl}&awc=${encodeURIComponent(tags.OTTO)}` : `${directUrl}?awc=${encodeURIComponent(tags.OTTO)}`;
+    }
+    if (store === 'Temu' && tags.Temu) {
+      return directUrl.includes('?') ? `${directUrl}&aff_id=${encodeURIComponent(tags.Temu)}` : `${directUrl}?aff_id=${encodeURIComponent(tags.Temu)}`;
+    }
+    return directUrl;
+  }
+
+  const cleanModel = extractCleanModelQuery(query);
+  const q = encodeURIComponent(cleanModel);
+
+  switch (store) {
+    case 'Amazon': {
+      const tagParam = tags.Amazon ? `?tag=${encodeURIComponent(tags.Amazon)}` : '';
+      const validAsin = asin && /^[A-Z0-9]{10}$/i.test(asin.trim()) ? asin.trim().toUpperCase() : null;
+      if (validAsin) {
+        return `https://www.amazon.de/dp/${validAsin}${tagParam}`;
+      }
+      return `https://www.amazon.de/s?k=${q}${tags.Amazon ? `&tag=${encodeURIComponent(tags.Amazon)}` : ''}`;
+    }
+    case 'eBay': {
+      const tagParam = tags.eBay ? `&mkcid=1&mkrid=707-53477-19255-0&campid=${encodeURIComponent(tags.eBay)}` : '';
+      // Direct Buy-It-Now (Sofort-Kaufen), bounded to exact price range to eliminate all phone cases & cheap accessories
+      const priceFilter = numPrice > 15 ? `&_udlo=${minPrice}&_udhi=${maxPrice}` : '';
+      return `https://www.ebay.de/sch/i.html?_nkw=${q}&LH_BIN=1${priceFilter}&_sop=15${tagParam}`;
+    }
+    case 'OTTO': {
+      const tagParam = tags.OTTO ? `?awc=${encodeURIComponent(tags.OTTO)}` : '';
+      const priceFilter = numPrice > 15 ? `?filter_preis_von=${minPrice}&filter_preis_bis=${maxPrice}` : '';
+      return `https://www.otto.de/suche/${q}/${priceFilter}${tagParam}`;
+    }
+    case 'Kaufland': {
+      const tagParam = tags.Kaufland ? `&utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}` : '';
+      const priceFilter = numPrice > 15 ? `&price_min=${minPrice}&price_max=${maxPrice}` : '';
+      return `https://www.kaufland.de/item/search/?search_value=${q}${priceFilter}${tagParam}`;
+    }
+    case 'MediaMarkt': {
+      const tagParam = tags.MediaMarkt ? `?partnerId=${encodeURIComponent(tags.MediaMarkt)}` : '';
+      return `https://www.mediamarkt.de/de/search.html?query=${q}${tagParam}`;
+    }
+    case 'Zalando': {
+      const tagParam = tags.Zalando ? `&awc=${encodeURIComponent(tags.Zalando)}` : '';
+      return `https://www.zalando.de/katalog/?q=${q}${tagParam}`;
+    }
+    case 'Galaxus': {
+      const tagParam = tags.Galaxus ? `&tag=${encodeURIComponent(tags.Galaxus)}` : '';
+      return `https://www.galaxus.de/de/search?q=${q}${tagParam}`;
+    }
+    case 'Douglas': {
+      const tagParam = tags.Douglas ? `?awc=${encodeURIComponent(tags.Douglas)}` : '';
+      return `https://www.douglas.de/de/search?q=${q}${tagParam}`;
+    }
+    case 'IKEA': {
+      const tagParam = tags.IKEA ? `&affId=${encodeURIComponent(tags.IKEA)}` : '';
+      return `https://www.ikea.com/de/de/search/?q=${q}${tagParam}`;
+    }
+    case 'AliExpress': {
+      const tagParam = tags.AliExpress ? `?aff_fcid=${encodeURIComponent(tags.AliExpress)}` : '';
+      const priceFilter = numPrice > 15 ? `&minPrice=${minPrice}&maxPrice=${maxPrice}` : '';
+      return `https://www.aliexpress.com/w/wholesale-${q.replace(/%20/g, '-')}.html${priceFilter}${tagParam}`;
+    }
+    case 'Temu': {
+      const tagParam = tags.Temu ? `&_x_ads_channel=affiliate&aff_id=${encodeURIComponent(tags.Temu)}` : '';
+      return `https://www.temu.com/de/search_result.html?search_key=${q}&search_type=1000${tagParam}`;
+    }
+    case 'SHEIN': {
+      const tagParam = tags.SHEIN ? `?url_from=${encodeURIComponent(tags.SHEIN)}` : '';
+      return `https://de.shein.com/pdsearch/${q}/${tagParam}`;
+    }
+    default:
+      return `https://www.amazon.de/s?k=${q}`;
+  }
+}
+
+function runAiShoppingAssistant(userPrompt, products) {
+  const q = (userPrompt || '').trim().toLowerCase();
+  const numMatch = q.match(/(\d{2,5})/);
+  const budget = numMatch ? parseFloat(numMatch[1]) : null;
+
+  const keywordGroups = [
+    { keys: ['لابتوب', 'حاسوب', 'كمبيوتر', 'العاب', 'ألعاب', 'بلايستيشن', 'laptop', 'gaming', 'pc', 'ps5', 'playstation', 'rtx'], cat: 'gaming' },
+    { keys: ['هاتف', 'جوال', 'موبايل', 'آيفون', 'ايفون', 'سامسونج', 'iphone', 'samsung', 'galaxy', 'phone', 'smartphone', 'handy'], cat: 'smartphones' },
+    { keys: ['قهوة', 'ماكينة', 'مكنسة', 'مطبخ', 'منزل', 'قلاية', 'دايسون', 'روبوروك', 'ديلونجي', 'coffee', 'vacuum', 'dyson', 'roborock', 'delonghi', 'ninja', 'kaffee', 'tefal', 'wmf'], cat: 'home_kitchen' },
+    { keys: ['شاشة', 'تلفزيون', 'سماعة', 'سماعات', 'صوت', 'سوني', 'tv', 'oled', 'fernseher', 'headphones', 'kopfhörer', 'sony', 'lg', 'jbl'], cat: 'tv_audio' },
+    { keys: ['ملابس', 'حذاء', 'أحذية', 'نايك', 'اديداس', 'جينز', 'جاكيت', 'nike', 'adidas', 'sneaker', 'schuhe', 'jeans', 'tommy', 'fashion'], cat: 'fashion_shoes' },
+    { keys: ['عطر', 'عطور', 'تجميل', 'ليزر', 'فيليبس', 'حلاقة', 'parfum', 'dior', 'lattafa', 'boss', 'philips', 'lumea', 'braun', 'beauty'], cat: 'perfumes_beauty' },
+    { keys: ['أثاث', 'كرسي', 'مكتب', 'سرير', 'فرشة', 'ديكور', 'bürostuhl', 'stuhl', 'schreibtisch', 'matratze', 'emma', 'sofa', 'möbel'], cat: 'furniture_decor' },
+    { keys: ['رياضة', 'جري', 'مشاية', 'أثقال', 'سكوتر', 'دراجة', 'laufband', 'walking', 'hantel', 'scooter', 'fitness', 'sport'], cat: 'sports_fitness' },
+    { keys: ['أطفال', 'ليغو', 'لعب', 'بيبي', 'lego', 'kinder', 'spielzeug', 'baby'], cat: 'kids_toys' },
+    { keys: ['عدة', 'أدوات', 'دريل', 'بوش', 'حديقة', 'غسيل', 'bosch', 'kärcher', 'werkzeug', 'akkuschrauber'], cat: 'tools_garden' },
+    { keys: ['سيارة', 'سيارات', 'داش كام', 'بطارية', 'dashcam', 'auto', 'starthilfe'], cat: 'auto_car' },
+    { keys: ['سفر', 'حقيبة', 'شنطة', 'ساعة', 'درون', 'كاميرا', 'koffer', 'samsonite', 'watch', 'drohne', 'dji'], cat: 'travel_luggage' }
+  ];
+
+  let matchedCategory = null;
+  for (const grp of keywordGroups) {
+    if (grp.keys.some(k => q.includes(k))) {
+      matchedCategory = grp.cat;
+      break;
+    }
+  }
+
+  let candidates = products.filter(p => {
+    const minPrice = p.offers[0].price;
+    if (budget && minPrice > budget * 1.15) return false;
+    if (matchedCategory && p.category === matchedCategory) return true;
+    const text = `${p.title} ${p.titleAr} ${p.brand} ${p.categoryAr}`.toLowerCase();
+    const words = q.split(/\s+/).filter(w => w.length > 2);
+    return words.some(w => text.includes(w));
+  });
+
+  if (candidates.length === 0) {
+    candidates = products.filter(p => {
+      const minPrice = p.offers[0].price;
+      if (budget) return minPrice <= budget;
+      return true;
+    });
+  }
+
+  candidates.sort((a, b) => {
+    const saveA = (a.msrp - a.offers[0].price) / a.msrp;
+    const saveB = (b.msrp - b.offers[0].price) / b.msrp;
+    return (saveB + b.rating * 0.1) - (saveA + a.rating * 0.1);
+  });
+
+  const topPicks = candidates.slice(0, 4);
+  return {
+    budgetDetected: budget,
+    categoryDetected: matchedCategory,
+    recommendations: topPicks
+  };
+}
+
+async function startServer() {
+  if (!fs.existsSync(CATALOG_PATH)) {
+    await generateInitialCatalog(CATALOG_PATH);
+  }
+  loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
+  loadJson(ANALYTICS_PATH, DEFAULT_ANALYTICS);
+
+  const server = http.createServer(async (req, res) => {
+    const parsedUrl = url.parse(req.url, true);
+    const pathname = parsedUrl.pathname;
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204);
+      return res.end();
+    }
+
+const MULTILINGUAL_DICTIONARY = {
+  // Screens & Monitors & TVs
+  'شاشة': 'monitor bildschirm',
+  'شاشات': 'monitor bildschirm',
+  'شاشه': 'monitor bildschirm',
+  'شاشة كمبيوتر': 'pc gaming monitor',
+  'شاشة قيمنق': 'gaming monitor',
+  'شاشه العاب': 'gaming monitor',
+  'بوصة': 'zoll',
+  'بوصه': 'zoll',
+  'انش': 'zoll',
+  'إنش': 'zoll',
+  'منحنية': 'curved',
+  'منحنيه': 'curved',
+  'تلفزيون': 'fernseher tv',
+  'تلفاز': 'fernseher tv',
+
+  // Smartphones & Tablets
+  'هاتف': 'smartphone handy',
+  'هواتف': 'smartphones handys',
+  'جوال': 'smartphone handy',
+  'جوالات': 'smartphones',
+  'موبايل': 'smartphone handy',
+  'موبايلات': 'smartphones',
+  'ايفون': 'iphone',
+  'آيفون': 'iphone',
+  'ايباد': 'ipad',
+  'آيباد': 'ipad',
+  'تابلت': 'tablet',
+
+  // Gaming & Laptops
+  'لابتوب': 'laptop notebook',
+  'كمبيوتر محمول': 'laptop notebook',
+  'حاسوب': 'computer pc laptop',
+  'كمبيوتر': 'computer pc',
+  'بلايستيشن': 'playstation ps5',
+  'سوني': 'sony playstation',
+  'العاب': 'gaming',
+  'ألعاب': 'gaming',
+  'يدة تحكم': 'controller',
+  'يد تحكم': 'controller',
+  'كيبورد': 'tastatur keyboard',
+  'ماوس': 'maus mouse',
+
+  // Audio
+  'سماعة': 'kopfhörer headphones',
+  'سماعات': 'kopfhörer headphones',
+  'سماعة بلوتوث': 'bluetooth kopfhörer',
+  'مكبر صوت': 'lautsprecher speaker',
+
+  // Fashion & Shoes
+  'حذاء': 'schuhe sneaker',
+  'أحذية': 'schuhe sneaker',
+  'احذية': 'schuhe sneaker',
+  'كوتشي': 'sneaker schuhe',
+  'سنيكرز': 'sneaker schuhe',
+  'ملابس': 'kleidung fashion',
+  'قميص': 'hemd shirt',
+  'تيشيرت': 't-shirt',
+  'جاكيت': 'jacke jacket',
+  'بنطلون': 'hose jeans',
+  'فستان': 'kleid dress',
+
+  // Perfumes & Beauty
+  'عطر': 'parfum',
+  'عطور': 'parfum',
+  'مكياج': 'makeup kosmetik',
+  'كريم': 'creme serum',
+  'عناية': 'hautpflege skincare',
+  'ماكينة حلاقة': 'rasierer shaver',
+
+  // Home & Furniture & Kitchen
+  'ماكينة قهوة': 'kaffeevollautomat',
+  'قهوة': 'kaffee coffee',
+  'قلاية هوائية': 'heißluftfritteuse air fryer',
+  'مكنسة': 'staubsauger vacuum',
+  'ثلاجة': 'kühlschrank fridge',
+  'غسالة': 'waschmaschine washer',
+  'أثاث': 'möbel',
+  'اثاث': 'möbel',
+  'طاولة': 'tisch table desk',
+  'كرسي': 'stuhl chair',
+  'كرسي مكتب': 'bürostuhl',
+  'كرسي قيمنق': 'gaming stuhl',
+  'سرير': 'bett bed',
+  'مرتبة': 'matratze mattress',
+  'كنبة': 'sofa couch',
+
+  // Sports, Outdoor, Camping & Tools
+  'رياضة': 'fitness sport',
+  'سير مشي': 'laufband treadmill',
+  'دراجة': 'fahrrad bike',
+  'سكوتر': 'e-scooter',
+  'كيس نوم': 'schlafsack sleeping bag',
+  'شوال نوم': 'schlafsack',
+  'تخييم': 'camping outdoor',
+  'خيمة': 'zelt tent',
+  'دريل': 'bohrmaschine akkuschrauber drill',
+  'مفك': 'akkuschrauber',
+  'غسيل سيارات': 'hochdruckreiniger',
+
+  // Brands
+  'سامسونج': 'samsung',
+  'سامسونغ': 'samsung',
+  'ابل': 'apple',
+  'أبل': 'apple',
+  'نايك': 'nike',
+  'نايكي': 'nike',
+  'اديداس': 'adidas',
+  'أديداس': 'adidas',
+  'شاومي': 'xiaomi',
+  'ديل': 'dell',
+  'اسوس': 'asus',
+  'لينوفو': 'lenovo',
+  'ال جي': 'lg',
+  'إل جي': 'lg',
+  'فيليبس': 'philips',
+  'ديلونجي': 'delonghi',
+  'نينجا': 'ninja',
+  'بوش': 'bosch',
+  'كيرشر': 'kärcher',
+  'كارشر': 'kärcher',
+  'ديور': 'dior',
+  'شانيل': 'chanel',
+  'زارا': 'zara',
+  'ايكيا': 'ikea',
+  'اريبوس': 'arebos',
+  'أريبوس': 'arebos'
+};
+
+const STOP_WORDS = new Set([
+  'der', 'die', 'das', 'dem', 'den', 'des', 'ein', 'eine', 'einer', 'eines', 'einem', 'einen',
+  'und', 'oder', 'aber', 'mit', 'ohne', 'für', 'von', 'zu', 'im', 'in', 'an', 'auf', 'aus', 'bei',
+  'the', 'a', 'an', 'and', 'or', 'with', 'without', 'for', 'of', 'to', 'in', 'on', 'at', 'by', 'from',
+  'من', 'إلى', 'عن', 'على', 'في', 'مع', 'بدون', 'أو', 'و', 'ثم', 'هذا', 'هذه', 'تم', 'كل'
+]);
+
+const GENERIC_MODIFIERS = new Set([
+  'schwarz', 'black', 'weiß', 'white', 'weiss', 'blau', 'blue', 'rot', 'red', 'grau', 'grey', 'gray',
+  'grün', 'green', 'silber', 'silver', 'gold', 'rosa', 'pink', 'gelb', 'yellow', 'braun', 'brown',
+  'أسود', 'أبيض', 'أزرق', 'أحمر', 'أخضر', 'رمادي', 'فضي', 'ذهبي',
+  'cm', 'mm', 'm', 'kg', 'g', 'ml', 'l', 'liter', 'w', 'watt', 'v', 'volt', 'hz', 'fps',
+  'stk', 'stück', 'teilig', 'tlg', 'set', 'pack', 'paar', 'pcs', 'piece', 'pieces',
+  'wege', 'weg', 'way', 'ways', 'outdoor', 'indoor', 'camping', 'universal', 'tragbar', 'portable',
+  'original', 'neu', 'new', 'verstellbare', 'inkl', 'inklusive', 'inklusivem',
+  'pro', 'max', 'mini', 'plus', 'ultra', 'lite'
+]);
+
+const KNOWN_BRANDS = [
+  'samsung', 'apple', 'sony', 'nike', 'adidas', 'xiaomi', 'dell', 'asus', 'lenovo', 'lg',
+  'philips', 'delonghi', 'ninja', 'bosch', 'kärcher', 'dior', 'chanel', 'zara', 'ikea',
+  'crua', 'lxz', 'amzfast', 'samsonite', 'emma', 'roborock', 'dyson', 'tefal', 'wmf', 'hisense',
+  'arebos', 'kesser', 'forceatt', 'kingcamp'
+];
+
+function parseAndExpandQuery(rawQ) {
+  let q = (rawQ || '').toLowerCase().trim();
+  let expandedTerms = [q];
+  let deSearchTokens = [];
+
+  // English synonyms
+  q = q.replace(/\binch\b/g, 'zoll')
+       .replace(/["”]/g, ' zoll ')
+       .replace(/\bscreen\b/g, 'monitor')
+       .replace(/\bphone\b/g, 'smartphone')
+       .replace(/\bshoes\b/g, 'schuhe')
+       .replace(/\bperfume\b/g, 'parfum')
+       .replace(/\bsleeping\s*bag\b/g, 'schlafsack');
+
+  // German compound words and apparel expansions
+  if (q.includes('funktionsparka') || q.includes('parka')) {
+    expandedTerms.push('funktionsparka', 'parka', 'winterparka', 'regenmantel', 'jacke');
+    deSearchTokens.push('parka', 'winterjacke');
+  }
+
+  // Check multi-word phrase dictionary
+  for (const [arKey, trans] of Object.entries(MULTILINGUAL_DICTIONARY)) {
+    if (arKey.includes(' ') && q.includes(arKey)) {
+      expandedTerms.push(...trans.split(/\s+/));
+      deSearchTokens.push(trans.split(/\s+/)[0]);
+    }
+  }
+
+  // Word-by-word
+  const rawWords = q
+    .replace(/[,()–|:°"/]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+
+  for (const word of rawWords) {
+    if (MULTILINGUAL_DICTIONARY[word]) {
+      const translated = MULTILINGUAL_DICTIONARY[word];
+      expandedTerms.push(...translated.split(/\s+/));
+      deSearchTokens.push(translated.split(/\s+/)[0]);
+    } else {
+      deSearchTokens.push(word);
+    }
+  }
+
+  const cleanDeQuery = [...new Set(deSearchTokens)].join(' ');
+  const numbers = (q.match(/\b\d+(\.\d+)?\b/g) || []);
+  const allTokens = [...new Set(expandedTerms.flatMap(t => t.split(/\s+/)).filter(t => t.length > 1))];
+  const brandsInQuery = KNOWN_BRANDS.filter(b => allTokens.includes(b) || cleanDeQuery.includes(b));
+
+  // Extract core substantive tokens (excluding stop words, colors, units, and pure numbers)
+  const cleanWords = deSearchTokens.filter(w => !STOP_WORDS.has(w));
+  const coreSubstantiveTokens = cleanWords.filter(w => !GENERIC_MODIFIERS.has(w) && !/^\d+$/.test(w) && w.length >= 3);
+  if (q.includes('funktionsparka') && !coreSubstantiveTokens.includes('parka')) {
+    coreSubstantiveTokens.push('parka');
+  }
+  const primarySubjectTokens = coreSubstantiveTokens.slice(0, 2);
+  const cleanSearchQuery = cleanWords.slice(0, 5).join(' ');
+
+  return {
+    rawQ,
+    normalized: q,
+    cleanDeQuery,
+    allTokens,
+    numbers,
+    brandsInQuery,
+    coreSubstantiveTokens,
+    primarySubjectTokens,
+    cleanSearchQuery
+  };
+}
+
+const KEYWORD_RESTRICTIONS = {
+  iphone: ['iphone'],
+  ipad: ['ipad'],
+  macbook: ['macbook'],
+  playstation: ['playstation', 'ps5', 'ps4'],
+  ps5: ['ps5', 'playstation 5'],
+  xbox: ['xbox'],
+  nintendo: ['nintendo', 'switch'],
+  dior: ['dior'],
+  chanel: ['chanel'],
+  nike: ['nike'],
+  adidas: ['adidas'],
+  samsung: ['samsung'],
+  apple: ['apple', 'iphone', 'ipad', 'macbook', 'airpods', 'watch'],
+  sony: ['sony', 'playstation'],
+  lg: ['lg'],
+  philips: ['philips'],
+  bosch: ['bosch'],
+  kärcher: ['kärcher', 'karcher'],
+  delonghi: ['delonghi'],
+  ninja: ['ninja'],
+  ikea: ['ikea'],
+  arebos: ['arebos'],
+  schlafsack: ['schlafsack', 'sleeping bag'],
+  funktionsparka: ['funktionsparka', 'parka', 'winterparka', 'regenmantel', 'jacke', 'funktionsjacke', 'winterjacke', 'mantel'],
+  parka: ['parka', 'funktionsparka', 'winterparka', 'regenmantel', 'jacke', 'funktionsjacke', 'winterjacke', 'mantel'],
+  monitor: ['monitor', 'bildschirm', 'display', 'screen', 'tv', 'curved', 'شاشة'],
+  شاشة: ['monitor', 'bildschirm', 'display', 'screen', 'tv', 'curved', 'شاشة'],
+  schuhe: ['schuhe', 'sneaker', 'stiefel', 'boots', 'حذاء', 'أحذية'],
+  حذاء: ['schuhe', 'sneaker', 'stiefel', 'boots', 'حذاء', 'أحذية'],
+  parfum: ['parfum', 'eau de', 'extrait', 'عطر', 'عطور'],
+  عطر: ['parfum', 'eau de', 'extrait', 'عطر', 'عطور']
+};
+
+function scoreProductRelevance(p, queryInfo, detectedCatId) {
+  const titleDe = (p.title || '').toLowerCase();
+  const titleAr = (p.titleAr || '').toLowerCase();
+  const brand = (p.brand || '').toLowerCase();
+  const asin = (p.asin || '').toLowerCase();
+  const category = (p.category || '').toLowerCase();
+  const combined = `${titleDe} ${titleAr} ${brand}`;
+
+  // 1. Core Substantive Matching:
+  // If the query has substantive product tokens (e.g. 'arebos', 'schlafsack', 'monitor'),
+  // the product MUST match at least one of these tokens. It cannot qualify purely by color or numbers!
+  if (queryInfo.coreSubstantiveTokens && queryInfo.coreSubstantiveTokens.length > 0) {
+    const hasCoreMatch = queryInfo.coreSubstantiveTokens.some(token => combined.includes(token));
+    if (!hasCoreMatch) {
+      return -1;
+    }
+
+    // If query has primary subject tokens (first 1-2 words), require matching primary subject
+    if (queryInfo.primarySubjectTokens && queryInfo.primarySubjectTokens.length > 0) {
+      const hasPrimaryMatch = queryInfo.primarySubjectTokens.some(token => combined.includes(token));
+      if (!hasPrimaryMatch) {
+        return -1;
+      }
+    }
+  }
+
+  // 2. If query specifies numeric dimensions/sizes (e.g. 49)
+  if (queryInfo.numbers.length > 0) {
+    const hasRequestedNumber = queryInfo.numbers.some(num => {
+      // Don't match RAM/Storage like 16GB if query is just 16
+      const regex = new RegExp(`(^|[^0-9a-zA-Z])${num}(\\s*zoll|\\s*"|-zoll|\\s*cm|\\s*inch|\\s*p)?([^0-9a-zA-Z]|$)`, 'i');
+      return regex.test(titleDe) || regex.test(titleAr);
+    });
+    // If user explicitly searched for a size and this product title doesn't have it, discard
+    if (!hasRequestedNumber && queryInfo.numbers.some(n => parseInt(n) > 20)) {
+      return -1;
+    }
+  }
+
+  // 3. Check strict keyword restrictions
+  for (const [key, allowedTerms] of Object.entries(KEYWORD_RESTRICTIONS)) {
+    if (queryInfo.allTokens.includes(key) || queryInfo.cleanDeQuery.includes(key)) {
+      const matchesRestriction = allowedTerms.some(term => combined.includes(term));
+      if (!matchesRestriction) {
+        return -1;
+      }
+    }
+  }
+
+  let score = 0;
+  // Exact phrase match
+  if (titleDe.includes(queryInfo.normalized) || titleAr.includes(queryInfo.normalized)) {
+    score += 150;
+  }
+  if (queryInfo.cleanDeQuery && titleDe.includes(queryInfo.cleanDeQuery)) {
+    score += 120;
+  }
+
+  // Token matches
+  for (const token of queryInfo.allTokens) {
+    if (token.length <= 1 || STOP_WORDS.has(token)) continue;
+    const isGeneric = GENERIC_MODIFIERS.has(token);
+    const weight = isGeneric ? 5 : 30;
+    if (titleDe.includes(token)) score += weight;
+    if (titleAr.includes(token)) score += weight;
+    if (brand.includes(token)) score += weight + 10;
+    if (asin.includes(token)) score += 80;
+  }
+
+  // Primary subject bonus & Brand match bonus
+  if (queryInfo.brandsInQuery && queryInfo.brandsInQuery.length > 0) {
+    for (const b of queryInfo.brandsInQuery) {
+      if (brand.includes(b) || titleDe.includes(b)) {
+        score += 350;
+      }
+    }
+  }
+
+  if (queryInfo.primarySubjectTokens) {
+    for (const pToken of queryInfo.primarySubjectTokens) {
+      if (combined.includes(pToken)) score += 100;
+      if (titleDe.startsWith(pToken) || brand === pToken) score += 200;
+    }
+  }
+
+  // Category match bonus
+  if (detectedCatId && category === detectedCatId) {
+    score += 25;
+  }
+
+  return score;
+}
+
+    // 1. GET /api/products
+    if (pathname === '/api/products' && req.method === 'GET') {
+      const catalog = loadJson(CATALOG_PATH, { products: [] });
+      let list = catalog.products || [];
+
+      const rawQ = (parsedUrl.query.q || '').trim();
+      const category = parsedUrl.query.category || 'all';
+      const store = parsedUrl.query.store || 'all';
+      const maxPrice = parsedUrl.query.maxPrice ? parseFloat(parsedUrl.query.maxPrice) : null;
+      const onlyFlash = parsedUrl.query.flash === 'true';
+      const sort = parsedUrl.query.sort || 'popular';
+
+      if (category !== 'all') {
+        list = list.filter(p => p.category === category);
+      }
+      if (store !== 'all') {
+        list = list.filter(p => p.offers && p.offers.some(o => o.store.toLowerCase() === store.toLowerCase()));
+      }
+      if (maxPrice && !isNaN(maxPrice)) {
+        list = list.filter(p => p.offers && p.offers[0].price <= maxPrice);
+      }
+      if (onlyFlash) {
+        list = list.filter(p => p.isFlashDeal);
+      }
+
+      if (rawQ) {
+        const queryInfo = parseAndExpandQuery(rawQ);
+        const detectedCat = detectCategoryFromText(rawQ + ' ' + queryInfo.cleanDeQuery);
+
+        // Score existing products
+        const scored = [];
+        for (const p of list) {
+          const score = scoreProductRelevance(p, queryInfo, detectedCat.id);
+          if (score > 0) {
+            scored.push({ product: p, score });
+          }
+        }
+
+        // Sort scored products by relevance descending
+        scored.sort((a, b) => b.score - a.score);
+
+        // If fewer than 16 relevant products found locally, enrich with live scrape (up to 20 products)
+        if (scored.length < 16 && rawQ.length >= 2) {
+          let liveScrapeQuery = queryInfo.cleanSearchQuery || queryInfo.cleanDeQuery || rawQ;
+          if (liveScrapeQuery.toLowerCase() === 'funktionsparka') {
+            liveScrapeQuery = 'Funktionsparka Parka';
+          }
+          console.log(`[Search Engine] Only ${scored.length} local matches for "${rawQ}". Live scraping Amazon for: "${liveScrapeQuery}"`);
+          const liveScraped = scrapeRealAmazonProducts(liveScrapeQuery, detectedCat.id, detectedCat.ar, 20, 15);
+          if (liveScraped.length > 0) {
+            const existingAsins = new Set(catalog.products.map(x => x.asin));
+            const scoredAsins = new Set(scored.map(s => s.product.asin));
+            for (const item of liveScraped) {
+              if (!existingAsins.has(item.asin)) {
+                catalog.products.unshift(item);
+                existingAsins.add(item.asin);
+              }
+              if (!scoredAsins.has(item.asin)) {
+                const score = scoreProductRelevance(item, queryInfo, detectedCat.id);
+                if (score > 0) {
+                  scored.push({ product: item, score });
+                  scoredAsins.add(item.asin);
+                }
+              }
+            }
+            scored.sort((a, b) => b.score - a.score);
+            catalog.totalProducts = catalog.products.length;
+            catalog.lastSyncedAt = new Date().toISOString();
+            saveJson(CATALOG_PATH, catalog);
+          }
+        }
+
+        // Cutoff threshold: must have at least score >= 25
+        const minThreshold = scored.length > 0 ? Math.max(25, scored[0].score * 0.15) : 25;
+        const filteredScored = scored.filter(s => s.score >= minThreshold);
+        list = filteredScored.map(s => s.product);
+      }
+
+      if (sort === 'price_asc') {
+        list.sort((a, b) => a.offers[0].price - b.offers[0].price);
+      } else if (sort === 'price_desc') {
+        list.sort((a, b) => b.offers[0].price - a.offers[0].price);
+      } else if (sort === 'discount') {
+        list.sort((a, b) => ((b.msrp - b.offers[0].price) / b.msrp) - ((a.msrp - a.offers[0].price) / a.msrp));
+      } else if (sort === 'rating') {
+        list.sort((a, b) => b.rating - a.rating);
+      }
+
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      return res.end(JSON.stringify({
+        total: list.length,
+        lastSyncedAt: catalog.lastSyncedAt,
+        sources: catalog.sources,
+        products: list
+      }));
+    }
+
+    // 1b. GET /api/product-gallery?asin=...
+    if (pathname === '/api/product-gallery' && req.method === 'GET') {
+      const asin = (parsedUrl.query.asin || '').trim();
+      const catalog = loadJson(CATALOG_PATH, { products: [] });
+      const prod = (catalog.products || []).find(p => p.asin === asin || p.id === `real-${asin}`);
+
+      if (prod && Array.isArray(prod.images) && prod.images.length > 1) {
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        return res.end(JSON.stringify({ asin, images: prod.images }));
+      }
+
+      const fallbackImg = prod ? prod.image : '';
+      const gallery = scrapeProductGalleryByAsin(asin, fallbackImg);
+      if (prod && gallery.length > 0) {
+        prod.images = gallery;
+        saveJson(CATALOG_PATH, catalog);
+      }
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      return res.end(JSON.stringify({ asin, images: gallery }));
+    }
+
+    // 2. POST /api/ai-assistant
+    if (pathname === '/api/ai-assistant' && req.method === 'POST') {
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      req.on('end', () => {
+        try {
+          const { prompt } = JSON.parse(body || '{}');
+          const catalog = loadJson(CATALOG_PATH, { products: [] });
+          const result = runAiShoppingAssistant(prompt, catalog.products || []);
+          res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify(result));
+        } catch (e) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Invalid request' }));
+        }
+      });
+      return;
+    }
+
+    // 3. GET /api/out
+    if (pathname === '/api/out' && req.method === 'GET') {
+      const { productId, asin, store, price, query, directUrl } = parsedUrl.query;
+      const settings = loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
+      const analytics = loadJson(ANALYTICS_PATH, DEFAULT_ANALYTICS);
+
+      const cleanStore = store || 'Amazon';
+      const itemPrice = parseFloat(price) || 100;
+      const hasActiveAffiliateTag = Boolean(settings.affiliateIds && settings.affiliateIds[cleanStore] && settings.affiliateIds[cleanStore].trim() !== '');
+      const rate = (settings.commissionRates && settings.commissionRates[cleanStore]) || 0.045;
+      const estCommission = hasActiveAffiliateTag ? +(itemPrice * rate).toFixed(2) : 0;
+
+      analytics.totalClicks = (analytics.totalClicks || 0) + 1;
+      analytics.estimatedCommissionEur = +((analytics.estimatedCommissionEur || 0) + estCommission).toFixed(2);
+      if (!analytics.storeBreakdown[cleanStore]) {
+        analytics.storeBreakdown[cleanStore] = { clicks: 0, estRevenue: 0 };
+      }
+      analytics.storeBreakdown[cleanStore].clicks += 1;
+      analytics.storeBreakdown[cleanStore].estRevenue = +(analytics.storeBreakdown[cleanStore].estRevenue + estCommission).toFixed(2);
+
+      analytics.recentClicks.unshift({
+        timestamp: new Date().toISOString(),
+        productId: productId || asin || 'real',
+        query: query || 'Product',
+        store: cleanStore,
+        price: itemPrice,
+        estCommission
+      });
+      analytics.recentClicks = analytics.recentClicks.slice(0, 30);
+      saveJson(ANALYTICS_PATH, analytics);
+
+      // Check for directUrl in query or within catalog.json offers
+      let effectiveDirectUrl = directUrl || '';
+      if (!effectiveDirectUrl && (productId || asin)) {
+        try {
+          const catalog = loadJson(CATALOG_PATH, { products: [] });
+          const foundProd = (catalog.products || []).find(p => p.id === productId || p.asin === asin);
+          if (foundProd && Array.isArray(foundProd.offers)) {
+            const foundOffer = foundProd.offers.find(o => o.store.toLowerCase() === cleanStore.toLowerCase());
+            if (foundOffer && foundOffer.directUrl) {
+              effectiveDirectUrl = foundOffer.directUrl;
+            }
+          }
+        } catch (e) {}
+      }
+
+      const cleanAsin = asin || (productId && productId.startsWith('real-') ? productId.replace('real-', '') : '');
+      const targetUrl = buildAffiliateRedirectUrl(cleanStore, query || 'Deal', cleanAsin, settings, itemPrice, effectiveDirectUrl);
+      res.writeHead(302, { Location: targetUrl });
+      return res.end();
+    }
+
+    // 4. GET & POST /api/admin/settings
+    if (pathname === '/api/admin/settings') {
+      if (req.method === 'GET') {
+        const settings = loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
+        const analytics = loadJson(ANALYTICS_PATH, DEFAULT_ANALYTICS);
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        return res.end(JSON.stringify({ settings, analytics }));
+      }
+      if (req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => { body += chunk; });
+        req.on('end', () => {
+          try {
+            const incoming = JSON.parse(body || '{}');
+            const current = loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
+            const updated = {
+              ...current,
+              ...incoming,
+              affiliateIds: { ...current.affiliateIds, ...(incoming.affiliateIds || {}) },
+              payoutSettings: { ...current.payoutSettings, ...(incoming.payoutSettings || {}) }
+            };
+            saveJson(SETTINGS_PATH, updated);
+            res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify({ ok: true, settings: updated }));
+          } catch (e) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Invalid settings payload' }));
+          }
+        });
+        return;
+      }
+    }
+
+    // 5. POST /api/admin/sync
+    if (pathname === '/api/admin/sync' && req.method === 'POST') {
+      const data = await generateInitialCatalog(CATALOG_PATH);
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      return res.end(JSON.stringify({
+        ok: true,
+        totalProducts: data.totalProducts,
+        lastSyncedAt: data.lastSyncedAt
+      }));
+    }
+
+    // 5b. POST /api/admin/reset-analytics
+    if (pathname === '/api/admin/reset-analytics' && req.method === 'POST') {
+      saveJson(ANALYTICS_PATH, DEFAULT_ANALYTICS);
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      return res.end(JSON.stringify({ ok: true, analytics: DEFAULT_ANALYTICS }));
+    }
+
+    // 6. POST /api/alerts
+    if (pathname === '/api/alerts' && req.method === 'POST') {
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      req.on('end', () => {
+        try {
+          const payload = JSON.parse(body || '{}');
+          const analytics = loadJson(ANALYTICS_PATH, DEFAULT_ANALYTICS);
+          analytics.priceAlerts = analytics.priceAlerts || [];
+          analytics.priceAlerts.unshift({
+            ...payload,
+            createdAt: new Date().toISOString()
+          });
+          saveJson(ANALYTICS_PATH, analytics);
+          res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ ok: true }));
+        } catch (e) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Invalid alert request' }));
+        }
+      });
+      return;
+    }
+
+    // 7. Static files
+    let filePath = pathname === '/' ? '/index.html' : (pathname === '/admin' ? '/owner-admin-portal.html' : pathname);
+    const resolvedPath = path.join(__dirname, 'public', filePath);
+    if (resolvedPath.startsWith(path.join(__dirname, 'public')) && fs.existsSync(resolvedPath) && fs.statSync(resolvedPath).isFile()) {
+      const ext = path.extname(resolvedPath).toLowerCase();
+      const mimeTypes = {
+        '.html': 'text/html; charset=utf-8',
+        '.css': 'text/css; charset=utf-8',
+        '.js': 'application/javascript; charset=utf-8',
+        '.json': 'application/json; charset=utf-8',
+        '.svg': 'image/svg+xml',
+        '.png': 'image/png',
+        '.jpg': 'image/jpeg'
+      };
+      res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'text/plain' });
+      return fs.createReadStream(resolvedPath).pipe(res);
+    }
+
+    res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('Not Found');
+  });
+
+  server.listen(PORT, '0.0.0.0', () => {
+    console.log(`\n=============================================================`);
+    console.log(`🚀 NexusDeals Global Marketplace (12 Platforms & 12 Categories)`);
+    console.log(`🌐 URL: http://localhost:${PORT}`);
+    console.log(`=============================================================\n`);
+  });
+}
+
+startServer();

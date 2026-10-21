@@ -286,6 +286,18 @@ function runAiShoppingAssistant(userPrompt, products) {
   };
 }
 
+function detectClientLanguage(acceptLangHeader) {
+  if (!acceptLangHeader) return 'de';
+  const tokens = acceptLangHeader.toLowerCase().split(',');
+  for (const t of tokens) {
+    const code = t.split(';')[0].trim().split('-')[0];
+    if (code === 'de') return 'de';
+    if (code === 'ar') return 'ar';
+    if (code === 'en') return 'en';
+  }
+  return 'de';
+}
+
 async function startServer() {
   if (!fs.existsSync(CATALOG_PATH)) {
     await generateInitialCatalog(CATALOG_PATH);
@@ -922,8 +934,18 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       return;
     }
 
-    // 7. Static files
-    let filePath = pathname === '/' ? '/index.html' : (pathname === '/admin' ? '/owner-admin-portal.html' : pathname);
+    // 7. Dynamic index.html with Phone/Device language injection
+    if (pathname === '/' || pathname === '/index.html') {
+      const clientLang = detectClientLanguage(req.headers['accept-language']);
+      const indexPath = path.join(__dirname, 'public', 'index.html');
+      let html = fs.readFileSync(indexPath, 'utf8');
+      html = html.replace(/<script>\s*\(function\(\)\s*\{/i, `<script>\n    window.__DETECTED_DEVICE_LANG__ = "${clientLang}";\n    (function() {`);
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      return res.end(html);
+    }
+
+    // 8. Static files
+    let filePath = pathname === '/admin' ? '/owner-admin-portal.html' : pathname;
     const resolvedPath = path.join(__dirname, 'public', filePath);
     if (resolvedPath.startsWith(path.join(__dirname, 'public')) && fs.existsSync(resolvedPath) && fs.statSync(resolvedPath).isFile()) {
       const ext = path.extname(resolvedPath).toLowerCase();

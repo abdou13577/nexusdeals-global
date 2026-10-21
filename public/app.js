@@ -1,22 +1,33 @@
 function detectPreferredLanguage() {
-  // Always inspect device / browser system language first
-  try {
-    const navLangs = (navigator.languages && navigator.languages.length)
-      ? navigator.languages
-      : [navigator.language || ''];
-    for (const l of navLangs) {
-      const code = (l || '').toLowerCase().split('-')[0];
-      if (code === 'de') return 'de';
-      if (code === 'en') return 'en';
-      if (code === 'ar') return 'ar';
-    }
-  } catch (e) {}
-
-  // If user explicitly switched language during current session
+  // 1. If user explicitly switched language during current session via switcher
   try {
     const manual = sessionStorage.getItem('nexus_deals_lang_manual');
     if (manual && ['de', 'en', 'ar'].includes(manual)) {
       return manual;
+    }
+  } catch (e) {}
+
+  // 2. Direct primary system language of the phone/device
+  try {
+    const primary = (navigator.language || '').toLowerCase().split('-')[0];
+    if (primary === 'de') return 'de';
+    if (primary === 'ar') return 'ar';
+    if (primary === 'en') return 'en';
+  } catch (e) {}
+
+  // 3. Injected server detected language from HTTP Accept-Language
+  if (typeof window !== 'undefined' && window.__DETECTED_DEVICE_LANG__) {
+    return window.__DETECTED_DEVICE_LANG__;
+  }
+
+  // 4. Secondary fallback checking navigator.languages
+  try {
+    const navLangs = navigator.languages || [];
+    for (const l of navLangs) {
+      const code = (l || '').toLowerCase().split('-')[0];
+      if (code === 'de') return 'de';
+      if (code === 'ar') return 'ar';
+      if (code === 'en') return 'en';
     }
   } catch (e) {}
 
@@ -133,7 +144,7 @@ const I18N = {
     navSearch: 'بحث',
     navFilter: 'الفلترة',
     navAi: 'المساعد AI',
-    navAdmin: 'الأدمن'
+    navDeals: 'العروض 🔥'
   },
 
   de: {
@@ -233,7 +244,7 @@ const I18N = {
     navSearch: 'Suche',
     navFilter: 'Filter',
     navAi: 'KI-Berater',
-    navAdmin: 'Admin'
+    navDeals: 'Deals 🔥'
   },
 
   en: {
@@ -333,7 +344,7 @@ const I18N = {
     navSearch: 'Search',
     navFilter: 'Filter',
     navAi: 'AI Assistant',
-    navAdmin: 'Admin'
+    navDeals: 'Deals 🔥'
   }
 };
 
@@ -357,6 +368,16 @@ function focusMobileSearch() {
   if (input) {
     input.focus();
     input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function toggleFlashDealsFilter() {
+  const cb = document.getElementById('flashOnlyCheckbox');
+  if (cb) {
+    cb.checked = !cb.checked;
+    filterAndSortProducts();
+    const btn = event && event.currentTarget;
+    if (btn) btn.classList.toggle('active', cb.checked);
   }
 }
 

@@ -8,15 +8,26 @@
     (function() {
       try {
         localStorage.removeItem('nexus_deals_lang');
-        var navLangs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'de'];
-        var lang = 'de';
-        for (var i = 0; i < navLangs.length; i++) {
-          var code = (navLangs[i] || '').toLowerCase().split('-')[0];
-          if (code === 'de' || code === 'en' || code === 'ar') {
-            lang = code;
-            break;
+        var manual = sessionStorage.getItem('nexus_deals_lang_manual');
+        var lang = manual;
+        if (!lang) {
+          var primary = (navigator.language || '').toLowerCase().split('-')[0];
+          if (primary === 'de' || primary === 'ar' || primary === 'en') {
+            lang = primary;
+          } else if (window.__DETECTED_DEVICE_LANG__) {
+            lang = window.__DETECTED_DEVICE_LANG__;
+          } else {
+            var navLangs = navigator.languages || [];
+            for (var i = 0; i < navLangs.length; i++) {
+              var code = (navLangs[i] || '').toLowerCase().split('-')[0];
+              if (code === 'de' || code === 'ar' || code === 'en') {
+                lang = code;
+                break;
+              }
+            }
           }
         }
+        if (!lang) lang = 'de';
         document.documentElement.lang = lang;
         document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
       } catch (e) {}
@@ -207,7 +218,7 @@
     <div class="lightbox-thumbs-bar" id="lightboxThumbsBar"></div>
   </div>
 
-  <!-- Native Mobile App Bottom Navigation Bar -->
+  <!-- Native Mobile App Bottom Navigation Bar (Customer Only) -->
   <nav class="mobile-bottom-nav">
     <button type="button" class="bottom-nav-item active" onclick="resetAllFilters()">
       <span class="nav-icon">🏠</span>
@@ -225,10 +236,10 @@
       <span class="nav-icon">🤖</span>
       <span class="nav-label" data-i18n="navAi">KI-Berater</span>
     </button>
-    <a href="/owner-admin-portal.html" class="bottom-nav-item">
-      <span class="nav-icon">👑</span>
-      <span class="nav-label" data-i18n="navAdmin">Admin</span>
-    </a>
+    <button type="button" class="bottom-nav-item" onclick="toggleFlashDealsFilter()">
+      <span class="nav-icon">🔥</span>
+      <span class="nav-label" data-i18n="navDeals">Deals</span>
+    </button>
   </nav>
 
   <script src="/app.js"></script>

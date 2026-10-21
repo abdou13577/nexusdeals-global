@@ -20,13 +20,13 @@ const DEFAULT_SETTINGS = {
   country: 'Germany / EU',
   affiliateIds: {
     Amazon: 'nexusdeals08-21',
-    OTTO: '',
+    OTTO: '3130490',
     Kaufland: '',
     eBay: '',
-    Zalando: '',
+    Zalando: '3130490',
     MediaMarkt: '',
     Galaxus: '',
-    Douglas: '',
+    Douglas: '3130490',
     IKEA: '',
     AliExpress: '',
     Temu: '',
@@ -199,7 +199,13 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
       return directUrl.includes('?') ? `${directUrl}&campid=${encodeURIComponent(tags.eBay)}` : `${directUrl}?campid=${encodeURIComponent(tags.eBay)}`;
     }
     if (store === 'OTTO' && tags.OTTO) {
-      return directUrl.includes('?') ? `${directUrl}&awc=${encodeURIComponent(tags.OTTO)}` : `${directUrl}?awc=${encodeURIComponent(tags.OTTO)}`;
+      return `https://www.awin1.com/cread.php?awinmid=14336&awinaffid=${encodeURIComponent(tags.OTTO)}&ued=${encodeURIComponent(directUrl)}`;
+    }
+    if (store === 'Zalando' && tags.Zalando) {
+      return `https://www.awin1.com/cread.php?awinmid=8686&awinaffid=${encodeURIComponent(tags.Zalando)}&ued=${encodeURIComponent(directUrl)}`;
+    }
+    if (store === 'Douglas' && tags.Douglas) {
+      return `https://www.awin1.com/cread.php?awinmid=10046&awinaffid=${encodeURIComponent(tags.Douglas)}&ued=${encodeURIComponent(directUrl)}`;
     }
     if (store === 'Kaufland' && tags.Kaufland) {
       return directUrl.includes('?') ? `${directUrl}&utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}` : `${directUrl}?utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}`;
@@ -229,8 +235,11 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
       return `https://www.ebay.de/sch/i.html?_nkw=${q}&LH_BIN=1${priceFilter}&_sop=12${tagParam}`;
     }
     case 'OTTO': {
-      const tagParam = tags.OTTO ? `?awc=${encodeURIComponent(tags.OTTO)}` : '';
-      return `https://www.otto.de/suche/${q}/${tagParam}`;
+      const rawUrl = `https://www.otto.de/suche/${q}/`;
+      if (tags.OTTO) {
+        return `https://www.awin1.com/cread.php?awinmid=14336&awinaffid=${encodeURIComponent(tags.OTTO)}&ued=${encodeURIComponent(rawUrl)}`;
+      }
+      return rawUrl;
     }
     case 'Kaufland': {
       const tagParam = tags.Kaufland ? `&utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}` : '';
@@ -241,16 +250,22 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
       return `https://www.mediamarkt.de/de/search.html?query=${q}${tagParam}`;
     }
     case 'Zalando': {
-      const tagParam = tags.Zalando ? `&awc=${encodeURIComponent(tags.Zalando)}` : '';
-      return `https://www.zalando.de/katalog/?q=${q}${tagParam}`;
+      const rawUrl = `https://www.zalando.de/katalog/?q=${q}`;
+      if (tags.Zalando) {
+        return `https://www.awin1.com/cread.php?awinmid=8686&awinaffid=${encodeURIComponent(tags.Zalando)}&ued=${encodeURIComponent(rawUrl)}`;
+      }
+      return rawUrl;
     }
     case 'Galaxus': {
       const tagParam = tags.Galaxus ? `&tag=${encodeURIComponent(tags.Galaxus)}` : '';
       return `https://www.galaxus.de/de/search?q=${q}${tagParam}`;
     }
     case 'Douglas': {
-      const tagParam = tags.Douglas ? `?awc=${encodeURIComponent(tags.Douglas)}` : '';
-      return `https://www.douglas.de/de/search?q=${q}${tagParam}`;
+      const rawUrl = `https://www.douglas.de/de/search?q=${q}`;
+      if (tags.Douglas) {
+        return `https://www.awin1.com/cread.php?awinmid=10046&awinaffid=${encodeURIComponent(tags.Douglas)}&ued=${encodeURIComponent(rawUrl)}`;
+      }
+      return rawUrl;
     }
     case 'IKEA': {
       const tagParam = tags.IKEA ? `&affId=${encodeURIComponent(tags.IKEA)}` : '';

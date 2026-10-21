@@ -3,7 +3,7 @@
   "currency": "EUR (€)",
   "country": "Germany / EU",
   "affiliateIds": {
-    "Amazon": "",
+    "Amazon": "nexusdeals08-21",
     "OTTO": "",
     "Kaufland": "",
     "eBay": "",
@@ -66,7 +66,7 @@
     "IKEA": 0.04,
     "AliExpress": 0.07,
     "Temu": 0.12,
-    "SHEIN": 0.10
+    "SHEIN": 0.1
   },
   "autoSyncEnabled": true
 }

@@ -19,7 +19,7 @@ const DEFAULT_SETTINGS = {
   currency: 'EUR (€)',
   country: 'Germany / EU',
   affiliateIds: {
-    Amazon: '',
+    Amazon: 'nexusdeals08-21',
     OTTO: '',
     Kaufland: '',
     eBay: '',

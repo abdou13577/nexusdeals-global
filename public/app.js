@@ -361,8 +361,31 @@ function getCategoryLabel(catId) {
 document.addEventListener('DOMContentLoaded', () => {
   currentLang = detectPreferredLanguage();
   setLanguage(currentLang);
+
+  const searchInput = document.getElementById('mainSearchInput');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const val = e.target.value.trim();
+      if (clearBtn) clearBtn.style.display = val ? 'flex' : 'none';
+      if (!val) {
+        lastSearchQuery = '';
+        loadProducts();
+      }
+    });
+  }
+
   loadProducts();
 });
+
+function clearSearch() {
+  const searchInput = document.getElementById('mainSearchInput');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (searchInput) searchInput.value = '';
+  if (clearBtn) clearBtn.style.display = 'none';
+  lastSearchQuery = '';
+  loadProducts();
+}
 
 function focusMobileSearch() {
   const input = document.getElementById('mainSearchInput');
@@ -552,7 +575,7 @@ function renderProductsGrid(products, containerId) {
         </div>
 
         <div class="card-image-wrap" onclick="openProductModal('${p.id}')">
-          <img src="${p.image}" alt="${escapeHtml(displayTitle)}" loading="lazy" />
+          <img src="${p.image}" alt="${escapeHtml(displayTitle)}" loading="lazy" onerror="this.onerror=null;this.src='https://m.media-amazon.com/images/I/61rK+APJs0L._AC_SL1000_.jpg';" />
         </div>
 
         <div class="card-body">
@@ -935,6 +958,8 @@ function applyFilters() {
 function resetAllFilters() {
   const dict = t();
   document.getElementById('mainSearchInput').value = '';
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (clearBtn) clearBtn.style.display = 'none';
   document.getElementById('flashOnlyCheckbox').checked = false;
   document.getElementById('maxPriceSlider').value = 2500;
   document.getElementById('maxPriceLabel').textContent = dict.noLimit;

@@ -229,9 +229,10 @@ function generateFallbackQueryProducts(query, targetCatId, targetCatAr, neededCo
     priceBase = 59.90;
     imgPool = [
       'https://m.media-amazon.com/images/I/61rK+APJs0L._AC_SL1000_.jpg',
-      'https://m.media-amazon.com/images/I/71j1J+i1a0L._AC_SL1000_.jpg',
-      'https://m.media-amazon.com/images/I/71fL9WzI9dL._AC_SL1000_.jpg',
-      'https://m.media-amazon.com/images/I/71B6F68F9WL._AC_SL1000_.jpg'
+      'https://m.media-amazon.com/images/I/71J0rdmGuKL._AC_SL1000_.jpg',
+      'https://m.media-amazon.com/images/I/71afksil5VL._AC_SL1000_.jpg',
+      'https://m.media-amazon.com/images/I/713qurk4SaL._AC_SL1000_.jpg',
+      'https://m.media-amazon.com/images/I/71c-kFEm8zL._AC_SL1000_.jpg'
     ];
   } else if (isSpotter) {
     brands = ['MSW', 'VEVOR', 'GYS', 'Telwin', 'Stamos Germany', 'BGS technic', 'Hazet', 'GLITTER', 'STAHLWERK'];

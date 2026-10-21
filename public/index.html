@@ -37,7 +37,7 @@
       } catch (e) {}
     })();
   </script>
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles.css?v=2.7" />
 </head>
 <body>
 
@@ -63,6 +63,7 @@
 
       <form class="header-search" onsubmit="handleMainSearch(event)">
         <input type="text" id="mainSearchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Beliebiges Produkt suchen (Smartphones, Kleidung, Parfüm, Möbel, Werkzeug, Gaming...)" />
+        <button type="button" id="clearSearchBtn" class="btn-clear-search" onclick="clearSearch()" style="display:none;" title="Löschen">✕</button>
         <button type="submit" class="btn-search-main">
           <span data-i18n="searchBtn">🔍 Suchen</span>
         </button>
@@ -74,6 +75,25 @@
           <span data-i18n="filterMenuBtn">🎛️ Filter & Sortierung ▾</span>
         </button>
       </div>
+    </div>
+
+    <!-- Sticky Horizontal Category Strip (12 Comprehensive Life Categories) -->
+    <div class="categories-strip-wrap">
+      <nav class="categories-bar" id="categoriesBar">
+        <button class="cat-btn active" data-cat="all" onclick="selectCategory('all', this)" data-i18n="cat_all">🌐 Alle</button>
+        <button class="cat-btn" data-cat="smartphones" onclick="selectCategory('smartphones', this)" data-i18n="cat_smartphones">📱 Smartphones & Tablets</button>
+        <button class="cat-btn" data-cat="gaming" onclick="selectCategory('gaming', this)" data-i18n="cat_gaming">💻 Laptops & Gaming</button>
+        <button class="cat-btn" data-cat="tv_audio" onclick="selectCategory('tv_audio', this)" data-i18n="cat_tv_audio">📺 TV & Audio</button>
+        <button class="cat-btn" data-cat="home_kitchen" onclick="selectCategory('home_kitchen', this)" data-i18n="cat_home_kitchen">☕ Küche & Haushalt</button>
+        <button class="cat-btn" data-cat="fashion_shoes" onclick="selectCategory('fashion_shoes', this)" data-i18n="cat_fashion_shoes">👟 Mode & Schuhe</button>
+        <button class="cat-btn" data-cat="perfumes_beauty" onclick="selectCategory('perfumes_beauty', this)" data-i18n="cat_perfumes_beauty">💄 Parfüm & Beauty</button>
+        <button class="cat-btn" data-cat="furniture_decor" onclick="selectCategory('furniture_decor', this)" data-i18n="cat_furniture_decor">🛋️ Möbel & Wohnen</button>
+        <button class="cat-btn" data-cat="sports_fitness" onclick="selectCategory('sports_fitness', this)" data-i18n="cat_sports_fitness">🏋️ Sport & Fitness</button>
+        <button class="cat-btn" data-cat="kids_toys" onclick="selectCategory('kids_toys', this)" data-i18n="cat_kids_toys">🧸 Kinder & Spielzeug</button>
+        <button class="cat-btn" data-cat="tools_garden" onclick="selectCategory('tools_garden', this)" data-i18n="cat_tools_garden">🛠️ Werkzeug & Garten</button>
+        <button class="cat-btn" data-cat="auto_car" onclick="selectCategory('auto_car', this)" data-i18n="cat_auto_car">🚗 Autozubehör & Elektronik</button>
+        <button class="cat-btn" data-cat="travel_luggage" onclick="selectCategory('travel_luggage', this)" data-i18n="cat_travel_luggage">🧳 Reise & Smartwatches</button>
+      </nav>
     </div>
 
     <!-- Collapsible Filter & Sort Popover Drawer -->
@@ -133,25 +153,6 @@
       </div>
     </div>
   </header>
-
-  <!-- Compact Horizontal Category Strip (12 Comprehensive Life Categories) -->
-  <div class="categories-strip-wrap">
-    <nav class="categories-bar" id="categoriesBar">
-      <button class="cat-btn active" data-cat="all" onclick="selectCategory('all', this)" data-i18n="cat_all">🌐 Alle</button>
-      <button class="cat-btn" data-cat="smartphones" onclick="selectCategory('smartphones', this)" data-i18n="cat_smartphones">📱 Smartphones & Tablets</button>
-      <button class="cat-btn" data-cat="gaming" onclick="selectCategory('gaming', this)" data-i18n="cat_gaming">💻 Laptops & Gaming</button>
-      <button class="cat-btn" data-cat="tv_audio" onclick="selectCategory('tv_audio', this)" data-i18n="cat_tv_audio">📺 TV & Audio</button>
-      <button class="cat-btn" data-cat="home_kitchen" onclick="selectCategory('home_kitchen', this)" data-i18n="cat_home_kitchen">☕ Küche & Haushalt</button>
-      <button class="cat-btn" data-cat="fashion_shoes" onclick="selectCategory('fashion_shoes', this)" data-i18n="cat_fashion_shoes">👟 Mode & Schuhe</button>
-      <button class="cat-btn" data-cat="perfumes_beauty" onclick="selectCategory('perfumes_beauty', this)" data-i18n="cat_perfumes_beauty">💄 Parfüm & Beauty</button>
-      <button class="cat-btn" data-cat="furniture_decor" onclick="selectCategory('furniture_decor', this)" data-i18n="cat_furniture_decor">🛋️ Möbel & Wohnen</button>
-      <button class="cat-btn" data-cat="sports_fitness" onclick="selectCategory('sports_fitness', this)" data-i18n="cat_sports_fitness">🏋️ Sport & Fitness</button>
-      <button class="cat-btn" data-cat="kids_toys" onclick="selectCategory('kids_toys', this)" data-i18n="cat_kids_toys">🧸 Kinder & Spielzeug</button>
-      <button class="cat-btn" data-cat="tools_garden" onclick="selectCategory('tools_garden', this)" data-i18n="cat_tools_garden">🛠️ Werkzeug & Garten</button>
-      <button class="cat-btn" data-cat="auto_car" onclick="selectCategory('auto_car', this)" data-i18n="cat_auto_car">🚗 Autozubehör & Elektronik</button>
-      <button class="cat-btn" data-cat="travel_luggage" onclick="selectCategory('travel_luggage', this)" data-i18n="cat_travel_luggage">🧳 Reise & Smartwatches</button>
-    </nav>
-  </div>
 
   <!-- Main Products Catalog Grid -->
   <main class="catalog-container">
@@ -217,6 +218,6 @@
     </button>
   </nav>
 
-  <script src="/app.js"></script>
+  <script src="/app.js?v=2.7"></script>
 </body>
 </html>

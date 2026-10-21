@@ -150,6 +150,14 @@ function interleaveDiverseProducts(products) {
     groups[p.category].push(p);
   }
 
+  // Shuffle products within each category so every refresh/visit reveals fresh items
+  for (const cat in groups) {
+    for (let i = groups[cat].length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [groups[cat][i], groups[cat][j]] = [groups[cat][j], groups[cat][i]];
+    }
+  }
+
   const preferredOrder = [
     'smartphones',
     'fashion_shoes',
@@ -165,7 +173,11 @@ function interleaveDiverseProducts(products) {
     'kids_toys'
   ];
 
-  const allCatKeys = Array.from(new Set([...preferredOrder, ...Object.keys(groups)]));
+  // Rotate starting category randomly so the very first product isn't always from the exact same category
+  const offset = Math.floor(Math.random() * preferredOrder.length);
+  const rotatedOrder = [...preferredOrder.slice(offset), ...preferredOrder.slice(0, offset)];
+  const allCatKeys = Array.from(new Set([...rotatedOrder, ...Object.keys(groups)]));
+
   const interleaved = [];
   let hasMore = true;
   let round = 0;

@@ -916,6 +916,13 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       const gallery = await scrapeProductGalleryByAsin(asin, fallbackImg);
       if (prod && gallery.length > 0) {
         prod.images = gallery;
+        if (Array.isArray(prod.offers)) {
+          prod.offers.forEach((o, idx) => {
+            if (!o.image) {
+              o.image = gallery[idx % gallery.length];
+            }
+          });
+        }
         saveJson(CATALOG_PATH, catalog);
       }
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });

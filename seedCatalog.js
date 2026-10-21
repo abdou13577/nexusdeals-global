@@ -184,9 +184,34 @@ function getDistributedMultipliers(hash, cat) {
   }
 }
 
-function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, brand) {
+function getStoreVariantInfo(store, categoryId, smartQuery, index, asin) {
+  const hash = (asin || smartQuery).split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
+  
+  let colorList = ['Schwarz', 'Weiß', 'Silber / Grau', 'Dunkelblau', 'Waldgrün'];
+  if (categoryId === 'smartphones' || categoryId === 'tv_audio' || categoryId === 'gaming' || categoryId === 'laptops_tablets') {
+    colorList = ['Schwarz', 'Weiß', 'Mitternachtsblau', 'Titan / Grau', 'Waldgrün', 'Rosa / Pink'];
+  } else if (categoryId === 'fashion_shoes') {
+    colorList = ['Schwarz', 'Dunkelblau', 'Anthrazit', 'Khaki', 'Beige', 'Weiß'];
+  } else if (categoryId === 'perfumes_beauty') {
+    colorList = ['100ml Eau de Parfum', '50ml Eau de Parfum', '100ml Eau de Toilette', '50ml Intense'];
+  } else if (categoryId === 'furniture_decor' || categoryId === 'home_kitchen') {
+    colorList = ['Weiß / Matt', 'Anthrazit', 'Eicheneffekt / Holz', 'Schwarzbraun', 'Edelstahl gebürstet'];
+  } else if (categoryId === 'auto_car' || categoryId === 'tools_garden') {
+    colorList = ['Schwarz / Metallic', 'Anthrazit', 'Rot / Schwarz', 'Profi Edition'];
+  }
+
+  const variantColor = colorList[(hash + index) % colorList.length];
+  const variantTitle = `${smartQuery} - ${variantColor}`;
+  
+  return {
+    variantColor,
+    variantTitle
+  };
+}
+
+function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, brand, galleryImages = []) {
   const smartQuery = extractSmartModelQuery(title, brand);
-  const hash = asin.split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
+  const hash = (asin || '').split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
   const storeList = getStoresForCategory(categoryId);
   const storeMultipliers = getDistributedMultipliers(hash, categoryId);
 
@@ -205,10 +230,11 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
     SHEIN: 4.6
   };
 
-  const offers = storeList.map(store => {
+  const offers = storeList.map((store, idx) => {
     const isAmazon = store === 'Amazon';
     const mult = storeMultipliers[store] || 1.04;
     const price = +(amazonLivePrice * mult).toFixed(2);
+    const { variantColor, variantTitle } = getStoreVariantInfo(store, categoryId, smartQuery, idx, asin);
 
     let directUrl;
     if (isAmazon) {
@@ -237,6 +263,10 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
       directUrl = `https://de.shein.com/pdsearch/${encodeURIComponent(smartQuery)}/`;
     }
 
+    const offerImage = (Array.isArray(galleryImages) && galleryImages.length > 0)
+      ? galleryImages[idx % galleryImages.length]
+      : undefined;
+
     return {
       store,
       storeLogo: store.toLowerCase(),
@@ -247,6 +277,9 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
       inStock: true,
       rating: storeRatings[store] || 4.7,
       query: smartQuery,
+      variantColor,
+      variantTitle,
+      image: offerImage,
       directUrl
     };
   });
@@ -691,5 +724,6 @@ module.exports = {
   buildRealOffersForProduct,
   extractSmartModelQuery,
   scrapeProductGalleryByAsin,
-  detectCategoryFromText
+  detectCategoryFromText,
+  getStoreVariantInfo
 };

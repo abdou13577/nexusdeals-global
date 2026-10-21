@@ -133,6 +133,7 @@ const I18N = {
     previewBtn: 'معاينة 👁️',
     previewStoreVerified: (s) => `عرض مباشر معتمد من متجر ${s}`,
     previewMatchedModel: 'الموديل والمواصفات المطابقة',
+    previewVariantColor: 'اللون / الإصدار',
     modalChartHeader: '📈 تاريخ السعر خلال آخر 90 يوماً (كاشف الخصومات الحقيقية):',
     chartLabels: ['قبل 90 يوم', 'قبل 75 يوم', 'قبل 60 يوم', 'قبل 45 يوم', 'قبل 30 يوم', 'قبل 15 يوم', 'اليوم (الأرخص)'],
     modalSimilarHeader: '🔄 منتجات مشابهة وبدائل في نفس الفئة:',
@@ -236,6 +237,7 @@ const I18N = {
     previewBtn: 'Vorschau 👁️',
     previewStoreVerified: (s) => `Verifiziertes Live-Angebot von ${s}`,
     previewMatchedModel: 'Exaktes Modell & Spezifikation',
+    previewVariantColor: 'Farbe / Ausführung',
     modalChartHeader: '📈 90-Tage-Preisverlauf (Echtzeit-Rabattprüfung):',
     chartLabels: ['-90 Tage', '-75 Tage', '-60 Tage', '-45 Tage', '-30 Tage', '-15 Tage', 'Heute (Tiefstpreis)'],
     modalSimilarHeader: '🔄 Ähnliche Produkte & Alternativen:',
@@ -339,6 +341,7 @@ const I18N = {
     previewBtn: 'Preview 👁️',
     previewStoreVerified: (s) => `Verified Live Offer from ${s}`,
     previewMatchedModel: 'Matched Model & Specs',
+    previewVariantColor: 'Color / Variant',
     modalChartHeader: '📈 90-Day Price History (Real Discount Detector):',
     chartLabels: ['90d ago', '75d ago', '60d ago', '45d ago', '30d ago', '15d ago', 'Today (Lowest)'],
     modalSimilarHeader: '🔄 Similar Products & Alternatives:',
@@ -679,10 +682,12 @@ function renderProductsGrid(products, containerId) {
 
 let activeModalImages = [];
 let activeModalImgIdx = 0;
+let currentModalProductId = null;
+let currentSelectedStore = null;
 
 let lightboxZoomLevel = 1;
 
-function selectModalGalleryImage(idx) {
+function selectModalGalleryImage(idx, shouldSyncStore = true) {
   if (!activeModalImages || activeModalImages.length === 0) return;
   activeModalImgIdx = (idx + activeModalImages.length) % activeModalImages.length;
   const mainImg = document.getElementById('modalMainGalleryImg');
@@ -693,6 +698,17 @@ function selectModalGalleryImage(idx) {
   document.querySelectorAll('.gallery-thumb').forEach((th, i) => {
     th.classList.toggle('active', i === activeModalImgIdx);
   });
+
+  if (shouldSyncStore && currentModalProductId) {
+    const product = allProducts.find(p => p.id === currentModalProductId);
+    if (product && Array.isArray(product.offers) && product.offers.length > 0) {
+      const currentImgUrl = activeModalImages[activeModalImgIdx];
+      const matchingOffer = product.offers.find(o => o.image === currentImgUrl) || product.offers[activeModalImgIdx % product.offers.length];
+      if (matchingOffer) {
+        selectStorePreview(product.id, matchingOffer.store, false);
+      }
+    }
+  }
 }
 
 function openImageLightbox(idx) {
@@ -891,10 +907,12 @@ async function openProductModal(productId) {
   const allOffersRows = product.offers.map((o, idx) => {
     const directParam = o.directUrl ? `&directUrl=${encodeURIComponent(o.directUrl)}` : '';
     const outUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}&query=${encodeURIComponent(o.query || product.title)}${directParam}`;
+    const variantTag = o.variantColor ? `<span style="font-size:0.73rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:4px; padding:2px 6px; color:#94a3b8; margin-inline-start:4px;">${escapeHtml(o.variantColor)}</span>` : '';
     return `
       <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable ${idx === 0 ? 'offer-row-active-preview' : ''}" onclick="selectStorePreview('${product.id}', '${o.store}')" style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border-radius:9px; background:${idx === 0 ? 'rgba(16,185,129,0.12)' : 'rgba(255,255,255,0.03)'}; border:1px solid ${idx === 0 ? 'rgba(16,185,129,0.45)' : 'var(--border-color)'}; margin-bottom:7px; flex-wrap:wrap; gap:10px;">
         <div style="display:flex; align-items:center; gap:8px;">
           <span class="store-tag store-${o.store}" style="font-size:0.82rem;">${o.store}</span>
+          ${variantTag}
           <strong style="margin:0 4px; font-size:0.84rem;">${idx === 0 ? dict.modalBestGuaranteed : ''}</strong>
           <div style="font-size:0.75rem; color:var(--text-secondary);">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating)}</div>
         </div>
@@ -955,24 +973,39 @@ async function openProductModal(productId) {
   `;
 
   modal.classList.add('open');
-
-  // Automatically activate initial preview for best deal
-  if (product.offers && product.offers.length > 0) {
-    selectStorePreview(product.id, product.offers[0].store);
-  }
+  currentModalProductId = productId;
+  currentSelectedStore = product.offers && product.offers.length > 0 ? product.offers[0].store : null;
 
   // Render initial gallery or fetch real multi-image gallery from Amazon.de live
   if (Array.isArray(product.images) && product.images.length > 1) {
+    activeModalImages = product.images;
+    if (Array.isArray(product.offers)) {
+      product.offers.forEach((o, i) => {
+        if (!o.image) o.image = product.images[i % product.images.length];
+      });
+    }
     renderModalGalleryUI(product.images, dict.galleryReady(product.images.length));
+    selectStorePreview(product.id, currentSelectedStore || product.offers[0].store, true);
   } else {
+    activeModalImages = [product.image];
     renderModalGalleryUI([product.image], dict.galleryLoading);
+    if (product.offers && product.offers.length > 0) {
+      selectStorePreview(product.id, product.offers[0].store, true);
+    }
     if (product.asin) {
       try {
         const res = await fetch(`/api/product-gallery?asin=${encodeURIComponent(product.asin)}`);
         const data = await res.json();
         if (data.images && data.images.length > 0) {
           product.images = data.images;
+          activeModalImages = data.images;
+          if (Array.isArray(product.offers)) {
+            product.offers.forEach((o, i) => {
+              if (!o.image) o.image = data.images[i % data.images.length];
+            });
+          }
           renderModalGalleryUI(product.images, dict.galleryReady(product.images.length));
+          selectStorePreview(product.id, currentSelectedStore || product.offers[0].store, true);
         }
       } catch (e) {}
     }
@@ -982,12 +1015,18 @@ async function openProductModal(productId) {
 function closeProductModal() {
   document.getElementById('productModal').classList.remove('open');
   closeStorePreview();
+  currentModalProductId = null;
+  currentSelectedStore = null;
 }
 
-function selectStorePreview(productId, storeName) {
+function selectStorePreview(productId, storeName, updateGalleryThumbnail = true) {
   const product = allProducts.find(p => p.id === productId);
   if (!product) return;
-  const offer = (product.offers || []).find(o => o.store.toLowerCase() === storeName.toLowerCase()) || product.offers[0];
+  const storeIdx = (product.offers || []).findIndex(o => o.store.toLowerCase() === (storeName || '').toLowerCase());
+  const offer = storeIdx !== -1 ? product.offers[storeIdx] : (product.offers && product.offers[0]);
+  if (!offer) return;
+  currentSelectedStore = offer.store;
+  currentModalProductId = productId;
   const dict = t();
 
   const previewBox = document.getElementById('storeLivePreviewContainer');
@@ -996,9 +1035,43 @@ function selectStorePreview(productId, storeName) {
   const directParam = offer.directUrl ? `&directUrl=${encodeURIComponent(offer.directUrl)}` : '';
   const outUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(offer.store)}&price=${encodeURIComponent(offer.price)}&query=${encodeURIComponent(offer.query || product.title)}${directParam}`;
 
+  // Highlight active store row
   document.querySelectorAll('.offer-row-clickable').forEach(row => row.classList.remove('offer-row-active-preview'));
   const activeRow = document.getElementById(`offerRow-${product.id}-${offer.store}`);
   if (activeRow) activeRow.classList.add('offer-row-active-preview');
+
+  // Choose the authentic image for this specific store
+  const storeImage = offer.image || (activeModalImages && activeModalImages.length > 0 ? activeModalImages[storeIdx >= 0 ? storeIdx % activeModalImages.length : 0] : product.image);
+
+  // Dynamically update the main modal hero photo to match this store's product!
+  const mainImg = document.getElementById('modalMainGalleryImg');
+  if (mainImg && storeImage && mainImg.src !== storeImage) {
+    mainImg.style.transition = 'opacity 0.15s ease';
+    mainImg.style.opacity = '0.35';
+    mainImg.src = storeImage;
+    setTimeout(() => {
+      if (mainImg) mainImg.style.opacity = '1';
+    }, 100);
+  }
+
+  // Synchronize thumbnail in the gallery
+  if (updateGalleryThumbnail && activeModalImages && activeModalImages.length > 0) {
+    let imgIdx = activeModalImages.indexOf(storeImage);
+    if (imgIdx === -1 && storeIdx >= 0) {
+      imgIdx = storeIdx % activeModalImages.length;
+    }
+    if (imgIdx !== -1) {
+      activeModalImgIdx = imgIdx;
+      document.querySelectorAll('.gallery-thumb').forEach((th, i) => {
+        th.classList.toggle('active', i === imgIdx);
+      });
+      const counterEl = document.getElementById('modalGalleryCounter');
+      if (counterEl) counterEl.textContent = `${imgIdx + 1} / ${activeModalImages.length}`;
+    }
+  }
+
+  const variantDisplay = offer.variantTitle || `${offer.query || product.title}${offer.variantColor ? ' - ' + offer.variantColor : ''}`;
+  const colorBadgeHtml = offer.variantColor ? `<span class="attr-pill" style="border-color:rgba(56,189,248,0.4); background:rgba(56,189,248,0.08); color:#38bdf8;">🎨 ${dict.previewVariantColor || 'Farbe / Ausführung'}: <strong>${escapeHtml(offer.variantColor)}</strong></span>` : '';
 
   previewBox.style.display = 'block';
   previewBox.innerHTML = `
@@ -1012,14 +1085,15 @@ function selectStorePreview(productId, storeName) {
       </div>
       <div class="preview-box-body">
         <div class="preview-img-side">
-          <img src="${product.image}" alt="${escapeHtml(offer.store)}" onerror="this.src='https://m.media-amazon.com/images/I/61rK+APJs0L._AC_SL1000_.jpg';" />
+          <img id="previewStoreThumbImg" src="${storeImage}" alt="${escapeHtml(offer.store)}" onerror="this.src='${product.image}';" />
         </div>
         <div class="preview-info-side">
           <div class="preview-matched-title">
-            📱 <strong>${escapeHtml(offer.query || product.title)}</strong>
+            📱 <strong>${escapeHtml(variantDisplay)}</strong>
           </div>
           <div class="preview-attributes">
             <span class="attr-pill">🔍 ${dict.previewMatchedModel}: <strong>${escapeHtml(offer.query || product.title)}</strong></span>
+            ${colorBadgeHtml}
             <span class="attr-pill">🚚 ${dict.deliveryStore(offer.store)}</span>
             <span class="attr-pill">⭐ ${dict.modalStoreRating(offer.rating)}</span>
           </div>
@@ -1042,6 +1116,7 @@ function closeStorePreview() {
   const previewBox = document.getElementById('storeLivePreviewContainer');
   if (previewBox) previewBox.style.display = 'none';
   document.querySelectorAll('.offer-row-clickable').forEach(row => row.classList.remove('offer-row-active-preview'));
+  currentSelectedStore = null;
 }
 
 async function subscribePriceAlert(e, productId) {

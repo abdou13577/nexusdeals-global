@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
-const { generateInitialCatalog, scrapeRealAmazonProducts, scrapeProductGalleryByAsin, detectCategoryFromText } = require('./seedCatalog');
+const { generateInitialCatalog, scrapeRealAmazonProducts, scrapeProductGalleryByAsin, detectCategoryFromText, extractSmartModelQuery } = require('./seedCatalog');
 
 const PORT = process.env.PORT || 3080;
 const DATA_DIR = path.join(__dirname, 'data');
@@ -124,23 +124,7 @@ function saveJson(filePath, data) {
 
 function extractCleanModelQuery(title, brand) {
   if (!title) return 'Product';
-  const modelMatch = title.match(/\b(KOW\s*\d+|[A-Z]{1,3}-\d{2,4}|iPhone\s*\d{1,2}|Galaxy\s*S\d{2}|WH-1000XM\d)\b/i);
-  let cleaned = title
-    .replace(/\(.*?\)/g, '')
-    .replace(/\[.*?\]/g, '')
-    .replace(/Generalüberholt|Refurbished|Gebraucht|Neu/gi, '')
-    .replace(/\bmit\s+Kapuze\b/gi, '')
-    .replace(/\b(Mn|Wmn|Prk|Qltd|Jckt|Flx|Cs|Prc|Atmungsaktiv|Wasserdicht|Outdoor|Camping|Schwarz|Blau|Grün|Rot|Weiß|Herren|Damen|Kinder)\b/gi, '')
-    .replace(/Funktionsparka|Steppparka|Winterjacke|Steppmantel|Regenjacke|Übergangsjacke/gi, ' ')
-    .split(/[:|–—,]/)[0]
-    .replace(/[^\w\sÄÖÜäöüß.-]/g, ' ')
-    .trim();
-  const words = cleaned.split(/\s+/).filter(Boolean);
-  let res = words.slice(0, 4).join(' ');
-  if (modelMatch && !res.toLowerCase().includes(modelMatch[1].toLowerCase().replace(/\s+/g, ''))) {
-    res += ' ' + modelMatch[1];
-  }
-  return res || title.slice(0, 30);
+  return extractSmartModelQuery(title);
 }
 
 function interleaveDiverseProducts(products) {

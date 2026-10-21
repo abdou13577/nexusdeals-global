@@ -125,11 +125,14 @@ const I18N = {
     alertEmailPlaceholder: 'بريدك الإلكتروني...',
     alertSubmitBtn: 'نبهني عند الانخفاض',
     alertSavedMsg: (p) => `✔️ تم تفعيل التنبيه! سنرسل لك إشعاراً فور وصول السعر إلى ${p}€.`,
-    modalCompareHeader: '🏪 جدول مقارنة الأسعار المباشر عبر جميع المنصات العالمية:',
+    modalCompareHeader: '🏪 جدول مقارنة الأسعار المباشر عبر كبرى المتاجر الأوروبية:',
     modalBestGuaranteed: '🏆 أرخص سعر مضمون اليوم',
     modalStoreRating: (r) => `تقييم المتجر ⭐ ${r}`,
     modalFreeShipping: 'شحن مجاني / سريع',
     modalGoToOffer: (s) => `الذهاب للعرض في ${s} ↗`,
+    previewBtn: 'معاينة 👁️',
+    previewStoreVerified: (s) => `عرض مباشر معتمد من متجر ${s}`,
+    previewMatchedModel: 'الموديل والمواصفات المطابقة',
     modalChartHeader: '📈 تاريخ السعر خلال آخر 90 يوماً (كاشف الخصومات الحقيقية):',
     chartLabels: ['قبل 90 يوم', 'قبل 75 يوم', 'قبل 60 يوم', 'قبل 45 يوم', 'قبل 30 يوم', 'قبل 15 يوم', 'اليوم (الأرخص)'],
     modalSimilarHeader: '🔄 منتجات مشابهة وبدائل في نفس الفئة:',
@@ -225,11 +228,14 @@ const I18N = {
     alertEmailPlaceholder: 'Ihre E-Mail-Adresse...',
     alertSubmitBtn: 'Benachrichtigen',
     alertSavedMsg: (p) => `✔️ Preiswecker aktiviert! Wir informieren Sie bei ${p}€.`,
-    modalCompareHeader: '🏪 Direkter Live-Preisvergleich auf allen Plattformen:',
+    modalCompareHeader: '🏪 Direkter Live-Preisvergleich führender europäischer Shops:',
     modalBestGuaranteed: '🏆 Garantierter Bestpreis heute',
     modalStoreRating: (r) => `Shop-Bewertung ⭐ ${r}`,
     modalFreeShipping: 'Schneller Direktversand',
     modalGoToOffer: (s) => `Zum Angebot bei ${s} ↗`,
+    previewBtn: 'Vorschau 👁️',
+    previewStoreVerified: (s) => `Verifiziertes Live-Angebot von ${s}`,
+    previewMatchedModel: 'Exaktes Modell & Spezifikation',
     modalChartHeader: '📈 90-Tage-Preisverlauf (Echtzeit-Rabattprüfung):',
     chartLabels: ['-90 Tage', '-75 Tage', '-60 Tage', '-45 Tage', '-30 Tage', '-15 Tage', 'Heute (Tiefstpreis)'],
     modalSimilarHeader: '🔄 Ähnliche Produkte & Alternativen:',
@@ -330,6 +336,9 @@ const I18N = {
     modalStoreRating: (r) => `Store Rating ⭐ ${r}`,
     modalFreeShipping: 'Fast Direct Shipping',
     modalGoToOffer: (s) => `Go to Offer on ${s} ↗`,
+    previewBtn: 'Preview 👁️',
+    previewStoreVerified: (s) => `Verified Live Offer from ${s}`,
+    previewMatchedModel: 'Matched Model & Specs',
     modalChartHeader: '📈 90-Day Price History (Real Discount Detector):',
     chartLabels: ['90d ago', '75d ago', '60d ago', '45d ago', '30d ago', '15d ago', 'Today (Lowest)'],
     modalSimilarHeader: '🔄 Similar Products & Alternatives:',
@@ -883,18 +892,21 @@ async function openProductModal(productId) {
     const directParam = o.directUrl ? `&directUrl=${encodeURIComponent(o.directUrl)}` : '';
     const outUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}&query=${encodeURIComponent(o.query || product.title)}${directParam}`;
     return `
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border-radius:9px; background:${idx === 0 ? 'rgba(16,185,129,0.12)' : 'rgba(255,255,255,0.03)'}; border:1px solid ${idx === 0 ? 'rgba(16,185,129,0.45)' : 'var(--border-color)'}; margin-bottom:7px; flex-wrap:wrap; gap:10px;">
-        <div>
+      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable ${idx === 0 ? 'offer-row-active-preview' : ''}" onclick="selectStorePreview('${product.id}', '${o.store}')" style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border-radius:9px; background:${idx === 0 ? 'rgba(16,185,129,0.12)' : 'rgba(255,255,255,0.03)'}; border:1px solid ${idx === 0 ? 'rgba(16,185,129,0.45)' : 'var(--border-color)'}; margin-bottom:7px; flex-wrap:wrap; gap:10px;">
+        <div style="display:flex; align-items:center; gap:8px;">
           <span class="store-tag store-${o.store}" style="font-size:0.82rem;">${o.store}</span>
-          <strong style="margin:0 8px; font-size:0.84rem;">${idx === 0 ? dict.modalBestGuaranteed : ''}</strong>
-          <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:3px;">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating)}</div>
+          <strong style="margin:0 4px; font-size:0.84rem;">${idx === 0 ? dict.modalBestGuaranteed : ''}</strong>
+          <div style="font-size:0.75rem; color:var(--text-secondary);">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating)}</div>
         </div>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="text-align:right;">
             <div style="font-size:1.15rem; font-weight:800; color:${idx === 0 ? '#34d399' : '#fff'};">${o.price.toFixed(2)} €</div>
             <div style="font-size:0.7rem; color:var(--text-secondary);">${dict.modalFreeShipping}</div>
           </div>
-          <a href="${outUrl}" target="_blank" rel="noopener" class="btn-search-main" style="text-decoration:none; padding:7px 14px; font-size:0.8rem;">
+          <button type="button" class="btn-action btn-sm" onclick="event.stopPropagation(); selectStorePreview('${product.id}', '${o.store}')" style="padding:6px 11px; font-size:0.78rem;" title="${dict.previewBtn}">
+            ${dict.previewBtn}
+          </button>
+          <a href="${outUrl}" target="_blank" rel="noopener" class="btn-search-main" style="text-decoration:none; padding:7px 14px; font-size:0.8rem;" onclick="event.stopPropagation();">
             ${dict.modalGoToOffer(o.store)}
           </a>
         </div>
@@ -927,6 +939,10 @@ async function openProductModal(productId) {
     </div>
 
     <h4 style="margin-bottom:8px; color:#38bdf8; font-size:0.95rem;">${dict.modalCompareHeader}</h4>
+
+    <!-- Interactive Live Store Preview Box -->
+    <div id="storeLivePreviewContainer" style="margin-bottom:14px;"></div>
+
     <div style="margin-bottom:20px;">${allOffersRows}</div>
 
     <h4 style="margin-bottom:10px; color:#fbbf24; font-size:0.95rem;">${dict.modalChartHeader}</h4>
@@ -939,6 +955,11 @@ async function openProductModal(productId) {
   `;
 
   modal.classList.add('open');
+
+  // Automatically activate initial preview for best deal
+  if (product.offers && product.offers.length > 0) {
+    selectStorePreview(product.id, product.offers[0].store);
+  }
 
   // Render initial gallery or fetch real multi-image gallery from Amazon.de live
   if (Array.isArray(product.images) && product.images.length > 1) {
@@ -960,6 +981,67 @@ async function openProductModal(productId) {
 
 function closeProductModal() {
   document.getElementById('productModal').classList.remove('open');
+  closeStorePreview();
+}
+
+function selectStorePreview(productId, storeName) {
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) return;
+  const offer = (product.offers || []).find(o => o.store.toLowerCase() === storeName.toLowerCase()) || product.offers[0];
+  const dict = t();
+
+  const previewBox = document.getElementById('storeLivePreviewContainer');
+  if (!previewBox) return;
+
+  const directParam = offer.directUrl ? `&directUrl=${encodeURIComponent(offer.directUrl)}` : '';
+  const outUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(offer.store)}&price=${encodeURIComponent(offer.price)}&query=${encodeURIComponent(offer.query || product.title)}${directParam}`;
+
+  document.querySelectorAll('.offer-row-clickable').forEach(row => row.classList.remove('offer-row-active-preview'));
+  const activeRow = document.getElementById(`offerRow-${product.id}-${offer.store}`);
+  if (activeRow) activeRow.classList.add('offer-row-active-preview');
+
+  previewBox.style.display = 'block';
+  previewBox.innerHTML = `
+    <div class="store-preview-box">
+      <div class="preview-box-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span class="store-tag store-${offer.store}">${offer.store}</span>
+          <span class="preview-badge-verified">✔️ ${dict.previewStoreVerified(offer.store)}</span>
+        </div>
+        <button type="button" class="btn-close-preview" onclick="closeStorePreview()" title="Schließen / إغلاق">✕</button>
+      </div>
+      <div class="preview-box-body">
+        <div class="preview-img-side">
+          <img src="${product.image}" alt="${escapeHtml(offer.store)}" onerror="this.src='https://m.media-amazon.com/images/I/61rK+APJs0L._AC_SL1000_.jpg';" />
+        </div>
+        <div class="preview-info-side">
+          <div class="preview-matched-title">
+            📱 <strong>${escapeHtml(offer.query || product.title)}</strong>
+          </div>
+          <div class="preview-attributes">
+            <span class="attr-pill">🔍 ${dict.previewMatchedModel}: <strong>${escapeHtml(offer.query || product.title)}</strong></span>
+            <span class="attr-pill">🚚 ${dict.deliveryStore(offer.store)}</span>
+            <span class="attr-pill">⭐ ${dict.modalStoreRating(offer.rating)}</span>
+          </div>
+          <div class="preview-price-row">
+            <div>
+              <span class="preview-price-val">${offer.price.toFixed(2)} €</span>
+              <span class="preview-price-sub">${dict.modalFreeShipping}</span>
+            </div>
+            <a href="${outUrl}" target="_blank" rel="noopener" class="btn-search-main btn-preview-go">
+              ${dict.buyFromBtn(offer.store, offer.price.toFixed(2))}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function closeStorePreview() {
+  const previewBox = document.getElementById('storeLivePreviewContainer');
+  if (previewBox) previewBox.style.display = 'none';
+  document.querySelectorAll('.offer-row-clickable').forEach(row => row.classList.remove('offer-row-active-preview'));
 }
 
 async function subscribePriceAlert(e, productId) {

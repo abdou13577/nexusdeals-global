@@ -393,25 +393,14 @@ function toggleFlashDealsFilter(e) {
 
 function toggleFilterDrawer() {
   const filterDrawer = document.getElementById('filterDrawer');
-  const aiDrawer = document.getElementById('aiDrawer');
   const btn = document.getElementById('filterToggleBtn');
-  aiDrawer.classList.remove('open');
-  document.getElementById('aiToggleBtn').classList.remove('active');
+  if (!filterDrawer) return;
   const isOpen = filterDrawer.classList.toggle('open');
-  btn.classList.toggle('active', isOpen);
+  if (btn) btn.classList.toggle('active', isOpen);
 }
 
 function toggleAiDrawer() {
-  const filterDrawer = document.getElementById('filterDrawer');
-  const aiDrawer = document.getElementById('aiDrawer');
-  const btn = document.getElementById('aiToggleBtn');
-  filterDrawer.classList.remove('open');
-  document.getElementById('filterToggleBtn').classList.remove('active');
-  const isOpen = aiDrawer.classList.toggle('open');
-  btn.classList.toggle('active', isOpen);
-  if (isOpen) {
-    document.getElementById('aiPromptInput').focus();
-  }
+  // AI Assistant removed per user request
 }
 
 function setLanguage(lang, isManualClick = false) {
@@ -959,14 +948,17 @@ function resetAllFilters() {
 }
 
 async function handleAiSearch(e) {
-  e.preventDefault();
-  const prompt = document.getElementById('aiPromptInput').value.trim();
+  if (e && e.preventDefault) e.preventDefault();
+  const input = document.getElementById('aiPromptInput');
+  if (!input) return;
+  const prompt = input.value.trim();
   if (!prompt) return;
   await executeAiQuery(prompt);
 }
 
 function runQuickAi(queryText, displayText) {
-  document.getElementById('aiPromptInput').value = displayText || queryText;
+  const input = document.getElementById('aiPromptInput');
+  if (input) input.value = displayText || queryText;
   executeAiQuery(queryText);
 }
 
@@ -974,6 +966,7 @@ async function executeAiQuery(prompt) {
   const dict = t();
   const panel = document.getElementById('aiResponsePanel');
   const textEl = document.getElementById('aiResponseText');
+  if (!panel || !textEl) return;
   panel.style.display = 'block';
   textEl.textContent = dict.aiLoading;
 

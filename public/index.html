@@ -73,11 +73,6 @@
         <button type="button" class="btn-action" id="filterToggleBtn" onclick="toggleFilterDrawer()">
           <span data-i18n="filterMenuBtn">🎛️ Filter & Sortierung ▾</span>
         </button>
-
-        <!-- Collapsible AI Assistant Trigger -->
-        <button type="button" class="btn-action btn-ai-highlight" id="aiToggleBtn" onclick="toggleAiDrawer()">
-          <span data-i18n="aiHeaderBtn">🤖 KI-Kaufberater ▾</span>
-        </button>
       </div>
     </div>
 
@@ -134,26 +129,6 @@
               <span data-i18n="flashDealsOnly" style="color:#fff;">🔥 Nur Blitz-Deals & Top-Ersparnis</span>
             </label>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Collapsible AI Shopping Assistant Drawer -->
-    <div class="dropdown-drawer" id="aiDrawer">
-      <div class="drawer-card" style="border-color:rgba(16, 185, 129, 0.45);">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-          <strong style="color:#34d399; font-size:0.92rem;" data-i18n="aiPromptLabel">🤖 Frage den KI-Einkaufsberater (Budget oder Wunschprodukt eingeben):</strong>
-          <button type="button" class="btn-action" style="padding:4px 10px; font-size:0.76rem;" onclick="toggleAiDrawer()" data-i18n="closeBtn">Schließen ✕</button>
-        </div>
-        <form style="display:flex; gap:8px;" onsubmit="handleAiSearch(event)">
-          <input type="text" id="aiPromptInput" data-i18n-placeholder="aiPlaceholder" placeholder="Z. B.: Nike Sneaker, Herrenparfüm, Bürostuhl oder Kaffeemaschine..." style="flex:1; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:9px 14px; border-radius:8px; outline:none;" />
-          <button type="submit" class="btn-search-main" style="background:linear-gradient(135deg,#10b981,#059669);" data-i18n="aiSubmitBtn">KI-Analyse ⚡</button>
-        </form>
-        <div class="quick-chips" id="quickChipsContainer"></div>
-
-        <div id="aiResponsePanel" style="display:none; margin-top:14px; padding-top:14px; border-top:1px solid var(--border-color);">
-          <div id="aiResponseText" style="white-space:pre-line; font-size:0.88rem; color:#e2e8f0; margin-bottom:12px;"></div>
-          <div class="products-grid" id="aiRecommendationsGrid"></div>
         </div>
       </div>
     </div>
@@ -235,10 +210,6 @@
     <button type="button" class="bottom-nav-item" onclick="toggleFilterDrawer()">
       <span class="nav-icon">🎛️</span>
       <span class="nav-label" data-i18n="navFilter">Filter</span>
-    </button>
-    <button type="button" class="bottom-nav-item" onclick="toggleAiDrawer()">
-      <span class="nav-icon">🤖</span>
-      <span class="nav-label" data-i18n="navAi">KI-Berater</span>
     </button>
     <button type="button" class="bottom-nav-item deals-btn" id="bottomNavDealsBtn" onclick="toggleFlashDealsFilter(event)">
       <span class="nav-icon">🔥</span>

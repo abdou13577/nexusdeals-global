@@ -480,6 +480,21 @@ const MULTILINGUAL_DICTIONARY = {
   'مفك': 'akkuschrauber',
   'غسيل سيارات': 'hochdruckreiniger',
 
+  // Automotive, Audio & Repair Tools
+  'راديو': 'autoradio radio',
+  'راديو سيارة': 'autoradio bluetooth carplay',
+  'مسجل سيارة': 'autoradio bluetooth carplay',
+  'مسجل': 'autoradio bluetooth',
+  'مشغل موسيقى': 'autoradio bluetooth carplay',
+  'مشغل موسيقى سيارة': 'autoradio bluetooth carplay',
+  'موسيقى سيارة': 'autoradio bluetooth',
+  'سبوتر': 'ausbeulspotter spotter',
+  'تعديل صدمات': 'ausbeulspotter dellenlifter',
+  'تعديل الصدمات': 'ausbeulspotter dellenlifter',
+  'لحام نقطي': 'punktschweißgerät spotter',
+  'بوردر': 'bördelgerät',
+  'كاميرا سيارة': 'dashcam autokamera',
+
   // Brands
   'سامسونج': 'samsung',
   'سامسونغ': 'samsung',
@@ -552,6 +567,20 @@ function parseAndExpandQuery(rawQ) {
   if (q.includes('funktionsparka') || q.includes('parka')) {
     expandedTerms.push('funktionsparka', 'parka', 'winterparka', 'regenmantel', 'jacke');
     deSearchTokens.push('parka', 'winterjacke');
+  }
+
+  // Automotive, car audio and repair tools expansions
+  if (/radio\s*auto|auto\s*radio|autoradio|carplay|car\s*stereo|مشغل\s*موسيقى|مسجل\s*سيارة|راديو\s*سيارة/.test(q)) {
+    expandedTerms.push('autoradio', 'carplay', 'bluetooth', 'radio');
+    deSearchTokens.push('autoradio', 'bluetooth');
+  }
+  if (/ausbeul|spotter|dellenlifter|punktschweiß|karosserie/.test(q)) {
+    expandedTerms.push('ausbeulspotter', 'spotter', 'punktschweißgerät', 'karosserie');
+    deSearchTokens.push('ausbeulspotter', 'karosserie');
+  }
+  if (/bördel|bremsleitung/.test(q)) {
+    expandedTerms.push('bördelgerät', 'bremsleitung');
+    deSearchTokens.push('bördelgerät');
   }
 
   // Check multi-word phrase dictionary
@@ -636,8 +665,41 @@ const KEYWORD_RESTRICTIONS = {
   schuhe: ['schuhe', 'sneaker', 'stiefel', 'boots', 'حذاء', 'أحذية'],
   حذاء: ['schuhe', 'sneaker', 'stiefel', 'boots', 'حذاء', 'أحذية'],
   parfum: ['parfum', 'eau de', 'extrait', 'عطر', 'عطور'],
-  عطر: ['parfum', 'eau de', 'extrait', 'عطر', 'عطور']
+  عطر: ['parfum', 'eau de', 'extrait', 'عطر', 'عطور'],
+  autoradio: ['autoradio', 'carplay', 'bluetooth radio', 'car stereo', 'dab+', 'مشغل', 'مسجل'],
+  radio: ['radio', 'autoradio', 'carplay', 'stereo', 'dab+'],
+  dashcam: ['dashcam', 'autokamera'],
+  ausbeulspotter: ['ausbeulspotter', 'spotter', 'dellenlifter', 'punktschweißgerät', 'instandsetzung', 'karosserie'],
+  spotter: ['ausbeulspotter', 'spotter', 'dellenlifter', 'punktschweißgerät', 'karosserie'],
+  dellenlifter: ['dellenlifter', 'ausbeul', 'dellen', 'spotter'],
+  bördelgerät: ['bördelgerät', 'bremsleitung', 'aufweiter', 'bördeln'],
+  punktschweißgerät: ['punktschweißgerät', 'schweißgerät', 'spotter']
 };
+
+function extractSmartKeywords(rawQ) {
+  const q = (rawQ || '').trim();
+  const lower = q.toLowerCase();
+  if (/radio\s*auto|auto\s*radio|autoradio|carplay|car\s*stereo|مشغل\s*موسيقى|مسجل\s*سيارة|راديو\s*سيارة/.test(lower)) {
+    return 'Autoradio Bluetooth CarPlay';
+  }
+  if (/ausbeul|spotter|dellenlifter|punktschweiß|karosserie/.test(lower)) {
+    return 'Ausbeulspotter Karosserie';
+  }
+  if (/bördel|bremsleitung/.test(lower)) {
+    return 'Bördelgerät Bremsleitung';
+  }
+  if (lower.includes('funktionsparka')) {
+    return 'Funktionsparka Parka';
+  }
+  const words = q.replace(/[,()–|:°"/]/g, ' ').split(/\s+/).filter(Boolean);
+  const substantive = words.filter(w => {
+    const lw = w.toLowerCase();
+    return !STOP_WORDS.has(lw) && !GENERIC_MODIFIERS.has(lw) && !/^\d+$/.test(lw) && lw.length >= 3;
+  });
+  if (substantive.length === 0) return q;
+  if (substantive.length <= 3) return substantive.join(' ');
+  return substantive.slice(0, 3).join(' ');
+}
 
 function scoreProductRelevance(p, queryInfo, detectedCatId) {
   const titleDe = (p.title || '').toLowerCase();
@@ -775,38 +837,43 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
 
         // If fewer than 16 relevant products found locally, enrich with live scrape (up to 20 products)
         if (scored.length < 16 && rawQ.length >= 2) {
-          let liveScrapeQuery = queryInfo.cleanSearchQuery || queryInfo.cleanDeQuery || rawQ;
-          if (liveScrapeQuery.toLowerCase() === 'funktionsparka') {
-            liveScrapeQuery = 'Funktionsparka Parka';
-          }
-          console.log(`[Search Engine] Only ${scored.length} local matches for "${rawQ}". Live scraping Amazon for: "${liveScrapeQuery}"`);
-          const liveScraped = scrapeRealAmazonProducts(liveScrapeQuery, detectedCat.id, detectedCat.ar, 20, 15);
+          const liveScrapeQuery = extractSmartKeywords(rawQ);
+          console.log(`[Search Engine] Only ${scored.length} local matches for "${rawQ}". Live scraping for: "${liveScrapeQuery}"`);
+          const liveScraped = await scrapeRealAmazonProducts(liveScrapeQuery, detectedCat.id, detectedCat.ar, 20, 8);
           if (liveScraped.length > 0) {
             const existingAsins = new Set(catalog.products.map(x => x.asin));
             const scoredAsins = new Set(scored.map(s => s.product.asin));
+            let addedNew = false;
             for (const item of liveScraped) {
               if (!existingAsins.has(item.asin)) {
                 catalog.products.push(item);
                 existingAsins.add(item.asin);
+                addedNew = true;
               }
               if (!scoredAsins.has(item.asin)) {
-                const score = scoreProductRelevance(item, queryInfo, detectedCat.id);
-                if (score > 0) {
-                  scored.push({ product: item, score });
-                  scoredAsins.add(item.asin);
+                let score = scoreProductRelevance(item, queryInfo, detectedCat.id);
+                if (score <= 0) {
+                  score = 75; // Guarantee visibility for freshly searched matching items
                 }
+                scored.push({ product: item, score });
+                scoredAsins.add(item.asin);
               }
             }
+            if (addedNew) {
+              catalog.totalProducts = catalog.products.length;
+              catalog.lastSyncedAt = new Date().toISOString();
+              saveJson(CATALOG_PATH, catalog);
+            }
             scored.sort((a, b) => b.score - a.score);
-            catalog.totalProducts = catalog.products.length;
-            catalog.lastSyncedAt = new Date().toISOString();
-            saveJson(CATALOG_PATH, catalog);
           }
         }
 
         // Cutoff threshold: must have at least score >= 25
         const minThreshold = scored.length > 0 ? Math.max(25, scored[0].score * 0.15) : 25;
-        const filteredScored = scored.filter(s => s.score >= minThreshold);
+        let filteredScored = scored.filter(s => s.score >= minThreshold);
+        if (filteredScored.length === 0 && scored.length > 0) {
+          filteredScored = scored;
+        }
         list = filteredScored.map(s => s.product);
       }
 
@@ -844,7 +911,7 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       }
 
       const fallbackImg = prod ? prod.image : '';
-      const gallery = scrapeProductGalleryByAsin(asin, fallbackImg);
+      const gallery = await scrapeProductGalleryByAsin(asin, fallbackImg);
       if (prod && gallery.length > 0) {
         prod.images = gallery;
         saveJson(CATALOG_PATH, catalog);

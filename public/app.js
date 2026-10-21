@@ -387,6 +387,33 @@ function clearSearch() {
   loadProducts();
 }
 
+function setActiveBottomNav(btnId) {
+  document.querySelectorAll('.bottom-nav-item').forEach(b => {
+    if (b.id !== 'bottomNavDealsBtn') {
+      b.classList.toggle('active', b.id === btnId);
+    }
+  });
+}
+
+function handleBottomNavHome(e) {
+  if (e) e.preventDefault();
+  setActiveBottomNav('bottomNavHomeBtn');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  closeFilterDrawer();
+  resetAllFilters();
+}
+
+function handleBottomNavSearch(e) {
+  if (e) e.preventDefault();
+  setActiveBottomNav('bottomNavSearchBtn');
+  focusMobileSearch();
+}
+
+function handleBottomNavFilter(e) {
+  if (e) e.preventDefault();
+  toggleFilterDrawer();
+}
+
 function focusMobileSearch() {
   const input = document.getElementById('mainSearchInput');
   if (input) {
@@ -417,9 +444,26 @@ function toggleFlashDealsFilter(e) {
 function toggleFilterDrawer() {
   const filterDrawer = document.getElementById('filterDrawer');
   const btn = document.getElementById('filterToggleBtn');
+  const bottomFilterBtn = document.getElementById('bottomNavFilterBtn');
   if (!filterDrawer) return;
   const isOpen = filterDrawer.classList.toggle('open');
   if (btn) btn.classList.toggle('active', isOpen);
+  if (bottomFilterBtn) bottomFilterBtn.classList.toggle('active', isOpen);
+  if (isOpen) {
+    setActiveBottomNav('bottomNavFilterBtn');
+  } else {
+    setActiveBottomNav('bottomNavHomeBtn');
+  }
+}
+
+function closeFilterDrawer() {
+  const filterDrawer = document.getElementById('filterDrawer');
+  const btn = document.getElementById('filterToggleBtn');
+  const bottomFilterBtn = document.getElementById('bottomNavFilterBtn');
+  if (filterDrawer) filterDrawer.classList.remove('open');
+  if (btn) btn.classList.remove('active');
+  if (bottomFilterBtn) bottomFilterBtn.classList.remove('active');
+  setActiveBottomNav('bottomNavHomeBtn');
 }
 
 function toggleAiDrawer() {

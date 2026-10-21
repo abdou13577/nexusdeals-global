@@ -29,11 +29,20 @@
   <!-- Sleek Compact Header -->
   <header class="main-header">
     <div class="header-inner">
-      <div class="brand-logo" onclick="resetAllFilters()">
-        <div class="logo-icon">N</div>
-        <div class="brand-text">
-          <h1>NexusDeals</h1>
-          <span data-i18n="subBrandText">Amazon • OTTO • Kaufland • Zalando • eBay • MediaMarkt • Temu • AliExpress</span>
+      <div class="header-top-row">
+        <div class="brand-logo" onclick="resetAllFilters()">
+          <div class="logo-icon">N</div>
+          <div class="brand-text">
+            <h1>NexusDeals</h1>
+            <span class="brand-subtitle" data-i18n="subBrandText">Amazon • OTTO • Kaufland • Zalando • eBay • MediaMarkt • Temu • AliExpress</span>
+          </div>
+        </div>
+
+        <!-- 3-Language Switcher -->
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn active" id="langBtn-de" onclick="setLanguage('de')">DE</button>
+          <button type="button" class="lang-btn" id="langBtn-en" onclick="setLanguage('en')">EN</button>
+          <button type="button" class="lang-btn" id="langBtn-ar" onclick="setLanguage('ar')">AR</button>
         </div>
       </div>
 
@@ -54,13 +63,6 @@
         <button type="button" class="btn-action btn-ai-highlight" id="aiToggleBtn" onclick="toggleAiDrawer()">
           <span data-i18n="aiHeaderBtn">🤖 KI-Kaufberater ▾</span>
         </button>
-
-        <!-- 3-Language Switcher -->
-        <div class="lang-switcher">
-          <button type="button" class="lang-btn active" id="langBtn-de" onclick="setLanguage('de')">DE</button>
-          <button type="button" class="lang-btn" id="langBtn-en" onclick="setLanguage('en')">EN</button>
-          <button type="button" class="lang-btn" id="langBtn-ar" onclick="setLanguage('ar')">AR</button>
-        </div>
       </div>
     </div>
 
@@ -204,6 +206,30 @@
 
     <div class="lightbox-thumbs-bar" id="lightboxThumbsBar"></div>
   </div>
+
+  <!-- Native Mobile App Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <button type="button" class="bottom-nav-item active" onclick="resetAllFilters()">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label" data-i18n="navHome">Start</span>
+    </button>
+    <button type="button" class="bottom-nav-item" onclick="focusMobileSearch()">
+      <span class="nav-icon">🔍</span>
+      <span class="nav-label" data-i18n="navSearch">Suche</span>
+    </button>
+    <button type="button" class="bottom-nav-item" onclick="toggleFilterDrawer()">
+      <span class="nav-icon">🎛️</span>
+      <span class="nav-label" data-i18n="navFilter">Filter</span>
+    </button>
+    <button type="button" class="bottom-nav-item" onclick="toggleAiDrawer()">
+      <span class="nav-icon">🤖</span>
+      <span class="nav-label" data-i18n="navAi">KI-Berater</span>
+    </button>
+    <a href="/owner-admin-portal.html" class="bottom-nav-item">
+      <span class="nav-icon">👑</span>
+      <span class="nav-label" data-i18n="navAdmin">Admin</span>
+    </a>
+  </nav>
 
   <script src="/app.js"></script>
 </body>

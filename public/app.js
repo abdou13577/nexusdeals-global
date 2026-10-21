@@ -128,7 +128,12 @@ const I18N = {
     aiFormattedReply: (best, bestOffer, amzOffer, saving) =>
       `🤖 تحليل المساعد الذكي للمنتجات الحقيقية:\n` +
       `🏆 أفضل ترشيح لك اليوم: ${best.title} (ASIN: ${best.asin})\n` +
-      `• السعر المباشر في Amazon.de: ${amzOffer.price.toFixed(2)} € | أرخص عرض في ${bestOffer.store}: ${bestOffer.price.toFixed(2)} € (توفير ${saving} €):`
+      `• السعر المباشر في Amazon.de: ${amzOffer.price.toFixed(2)} € | أرخص عرض في ${bestOffer.store}: ${bestOffer.price.toFixed(2)} € (توفير ${saving} €):`,
+    navHome: 'الرئيسية',
+    navSearch: 'بحث',
+    navFilter: 'الفلترة',
+    navAi: 'المساعد AI',
+    navAdmin: 'الأدمن'
   },
 
   de: {
@@ -223,7 +228,12 @@ const I18N = {
     aiFormattedReply: (best, bestOffer, amzOffer, saving) =>
       `🤖 KI-Deal-Analyse:\n` +
       `🏆 Beste Empfehlung heute: ${best.title} (ASIN: ${best.asin})\n` +
-      `• Live-Preis auf Amazon.de: ${amzOffer.price.toFixed(2)} € | Günstigstes Angebot bei ${bestOffer.store}: ${bestOffer.price.toFixed(2)} € (Ersparnis: ${saving} €):`
+      `• Live-Preis auf Amazon.de: ${amzOffer.price.toFixed(2)} € | Günstigstes Angebot bei ${bestOffer.store}: ${bestOffer.price.toFixed(2)} € (Ersparnis: ${saving} €):`,
+    navHome: 'Start',
+    navSearch: 'Suche',
+    navFilter: 'Filter',
+    navAi: 'KI-Berater',
+    navAdmin: 'Admin'
   },
 
   en: {
@@ -318,7 +328,12 @@ const I18N = {
     aiFormattedReply: (best, bestOffer, amzOffer, saving) =>
       `🤖 AI Analysis of Verified Live Products:\n` +
       `🏆 Top Recommendation Today: ${best.title} (ASIN: ${best.asin})\n` +
-      `• Live Price on Amazon.de: ${amzOffer.price.toFixed(2)} € | Cheapest offer on ${bestOffer.store}: ${bestOffer.price.toFixed(2)} € (Save ${saving} €):`
+      `• Live Price on Amazon.de: ${amzOffer.price.toFixed(2)} € | Cheapest offer on ${bestOffer.store}: ${bestOffer.price.toFixed(2)} € (Save ${saving} €):`,
+    navHome: 'Home',
+    navSearch: 'Search',
+    navFilter: 'Filter',
+    navAi: 'AI Assistant',
+    navAdmin: 'Admin'
   }
 };
 
@@ -336,6 +351,14 @@ document.addEventListener('DOMContentLoaded', () => {
   setLanguage(currentLang);
   loadProducts();
 });
+
+function focusMobileSearch() {
+  const input = document.getElementById('mainSearchInput');
+  if (input) {
+    input.focus();
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
 
 function toggleFilterDrawer() {
   const filterDrawer = document.getElementById('filterDrawer');
@@ -450,6 +473,13 @@ async function loadProducts() {
   }
 }
 
+function handleCardClick(e, productId) {
+  if (e.target.closest('.btn-buy-best') || e.target.closest('.offer-row')) {
+    return;
+  }
+  openProductModal(productId);
+}
+
 function renderProductsGrid(products, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -495,7 +525,7 @@ function renderProductsGrid(products, containerId) {
     const bestOutUrl = `/api/out?productId=${encodeURIComponent(p.id)}&asin=${encodeURIComponent(p.asin || '')}&store=${encodeURIComponent(bestOffer.store)}&price=${encodeURIComponent(bestOffer.price)}&query=${encodeURIComponent(bestOffer.query || p.title)}${bestDirectParam}`;
 
     return `
-      <article class="product-card">
+      <article class="product-card" onclick="handleCardClick(event, '${p.id}')">
         <div class="card-badges">
           <span class="badge-deal">${escapeHtml(badgeLeft)}</span>
           <span class="badge-Savings">${escapeHtml(badgeRight)}</span>

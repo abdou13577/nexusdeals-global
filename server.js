@@ -204,8 +204,9 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
 
   // If a direct product page URL is already known, append affiliate tag and redirect directly!
   if (directUrl && typeof directUrl === 'string' && directUrl.startsWith('http')) {
-    if (store === 'Amazon' && tags.Amazon) {
-      return directUrl.includes('?') ? `${directUrl}&tag=${encodeURIComponent(tags.Amazon)}` : `${directUrl}?tag=${encodeURIComponent(tags.Amazon)}`;
+    if (store === 'Amazon') {
+      const tag = tags.Amazon || 'nexusdeals08-21';
+      return directUrl.includes('tag=') ? directUrl : (directUrl.includes('?') ? `${directUrl}&tag=${encodeURIComponent(tag)}` : `${directUrl}?tag=${encodeURIComponent(tag)}`);
     }
     if (store === 'eBay' && tags.eBay) {
       return directUrl.includes('?') ? `${directUrl}&campid=${encodeURIComponent(tags.eBay)}` : `${directUrl}?campid=${encodeURIComponent(tags.eBay)}`;
@@ -233,12 +234,12 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
 
   switch (store) {
     case 'Amazon': {
-      const tagParam = tags.Amazon ? `?tag=${encodeURIComponent(tags.Amazon)}` : '';
+      const tagParam = `?tag=${encodeURIComponent(tags.Amazon || 'nexusdeals08-21')}`;
       const validAsin = asin && /^[A-Z0-9]{10}$/i.test(asin.trim()) ? asin.trim().toUpperCase() : null;
       if (validAsin) {
         return `https://www.amazon.de/dp/${validAsin}${tagParam}`;
       }
-      return `https://www.amazon.de/s?k=${q}${tags.Amazon ? `&tag=${encodeURIComponent(tags.Amazon)}` : ''}`;
+      return `https://www.amazon.de/s?k=${q}&tag=${encodeURIComponent(tags.Amazon || 'nexusdeals08-21')}`;
     }
     case 'eBay': {
       const tagParam = tags.eBay ? `&mkcid=1&mkrid=707-53477-19255-0&campid=${encodeURIComponent(tags.eBay)}` : '';
@@ -902,7 +903,12 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
         list = interleaveDiverseProducts(list);
       }
 
-      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.writeHead(200, {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      });
       return res.end(JSON.stringify({
         total: list.length,
         lastSyncedAt: catalog.lastSyncedAt,

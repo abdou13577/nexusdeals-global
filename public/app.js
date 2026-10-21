@@ -50,8 +50,8 @@ let lastSearchQuery = '';
 const I18N = {
   ar: {
     dir: 'rtl',
-    pageTitle: 'NexusDeals Global | قارن الأسعار في 12 منصة عالمية (Amazon • OTTO • Kaufland • Zalando • eBay • Temu)',
-    subBrandText: 'Amazon • OTTO • Kaufland • Zalando • eBay • MediaMarkt • Temu • AliExpress',
+    pageTitle: 'NexusDeals Global | قارن الأسعار والشراء المباشر عبر المتاجر الكبرى',
+    subBrandText: 'Amazon • OTTO • MediaMarkt • Kaufland • Zalando • Galaxus • eBay • Douglas',
     searchPlaceholder: 'ابحث عن أي منتج (هواتف، ملابس، عطور، أثاث، أدوات، ألعاب...)',
     searchBtn: '🔍 بحث',
     filterMenuBtn: '🎛️ الفلترة والترتيب ▾',
@@ -89,7 +89,7 @@ const I18N = {
     cat_wearables: '⌚ الساعات الذكية',
     cat_cameras: '📷 الكاميرات والدرون',
     filterStoreLabel: 'المتجر / المنصة العالمية:',
-    storeAll: 'الكل (12 منصة)',
+    storeAll: 'جميع المتاجر المعتمدة',
     maxPriceTitle: 'أقصى سعر:',
     noLimit: 'الكل (بدون حد)',
     upToPrice: (v) => `حتى ${v} €`,
@@ -101,7 +101,7 @@ const I18N = {
     sortRating: 'الأعلى تقييماً ⭐',
     catalogTip: '💡 اضغط على أي متجر للشراء المباشر أو "مقارنة شاملة" لرؤية كل المنصات وتاريخ السعر.',
     resultsSearch: (q, n) => `🔍 نتائج البحث عن <strong>"${q}"</strong>: <strong>${n}</strong> منتج حقيقي`,
-    resultsAll: (n) => `📦 يعرض <strong>${n}</strong> منتج حقيقي الأكثر مبيعاً عبر 12 منصة عالمية`,
+    resultsAll: (n) => `📦 يعرض <strong>${n}</strong> منتج حقيقي الأكثر مبيعاً في المتاجر المعتمدة`,
     noResultsTitle: 'لم يتم العثور على نتائج مطابقة لهذه الفلاتر',
     noResultsDesc: 'جرب زيادة الحد الأقصى للسعر أو البحث عن اسم أي منتج تريد جلبه فوراً.',
     showAllBtn: 'إظهار جميع المنتجات 🔄',
@@ -112,7 +112,7 @@ const I18N = {
     inStockReady: '✔️ متوفر',
     cheapestTag: '🏆 الأرخص',
     deliveryStore: (store) => `شحن من ${store}`,
-    buyFromBtn: (store, price) => `🛒 اشترِ من ${store} (${price}€)`,
+    buyFromBtn: (store, price) => `🛒 الشراء مباشرة من ${store} (${price}€) ↗`,
     compareHistoryBtn: (n) => `📊 قارن (${n} متاجر)`,
     aiVerdictCard: (price, asin) => `سعر حقيقي مباشر في Amazon.de (${price}€) • ASIN: ${asin}`,
     modalSpecs: (title, asin, price) => [
@@ -150,8 +150,8 @@ const I18N = {
 
   de: {
     dir: 'ltr',
-    pageTitle: 'NexusDeals Global | Preisvergleich über 12 Plattformen (Amazon • OTTO • Kaufland • Zalando • eBay • Temu)',
-    subBrandText: 'Amazon • OTTO • Kaufland • Zalando • eBay • MediaMarkt • Temu • AliExpress',
+    pageTitle: 'NexusDeals Global | Preisvergleich & Direktkauf führender Marktplätze',
+    subBrandText: 'Amazon • OTTO • MediaMarkt • Kaufland • Zalando • Galaxus • eBay • Douglas',
     searchPlaceholder: 'Produkt suchen (Smartphones, Mode, Parfum, Möbel, Werkzeug, Spielzeug...)',
     searchBtn: '🔍 Suchen',
     filterMenuBtn: '🎛️ Filter & Sortierung ▾',
@@ -189,7 +189,7 @@ const I18N = {
     cat_wearables: '⌚ Smartwatches',
     cat_cameras: '📷 Kameras & Drohnen',
     filterStoreLabel: 'Shop / Plattform:',
-    storeAll: 'Alle (12 Shops)',
+    storeAll: 'Alle verifizierten Shops',
     maxPriceTitle: 'Max. Preis:',
     noLimit: 'Alle (Kein Limit)',
     upToPrice: (v) => `Bis ${v} €`,
@@ -201,7 +201,7 @@ const I18N = {
     sortRating: 'Beste Bewertung ⭐',
     catalogTip: '💡 Klicken Sie auf einen Shop zum Direktkauf oder auf „Vergleichen“ für alle Shops & Preisverlauf.',
     resultsSearch: (q, n) => `🔍 Suchergebnisse für <strong>„${q}“</strong>: <strong>${n}</strong> echte Produkte`,
-    resultsAll: (n) => `📦 <strong>${n}</strong> verifizierte Bestseller-Produkte im Preisvergleich über 12 Plattformen`,
+    resultsAll: (n) => `📦 Zeigt <strong>${n}</strong> verifizierte Bestseller führender europäischer Marktplätze`,
     noResultsTitle: 'Keine passenden Produkte für diese Filter gefunden',
     noResultsDesc: 'Erhöhen Sie das Preislimit oder suchen Sie oben nach einem beliebigen Produktnamen.',
     showAllBtn: 'Alle Produkte anzeigen 🔄',
@@ -212,7 +212,7 @@ const I18N = {
     inStockReady: '✔️ Lieferbar',
     cheapestTag: '🏆 Bestpreis',
     deliveryStore: (store) => `Versand via ${store}`,
-    buyFromBtn: (store, price) => `🛒 Bei ${store} (${price}€)`,
+    buyFromBtn: (store, price) => `🛒 Bei ${store} kaufen (${price}€) ↗`,
     compareHistoryBtn: (n) => `📊 Vergleich (${n} Shops)`,
     aiVerdictCard: (price, asin) => `Verifizierter Live-Preis auf Amazon.de (${price}€) • ASIN: ${asin}`,
     modalSpecs: (title, asin, price) => [
@@ -250,8 +250,8 @@ const I18N = {
 
   en: {
     dir: 'ltr',
-    pageTitle: 'NexusDeals Global | Live Price Comparison across 12 Platforms (Amazon • OTTO • Kaufland • Zalando • eBay • Temu)',
-    subBrandText: 'Amazon • OTTO • Kaufland • Zalando • eBay • MediaMarkt • Temu • AliExpress',
+    pageTitle: 'NexusDeals Global | Direct Buy & Price Comparison across Top Stores',
+    subBrandText: 'Amazon • OTTO • MediaMarkt • Kaufland • Zalando • Galaxus • eBay • Douglas',
     searchPlaceholder: 'Search any product (smartphones, fashion, perfumes, furniture, tools, toys...)',
     searchBtn: '🔍 Search',
     filterMenuBtn: '🎛️ Filter & Sort ▾',
@@ -289,7 +289,7 @@ const I18N = {
     cat_wearables: '⌚ Smartwatches',
     cat_cameras: '📷 Cameras & Drones',
     filterStoreLabel: 'Global Store / Platform:',
-    storeAll: 'All (12 Stores)',
+    storeAll: 'All Verified Stores',
     maxPriceTitle: 'Max Price:',
     noLimit: 'All (No Limit)',
     upToPrice: (v) => `Up to ${v} €`,
@@ -301,7 +301,7 @@ const I18N = {
     sortRating: 'Highest Rating ⭐',
     catalogTip: '💡 Click any store row to buy directly, or click "Compare" for all stores & 90-day price chart.',
     resultsSearch: (q, n) => `🔍 Live results for <strong>"${q}"</strong>: <strong>${n}</strong> real products`,
-    resultsAll: (n) => `📦 Showing <strong>${n}</strong> verified best-selling products compared across 12 platforms`,
+    resultsAll: (n) => `📦 Showing <strong>${n}</strong> verified best-sellers across top European marketplaces`,
     noResultsTitle: 'No matching products found for these filters',
     noResultsDesc: 'Try increasing the maximum price slider or search any product name above.',
     showAllBtn: 'Show All Products 🔄',
@@ -312,7 +312,7 @@ const I18N = {
     inStockReady: '✔️ In Stock',
     cheapestTag: '🏆 Cheapest',
     deliveryStore: (store) => `Ships from ${store}`,
-    buyFromBtn: (store, price) => `🛒 Buy at ${store} (${price}€)`,
+    buyFromBtn: (store, price) => `🛒 Buy directly at ${store} (${price}€) ↗`,
     compareHistoryBtn: (n) => `📊 Compare (${n} Stores)`,
     aiVerdictCard: (price, asin) => `Live verified price on Amazon.de (${price}€) • ASIN: ${asin}`,
     modalSpecs: (title, asin, price) => [
@@ -540,7 +540,8 @@ async function loadProducts() {
     category: currentCategory,
     store: currentStore,
     sort: sort,
-    flash: flashOnly ? 'true' : 'false'
+    flash: flashOnly ? 'true' : 'false',
+    _t: Date.now()
   });
 
   if (currentMaxPrice < 2500) {
@@ -551,7 +552,13 @@ async function loadProducts() {
   }
 
   try {
-    const res = await fetch(`/api/products?${params.toString()}`);
+    const res = await fetch(`/api/products?${params.toString()}`, {
+      cache: 'no-store',
+      headers: {
+        'Pragma': 'no-cache',
+        'Cache-Control': 'no-cache'
+      }
+    });
     const data = await res.json();
     allProducts = data.products || [];
     updateStatusBarText();

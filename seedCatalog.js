@@ -301,9 +301,19 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
       directUrl = `https://de.shein.com/pdsearch/${encodeURIComponent(smartQuery)}/`;
     }
 
-    const offerImage = (Array.isArray(galleryImages) && galleryImages.length > 0)
-      ? galleryImages[idx % galleryImages.length]
-      : undefined;
+    const storePool = {
+      eBay: ['https://i.ebayimg.com/images/g/x8AAAOSwsNFl~5bW/s-l1600.jpg', 'https://i.ebayimg.com/images/g/H~AAAOSwSjZlwV4v/s-l1600.jpg'],
+      OTTO: ['https://i.otto.de/i/otto/36881958/sony-wh-1000xm4-over-ear-kopfhoerer-schwarz.jpg'],
+      IKEA: ['https://www.ikea.com/de/de/images/products/billy-buecherregal-weiss__0625599_pe692385_s5.jpg']
+    };
+
+    let storeImages;
+    if (isAmazon) {
+      storeImages = (Array.isArray(galleryImages) && galleryImages.length > 0) ? galleryImages : [];
+    } else {
+      storeImages = storePool[store] || [];
+    }
+    const offerImage = storeImages.length > 0 ? storeImages[0] : (galleryImages[0] || undefined);
 
     return {
       store,
@@ -318,6 +328,7 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
       variantColor,
       variantTitle,
       image: offerImage,
+      images: storeImages.length > 0 ? storeImages : [offerImage].filter(Boolean),
       directUrl
     };
   });

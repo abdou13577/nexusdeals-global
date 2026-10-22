@@ -1131,38 +1131,14 @@ async function openProductModal(productId) {
   currentModalProductId = productId;
   currentSelectedStore = initialOffer.store;
 
-  // Render initial gallery or fetch real multi-image gallery from Amazon.de live
-  if (Array.isArray(product.images) && product.images.length > 1) {
-    activeModalImages = product.images;
-    if (Array.isArray(product.offers)) {
-      product.offers.forEach((o, i) => {
-        if (!o.image) o.image = product.images[i % product.images.length];
-      });
-    }
-    renderModalGalleryUI(product.images, dict.galleryReady(product.images.length));
-    selectStorePreview(product.id, currentSelectedStore, true);
-  } else {
-    activeModalImages = [product.image];
-    renderModalGalleryUI([product.image], dict.galleryLoading);
-    selectStorePreview(product.id, currentSelectedStore, true);
-    if (product.asin) {
-      try {
-        const res = await fetch(`/api/product-gallery?asin=${encodeURIComponent(product.asin)}`);
-        const data = await res.json();
-        if (data.images && data.images.length > 0) {
-          product.images = data.images;
-          activeModalImages = data.images;
-          if (Array.isArray(product.offers)) {
-            product.offers.forEach((o, i) => {
-              if (!o.image) o.image = data.images[i % data.images.length];
-            });
-          }
-          renderModalGalleryUI(product.images, dict.galleryReady(product.images.length));
-          selectStorePreview(product.id, currentSelectedStore, true);
-        }
-      } catch (e) {}
-    }
-  }
+  // Render initial gallery using THAT store's authentic images
+  const initialImages = (Array.isArray(initialOffer.images) && initialOffer.images.length > 0)
+    ? initialOffer.images
+    : (initialOffer.image ? [initialOffer.image] : (Array.isArray(product.images) && product.images.length > 0 ? product.images : [product.image]));
+
+  activeModalImages = initialImages;
+  renderModalGalleryUI(initialImages, dict.stageLiveFrom(initialOffer.store));
+  selectStorePreview(product.id, currentSelectedStore, false);
 }
 
 function closeProductModal() {
@@ -1173,7 +1149,7 @@ function closeProductModal() {
   currentSelectedStore = null;
 }
 
-function selectStorePreview(productId, storeName, updateGalleryThumbnail = true) {
+function selectStorePreview(productId, storeName, updateGallery = true) {
   const product = allProducts.find(p => p.id === productId);
   if (!product) return;
   const storeIdx = (product.offers || []).findIndex(o => o.store.toLowerCase() === (storeName || '').toLowerCase());
@@ -1217,7 +1193,7 @@ function selectStorePreview(productId, storeName, updateGalleryThumbnail = true)
     stagePriceNumber.textContent = `${offer.price.toFixed(2)} €`;
   }
 
-  const refPrice = product.msrp && product.msrp > offer.price ? product.msrp : null;
+  const refPrice = (offer.msrp && offer.msrp > offer.price) ? offer.msrp : ((product.msrp && product.msrp > offer.price) ? product.msrp : null);
   if (stagePriceMsrp) {
     if (refPrice) {
       stagePriceMsrp.textContent = `${refPrice.toFixed(2)} €`;
@@ -1252,16 +1228,19 @@ function selectStorePreview(productId, storeName, updateGalleryThumbnail = true)
     stageDirectBuyLink.innerHTML = dict.stageDirectBuyBtn(offer.store, offer.price.toFixed(2));
   }
 
-  // 5. Morph Specs List
+  // 5. Morph Specs List to THAT store's actual specs
   const stageSpecsList = document.getElementById('stageSpecsList');
   if (stageSpecsList) {
-    stageSpecsList.innerHTML = `
-      <li><strong>${dict.stageSpecRetailer(offer.store)}</strong></li>
-      <li>${dict.stageSpecTitle(escapeHtml(displayTitle))}</li>
-      <li>${dict.stageSpecPrice(offer.price.toFixed(2))}</li>
-      <li>${dict.stageSpecRating(offer.rating || 4.8)}</li>
-      <li>${dict.stageSpecShipping(offer.store)}</li>
-    `;
+    const specsItems = (Array.isArray(offer.specs) && offer.specs.length > 0)
+      ? offer.specs
+      : [
+          `<strong>${dict.stageSpecRetailer(offer.store)}</strong>`,
+          dict.stageSpecTitle(escapeHtml(displayTitle)),
+          dict.stageSpecPrice(offer.price.toFixed(2)),
+          dict.stageSpecRating(offer.rating || 4.8),
+          dict.stageSpecShipping(offer.store)
+        ];
+    stageSpecsList.innerHTML = specsItems.map(s => `<li>${s.startsWith('<') ? s : escapeHtml(s)}</li>`).join('');
   }
 
   // 6. Update Target Price Input
@@ -1270,39 +1249,16 @@ function selectStorePreview(productId, storeName, updateGalleryThumbnail = true)
     alertPriceInput.value = Math.round(offer.price * 0.92);
   }
 
-  // 7. Morph Image with smooth transition
-  const storeImage = offer.image || (activeModalImages && activeModalImages.length > 0 ? activeModalImages[storeIdx >= 0 ? storeIdx % activeModalImages.length : 0] : product.image);
-  const mainImg = document.getElementById('modalMainGalleryImg');
-  if (mainImg && storeImage && mainImg.src !== storeImage) {
-    mainImg.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
-    mainImg.style.opacity = '0.35';
-    mainImg.style.transform = 'scale(0.97)';
-    mainImg.src = storeImage;
-    setTimeout(() => {
-      if (mainImg) {
-        mainImg.style.opacity = '1';
-        mainImg.style.transform = 'scale(1)';
-      }
-    }, 120);
-  }
+  // 7. Morph Gallery to THAT store's dedicated authentic photos!
+  const storeImages = (Array.isArray(offer.images) && offer.images.length > 0)
+    ? offer.images
+    : (offer.image ? [offer.image] : (product.images || [product.image]));
 
-  // 8. Synchronize gallery thumbnails
-  if (updateGalleryThumbnail && activeModalImages && activeModalImages.length > 0) {
-    let imgIdx = activeModalImages.indexOf(storeImage);
-    if (imgIdx === -1 && storeIdx >= 0) {
-      imgIdx = storeIdx % activeModalImages.length;
-    }
-    if (imgIdx !== -1) {
-      activeModalImgIdx = imgIdx;
-      document.querySelectorAll('.gallery-thumb').forEach((th, i) => {
-        th.classList.toggle('active', i === imgIdx);
-      });
-      const counterEl = document.getElementById('modalGalleryCounter');
-      if (counterEl) counterEl.textContent = `${imgIdx + 1} / ${activeModalImages.length}`;
-    }
-  }
+  activeModalImages = storeImages;
+  activeModalImgIdx = 0;
+  renderModalGalleryUI(storeImages, dict.stageLiveFrom(offer.store));
 
-  // 9. Update Active Highlight and Row Indicators below
+  // 8. Update Active Highlight and Row Indicators below
   (product.offers || []).forEach(o => {
     const rowEl = document.getElementById(`offerRow-${product.id}-${o.store}`);
     const indEl = document.getElementById(`rowIndicator-${product.id}-${o.store}`);
@@ -1321,7 +1277,7 @@ function selectStorePreview(productId, storeName, updateGalleryThumbnail = true)
     }
   });
 
-  // 10. Subtle pulse on Stage Card
+  // 9. Subtle pulse on Stage Card
   if (stageCard) {
     stageCard.classList.remove('stage-pulsing-update');
     void stageCard.offsetWidth; // trigger reflow

@@ -289,9 +289,15 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
       return `https://www.ikea.com/de/de/search/?q=${q}${tagParam}`;
     }
     case 'AliExpress': {
-      const tagParam = (tags.AliExpress && !isDirectMode) ? `?aff_fcid=${encodeURIComponent(tags.AliExpress)}` : '';
       const priceFilter = numPrice > 15 ? `&minPrice=${minPrice}&maxPrice=${maxPrice}` : '';
-      return `https://www.aliexpress.com/w/wholesale-${q.replace(/%20/g, '-')}.html${priceFilter}${tagParam}`;
+      const rawUrl = `https://www.aliexpress.com/w/wholesale-${q.replace(/%20/g, '-')}.html${priceFilter}`;
+      if (tags.AliExpress && !isDirectMode) {
+        if (/^\d+$/.test(tags.AliExpress.trim())) {
+          return `https://www.awin1.com/cread.php?awinmid=10748&awinaffid=${encodeURIComponent(tags.AliExpress.trim())}&ued=${encodeURIComponent(rawUrl)}`;
+        }
+        return `${rawUrl}?aff_fcid=${encodeURIComponent(tags.AliExpress)}`;
+      }
+      return rawUrl;
     }
     case 'Temu': {
       if (!isDirectMode && (!query || query.trim() === '' || query === 'Deals')) {

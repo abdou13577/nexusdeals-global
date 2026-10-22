@@ -13,7 +13,7 @@
     "Douglas": "3130490",
     "IKEA": "",
     "AliExpress": "",
-    "Temu": "",
+    "Temu": "aph89702",
     "SHEIN": ""
   },
   "storeModes": {
@@ -27,7 +27,7 @@
     "eBay": "direct",
     "IKEA": "direct",
     "AliExpress": "direct",
-    "Temu": "direct",
+    "Temu": "affiliate",
     "SHEIN": "direct"
   },
   "payoutSettings": {

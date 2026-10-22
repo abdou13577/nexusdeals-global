@@ -231,7 +231,8 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
       return directUrl.includes('?') ? `${directUrl}&utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}` : `${directUrl}?utm_source=affiliate&partnerId=${encodeURIComponent(tags.Kaufland)}`;
     }
     if (store === 'Temu' && tags.Temu) {
-      return directUrl.includes('?') ? `${directUrl}&aff_id=${encodeURIComponent(tags.Temu)}` : `${directUrl}?aff_id=${encodeURIComponent(tags.Temu)}`;
+      const sep = directUrl.includes('?') ? '&' : '?';
+      return `${directUrl}${sep}_x_ads_channel=affiliate&aff_id=${encodeURIComponent(tags.Temu)}`;
     }
     return directUrl;
   }

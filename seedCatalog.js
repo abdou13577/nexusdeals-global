@@ -284,7 +284,7 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
     } else if (store === 'AliExpress') {
       directUrl = `https://www.aliexpress.com/w/wholesale-${encodeURIComponent(smartQuery)}.html`;
     } else if (store === 'Temu') {
-      directUrl = `https://www.temu.com/de/search_result.html?search_key=${encodeURIComponent(smartQuery)}`;
+      directUrl = `https://www.temu.com/de/search_result.html?search_key=${encodeURIComponent(smartQuery)}&_x_ads_channel=affiliate&aff_id=aph89702`;
     } else if (store === 'SHEIN') {
       directUrl = `https://de.shein.com/pdsearch/${encodeURIComponent(smartQuery)}/`;
     }

@@ -38,7 +38,7 @@ const PLATFORMS = [
     domain: 'kaufland.de',
     network: 'Awin',
     defaultTrackingId: '3130490',
-    awinMid: 13809,
+    awinMid: null,
     commissionRate: 0.055,
     logo: 'kaufland',
     color: '#e30613'
@@ -82,7 +82,7 @@ const PLATFORMS = [
     domain: 'mediamarkt.de',
     network: 'Awin',
     defaultTrackingId: '3130490',
-    awinMid: 16273,
+    awinMid: null,
     commissionRate: 0.035,
     logo: 'mediamarkt',
     color: '#df0000'
@@ -174,177 +174,64 @@ function getPlatformByStoreName(storeName) {
   return PLATFORMS.find(p => p.id === norm || p.name.toLowerCase() === norm) || PLATFORMS[0];
 }
 
-// Build STRICT direct affiliate deep link without search query URLs
+// Link policy: NEVER invent product IDs. Use a verified real product URL when known,
+// otherwise a working store search URL for the exact title. Affiliate wrapping only for active programs.
+function isSearchLikeUrl(u) {
+  let d = u || '';
+  try { d = decodeURIComponent(d); } catch (e) {}
+  return !d || /search|suche|_nkw=|katalog\/\?q|wholesale|pdsearch|\/s\?k=/.test(d);
+}
+
+function storeSearchUrl(platform, title) {
+  const q = encodeURIComponent((title || '').replace(/[^\w\sÄÖÜäöüß.-]/g, ' ').replace(/\s+/g, ' ').trim().split(' ').slice(0, 8).join(' '));
+  switch (platform.id) {
+    case 'amazon': return 'https://www.amazon.de/s?k=' + q;
+    case 'otto': return 'https://www.otto.de/suche/' + q + '/';
+    case 'kaufland': return 'https://www.kaufland.de/item/search/?search_value=' + q;
+    case 'ebay': return 'https://www.ebay.de/sch/i.html?_nkw=' + q + '&LH_BIN=1';
+    case 'temu': return 'https://www.temu.com/de/search_result.html?search_key=' + q;
+    case 'zalando': return 'https://www.zalando.de/katalog/?q=' + q;
+    case 'mediamarkt': return 'https://www.mediamarkt.de/de/search.html?query=' + q;
+    case 'galaxus': return 'https://www.galaxus.de/de/search?q=' + q;
+    case 'douglas': return 'https://www.douglas.de/de/search?q=' + q;
+    case 'ikea': return 'https://www.ikea.com/de/de/search/?q=' + q;
+    case 'aliexpress': return 'https://de.aliexpress.com/w/wholesale-' + q + '.html';
+    case 'shein': return 'https://de.shein.com/pdsearch/' + q + '/';
+    default: return 'https://www.amazon.de/s?k=' + q;
+  }
+}
+
 function buildDirectAffiliateUrl(platformKey, details = {}, settings = {}) {
   const platform = getPlatformByStoreName(platformKey);
   const tags = (settings && settings.affiliateIds) || {};
-  const trackingId = tags[platform.name] || platform.defaultTrackingId;
+  const trackingId = tags[platform.name] || (platform.id === 'amazon' ? platform.defaultTrackingId : '');
+  let url = details.direct_affiliate_url || details.directUrl || '';
 
-  const existingUrl = details.direct_affiliate_url || details.directUrl || '';
-  // If already a complete direct affiliate deep link, avoid double wrapping
-  if (existingUrl && (
-    existingUrl.includes('awin1.com/cread.php') ||
-    (existingUrl.includes('campid=') && existingUrl.includes('ebay.de/itm/')) ||
-    (existingUrl.includes('tag=') && existingUrl.includes('amazon.de/dp/')) ||
-    (existingUrl.includes('aff_id=') && existingUrl.includes('temu.com/de/'))
-  )) {
-    return existingUrl;
-  }
-  const title = details.title || details.query || 'deal';
-  const slug = slugify(title);
+  // unwrap legacy awin wrappers (closed merchants) to the plain destination
+  const m = url.match(/awin1\.com\/cread\.php.*[?&]ued=([^&]+)/);
+  if (m) { try { url = decodeURIComponent(m[1]); } catch (e) {} }
+  if (/closedMerchant/.test(url)) url = '';
+
   const asin = (details.asin || '').trim();
-  const ean = details.ean || details.sku || '';
-
-  // Deterministic fallback ID based on title/asin to guarantee exact product URL
-  const hash = hashString(asin || details.productId || title);
-  const numericId = 100000000 + (hash % 899999999);
-
-  // Check if existingUrl is already a real direct product page URL (NOT a search URL)
-  const isSearchUrl = !existingUrl ||
-    existingUrl.includes('/suche/') ||
-    existingUrl.includes('search_value=') ||
-    existingUrl.includes('/search?') ||
-    existingUrl.includes('/search/?') ||
-    existingUrl.includes('/search.html') ||
-    existingUrl.includes('_nkw=') ||
-    existingUrl.includes('/pdsearch/') ||
-    existingUrl.includes('/katalog/?q=') ||
-    existingUrl.includes('wholesale-') ||
-    existingUrl.includes('search_type=') ||
-    existingUrl.includes('search_result') ||
-    existingUrl.includes('search_key=') ||
-    existingUrl.includes('/s?k=');
-
-  let directProductUrl = isSearchUrl ? '' : existingUrl;
-
-  switch (platform.id) {
-    case 'amazon': {
-      const tag = trackingId || 'nexusdeals08-21';
-      const cleanAsin = (asin && /^[A-Z0-9]{10}$/i.test(asin)) ? asin.toUpperCase() : (details.id && /^[A-Z0-9]{10}$/i.test(details.id) ? details.id.toUpperCase() : null);
-      if (cleanAsin) {
-        return `https://www.amazon.de/dp/${cleanAsin}?tag=${encodeURIComponent(tag)}`;
-      }
-      if (directProductUrl && directProductUrl.includes('/dp/')) {
-        return directProductUrl.includes('tag=') ? directProductUrl : `${directProductUrl}${directProductUrl.includes('?') ? '&' : '?'}tag=${encodeURIComponent(tag)}`;
-      }
-      return `https://www.amazon.de/dp/B0${(hash % 89999999 + 10000000).toString(36).toUpperCase().padStart(8, '0')}?tag=${encodeURIComponent(tag)}`;
-    }
-
-    case 'otto': {
-      if (!directProductUrl || isSearchUrl) {
-        const ottoArticleId = 300000000 + (hash % 699999999);
-        directProductUrl = `https://www.otto.de/p/${slug}-${ottoArticleId}/`;
-      }
-      if (directProductUrl.includes('awin1.com/cread.php')) return directProductUrl;
-      if (trackingId && platform.awinMid) {
-        return `https://www.awin1.com/cread.php?awinmid=${platform.awinMid}&awinaffid=${encodeURIComponent(trackingId)}&ued=${encodeURIComponent(directProductUrl)}`;
-      }
-      return directProductUrl;
-    }
-
-    case 'kaufland': {
-      if (!directProductUrl || isSearchUrl) {
-        const kauflandId = 400000000 + (hash % 599999999);
-        directProductUrl = `https://www.kaufland.de/product/${kauflandId}/`;
-      }
-      if (directProductUrl.includes('awin1.com/cread.php')) return directProductUrl;
-      if (trackingId && platform.awinMid) {
-        return `https://www.awin1.com/cread.php?awinmid=${platform.awinMid}&awinaffid=${encodeURIComponent(trackingId)}&ued=${encodeURIComponent(directProductUrl)}`;
-      }
-      return directProductUrl.includes('?') ? `${directProductUrl}&utm_source=affiliate&partnerId=${encodeURIComponent(trackingId || '3130490')}` : `${directProductUrl}?utm_source=affiliate&partnerId=${encodeURIComponent(trackingId || '3130490')}`;
-    }
-
-    case 'ebay': {
-      const ebayItemId = 300000000000 + (hash % 69999999999);
-      if (!directProductUrl || isSearchUrl) {
-        directProductUrl = `https://www.ebay.de/itm/${ebayItemId}`;
-      }
-      if (directProductUrl.includes('campid=')) return directProductUrl;
-      const campid = trackingId || '5339000000';
-      const sep = directProductUrl.includes('?') ? '&' : '?';
-      return `${directProductUrl}${sep}mkcid=1&mkrid=707-53477-19255-0&campid=${encodeURIComponent(campid)}&customid=nexusdeals`;
-    }
-
-    case 'temu': {
-      const goodsId = 601099000000000 + (hash % 399999999999);
-      const affId = trackingId || 'aph89702';
-      if (!directProductUrl || isSearchUrl) {
-        return `https://www.temu.com/de/${slug}-g-${goodsId}.html?_x_ads_channel=affiliate&aff_id=${encodeURIComponent(affId)}`;
-      }
-      const sep = directProductUrl.includes('?') ? '&' : '?';
-      return `${directProductUrl}${sep}_x_ads_channel=affiliate&aff_id=${encodeURIComponent(affId)}`;
-    }
-
-    case 'douglas': {
-      if (!directProductUrl || isSearchUrl) {
-        const douglasId = 1000000 + (hash % 8999999);
-        const brandSlug = slugify(details.brand || 'douglas');
-        directProductUrl = `https://www.douglas.de/de/p/${brandSlug}/${slug}/${douglasId}`;
-      }
-      if (trackingId && platform.awinMid) {
-        return `https://www.awin1.com/cread.php?awinmid=${platform.awinMid}&awinaffid=${encodeURIComponent(trackingId)}&ued=${encodeURIComponent(directProductUrl)}`;
-      }
-      return directProductUrl;
-    }
-
-    case 'mediamarkt': {
-      if (!directProductUrl || isSearchUrl) {
-        const mmArticle = 2000000 + (hash % 7999999);
-        directProductUrl = `https://www.mediamarkt.de/de/product/${slug}-${mmArticle}.html`;
-      }
-      if (trackingId && platform.awinMid) {
-        return `https://www.awin1.com/cread.php?awinmid=${platform.awinMid}&awinaffid=${encodeURIComponent(trackingId)}&ued=${encodeURIComponent(directProductUrl)}`;
-      }
-      return directProductUrl;
-    }
-
-    case 'zalando': {
-      if (!directProductUrl || isSearchUrl) {
-        const brandSlug = slugify(details.brand || 'fashion');
-        const sku = `SKU${(hash % 899999 + 100000)}`;
-        directProductUrl = `https://www.zalando.de/${brandSlug}-${slug}-${sku}.html`;
-      }
-      return directProductUrl;
-    }
-
-    case 'ikea': {
-      if (!directProductUrl || isSearchUrl) {
-        const ikeaSku = (hash % 89999999 + 10000000).toString().padStart(8, '0');
-        directProductUrl = `https://www.ikea.com/de/de/p/${slug}-${ikeaSku}/`;
-      }
-      return directProductUrl;
-    }
-
-    case 'galaxus': {
-      if (!directProductUrl || isSearchUrl) {
-        const galaxusId = 40000000 + (hash % 59999999);
-        directProductUrl = `https://www.galaxus.de/de/s1/product/${slug}-${galaxusId}`;
-      }
-      return directProductUrl;
-    }
-
-    case 'shein': {
-      if (!directProductUrl || isSearchUrl) {
-        const sheinGoodsId = 20000000 + (hash % 79999999);
-        directProductUrl = `https://de.shein.com/${slug}-p-${sheinGoodsId}.html?url_from=nexusdeals`;
-      }
-      return directProductUrl;
-    }
-
-    case 'aliexpress': {
-      const aliItemId = 1005000000000000 + (hash % 999999999999);
-      if (!directProductUrl || isSearchUrl) {
-        directProductUrl = `https://de.aliexpress.com/item/${aliItemId}.html`;
-      }
-      if (trackingId && platform.awinMid) {
-        return `https://www.awin1.com/cread.php?awinmid=${platform.awinMid}&awinaffid=${encodeURIComponent(trackingId)}&ued=${encodeURIComponent(directProductUrl)}`;
-      }
-      return directProductUrl;
-    }
-
-    default:
-      return directProductUrl || `https://www.amazon.de/s?k=${encodeURIComponent(title)}&tag=nexusdeals08-21`;
+  const amzTag = encodeURIComponent(trackingId || 'nexusdeals08-21');
+  if (platform.id === 'amazon') {
+    if (/^B[A-Z0-9]{9}$/i.test(asin)) return 'https://www.amazon.de/dp/' + asin.toUpperCase() + '?tag=' + amzTag;
+    if (url.includes('/dp/')) return url.includes('tag=') ? url : url + (url.includes('?') ? '&' : '?') + 'tag=' + amzTag;
+    return storeSearchUrl(platform, details.title || details.query) + '&tag=' + amzTag;
   }
+
+  if (!url || isSearchLikeUrl(url)) url = storeSearchUrl(platform, details.title || details.query);
+
+  // Awin wrapping only for merchants whose programme is confirmed active on this account
+  const awinActive = { otto: 14336, douglas: 10046 };
+  if (awinActive[platform.id] && trackingId) {
+    return 'https://www.awin1.com/cread.php?awinmid=' + awinActive[platform.id] + '&awinaffid=' + encodeURIComponent(trackingId) + '&ued=' + encodeURIComponent(url);
+  }
+  if (platform.id === 'temu' && trackingId && !url.includes('aff_id=')) {
+    return url + (url.includes('?') ? '&' : '?') + '_x_ads_channel=affiliate&aff_id=' + encodeURIComponent(trackingId);
+  }
+  if (platform.id === 'ebay' && tags.eBay) return url + (url.includes('?') ? '&' : '?') + 'mkcid=1&mkrid=707-53477-19255-0&campid=' + encodeURIComponent(tags.eBay);
+  return url;
 }
 
 // In-Memory Relational Database State
@@ -357,8 +244,8 @@ class MarketplaceDatabase {
   }
 
   init(settings = {}) {
-    this.load(settings);
     this.initialized = true;
+    this.load(settings);
   }
 
   load(settings = {}) {
@@ -374,44 +261,7 @@ class MarketplaceDatabase {
         this.products = JSON.parse(fs.readFileSync(PRODUCTS_PATH, 'utf8'));
         this.productOffers = JSON.parse(fs.readFileSync(OFFERS_PIVOT_PATH, 'utf8'));
 
-        let upgradedCount = 0;
-        for (const offer of this.productOffers) {
-          const u = offer.direct_affiliate_url || offer.directUrl || '';
-          if (
-            u.includes('search_result') ||
-            u.includes('search_key=') ||
-            u.includes('search_value=') ||
-            u.includes('/suche/') ||
-            u.includes('/search?') ||
-            u.includes('/search/?') ||
-            u.includes('/search.html') ||
-            u.includes('_nkw=') ||
-            u.includes('/pdsearch/') ||
-            u.includes('/katalog/?q=') ||
-            u.includes('wholesale-') ||
-            u.includes('/s?k=')
-          ) {
-            const prod = this.products.find(p => p.id === offer.product_id);
-            const direct = buildDirectAffiliateUrl(offer.platform_id || offer.store, {
-              productId: offer.product_id,
-              asin: (prod && prod.asin) || '',
-              title: (prod && prod.title) || offer.variantTitle || 'Deal',
-              brand: (prod && prod.brand) || '',
-              direct_affiliate_url: '',
-              price: offer.price
-            }, settings);
-            offer.direct_affiliate_url = direct;
-            offer.directUrl = direct;
-            upgradedCount++;
-          }
-        }
-
-        if (upgradedCount > 0) {
-          console.log(`[DB] Upgraded ${upgradedCount} generic search URLs to strict direct affiliate deep links.`);
-          this.save();
-        } else {
-          console.log(`[DB] Loaded ${this.products.length} products and ${this.productOffers.length} pivot offers (100% verified deep links).`);
-        }
+        console.log(`[DB] Loaded ${this.products.length} products and ${this.productOffers.length} pivot offers.`);
         return;
       }
     } catch (e) {

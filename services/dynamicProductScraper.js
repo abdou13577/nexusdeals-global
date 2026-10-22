@@ -231,33 +231,7 @@ async function dynamicSearchAndAggregate(query, settings = {}, maxResults = 8) {
     }
   }
 
-  // 2. If external marketplace returned fewer than 2 items (e.g. anti-scraping block or rare query),
-  // instantly synthesize verified high-precision domain items
-  if (scrapedProducts.length < 2) {
-    const fallbackCount = Math.max(2, maxResults - scrapedProducts.length);
-    const domainBrands = ['NexusPro', 'AeroTech', 'MasterCraft', 'PowerPeak', 'TitanEdge', 'UltraSmart'];
-    const baseP = 39.99;
-
-    for (let k = 0; k < fallbackCount; k++) {
-      const bName = domainBrands[k % domainBrands.length];
-      const fakeAsin = `B0${(Date.now() % 89999999 + k * 1000).toString(36).toUpperCase().padStart(8, '0')}`;
-      const itemTitle = `${bName} ${cleanQ} - Professional Edition 2026`;
-      const itemPrice = +(baseP * (1 + k * 0.25)).toFixed(2);
-      const pool = require('./imageResolver').PLATFORM_CDN_FALLBACKS[category.id] || require('./imageResolver').PLATFORM_CDN_FALLBACKS.home_kitchen;
-
-      scrapedProducts.push({
-        asin: fakeAsin,
-        title: itemTitle,
-        brand: bName,
-        price: itemPrice,
-        msrp: +(itemPrice * 1.28).toFixed(2),
-        image: pool[k % pool.length],
-        images: [pool[k % pool.length]],
-        rating: +(4.6 + ((k % 4) * 0.1)).toFixed(1),
-        reviewsCount: 95 + k * 45
-      });
-    }
-  }
+  // 2. No synthetic products: if the live source returns nothing, nothing is added.
 
   // 3. Assemble Multi-Platform Offers & Strict Direct Deep Links across 12 platforms
   const finalCachedProducts = [];

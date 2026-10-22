@@ -1,0 +1,11 @@
+const { db } = require('../data/db');
+db.init();
+const ps = db.getProducts();
+console.log('products', ps.length, 'offers', db.productOffers.length);
+const dec = u => { try { return decodeURIComponent(u); } catch (e) { return u; } };
+const bad = db.productOffers.filter(o => /closedMerchant|kaufland\.de\/product\/|ebay\.de\/itm\/|galaxus\.de\/de\/s1\/product|-SKU\d+\.html|awinmid=(13809|16273)/.test(dec(o.direct_affiliate_url)));
+console.log('fabricated-pattern offers left:', bad.length);
+console.log('fake products left:', ps.filter(p => /^B0\d{8}$/.test(p.asin || '') || /Professional (Set|Edition)/.test(p.title)).length);
+const p = ps.find(x => /iphone 15/i.test(x.title)) || ps[0];
+console.log(p.title);
+p.offers.forEach(o => console.log(' ', o.store, o.price, o.direct_affiliate_url.slice(0, 130)));

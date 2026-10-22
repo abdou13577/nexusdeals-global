@@ -468,7 +468,22 @@ function setSheetBackdrop(on) {
   document.documentElement.classList.toggle('sheet-open', !!on);
 }
 
+let filterDrawerHome = null;
+function placeFilterDrawer() {
+  const d = document.getElementById('filterDrawer');
+  if (!d) return;
+  if (!filterDrawerHome) filterDrawerHome = { parent: d.parentNode, next: d.nextSibling };
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (isMobile && d.parentNode !== document.body) {
+    document.body.appendChild(d); // escape the sticky header (its backdrop-filter traps fixed children)
+  } else if (!isMobile && d.parentNode === document.body && filterDrawerHome.parent) {
+    filterDrawerHome.parent.insertBefore(d, filterDrawerHome.next && filterDrawerHome.next.parentNode === filterDrawerHome.parent ? filterDrawerHome.next : null);
+  }
+}
+window.addEventListener('resize', placeFilterDrawer);
+
 function toggleFilterDrawer() {
+  placeFilterDrawer();
   const filterDrawer = document.getElementById('filterDrawer');
   const btn = document.getElementById('filterToggleBtn');
   const bottomFilterBtn = document.getElementById('bottomNavFilterBtn');

@@ -961,7 +961,12 @@ async function openProductModal(productId) {
   const titleEl = document.getElementById('modalProductTitle');
   const bodyEl = document.getElementById('modalProductBody');
 
-  titleEl.textContent = product.title;
+  const catLocalized = getCategoryLabel(product.category).replace(/^[^\s]+\s/, '');
+  // On mobile screens, display clean concise breadcrumb in sticky top bar to prevent clutter
+  titleEl.textContent = (window.innerWidth <= 768) ? `${product.brand || 'NexusDeals'} • ${catLocalized}` : product.title;
+
+  const modalBox = modal.querySelector('.modal-box');
+  if (modalBox) modalBox.scrollTop = 0;
 
   const history = product.priceHistory90d || [product.msrp, product.offers[0].price];
   const maxHist = Math.max(...history, 1);
@@ -1036,8 +1041,6 @@ async function openProductModal(productId) {
       </div>
     `;
   }).join('');
-
-  const catLocalized = getCategoryLabel(product.category).replace(/^[^\s]+\s/, '');
 
   bodyEl.innerHTML = `
     <!-- High-Tech Interactive Live Store Stage -->
@@ -1122,8 +1125,19 @@ async function openProductModal(productId) {
     <div class="price-chart-bars">${chartBarsHtml}</div>
 
     <h4 style="margin-bottom:8px; color:#34d399; font-size:0.95rem;">${dict.modalSimilarHeader}</h4>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px; margin-bottom:18px;">
       ${similarHtml}
+    </div>
+
+    <!-- Native Mobile Floating Bottom Sticky Buy Bar -->
+    <div class="modal-mobile-sticky-bar" id="modalMobileStickyBar">
+      <div class="mmb-price-col">
+        <span class="mmb-store" id="mmbStoreName">${initialOffer.store}</span>
+        <span class="mmb-price" id="mmbPriceVal">${initialOffer.price.toFixed(2)} €</span>
+      </div>
+      <a id="mmbBuyBtn" href="${initialOutUrl}" target="_blank" rel="noopener" class="mmb-cta-btn">
+        ${dict.stageDirectBuyBtn(initialOffer.store, initialOffer.price.toFixed(2))}
+      </a>
     </div>
   `;
 
@@ -1228,6 +1242,17 @@ function selectStorePreview(productId, storeName, updateGallery = false) {
     stageDirectBuyLink.href = outUrl;
     stageDirectBuyLink.innerHTML = dict.stageDirectBuyBtn(offer.store, offer.price.toFixed(2));
   }
+
+  // Update floating mobile sticky purchase bar
+  const mmbBuyBtn = document.getElementById('mmbBuyBtn');
+  const mmbStoreName = document.getElementById('mmbStoreName');
+  const mmbPriceVal = document.getElementById('mmbPriceVal');
+  if (mmbBuyBtn) {
+    mmbBuyBtn.href = outUrl;
+    mmbBuyBtn.innerHTML = dict.stageDirectBuyBtn(offer.store, offer.price.toFixed(2));
+  }
+  if (mmbStoreName) mmbStoreName.textContent = offer.store;
+  if (mmbPriceVal) mmbPriceVal.textContent = `${offer.price.toFixed(2)} €`;
 
   // 5. Morph Specs List to THAT store's actual specs
   const stageSpecsList = document.getElementById('stageSpecsList');

@@ -1028,21 +1028,25 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
 
       // Check for directUrl in query or within catalog.json offers
       let effectiveDirectUrl = directUrl || '';
-      if (!effectiveDirectUrl && (productId || asin)) {
+      let effectiveQuery = query || '';
+      if (productId || asin) {
         try {
           const catalog = loadJson(CATALOG_PATH, { products: [] });
-          const foundProd = (catalog.products || []).find(p => p.id === productId || p.asin === asin);
-          if (foundProd && Array.isArray(foundProd.offers)) {
-            const foundOffer = foundProd.offers.find(o => o.store.toLowerCase() === cleanStore.toLowerCase());
-            if (foundOffer && foundOffer.directUrl) {
-              effectiveDirectUrl = foundOffer.directUrl;
+          const foundProd = (catalog.products || []).find(p => (productId && p.id === productId) || (asin && p.asin === asin));
+          if (foundProd) {
+            if (!effectiveQuery) effectiveQuery = foundProd.title;
+            if (!effectiveDirectUrl && Array.isArray(foundProd.offers)) {
+              const foundOffer = foundProd.offers.find(o => o.store.toLowerCase() === cleanStore.toLowerCase());
+              if (foundOffer && foundOffer.directUrl) {
+                effectiveDirectUrl = foundOffer.directUrl;
+              }
             }
           }
         } catch (e) {}
       }
 
       const cleanAsin = asin || (productId && productId.startsWith('real-') ? productId.replace('real-', '') : '');
-      const targetUrl = buildAffiliateRedirectUrl(cleanStore, query || 'Deal', cleanAsin, settings, itemPrice, effectiveDirectUrl);
+      const targetUrl = buildAffiliateRedirectUrl(cleanStore, effectiveQuery || 'Deal', cleanAsin, settings, itemPrice, effectiveDirectUrl);
       res.writeHead(302, { Location: targetUrl });
       return res.end();
     }

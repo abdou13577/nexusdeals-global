@@ -1,20 +1,177 @@
 {
-  "totalClicks": 0,
-  "estimatedCommissionEur": 0,
+  "totalClicks": 15,
+  "estimatedCommissionEur": 46.3,
   "storeBreakdown": {
-    "Amazon": { "clicks": 0, "estRevenue": 0 },
-    "OTTO": { "clicks": 0, "estRevenue": 0 },
-    "Kaufland": { "clicks": 0, "estRevenue": 0 },
-    "eBay": { "clicks": 0, "estRevenue": 0 },
-    "Zalando": { "clicks": 0, "estRevenue": 0 },
-    "MediaMarkt": { "clicks": 0, "estRevenue": 0 },
-    "Galaxus": { "clicks": 0, "estRevenue": 0 },
-    "Douglas": { "clicks": 0, "estRevenue": 0 },
-    "IKEA": { "clicks": 0, "estRevenue": 0 },
-    "AliExpress": { "clicks": 0, "estRevenue": 0 },
-    "Temu": { "clicks": 0, "estRevenue": 0 },
-    "SHEIN": { "clicks": 0, "estRevenue": 0 }
+    "Amazon": {
+      "clicks": 3,
+      "estRevenue": 11.4
+    },
+    "OTTO": {
+      "clicks": 0,
+      "estRevenue": 0
+    },
+    "Kaufland": {
+      "clicks": 0,
+      "estRevenue": 0
+    },
+    "eBay": {
+      "clicks": 0,
+      "estRevenue": 0
+    },
+    "Zalando": {
+      "clicks": 0,
+      "estRevenue": 0
+    },
+    "MediaMarkt": {
+      "clicks": 1,
+      "estRevenue": 0
+    },
+    "Galaxus": {
+      "clicks": 0,
+      "estRevenue": 0
+    },
+    "Douglas": {
+      "clicks": 0,
+      "estRevenue": 0
+    },
+    "IKEA": {
+      "clicks": 1,
+      "estRevenue": 0
+    },
+    "AliExpress": {
+      "clicks": 0,
+      "estRevenue": 0
+    },
+    "Temu": {
+      "clicks": 7,
+      "estRevenue": 34.9
+    },
+    "SHEIN": {
+      "clicks": 3,
+      "estRevenue": 0
+    }
   },
-  "recentClicks": [],
+  "recentClicks": [
+    {
+      "timestamp": "2026-10-22T16:27:55.145Z",
+      "productId": "mm-prod-ps5-slim",
+      "query": "Product",
+      "store": "MediaMarkt",
+      "price": 479,
+      "estCommission": 0
+    },
+    {
+      "timestamp": "2026-10-22T16:27:55.124Z",
+      "productId": "ikea-p201",
+      "query": "Product",
+      "store": "IKEA",
+      "price": 59.99,
+      "estCommission": 0
+    },
+    {
+      "timestamp": "2026-10-22T16:27:55.097Z",
+      "productId": "shein-p105",
+      "query": "Product",
+      "store": "Temu",
+      "price": 21.49,
+      "estCommission": 2.58
+    },
+    {
+      "timestamp": "2026-10-22T16:27:55.072Z",
+      "productId": "shein-p105",
+      "query": "Product",
+      "store": "SHEIN",
+      "price": 26.99,
+      "estCommission": 0
+    },
+    {
+      "timestamp": "2026-10-22T16:27:55.046Z",
+      "productId": "real-B077P3Z288",
+      "query": "Product",
+      "store": "Temu",
+      "price": 56.61,
+      "estCommission": 6.79
+    },
+    {
+      "timestamp": "2026-10-22T16:27:55.018Z",
+      "productId": "real-B077P3Z288",
+      "query": "Product",
+      "store": "Amazon",
+      "price": 84.35,
+      "estCommission": 3.8
+    },
+    {
+      "timestamp": "2026-10-22T16:26:34.726Z",
+      "productId": "real-B077P3Z288",
+      "query": "BEIBYE 2045",
+      "store": "Temu",
+      "price": 56.61,
+      "estCommission": 6.79
+    },
+    {
+      "timestamp": "2026-10-22T16:25:47.571Z",
+      "productId": "shein-p105",
+      "query": "Product",
+      "store": "SHEIN",
+      "price": 26.99,
+      "estCommission": 0
+    },
+    {
+      "timestamp": "2026-10-22T16:25:47.545Z",
+      "productId": "shein-p105",
+      "query": "Product",
+      "store": "Temu",
+      "price": 21.49,
+      "estCommission": 2.58
+    },
+    {
+      "timestamp": "2026-10-22T16:25:47.517Z",
+      "productId": "real-B077P3Z288",
+      "query": "Product",
+      "store": "Temu",
+      "price": 56.61,
+      "estCommission": 6.79
+    },
+    {
+      "timestamp": "2026-10-22T16:25:47.488Z",
+      "productId": "real-B077P3Z288",
+      "query": "Product",
+      "store": "Amazon",
+      "price": 84.35,
+      "estCommission": 3.8
+    },
+    {
+      "timestamp": "2026-10-22T16:24:53.819Z",
+      "productId": "shein-p105",
+      "query": "Product",
+      "store": "Temu",
+      "price": 21.49,
+      "estCommission": 2.58
+    },
+    {
+      "timestamp": "2026-10-22T16:24:53.793Z",
+      "productId": "shein-p105",
+      "query": "Product",
+      "store": "SHEIN",
+      "price": 26.99,
+      "estCommission": 0
+    },
+    {
+      "timestamp": "2026-10-22T16:24:53.765Z",
+      "productId": "real-B077P3Z288",
+      "query": "Product",
+      "store": "Amazon",
+      "price": 84.35,
+      "estCommission": 3.8
+    },
+    {
+      "timestamp": "2026-10-22T16:24:53.739Z",
+      "productId": "real-B077P3Z288",
+      "query": "Product",
+      "store": "Temu",
+      "price": 56.61,
+      "estCommission": 6.79
+    }
+  ],
   "priceAlerts": []
 }

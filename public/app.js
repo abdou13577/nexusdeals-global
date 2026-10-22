@@ -717,6 +717,7 @@ function renderProductsGrid(products, containerId) {
 
     const bestDirectParam = bestOffer.directUrl ? `&directUrl=${encodeURIComponent(bestOffer.directUrl)}` : '';
     const bestOutUrl = `/api/out?productId=${encodeURIComponent(p.id)}&asin=${encodeURIComponent(p.asin || '')}&store=${encodeURIComponent(bestOffer.store)}&price=${encodeURIComponent(bestOffer.price)}&query=${encodeURIComponent(bestOffer.query || p.title)}${bestDirectParam}`;
+    const cardImg = (focusOffer && focusOffer.image) ? focusOffer.image : p.image;
 
     return `
       <article class="product-card" onclick="handleCardClick(event, '${p.id}')">
@@ -725,7 +726,7 @@ function renderProductsGrid(products, containerId) {
         </div>
 
         <div class="card-image-wrap" onclick="openProductModal('${p.id}')">
-          <img src="${p.image}" alt="${escapeHtml(displayTitle)}" loading="lazy" onerror="this.onerror=null;this.src='https://m.media-amazon.com/images/I/61rK+APJs0L._AC_SL1000_.jpg';" />
+          <img src="${cardImg}" alt="${escapeHtml(displayTitle)}" loading="lazy" onerror="this.onerror=null;this.style.opacity='0.6';" />
         </div>
 
         <div class="card-body">
@@ -1247,10 +1248,10 @@ function selectStorePreview(productId, storeName, updateGallery = false) {
     alertPriceInput.value = Math.round(offer.price * 0.92);
   }
 
-  // 7. Ensure Main Product Photo is NEVER corrupted or replaced with an unrelated object
+  // 7. Ensure Main Product Photo is NEVER corrupted and matches the active store offer
   const mainImg = document.getElementById('modalMainGalleryImg');
-  if (mainImg && (!mainImg.src || mainImg.src.includes('unsplash'))) {
-    mainImg.src = product.image;
+  if (mainImg) {
+    mainImg.src = offer.image || product.image;
   }
 
   // 8. Update Active Highlight and Row Indicators below

@@ -789,7 +789,7 @@ let currentSelectedStore = null;
 
 let lightboxZoomLevel = 1;
 
-function selectModalGalleryImage(idx, shouldSyncStore = true) {
+function selectModalGalleryImage(idx) {
   if (!activeModalImages || activeModalImages.length === 0) return;
   activeModalImgIdx = (idx + activeModalImages.length) % activeModalImages.length;
   const mainImg = document.getElementById('modalMainGalleryImg');
@@ -800,17 +800,6 @@ function selectModalGalleryImage(idx, shouldSyncStore = true) {
   document.querySelectorAll('.gallery-thumb').forEach((th, i) => {
     th.classList.toggle('active', i === activeModalImgIdx);
   });
-
-  if (shouldSyncStore && currentModalProductId) {
-    const product = allProducts.find(p => p.id === currentModalProductId);
-    if (product && Array.isArray(product.offers) && product.offers.length > 0) {
-      const currentImgUrl = activeModalImages[activeModalImgIdx];
-      const matchingOffer = product.offers.find(o => o.image === currentImgUrl) || product.offers[activeModalImgIdx % product.offers.length];
-      if (matchingOffer) {
-        selectStorePreview(product.id, matchingOffer.store, false);
-      }
-    }
-  }
 }
 
 function openImageLightbox(idx) {
@@ -966,6 +955,48 @@ function renderModalGalleryUI(images, statusText) {
   `;
 }
 
+function renderModalOffersList(product, selectedStore) {
+  const dict = t();
+  if (!product || !Array.isArray(product.offers)) return '';
+  // Strictly enforce price hierarchy: lowest price first
+  product.offers.sort((a, b) => a.price - b.price);
+
+  return product.offers.map((o, idx) => {
+    const targetDirect = o.direct_affiliate_url || o.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}`;
+    const variantTag = o.variantColor ? `<span class="mo-variant-pill">${escapeHtml(o.variantColor)}</span>` : '';
+    const isSelected = selectedStore ? (o.store.toLowerCase() === selectedStore.toLowerCase()) : (idx === 0);
+    return `
+      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable modal-offer ${isSelected ? 'offer-row-active-preview' : ''}" onclick="selectStorePreview('${product.id}', '${o.store}')">
+        <div class="mo-main">
+          <div class="mo-tags">
+            <span class="store-tag store-${o.store}">${o.store}</span>
+            ${variantTag}
+            ${idx === 0 ? `<strong class="mo-best">${dict.modalBestGuaranteed}</strong>` : ''}
+            <span id="rowIndicator-${product.id}-${o.store}" class="row-stage-indicator ${isSelected ? 'live-active' : ''}">
+              ${isSelected ? dict.stageDisplayingNow : dict.stageSwitchToBtn}
+            </span>
+          </div>
+          <div class="mo-meta">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating || 4.8)}</div>
+        </div>
+        <div class="mo-side">
+          <div class="mo-price-box">
+            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#fff'};">${o.price.toFixed(2)} €</div>
+            <div class="mo-ship">${dict.modalFreeShipping}</div>
+          </div>
+          <div class="mo-actions">
+            <button type="button" class="btn-action btn-sm mo-preview" onclick="event.stopPropagation(); selectStorePreview('${product.id}', '${o.store}')" title="${dict.previewBtn}">
+              ${dict.previewBtn}
+            </button>
+            <a href="${targetDirect}" target="_blank" rel="noopener" class="btn-search-main mo-go" onclick="event.stopPropagation(); trackAffiliateClick('${product.id}', '${o.store}', ${o.price});">
+              ${dict.modalGoToOffer(o.store)}
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
 async function openProductModal(productId) {
   const product = allProducts.find(p => p.id === productId);
   if (!product) return;
@@ -1024,40 +1055,7 @@ async function openProductModal(productId) {
 
   const initialTargetDirect = initialOffer.direct_affiliate_url || initialOffer.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(initialOffer.store)}&price=${encodeURIComponent(initialOffer.price)}`;
 
-  const allOffersRows = (product.offers || []).map((o, idx) => {
-    const targetDirect = o.direct_affiliate_url || o.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}`;
-    const variantTag = o.variantColor ? `<span class="mo-variant-pill">${escapeHtml(o.variantColor)}</span>` : '';
-    const isSelected = o.store.toLowerCase() === initialOffer.store.toLowerCase();
-    return `
-      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable modal-offer ${isSelected ? 'offer-row-active-preview' : ''}" onclick="selectStorePreview('${product.id}', '${o.store}')">
-        <div class="mo-main">
-          <div class="mo-tags">
-            <span class="store-tag store-${o.store}">${o.store}</span>
-            ${variantTag}
-            ${idx === 0 ? `<strong class="mo-best">${dict.modalBestGuaranteed}</strong>` : ''}
-            <span id="rowIndicator-${product.id}-${o.store}" class="row-stage-indicator ${isSelected ? 'live-active' : ''}">
-              ${isSelected ? dict.stageDisplayingNow : dict.stageSwitchToBtn}
-            </span>
-          </div>
-          <div class="mo-meta">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating || 4.8)}</div>
-        </div>
-        <div class="mo-side">
-          <div class="mo-price-box">
-            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#fff'};">${o.price.toFixed(2)} €</div>
-            <div class="mo-ship">${dict.modalFreeShipping}</div>
-          </div>
-          <div class="mo-actions">
-            <button type="button" class="btn-action btn-sm mo-preview" onclick="event.stopPropagation(); selectStorePreview('${product.id}', '${o.store}')" title="${dict.previewBtn}">
-              ${dict.previewBtn}
-            </button>
-            <a href="${targetDirect}" target="_blank" rel="noopener" class="btn-search-main mo-go" onclick="event.stopPropagation(); trackAffiliateClick('${product.id}', '${o.store}', ${o.price});">
-              ${dict.modalGoToOffer(o.store)}
-            </a>
-          </div>
-        </div>
-      </div>
-    `;
-  }).join('');
+  const allOffersRows = renderModalOffersList(product, initialOffer.store);
 
   bodyEl.innerHTML = `
     <!-- High-Tech Interactive Live Store Stage -->
@@ -1133,7 +1131,7 @@ async function openProductModal(productId) {
 
     <h4 style="margin:20px 0 10px; color:#38bdf8; font-size:1rem; font-weight:800;">${dict.stageCompareHeader(product.offers.length)}</h4>
 
-    <div style="margin-bottom:8px;">${allOffersRows}</div>
+    <div style="margin-bottom:8px;" id="modalOffersContainer">${allOffersRows}</div>
     <div style="font-size:0.76rem; color:var(--text-secondary); margin-bottom:18px; padding:8px 12px; background:rgba(255,255,255,0.03); border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
       🛡️ ${currentLang === 'ar' ? 'جميع الأسعار والعروض حقيقية ومحدثة مباشرة من المنصات الرسمية — اضغط على أي منصة لعرضها في الشاشة بالأعلى أو الشراء المباشر.' : (currentLang === 'de' ? 'Alle Preise und Angebote sind verifiziert und live mit den offiziellen Plattformen abgestimmt.' : 'All prices and listings are verified live data from official platforms.')}
     </div>
@@ -1186,21 +1184,22 @@ async function triggerLivePriceSync(productId) {
       if (idx !== -1) {
         allProducts[idx] = updatedProd;
       }
+      if (Array.isArray(updatedProd.offers)) {
+        updatedProd.offers.sort((a, b) => a.price - b.price);
+      }
       const dict = t();
       const statusPill = document.getElementById('stageStatusText');
       if (statusPill) {
         statusPill.innerHTML = `${dict.livePriceSynced || '⚡ Live Synced'}`;
         statusPill.style.color = '#34d399';
       }
+      const container = document.getElementById('modalOffersContainer');
+      if (container) {
+        container.innerHTML = renderModalOffersList(updatedProd, currentSelectedStore);
+      }
       if (currentSelectedStore) {
         selectStorePreview(productId, currentSelectedStore, false);
       }
-      (updatedProd.offers || []).forEach(o => {
-        const rowPriceEl = document.querySelector(`#offerRow-${productId}-${o.store} .mo-price`);
-        if (rowPriceEl) {
-          rowPriceEl.textContent = `${o.price.toFixed(2)} €`;
-        }
-      });
     }
   } catch (e) {
     // Non-blocking sync
@@ -1324,10 +1323,15 @@ function selectStorePreview(productId, storeName, updateGallery = false) {
     alertPriceInput.value = Math.round(offer.price * 0.92);
   }
 
-  // 7. Ensure Main Product Photo is NEVER corrupted and matches the active store offer
-  const mainImg = document.getElementById('modalMainGalleryImg');
-  if (mainImg) {
-    mainImg.src = offer.image || product.image;
+  // 7. Morph Product Photo to match the active store offer
+  if (Array.isArray(offer.images) && offer.images.length > 1) {
+    activeModalImages = offer.images;
+    renderModalGalleryUI(offer.images, dict.stageLiveFrom(offer.store));
+  } else {
+    const mainImg = document.getElementById('modalMainGalleryImg');
+    if (mainImg && (offer.image || product.image)) {
+      mainImg.src = offer.image || product.image;
+    }
   }
 
   // 8. Update Active Highlight and Row Indicators below

@@ -7,6 +7,7 @@ const { generateInitialCatalog, scrapeRealAmazonProducts, scrapeProductGalleryBy
 const { db, buildDirectAffiliateUrl: dbBuildAffiliateUrl } = require('./data/db');
 const { dynamicSearchAndAggregate } = require('./services/dynamicProductScraper');
 const { resolveBestProductImage, generateSvgPlaceholder } = require('./services/imageResolver');
+const { syncProductLivePrices } = require('./services/livePriceSyncService');
 
 const PORT = process.env.PORT || 3080;
 const DATA_DIR = path.join(__dirname, 'data');
@@ -988,6 +989,29 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       }
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
       return res.end(JSON.stringify({ asin, images: gallery }));
+    }
+
+    // 1c. GET /api/sync-live-product?id=...
+    if (pathname === '/api/sync-live-product' && req.method === 'GET') {
+      const prodId = (parsedUrl.query.id || '').trim();
+      const settings = loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
+      const prod = db.getProductById(prodId);
+      if (!prod) {
+        res.writeHead(404, { 'Content-Type': 'application/json' });
+        return res.end('{"error":"Product not found"}');
+      }
+
+      try {
+        const updated = await syncProductLivePrices(prod, settings);
+        res.writeHead(200, {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Cache-Control': 'no-store'
+        });
+        return res.end(JSON.stringify({ ok: true, product: updated }));
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ ok: false, error: err.message, product: prod }));
+      }
     }
 
     // 2. POST /api/ai-assistant

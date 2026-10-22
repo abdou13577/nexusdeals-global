@@ -48,7 +48,7 @@ const PLATFORMS = [
     name: 'eBay',
     domain: 'ebay.de',
     network: 'eBay Partner Network',
-    defaultTrackingId: '5339000000',
+    defaultTrackingId: '5339228999',
     awinMid: null,
     commissionRate: 0.04,
     logo: 'ebay',
@@ -182,8 +182,20 @@ function isSearchLikeUrl(u) {
   return !d || /search|suche|_nkw=|katalog\/\?q|wholesale|pdsearch|\/s\?k=/.test(d);
 }
 
+function cleanTitleForStoreSearch(title) {
+  if (!title) return '';
+  // Cut off at pipe, dash, or secondary specs after main model name
+  let clean = title.split(/[|–—]/)[0].trim();
+  // Remove German filler stop words that confuse external merchant search engines
+  const stopWords = new Set(['für', 'mit', 'und', 'von', 'in', 'im', 'der', 'die', 'das', 'den', 'dem', 'ein', 'eine', 'einen', 'zu', 'auf', 'aus', 'ohne', 'inkl', 'inklusive', 'app']);
+  const words = clean.replace(/[^\w\sÄÖÜäöüß.-]/g, ' ').replace(/\s+/g, ' ').trim().split(' ');
+  const filtered = words.filter(w => !stopWords.has(w.toLowerCase()));
+  return filtered.slice(0, 5).join(' ');
+}
+
 function storeSearchUrl(platform, title) {
-  const q = encodeURIComponent((title || '').replace(/[^\w\sÄÖÜäöüß.-]/g, ' ').replace(/\s+/g, ' ').trim().split(' ').slice(0, 8).join(' '));
+  const cleanQ = cleanTitleForStoreSearch(title);
+  const q = encodeURIComponent(cleanQ || (title || '').slice(0, 30));
   switch (platform.id) {
     case 'amazon': return 'https://www.amazon.de/s?k=' + q;
     case 'otto': return 'https://www.otto.de/suche/' + q + '/';
@@ -204,7 +216,7 @@ function storeSearchUrl(platform, title) {
 function buildDirectAffiliateUrl(platformKey, details = {}, settings = {}) {
   const platform = getPlatformByStoreName(platformKey);
   const tags = (settings && settings.affiliateIds) || {};
-  const trackingId = tags[platform.name] || (platform.id === 'amazon' ? platform.defaultTrackingId : '');
+  const trackingId = tags[platform.name] || platform.defaultTrackingId || '';
   let url = details.direct_affiliate_url || details.directUrl || '';
 
   // unwrap legacy awin wrappers (closed merchants) to the plain destination
@@ -230,7 +242,9 @@ function buildDirectAffiliateUrl(platformKey, details = {}, settings = {}) {
   if (platform.id === 'temu' && trackingId && !url.includes('aff_id=')) {
     return url + (url.includes('?') ? '&' : '?') + '_x_ads_channel=affiliate&aff_id=' + encodeURIComponent(trackingId);
   }
-  if (platform.id === 'ebay' && tags.eBay) return url + (url.includes('?') ? '&' : '?') + 'mkcid=1&mkrid=707-53477-19255-0&campid=' + encodeURIComponent(tags.eBay);
+  if (platform.id === 'ebay' && trackingId && !url.includes('campid=')) {
+    return url + (url.includes('?') ? '&' : '?') + 'mkcid=1&mkrid=707-53477-19255-0&campid=' + encodeURIComponent(trackingId);
+  }
   return url;
 }
 

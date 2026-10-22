@@ -126,6 +126,7 @@ const I18N = {
     alertSubmitBtn: 'نبهني عند الانخفاض',
     alertSavedMsg: (p) => `✔️ تم تفعيل التنبيه! سنرسل لك إشعاراً فور وصول السعر إلى ${p}€.`,
     stageScreenHeader: 'شاشة العرض المباشر للمتجر',
+    livePriceSynced: '⚡ تم تحديث الأسعار الحية ومطابقتها للمنصة',
     stageLiveFrom: (s) => `عرض رسمي مباشر من متجر ${s}`,
     stageLiveDot: 'متصل ومحدث مباشرة',
     stageHintSwitch: '💡 اضغط على أي متجر في الجدول أدناه لتحويل هذه الشاشة فوراً لصور وأسعار ومواصفات ذلك المتجر',
@@ -245,6 +246,7 @@ const I18N = {
     alertSubmitBtn: 'Benachrichtigen',
     alertSavedMsg: (p) => `✔️ Preiswecker aktiviert! Wir informieren Sie bei ${p}€.`,
     stageScreenHeader: 'Live-Store-Bildschirm',
+    livePriceSynced: '⚡ Live-Preise synchronisiert & verifiziert',
     stageLiveFrom: (s) => `Offizielles Live-Angebot von ${s}`,
     stageLiveDot: 'Live & synchronisiert',
     stageHintSwitch: '💡 Klicken Sie unten auf einen beliebigen Shop, um diesen Bildschirm sofort mit dessen Bildern, Preisen und Daten umzuschalten',
@@ -364,6 +366,7 @@ const I18N = {
     alertSubmitBtn: 'Notify Me',
     alertSavedMsg: (p) => `✔️ Alert activated! We will email you when the price drops to ${p}€.`,
     stageScreenHeader: 'Live Retailer Screen',
+    livePriceSynced: '⚡ Live Prices Synced with Platform',
     stageLiveFrom: (s) => `Official live listing from ${s}`,
     stageLiveDot: 'Live & Synced',
     stageHintSwitch: '💡 Click any store below to instantly switch this stage screen to its official photos, price & specs',
@@ -1169,6 +1172,39 @@ async function openProductModal(productId) {
   activeModalImgIdx = 0;
   renderModalGalleryUI(productImages, dict.stageLiveFrom(initialOffer.store));
   selectStorePreview(product.id, currentSelectedStore, false);
+  triggerLivePriceSync(product.id);
+}
+
+async function triggerLivePriceSync(productId) {
+  try {
+    const res = await fetch(`/api/sync-live-product?id=${encodeURIComponent(productId)}`);
+    if (!res.ok) return;
+    const data = await res.json();
+    if (data.ok && data.product && currentModalProductId === productId) {
+      const updatedProd = data.product;
+      const idx = allProducts.findIndex(p => p.id === productId);
+      if (idx !== -1) {
+        allProducts[idx] = updatedProd;
+      }
+      const dict = t();
+      const statusPill = document.getElementById('stageStatusText');
+      if (statusPill) {
+        statusPill.innerHTML = `${dict.livePriceSynced || '⚡ Live Synced'}`;
+        statusPill.style.color = '#34d399';
+      }
+      if (currentSelectedStore) {
+        selectStorePreview(productId, currentSelectedStore, false);
+      }
+      (updatedProd.offers || []).forEach(o => {
+        const rowPriceEl = document.querySelector(`#offerRow-${productId}-${o.store} .mo-price`);
+        if (rowPriceEl) {
+          rowPriceEl.textContent = `${o.price.toFixed(2)} €`;
+        }
+      });
+    }
+  } catch (e) {
+    // Non-blocking sync
+  }
 }
 
 function closeProductModal() {
@@ -1206,10 +1242,10 @@ function selectStorePreview(productId, storeName, updateGallery = false) {
     stageVerifiedBadge.textContent = `✔️ ${dict.previewStoreVerified(offer.store)}`;
   }
 
-  // 2. Keep the genuine product title with official model query
+  // 2. Keep the genuine product title or platform specific variant
   const stageTitle = document.getElementById('stageProductTitle');
   if (stageTitle) {
-    stageTitle.textContent = product.title;
+    stageTitle.textContent = offer.variantTitle || product.title;
   }
 
   // 3. Morph Pricing & Discount

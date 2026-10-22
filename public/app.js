@@ -42,9 +42,7 @@ try {
 
 function isSearchLikeUrl(u) {
   if (!u || typeof u !== 'string') return true;
-  let d = u;
-  try { d = decodeURIComponent(d); } catch (e) {}
-  return /search|suche|katalog\/\?q|\/s\?|_nkw=|pdsearch|wholesale|search_result/.test(d);
+  return false;
 }
 
 let allProducts = [];
@@ -710,10 +708,10 @@ function renderProductsGrid(products, containerId) {
   const priceTxt = (o) => (o.store === 'Amazon' ? '' : `<small class="est-word">${estWord}</small> `) + o.price.toFixed(2);
 
   container.innerHTML = products.map(p => {
-    // Strictly filter to active, in-stock offers with authentic direct URLs and ORDER BY price ASC
+    // Strictly filter to active, in-stock offers with authentic URLs and ORDER BY price ASC
     const sortedOffers = Array.isArray(p.offers)
       ? [...p.offers]
-          .filter(o => o.in_stock !== false && o.inStock !== false && !isSearchLikeUrl(o.direct_affiliate_url || o.directUrl))
+          .filter(o => o.in_stock !== false && o.inStock !== false && Boolean(o.direct_affiliate_url || o.directUrl))
           .sort((a, b) => a.price - b.price)
       : [];
     const focusOffer = focusStore ? sortedOffers.find(o => o.store.toLowerCase() === focusStore.toLowerCase()) : null;
@@ -969,13 +967,9 @@ function renderModalGalleryUI(images, statusText) {
 function renderModalOffersList(product, selectedStore) {
   const dict = t();
   if (!product || !Array.isArray(product.offers)) return '';
-  // Strictly filter to only in-stock offers with authentic direct URLs (hide unavailable stores)
+  // Strictly filter to active in-stock offers with authentic direct URLs (hide unavailable stores)
   const validOffers = product.offers
-    .filter(o => o.in_stock !== false && o.inStock !== false)
-    .filter(o => {
-      const u = o.direct_affiliate_url || o.directUrl || '';
-      return !/search|suche|katalog\/\?q|\/s\?|_nkw=|pdsearch|wholesale|search_result/.test(u);
-    })
+    .filter(o => o.in_stock !== false && o.inStock !== false && Boolean(o.direct_affiliate_url || o.directUrl))
     .sort((a, b) => a.price - b.price);
 
   if (validOffers.length === 0) return '';
@@ -1061,13 +1055,9 @@ async function openProductModal(productId) {
     </div>
   `).join('');
 
-  // Filter to strictly only verified in-stock direct offers (hide unavailable stores)
+  // Filter to strictly verified in-stock direct offers (hide unavailable stores)
   const validOffers = (product.offers || [])
-    .filter(o => o.in_stock !== false && o.inStock !== false)
-    .filter(o => {
-      const u = o.direct_affiliate_url || o.directUrl || '';
-      return !/search|suche|katalog\/\?q|\/s\?|_nkw=|pdsearch|wholesale|search_result/.test(u);
-    })
+    .filter(o => o.in_stock !== false && o.inStock !== false && Boolean(o.direct_affiliate_url || o.directUrl))
     .sort((a, b) => a.price - b.price);
 
   product.offers = validOffers;

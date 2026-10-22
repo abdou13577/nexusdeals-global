@@ -9,7 +9,7 @@
     "rating": 4.8,
     "reviewsCount": 3840,
     "msrp": 399,
-    "price": 279.99,
+    "price": 278.39,
     "image": "https://m.media-amazon.com/images/I/71u9iIqKHDL._AC_SL1500_.jpg",
     "images": [
       "https://m.media-amazon.com/images/I/71u9iIqKHDL._AC_SL1500_.jpg"
@@ -28,7 +28,7 @@
     "rating": 4.8,
     "reviewsCount": 4620,
     "msrp": 119.99,
-    "price": 109.95,
+    "price": 96.12,
     "image": "https://m.media-amazon.com/images/I/71rL0JkE5dL._AC_SL1500_.jpg",
     "images": [
       "https://m.media-amazon.com/images/I/71rL0JkE5dL._AC_SL1500_.jpg"
@@ -47,7 +47,7 @@
     "rating": 4.9,
     "reviewsCount": 3910,
     "msrp": 145,
-    "price": 119,
+    "price": 116.57,
     "image": "https://m.media-amazon.com/images/I/61S2k4n3K3L._AC_SL1200_.jpg",
     "images": [
       "https://m.media-amazon.com/images/I/61S2k4n3K3L._AC_SL1200_.jpg"
@@ -66,7 +66,7 @@
     "rating": 4.8,
     "reviewsCount": 420,
     "msrp": 299.98,
-    "price": 119.99,
+    "price": 101.31,
     "image": "https://m.media-amazon.com/images/I/71v6UJXdrNL._AC_SL1000_.jpg",
     "images": [
       "https://m.media-amazon.com/images/I/71v6UJXdrNL._AC_SL1000_.jpg"
@@ -85,7 +85,7 @@
     "rating": 4.9,
     "reviewsCount": 5410,
     "msrp": 549.99,
-    "price": 479,
+    "price": 472.27,
     "image": "https://m.media-amazon.com/images/I/61+nQkSgUWL._AC_SL1500_.jpg",
     "images": [
       "https://m.media-amazon.com/images/I/61+nQkSgUWL._AC_SL1500_.jpg"
@@ -117,15 +117,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (21.49€) مع مقارنة شاملة لـ 4 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.608Z",
     "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 29.99
+    "price": 29.18
   },
   {
     "id": "real-B0DHYDVWKC",
     "asin": "B0DHYDVWKC",
     "title": "Apple iPhone 16, 128GB, Pink (Generalüberholt)",
     "titleAr": "Apple iPhone 16, 128GB, Pink (Generalüberholt)",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Apple",
     "ean": "B0DHYDVWKC",
     "sku": "B0DHYDVWKC",
@@ -189,7 +189,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (100.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 108.99
+    "price": 95.39
   },
   {
     "id": "real-B09Q2PNY5L",
@@ -225,15 +225,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (27.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 39.66
+    "price": 38.88
   },
   {
     "id": "real-B0CTCQXZ3G",
     "asin": "B0CTCQXZ3G",
     "title": "PHILIPS Kaffeevollautomat LatteGo 5500 Serie, Silber, 20 Spezialitäten | Espressomaschine Hot & Cold, LatteGo Milchsystem, 4 Profile, Farb-Touch-Display, SilentBrew, Keramikmahlwerk (EP5546/70)",
     "titleAr": "PHILIPS Kaffeevollautomat LatteGo 5500 Serie, Silber, 20 Spezialitäten | Espressomaschine Hot & Cold, LatteGo Milchsystem, 4 Profile, Farb-Touch-Display, SilentBrew, Keramikmahlwerk (EP5546/70)",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "PHILIPS",
     "ean": "B0CTCQXZ3G",
     "sku": "B0CTCQXZ3G",
@@ -261,7 +261,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (506.37€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 522.89
+    "price": 392.78
   },
   {
     "id": "real-B0FVBKNSKL",
@@ -291,7 +291,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (68.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 68.52
+    "price": 67.64
   },
   {
     "id": "real-B096SBXHR7",
@@ -327,7 +327,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (14.41€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 21
+    "price": 17.54
   },
   {
     "id": "real-B0FN7ZG39D",
@@ -363,7 +363,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (587.46€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 593.69
+    "price": 574.45
   },
   {
     "id": "real-B0GYW2LC1X",
@@ -399,7 +399,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (278.15€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 288.27
+    "price": 284.41
   },
   {
     "id": "real-B0828KQKBM",
@@ -435,7 +435,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (62.25€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 63.81
+    "price": 62.58
   },
   {
     "id": "real-B0H7S1F5GN",
@@ -471,7 +471,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (62.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 64.12
+    "price": 62.7
   },
   {
     "id": "real-B077P3Z288",
@@ -507,7 +507,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (56.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 84.35
+    "price": 74.19
   },
   {
     "id": "real-B0FWRGPYT6",
@@ -542,15 +542,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (154.90€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 169.48
+    "price": 159.11
   },
   {
     "id": "real-B0DHYFNJ5X",
     "asin": "B0DHYFNJ5X",
     "title": "Apple iPhone 16, 128GB, Ultramarin (Generalüberholt)",
     "titleAr": "Apple iPhone 16, 128GB, Ultramarin (Generalüberholt)",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Apple",
     "ean": "B0DHYFNJ5X",
     "sku": "B0DHYFNJ5X",
@@ -578,7 +578,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (549.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 564.33
+    "price": 559.53
   },
   {
     "id": "real-B0DBHZGDZM",
@@ -614,7 +614,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (118.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 131.31
+    "price": 119.18
   },
   {
     "id": "real-B0CXDKDVLG",
@@ -650,15 +650,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (27.17€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 36.28
+    "price": 32.61
   },
   {
     "id": "real-B08CBJ8W9W",
     "asin": "B08CBJ8W9W",
     "title": "PHILIPS Kaffeevollautomat LatteGo 5400 Serie, Chrom, 12 Spezialitäten | Espressomaschine, LatteGo Milchsystem, einfache Reinigung, 4 Profile, TFT-Display, Keramikmahlwerk (EP5447/90)",
     "titleAr": "PHILIPS Kaffeevollautomat LatteGo 5400 Serie, Chrom, 12 Spezialitäten | Espressomaschine, LatteGo Milchsystem, einfache Reinigung, 4 Profile, TFT-Display, Keramikmahlwerk (EP5447/90)",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "PHILIPS",
     "ean": "B08CBJ8W9W",
     "sku": "B08CBJ8W9W",
@@ -683,7 +683,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (406.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 412.43
+    "price": 354.74
   },
   {
     "id": "real-B0FTTMCF2Z",
@@ -717,7 +717,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (66.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 67.43
+    "price": 66.28
   },
   {
     "id": "real-B0CFHTFW33",
@@ -753,7 +753,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (41.12€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 49.63
+    "price": 48.24
   },
   {
     "id": "real-B0CLT54ZNZ",
@@ -782,7 +782,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (594.73€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 611.99
+    "price": 590.84
   },
   {
     "id": "real-B0FJF5X995",
@@ -817,7 +817,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (96.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 100.37
+    "price": 93.03
   },
   {
     "id": "real-B0828L97QF",
@@ -853,7 +853,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (103.45€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 106.67
+    "price": 104.07
   },
   {
     "id": "real-B0HFT1S7NP",
@@ -886,7 +886,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (53.86€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 54.91
+    "price": 52.25
   },
   {
     "id": "real-B0BKZV8MZM",
@@ -922,7 +922,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (283.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 299.23
+    "price": 280.92
   },
   {
     "id": "real-B0G2LSB76P",
@@ -958,15 +958,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (104.91€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 112.56
+    "price": 97.53
   },
   {
     "id": "real-B0DHYF5TVV",
     "asin": "B0DHYF5TVV",
     "title": "Apple iPhone 16, 128GB, Schwarz (Generalüberholt)",
     "titleAr": "Apple iPhone 16, 128GB, Schwarz (Generalüberholt)",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Apple",
     "ean": "B0DHYF5TVV",
     "sku": "B0DHYF5TVV",
@@ -994,7 +994,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (559.98€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 569.9
+    "price": 569.62
   },
   {
     "id": "real-B0CT19QWWV",
@@ -1030,7 +1030,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (114.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 127.43
+    "price": 110.6
   },
   {
     "id": "real-B0H3BPPSTV",
@@ -1066,15 +1066,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (480.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 490.96
+    "price": 489.24
   },
   {
     "id": "real-B0H94ZSVN8",
     "asin": "B0H94ZSVN8",
     "title": "PHILIPS Kaffeevollautomat LatteGo Pro Aromis 6000, Schwarz, 22 Getränke | Espressomaschine Hot&Cold, BrewExtract, Profile, SilentBrew, BrewAdjust für optimiertes Aufbrühen jeder Bohnenart (EP6550/11)",
     "titleAr": "PHILIPS Kaffeevollautomat LatteGo Pro Aromis 6000, Schwarz, 22 Getränke | Espressomaschine Hot&Cold, BrewExtract, Profile, SilentBrew, BrewAdjust für optimiertes Aufbrühen jeder Bohnenart (EP6550/11)",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "PHILIPS",
     "ean": "B0H94ZSVN8",
     "sku": "B0H94ZSVN8",
@@ -1101,7 +1101,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (783.98€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 797.86
+    "price": 561.79
   },
   {
     "id": "real-B074L6R6BS",
@@ -1137,7 +1137,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (146.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 149.26
+    "price": 136.98
   },
   {
     "id": "real-B0CNTSQ9B1",
@@ -1173,7 +1173,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (43.97€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 63
+    "price": 57.09
   },
   {
     "id": "real-B08H98GVK8",
@@ -1200,7 +1200,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (530.59€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 539.22
+    "price": 517
   },
   {
     "id": "real-B0FC2ZBWP8",
@@ -1236,7 +1236,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (452.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 462.34
+    "price": 453.88
   },
   {
     "id": "real-B0F8BQW4TR",
@@ -1272,7 +1272,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (358.97€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 364.44
+    "price": 304.05
   },
   {
     "id": "real-B00C3HTOZU",
@@ -1303,7 +1303,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (150.01€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 152.48
+    "price": 147.13
   },
   {
     "id": "real-B0CX54K6ZX",
@@ -1339,7 +1339,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (136.26€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 152.08
+    "price": 129.7
   },
   {
     "id": "real-B0DG2YW4SN",
@@ -1375,15 +1375,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (94.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 108.17
+    "price": 92.22
   },
   {
     "id": "real-B0DGHN3YNR",
     "asin": "B0DGHN3YNR",
     "title": "Apple iPhone 16 128 GB: 5G Handy mit Kamerasteuerung, A18 Chip und einem echten Boost für die Batterie. Funktioniert mit A...",
     "titleAr": "Apple iPhone 16 128 GB: 5G Handy mit Kamerasteuerung, A18 Chip und einem echten Boost für die Batterie. Funktioniert mit A...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Apple",
     "ean": "B0DGHN3YNR",
     "sku": "B0DGHN3YNR",
@@ -1411,7 +1411,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (830.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 854.65
+    "price": 834.17
   },
   {
     "id": "real-B0FTMR15W8",
@@ -1447,7 +1447,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (69.74€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 81.57
+    "price": 79.62
   },
   {
     "id": "real-B0DCGCWZZF",
@@ -1483,15 +1483,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (817.12€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 830.58
+    "price": 821.19
   },
   {
     "id": "real-B0CDCFH17J",
     "asin": "B0CDCFH17J",
     "title": "PHILIPS Kaffeevollautomat LatteGo 3300 Serie, Chrom, 6 Spezialitäten | Espressomaschine, LatteGo Milchsystem, einfache Reinigung, SilentBrew, Farb-Touch-Display, Keramikmahlwerk (EP3347/90)",
     "titleAr": "PHILIPS Kaffeevollautomat LatteGo 3300 Serie, Chrom, 6 Spezialitäten | Espressomaschine, LatteGo Milchsystem, einfache Reinigung, SilentBrew, Farb-Touch-Display, Keramikmahlwerk (EP3347/90)",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "PHILIPS",
     "ean": "B0CDCFH17J",
     "sku": "B0CDCFH17J",
@@ -1518,7 +1518,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (361.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 375.15
+    "price": 300.89
   },
   {
     "id": "real-B0G2284CJK",
@@ -1554,7 +1554,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (64.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 65.51
+    "price": 62.61
   },
   {
     "id": "real-B0CNH9JDFX",
@@ -1590,7 +1590,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (13.82€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 19.42
+    "price": 16.03
   },
   {
     "id": "real-B0BKX48NZ9",
@@ -1618,7 +1618,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (790.88€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 818.46
+    "price": 798.93
   },
   {
     "id": "real-B0CQWT6V1H",
@@ -1654,7 +1654,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (288.91€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 298.77
+    "price": 284.03
   },
   {
     "id": "real-B0C6PGXG7L",
@@ -1690,7 +1690,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (262.58€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 269.2
+    "price": 227.21
   },
   {
     "id": "real-B00CJ33QEI",
@@ -1720,7 +1720,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (390.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 407.14
+    "price": 361.05
   },
   {
     "id": "real-B0D17JHD2P",
@@ -1792,15 +1792,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (53.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 54.33
+    "price": 53.46
   },
   {
     "id": "real-B0DGHQW185",
     "asin": "B0DGHQW185",
     "title": "Apple iPhone 16 Plus 128 GB: 5G Handy mit Kamerasteuerung, A18 Chip und einem echten Boost für die B...",
     "titleAr": "Apple iPhone 16 Plus 128 GB: 5G Handy mit Kamerasteuerung, A18 Chip und einem echten Boost für die B...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Apple",
     "ean": "B0DGHQW185",
     "sku": "B0DGHQW185",
@@ -1828,7 +1828,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (907.80€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 918.83
+    "price": 863.17
   },
   {
     "id": "real-B0C4YB24FT",
@@ -1862,7 +1862,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (96.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 103.94
+    "price": 88.97
   },
   {
     "id": "real-B0CDTVTFFS",
@@ -1905,8 +1905,8 @@
     "asin": "B07MMSHC4R",
     "title": "PHILIPS Kaffeevollautomat Panarello 2200 Serie, Schwarz, 2 Spezialitäten | Espressomaschine, klassischer Milchaufschäumer, Touch-Display, Keramikmahlwerk (EP2220/10)",
     "titleAr": "PHILIPS Kaffeevollautomat Panarello 2200 Serie, Schwarz, 2 Spezialitäten | Espressomaschine, klassischer Milchaufschäumer, Touch-Display, Keramikmahlwerk (EP2220/10)",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "PHILIPS",
     "ean": "B07MMSHC4R",
     "sku": "B07MMSHC4R",
@@ -1934,7 +1934,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (244.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 250.34
+    "price": 226.88
   },
   {
     "id": "real-B08ZXY1B7H",
@@ -1970,7 +1970,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (44.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 45.24
+    "price": 44.7
   },
   {
     "id": "real-B07GZYWX4B",
@@ -2006,7 +2006,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (64.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 71.56
+    "price": 63.59
   },
   {
     "id": "real-B0BRQCBK2W",
@@ -2035,7 +2035,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (804.67€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 825.56
+    "price": 791.16
   },
   {
     "id": "real-B0CTT7Q8WQ",
@@ -2071,7 +2071,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (55.27€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 56.54
+    "price": 52.99
   },
   {
     "id": "real-B0CVXDGNWP",
@@ -2107,7 +2107,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (106.55€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 110.21
+    "price": 95.26
   },
   {
     "id": "real-B010TL9PT6",
@@ -2140,7 +2140,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (566.39€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 582.47
+    "price": 476.88
   },
   {
     "id": "real-B00VFQUS82",
@@ -2176,7 +2176,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (251.33€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 283.03
+    "price": 226.24
   },
   {
     "id": "real-B0BV7DR4B6",
@@ -2212,15 +2212,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (152.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 164.53
+    "price": 143.93
   },
   {
     "id": "real-B0DGHY5KG8",
     "asin": "B0DGHY5KG8",
     "title": "Apple iPhone 16 128 GB: 5G Handy mit Kamerasteuerung, A18 Chip und einem echten Boost für die Batter...",
     "titleAr": "Apple iPhone 16 128 GB: 5G Handy mit Kamerasteuerung, A18 Chip und einem echten Boost für die Batter...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Apple",
     "ean": "B0DGHY5KG8",
     "sku": "B0DGHY5KG8",
@@ -2248,7 +2248,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (788.26€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 819.91
+    "price": 803.18
   },
   {
     "id": "real-B0G5P8BLFL",
@@ -2284,7 +2284,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (93.73€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 99.18
+    "price": 82.95
   },
   {
     "id": "real-B0DF8L6PDK",
@@ -2320,15 +2320,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (655.73€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 660.35
+    "price": 629.99
   },
   {
     "id": "real-B0CTCQKJ1B",
     "asin": "B0CTCQKJ1B",
     "title": "PHILIPS Kaffeevollautomat LatteGo 5500 Serie, Schwarz, 20 Spezialitäten | Espressomaschine Hot & Cold, LatteGo Milchsystem, 4 Profile, Farb-Touch-Display, SilentBrew, Keramikmahlwerk (EP5544/50)",
     "titleAr": "PHILIPS Kaffeevollautomat LatteGo 5500 Serie, Schwarz, 20 Spezialitäten | Espressomaschine Hot & Cold, LatteGo Milchsystem, 4 Profile, Farb-Touch-Display, SilentBrew, Keramikmahlwerk (EP5544/50)",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "PHILIPS",
     "ean": "B0CTCQKJ1B",
     "sku": "B0CTCQKJ1B",
@@ -2356,7 +2356,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (531.76€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 544.84
+    "price": 424.85
   },
   {
     "id": "real-B0CS6ZZ3MY",
@@ -2392,7 +2392,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (46.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 46.62
+    "price": 46.04
   },
   {
     "id": "real-B08P7JTLDB",
@@ -2428,7 +2428,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 25.49
+    "price": 20.38
   },
   {
     "id": "real-B0CLTBHXWQ",
@@ -2455,7 +2455,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (596.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 608.95
+    "price": 579.96
   },
   {
     "id": "real-B0CWNYX31T",
@@ -2491,7 +2491,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (109.01€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 111.97
+    "price": 111.07
   },
   {
     "id": "real-B0HDSX1XVW",
@@ -2527,7 +2527,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (102.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 105.99
+    "price": 103
   },
   {
     "id": "real-B0DQ93HX2L",
@@ -2563,7 +2563,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (240.68€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 245.29
+    "price": 200.44
   },
   {
     "id": "real-B0CX58XZL6",
@@ -2599,7 +2599,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (191.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 212.61
+    "price": 183.22
   },
   {
     "id": "real-B0CWH3FX31",
@@ -2635,15 +2635,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (115.89€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 124.35
+    "price": 107.74
   },
   {
     "id": "real-B0CNH5NN31",
     "asin": "B0CNH5NN31",
     "title": "Samsung Galaxy S24 AI Smartphone, Android-Handy ohne Vertrag, 8 GB RAM, 256 GB Speicher, 50-MP-Kamera, Lange Akkulaufzeit,...",
     "titleAr": "Samsung Galaxy S24 AI Smartphone, Android-Handy ohne Vertrag, 8 GB RAM, 256 GB Speicher, 50-MP-Kamera, Lange Akkulaufzeit,...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Samsung",
     "ean": "B0CNH5NN31",
     "sku": "B0CNH5NN31",
@@ -2671,7 +2671,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (428.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 436.3
+    "price": 417.28
   },
   {
     "id": "real-B0CT16KJLS",
@@ -2707,7 +2707,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (123.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 144.34
+    "price": 125.75
   },
   {
     "id": "real-B0CVXQ59YY",
@@ -2743,15 +2743,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (676.54€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 687.68
+    "price": 679.91
   },
   {
     "id": "real-B0H34G7VB2",
     "asin": "B0H34G7VB2",
     "title": "GOURMETmaxx FryUp3 Vertikale Heißluftfritteuse 3 Kammern | Airfryer XXL PFAS-frei | Heissluftfritteuse XXL 13,4L + Ofenschublade für Pizza etc | Air Fryer Heißluftfritteuse SuperClear-LED-Touchdisplay",
     "titleAr": "GOURMETmaxx FryUp3 Vertikale Heißluftfritteuse 3 Kammern | Airfryer XXL PFAS-frei | Heissluftfritteuse XXL 13,4L + Ofenschublade für Pizza etc | Air Fryer Heißluftfritteuse SuperClear-LED-Touchdisplay",
-    "category": "tv_audio",
-    "categoryAr": "الشاشات والصوتيات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "GOURMETmaxx",
     "ean": "B0H34G7VB2",
     "sku": "B0H34G7VB2",
@@ -2779,7 +2779,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (146.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 149.13
+    "price": 131.43
   },
   {
     "id": "real-B0B8TQ7YRW",
@@ -2811,7 +2811,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (20.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 20.6
+    "price": 20.33
   },
   {
     "id": "real-B0D1R7PSMS",
@@ -2847,7 +2847,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.32€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 24.19
+    "price": 21.07
   },
   {
     "id": "real-B0DZ46NFCJ",
@@ -2883,7 +2883,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (491.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 511.68
+    "price": 486.71
   },
   {
     "id": "real-B0GWQWWJDX",
@@ -2919,7 +2919,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (98.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 99.55
+    "price": 93.24
   },
   {
     "id": "real-B015TKUPIC",
@@ -2955,7 +2955,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (92.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 94.52
+    "price": 91.67
   },
   {
     "id": "real-B086XYFJ3J",
@@ -2991,7 +2991,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (92.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 95.31
+    "price": 91.76
   },
   {
     "id": "real-B0G719PNZD",
@@ -3027,7 +3027,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (101.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 115.26
+    "price": 93.8
   },
   {
     "id": "real-B09BNY3PTN",
@@ -3063,15 +3063,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (62.01€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 70.47
+    "price": 60.71
   },
   {
     "id": "real-B0GGCDV1Q1",
     "asin": "B0GGCDV1Q1",
     "title": "Google Pixel 10a – 7 Jahre Betriebssystem- und Sicherheitsupdates, mehr als 30 Stunden Akkulaufzeit,...",
     "titleAr": "Google Pixel 10a – 7 Jahre Betriebssystem- und Sicherheitsupdates, mehr als 30 Stunden Akkulaufzeit,...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Google",
     "ean": "B0GGCDV1Q1",
     "sku": "B0GGCDV1Q1",
@@ -3099,7 +3099,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (400.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 404.02
+    "price": 382.5
   },
   {
     "id": "real-B0FLYL3QM1",
@@ -3107,7 +3107,7 @@
     "title": "Killtec KOW 18 WMN PRK",
     "titleAr": "Killtec KOW 18 WMN PRK",
     "category": "fashion_shoes",
-    "categoryAr": "الملابس والأحذية والأزياء",
+    "categoryAr": "منتجات عامة",
     "brand": "Killtec",
     "ean": "B0FLYL3QM1",
     "sku": "B0FLYL3QM1",
@@ -3131,7 +3131,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (102.68€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 118.57
+    "price": 101.21
   },
   {
     "id": "real-B0F9LDNNQP",
@@ -3167,15 +3167,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (621.76€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 640.59
+    "price": 632.02
   },
   {
     "id": "real-B0H2F597GG",
     "asin": "B0H2F597GG",
     "title": "GOURMETmaxx FryUp3 Vertikale Heißluftfritteuse 3 Kammern | Heissluftfritteuse XXL 17 Liter | Airfryer mit Klapp-Touchdisplay, 12 Onetouch-Programmen, Sichtfenstern | Air Fryer Fritteuse 12 Personen",
     "titleAr": "GOURMETmaxx FryUp3 Vertikale Heißluftfritteuse 3 Kammern | Heissluftfritteuse XXL 17 Liter | Airfryer mit Klapp-Touchdisplay, 12 Onetouch-Programmen, Sichtfenstern | Air Fryer Fritteuse 12 Personen",
-    "category": "tv_audio",
-    "categoryAr": "الشاشات والصوتيات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "GOURMETmaxx",
     "ean": "B0H2F597GG",
     "sku": "B0H2F597GG",
@@ -3203,7 +3203,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (143.23€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 146.57
+    "price": 144.8
   },
   {
     "id": "real-B0DB4H2L74",
@@ -3235,7 +3235,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (50.55€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 51.45
+    "price": 50.55
   },
   {
     "id": "real-B0H4G5MLK6",
@@ -3271,7 +3271,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.75€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 28.6
+    "price": 24.51
   },
   {
     "id": "real-B0DDKDSBSN",
@@ -3303,7 +3303,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (421.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 434.13
+    "price": 423.73
   },
   {
     "id": "real-B0F9XDH7HK",
@@ -3338,7 +3338,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (60.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 62.16
+    "price": 59.89
   },
   {
     "id": "real-B08ZSNYN8N",
@@ -3372,7 +3372,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (170.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 179.15
+    "price": 159.54
   },
   {
     "id": "real-B0DQ19D94K",
@@ -3408,7 +3408,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (211.29€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 225.74
+    "price": 208.9
   },
   {
     "id": "real-B0FPXFZXCN",
@@ -3444,15 +3444,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (24.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 30.88
+    "price": 29.66
   },
   {
     "id": "real-B0CNH77WY4",
     "asin": "B0CNH77WY4",
     "title": "Samsung Galaxy S24 AI Smartphone, Android-Handy ohne Vertrag, 8 GB RAM, 128 GB Speicher, 50-MP-Kamera, Lange Akkulaufzeit,...",
     "titleAr": "Samsung Galaxy S24 AI Smartphone, Android-Handy ohne Vertrag, 8 GB RAM, 128 GB Speicher, 50-MP-Kamera, Lange Akkulaufzeit,...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Samsung",
     "ean": "B0CNH77WY4",
     "sku": "B0CNH77WY4",
@@ -3480,7 +3480,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (506.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 526.84
+    "price": 516.09
   },
   {
     "id": "real-B0DBJ29GJH",
@@ -3516,7 +3516,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (101.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 109.37
+    "price": 95.98
   },
   {
     "id": "real-B0H2YK2DQS",
@@ -3552,15 +3552,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (874.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 901.59
+    "price": 877.31
   },
   {
     "id": "real-B0H2FG3VBN",
     "asin": "B0H2FG3VBN",
     "title": "GOURMETmaxx FryUp3 Vertikale Heißluftfritteuse 3 Kammern | Heissluftfritteuse XXL 17 Liter | Airfryer mit Multi-Colour-Klapp-Touchdisplay | Air Fryer Fritteuse für 12 Personen | 12 One-touch-Programme",
     "titleAr": "GOURMETmaxx FryUp3 Vertikale Heißluftfritteuse 3 Kammern | Heissluftfritteuse XXL 17 Liter | Airfryer mit Multi-Colour-Klapp-Touchdisplay | Air Fryer Fritteuse für 12 Personen | 12 One-touch-Programme",
-    "category": "tv_audio",
-    "categoryAr": "الشاشات والصوتيات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "GOURMETmaxx",
     "ean": "B0H2FG3VBN",
     "sku": "B0H2FG3VBN",
@@ -3588,7 +3588,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (150.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 152.25
+    "price": 139.23
   },
   {
     "id": "real-B0DF85K4N5",
@@ -3622,7 +3622,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (23.46€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 23.67
+    "price": 23.42
   },
   {
     "id": "real-B0H4RH1HLH",
@@ -3658,7 +3658,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (13.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 16.34
+    "price": 13.59
   },
   {
     "id": "real-B0F5Z4GKZ8",
@@ -3694,7 +3694,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (1279.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 1328.65
+    "price": 1287.11
   },
   {
     "id": "real-B0FB3N1S6W",
@@ -3727,15 +3727,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (220.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 227.71
+    "price": 213.81
   },
   {
     "id": "real-B0CNH6RHV6",
     "asin": "B0CNH6RHV6",
     "title": "Samsung Galaxy S24 Ultra AI Smartphone, Android-Handy ohne Vertrag, 12GB RAM/256GB Speicher, 200-MP-Kamera, S Pen, Lange A...",
     "titleAr": "Samsung Galaxy S24 Ultra AI Smartphone, Android-Handy ohne Vertrag, 12GB RAM/256GB Speicher, 200-MP-Kamera, S Pen, Lange A...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Samsung",
     "ean": "B0CNH6RHV6",
     "sku": "B0CNH6RHV6",
@@ -3763,7 +3763,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (555.23€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 573.35
+    "price": 566.24
   },
   {
     "id": "real-B0B6HZMVJX",
@@ -3799,7 +3799,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (32.90€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 43.23
+    "price": 34.92
   },
   {
     "id": "real-B0H2YNKM7X",
@@ -3835,15 +3835,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (1078.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 1098.52
+    "price": 1065.7
   },
   {
     "id": "real-B0DPQ55RVS",
     "asin": "B0DPQ55RVS",
     "title": "Cosori Airfryer, Testsieger, 10,8L Turbo Tower Pro Smart | Stiftung Warentest Testsieger, Dual Blaze...",
     "titleAr": "Cosori Airfryer, Testsieger, 10,8L Turbo Tower Pro Smart | Stiftung Warentest Testsieger, Dual Blaze...",
-    "category": "home_kitchen",
-    "categoryAr": "المطبخ والأجهزة المنزلية",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "Cosori",
     "ean": "B0DPQ55RVS",
     "sku": "B0DPQ55RVS",
@@ -3871,7 +3871,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (212.85€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 241.05
+    "price": 191.6
   },
   {
     "id": "real-B0B92Y18GT",
@@ -3905,7 +3905,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (27.82€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 28.37
+    "price": 27.04
   },
   {
     "id": "real-B0BVGQSLJZ",
@@ -3941,7 +3941,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (38.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.327Z",
-    "price": 48.81
+    "price": 37.03
   },
   {
     "id": "real-B0B8QL8P2C",
@@ -3977,7 +3977,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (1261.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.327Z",
-    "price": 1280.16
+    "price": 1193.33
   },
   {
     "id": "real-B0H5XFW88V",
@@ -4011,15 +4011,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (311.03€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.327Z",
-    "price": 317.7
+    "price": 305.46
   },
   {
     "id": "real-B0GMWJXS4M",
     "asin": "B0GMWJXS4M",
     "title": "Samsung Galaxy A57 5G, Schlankes AI-Smartphone, Awesome Intelligence, 256 GB Speicherplatz, 50 MP Weitwinkel-Kamera, Bis z...",
     "titleAr": "Samsung Galaxy A57 5G, Schlankes AI-Smartphone, Awesome Intelligence, 256 GB Speicherplatz, 50 MP Weitwinkel-Kamera, Bis z...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Samsung",
     "ean": "B0GMWJXS4M",
     "sku": "B0GMWJXS4M",
@@ -4047,7 +4047,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (394.41€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.327Z",
-    "price": 401.15
+    "price": 401.11
   },
   {
     "id": "real-B09HWTJ8NY",
@@ -4083,7 +4083,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (75.11€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 84.02
+    "price": 74.2
   },
   {
     "id": "real-B0H2YG5JJF",
@@ -4119,7 +4119,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (1842.28€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 1919.04
+    "price": 1825.4
   },
   {
     "id": "real-B0DJ71KZXF",
@@ -4153,7 +4153,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (81.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 93.88
+    "price": 77.55
   },
   {
     "id": "real-B0CN9PWGGL",
@@ -4183,7 +4183,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (26.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 26.66
+    "price": 26.14
   },
   {
     "id": "real-B0D1R5P9XB",
@@ -4219,7 +4219,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 27.95
+    "price": 22.49
   },
   {
     "id": "real-B0F6CV56MN",
@@ -4255,7 +4255,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (1515.11€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 1531.96
+    "price": 1481.1
   },
   {
     "id": "real-B095WXTL7R",
@@ -4288,15 +4288,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (196.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 203.35
+    "price": 199.49
   },
   {
     "id": "real-B0DPN98BDQ",
     "asin": "B0DPN98BDQ",
     "title": "Samsung Galaxy S25 AI Smartphone mit Galaxy AI, Ohne Vertrag, Handy mit Android, 12 GB RAM, 128 GB Speicher, 50-MP-Kamera,...",
     "titleAr": "Samsung Galaxy S25 AI Smartphone mit Galaxy AI, Ohne Vertrag, Handy mit Android, 12 GB RAM, 128 GB Speicher, 50-MP-Kamera,...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "Samsung",
     "ean": "B0DPN98BDQ",
     "sku": "B0DPN98BDQ",
@@ -4324,7 +4324,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (525.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 546.64
+    "price": 514.4
   },
   {
     "id": "real-B0DDSYKMKM",
@@ -4360,7 +4360,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (75.43€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 82.98
+    "price": 82.63
   },
   {
     "id": "real-B0H4QWJRHV",
@@ -4396,7 +4396,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (365.98€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 372.92
+    "price": 372.36
   },
   {
     "id": "real-B09ZYLM43B",
@@ -4432,7 +4432,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (135.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 158.65
+    "price": 152.97
   },
   {
     "id": "real-B0DGLN29DQ",
@@ -4465,7 +4465,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (30.03€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 30.21
+    "price": 29.3
   },
   {
     "id": "real-B0DHRDVWGN",
@@ -4501,7 +4501,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (20.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 26.12
+    "price": 24.36
   },
   {
     "id": "real-B0F3DHMM39",
@@ -4537,7 +4537,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (1875.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 1911.97
+    "price": 1824.02
   },
   {
     "id": "real-B01ENFAEJE",
@@ -4573,15 +4573,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (227.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 234.04
+    "price": 216.14
   },
   {
     "id": "real-B0GXBGC7MG",
     "asin": "B0GXBGC7MG",
     "title": "realme 14 5G Smartphone Ohne Vertrag, Snapdragon 6 Gen 4 5G, 6000mAh Titan Akku & 45W Schnellladung,...",
     "titleAr": "realme 14 5G Smartphone Ohne Vertrag, Snapdragon 6 Gen 4 5G, 6000mAh Titan Akku & 45W Schnellladung,...",
-    "category": "laptops_tablets",
-    "categoryAr": "أجهزة لابتوب وتابلت",
+    "category": "smartphones",
+    "categoryAr": "الهواتف والتابلت",
     "brand": "realme",
     "ean": "B0GXBGC7MG",
     "sku": "B0GXBGC7MG",
@@ -4609,7 +4609,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (206.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 213.19
+    "price": 210.72
   },
   {
     "id": "real-B08VR9CW3S",
@@ -4645,7 +4645,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (21.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 30.62
+    "price": 26.14
   },
   {
     "id": "real-B0GSGX6FF1",
@@ -4681,7 +4681,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (924.71€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 961.14
+    "price": 942.3
   },
   {
     "id": "real-B0FS16B394",
@@ -4716,7 +4716,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (421.93€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 480.01
+    "price": 421.01
   },
   {
     "id": "real-B0DGLKQ4HT",
@@ -4747,7 +4747,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (30.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 30.84
+    "price": 30.56
   },
   {
     "id": "real-B0H6B1MSD1",
@@ -4755,7 +4755,7 @@
     "title": "UREVO 2 in 1 Laufband für zuhause mit APP | Walking pad mit doppelter Stoßdämpfung, Laufband mit Fernbedienung und LED-Anzeige, KI-gestützte App",
     "titleAr": "UREVO 2 in 1 Laufband für zuhause mit APP | Walking pad mit doppelter Stoßdämpfung, Laufband mit Fernbedienung und LED-Anzeige, KI-gestützte App",
     "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "categoryAr": "الرياضة واللياقة والتخييم",
     "brand": "UREVO",
     "ean": "B0H6B1MSD1",
     "sku": "B0H6B1MSD1",
@@ -4783,7 +4783,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (172.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 188.52
+    "price": 164.69
   },
   {
     "id": "real-B0H5XBKYYM",
@@ -4816,7 +4816,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (608.25€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 616.07
+    "price": 616.01
   },
   {
     "id": "real-B0HJ9ZZ8VY",
@@ -4888,7 +4888,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (110.72€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 120.48
+    "price": 103.7
   },
   {
     "id": "real-B0GSH2NHSZ",
@@ -4924,7 +4924,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (907.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 928.33
+    "price": 917.13
   },
   {
     "id": "real-B0FFGQ7L2T",
@@ -4959,7 +4959,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (470.82€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 551.31
+    "price": 520.54
   },
   {
     "id": "real-B0F443WD8W",
@@ -4987,7 +4987,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (19.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 19.88
+    "price": 18.97
   },
   {
     "id": "real-B0F4XNTNXN",
@@ -4995,7 +4995,7 @@
     "title": "UREVO 2 in 1 Laufband für zuhause mit APP | Walking pad mit doppelter Stoßdämpfung, Laufband mit Fernbedienung und LED-Anzeige, KI-gestützte App",
     "titleAr": "UREVO 2 in 1 Laufband für zuhause mit APP | Walking pad mit doppelter Stoßdämpfung, Laufband mit Fernbedienung und LED-Anzeige, KI-gestützte App",
     "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "categoryAr": "الرياضة واللياقة والتخييم",
     "brand": "UREVO",
     "ean": "B0F4XNTNXN",
     "sku": "B0F4XNTNXN",
@@ -5059,7 +5059,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (1540.39€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 1569.42
+    "price": 1498.48
   },
   {
     "id": "real-B0DBJ472CT",
@@ -5095,7 +5095,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (77.84€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 85.26
+    "price": 85.11
   },
   {
     "id": "real-B09Y2LL45F",
@@ -5131,7 +5131,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (199.25€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 203.11
+    "price": 193.77
   },
   {
     "id": "real-B0GMH56TRH",
@@ -5167,15 +5167,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (412.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 478.65
+    "price": 421.2
   },
   {
     "id": "real-B0GTWNZQXW",
     "asin": "B0GTWNZQXW",
     "title": "Braun Smart IPL Geräte Haarentfernung Skin i·expert 7, PL7211, Rosegold | Alternative Laser Haarentfernung für Zuhause, Dauerhafte Haarentfernung, Inkl. Etui, Gillette Venus Rasierer Und 2 Aufsätze",
     "titleAr": "Braun Smart IPL Geräte Haarentfernung Skin i·expert 7, PL7211, Rosegold | Alternative Laser Haarentfernung für Zuhause, Dauerhafte Haarentfernung, Inkl. Etui, Gillette Venus Rasierer Und 2 Aufsätze",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور والتجميل والعناية",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "Braun",
     "ean": "B0GTWNZQXW",
     "sku": "B0GTWNZQXW",
@@ -5203,7 +5203,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (381.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 390.28
+    "price": 381.35
   },
   {
     "id": "real-B0GXZK5YPP",
@@ -5211,7 +5211,7 @@
     "title": "Laufband mit 9% Steigung, Walking pad klappbar mit Sicherheitsgriff",
     "titleAr": "Laufband mit 9% Steigung, Walking pad klappbar mit Sicherheitsgriff",
     "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "categoryAr": "الرياضة واللياقة والتخييم",
     "brand": "Laufband",
     "ean": "B0GXZK5YPP",
     "sku": "B0GXZK5YPP",
@@ -5239,7 +5239,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (89.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 96.98
+    "price": 92.75
   },
   {
     "id": "real-B0FQG92W6D",
@@ -5275,7 +5275,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (976.15€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 987.51
+    "price": 917.78
   },
   {
     "id": "real-B0952CRK3R",
@@ -5311,7 +5311,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (107.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 117.16
+    "price": 111.05
   },
   {
     "id": "real-B0BXM22X99",
@@ -5347,7 +5347,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (220.87€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 224.01
+    "price": 215.5
   },
   {
     "id": "real-B0GHMV8ML5",
@@ -5383,15 +5383,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (297.70€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 344.16
+    "price": 303.15
   },
   {
     "id": "real-B0G4CPCFT9",
     "asin": "B0G4CPCFT9",
     "title": "Braun IPL Geräte Haarentfernung Silk·expert Pro 5, PL5100, Weiß/Gold | Alternative Laser Haarentfernung für Zuhause, Dauerhafte Haarentfernung, Inkl. Etui Und 1 Aufsatz",
     "titleAr": "Braun IPL Geräte Haarentfernung Silk·expert Pro 5, PL5100, Weiß/Gold | Alternative Laser Haarentfernung für Zuhause, Dauerhafte Haarentfernung, Inkl. Etui Und 1 Aufsatz",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور والتجميل والعناية",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "Braun",
     "ean": "B0G4CPCFT9",
     "sku": "B0G4CPCFT9",
@@ -5419,15 +5419,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (305.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 307.96
+    "price": 249.58
   },
   {
     "id": "real-B0GX2CG369",
     "asin": "B0GX2CG369",
     "title": "Tretmann Walking Pad mit Steigung klappbar -extra leise [LongLife Laufdeck] | Mit App, bis 150 kg be...",
     "titleAr": "Tretmann Walking Pad mit Steigung klappbar -extra leise [LongLife Laufdeck] | Mit App, bis 150 kg be...",
-    "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "Tretmann",
     "ean": "B0GX2CG369",
     "sku": "B0GX2CG369",
@@ -5455,7 +5455,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (164.89€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 182
+    "price": 148.74
   },
   {
     "id": "real-B0FQGG53WL",
@@ -5491,7 +5491,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (1074.81€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 1113.91
+    "price": 1095.64
   },
   {
     "id": "real-B09LQBR5PJ",
@@ -5527,7 +5527,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (33.67€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 47.82
+    "price": 40.82
   },
   {
     "id": "real-B0DBLP647C",
@@ -5563,7 +5563,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (228.81€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 231.45
+    "price": 219.88
   },
   {
     "id": "real-B0DWKBMSWG",
@@ -5598,15 +5598,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (201.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 210.37
+    "price": 185.52
   },
   {
     "id": "real-B0G4CR25T1",
     "asin": "B0G4CR25T1",
     "title": "Braun IPL Geräte Haarentfernung Silk·expert Pro 5, PL5234, Weiß/Silber | Alternative Laser Haarentfernung für Zuhause, Dauerhafte Haarentfernung, Inkl. Etui, Gillette Venus Rasierer Und 2 Aufsätze",
     "titleAr": "Braun IPL Geräte Haarentfernung Silk·expert Pro 5, PL5234, Weiß/Silber | Alternative Laser Haarentfernung für Zuhause, Dauerhafte Haarentfernung, Inkl. Etui, Gillette Venus Rasierer Und 2 Aufsätze",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور والتجميل والعناية",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "Braun",
     "ean": "B0G4CR25T1",
     "sku": "B0G4CR25T1",
@@ -5634,7 +5634,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (351.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 354.19
+    "price": 312.04
   },
   {
     "id": "real-B0DNR4H57P",
@@ -5642,7 +5642,7 @@
     "title": "Sportstech, Walking Pad klappbar für Homeoffice + 180 kg belastbar sPad | Laufband für Zuhause mit B...",
     "titleAr": "Sportstech, Walking Pad klappbar für Homeoffice + 180 kg belastbar sPad | Laufband für Zuhause mit B...",
     "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "categoryAr": "الرياضة واللياقة والتخييم",
     "brand": "Sportstech",
     "ean": "B0DNR4H57P",
     "sku": "B0DNR4H57P",
@@ -5670,7 +5670,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (297.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 317.64
+    "price": 278.21
   },
   {
     "id": "real-B0FQG8ZNH2",
@@ -5706,7 +5706,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (856.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 882.18
+    "price": 858.42
   },
   {
     "id": "real-B0G5YXLWHH",
@@ -5742,7 +5742,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (85.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 94.98
+    "price": 87.09
   },
   {
     "id": "real-B0F2TT8Q7M",
@@ -5778,7 +5778,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (321.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 334.09
+    "price": 323.65
   },
   {
     "id": "real-B0GHN9DR1C",
@@ -5814,15 +5814,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (527.45€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 560.52
+    "price": 501.01
   },
   {
     "id": "real-B0F32JZPTS",
     "asin": "B0F32JZPTS",
     "title": "Braun IPL Geräte Haarentfernung Silk·expert Mini, PL1112, Rosa | Alternative Laser Haarentfernung für Zuhause, Dauerhafte Haarentfernung, Kompakte Größe für Unterwegs, Einfach Und Sicher",
     "titleAr": "Braun IPL Geräte Haarentfernung Silk·expert Mini, PL1112, Rosa | Alternative Laser Haarentfernung für Zuhause, Dauerhafte Haarentfernung, Kompakte Größe für Unterwegs, Einfach Und Sicher",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور والتجميل والعناية",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "Braun",
     "ean": "B0F32JZPTS",
     "sku": "B0F32JZPTS",
@@ -5850,7 +5850,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (186.34€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 190.69
+    "price": 190.35
   },
   {
     "id": "real-B0GWR3S5B7",
@@ -5858,7 +5858,7 @@
     "title": "Laufband für Zuhause, Elektrisches Laufbänder mit Griff, Klappbares bis 10Km/H, Treadmill Walking Pad for Home, Leise Klei...",
     "titleAr": "Laufband für Zuhause, Elektrisches Laufbänder mit Griff, Klappbares bis 10Km/H, Treadmill Walking Pad for Home, Leise Klei...",
     "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "categoryAr": "الرياضة واللياقة والتخييم",
     "brand": "Laufband",
     "ean": "B0GWR3S5B7",
     "sku": "B0GWR3S5B7",
@@ -5886,7 +5886,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (101.80€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 107.72
+    "price": 87.67
   },
   {
     "id": "real-B0GQVG8S7V",
@@ -5922,7 +5922,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (772.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 795.41
+    "price": 776.36
   },
   {
     "id": "real-B0G52VCZG1",
@@ -5958,7 +5958,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (94.86€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 101.56
+    "price": 86.12
   },
   {
     "id": "real-B0C4TLFZSZ",
@@ -6030,15 +6030,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (64.38€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 74.86
+    "price": 68.38
   },
   {
     "id": "real-B08F7SY665",
     "asin": "B08F7SY665",
     "title": "Braun Rasierer Herren Elektrisch Series 9  PRO+, 9610si, Schwarz | Elektrorasierer, 5+1 Scherkopfele...",
     "titleAr": "Braun Rasierer Herren Elektrisch Series 9  PRO+, 9610si, Schwarz | Elektrorasierer, 5+1 Scherkopfele...",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور والتجميل والعناية",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "Braun",
     "ean": "B08F7SY665",
     "sku": "B08F7SY665",
@@ -6066,7 +6066,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (363.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 364.95
+    "price": 324.54
   },
   {
     "id": "real-B0H7WHTMCP",
@@ -6074,7 +6074,7 @@
     "title": "Walking Pad, 12 HIIT Programes Laufband für Zuhause mit 9% Steigung | Leises Laufband 1-10KM/H 2.5HP Bürstenloser Motor, D...",
     "titleAr": "Walking Pad, 12 HIIT Programes Laufband für Zuhause mit 9% Steigung | Leises Laufband 1-10KM/H 2.5HP Bürstenloser Motor, D...",
     "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "categoryAr": "الرياضة واللياقة والتخييم",
     "brand": "Walking",
     "ean": "B0H7WHTMCP",
     "sku": "B0H7WHTMCP",
@@ -6102,7 +6102,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (128.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 144.69
+    "price": 124.61
   },
   {
     "id": "real-B084MFS8P9",
@@ -6138,7 +6138,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (72.45€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 78.07
+    "price": 69.66
   },
   {
     "id": "real-B0CX1VYYQL",
@@ -6174,7 +6174,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (106.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 108.01
+    "price": 103.13
   },
   {
     "id": "real-B0BQMG8862",
@@ -6216,8 +6216,8 @@
     "asin": "B08RB6C5GP",
     "title": "Philips Lumea IPL 9000 Series - IPL-Haarentfernungsgerät für jahrelang seidig-glatte Haut* mit 3 Aufsätzen für Körper & Ge...",
     "titleAr": "Philips Lumea IPL 9000 Series - IPL-Haarentfernungsgerät für jahrelang seidig-glatte Haut* mit 3 Aufsätzen für Körper & Ge...",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور والتجميل والعناية",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "Philips",
     "ean": "B08RB6C5GP",
     "sku": "B08RB6C5GP",
@@ -6245,7 +6245,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (340.33€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 345.86
+    "price": 288.17
   },
   {
     "id": "real-B0CMR4WTT9",
@@ -6281,7 +6281,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (1458.43€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 1500.75
+    "price": 1448.88
   },
   {
     "id": "real-B0CT19MSKC",
@@ -6317,7 +6317,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (98.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 114.9
+    "price": 100
   },
   {
     "id": "real-B0BQMJR58X",
@@ -6350,15 +6350,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (66.83€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 76.47
+    "price": 74.75
   },
   {
     "id": "real-B07HX2KMXK",
     "asin": "B07HX2KMXK",
     "title": "Philips Lumea IPL 7000 Series - IPL Geräte Haarentfernung für jahrelang seidig-glatte Haut* mit 3 Aufsätzen für Körper & G...",
     "titleAr": "Philips Lumea IPL 7000 Series - IPL Geräte Haarentfernung für jahrelang seidig-glatte Haut* mit 3 Aufsätzen für Körper & G...",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور والتجميل والعناية",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "Philips",
     "ean": "B07HX2KMXK",
     "sku": "B07HX2KMXK",
@@ -6386,7 +6386,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (318.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 326.47
+    "price": 268.7
   },
   {
     "id": "real-B0FL84SPYC",
@@ -6394,7 +6394,7 @@
     "title": "VMAX E-Scooter NEW VX2 HUB 70-90 km E Roller mit Straßenzulassung | E-Roller mit Straßenzulassung in DE, 70-90 km Reichweite, 20km/h, 130kg Traglast, Blinker vorne/hinten, vollgefedert",
     "titleAr": "VMAX E-Scooter NEW VX2 HUB 70-90 km E Roller mit Straßenzulassung | E-Roller mit Straßenzulassung in DE, 70-90 km Reichweite, 20km/h, 130kg Traglast, Blinker vorne/hinten, vollgefedert",
     "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "categoryAr": "الرياضة واللياقة والتخييم",
     "brand": "VMAX",
     "ean": "B0FL84SPYC",
     "sku": "B0FL84SPYC",
@@ -6422,7 +6422,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (921.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 1058.77
+    "price": 893.28
   },
   {
     "id": "real-B0F9Z1NLGY",
@@ -6458,7 +6458,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (34.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 47.49
+    "price": 32.3
   },
   {
     "id": "real-B0FPCJ3NX8",
@@ -6494,7 +6494,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (26.52€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 38.07
+    "price": 36.87
   },
   {
     "id": "real-B0H834LSCF",
@@ -6502,7 +6502,7 @@
     "title": "VMAX E-Scooter VX2 LITE 70-90 km Reichweite mit Straßenzulassung DE | E-Scooter mit Straßenzulassung, 70-90km Reichweite, 20km/h, 130kg Traglast, 500W Motor, 28% Steigung",
     "titleAr": "VMAX E-Scooter VX2 LITE 70-90 km Reichweite mit Straßenzulassung DE | E-Scooter mit Straßenzulassung, 70-90km Reichweite, 20km/h, 130kg Traglast, 500W Motor, 28% Steigung",
     "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "categoryAr": "الرياضة واللياقة والتخييم",
     "brand": "VMAX",
     "ean": "B0H834LSCF",
     "sku": "B0H834LSCF",
@@ -6530,7 +6530,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (767.55€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 830.68
+    "price": 660.59
   },
   {
     "id": "real-B0BYYVCBLF",
@@ -6566,7 +6566,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (21.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 28.31
+    "price": 21.54
   },
   {
     "id": "real-B0H1JD7NDZ",
@@ -6600,7 +6600,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.97€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 33.71
+    "price": 23.79
   },
   {
     "id": "real-B0GBXCW6BR",
@@ -6608,7 +6608,7 @@
     "title": "Xiaomi E-Scooter 6 Serie, E Roller Mit Straßenzulassung, 45-75km Reichweite | 10-12\" Tubeless-Reifen, Max 20km/h, Federun...",
     "titleAr": "Xiaomi E-Scooter 6 Serie, E Roller Mit Straßenzulassung, 45-75km Reichweite | 10-12\" Tubeless-Reifen, Max 20km/h, Federun...",
     "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "categoryAr": "الرياضة واللياقة والتخييم",
     "brand": "Xiaomi",
     "ean": "B0GBXCW6BR",
     "sku": "B0GBXCW6BR",
@@ -6636,7 +6636,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (256.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 292.05
+    "price": 286.3
   },
   {
     "id": "real-B0CW22RHSL",
@@ -6672,7 +6672,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (24.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 35.35
+    "price": 24.4
   },
   {
     "id": "real-B0H5VZGYNH",
@@ -6706,15 +6706,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (80.38€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 88.52
+    "price": 78.96
   },
   {
     "id": "real-B0GTYRM3KH",
     "asin": "B0GTYRM3KH",
     "title": "E Scooter mit Straßenzulassung (ABE), 8,5 Zoll Wabenreifen | 350W Motor | 30km Reichweite, 10 Zoll Wabenreifen | 500W Moto...",
     "titleAr": "E Scooter mit Straßenzulassung (ABE), 8,5 Zoll Wabenreifen | 350W Motor | 30km Reichweite, 10 Zoll Wabenreifen | 500W Moto...",
-    "category": "sports_fitness",
-    "categoryAr": "الرياضة واللياقة والدراجات",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "E",
     "ean": "B0GTYRM3KH",
     "sku": "B0GTYRM3KH",
@@ -6742,7 +6742,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (149.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 166.51
+    "price": 154.47
   },
   {
     "id": "real-B0DGQB76T9",
@@ -6778,7 +6778,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (149.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 160.34
+    "price": 131.09
   },
   {
     "id": "real-B0B2JVCT5S",
@@ -6814,7 +6814,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.40€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 25.03
+    "price": 23.88
   },
   {
     "id": "real-B07QJ6CSVQ",
@@ -6850,7 +6850,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 32.93
+    "price": 28.7
   },
   {
     "id": "real-B0FDWZV1Z4",
@@ -6886,7 +6886,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (24.75€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 33.52
+    "price": 23.56
   },
   {
     "id": "real-B09R1YD7HN",
@@ -6922,7 +6922,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 37.66
+    "price": 29.29
   },
   {
     "id": "real-B08YYPZ1K7",
@@ -6958,7 +6958,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.03€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 31.77
+    "price": 24.16
   },
   {
     "id": "real-B08YYQLFMR",
@@ -6994,7 +6994,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (26.83€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 34.37
+    "price": 26.41
   },
   {
     "id": "real-B0GX7H22ZX",
@@ -7030,7 +7030,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.14€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 31.79
+    "price": 31.16
   },
   {
     "id": "real-B0GX71Z79N",
@@ -7066,7 +7066,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.15€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 36.99
+    "price": 29.17
   },
   {
     "id": "real-B0B5TDQ7Y7",
@@ -7102,7 +7102,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.20€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 37.73
+    "price": 35.25
   },
   {
     "id": "real-B0C3C6F7KC",
@@ -7138,7 +7138,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (26.32€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 34.66
+    "price": 27.05
   },
   {
     "id": "real-B09CM6W1Z7",
@@ -7174,7 +7174,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (28.36€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 35.25
+    "price": 23.08
   },
   {
     "id": "real-B0F2MSTCZ3",
@@ -7210,7 +7210,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 31.67
+    "price": 22.64
   },
   {
     "id": "real-B0FJ19Y98F",
@@ -7246,7 +7246,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (37.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 48
+    "price": 45.75
   },
   {
     "id": "real-B0FJ1YQXGQ",
@@ -7282,7 +7282,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (36.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 47.9
+    "price": 35.89
   },
   {
     "id": "real-B0F4QPV257",
@@ -7318,7 +7318,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (70.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 76.75
+    "price": 68.91
   },
   {
     "id": "real-B0GFG91HQN",
@@ -7354,7 +7354,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (98.91€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 104.56
+    "price": 90.65
   },
   {
     "id": "real-B0HBQ47W53",
@@ -7390,7 +7390,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (123.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 128.11
+    "price": 118.87
   },
   {
     "id": "real-B0DMVDQQG9",
@@ -7426,7 +7426,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (141.40€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 147.08
+    "price": 122.81
   },
   {
     "id": "real-B0GXKF7J1Y",
@@ -7462,7 +7462,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (229.90€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 234.4
+    "price": 223.06
   },
   {
     "id": "real-B0FJF842KV",
@@ -7498,7 +7498,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (165.74€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 170.3
+    "price": 156.32
   },
   {
     "id": "real-B0DDBSMF34",
@@ -7534,7 +7534,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (142.43€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 146.11
+    "price": 128.78
   },
   {
     "id": "real-B0D24YBPWC",
@@ -7570,7 +7570,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (142.17€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 146.03
+    "price": 116.72
   },
   {
     "id": "real-B0FHHQ3NRM",
@@ -7606,7 +7606,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (58.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 59.27
+    "price": 50
   },
   {
     "id": "real-B0GMFDTRQP",
@@ -7642,7 +7642,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (52.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 54.99
+    "price": 49.5
   },
   {
     "id": "real-B0GKLRV2PW",
@@ -7678,7 +7678,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (61.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 64.73
+    "price": 58.81
   },
   {
     "id": "real-B0DPQ67432",
@@ -7714,7 +7714,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (101.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 105.9
+    "price": 102.47
   },
   {
     "id": "real-B0GSTJNBL3",
@@ -7750,7 +7750,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (74.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 75.08
+    "price": 63.34
   },
   {
     "id": "real-B0C3KPV6HF",
@@ -7786,7 +7786,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (75.45€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 77.69
+    "price": 69.01
   },
   {
     "id": "real-B0DM25JNBJ",
@@ -7822,7 +7822,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (102.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 104.72
+    "price": 93.2
   },
   {
     "id": "real-B09Z5XCT8W",
@@ -7858,7 +7858,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (38.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 39.49
+    "price": 34.02
   },
   {
     "id": "real-B0HF7Y73YG",
@@ -7894,7 +7894,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (74.24€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 75.11
+    "price": 62.07
   },
   {
     "id": "real-B0HGM3KFPZ",
@@ -7930,7 +7930,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (68.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 68.78
+    "price": 66.28
   },
   {
     "id": "real-B0HCXWC9SV",
@@ -7966,7 +7966,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (140.58€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 147.61
+    "price": 134.13
   },
   {
     "id": "real-B0G6DRLF65",
@@ -8002,7 +8002,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (159.29€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 164.35
+    "price": 149.44
   },
   {
     "id": "real-B0HDJB2Y2N",
@@ -8038,7 +8038,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (68.11€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 69.19
+    "price": 58.4
   },
   {
     "id": "real-B0GT8V6N4B",
@@ -8074,7 +8074,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (66.85€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 67.91
+    "price": 57.31
   },
   {
     "id": "real-B0FFG3BVQG",
@@ -8106,7 +8106,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (272.48€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 278.67
+    "price": 270.25
   },
   {
     "id": "real-B0FFF5KWQ3",
@@ -8142,7 +8142,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (207.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 213.4
+    "price": 178.22
   },
   {
     "id": "real-B0HJCPFT7J",
@@ -8176,7 +8176,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (180.02€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 182.98
+    "price": 174.86
   },
   {
     "id": "real-B0BN5LTD22",
@@ -8212,15 +8212,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (186.84€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 193.26
+    "price": 167.03
   },
   {
     "id": "real-B0CJ9H3CS6",
     "asin": "B0CJ9H3CS6",
     "title": "VEVOR Spot Welding Machine Dent Spotter 3kW Bolt Welding Machine Dent 6-in-1 Welding Machine with Overheating Protection S...",
     "titleAr": "جهاز تعديل صدمات السيارات VEVOR سبوتر احترافي - VEVOR Spot Welding Machine Dent Spotter 3kW Bolt Welding Machine Dent",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "VEVOR",
     "ean": "B0CJ9H3CS6",
     "sku": "B0CJ9H3CS6",
@@ -8248,7 +8248,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (177.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 183.6
+    "price": 146.46
   },
   {
     "id": "real-B0GRVJVRK3",
@@ -8281,7 +8281,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (258.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 271.58
+    "price": 246.77
   },
   {
     "id": "real-B0DDTLV4P4",
@@ -8317,7 +8317,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (57.36€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 58.66
+    "price": 56.89
   },
   {
     "id": "real-B0GCYC9XTS",
@@ -8353,15 +8353,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (62.48€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 65.66
+    "price": 64.32
   },
   {
     "id": "real-B06XXJQK52",
     "asin": "B06XXJQK52",
     "title": "GS, 10-teiliges Karosserie-Reparatur-Set, Werkzeuge zum Ausbeulen und Dellen-Entfernen ohne Lackieru...",
     "titleAr": "جهاز تعديل صدمات السيارات GS سبوتر احترافي - GS, 10-teiliges Karosserie-Reparatur-Set, Werkzeuge zum Ausbeulen und",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "tools_garden",
+    "categoryAr": "العدد والأدوات والحديقة",
     "brand": "GS",
     "ean": "B06XXJQK52",
     "sku": "B06XXJQK52",
@@ -8389,7 +8389,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (18.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 18.53
+    "price": 15.31
   },
   {
     "id": "real-B0HLF3CFM6",
@@ -8422,7 +8422,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (409.93€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 419.84
+    "price": 347.26
   },
   {
     "id": "real-B0HJLWS5QK",
@@ -8452,7 +8452,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (282.14€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 290.93
+    "price": 283.83
   },
   {
     "id": "real-B0GSSQ71JN",
@@ -8488,7 +8488,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (247.03€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 251.4
+    "price": 203
   },
   {
     "id": "real-B0DKNYY53D",
@@ -8522,7 +8522,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (498.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 507.96
+    "price": 483.37
   },
   {
     "id": "real-B0BN5B4FNS",
@@ -8558,7 +8558,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (127.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 129.74
+    "price": 128.03
   },
   {
     "id": "real-B0FX4HK2L9",
@@ -8591,7 +8591,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (210.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 215.33
+    "price": 191.64
   },
   {
     "id": "real-B0FGW1HW4M",
@@ -8627,7 +8627,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (20.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 20.51
+    "price": 18.59
   },
   {
     "id": "real-B0FGXJ2F62",
@@ -8663,7 +8663,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (15.93€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 16.45
+    "price": 13.33
   },
   {
     "id": "real-B07WHWBCP9",
@@ -8697,15 +8697,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (16.33€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 16.65
+    "price": 15.84
   },
   {
     "id": "real-B0H1BQP4NG",
     "asin": "B0H1BQP4NG",
     "title": "HIYI Dellenreflektor 23in/60cm 2er Set mit Tasche – Dellenreflektorboard | mit Tasche, Dellenreflektorboard",
     "titleAr": "جهاز تعديل صدمات السيارات HIYI سبوتر احترافي - HIYI Dellenreflektor 23in/60cm 2er Set mit Tasche – Dellenreflektorboa",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "HIYI",
     "ean": "B0H1BQP4NG",
     "sku": "B0H1BQP4NG",
@@ -8733,7 +8733,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (16.52€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 16.75
+    "price": 12.8
   },
   {
     "id": "real-B0GRV2X8LW",
@@ -8767,7 +8767,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (326.80€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 338.2
+    "price": 328.6
   },
   {
     "id": "real-B0DPB2NGMQ",
@@ -8775,7 +8775,7 @@
     "title": "33,000ft Damen Wanderhose Wasserabweisend Trekkinghose mit 5 Taschen | Schnelltrocknend, Verschleißfest, Leicht, 4-Wege-Stretch, Atmungsaktiv, Funktionshose, für Outdoor Camping Laufen",
     "titleAr": "33,000ft Damen Wanderhose Wasserabweisend Trekkinghose mit 5 Taschen | Schnelltrocknend, Verschleißfest, Leicht, 4-Wege-Stretch, Atmungsaktiv, Funktionshose, für Outdoor Camping Laufen",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "33000ft",
     "ean": "B0DPB2NGMQ",
     "sku": "B0DPB2NGMQ",
@@ -8792,7 +8792,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (16.23€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 22.95
+    "price": 16.93
   },
   {
     "id": "real-B0DP9ZGVZ3",
@@ -8800,7 +8800,7 @@
     "title": "33,000ft Damen Wanderhose Wasserabweisend Trekkinghose mit 5 Taschen | Schnelltrocknend, Verschleißfest, Leicht, 4-Wege-Stretch, Atmungsaktiv, Funktionshose, für Outdoor Camping Laufen",
     "titleAr": "33,000ft Damen Wanderhose Wasserabweisend Trekkinghose mit 5 Taschen | Schnelltrocknend, Verschleißfest, Leicht, 4-Wege-Stretch, Atmungsaktiv, Funktionshose, für Outdoor Camping Laufen",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "33000ft",
     "ean": "B0DP9ZGVZ3",
     "sku": "B0DP9ZGVZ3",
@@ -8817,7 +8817,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 24.27
+    "price": 21.6
   },
   {
     "id": "real-B0DP9YYZ91",
@@ -8825,7 +8825,7 @@
     "title": "33,000ft Damen Wanderhose Wasserabweisend Trekkinghose mit 5 Taschen | Schnelltrocknend, Verschleißfest, Leicht, 4-Wege-Stretch, Atmungsaktiv, Funktionshose, für Outdoor Camping Laufen",
     "titleAr": "33,000ft Damen Wanderhose Wasserabweisend Trekkinghose mit 5 Taschen | Schnelltrocknend, Verschleißfest, Leicht, 4-Wege-Stretch, Atmungsaktiv, Funktionshose, für Outdoor Camping Laufen",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "33000ft",
     "ean": "B0DP9YYZ91",
     "sku": "B0DP9YYZ91",
@@ -8842,7 +8842,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (16.95€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 23.58
+    "price": 16.58
   },
   {
     "id": "real-B0952CS43L",
@@ -8850,7 +8850,7 @@
     "title": "killtec Damen Funktionsparka/Parka mit Kapuze KOW 165 WMN PRK | Winterjacke, wasserdicht, atmungsaktiv, winddicht, Teddy-F...",
     "titleAr": "معطف باركا killtec شتوي دافئ ومقاوم للماء - killtec Damen Funktionsparka/Parka mit Kapuze KOW 165 WMN PRK | Winter",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "killtec",
     "ean": "B0952CS43L",
     "sku": "B0952CS43L",
@@ -8867,7 +8867,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (88.06€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 99.39
+    "price": 86.57
   },
   {
     "id": "real-B09SLSPV7B",
@@ -8875,7 +8875,7 @@
     "title": "FALKENSTEJN Summer Windbreaker Anorak Windjacke leichte Jacke",
     "titleAr": "FALKENSTEJN Summer Windbreaker Anorak Windjacke leichte Jacke",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "FALKENSTEJN",
     "ean": "B09SLSPV7B",
     "sku": "B09SLSPV7B",
@@ -8892,7 +8892,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 31.81
+    "price": 22
   },
   {
     "id": "real-B0H6DNX1XW",
@@ -8900,7 +8900,7 @@
     "title": "33,000ft Herren Wasserdichte Softshelljacke Fleece Gefütterte Outdoorjacke | Warm, 5 Taschen, Atmung...",
     "titleAr": "33,000ft Herren Wasserdichte Softshelljacke Fleece Gefütterte Outdoorjacke | Warm, 5 Taschen, Atmung...",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "33000ft",
     "ean": "B0H6DNX1XW",
     "sku": "B0H6DNX1XW",
@@ -8917,7 +8917,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (28.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 38.85
+    "price": 28.66
   },
   {
     "id": "real-B0H1N1SMPY",
@@ -8925,7 +8925,7 @@
     "title": "killtec Herren Kos 182 Mn Jckt Leichtstretchjacke mit Kapuze/Sportjacke (1er Pack)",
     "titleAr": "killtec Herren Kos 182 Mn Jckt Leichtstretchjacke mit Kapuze/Sportjacke (1er Pack)",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "killtec",
     "ean": "B0H1N1SMPY",
     "sku": "B0H1N1SMPY",
@@ -8942,7 +8942,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (46.36€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 64.75
+    "price": 48.51
   },
   {
     "id": "real-B0952C547S",
@@ -8950,7 +8950,7 @@
     "title": "Killtec Damen Outdoorjacke Funktionsjacke mit abzippbarer Kapuze KOW 140 WMN Jckt wasserdicht, Winddicht, atmungsaktiv",
     "titleAr": "Killtec Damen Outdoorjacke Funktionsjacke mit abzippbarer Kapuze KOW 140 WMN Jckt wasserdicht, Winddicht, atmungsaktiv",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "Killtec",
     "ean": "B0952C547S",
     "sku": "B0952C547S",
@@ -8967,7 +8967,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (43.48€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 61.63
+    "price": 43.82
   },
   {
     "id": "real-B0CT1HGLKT",
@@ -8975,7 +8975,7 @@
     "title": "Killtec Damen Steppparka/Parka mit Kapuze KOW 55 Wmn Qltd Prk",
     "titleAr": "معطف باركا Killtec شتوي دافئ ومقاوم للماء - Killtec Damen Steppparka/Parka mit Kapuze KOW 55 Wmn Qltd Prk",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "Killtec",
     "ean": "B0CT1HGLKT",
     "sku": "B0CT1HGLKT",
@@ -8992,7 +8992,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (87.39€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 99.87
+    "price": 86.99
   },
   {
     "id": "real-B0CSZXZD18",
@@ -9000,7 +9000,7 @@
     "title": "Killtec Damen Steppmantel/Funktionsmantel mit Kapuze KOW 56 Wmn Qltd Ct",
     "titleAr": "معطف باركا Killtec شتوي دافئ ومقاوم للماء - Killtec Damen Steppmantel/Funktionsmantel mit Kapuze KOW 56 Wmn Qltd C",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "Killtec",
     "ean": "B0CSZXZD18",
     "sku": "B0CSZXZD18",
@@ -9017,7 +9017,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (111.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 125.89
+    "price": 110.04
   },
   {
     "id": "real-B0952CTY3B",
@@ -9025,7 +9025,7 @@
     "title": "Killtec Damen Outdoorjacke Funktionsjacke mit abzippbarer Kapuze KOW 140 WMN Jckt wasserdicht, Winddicht, atmungsaktiv",
     "titleAr": "Killtec Damen Outdoorjacke Funktionsjacke mit abzippbarer Kapuze KOW 140 WMN Jckt wasserdicht, Winddicht, atmungsaktiv",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "Killtec",
     "ean": "B0952CTY3B",
     "sku": "B0952CTY3B",
@@ -9042,7 +9042,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (83.81€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 91.7
+    "price": 86.92
   },
   {
     "id": "real-B0952BV4KR",
@@ -9050,7 +9050,7 @@
     "title": "killtec Herren Funktionsjacke mit abzippbarer Kapuze KOW 161 MN JCKT | Outdoorjacke, Winterjacke, verschweißte Nähte, wass...",
     "titleAr": "معطف باركا killtec شتوي دافئ ومقاوم للماء - killtec Herren Funktionsjacke mit abzippbarer Kapuze KOW 161 MN JCKT |",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "killtec",
     "ean": "B0952BV4KR",
     "sku": "B0952BV4KR",
@@ -9067,7 +9067,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (81.24€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 88.5
+    "price": 78.56
   },
   {
     "id": "real-B0FN4FFPPH",
@@ -9075,7 +9075,7 @@
     "title": "SwissWell Softshelljacke Herren Wasserdichte Winddichte Atmungsaktive Funktionsjacke mit Kapuze Outd...",
     "titleAr": "SwissWell Softshelljacke Herren Wasserdichte Winddichte Atmungsaktive Funktionsjacke mit Kapuze Outd...",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "SwissWell",
     "ean": "B0FN4FFPPH",
     "sku": "B0FN4FFPPH",
@@ -9092,7 +9092,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (25.24€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 35.63
+    "price": 25.47
   },
   {
     "id": "real-B0FXB7XMBT",
@@ -9100,7 +9100,7 @@
     "title": "Zoofly Winterjacke für Herren Skijacke Warm Wasserdicht Outdoor jacken Männer Winddicht Snowboardjac...",
     "titleAr": "معطف باركا Zoofly شتوي دافئ ومقاوم للماء - Zoofly Winterjacke für Herren Skijacke Warm Wasserdicht Outdoor jacken",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "Zoofly",
     "ean": "B0FXB7XMBT",
     "sku": "B0FXB7XMBT",
@@ -9117,7 +9117,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (50.47€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 68.06
+    "price": 67.04
   },
   {
     "id": "real-B09LCX1696",
@@ -9125,7 +9125,7 @@
     "title": "33,000ft Softshelljacke für Herren Wasserdicht Outdoor Jacke Übergangsjacke | Winddicht Warme Fleece...",
     "titleAr": "33,000ft Softshelljacke für Herren Wasserdicht Outdoor Jacke Übergangsjacke | Winddicht Warme Fleece...",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "33000ft",
     "ean": "B09LCX1696",
     "sku": "B09LCX1696",
@@ -9142,7 +9142,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (29.46€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 39.1
+    "price": 28.23
   },
   {
     "id": "real-B0CW24CW69",
@@ -9150,7 +9150,7 @@
     "title": "Outdoor Ventures Jacke Damen Wasserdichte Softshelljacke Übergangsjacke | Winddichte Regenjacke, Gef...",
     "titleAr": "Outdoor Ventures Jacke Damen Wasserdichte Softshelljacke Übergangsjacke | Winddichte Regenjacke, Gef...",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "Outdoor",
     "ean": "B0CW24CW69",
     "sku": "B0CW24CW69",
@@ -9167,7 +9167,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 38.48
+    "price": 34.16
   },
   {
     "id": "real-B0952CG1Y4",
@@ -9175,7 +9175,7 @@
     "title": "killtec Damen Funktionsparka/Parka mit Kapuze KOW 165 WMN PRK | Winterjacke, wasserdicht, atmungsaktiv, winddicht, Teddy-F...",
     "titleAr": "معطف باركا killtec شتوي دافئ ومقاوم للماء - killtec Damen Funktionsparka/Parka mit Kapuze KOW 165 WMN PRK | Winter",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "killtec",
     "ean": "B0952CG1Y4",
     "sku": "B0952CG1Y4",
@@ -9192,7 +9192,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (98.54€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 131.79
+    "price": 116.79
   },
   {
     "id": "real-B0CT11QL88",
@@ -9200,7 +9200,7 @@
     "title": "Killtec Damen Outdoorjacke Funktionsjacke mit abzippbarer Kapuze KOW 140 WMN Jckt wasserdicht, Winddicht, atmungsaktiv",
     "titleAr": "Killtec Damen Outdoorjacke Funktionsjacke mit abzippbarer Kapuze KOW 140 WMN Jckt wasserdicht, Winddicht, atmungsaktiv",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "Killtec",
     "ean": "B0CT11QL88",
     "sku": "B0CT11QL88",
@@ -9217,7 +9217,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (71.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 78.31
+    "price": 65.46
   },
   {
     "id": "real-B0DPWS1VF5",
@@ -9225,7 +9225,7 @@
     "title": "Killtec Mädchen Steppjacke mit Kapuze KOW 220 Grls Qltd Jckt",
     "titleAr": "معطف باركا Killtec شتوي دافئ ومقاوم للماء - Killtec Mädchen Steppjacke mit Kapuze KOW 220 Grls Qltd Jckt",
     "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "Killtec",
     "ean": "B0DPWS1VF5",
     "sku": "B0DPWS1VF5",
@@ -9242,7 +9242,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (28.32€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 39.64
+    "price": 38.62
   },
   {
     "id": "real-B0DT49BL33",
@@ -9267,15 +9267,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (178.28€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 187.5
+    "price": 158.42
   },
   {
     "id": "real-B0BTPG3VCS",
     "asin": "B0BTPG3VCS",
     "title": "LST Autoabdeckung Indoor – lackschonende und Dehnbare Autogarage. Car Cover Innenbereich für Autohäu...",
     "titleAr": "LST Autoabdeckung Indoor – lackschonende und Dehnbare Autogarage. Car Cover Innenbereich für Autohäu...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "LST",
     "ean": "B0BTPG3VCS",
     "sku": "B0BTPG3VCS",
@@ -9292,7 +9292,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (53.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 55.85
+    "price": 46.74
   },
   {
     "id": "real-B0CZ7VYZL6",
@@ -9317,7 +9317,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (10.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 13.8
+    "price": 11.14
   },
   {
     "id": "real-B01B640WTC",
@@ -9342,7 +9342,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (10.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 13.95
+    "price": 10.56
   },
   {
     "id": "real-B0CVW3HZ2Z",
@@ -9367,7 +9367,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (43.82€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 45.45
+    "price": 39.19
   },
   {
     "id": "real-B09V33TQG1",
@@ -9392,7 +9392,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (49.98€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 51.48
+    "price": 44.94
   },
   {
     "id": "real-B0843GV3WS",
@@ -9417,7 +9417,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (25.83€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 32.05
+    "price": 24.88
   },
   {
     "id": "real-B08P4Q62MN",
@@ -9442,7 +9442,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (16.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 20.86
+    "price": 19.98
   },
   {
     "id": "real-B07F8WT5PC",
@@ -9467,7 +9467,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (114.15€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 120.28
+    "price": 116.9
   },
   {
     "id": "real-B08YRQ2JYD",
@@ -9492,7 +9492,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (8.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 11.6
+    "price": 8.96
   },
   {
     "id": "real-B002FUNGMM",
@@ -9517,7 +9517,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (16.71€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 17.19
+    "price": 16.39
   },
   {
     "id": "real-B0DP746JPR",
@@ -9542,7 +9542,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (138.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 141.42
+    "price": 127.09
   },
   {
     "id": "real-B09WDPMLLT",
@@ -9567,7 +9567,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (143.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 158.74
+    "price": 144.19
   },
   {
     "id": "real-B085QK65LQ",
@@ -9592,7 +9592,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.95€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 30.16
+    "price": 20.14
   },
   {
     "id": "real-B08HN9STRX",
@@ -9617,7 +9617,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (21.91€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 29.19
+    "price": 28.86
   },
   {
     "id": "real-B00A699PZ6",
@@ -9642,7 +9642,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (6.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 8.79
+    "price": 7.07
   },
   {
     "id": "real-B0CM958PXP",
@@ -9667,7 +9667,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (21.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 22.26
+    "price": 18.19
   },
   {
     "id": "real-B0GJSWPLG4",
@@ -9692,7 +9692,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (11.55€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 15.57
+    "price": 15.34
   },
   {
     "id": "real-B0DSZPP1SR",
@@ -9717,15 +9717,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (85.87€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 94.16
+    "price": 85.76
   },
   {
     "id": "real-B0CZQ112DP",
     "asin": "B0CZQ112DP",
     "title": "AUTOXBERT 2 x LED Kennzeichenbeleuchtung Für BMW 3er E46 4D 1998-2005 Für BMW 3er E46 5D Touring 1998-2005 6000K 18SMD LED...",
     "titleAr": "AUTOXBERT 2 x LED Kennzeichenbeleuchtung Für BMW 3er E46 4D 1998-2005 Für BMW 3er E46 5D Touring 1998-2005 6000K 18SMD LED...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "fashion_shoes",
+    "categoryAr": "منتجات عامة",
     "brand": "AUTOXBERT",
     "ean": "B0CZQ112DP",
     "sku": "B0CZQ112DP",
@@ -9742,7 +9742,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (14.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 14.6
+    "price": 13.13
   },
   {
     "id": "real-B0F5HP24Y8",
@@ -9767,7 +9767,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (278.70€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 303.26
+    "price": 289.07
   },
   {
     "id": "real-B0GCYNJZFN",
@@ -9792,7 +9792,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (83.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 91.39
+    "price": 84.71
   },
   {
     "id": "real-B0GMQ4CSNW",
@@ -9817,7 +9817,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (38.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 52.09
+    "price": 39.63
   },
   {
     "id": "real-B0GSFP4WXW",
@@ -9842,7 +9842,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (83.71€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 91.49
+    "price": 86.92
   },
   {
     "id": "real-B0CQRTKXWS",
@@ -9867,7 +9867,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (396.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 420.08
+    "price": 389.72
   },
   {
     "id": "real-B098P52S8V",
@@ -9892,7 +9892,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (233.94€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 254.84
+    "price": 226.21
   },
   {
     "id": "real-B0GQT7MYDG",
@@ -9917,7 +9917,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (27.71€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 37.22
+    "price": 28.32
   },
   {
     "id": "real-B0G8185RQZ",
@@ -9942,7 +9942,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (37.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 46.58
+    "price": 35.11
   },
   {
     "id": "real-B0HHMP8H5T",
@@ -9967,7 +9967,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (48.29€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 69.03
+    "price": 49.23
   },
   {
     "id": "real-B0DJD29WKV",
@@ -9992,7 +9992,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (260.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 301.7
+    "price": 265.49
   },
   {
     "id": "real-B07F1SLX32",
@@ -10017,7 +10017,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (184.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 201.26
+    "price": 191.84
   },
   {
     "id": "real-B0G4CP7R39",
@@ -10042,7 +10042,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (432.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 474.24
+    "price": 438.09
   },
   {
     "id": "real-B0CW9YPRSH",
@@ -10067,7 +10067,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (417.69€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 456.99
+    "price": 423.58
   },
   {
     "id": "real-B0GQ38J2L2",
@@ -10092,7 +10092,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (73.87€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 81.53
+    "price": 74.56
   },
   {
     "id": "real-B0CQMPN7DY",
@@ -10117,7 +10117,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (798.19€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 818.82
+    "price": 795.36
   },
   {
     "id": "real-B0CQPMYTVM",
@@ -10142,7 +10142,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (634.11€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 640.52
+    "price": 620.28
   },
   {
     "id": "real-B08H93ZRK9",
@@ -10167,7 +10167,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (612.90€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 619.4
+    "price": 599.33
   },
   {
     "id": "real-B0HBPPVPDH",
@@ -10192,7 +10192,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (35.54€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 36.26
+    "price": 36.04
   },
   {
     "id": "real-B0H3PRZN2X",
@@ -10217,7 +10217,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (110.76€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 113.9
+    "price": 112.87
   },
   {
     "id": "real-B07HNR4ZZD",
@@ -10242,7 +10242,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (375.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 387.03
+    "price": 382.77
   },
   {
     "id": "real-B07HGBNWTY",
@@ -10267,7 +10267,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (756.31€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 772.53
+    "price": 769.83
   },
   {
     "id": "real-B0DJDF4XKN",
@@ -10292,15 +10292,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (996.06€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 1022.65
+    "price": 990.78
   },
   {
     "id": "real-B0F2459QMN",
     "asin": "B0F2459QMN",
     "title": "PS5/Slim/Pro Ständer und Kühlstation mit Dual-Controller-Ladestation für PlayStation 5 Konsole, PS5-Zubehör inkl. Controller-Ladegerät, Lüfter, Headset-Halterung, Weiß",
     "titleAr": "PS5/Slim/Pro Ständer und Kühlstation mit Dual-Controller-Ladestation für PlayStation 5 Konsole, PS5-Zubehör inkl. Controller-Ladegerät, Lüfter, Headset-Halterung, Weiß",
-    "category": "gaming",
-    "categoryAr": "الكمبيوترات والألعاب",
+    "category": "auto_car",
+    "categoryAr": "مستلزمات وأجهزة السيارات",
     "brand": "PS5SlimPro",
     "ean": "B0F2459QMN",
     "sku": "B0F2459QMN",
@@ -10317,15 +10317,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (27.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 27.82
+    "price": 24.31
   },
   {
     "id": "real-B0GPWLWT5C",
     "asin": "B0GPWLWT5C",
     "title": "PS5/Slim/Pro Kühlstation mit Dual-Controller-Ladegerät, 3-stufigem Turbolüfter mit Drehzahlanzeige, RGB-Beleuchtungsmodi, Spielkartenfach und Headset-Halterung für PlayStation 5",
     "titleAr": "PS5/Slim/Pro Kühlstation mit Dual-Controller-Ladegerät, 3-stufigem Turbolüfter mit Drehzahlanzeige, RGB-Beleuchtungsmodi, Spielkartenfach und Headset-Halterung für PlayStation 5",
-    "category": "gaming",
-    "categoryAr": "الكمبيوترات والألعاب",
+    "category": "auto_car",
+    "categoryAr": "مستلزمات وأجهزة السيارات",
     "brand": "PS5SlimPro",
     "ean": "B0GPWLWT5C",
     "sku": "B0GPWLWT5C",
@@ -10342,15 +10342,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (27.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 27.83
+    "price": 23.62
   },
   {
     "id": "real-B0GPVT9ZX9",
     "asin": "B0GPVT9ZX9",
     "title": "PS5/Slim/Pro Kühlstation mit Dual-Controller-Ladegerät, 3-stufigem Turbolüfter, 4 USB-C-Adaptern, USB-Hub und Headset-Halterung für PlayStation 5 Konsole (Disc/Digital Edition)",
     "titleAr": "PS5/Slim/Pro Kühlstation mit Dual-Controller-Ladegerät, 3-stufigem Turbolüfter, 4 USB-C-Adaptern, USB-Hub und Headset-Halterung für PlayStation 5 Konsole (Disc/Digital Edition)",
-    "category": "gaming",
-    "categoryAr": "الكمبيوترات والألعاب",
+    "category": "auto_car",
+    "categoryAr": "مستلزمات وأجهزة السيارات",
     "brand": "PS5SlimPro",
     "ean": "B0GPVT9ZX9",
     "sku": "B0GPVT9ZX9",
@@ -10367,15 +10367,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (29.00€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 29.42
+    "price": 26.88
   },
   {
     "id": "real-B0GPWHSNYJ",
     "asin": "B0GPWHSNYJ",
     "title": "PS5/Slim/Pro Kühlstation mit Dual-Controller-Ladegerät, 3-stufigem Turbolüfter, USB-Hub, Aufbewahrung für Spielkarten und Headset-Halterung für PlayStation 5",
     "titleAr": "PS5/Slim/Pro Kühlstation mit Dual-Controller-Ladegerät, 3-stufigem Turbolüfter, USB-Hub, Aufbewahrung für Spielkarten und Headset-Halterung für PlayStation 5",
-    "category": "gaming",
-    "categoryAr": "الكمبيوترات والألعاب",
+    "category": "auto_car",
+    "categoryAr": "مستلزمات وأجهزة السيارات",
     "brand": "PS5SlimPro",
     "ean": "B0GPWHSNYJ",
     "sku": "B0GPWHSNYJ",
@@ -10392,15 +10392,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (32.10€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 32.54
+    "price": 28.77
   },
   {
     "id": "real-B0GPW7SCM1",
     "asin": "B0GPW7SCM1",
     "title": "PS5 Slim Kühlstation mit Dual-Controller-Ladegerät, 3-stufigem Turbo-Lüfter, USB-Hub und Headset-Haken für die PlayStation 5 Slim Konsole (Disc/Digital Edition)",
     "titleAr": "PS5 Slim Kühlstation mit Dual-Controller-Ladegerät, 3-stufigem Turbo-Lüfter, USB-Hub und Headset-Haken für die PlayStation 5 Slim Konsole (Disc/Digital Edition)",
-    "category": "gaming",
-    "categoryAr": "الكمبيوترات والألعاب",
+    "category": "auto_car",
+    "categoryAr": "مستلزمات وأجهزة السيارات",
     "brand": "PS5",
     "ean": "B0GPW7SCM1",
     "sku": "B0GPW7SCM1",
@@ -10417,7 +10417,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (31.12€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 32.04
+    "price": 25.65
   },
   {
     "id": "real-B07HHPX4N1",
@@ -10442,7 +10442,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (177.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 178.64
+    "price": 173.71
   },
   {
     "id": "real-B0H4FCRCKX",
@@ -10467,7 +10467,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (47.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 48.69
+    "price": 47.17
   },
   {
     "id": "real-B0D22P4HBH",
@@ -10492,7 +10492,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (22.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 22.55
+    "price": 22.3
   },
   {
     "id": "real-B0CL5HJNLM",
@@ -10517,15 +10517,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (106.24€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 109.08
+    "price": 105.68
   },
   {
     "id": "real-B0BWSFGQ49",
     "asin": "B0BWSFGQ49",
     "title": "De&#x27;Longhi Magnifica S - Kaffeevollautomat 2 Getränke Schwarz | Kaffeemaschine mit Manuellem Milchaufschäumer, Espresso und Cappuccino, 2-Tassen-Funktion, Tastenbedienfeld, ECAM11.112.B",
     "titleAr": "De&#x27;Longhi Magnifica S - Kaffeevollautomat 2 Getränke Schwarz | Kaffeemaschine mit Manuellem Milchaufschäumer, Espresso und Cappuccino, 2-Tassen-Funktion, Tastenbedienfeld, ECAM11.112.B",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "De&x27Longhi",
     "ean": "B0BWSFGQ49",
     "sku": "B0BWSFGQ49",
@@ -10542,15 +10542,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (287.17€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 293.51
+    "price": 220.79
   },
   {
     "id": "real-B0CCF5KCBQ",
     "asin": "B0CCF5KCBQ",
     "title": "De&#x27;Longhi Magnifica Start - Kaffeevollautomat 4 Getränke Schwarz-Grau | Kaffeemaschine mit LatteCrema Hot-Milchaufschäumer, Espresso und Cappuccino, Touch-Bedienfeld, ECAM222.60.BG",
     "titleAr": "De&#x27;Longhi Magnifica Start - Kaffeevollautomat 4 Getränke Schwarz-Grau | Kaffeemaschine mit LatteCrema Hot-Milchaufschäumer, Espresso und Cappuccino, Touch-Bedienfeld, ECAM222.60.BG",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "De&x27Longhi",
     "ean": "B0CCF5KCBQ",
     "sku": "B0CCF5KCBQ",
@@ -10567,15 +10567,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (377.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 383.59
+    "price": 378.53
   },
   {
     "id": "real-B09CGRQ965",
     "asin": "B09CGRQ965",
     "title": "De&#x27;Longhi Magnifica Evo - Kaffeevollautomat 7 Getränke Schwarz | Kaffeemaschine mit LatteCrema Hot-Milchaufschäumer, Cappuccino, One-Touch-Getränke, Touch-Bedienfeld, ECAM292.81.B",
     "titleAr": "De&#x27;Longhi Magnifica Evo - Kaffeevollautomat 7 Getränke Schwarz | Kaffeemaschine mit LatteCrema Hot-Milchaufschäumer, Cappuccino, One-Touch-Getränke, Touch-Bedienfeld, ECAM292.81.B",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "De&x27Longhi",
     "ean": "B09CGRQ965",
     "sku": "B09CGRQ965",
@@ -10592,15 +10592,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (446.34€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 462.82
+    "price": 371.2
   },
   {
     "id": "real-B0D4ZNSQ6L",
     "asin": "B0D4ZNSQ6L",
     "title": "De&#x27;Longhi Magnifica Evo Next - Kaffeevollautomat 13 Getränke Titan | Kaffeemaschine mit LatteCrema Hot-Milchaufschäumer, Cappuccino, One-Touch-Getränke, Farbdisplay, ECAM312.80.TB",
     "titleAr": "De&#x27;Longhi Magnifica Evo Next - Kaffeevollautomat 13 Getränke Titan | Kaffeemaschine mit LatteCrema Hot-Milchaufschäumer, Cappuccino, One-Touch-Getränke, Farbdisplay, ECAM312.80.TB",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "De&x27Longhi",
     "ean": "B0D4ZNSQ6L",
     "sku": "B0D4ZNSQ6L",
@@ -10617,15 +10617,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (555.72€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 562.81
+    "price": 484.74
   },
   {
     "id": "real-B0H2ND6MJ4",
     "asin": "B0H2ND6MJ4",
     "title": "De&#x27;Longhi Magnifica Duo – Kaffeevollautomat 20 Getränke Silber | Kaffeemaschine mit LatteCrema Hot & Cool-Milchaufschäumer, Heiße & Kalte Getränke, Cold Brew, Farbdisplay, ECAM332.80.SXB",
     "titleAr": "De&#x27;Longhi Magnifica Duo – Kaffeevollautomat 20 Getränke Silber | Kaffeemaschine mit LatteCrema Hot & Cool-Milchaufschäumer, Heiße & Kalte Getränke, Cold Brew, Farbdisplay, ECAM332.80.SXB",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "De&x27Longhi",
     "ean": "B0H2ND6MJ4",
     "sku": "B0H2ND6MJ4",
@@ -10642,15 +10642,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (587.93€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 608.12
+    "price": 494.06
   },
   {
     "id": "real-B0DFCSXC1S",
     "asin": "B0DFCSXC1S",
     "title": "Ninja Luxe Café Premier 3-in-1-Kaffeemaschine mit Mahlwerk & Aufschäumer | Für Latte, Cappuccino, Co...",
     "titleAr": "Ninja Luxe Café Premier 3-in-1-Kaffeemaschine mit Mahlwerk & Aufschäumer | Für Latte, Cappuccino, Co...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "Ninja",
     "ean": "B0DFCSXC1S",
     "sku": "B0DFCSXC1S",
@@ -10667,15 +10667,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (430.12€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 437.47
+    "price": 295.77
   },
   {
     "id": "real-B00400OMU0",
     "asin": "B00400OMU0",
     "title": "De'Longhi Magnifica S - Kaffeevollautomat 2 Getränke Schwarz | Kaffeemaschine mit Manuellem Milchaufschäumer, Espresso und...",
     "titleAr": "De'Longhi Magnifica S - Kaffeevollautomat 2 Getränke Schwarz | Kaffeemaschine mit Manuellem Milchaufschäumer, Espresso und...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "DeLonghi",
     "ean": "B00400OMU0",
     "sku": "B00400OMU0",
@@ -10692,15 +10692,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (291.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 294.23
+    "price": 205.87
   },
   {
     "id": "real-B0D1VRV1YW",
     "asin": "B0D1VRV1YW",
     "title": "PHILIPS Kaffeevollautomat LatteGo 2300 Serie, Weiß, 4 Spezialitäten | Espressomaschine, LatteGo Milc...",
     "titleAr": "PHILIPS Kaffeevollautomat LatteGo 2300 Serie, Weiß, 4 Spezialitäten | Espressomaschine, LatteGo Milc...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "PHILIPS",
     "ean": "B0D1VRV1YW",
     "sku": "B0D1VRV1YW",
@@ -10717,15 +10717,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (326.80€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 338.2
+    "price": 304.94
   },
   {
     "id": "real-B0DG6VY1GY",
     "asin": "B0DG6VY1GY",
     "title": "KRUPS Sensation Milk Kaffeevollautomat, 6 Kaffee & Milchgetränke, perfekter Geschmack, Milch Maestro...",
     "titleAr": "KRUPS Sensation Milk Kaffeevollautomat, 6 Kaffee & Milchgetränke, perfekter Geschmack, Milch Maestro...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "KRUPS",
     "ean": "B0DG6VY1GY",
     "sku": "B0DG6VY1GY",
@@ -10742,15 +10742,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (484.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 492.19
+    "price": 419.33
   },
   {
     "id": "real-B0FRGPPLYR",
     "asin": "B0FRGPPLYR",
     "title": "De’Longhi Magnifica Evo Next - Perfetto Kaffeevollautomat mit LatteCrema-Milchaufschäumer, 13 One-Touch-Getränke, Coffee- ...",
     "titleAr": "De’Longhi Magnifica Evo Next - Perfetto Kaffeevollautomat mit LatteCrema-Milchaufschäumer, 13 One-Touch-Getränke, Coffee- ...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "DeLonghi",
     "ean": "B0FRGPPLYR",
     "sku": "B0FRGPPLYR",
@@ -10767,15 +10767,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (461.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 475.68
+    "price": 415.19
   },
   {
     "id": "real-B09CGSCBK5",
     "asin": "B09CGSCBK5",
     "title": "De'Longhi Magnifica Evo - Kaffeevollautomat 5 Getränke Silber | Kaffeemaschine mit Manuellem Milchau...",
     "titleAr": "De'Longhi Magnifica Evo - Kaffeevollautomat 5 Getränke Silber | Kaffeemaschine mit Manuellem Milchau...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "DeLonghi",
     "ean": "B09CGSCBK5",
     "sku": "B09CGSCBK5",
@@ -10792,15 +10792,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (382.58€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 391.19
+    "price": 326.89
   },
   {
     "id": "real-B09TKRNWJX",
     "asin": "B09TKRNWJX",
     "title": "De'Longhi Eletta Explore - Kaffeevollautomat mit 40+ Getränken Grau | Kaffeemaschine mit LatteCrema Hot & Cool-Milchaufsch...",
     "titleAr": "De'Longhi Eletta Explore - Kaffeevollautomat mit 40+ Getränken Grau | Kaffeemaschine mit LatteCrema Hot & Cool-Milchaufsch...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "DeLonghi",
     "ean": "B09TKRNWJX",
     "sku": "B09TKRNWJX",
@@ -10817,15 +10817,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (747.75€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 773.43
+    "price": 657.46
   },
   {
     "id": "real-B0CDCM3J5G",
     "asin": "B0CDCM3J5G",
     "title": "De'Longhi Rivelia - Kaffeevollautomat 16 Getränke Weiß | Kaffeemaschine mit LatteCrema Hot-Milchaufschäumer, Farbdisplay, ...",
     "titleAr": "De'Longhi Rivelia - Kaffeevollautomat 16 Getränke Weiß | Kaffeemaschine mit LatteCrema Hot-Milchaufschäumer, Farbdisplay, ...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "DeLonghi",
     "ean": "B0CDCM3J5G",
     "sku": "B0CDCM3J5G",
@@ -10842,15 +10842,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (559.84€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 577.63
+    "price": 525.21
   },
   {
     "id": "real-B0HFNKKTL6",
     "asin": "B0HFNKKTL6",
     "title": "De'Longhi Eletta Ultra - Kaffeevollautomat mit 40+ Getränken Silent Tech | Kaffeemaschine mit LatteCrema Hot-Milchaufschäu...",
     "titleAr": "De'Longhi Eletta Ultra - Kaffeevollautomat mit 40+ Getränken Silent Tech | Kaffeemaschine mit LatteCrema Hot-Milchaufschäu...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "DeLonghi",
     "ean": "B0HFNKKTL6",
     "sku": "B0HFNKKTL6",
@@ -10867,15 +10867,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (977.23€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 988.5
+    "price": 747.72
   },
   {
     "id": "real-B08CBJCQ39",
     "asin": "B08CBJCQ39",
     "title": "PHILIPS Kaffeevollautomat LatteGo 5400 Serie, Schwarz, 12 Spezialitäten | Espressomaschine, LatteGo ...",
     "titleAr": "PHILIPS Kaffeevollautomat LatteGo 5400 Serie, Schwarz, 12 Spezialitäten | Espressomaschine, LatteGo ...",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "category": "home_kitchen",
+    "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "PHILIPS",
     "ean": "B08CBJCQ39",
     "sku": "B08CBJCQ39",
@@ -10892,15 +10892,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (414.59€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 430.97
+    "price": 351.78
   },
   {
     "id": "real-B06XSGLJTR",
     "asin": "B06XSGLJTR",
     "title": "BEIBYE Hartschalen Koffer Trolley Rollkoffer Reisekoffer 4 Zwillingsrollen Polycabonat (Rosa Gold, Handgepäck 55cm-40L)",
     "titleAr": "BEIBYE Hartschalen Koffer Trolley Rollkoffer Reisekoffer 4 Zwillingsrollen Polycabonat (Rosa Gold, Handgepäck 55cm-40L)",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B06XSGLJTR",
     "sku": "B06XSGLJTR",
@@ -10917,15 +10917,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 40.29
+    "price": 37.42
   },
   {
     "id": "real-B0BWFBB1QZ",
     "asin": "B0BWFBB1QZ",
     "title": "BEIBYE Zwillingsrollen 2066 Hartschalen-Koffer: 15 Farben, ABS-Kunststoff, Zahlenschloss mit Doppelreißverschluss, Exklusive Innenausstattung und umfangreiche Funktionen(Rosa Gold, M)",
     "titleAr": "BEIBYE Zwillingsrollen 2066 Hartschalen-Koffer: 15 Farben, ABS-Kunststoff, Zahlenschloss mit Doppelreißverschluss, Exklusive Innenausstattung und umfangreiche Funktionen(Rosa Gold, M)",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B0BWFBB1QZ",
     "sku": "B0BWFBB1QZ",
@@ -10942,15 +10942,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (20.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 28.83
+    "price": 20.57
   },
   {
     "id": "real-B06XSK83ZM",
     "asin": "B06XSK83ZM",
     "title": "BEIBYE Hartschalen Koffer Trolley Rollkoffer Reisekoffer 4 Zwillingsrollen Polycabonat (Schwarz, Han...",
     "titleAr": "BEIBYE Hartschalen Koffer Trolley Rollkoffer Reisekoffer 4 Zwillingsrollen Polycabonat (Schwarz, Han...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B06XSK83ZM",
     "sku": "B06XSK83ZM",
@@ -10967,15 +10967,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (24.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 33.92
+    "price": 19.2
   },
   {
     "id": "real-B0BHDYR2ZG",
     "asin": "B0BHDYR2ZG",
     "title": "BEIBYE TSA-Schloß 2080 Gepäck Zwillingsrollen Reisekoffer Koffer Trolley Hartschale Dehnungsfuge (Ro...",
     "titleAr": "BEIBYE TSA-Schloß 2080 Gepäck Zwillingsrollen Reisekoffer Koffer Trolley Hartschale Dehnungsfuge (Ro...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B0BHDYR2ZG",
     "sku": "B0BHDYR2ZG",
@@ -10992,15 +10992,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (40.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 54.9
+    "price": 47.61
   },
   {
     "id": "real-B0BHJJJ22N",
     "asin": "B0BHJJJ22N",
     "title": "BEIBYE- 3er Kofferset Hartschalen-Koffer Reisekoffer Trolley Rollkoffer Set Reisekofferset (Dunkelblau)",
     "titleAr": "BEIBYE- 3er Kofferset Hartschalen-Koffer Reisekoffer Trolley Rollkoffer Set Reisekofferset (Dunkelblau)",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE-",
     "ean": "B0BHJJJ22N",
     "sku": "B0BHJJJ22N",
@@ -11017,15 +11017,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (87.76€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 93.86
+    "price": 68.35
   },
   {
     "id": "real-B07TF6LDYK",
     "asin": "B07TF6LDYK",
     "title": "BEIBYE 2045 Zwillingsrollen 3tlg. Reisekoffer Koffer Kofferset Trolleys Hartschale in 20 Farben (Sch...",
     "titleAr": "BEIBYE 2045 Zwillingsrollen 3tlg. Reisekoffer Koffer Kofferset Trolleys Hartschale in 20 Farben (Sch...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B07TF6LDYK",
     "sku": "B07TF6LDYK",
@@ -11042,15 +11042,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (56.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 84.35
+    "price": 73.35
   },
   {
     "id": "real-B084C38QQP",
     "asin": "B084C38QQP",
     "title": "BEIBYE TSA-Schloß 2080 Zwillingsrollen 3 TLG. Reisekofferset Koffer Kofferset Trolley Trolleys Harts...",
     "titleAr": "BEIBYE TSA-Schloß 2080 Zwillingsrollen 3 TLG. Reisekofferset Koffer Kofferset Trolley Trolleys Harts...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B084C38QQP",
     "sku": "B084C38QQP",
@@ -11067,15 +11067,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (86.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 93.42
+    "price": 71.63
   },
   {
     "id": "real-B08D954LLW",
     "asin": "B08D954LLW",
     "title": "BEIBYE Hartschalenkoffer XL 76 cm – großer Reisekoffer für Familienreisen, leicht, robust, ABS, 360° Doppelrollen, Zahlens...",
     "titleAr": "BEIBYE Hartschalenkoffer XL 76 cm – großer Reisekoffer für Familienreisen, leicht, robust, ABS, 360° Doppelrollen, Zahlens...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B08D954LLW",
     "sku": "B08D954LLW",
@@ -11092,15 +11092,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (39.32€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 49.9
+    "price": 33.39
   },
   {
     "id": "real-B09FFRV8WT",
     "asin": "B09FFRV8WT",
     "title": "BEIBYE Handgepäck Koffer M 55 cm – Kabinenkoffer aus ABS, leicht, 360° Doppelrollen, Reisekoffer für Kurzreisen, Dunkelgruen",
     "titleAr": "BEIBYE Handgepäck Koffer M 55 cm – Kabinenkoffer aus ABS, leicht, 360° Doppelrollen, Reisekoffer für Kurzreisen, Dunkelgruen",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B09FFRV8WT",
     "sku": "B09FFRV8WT",
@@ -11117,15 +11117,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (25.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 34.9
+    "price": 22.29
   },
   {
     "id": "real-B08FDM3X9F",
     "asin": "B08FDM3X9F",
     "title": "BEIBYE 2045 Zwillingsrollen 3tlg. Reisekoffer Koffer Kofferset Trolleys Hartschale in 20 Farben (Dunkelgrün)",
     "titleAr": "BEIBYE 2045 Zwillingsrollen 3tlg. Reisekoffer Koffer Kofferset Trolleys Hartschale in 20 Farben (Dunkelgrün)",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B08FDM3X9F",
     "sku": "B08FDM3X9F",
@@ -11142,15 +11142,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (56.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 84.35
+    "price": 60.28
   },
   {
     "id": "real-B00G47HM2C",
     "asin": "B00G47HM2C",
     "title": "BEIBYE- 3er Kofferset Hartschalen-Koffer Reisekoffer Trolley Rollkoffer Set Reisekofferset (Green)",
     "titleAr": "BEIBYE- 3er Kofferset Hartschalen-Koffer Reisekoffer Trolley Rollkoffer Set Reisekofferset (Green)",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE-",
     "ean": "B00G47HM2C",
     "sku": "B00G47HM2C",
@@ -11167,15 +11167,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (83.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 93.86
+    "price": 83.92
   },
   {
     "id": "real-B07KGCW3L9",
     "asin": "B07KGCW3L9",
     "title": "BEIBYE Zwillingsrollen Hardcase Reisekoffer Koffer Trolleys Hartschale in XL-L-M in 14 Farben (Rosag...",
     "titleAr": "BEIBYE Zwillingsrollen Hardcase Reisekoffer Koffer Trolleys Hartschale in XL-L-M in 14 Farben (Rosag...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B07KGCW3L9",
     "sku": "B07KGCW3L9",
@@ -11192,15 +11192,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (27.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 33.92
+    "price": 28.68
   },
   {
     "id": "real-B09MZ32949",
     "asin": "B09MZ32949",
     "title": "BEIBYE Zwillingsrollen 2048 Hartschale Trolley Koffer Reisekoffer in M-L-XL-Set in 15 Farben (Schwar...",
     "titleAr": "BEIBYE Zwillingsrollen 2048 Hartschale Trolley Koffer Reisekoffer in M-L-XL-Set in 15 Farben (Schwar...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B09MZ32949",
     "sku": "B09MZ32949",
@@ -11217,15 +11217,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (36.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 49.9
+    "price": 44.25
   },
   {
     "id": "real-B0BMB15952",
     "asin": "B0BMB15952",
     "title": "BEIBYE 4 Rollen Reisekoffer .Stoffkoffer Handgepäck Kindergepäck Gepäck Koffer Trolley Set-XL-L-M (T...",
     "titleAr": "BEIBYE 4 Rollen Reisekoffer .Stoffkoffer Handgepäck Kindergepäck Gepäck Koffer Trolley Set-XL-L-M (T...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "kids_toys",
+    "categoryAr": "ألعاب الأطفال والبيبي",
     "brand": "BEIBYE",
     "ean": "B0BMB15952",
     "sku": "B0BMB15952",
@@ -11242,15 +11242,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.74€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 44.9
+    "price": 30.64
   },
   {
     "id": "real-B083QHCDLW",
     "asin": "B083QHCDLW",
     "title": "BEIBYE Hartschalenkoffer XL 76 cm – großer Reisekoffer für Familienreisen, leicht, robust, ABS, 360° Doppelrollen, Zahlens...",
     "titleAr": "BEIBYE Hartschalenkoffer XL 76 cm – großer Reisekoffer für Familienreisen, leicht, robust, ABS, 360° Doppelrollen, Zahlens...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B083QHCDLW",
     "sku": "B083QHCDLW",
@@ -11267,15 +11267,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (41.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 59.9
+    "price": 49.56
   },
   {
     "id": "real-B08LQHSVVG",
     "asin": "B08LQHSVVG",
     "title": "BEIBYE Zwillingsrollen Hardcase Reisekoffer Koffer Trolleys Hartschale in XL-L-M in 14 Farben (Oliv...",
     "titleAr": "BEIBYE Zwillingsrollen Hardcase Reisekoffer Koffer Trolleys Hartschale in XL-L-M in 14 Farben (Oliv...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B08LQHSVVG",
     "sku": "B08LQHSVVG",
@@ -11292,15 +11292,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (29.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 37.9
+    "price": 34.78
   },
   {
     "id": "real-B081NKV3Z3",
     "asin": "B081NKV3Z3",
     "title": "BEIBYE Stoff Kofferset Trolley Gepäckset mit Vorder Taschen, Oberer Öffnung und Dehnungsfuge (Türkis)",
     "titleAr": "BEIBYE Stoff Kofferset Trolley Gepäckset mit Vorder Taschen, Oberer Öffnung und Dehnungsfuge (Türkis)",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "BEIBYE",
     "ean": "B081NKV3Z3",
     "sku": "B081NKV3Z3",
@@ -11317,15 +11317,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (103.02€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 110.42
+    "price": 87.62
   },
   {
     "id": "real-B0GH77LW6P",
     "asin": "B0GH77LW6P",
     "title": "LIGHT FLIGHT Handgepäck Koffer Trolley, Erweiterbarer 55 x 38 x 22cm 360° | 33L-41L, ABS+PC, 3150g, ...",
     "titleAr": "LIGHT FLIGHT Handgepäck Koffer Trolley, Erweiterbarer 55 x 38 x 22cm 360° | 33L-41L, ABS+PC, 3150g, ...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "LIGHT",
     "ean": "B0GH77LW6P",
     "sku": "B0GH77LW6P",
@@ -11342,15 +11342,15 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (47.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 56.99
+    "price": 40.66
   },
   {
     "id": "real-B0G654DTFY",
     "asin": "B0G654DTFY",
     "title": "Münicase Reisekoffer L 66 cm, TSA, Hartschalenkoffer, Schwarz | Dehnfalte, Innenfächer, Kreuzgurt, S...",
     "titleAr": "Münicase Reisekoffer L 66 cm, TSA, Hartschalenkoffer, Schwarz | Dehnfalte, Innenfächer, Kreuzgurt, S...",
-    "category": "fashion_shoes",
-    "categoryAr": "منتجات عامة",
+    "category": "travel_luggage",
+    "categoryAr": "السفر والحقائب والساعات",
     "brand": "Münicase",
     "ean": "B0G654DTFY",
     "sku": "B0G654DTFY",
@@ -11367,7 +11367,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (44.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 55.16
+    "price": 37
   },
   {
     "id": "real-B0D49NK11B",
@@ -11392,7 +11392,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (34.10€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 45.99
+    "price": 34.81
   },
   {
     "id": "real-B0C9M5V2XF",
@@ -11417,7 +11417,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (37.83€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 45.99
+    "price": 31.18
   },
   {
     "id": "real-B0FHTLRK67",
@@ -11442,7 +11442,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.88€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 33.99
+    "price": 27.69
   },
   {
     "id": "real-B0HKXMWJKQ",
@@ -11467,7 +11467,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (39.69€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 49.99
+    "price": 45.05
   },
   {
     "id": "real-B0BCQ2WMZY",
@@ -11492,7 +11492,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (34.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 44.85
+    "price": 36.23
   },
   {
     "id": "real-B0C6PZNGNK",
@@ -11517,7 +11517,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.81€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 42.99
+    "price": 38.26
   },
   {
     "id": "real-B07V69LW6F",
@@ -11542,7 +11542,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (43.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 53.89
+    "price": 49.3
   },
   {
     "id": "real-B0B7RW2CP2",
@@ -11567,7 +11567,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (38.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 47.69
+    "price": 37.02
   },
   {
     "id": "real-B0HJ5TMV4H",
@@ -11592,7 +11592,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 24.98
+    "price": 24.25
   },
   {
     "id": "real-B0B5CCPYRR",
@@ -11617,7 +11617,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.00€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 42.49
+    "price": 29.38
   },
   {
     "id": "real-B0B5CHHLGH",
@@ -11642,7 +11642,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (35.01€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 42.49
+    "price": 34.02
   },
   {
     "id": "real-B0F9NTNMN8",
@@ -11667,7 +11667,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.84€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 42.98
+    "price": 31.21
   },
   {
     "id": "real-B0H1MC29N5",
@@ -11692,7 +11692,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (37.73€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 49.98
+    "price": 45.24
   },
   {
     "id": "real-B0GF7SSTDH",
@@ -11717,7 +11717,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (50.33€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 68.99
+    "price": 47.71
   },
   {
     "id": "real-B0F9Y1Y7X1",
@@ -11742,7 +11742,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (45.88€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 55.98
+    "price": 54.17
   },
   {
     "id": "real-B0B5D997K1",
@@ -11767,7 +11767,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 42.49
+    "price": 41.5
   },
   {
     "id": "real-B0H8WL27HM",
@@ -11792,7 +11792,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (70.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 74.99
+    "price": 69.33
   },
   {
     "id": "real-B0DFFXS426",
@@ -11817,7 +11817,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (54.40€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 67.75
+    "price": 45.89
   },
   {
     "id": "real-B0HN7RV5KT",
@@ -11842,7 +11842,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.46€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 23.99
+    "price": 17.14
   },
   {
     "id": "real-B07PN69HF7",
@@ -11867,7 +11867,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (10.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 13.5
+    "price": 11.99
   },
   {
     "id": "real-B08DJ4XRP5",
@@ -11892,7 +11892,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (38.24€) • ASIN: B08DJ4XRP5",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 38.24
+    "price": 27.24
   },
   {
     "id": "real-B08MZHLCSB",
@@ -11917,7 +11917,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (38.24€) • ASIN: B08MZHLCSB",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 38.24
+    "price": 33.68
   },
   {
     "id": "real-B08DJ5FYBN",
@@ -11942,7 +11942,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (44.99€) • ASIN: B08DJ5FYBN",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 44.99
+    "price": 31.03
   },
   {
     "id": "real-B0HKXPVX4H",
@@ -11967,7 +11967,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (49.99€) • ASIN: B0HKXPVX4H",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 49.99
+    "price": 40.97
   },
   {
     "id": "real-B09G2S4GFW",
@@ -11992,7 +11992,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (37.05€) • ASIN: B09G2S4GFW",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 37.05
+    "price": 25.52
   },
   {
     "id": "real-B0BCQ48L97",
@@ -12017,7 +12017,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (44.85€) • ASIN: B0BCQ48L97",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 44.85
+    "price": 44.61
   },
   {
     "id": "real-B07V7DS8LQ",
@@ -12042,7 +12042,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (56.69€) • ASIN: B07V7DS8LQ",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.341Z",
-    "price": 56.69
+    "price": 39.76
   },
   {
     "id": "real-B098B1P5F1",
@@ -12067,7 +12067,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (69.99€) • ASIN: B098B1P5F1",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.341Z",
-    "price": 69.99
+    "price": 68.35
   },
   {
     "id": "real-B0F9YLN4RV",
@@ -12092,6 +12092,6 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (49.99€) • ASIN: B0F9YLN4RV",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.341Z",
-    "price": 49.99
+    "price": 37.45
   }
 ]

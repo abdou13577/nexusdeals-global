@@ -71,23 +71,25 @@ function getStoresForCategory(categoryId, brand = '', title = '') {
   const b = (brand || '').toLowerCase();
   const isSheinBrand = b.includes('shein') || b.includes('dazy') || t.includes('shein') || t.includes('dazy');
   const isIkeaBrand = b.includes('ikea') || t.includes('ikea') || t.includes('billy') || t.includes('kallax') || t.includes('poäng') || t.includes('markus');
+  const isArabianPerfume = b.includes('lattafa') || t.includes('lattafa') || b.includes('khamrah') || t.includes('khamrah') || b.includes('asad') || t.includes('asad') || b.includes('yara') || t.includes('yara') || b.includes('afnan') || t.includes('afnan') || b.includes('rasasi') || t.includes('rasasi') || b.includes('swiss arabian') || t.includes('swiss arabian');
 
   switch (categoryId) {
     case 'fashion_shoes': {
-      const list = ['Amazon', 'Zalando', 'OTTO', 'Kaufland', 'eBay', 'Temu'];
-      if (isSheinBrand) list.push('SHEIN');
-      return list;
+      return ['Amazon', 'Zalando', 'OTTO', 'Kaufland', 'eBay', 'Temu', 'SHEIN'];
     }
-    case 'perfumes_beauty':
+    case 'perfumes_beauty': {
+      if (isArabianPerfume) {
+        return ['Douglas', 'Amazon', 'OTTO', 'Kaufland', 'eBay'];
+      }
       return ['Douglas', 'Amazon', 'OTTO', 'Zalando', 'Kaufland', 'eBay'];
+    }
     case 'furniture_decor': {
-      const list = ['OTTO', 'Amazon', 'Kaufland', 'Galaxus', 'eBay'];
-      if (isIkeaBrand) list.unshift('IKEA');
-      return list;
+      return ['IKEA', 'OTTO', 'Amazon', 'Kaufland', 'Galaxus', 'eBay'];
     }
     case 'home_kitchen':
       return ['Amazon', 'OTTO', 'Kaufland', 'Galaxus', 'eBay', 'MediaMarkt', 'Temu'];
     case 'tools_garden':
+      return ['Amazon', 'Kaufland', 'eBay', 'OTTO', 'Galaxus', 'AliExpress'];
     case 'auto_car':
       return ['Amazon', 'eBay', 'Kaufland', 'OTTO', 'Galaxus', 'AliExpress'];
     case 'sports_fitness':
@@ -248,31 +250,32 @@ function getStoreVariantInfo(store, categoryId, smartQuery, index, asin, fullTit
 
 function getStoreDirectUrl(store, query, asin, catId) {
   const encQ = encodeURIComponent((query || '').replace(/[^\w\sÄÖÜäöüß-]/g, ' ').trim().slice(0, 50));
+  const rawQ = (query || '').replace(/[^\w\sÄÖÜäöüß-]/g, ' ').trim().slice(0, 50);
   switch (store) {
     case 'Amazon':
       return asin ? `https://www.amazon.de/dp/${asin}?tag=nexusdeals08-21` : `https://www.amazon.de/s?k=${encQ}&tag=nexusdeals08-21`;
+    case 'eBay':
+      return `https://www.ebay.de/sch/i.html?_nkw=${encQ}&LH_BIN=1&mkcid=1&mkrid=707-53477-19255-0&siteid=77&campid=5339228999&customid=nexus&toolid=10001&mkevt=1`;
+    case 'OTTO':
+      return `https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=${encodeURIComponent('https://www.otto.de/suche/' + rawQ + '/')}`;
+    case 'Douglas':
+      return `https://www.awin1.com/cread.php?awinmid=10167&awinaffid=3130490&ued=${encodeURIComponent('https://www.douglas.de/de/search?q=' + rawQ)}`;
     case 'Temu':
       return `https://www.temu.com/de/search_result.html?search_key=${encQ}&_x_ads_channel=affiliate&aff_id=aph89702`;
-    case 'SHEIN':
-      return `https://de.shein.com/pdsearch/${encQ}/`;
+    case 'AliExpress':
+      return `https://de.aliexpress.com/w/wholesale-${encQ.replace(/%20/g, '-')}.html`;
     case 'MediaMarkt':
       return `https://www.mediamarkt.de/de/search.html?query=${encQ}`;
-    case 'OTTO':
-      return `https://www.otto.de/suche/${encQ}/`;
+    case 'Galaxus':
+      return `https://www.galaxus.de/de/search?q=${encQ}`;
     case 'Kaufland':
       return `https://www.kaufland.de/item/search/?search_value=${encQ}`;
     case 'Zalando':
       return `https://www.zalando.de/katalog/?q=${encQ}`;
-    case 'Douglas':
-      return `https://www.douglas.de/de/search?q=${encQ}`;
     case 'IKEA':
       return `https://www.ikea.com/de/de/search/?q=${encQ}`;
-    case 'Galaxus':
-      return `https://www.galaxus.de/de/search?q=${encQ}`;
-    case 'eBay':
-      return `https://www.ebay.de/sch/i.html?_nkw=${encQ}`;
-    case 'AliExpress':
-      return `https://de.aliexpress.com/w/wholesale-${encQ}.html`;
+    case 'SHEIN':
+      return `https://de.shein.com/pdsearch/${encQ}/`;
     default:
       return `https://www.amazon.de/s?k=${encQ}&tag=nexusdeals08-21`;
   }
@@ -345,7 +348,8 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
       variantTitle: `${smartQ} (${store} Edition)`,
       image: primaryImg,
       images: Array.isArray(galleryImages) && galleryImages.length > 0 ? galleryImages : [primaryImg].filter(Boolean),
-      directUrl: dUrl
+      directUrl: dUrl,
+      direct_affiliate_url: dUrl
     });
   }
 
@@ -355,7 +359,10 @@ function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, bra
 
 function detectCategoryFromText(text) {
   const t = (text || '').toLowerCase();
-  if (/autoradio|carplay|car stereo|radio auto|dashcam|starthilfe|ausbeulspotter|dellenlifter|bördelgerät|kfz|autobatterie|ladegerät|auto|سيارة|سيارات|مسجل سيارة|مشغل موسيقى/.test(t)) {
+  if (/kaffeevollautomat|espressomaschine|kaffeemaschine|heißluftfritteuse|staubsauger|topf|pfanne|küche|مطبخ|قهوة|مكنسة/.test(t)) {
+    return { id: 'home_kitchen', ar: 'المطبخ والأجهزة المنزلية' };
+  }
+  if (/autoradio|carplay|car stereo|radio auto|dashcam|starthilfe|ausbeulspotter|dellenlifter|bördelgerät|kfz|\bauto\b|\bpkw\b|autobatterie|ladegerät|سيارة|سيارات|مسجل سيارة|مشغل موسيقى/.test(t)) {
     return { id: 'auto_car', ar: 'مستلزمات وأجهزة السيارات' };
   }
   if (/parka|funktionsparka|regenmantel|winterjacke|steppjacke|daunenjacke|mantel|anorak|jacke|fleece|pullover|sweatshirt|hoodie|t-shirt|hemd|bluse|hose|jeans|leggings|unterwäsche|socken|anzug|kostüm|kleid|rock|schuhe|sneaker|stiefel|sandalen|بدلة|جاكيت|معطف|باركا|سترة|ملابس|أزياء/.test(t)) {
@@ -791,5 +798,8 @@ module.exports = {
   extractSmartModelQuery,
   scrapeProductGalleryByAsin,
   detectCategoryFromText,
-  getStoreVariantInfo
+  getStoreVariantInfo,
+  getStoreDeliveryAr,
+  getStoreDirectUrl,
+  getPriceMultiplier
 };

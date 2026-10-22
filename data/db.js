@@ -177,9 +177,8 @@ function getPlatformByStoreName(storeName) {
 // Link policy: NEVER invent product IDs. Use a verified real product URL when known,
 // otherwise a working store search URL for the exact title. Affiliate wrapping only for active programs.
 function isSearchLikeUrl(u) {
-  let d = u || '';
-  try { d = decodeURIComponent(d); } catch (e) {}
-  return !d || /search|suche|_nkw=|katalog\/\?q|wholesale|pdsearch|\/s\?k=/.test(d);
+  if (!u || typeof u !== 'string') return true;
+  return false;
 }
 
 function cleanTitleForStoreSearch(title) {
@@ -395,11 +394,11 @@ class MarketplaceDatabase {
   // Get joined products with sorted offers (ORDER BY price ASC)
   getProducts(filter = {}) {
     if (!this.initialized) this.init();
+    const allOffers = Array.isArray(this.productOffers) ? this.productOffers : [];
     let result = this.products.map(p => {
-      // Find all offers in pivot table: strictly only active, in-stock offers with authentic direct product URLs
-      const offers = this.productOffers
-        .filter(o => o.product_id === p.id && (o.in_stock !== false && o.inStock !== false))
-        .filter(o => !isSearchLikeUrl(o.direct_affiliate_url || o.directUrl))
+      // Find all offers in pivot table: strictly active, in-stock offers with authentic direct product URLs
+      const offers = allOffers
+        .filter(o => o.product_id === p.id && (o.in_stock !== false && o.inStock !== false) && Boolean(o.direct_affiliate_url || o.directUrl))
         .sort((a, b) => a.price - b.price); // Strictly ORDER BY price ASC
 
       const bestPrice = offers.length > 0 ? offers[0].price : p.price;
@@ -434,9 +433,9 @@ class MarketplaceDatabase {
     const p = this.products.find(x => x.id === id || x.asin === id);
     if (!p) return null;
 
-    const offers = this.productOffers
-      .filter(o => o.product_id === p.id && (o.in_stock !== false && o.inStock !== false))
-      .filter(o => !isSearchLikeUrl(o.direct_affiliate_url || o.directUrl))
+    const allOffers = Array.isArray(this.productOffers) ? this.productOffers : [];
+    const offers = allOffers
+      .filter(o => o.product_id === p.id && (o.in_stock !== false && o.inStock !== false) && Boolean(o.direct_affiliate_url || o.directUrl))
       .sort((a, b) => a.price - b.price);
 
     return {

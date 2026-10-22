@@ -247,93 +247,28 @@ function getStoreVariantInfo(store, categoryId, smartQuery, index, asin, fullTit
 }
 
 function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, brand, galleryImages = []) {
-  const smartQuery = extractSmartModelQuery(title, brand);
-  const hash = (asin || '').split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
-  const storeList = getStoresForCategory(categoryId, brand, title);
-  const storeMultipliers = getDistributedMultipliers(hash, categoryId);
+  // Scraped Amazon product: ONLY verified direct Amazon link with exact live price
+  const primaryImg = (Array.isArray(galleryImages) && galleryImages.length > 0) ? galleryImages[0] : '';
+  const directUrl = `https://www.amazon.de/dp/${asin}?tag=nexusdeals08-21`;
 
-  const storeRatings = {
-    Amazon: 4.9,
-    OTTO: 4.8,
-    Kaufland: 4.7,
-    eBay: 4.7,
-    MediaMarkt: 4.8,
-    Galaxus: 4.8,
-    Zalando: 4.9,
-    Douglas: 4.9,
-    IKEA: 4.8,
-    AliExpress: 4.6,
-    Temu: 4.5,
-    SHEIN: 4.6
-  };
-
-  const offers = storeList.map((store, idx) => {
-    const isAmazon = store === 'Amazon';
-    const mult = storeMultipliers[store] || 1.04;
-    const price = +(amazonLivePrice * mult).toFixed(2);
-    const { variantColor, variantTitle } = getStoreVariantInfo(store, categoryId, smartQuery, idx, asin, title);
-
-    let directUrl;
-    if (isAmazon) {
-      directUrl = `https://www.amazon.de/dp/${asin}?tag=nexusdeals08-21`;
-    } else if (store === 'OTTO') {
-      directUrl = `https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=${encodeURIComponent(`https://www.otto.de/suche/${encodeURIComponent(smartQuery)}/`)}`;
-    } else if (store === 'Zalando') {
-      // 100% direct official Zalando search - bypass dead Awin mid=8686
-      directUrl = `https://www.zalando.de/katalog/?q=${encodeURIComponent(smartQuery)}`;
-    } else if (store === 'Douglas') {
-      directUrl = `https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=${encodeURIComponent(`https://www.douglas.de/de/search?q=${encodeURIComponent(smartQuery)}`)}`;
-    } else if (store === 'MediaMarkt') {
-      directUrl = `https://www.mediamarkt.de/de/search.html?query=${encodeURIComponent(smartQuery)}`;
-    } else if (store === 'eBay') {
-      directUrl = `https://www.ebay.de/sch/i.html?_nkw=${encodeURIComponent(smartQuery)}&LH_BIN=1&_sop=12`;
-    } else if (store === 'Galaxus') {
-      directUrl = `https://www.galaxus.de/de/search?q=${encodeURIComponent(smartQuery)}`;
-    } else if (store === 'Kaufland') {
-      directUrl = `https://www.kaufland.de/item/search/?search_value=${encodeURIComponent(smartQuery)}`;
-    } else if (store === 'IKEA') {
-      directUrl = `https://www.ikea.com/de/de/search/?q=${encodeURIComponent(smartQuery)}`;
-    } else if (store === 'AliExpress') {
-      directUrl = `https://www.aliexpress.com/w/wholesale-${encodeURIComponent(smartQuery)}.html`;
-    } else if (store === 'Temu') {
-      directUrl = `https://www.temu.com/de/search_result.html?search_key=${encodeURIComponent(smartQuery)}&_x_ads_channel=affiliate&aff_id=aph89702`;
-    } else if (store === 'SHEIN') {
-      directUrl = `https://de.shein.com/pdsearch/${encodeURIComponent(smartQuery)}/`;
-    }
-
-    const storePool = {
-      eBay: ['https://i.ebayimg.com/images/g/x8AAAOSwsNFl~5bW/s-l1600.jpg', 'https://i.ebayimg.com/images/g/H~AAAOSwSjZlwV4v/s-l1600.jpg'],
-      OTTO: ['https://i.otto.de/i/otto/36881958/sony-wh-1000xm4-over-ear-kopfhoerer-schwarz.jpg'],
-      IKEA: ['https://www.ikea.com/de/de/images/products/billy-buecherregal-weiss__0625599_pe692385_s5.jpg']
-    };
-
-    let storeImages;
-    if (isAmazon) {
-      storeImages = (Array.isArray(galleryImages) && galleryImages.length > 0) ? galleryImages : [];
-    } else {
-      storeImages = storePool[store] || [];
-    }
-    const offerImage = storeImages.length > 0 ? storeImages[0] : (galleryImages[0] || undefined);
-
-    return {
-      store,
-      storeLogo: store.toLowerCase(),
-      asin: isAmazon ? asin : undefined,
-      price,
+  return [
+    {
+      store: 'Amazon',
+      storeLogo: 'amazon',
+      asin,
+      price: amazonLivePrice,
       shipping: 0,
-      deliveryAr: isAmazon ? `شراء فوري مباشر - متوفر في أمازون` : `متوفر في ${store}`,
+      deliveryAr: 'شراء فوري مباشر - متوفر في أمازون برايم',
       inStock: true,
-      rating: storeRatings[store] || 4.7,
-      query: smartQuery,
-      variantColor,
-      variantTitle,
-      image: offerImage,
-      images: storeImages.length > 0 ? storeImages : [offerImage].filter(Boolean),
+      rating: 4.9,
+      query: title,
+      variantColor: '',
+      variantTitle: title,
+      image: primaryImg,
+      images: Array.isArray(galleryImages) && galleryImages.length > 0 ? galleryImages : [primaryImg].filter(Boolean),
       directUrl
-    };
-  });
-
-  return offers.sort((a, b) => a.price - b.price);
+    }
+  ];
 }
 
 function detectCategoryFromText(text) {

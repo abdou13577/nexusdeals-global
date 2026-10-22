@@ -66,30 +66,42 @@ function parseGermanPrice(str) {
 }
 
 // Select authentic, verified platforms per category across all 12 global platforms
-function getStoresForCategory(categoryId) {
+function getStoresForCategory(categoryId, brand = '', title = '') {
+  const t = (title || '').toLowerCase();
+  const b = (brand || '').toLowerCase();
+  const isSheinBrand = b.includes('shein') || b.includes('dazy') || t.includes('shein') || t.includes('dazy');
+  const isIkeaBrand = b.includes('ikea') || t.includes('ikea') || t.includes('billy') || t.includes('kallax') || t.includes('poäng') || t.includes('markus');
+
   switch (categoryId) {
-    case 'fashion_shoes':
-      return ['Amazon', 'Zalando', 'OTTO', 'Kaufland', 'eBay', 'SHEIN', 'Temu', 'AliExpress'];
+    case 'fashion_shoes': {
+      const list = ['Amazon', 'Zalando', 'OTTO', 'Kaufland', 'eBay', 'Temu'];
+      if (isSheinBrand) list.push('SHEIN');
+      return list;
+    }
     case 'perfumes_beauty':
-      return ['Amazon', 'Douglas', 'OTTO', 'Zalando', 'Kaufland', 'Galaxus', 'eBay', 'Temu'];
-    case 'furniture_decor':
+      return ['Douglas', 'Amazon', 'OTTO', 'Zalando', 'Kaufland', 'eBay'];
+    case 'furniture_decor': {
+      const list = ['OTTO', 'Amazon', 'Kaufland', 'Galaxus', 'eBay'];
+      if (isIkeaBrand) list.unshift('IKEA');
+      return list;
+    }
     case 'home_kitchen':
-      return ['Amazon', 'IKEA', 'OTTO', 'Kaufland', 'Galaxus', 'eBay', 'Temu', 'AliExpress'];
+      return ['Amazon', 'OTTO', 'Kaufland', 'Galaxus', 'eBay', 'MediaMarkt', 'Temu'];
     case 'tools_garden':
     case 'auto_car':
-      return ['Amazon', 'eBay', 'Kaufland', 'OTTO', 'Galaxus', 'AliExpress', 'Temu', 'MediaMarkt'];
+      return ['Amazon', 'eBay', 'Kaufland', 'OTTO', 'Galaxus', 'AliExpress'];
     case 'sports_fitness':
     case 'kids_toys':
     case 'travel_luggage':
-      return ['Amazon', 'OTTO', 'Kaufland', 'Galaxus', 'eBay', 'MediaMarkt', 'Temu', 'AliExpress'];
+      return ['Amazon', 'OTTO', 'Kaufland', 'Galaxus', 'eBay', 'AliExpress'];
     case 'smartphones':
     case 'tv_audio':
     case 'gaming':
     case 'laptops_tablets':
     case 'computers':
-      return ['Amazon', 'MediaMarkt', 'Galaxus', 'eBay', 'Kaufland', 'OTTO', 'AliExpress', 'Temu'];
+      return ['Amazon', 'MediaMarkt', 'OTTO', 'Galaxus', 'eBay', 'Kaufland'];
     default:
-      return ['Amazon', 'OTTO', 'MediaMarkt', 'Kaufland', 'Galaxus', 'eBay', 'AliExpress', 'Temu'];
+      return ['Amazon', 'OTTO', 'MediaMarkt', 'Kaufland', 'Galaxus', 'eBay'];
   }
 }
 
@@ -237,7 +249,7 @@ function getStoreVariantInfo(store, categoryId, smartQuery, index, asin, fullTit
 function buildRealOffersForProduct(asin, title, amazonLivePrice, categoryId, brand, galleryImages = []) {
   const smartQuery = extractSmartModelQuery(title, brand);
   const hash = (asin || '').split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
-  const storeList = getStoresForCategory(categoryId);
+  const storeList = getStoresForCategory(categoryId, brand, title);
   const storeMultipliers = getDistributedMultipliers(hash, categoryId);
 
   const storeRatings = {

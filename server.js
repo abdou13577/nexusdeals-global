@@ -8,6 +8,7 @@ const { db, buildDirectAffiliateUrl: dbBuildAffiliateUrl } = require('./data/db'
 const { dynamicSearchAndAggregate } = require('./services/dynamicProductScraper');
 const { resolveBestProductImage, generateSvgPlaceholder } = require('./services/imageResolver');
 const { syncProductLivePrices } = require('./services/livePriceSyncService');
+const { aiDiscoveryEngine } = require('./services/aiProductDiscoveryEngine');
 
 const PORT = process.env.PORT || 3080;
 const DATA_DIR = path.join(__dirname, 'data');
@@ -1014,6 +1015,15 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       }
     }
 
+    // 1d. GET /api/ai/match-product?id=...
+    if (pathname === '/api/ai/match-product' && req.method === 'GET') {
+      const prodId = (parsedUrl.query.id || '').trim();
+      const settings = loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
+      const matched = await aiDiscoveryEngine.matchProductAcrossStores(prodId, settings);
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      return res.end(JSON.stringify({ ok: true, product: matched }));
+    }
+
     // 2. POST /api/ai-assistant
     if (pathname === '/api/ai-assistant' && req.method === 'POST') {
       let body = '';
@@ -1292,6 +1302,9 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
     console.log(`🚀 NexusDeals Global Marketplace (12 Platforms & 12 Categories)`);
     console.log(`🌐 URL: http://localhost:${PORT}`);
     console.log(`=============================================================\n`);
+
+    // Start background AI Product Discovery & Cross-Matcher Engine
+    aiDiscoveryEngine.start();
 
     // Keep-alive: prevent Render free tier from sleeping (no more "Welcome to Render" loading screen)
     const publicUrl = process.env.RENDER_EXTERNAL_URL || process.env.PUBLIC_URL || 'https://nexusdeals-global.onrender.com';

@@ -396,9 +396,10 @@ class MarketplaceDatabase {
   getProducts(filter = {}) {
     if (!this.initialized) this.init();
     let result = this.products.map(p => {
-      // Find all offers in pivot table
+      // Find all offers in pivot table: strictly only active, in-stock offers with authentic direct product URLs
       const offers = this.productOffers
-        .filter(o => o.product_id === p.id)
+        .filter(o => o.product_id === p.id && (o.in_stock !== false && o.inStock !== false))
+        .filter(o => !isSearchLikeUrl(o.direct_affiliate_url || o.directUrl))
         .sort((a, b) => a.price - b.price); // Strictly ORDER BY price ASC
 
       const bestPrice = offers.length > 0 ? offers[0].price : p.price;
@@ -434,7 +435,8 @@ class MarketplaceDatabase {
     if (!p) return null;
 
     const offers = this.productOffers
-      .filter(o => o.product_id === p.id)
+      .filter(o => o.product_id === p.id && (o.in_stock !== false && o.inStock !== false))
+      .filter(o => !isSearchLikeUrl(o.direct_affiliate_url || o.directUrl))
       .sort((a, b) => a.price - b.price);
 
     return {

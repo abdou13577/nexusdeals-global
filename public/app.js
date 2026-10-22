@@ -40,6 +40,13 @@ try {
   sessionStorage.removeItem('nexus_deals_lang_manual');
 } catch (e) {}
 
+function isSearchLikeUrl(u) {
+  if (!u || typeof u !== 'string') return true;
+  let d = u;
+  try { d = decodeURIComponent(d); } catch (e) {}
+  return /search|suche|katalog\/\?q|\/s\?|_nkw=|pdsearch|wholesale|search_result/.test(d);
+}
+
 let allProducts = [];
 let currentCategory = 'all';
 let currentStore = 'all';
@@ -140,7 +147,7 @@ const I18N = {
     stageSpecPrice: (p) => `السعر الفعلي المباشر: ${p} € (شامل الضريبة)`,
     stageSpecRating: (r) => `تقييم المتجر: ⭐ ${r} / 5`,
     stageSpecShipping: (s) => `التوصيل والضمان: شحن من مستودعات ${s} مع ضمان الإرجاع الرسمي`,
-    stageCompareHeader: (n) => `🏪 المنصات والمتاجر المتوفرة (${n} متاجر حقيقية) — اضغط على أي متجر لعرضه في الشاشة 📺:`,
+    stageCompareHeader: (n) => n === 1 ? '🏬 المنصة الرسمية المعتمدة لهذا المنتج (متجر أصلي ومباشر 100%):' : `🏪 المتاجر الرسمية المتوفرة حالياً (${n} متاجر موثقة) — اضغط على أي متجر لعرض إعلانه في الشاشة 📺:`,
     modalCompareHeader: '🏪 جدول مقارنة الأسعار المباشر عبر كبرى المتاجر الأوروبية:',
     modalBestGuaranteed: '🏆 أرخص سعر مضمون اليوم',
     modalStoreRating: (r) => `تقييم المتجر ⭐ ${r}`,
@@ -260,7 +267,7 @@ const I18N = {
     stageSpecPrice: (p) => `Live-Endpreis: ${p} € (inkl. MwSt.)`,
     stageSpecRating: (r) => `Shop-Bewertung: ⭐ ${r} / 5`,
     stageSpecShipping: (s) => `Lieferung & Garantie: Versand via ${s} mit Käuferschutz & Rückgaberecht`,
-    stageCompareHeader: (n) => `🏪 Verfügbare Shops (${n} echte Händler) — Klicken Sie auf einen Shop für den Live-Bildschirm 📺:`,
+    stageCompareHeader: (n) => n === 1 ? '🏬 Offizielle Partner-Plattform für dieses Produkt (100% verifiziert):' : `🏪 Verfügbare Partner-Shops (${n} verifizierte Händler) — Klicken Sie auf einen Shop für den Live-Bildschirm 📺:`,
     modalCompareHeader: '🏪 Direkter Live-Preisvergleich führender europäischer Shops:',
     modalBestGuaranteed: '🏆 Garantierter Bestpreis heute',
     modalStoreRating: (r) => `Shop-Bewertung ⭐ ${r}`,
@@ -380,7 +387,7 @@ const I18N = {
     stageSpecPrice: (p) => `Live Verified Price: ${p} € (incl. VAT)`,
     stageSpecRating: (r) => `Store Rating: ⭐ ${r} / 5`,
     stageSpecShipping: (s) => `Delivery & Warranty: Fulfilled via ${s} with official buyer protection`,
-    stageCompareHeader: (n) => `🏪 Available Stores (${n} verified retailers) — Click any store to view on Stage 📺:`,
+    stageCompareHeader: (n) => n === 1 ? '🏬 Official Partner Platform for this item (100% verified direct):' : `🏪 Available Partner Stores (${n} verified retailers) — Click any store to view on Stage 📺:`,
     modalCompareHeader: '🏪 Live Multi-Store Price Comparison Table:',
     modalBestGuaranteed: '🏆 Lowest Price Guaranteed Today',
     modalStoreRating: (r) => `Store Rating ⭐ ${r}`,
@@ -703,8 +710,12 @@ function renderProductsGrid(products, containerId) {
   const priceTxt = (o) => (o.store === 'Amazon' ? '' : `<small class="est-word">${estWord}</small> `) + o.price.toFixed(2);
 
   container.innerHTML = products.map(p => {
-    // Strictly ORDER BY price ASC across all platforms
-    const sortedOffers = Array.isArray(p.offers) ? [...p.offers].sort((a, b) => a.price - b.price) : [];
+    // Strictly filter to active, in-stock offers with authentic direct URLs and ORDER BY price ASC
+    const sortedOffers = Array.isArray(p.offers)
+      ? [...p.offers]
+          .filter(o => o.in_stock !== false && o.inStock !== false && !isSearchLikeUrl(o.direct_affiliate_url || o.directUrl))
+          .sort((a, b) => a.price - b.price)
+      : [];
     const focusOffer = focusStore ? sortedOffers.find(o => o.store.toLowerCase() === focusStore.toLowerCase()) : null;
     const bestOffer = focusOffer || (sortedOffers.length > 0 ? sortedOffers[0] : { store: 'Amazon', price: p.price || 0 });
     const savingEur = Math.max(0, Math.round(p.msrp - bestOffer.price));
@@ -958,10 +969,18 @@ function renderModalGalleryUI(images, statusText) {
 function renderModalOffersList(product, selectedStore) {
   const dict = t();
   if (!product || !Array.isArray(product.offers)) return '';
-  // Strictly enforce price hierarchy: lowest price first
-  product.offers.sort((a, b) => a.price - b.price);
+  // Strictly filter to only in-stock offers with authentic direct URLs (hide unavailable stores)
+  const validOffers = product.offers
+    .filter(o => o.in_stock !== false && o.inStock !== false)
+    .filter(o => {
+      const u = o.direct_affiliate_url || o.directUrl || '';
+      return !/search|suche|katalog\/\?q|\/s\?|_nkw=|pdsearch|wholesale|search_result/.test(u);
+    })
+    .sort((a, b) => a.price - b.price);
 
-  return product.offers.map((o, idx) => {
+  if (validOffers.length === 0) return '';
+
+  return validOffers.map((o, idx) => {
     const targetDirect = o.direct_affiliate_url || o.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}`;
     const variantTag = o.variantColor ? `<span class="mo-variant-pill">${escapeHtml(o.variantColor)}</span>` : '';
     const isSelected = selectedStore ? (o.store.toLowerCase() === selectedStore.toLowerCase()) : (idx === 0);
@@ -1042,15 +1061,21 @@ async function openProductModal(productId) {
     </div>
   `).join('');
 
-  // Ensure strict price hierarchy: ORDER BY price ASC
-  if (Array.isArray(product.offers)) {
-    product.offers.sort((a, b) => a.price - b.price);
-  }
+  // Filter to strictly only verified in-stock direct offers (hide unavailable stores)
+  const validOffers = (product.offers || [])
+    .filter(o => o.in_stock !== false && o.inStock !== false)
+    .filter(o => {
+      const u = o.direct_affiliate_url || o.directUrl || '';
+      return !/search|suche|katalog\/\?q|\/s\?|_nkw=|pdsearch|wholesale|search_result/.test(u);
+    })
+    .sort((a, b) => a.price - b.price);
+
+  product.offers = validOffers;
 
   const initialStore = (currentStore && currentStore !== 'all') ? currentStore : null;
-  let initialOffer = initialStore ? (product.offers || []).find(o => o.store.toLowerCase() === initialStore.toLowerCase()) : null;
+  let initialOffer = initialStore ? validOffers.find(o => o.store.toLowerCase() === initialStore.toLowerCase()) : null;
   if (!initialOffer) {
-    initialOffer = (product.offers && product.offers.length > 0) ? product.offers[0] : { store: 'Amazon', price: product.price || 0, rating: 4.8 };
+    initialOffer = (validOffers.length > 0) ? validOffers[0] : { store: 'Amazon', price: product.price || 0, rating: 4.8 };
   }
 
   const initialTargetDirect = initialOffer.direct_affiliate_url || initialOffer.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(initialOffer.store)}&price=${encodeURIComponent(initialOffer.price)}`;

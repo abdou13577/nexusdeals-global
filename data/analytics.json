@@ -1,10 +1,10 @@
 {
-  "totalClicks": 23,
-  "estimatedCommissionEur": 0,
+  "totalClicks": 25,
+  "estimatedCommissionEur": 4.5,
   "storeBreakdown": {
     "Amazon": {
-      "clicks": 5,
-      "estRevenue": 0
+      "clicks": 6,
+      "estRevenue": 4.5
     },
     "OTTO": {
       "clicks": 4,
@@ -15,7 +15,7 @@
       "estRevenue": 0
     },
     "eBay": {
-      "clicks": 5,
+      "clicks": 6,
       "estRevenue": 0
     },
     "Zalando": {
@@ -52,6 +52,22 @@
     }
   },
   "recentClicks": [
+    {
+      "timestamp": "2026-10-22T11:22:09.055Z",
+      "productId": "B0CS6Y4L3N",
+      "query": "Product",
+      "store": "Amazon",
+      "price": 100,
+      "estCommission": 4.5
+    },
+    {
+      "timestamp": "2026-10-22T11:21:49.643Z",
+      "productId": "real",
+      "query": "Product",
+      "store": "eBay",
+      "price": 100,
+      "estCommission": 0
+    },
     {
       "timestamp": "2026-10-20T23:56:55.936Z",
       "productId": "real-B0CSZRYQP1",

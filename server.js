@@ -838,7 +838,13 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
         list = list.filter(p => p.offers && p.offers.some(o => o.store.toLowerCase() === store.toLowerCase()));
       }
       if (maxPrice && !isNaN(maxPrice)) {
-        list = list.filter(p => p.offers && p.offers[0].price <= maxPrice);
+        list = list.filter(p => {
+          if (store !== 'all') {
+            const so = (p.offers || []).find(o => o.store.toLowerCase() === store.toLowerCase());
+            if (so) return so.price <= maxPrice;
+          }
+          return p.offers && p.offers[0].price <= maxPrice;
+        });
       }
       if (onlyFlash) {
         list = list.filter(p => p.isFlashDeal);
@@ -902,12 +908,19 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
         list = filteredScored.map(s => s.product);
       }
 
+      const priceFor = (p) => {
+        if (store !== 'all') {
+          const so = (p.offers || []).find(o => o.store.toLowerCase() === store.toLowerCase());
+          if (so) return so.price;
+        }
+        return p.offers[0].price;
+      };
       if (sort === 'price_asc') {
-        list.sort((a, b) => a.offers[0].price - b.offers[0].price);
+        list.sort((a, b) => priceFor(a) - priceFor(b));
       } else if (sort === 'price_desc') {
-        list.sort((a, b) => b.offers[0].price - a.offers[0].price);
+        list.sort((a, b) => priceFor(b) - priceFor(a));
       } else if (sort === 'discount') {
-        list.sort((a, b) => ((b.msrp - b.offers[0].price) / b.msrp) - ((a.msrp - a.offers[0].price) / a.msrp));
+        list.sort((a, b) => ((b.msrp - priceFor(b)) / b.msrp) - ((a.msrp - priceFor(a)) / a.msrp));
       } else if (sort === 'rating') {
         list.sort((a, b) => b.rating - a.rating);
       } else if (!rawQ && category === 'all') {
@@ -1152,12 +1165,15 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
     console.log(`=============================================================\n`);
 
     // Keep-alive: prevent Render free tier from sleeping (no more "Welcome to Render" loading screen)
-    const publicUrl = process.env.RENDER_EXTERNAL_URL || process.env.PUBLIC_URL;
-    if (publicUrl) {
+    const publicUrl = process.env.RENDER_EXTERNAL_URL || process.env.PUBLIC_URL || 'https://nexusdeals-global.onrender.com';
+    if (publicUrl && !publicUrl.includes('localhost')) {
       const lib = publicUrl.startsWith('https') ? require('https') : require('http');
       setInterval(() => {
-        lib.get(`${publicUrl}/api/health`, (r) => r.resume()).on('error', () => {});
-      }, 9 * 60 * 1000);
+        lib.get(`${publicUrl}/api/health`, (r) => {
+          r.resume();
+        }).on('error', () => {});
+      }, 7 * 60 * 1000);
+      console.log(`[Keep-Alive] Configured active keep-alive ping for: ${publicUrl}/api/health (every 7m)`);
     }
   });
 }

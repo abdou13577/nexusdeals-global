@@ -1788,4 +1788,4 @@ html.modal-open, html.sheet-open { overflow: hidden; }
   /* Smooth page enter */
   .products-grid { animation: appFade .35s ease both; }
   @keyframes appFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-}
+}.est-word{font-size:.62em;font-weight:600;opacity:.75;margin-inline-end:2px}

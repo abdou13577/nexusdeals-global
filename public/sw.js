@@ -1,8 +1,8 @@
-﻿// NexusDeals service worker: instant app-shell + resilient API fallback
-const VERSION = 'nexus-v3.1';
+// NexusDeals service worker: instant app-shell + resilient API fallback
+const VERSION = 'nexus-v3.2';
 const SHELL = `${VERSION}-shell`;
 const DATA = `${VERSION}-data`;
-const SHELL_URLS = ['/', '/styles.css?v=3.1', '/app.js?v=3.1', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png'];
+const SHELL_URLS = ['/', '/styles.css?v=3.2', '/app.js?v=3.2', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

@@ -637,8 +637,15 @@ function renderProductsGrid(products, containerId) {
     return;
   }
 
+  const focusStore = (typeof currentStore === 'string' && currentStore !== 'all') ? currentStore : null;
+  const L = currentLang;
+  const estWord = L === 'ar' ? 'تقريبي' : (L === 'de' ? 'ca.' : 'est.');
+  const storePriceLbl = (s) => L === 'ar' ? `السعر في ${s}` : (L === 'de' ? `Preis bei ${s}` : `Price at ${s}`);
+  const priceTxt = (o) => (o.store === 'Amazon' ? '' : `<small class="est-word">${estWord}</small> `) + o.price.toFixed(2);
+
   container.innerHTML = products.map(p => {
-    const bestOffer = p.offers[0];
+    const focusOffer = focusStore ? p.offers.find(o => o.store.toLowerCase() === focusStore.toLowerCase()) : null;
+    const bestOffer = focusOffer || p.offers[0];
     const savingEur = Math.max(0, Math.round(p.msrp - bestOffer.price));
     const savingPct = Math.max(5, Math.round(((p.msrp - bestOffer.price) / p.msrp) * 100));
     const displayTitle = p.title;
@@ -646,17 +653,18 @@ function renderProductsGrid(products, containerId) {
     const badgeLeft = savingEur > 25 ? dict.badgeHotDeal(savingEur) : dict.badgeVerified(p.asin || 'DE');
     const badgeRight = dict.badgeSave(savingEur, savingPct);
 
-    const topOffersHtml = p.offers.slice(0, 4).map((o, idx) => {
+    const shownOffers = focusOffer ? [focusOffer] : p.offers.slice(0, 4);
+    const topOffersHtml = shownOffers.map((o, idx) => {
       const directParam = o.directUrl ? `&directUrl=${encodeURIComponent(o.directUrl)}` : '';
       const outUrl = `/api/out?productId=${encodeURIComponent(p.id)}&asin=${encodeURIComponent(p.asin || '')}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}&query=${encodeURIComponent(o.query || p.title)}${directParam}`;
       return `
         <a href="${outUrl}" target="_blank" rel="noopener" class="offer-row ${idx === 0 ? 'cheapest' : ''}">
           <div style="display:flex; align-items:center; gap:6px;">
             <span class="store-tag store-${o.store}">${o.store}</span>
-            <span style="font-size:0.72rem; color:var(--text-secondary);">${idx === 0 ? dict.cheapestTag : dict.deliveryStore(o.store)}</span>
+            <span style="font-size:0.72rem; color:var(--text-secondary);">${focusOffer ? dict.deliveryStore(o.store) : (idx === 0 ? dict.cheapestTag : dict.deliveryStore(o.store))}</span>
           </div>
           <div class="offer-price-val" style="color:${idx === 0 ? '#34d399' : '#f8fafc'};">
-            ${o.price.toFixed(2)} € ↗
+            ${priceTxt(o)} € ↗
           </div>
         </a>
       `;
@@ -685,9 +693,9 @@ function renderProductsGrid(products, containerId) {
 
           <div class="best-price-box">
             <div>
-              <div style="font-size:0.72rem; color:var(--text-secondary);">${dict.cheapestNowIn(bestOffer.store)}</div>
+              <div style="font-size:0.72rem; color:var(--text-secondary);">${focusOffer ? storePriceLbl(bestOffer.store) : dict.cheapestNowIn(bestOffer.store)}</div>
               <div>
-                <span class="price-main">${bestOffer.price.toFixed(2)} €</span>
+                <span class="price-main">${priceTxt(bestOffer)} €</span>
                 <span class="price-msrp">${p.msrp.toFixed(2)} €</span>
               </div>
             </div>
@@ -954,7 +962,7 @@ async function openProductModal(productId) {
         </div>
         <div class="mo-side">
           <div class="mo-price-box">
-            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#fff'};">${o.price.toFixed(2)} €</div>
+            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#fff'};">${o.store === 'Amazon' ? '' : `<small class="est-word">${currentLang === 'ar' ? 'تقريبي' : (currentLang === 'de' ? 'ca.' : 'est.')}</small> `}${o.price.toFixed(2)} €</div>
             <div class="mo-ship">${dict.modalFreeShipping}</div>
           </div>
           <div class="mo-actions">
@@ -999,7 +1007,8 @@ async function openProductModal(productId) {
     <!-- Interactive Live Store Preview Box -->
     <div id="storeLivePreviewContainer" style="margin-bottom:14px;"></div>
 
-    <div style="margin-bottom:20px;">${allOffersRows}</div>
+    <div style="margin-bottom:8px;">${allOffersRows}</div>
+    <div style="font-size:0.72rem; color:var(--text-secondary); margin-bottom:18px;">ℹ️ ${currentLang === 'ar' ? 'سعر Amazon حقيقي من الموقع. أسعار المتاجر الأخرى تقديرية وقد تختلف قليلاً عند المتجر.' : (currentLang === 'de' ? 'Der Amazon-Preis ist live. Preise anderer Shops sind Richtwerte und können im Shop leicht abweichen.' : "Amazon price is live. Other shops' prices are estimates and may differ slightly at the store.")}</div>
 
     <h4 style="margin-bottom:10px; color:#fbbf24; font-size:0.95rem;">${dict.modalChartHeader}</h4>
     <div class="price-chart-bars">${chartBarsHtml}</div>

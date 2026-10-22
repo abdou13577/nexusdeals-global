@@ -294,6 +294,9 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
       return `https://www.aliexpress.com/w/wholesale-${q.replace(/%20/g, '-')}.html${priceFilter}${tagParam}`;
     }
     case 'Temu': {
+      if (!isDirectMode && (!query || query.trim() === '' || query === 'Deals')) {
+        return (settings && settings.temuPromoUrl) || 'https://temu.to/m/u6b3glm38yo';
+      }
       const tagParam = (tags.Temu && !isDirectMode) ? `&_x_ads_channel=affiliate&aff_id=${encodeURIComponent(tags.Temu)}` : '';
       return `https://www.temu.com/de/search_result.html?search_key=${q}&search_type=1000${tagParam}`;
     }

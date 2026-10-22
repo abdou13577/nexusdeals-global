@@ -1065,7 +1065,32 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       return res.end();
     }
 
-    // 3b. GET /api/image-proxy?url=...
+    // 3b. Non-blocking beacon track click
+    if (pathname === '/api/track-click') {
+      try {
+        const { productId, store, price } = parsedUrl.query;
+        const cleanStore = store || 'Amazon';
+        const itemPrice = parseFloat(price) || 100;
+        const settings = loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
+        const analytics = loadJson(ANALYTICS_PATH, DEFAULT_ANALYTICS);
+        const hasActiveAffiliateTag = Boolean(settings.affiliateIds && settings.affiliateIds[cleanStore] && settings.affiliateIds[cleanStore].trim() !== '');
+        const rate = (settings.commissionRates && settings.commissionRates[cleanStore]) || 0.045;
+        const estCommission = hasActiveAffiliateTag ? +(itemPrice * rate).toFixed(2) : 0;
+
+        analytics.totalClicks = (analytics.totalClicks || 0) + 1;
+        analytics.estimatedCommissionEur = +((analytics.estimatedCommissionEur || 0) + estCommission).toFixed(2);
+        if (!analytics.storeBreakdown[cleanStore]) {
+          analytics.storeBreakdown[cleanStore] = { clicks: 0, estRevenue: 0 };
+        }
+        analytics.storeBreakdown[cleanStore].clicks += 1;
+        analytics.storeBreakdown[cleanStore].estRevenue = +(analytics.storeBreakdown[cleanStore].estRevenue + estCommission).toFixed(2);
+        saveJson(ANALYTICS_PATH, analytics);
+      } catch (e) {}
+      res.writeHead(204);
+      return res.end();
+    }
+
+    // 3c. GET /api/image-proxy?url=...
     if (pathname === '/api/image-proxy' && req.method === 'GET') {
       const targetUrl = parsedUrl.query.url;
       const title = parsedUrl.query.title || 'Product';

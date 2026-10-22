@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-10-22T21:18:05.978Z",
+  "lastSyncedAt": "2026-10-22T21:29:53.022Z",
   "totalProducts": 465,
   "sources": [
     "Amazon",
@@ -64660,29 +64660,6 @@
           "last_updated": "2026-10-22T21:16:47.623Z"
         },
         {
-          "id": "off-real-B0952CG1Y4-amazon",
-          "product_id": "real-B0952CG1Y4",
-          "platform_id": "amazon",
-          "store": "Amazon",
-          "storeLogo": "amazon",
-          "price": 111.35,
-          "direct_affiliate_url": "https://www.amazon.de/dp/B0952CG1Y4?tag=nexusdeals08-21",
-          "directUrl": "https://www.amazon.de/dp/B0952CG1Y4?tag=nexusdeals08-21",
-          "variantTitle": "killtec Damen Funktionsparka Parka (Amazon Edition)",
-          "variantColor": "",
-          "image": "https://m.media-amazon.com/images/I/61nprBy2n+L._AC_SL1000_.jpg",
-          "images": [
-            "https://m.media-amazon.com/images/I/61nprBy2n+L._AC_SL1000_.jpg"
-          ],
-          "shipping": 0,
-          "deliveryAr": "شراء فوري مباشر - متوفر في أمازون برايم",
-          "in_stock": true,
-          "inStock": true,
-          "rating": 4.6,
-          "query": "killtec Damen Funktionsparka Parka",
-          "last_updated": "2026-10-22T21:16:47.623Z"
-        },
-        {
           "id": "off-real-B0952CG1Y4-zalando",
           "product_id": "real-B0952CG1Y4",
           "platform_id": "zalando",
@@ -64702,6 +64679,29 @@
           "in_stock": true,
           "inStock": true,
           "rating": 4.9,
+          "query": "killtec Damen Funktionsparka Parka",
+          "last_updated": "2026-10-22T21:16:47.623Z"
+        },
+        {
+          "id": "off-real-B0952CG1Y4-amazon",
+          "product_id": "real-B0952CG1Y4",
+          "platform_id": "amazon",
+          "store": "Amazon",
+          "storeLogo": "amazon",
+          "price": 131.79,
+          "direct_affiliate_url": "https://www.amazon.de/dp/B0952CG1Y4?tag=nexusdeals08-21",
+          "directUrl": "https://www.amazon.de/dp/B0952CG1Y4?tag=nexusdeals08-21",
+          "variantTitle": "killtec Damen Funktionsparka KOW 165 WMN PRK (Größe 36, grün/grau)",
+          "variantColor": "Größe 36 / grün-grau",
+          "image": "https://m.media-amazon.com/images/I/61nprBy2n+L._AC_SL1000_.jpg",
+          "images": [
+            "https://m.media-amazon.com/images/I/61nprBy2n+L._AC_SL1000_.jpg"
+          ],
+          "shipping": 0,
+          "deliveryAr": "شراء فوري مباشر - متوفر في أمازون برايم",
+          "in_stock": true,
+          "inStock": true,
+          "rating": 4.6,
           "query": "killtec Damen Funktionsparka Parka",
           "last_updated": "2026-10-22T21:16:47.623Z"
         }

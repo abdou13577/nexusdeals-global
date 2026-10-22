@@ -1,10 +1,10 @@
 {
-  "totalClicks": 16,
-  "estimatedCommissionEur": 52.3,
+  "totalClicks": 18,
+  "estimatedCommissionEur": 58.23,
   "storeBreakdown": {
     "Amazon": {
-      "clicks": 3,
-      "estRevenue": 11.4
+      "clicks": 4,
+      "estRevenue": 17.33
     },
     "OTTO": {
       "clicks": 1,
@@ -27,7 +27,7 @@
       "estRevenue": 0
     },
     "Galaxus": {
-      "clicks": 0,
+      "clicks": 1,
       "estRevenue": 0
     },
     "Douglas": {
@@ -52,6 +52,14 @@
     }
   },
   "recentClicks": [
+    {
+      "timestamp": "2026-10-22T21:28:30.251Z",
+      "productId": "real-B07HGBNWTY",
+      "query": "Sony PlayStation 4 Slim 500 GB (CUH-2116A)",
+      "store": "Galaxus",
+      "price": 756.31,
+      "estCommission": 0
+    },
     {
       "timestamp": "2026-10-22T21:17:55.551Z",
       "productId": "otto-prod-delonghi-magnifica",

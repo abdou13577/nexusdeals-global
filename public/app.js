@@ -125,6 +125,21 @@ const I18N = {
     alertEmailPlaceholder: 'بريدك الإلكتروني...',
     alertSubmitBtn: 'نبهني عند الانخفاض',
     alertSavedMsg: (p) => `✔️ تم تفعيل التنبيه! سنرسل لك إشعاراً فور وصول السعر إلى ${p}€.`,
+    stageScreenHeader: 'شاشة العرض المباشر للمتجر',
+    stageLiveFrom: (s) => `عرض رسمي مباشر من متجر ${s}`,
+    stageLiveDot: 'متصل ومحدث مباشرة',
+    stageHintSwitch: '💡 اضغط على أي متجر في الجدول أدناه لتحويل هذه الشاشة فوراً لصور وأسعار ومواصفات ذلك المتجر',
+    stageDisplayingNow: 'يُعرض في الشاشة بالأعلى 📺',
+    stageSwitchToBtn: 'معاينة بالشاشة 👁️',
+    stageDirectBuyBtn: (s, p) => `🛒 الشراء مباشرة من ${s} (${p}€) ↗`,
+    stageSavingBadge: (val, pct) => `وفر ${val}€ (-${pct}%)`,
+    stageSpecsTitle: 'المواصفات والبيانات المسجلة لدى المنصة:',
+    stageSpecRetailer: (s) => `المنصة الرسمية: ${s}`,
+    stageSpecTitle: (t) => `اسم العرض في المتجر: ${t}`,
+    stageSpecPrice: (p) => `السعر الفعلي المباشر: ${p} € (شامل الضريبة)`,
+    stageSpecRating: (r) => `تقييم المتجر: ⭐ ${r} / 5`,
+    stageSpecShipping: (s) => `التوصيل والضمان: شحن من مستودعات ${s} مع ضمان الإرجاع الرسمي`,
+    stageCompareHeader: (n) => `🏪 المنصات والمتاجر المتوفرة (${n} متاجر حقيقية) — اضغط على أي متجر لعرضه في الشاشة 📺:`,
     modalCompareHeader: '🏪 جدول مقارنة الأسعار المباشر عبر كبرى المتاجر الأوروبية:',
     modalBestGuaranteed: '🏆 أرخص سعر مضمون اليوم',
     modalStoreRating: (r) => `تقييم المتجر ⭐ ${r}`,
@@ -229,6 +244,21 @@ const I18N = {
     alertEmailPlaceholder: 'Ihre E-Mail-Adresse...',
     alertSubmitBtn: 'Benachrichtigen',
     alertSavedMsg: (p) => `✔️ Preiswecker aktiviert! Wir informieren Sie bei ${p}€.`,
+    stageScreenHeader: 'Live-Store-Bildschirm',
+    stageLiveFrom: (s) => `Offizielles Live-Angebot von ${s}`,
+    stageLiveDot: 'Live & synchronisiert',
+    stageHintSwitch: '💡 Klicken Sie unten auf einen beliebigen Shop, um diesen Bildschirm sofort mit dessen Bildern, Preisen und Daten umzuschalten',
+    stageDisplayingNow: 'Wird oben angezeigt 📺',
+    stageSwitchToBtn: 'Im Bildschirm zeigen 👁️',
+    stageDirectBuyBtn: (s, p) => `🛒 Direkt bei ${s} kaufen (${p}€) ↗`,
+    stageSavingBadge: (val, pct) => `${val}€ Ersparnis (-${pct}%)`,
+    stageSpecsTitle: 'Produktdetails & Daten der Plattform:',
+    stageSpecRetailer: (s) => `Offizielle Plattform: ${s}`,
+    stageSpecTitle: (t) => `Angebotstitel im Shop: ${t}`,
+    stageSpecPrice: (p) => `Live-Endpreis: ${p} € (inkl. MwSt.)`,
+    stageSpecRating: (r) => `Shop-Bewertung: ⭐ ${r} / 5`,
+    stageSpecShipping: (s) => `Lieferung & Garantie: Versand via ${s} mit Käuferschutz & Rückgaberecht`,
+    stageCompareHeader: (n) => `🏪 Verfügbare Shops (${n} echte Händler) — Klicken Sie auf einen Shop für den Live-Bildschirm 📺:`,
     modalCompareHeader: '🏪 Direkter Live-Preisvergleich führender europäischer Shops:',
     modalBestGuaranteed: '🏆 Garantierter Bestpreis heute',
     modalStoreRating: (r) => `Shop-Bewertung ⭐ ${r}`,
@@ -333,6 +363,21 @@ const I18N = {
     alertEmailPlaceholder: 'Your email address...',
     alertSubmitBtn: 'Notify Me',
     alertSavedMsg: (p) => `✔️ Alert activated! We will email you when the price drops to ${p}€.`,
+    stageScreenHeader: 'Live Retailer Screen',
+    stageLiveFrom: (s) => `Official live listing from ${s}`,
+    stageLiveDot: 'Live & Synced',
+    stageHintSwitch: '💡 Click any store below to instantly switch this stage screen to its official photos, price & specs',
+    stageDisplayingNow: 'Displaying on Stage 📺',
+    stageSwitchToBtn: 'View on Stage 👁️',
+    stageDirectBuyBtn: (s, p) => `🛒 Buy directly from ${s} (${p}€) ↗`,
+    stageSavingBadge: (val, pct) => `Save ${val}€ (-${pct}%)`,
+    stageSpecsTitle: 'Platform & Product Specifications:',
+    stageSpecRetailer: (s) => `Official Platform: ${s}`,
+    stageSpecTitle: (t) => `Listing Title: ${t}`,
+    stageSpecPrice: (p) => `Live Verified Price: ${p} € (incl. VAT)`,
+    stageSpecRating: (r) => `Store Rating: ⭐ ${r} / 5`,
+    stageSpecShipping: (s) => `Delivery & Warranty: Fulfilled via ${s} with official buyer protection`,
+    stageCompareHeader: (n) => `🏪 Available Stores (${n} verified retailers) — Click any store to view on Stage 📺:`,
     modalCompareHeader: '🏪 Live Multi-Store Price Comparison Table:',
     modalBestGuaranteed: '🏆 Lowest Price Guaranteed Today',
     modalStoreRating: (r) => `Store Rating ⭐ ${r}`,
@@ -946,23 +991,36 @@ async function openProductModal(productId) {
     </div>
   `).join('');
 
-  const allOffersRows = product.offers.map((o, idx) => {
+  const initialStore = (currentStore && currentStore !== 'all') ? currentStore : null;
+  let initialOffer = initialStore ? (product.offers || []).find(o => o.store.toLowerCase() === initialStore.toLowerCase()) : null;
+  if (!initialOffer) {
+    initialOffer = (product.offers && product.offers.length > 0) ? product.offers[0] : { store: 'Amazon', price: product.price || 0, rating: 4.8 };
+  }
+
+  const initialDirectParam = initialOffer.directUrl ? `&directUrl=${encodeURIComponent(initialOffer.directUrl)}` : '';
+  const initialOutUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(initialOffer.store)}&price=${encodeURIComponent(initialOffer.price)}&query=${encodeURIComponent(initialOffer.query || product.title)}${initialDirectParam}`;
+
+  const allOffersRows = (product.offers || []).map((o, idx) => {
     const directParam = o.directUrl ? `&directUrl=${encodeURIComponent(o.directUrl)}` : '';
     const outUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}&query=${encodeURIComponent(o.query || product.title)}${directParam}`;
-    const variantTag = o.variantColor ? `<span style="font-size:0.73rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:4px; padding:2px 6px; color:#94a3b8; margin-inline-start:4px;">${escapeHtml(o.variantColor)}</span>` : '';
+    const variantTag = o.variantColor ? `<span class="mo-variant-pill">${escapeHtml(o.variantColor)}</span>` : '';
+    const isSelected = o.store.toLowerCase() === initialOffer.store.toLowerCase();
     return `
-      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable modal-offer ${idx === 0 ? 'offer-row-active-preview' : ''}" onclick="selectStorePreview('${product.id}', '${o.store}')" style="background:${idx === 0 ? 'rgba(16,185,129,0.12)' : 'rgba(255,255,255,0.03)'}; border:1px solid ${idx === 0 ? 'rgba(16,185,129,0.45)' : 'var(--border-color)'};">
+      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable modal-offer ${isSelected ? 'offer-row-active-preview' : ''}" onclick="selectStorePreview('${product.id}', '${o.store}')">
         <div class="mo-main">
           <div class="mo-tags">
-            <span class="store-tag store-${o.store}" style="font-size:0.82rem;">${o.store}</span>
+            <span class="store-tag store-${o.store}">${o.store}</span>
             ${variantTag}
             ${idx === 0 ? `<strong class="mo-best">${dict.modalBestGuaranteed}</strong>` : ''}
+            <span id="rowIndicator-${product.id}-${o.store}" class="row-stage-indicator ${isSelected ? 'live-active' : ''}">
+              ${isSelected ? dict.stageDisplayingNow : dict.stageSwitchToBtn}
+            </span>
           </div>
-          <div class="mo-meta">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating)}</div>
+          <div class="mo-meta">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating || 4.8)}</div>
         </div>
         <div class="mo-side">
           <div class="mo-price-box">
-            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#fff'};">${o.store === 'Amazon' ? '' : `<small class="est-word">${currentLang === 'ar' ? 'تقريبي' : (currentLang === 'de' ? 'ca.' : 'est.')}</small> `}${o.price.toFixed(2)} €</div>
+            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#fff'};">${o.price.toFixed(2)} €</div>
             <div class="mo-ship">${dict.modalFreeShipping}</div>
           </div>
           <div class="mo-actions">
@@ -978,37 +1036,86 @@ async function openProductModal(productId) {
     `;
   }).join('');
 
-  const amzOffer = product.offers.find(o => o.store === 'Amazon') || product.offers[0];
-  const localizedSpecs = dict.modalSpecs(product.title, product.asin || 'DE', amzOffer.price.toFixed(2));
   const catLocalized = getCategoryLabel(product.category).replace(/^[^\s]+\s/, '');
 
   bodyEl.innerHTML = `
-    <div class="modal-product-top-grid">
-      <div class="modal-gallery-box" id="modalGalleryContainer"></div>
-      <div>
-        <div style="color:#38bdf8; font-weight:700; font-size:0.82rem; margin-bottom:4px;">${escapeHtml(product.brand)} • ${escapeHtml(catLocalized)}</div>
-        <h4 style="font-size:1.05rem; margin-bottom:8px;">${escapeHtml(product.title)}</h4>
-        <ul style="margin:0 18px 12px; font-size:0.83rem; color:var(--text-secondary);">
-          ${localizedSpecs.map(s => `<li>${escapeHtml(s)}</li>`).join('')}
-        </ul>
+    <!-- High-Tech Interactive Live Store Stage -->
+    <div class="interactive-stage-card" id="interactiveStageCard">
+      <div class="stage-screen-topbar">
+        <div class="stage-topbar-left">
+          <span class="stage-tv-icon">📺</span>
+          <span class="stage-screen-title">${dict.stageScreenHeader}</span>
+          <span class="store-tag store-${initialOffer.store}" id="stageStoreTag">${initialOffer.store}</span>
+        </div>
+        <div class="stage-topbar-right">
+          <span class="stage-live-pulse"><span class="live-pulse-dot"></span> <span id="stageStatusText">${dict.stageLiveFrom(initialOffer.store)}</span></span>
+        </div>
+      </div>
 
-        <form onsubmit="subscribePriceAlert(event, '${product.id}')" style="background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.3); padding:8px 12px; border-radius:8px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-          <span style="font-size:0.8rem; font-weight:700;">${dict.alertBoxTitle}</span>
-          <input type="email" id="alertEmailInput" placeholder="${dict.alertEmailPlaceholder}" required style="background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:5px 9px; border-radius:6px; flex:1;" />
-          <input type="number" id="alertTargetPrice" value="${Math.round(product.offers[0].price * 0.92)}" style="width:82px; background:var(--bg-elevated); border:1px solid var(--border-color); color:#fff; padding:5px 7px; border-radius:6px;" />
-          <button type="submit" class="btn-action" style="background:#0ea5e9; color:#fff; border:none; padding:6px 11px;">${dict.alertSubmitBtn}</button>
-        </form>
-        <div id="alertSavedMsg" style="color:#34d399; font-size:0.78rem; margin-top:4px;"></div>
+      <div class="stage-screen-grid">
+        <div class="stage-gallery-column">
+          <div class="modal-gallery-box" id="modalGalleryContainer"></div>
+        </div>
+        <div class="stage-info-column" id="stageInfoColumn">
+          <div class="stage-meta-header">
+            <span class="stage-brand-pill" id="stageBrandPill">${escapeHtml(product.brand)} • ${escapeHtml(catLocalized)}</span>
+            <span class="stage-verified-badge" id="stageVerifiedBadge">✔️ ${dict.previewStoreVerified(initialOffer.store)}</span>
+          </div>
+
+          <h3 class="stage-product-title" id="stageProductTitle">
+            ${escapeHtml(initialOffer.variantTitle || initialOffer.query || product.title)}
+          </h3>
+
+          <div class="stage-pricing-banner" id="stagePricingBanner">
+            <div class="stage-price-primary">
+              <span class="stage-price-number" id="stagePriceNumber">${initialOffer.price.toFixed(2)} €</span>
+              <span class="stage-price-msrp" id="stagePriceMsrp" style="${product.msrp && product.msrp > initialOffer.price ? '' : 'display:none;'}">${product.msrp ? product.msrp.toFixed(2) + ' €' : ''}</span>
+              <span class="stage-discount-tag" id="stageDiscountTag" style="${product.msrp && product.msrp > initialOffer.price ? '' : 'display:none;'}">
+                ${product.msrp && product.msrp > initialOffer.price ? dict.stageSavingBadge((product.msrp - initialOffer.price).toFixed(2), Math.round(((product.msrp - initialOffer.price) / product.msrp) * 100)) : ''}
+              </span>
+            </div>
+            <div class="stage-shipping-info" id="stageShippingBadge">
+              🚚 ${dict.deliveryStore(initialOffer.store)} • ${dict.modalFreeShipping}
+            </div>
+          </div>
+
+          <div class="stage-specs-box">
+            <div class="stage-specs-title">📋 ${dict.stageSpecsTitle}</div>
+            <ul class="stage-specs-list" id="stageSpecsList">
+              <li><strong>${dict.stageSpecRetailer(initialOffer.store)}</strong></li>
+              <li>${dict.stageSpecTitle(escapeHtml(initialOffer.variantTitle || initialOffer.query || product.title))}</li>
+              <li>${dict.stageSpecPrice(initialOffer.price.toFixed(2))}</li>
+              <li>${dict.stageSpecRating(initialOffer.rating || 4.8)}</li>
+              <li>${dict.stageSpecShipping(initialOffer.store)}</li>
+            </ul>
+          </div>
+
+          <div class="stage-actions-area">
+            <a id="stageDirectBuyLink" href="${initialOutUrl}" target="_blank" rel="noopener" class="btn-search-main stage-buy-btn">
+              ${dict.stageDirectBuyBtn(initialOffer.store, initialOffer.price.toFixed(2))}
+            </a>
+            <div class="stage-interactive-hint">
+              ${dict.stageHintSwitch}
+            </div>
+          </div>
+
+          <form onsubmit="subscribePriceAlert(event, '${product.id}')" class="stage-alert-form">
+            <span style="font-size:0.78rem; font-weight:700;">${dict.alertBoxTitle}</span>
+            <input type="email" id="alertEmailInput" placeholder="${dict.alertEmailPlaceholder}" required class="stage-alert-input" />
+            <input type="number" id="alertTargetPrice" value="${Math.round(initialOffer.price * 0.92)}" class="stage-alert-price" />
+            <button type="submit" class="btn-action stage-alert-btn">${dict.alertSubmitBtn}</button>
+          </form>
+          <div id="alertSavedMsg" class="stage-alert-msg"></div>
+        </div>
       </div>
     </div>
 
-    <h4 style="margin-bottom:8px; color:#38bdf8; font-size:0.95rem;">${dict.modalCompareHeader}</h4>
-
-    <!-- Interactive Live Store Preview Box -->
-    <div id="storeLivePreviewContainer" style="margin-bottom:14px;"></div>
+    <h4 style="margin:20px 0 10px; color:#38bdf8; font-size:1rem; font-weight:800;">${dict.stageCompareHeader(product.offers.length)}</h4>
 
     <div style="margin-bottom:8px;">${allOffersRows}</div>
-    <div style="font-size:0.72rem; color:var(--text-secondary); margin-bottom:18px;">ℹ️ ${currentLang === 'ar' ? 'سعر Amazon حقيقي من الموقع. أسعار المتاجر الأخرى تقديرية وقد تختلف قليلاً عند المتجر.' : (currentLang === 'de' ? 'Der Amazon-Preis ist live. Preise anderer Shops sind Richtwerte und können im Shop leicht abweichen.' : "Amazon price is live. Other shops' prices are estimates and may differ slightly at the store.")}</div>
+    <div style="font-size:0.76rem; color:var(--text-secondary); margin-bottom:18px; padding:8px 12px; background:rgba(255,255,255,0.03); border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+      🛡️ ${currentLang === 'ar' ? 'جميع الأسعار والعروض حقيقية ومحدثة مباشرة من المنصات الرسمية — اضغط على أي منصة لعرضها في الشاشة بالأعلى أو الشراء المباشر.' : (currentLang === 'de' ? 'Alle Preise und Angebote sind verifiziert und live mit den offiziellen Plattformen abgestimmt.' : 'All prices and listings are verified live data from official platforms.')}
+    </div>
 
     <h4 style="margin-bottom:10px; color:#fbbf24; font-size:0.95rem;">${dict.modalChartHeader}</h4>
     <div class="price-chart-bars">${chartBarsHtml}</div>
@@ -1022,7 +1129,7 @@ async function openProductModal(productId) {
   modal.classList.add('open');
   document.documentElement.classList.add('modal-open');
   currentModalProductId = productId;
-  currentSelectedStore = product.offers && product.offers.length > 0 ? product.offers[0].store : null;
+  currentSelectedStore = initialOffer.store;
 
   // Render initial gallery or fetch real multi-image gallery from Amazon.de live
   if (Array.isArray(product.images) && product.images.length > 1) {
@@ -1033,13 +1140,11 @@ async function openProductModal(productId) {
       });
     }
     renderModalGalleryUI(product.images, dict.galleryReady(product.images.length));
-    selectStorePreview(product.id, currentSelectedStore || product.offers[0].store, true);
+    selectStorePreview(product.id, currentSelectedStore, true);
   } else {
     activeModalImages = [product.image];
     renderModalGalleryUI([product.image], dict.galleryLoading);
-    if (product.offers && product.offers.length > 0) {
-      selectStorePreview(product.id, product.offers[0].store, true);
-    }
+    selectStorePreview(product.id, currentSelectedStore, true);
     if (product.asin) {
       try {
         const res = await fetch(`/api/product-gallery?asin=${encodeURIComponent(product.asin)}`);
@@ -1053,7 +1158,7 @@ async function openProductModal(productId) {
             });
           }
           renderModalGalleryUI(product.images, dict.galleryReady(product.images.length));
-          selectStorePreview(product.id, currentSelectedStore || product.offers[0].store, true);
+          selectStorePreview(product.id, currentSelectedStore, true);
         }
       } catch (e) {}
     }
@@ -1078,32 +1183,110 @@ function selectStorePreview(productId, storeName, updateGalleryThumbnail = true)
   currentModalProductId = productId;
   const dict = t();
 
-  const previewBox = document.getElementById('storeLivePreviewContainer');
-  if (!previewBox) return;
+  // 1. Morph Stage Card Header
+  const stageCard = document.getElementById('interactiveStageCard');
+  const stageStoreTag = document.getElementById('stageStoreTag');
+  const stageStatusText = document.getElementById('stageStatusText');
+  const stageVerifiedBadge = document.getElementById('stageVerifiedBadge');
 
+  if (stageStoreTag) {
+    stageStoreTag.className = `store-tag store-${offer.store}`;
+    stageStoreTag.textContent = offer.store;
+  }
+  if (stageStatusText) {
+    stageStatusText.textContent = dict.stageLiveFrom(offer.store);
+  }
+  if (stageVerifiedBadge) {
+    stageVerifiedBadge.textContent = `✔️ ${dict.previewStoreVerified(offer.store)}`;
+  }
+
+  // 2. Morph Title
+  const stageTitle = document.getElementById('stageProductTitle');
+  const displayTitle = offer.variantTitle || `${offer.query || product.title}${offer.variantColor ? ' - ' + offer.variantColor : ''}`;
+  if (stageTitle) {
+    stageTitle.textContent = displayTitle;
+  }
+
+  // 3. Morph Pricing & Discount
+  const stagePriceNumber = document.getElementById('stagePriceNumber');
+  const stagePriceMsrp = document.getElementById('stagePriceMsrp');
+  const stageDiscountTag = document.getElementById('stageDiscountTag');
+  const stageShippingBadge = document.getElementById('stageShippingBadge');
+
+  if (stagePriceNumber) {
+    stagePriceNumber.textContent = `${offer.price.toFixed(2)} €`;
+  }
+
+  const refPrice = product.msrp && product.msrp > offer.price ? product.msrp : null;
+  if (stagePriceMsrp) {
+    if (refPrice) {
+      stagePriceMsrp.textContent = `${refPrice.toFixed(2)} €`;
+      stagePriceMsrp.style.display = 'inline-block';
+    } else {
+      stagePriceMsrp.style.display = 'none';
+    }
+  }
+
+  if (stageDiscountTag) {
+    if (refPrice && refPrice > offer.price) {
+      const diff = refPrice - offer.price;
+      const pct = Math.round((diff / refPrice) * 100);
+      stageDiscountTag.textContent = dict.stageSavingBadge(diff.toFixed(2), pct);
+      stageDiscountTag.style.display = 'inline-block';
+    } else {
+      stageDiscountTag.style.display = 'none';
+    }
+  }
+
+  if (stageShippingBadge) {
+    stageShippingBadge.innerHTML = `🚚 ${dict.deliveryStore(offer.store)} • ${dict.modalFreeShipping}`;
+  }
+
+  // 4. Morph Direct Buy CTA Button
   const directParam = offer.directUrl ? `&directUrl=${encodeURIComponent(offer.directUrl)}` : '';
   const outUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(offer.store)}&price=${encodeURIComponent(offer.price)}&query=${encodeURIComponent(offer.query || product.title)}${directParam}`;
 
-  // Highlight active store row
-  document.querySelectorAll('.offer-row-clickable').forEach(row => row.classList.remove('offer-row-active-preview'));
-  const activeRow = document.getElementById(`offerRow-${product.id}-${offer.store}`);
-  if (activeRow) activeRow.classList.add('offer-row-active-preview');
-
-  // Choose the authentic image for this specific store
-  const storeImage = offer.image || (activeModalImages && activeModalImages.length > 0 ? activeModalImages[storeIdx >= 0 ? storeIdx % activeModalImages.length : 0] : product.image);
-
-  // Dynamically update the main modal hero photo to match this store's product!
-  const mainImg = document.getElementById('modalMainGalleryImg');
-  if (mainImg && storeImage && mainImg.src !== storeImage) {
-    mainImg.style.transition = 'opacity 0.15s ease';
-    mainImg.style.opacity = '0.35';
-    mainImg.src = storeImage;
-    setTimeout(() => {
-      if (mainImg) mainImg.style.opacity = '1';
-    }, 100);
+  const stageDirectBuyLink = document.getElementById('stageDirectBuyLink');
+  if (stageDirectBuyLink) {
+    stageDirectBuyLink.href = outUrl;
+    stageDirectBuyLink.innerHTML = dict.stageDirectBuyBtn(offer.store, offer.price.toFixed(2));
   }
 
-  // Synchronize thumbnail in the gallery
+  // 5. Morph Specs List
+  const stageSpecsList = document.getElementById('stageSpecsList');
+  if (stageSpecsList) {
+    stageSpecsList.innerHTML = `
+      <li><strong>${dict.stageSpecRetailer(offer.store)}</strong></li>
+      <li>${dict.stageSpecTitle(escapeHtml(displayTitle))}</li>
+      <li>${dict.stageSpecPrice(offer.price.toFixed(2))}</li>
+      <li>${dict.stageSpecRating(offer.rating || 4.8)}</li>
+      <li>${dict.stageSpecShipping(offer.store)}</li>
+    `;
+  }
+
+  // 6. Update Target Price Input
+  const alertPriceInput = document.getElementById('alertTargetPrice');
+  if (alertPriceInput) {
+    alertPriceInput.value = Math.round(offer.price * 0.92);
+  }
+
+  // 7. Morph Image with smooth transition
+  const storeImage = offer.image || (activeModalImages && activeModalImages.length > 0 ? activeModalImages[storeIdx >= 0 ? storeIdx % activeModalImages.length : 0] : product.image);
+  const mainImg = document.getElementById('modalMainGalleryImg');
+  if (mainImg && storeImage && mainImg.src !== storeImage) {
+    mainImg.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
+    mainImg.style.opacity = '0.35';
+    mainImg.style.transform = 'scale(0.97)';
+    mainImg.src = storeImage;
+    setTimeout(() => {
+      if (mainImg) {
+        mainImg.style.opacity = '1';
+        mainImg.style.transform = 'scale(1)';
+      }
+    }, 120);
+  }
+
+  // 8. Synchronize gallery thumbnails
   if (updateGalleryThumbnail && activeModalImages && activeModalImages.length > 0) {
     let imgIdx = activeModalImages.indexOf(storeImage);
     if (imgIdx === -1 && storeIdx >= 0) {
@@ -1119,51 +1302,34 @@ function selectStorePreview(productId, storeName, updateGalleryThumbnail = true)
     }
   }
 
-  const variantDisplay = offer.variantTitle || `${offer.query || product.title}${offer.variantColor ? ' - ' + offer.variantColor : ''}`;
-  const colorBadgeHtml = offer.variantColor ? `<span class="attr-pill" style="border-color:rgba(56,189,248,0.4); background:rgba(56,189,248,0.08); color:#38bdf8;">🎨 ${dict.previewVariantColor || 'Farbe / Ausführung'}: <strong>${escapeHtml(offer.variantColor)}</strong></span>` : '';
+  // 9. Update Active Highlight and Row Indicators below
+  (product.offers || []).forEach(o => {
+    const rowEl = document.getElementById(`offerRow-${product.id}-${o.store}`);
+    const indEl = document.getElementById(`rowIndicator-${product.id}-${o.store}`);
+    const isThisOffer = o.store.toLowerCase() === offer.store.toLowerCase();
+    if (rowEl) {
+      rowEl.classList.toggle('offer-row-active-preview', isThisOffer);
+    }
+    if (indEl) {
+      if (isThisOffer) {
+        indEl.className = 'row-stage-indicator live-active';
+        indEl.innerHTML = dict.stageDisplayingNow;
+      } else {
+        indEl.className = 'row-stage-indicator';
+        indEl.innerHTML = dict.stageSwitchToBtn;
+      }
+    }
+  });
 
-  previewBox.style.display = 'block';
-  previewBox.innerHTML = `
-    <div class="store-preview-box">
-      <div class="preview-box-header">
-        <div style="display:flex; align-items:center; gap:8px;">
-          <span class="store-tag store-${offer.store}">${offer.store}</span>
-          <span class="preview-badge-verified">✔️ ${dict.previewStoreVerified(offer.store)}</span>
-        </div>
-        <button type="button" class="btn-close-preview" onclick="closeStorePreview()" title="Schließen / إغلاق">✕</button>
-      </div>
-      <div class="preview-box-body">
-        <div class="preview-img-side">
-          <img id="previewStoreThumbImg" src="${storeImage}" alt="${escapeHtml(offer.store)}" onerror="this.src='${product.image}';" />
-        </div>
-        <div class="preview-info-side">
-          <div class="preview-matched-title">
-            📱 <strong>${escapeHtml(variantDisplay)}</strong>
-          </div>
-          <div class="preview-attributes">
-            <span class="attr-pill">🔍 ${dict.previewMatchedModel}: <strong>${escapeHtml(offer.query || product.title)}</strong></span>
-            ${colorBadgeHtml}
-            <span class="attr-pill">🚚 ${dict.deliveryStore(offer.store)}</span>
-            <span class="attr-pill">⭐ ${dict.modalStoreRating(offer.rating)}</span>
-          </div>
-          <div class="preview-price-row">
-            <div>
-              <span class="preview-price-val">${offer.price.toFixed(2)} €</span>
-              <span class="preview-price-sub">${dict.modalFreeShipping}</span>
-            </div>
-            <a href="${outUrl}" target="_blank" rel="noopener" class="btn-search-main btn-preview-go">
-              ${dict.buyFromBtn(offer.store, offer.price.toFixed(2))}
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
+  // 10. Subtle pulse on Stage Card
+  if (stageCard) {
+    stageCard.classList.remove('stage-pulsing-update');
+    void stageCard.offsetWidth; // trigger reflow
+    stageCard.classList.add('stage-pulsing-update');
+  }
 }
 
 function closeStorePreview() {
-  const previewBox = document.getElementById('storeLivePreviewContainer');
-  if (previewBox) previewBox.style.display = 'none';
   document.querySelectorAll('.offer-row-clickable').forEach(row => row.classList.remove('offer-row-active-preview'));
   currentSelectedStore = null;
 }

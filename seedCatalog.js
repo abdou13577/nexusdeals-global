@@ -560,7 +560,7 @@ async function scrapeRealAmazonProducts(query, categoryId, categoryAr, maxItems 
         targetCatAr = detected.ar;
       }
 
-      const offers = buildRealOffersForProduct(asin, title, livePrice, targetCatId);
+      const offers = buildRealOffersForProduct(asin, title, livePrice, targetCatId, brand);
       const minPrice = offers[0].price;
       const savingEur = Math.max(0, Math.round(msrp - minPrice));
 

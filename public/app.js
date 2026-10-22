@@ -1131,13 +1131,14 @@ async function openProductModal(productId) {
   currentModalProductId = productId;
   currentSelectedStore = initialOffer.store;
 
-  // Render initial gallery using THAT store's authentic images
-  const initialImages = (Array.isArray(initialOffer.images) && initialOffer.images.length > 0)
-    ? initialOffer.images
-    : (initialOffer.image ? [initialOffer.image] : (Array.isArray(product.images) && product.images.length > 0 ? product.images : [product.image]));
+  // Render initial gallery using the genuine, verified product photos
+  const productImages = (Array.isArray(product.images) && product.images.length > 0)
+    ? product.images
+    : [product.image];
 
-  activeModalImages = initialImages;
-  renderModalGalleryUI(initialImages, dict.stageLiveFrom(initialOffer.store));
+  activeModalImages = productImages;
+  activeModalImgIdx = 0;
+  renderModalGalleryUI(productImages, dict.stageLiveFrom(initialOffer.store));
   selectStorePreview(product.id, currentSelectedStore, false);
 }
 
@@ -1149,7 +1150,7 @@ function closeProductModal() {
   currentSelectedStore = null;
 }
 
-function selectStorePreview(productId, storeName, updateGallery = true) {
+function selectStorePreview(productId, storeName, updateGallery = false) {
   const product = allProducts.find(p => p.id === productId);
   if (!product) return;
   const storeIdx = (product.offers || []).findIndex(o => o.store.toLowerCase() === (storeName || '').toLowerCase());
@@ -1176,11 +1177,10 @@ function selectStorePreview(productId, storeName, updateGallery = true) {
     stageVerifiedBadge.textContent = `✔️ ${dict.previewStoreVerified(offer.store)}`;
   }
 
-  // 2. Morph Title
+  // 2. Keep the genuine product title with official model query
   const stageTitle = document.getElementById('stageProductTitle');
-  const displayTitle = offer.variantTitle || `${offer.query || product.title}${offer.variantColor ? ' - ' + offer.variantColor : ''}`;
   if (stageTitle) {
-    stageTitle.textContent = displayTitle;
+    stageTitle.textContent = product.title;
   }
 
   // 3. Morph Pricing & Discount
@@ -1193,7 +1193,7 @@ function selectStorePreview(productId, storeName, updateGallery = true) {
     stagePriceNumber.textContent = `${offer.price.toFixed(2)} €`;
   }
 
-  const refPrice = (offer.msrp && offer.msrp > offer.price) ? offer.msrp : ((product.msrp && product.msrp > offer.price) ? product.msrp : null);
+  const refPrice = product.msrp && product.msrp > offer.price ? product.msrp : null;
   if (stagePriceMsrp) {
     if (refPrice) {
       stagePriceMsrp.textContent = `${refPrice.toFixed(2)} €`;
@@ -1231,16 +1231,14 @@ function selectStorePreview(productId, storeName, updateGallery = true) {
   // 5. Morph Specs List to THAT store's actual specs
   const stageSpecsList = document.getElementById('stageSpecsList');
   if (stageSpecsList) {
-    const specsItems = (Array.isArray(offer.specs) && offer.specs.length > 0)
-      ? offer.specs
-      : [
-          `<strong>${dict.stageSpecRetailer(offer.store)}</strong>`,
-          dict.stageSpecTitle(escapeHtml(displayTitle)),
-          dict.stageSpecPrice(offer.price.toFixed(2)),
-          dict.stageSpecRating(offer.rating || 4.8),
-          dict.stageSpecShipping(offer.store)
-        ];
-    stageSpecsList.innerHTML = specsItems.map(s => `<li>${s.startsWith('<') ? s : escapeHtml(s)}</li>`).join('');
+    const specsItems = [
+      `<strong>${dict.stageSpecRetailer(offer.store)}</strong>`,
+      dict.stageSpecTitle(escapeHtml(offer.variantTitle || product.title)),
+      dict.stageSpecPrice(offer.price.toFixed(2)),
+      dict.stageSpecRating(offer.rating || 4.8),
+      dict.stageSpecShipping(offer.store)
+    ];
+    stageSpecsList.innerHTML = specsItems.map(s => `<li>${s}</li>`).join('');
   }
 
   // 6. Update Target Price Input
@@ -1249,14 +1247,11 @@ function selectStorePreview(productId, storeName, updateGallery = true) {
     alertPriceInput.value = Math.round(offer.price * 0.92);
   }
 
-  // 7. Morph Gallery to THAT store's dedicated authentic photos!
-  const storeImages = (Array.isArray(offer.images) && offer.images.length > 0)
-    ? offer.images
-    : (offer.image ? [offer.image] : (product.images || [product.image]));
-
-  activeModalImages = storeImages;
-  activeModalImgIdx = 0;
-  renderModalGalleryUI(storeImages, dict.stageLiveFrom(offer.store));
+  // 7. Ensure Main Product Photo is NEVER corrupted or replaced with an unrelated object
+  const mainImg = document.getElementById('modalMainGalleryImg');
+  if (mainImg && (!mainImg.src || mainImg.src.includes('unsplash'))) {
+    mainImg.src = product.image;
+  }
 
   // 8. Update Active Highlight and Row Indicators below
   (product.offers || []).forEach(o => {

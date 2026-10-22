@@ -1,329 +1,98 @@
 [
   {
-    "id": "otto-prod-delonghi-magnifica",
-    "asin": null,
+    "id": "otto-delonghi-magnifica",
     "title": "DeLonghi Kaffeevollautomat Magnifica S ECAM 22.110.B, 1450 Watt, 15 bar, Cappuccino-Düse",
-    "titleAr": "DeLonghi Kaffeevollautomat Magnifica S ECAM 22.110.B, 1450 Watt, 15 bar, Cappuccino-Düse",
+    "titleAr": "ماكينة صنع القهوة ديلونجي ماجنيفيكا اس أوتوماتيكية بالكامل 1450 واط",
     "category": "home_kitchen",
     "categoryAr": "المطبخ والأجهزة المنزلية",
     "brand": "DeLonghi",
-    "ean": null,
-    "sku": null,
     "rating": 4.8,
     "reviewsCount": 3840,
     "msrp": 399,
-    "image": "https://m.media-amazon.com/images/I/61MMDVhqxpL._AC_SL1000_.jpg",
+    "price": 279.99,
+    "image": "https://m.media-amazon.com/images/I/71u9iIqKHDL._AC_SL1500_.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/61MMDVhqxpL._AC_SL1000_.jpg"
+      "https://m.media-amazon.com/images/I/71u9iIqKHDL._AC_SL1500_.jpg"
     ],
-    "badge": "وفر 166€ 🔥",
+    "badge": "OTTO Bestseller ✔️",
     "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Temu (233.39€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.605Z",
-    "updated_at": "2026-10-22T21:44:35.317Z",
-    "price": 233.39
+    "discountStatus": "verified_low"
   },
   {
-    "id": "otto-prod-philips-airfryer-xxl",
-    "asin": null,
-    "title": "Philips Airfryer XXL HD9285/90 Heißluftfritteuse, 7.2L, 2000W, Connected App, 16-in-1",
-    "titleAr": "Philips Airfryer XXL HD9285/90 Heißluftfritteuse, 7.2L, 2000W, Connected App, 16-in-1",
-    "category": "home_kitchen",
-    "categoryAr": "المطبخ والأجهزة المنزلية",
-    "brand": "Philips",
-    "ean": null,
-    "sku": null,
-    "rating": 4.8,
-    "reviewsCount": 1950,
-    "msrp": 229.99,
-    "image": "https://m.media-amazon.com/images/I/51au-vmSIlL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/51au-vmSIlL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 111€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Temu (119.24€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.606Z",
-    "updated_at": "2026-10-22T21:44:35.319Z",
-    "price": 119.24
-  },
-  {
-    "id": "kaufland-prod-bmw-e46-radio",
-    "asin": null,
-    "title": "HEXTINEX Für BMW E46 (1999-2004) Linux Autoradio, FM, Bluetooth, Schwarz Touchscreen",
-    "titleAr": "HEXTINEX Für BMW E46 (1999-2004) Linux Autoradio, FM, Bluetooth, Schwarz Touchscreen",
-    "category": "auto_car",
-    "categoryAr": "مستلزمات وأجهزة السيارات",
-    "brand": "HEXTINEX",
-    "ean": null,
-    "sku": null,
-    "rating": 4.8,
-    "reviewsCount": 420,
-    "msrp": 299.98,
-    "image": "https://m.media-amazon.com/images/I/71v6UJXdrNL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/71v6UJXdrNL._AC_SL1000_.jpg",
-      "https://m.media-amazon.com/images/I/81z0DaAiyjL._AC_SL1500_.jpg"
-    ],
-    "badge": "وفر 186€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى eBay (114.20€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.607Z",
-    "updated_at": "2026-10-22T21:44:35.319Z",
-    "price": 114.2
-  },
-  {
-    "id": "kaufland-prod-einhell-akku-schrauber",
-    "asin": null,
-    "title": "Einhell Akku-Bohrschrauber TE-CD 18/40 Li-Solo Power X-Change (18V, 40Nm, 2-Gang)",
-    "titleAr": "Einhell Akku-Bohrschrauber TE-CD 18/40 Li-Solo Power X-Change (18V, 40Nm, 2-Gang)",
-    "category": "tools_garden",
-    "categoryAr": "العدد والأدوات والحديقة",
-    "brand": "Einhell",
-    "ean": null,
-    "sku": null,
-    "rating": 4.8,
-    "reviewsCount": 2150,
-    "msrp": 64.95,
-    "image": "https://m.media-amazon.com/images/I/71HhngDd7xL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/71HhngDd7xL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 27€ 🔥",
-    "isFlashDeal": false,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (37.55€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.607Z",
-    "updated_at": "2026-10-22T21:44:35.319Z",
-    "price": 37.55
-  },
-  {
-    "id": "mm-prod-ps5-slim",
-    "asin": null,
-    "title": "Sony PlayStation 5 Slim Konsole (Modellgruppe CFI-2000, 1TB SSD, D-Chassis)",
-    "titleAr": "Sony PlayStation 5 Slim Konsole (Modellgruppe CFI-2000, 1TB SSD, D-Chassis)",
-    "category": "gaming",
-    "categoryAr": "الكمبيوترات والألعاب",
-    "brand": "Sony",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 5410,
-    "msrp": 549.99,
-    "image": "https://m.media-amazon.com/images/I/51U1wHaw7yL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/51U1wHaw7yL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 87€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (463.33€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.607Z",
-    "updated_at": "2026-10-22T21:44:35.319Z",
-    "price": 463.33
-  },
-  {
-    "id": "mm-prod-airpods-pro-2",
-    "asin": null,
-    "title": "Apple AirPods Pro 2 mit MagSafe Ladecase (USB-C), Aktive Geräuschunterdrückung",
-    "titleAr": "Apple AirPods Pro 2 mit MagSafe Ladecase (USB-C), Aktive Geräuschunterdrückung",
-    "category": "tv_audio",
-    "categoryAr": "الشاشات والصوتيات",
-    "brand": "Apple",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 8200,
-    "msrp": 279,
-    "image": "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg"
-    ],
-    "badge": "وفر 51€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (227.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.607Z",
-    "updated_at": "2026-10-22T21:44:35.319Z",
-    "price": 227.66
-  },
-  {
-    "id": "doug-prod-dior-sauvage",
-    "asin": null,
-    "title": "Dior Sauvage Eau de Parfum, 100ml Zerstäuber - Original Herrenparfum Klassiker",
-    "titleAr": "Dior Sauvage Eau de Parfum, 100ml Zerstäuber - Original Herrenparfum Klassiker",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور والتجميل والعناية",
-    "brand": "Dior",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 3910,
-    "msrp": 145,
-    "image": "https://m.media-amazon.com/images/I/712kbj96mHL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/712kbj96mHL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 29€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (116.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.607Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 116.44
-  },
-  {
-    "id": "zalando-prod-nike-air-force-1",
-    "asin": null,
+    "id": "zalando-nike-air-force-1",
     "title": "Nike Sportswear AIR FORCE 1 '07 Sneaker low, White/White Klassiker",
-    "titleAr": "Nike Sportswear AIR FORCE 1 '07 Sneaker low, White/White Klassiker",
+    "titleAr": "حذاء نايكي إير فورس 1 الرياضي الكلاسيكي باللون الأبيض الأصلي",
     "category": "fashion_shoes",
     "categoryAr": "الملابس والأحذية والأزياء",
     "brand": "Nike",
-    "ean": null,
-    "sku": null,
     "rating": 4.8,
     "reviewsCount": 4620,
     "msrp": 119.99,
-    "image": "https://m.media-amazon.com/images/I/61m657H8WjL._AC_SL1000_.jpg",
+    "price": 109.95,
+    "image": "https://m.media-amazon.com/images/I/71rL0JkE5dL._AC_SL1500_.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/61m657H8WjL._AC_SL1000_.jpg"
+      "https://m.media-amazon.com/images/I/71rL0JkE5dL._AC_SL1500_.jpg"
     ],
-    "badge": "وفر 23€ 🔥",
+    "badge": "Zalando Bestseller 👟",
     "isFlashDeal": false,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Temu (97.15€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.607Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 97.15
+    "discountStatus": "verified_low"
   },
   {
-    "id": "ebay-prod-iphone-15",
-    "asin": null,
-    "title": "Apple iPhone 15 128GB Schwarz Neu & OVP ohne Simlock Händler-Garantie",
-    "titleAr": "Apple iPhone 15 128GB Schwarz Neu & OVP ohne Simlock Händler-Garantie",
-    "category": "smartphones",
-    "categoryAr": "الهواتف والتابلت",
-    "brand": "Apple",
-    "ean": null,
-    "sku": null,
+    "id": "douglas-dior-sauvage",
+    "title": "Dior Sauvage Eau de Parfum, 100ml Zerstäuber - Original Herrenparfum Klassiker",
+    "titleAr": "عطر ديور سوفاج أو دو بارفيوم 100 مل رجالي أصلي 100%",
+    "category": "perfumes_beauty",
+    "categoryAr": "العطور والتجميل والعناية",
+    "brand": "Dior",
     "rating": 4.9,
-    "reviewsCount": 1240,
-    "msrp": 849,
-    "image": "https://m.media-amazon.com/images/I/71657TiFeHL._AC_SL1500_.jpg",
+    "reviewsCount": 3910,
+    "msrp": 145,
+    "price": 119,
+    "image": "https://m.media-amazon.com/images/I/61S2k4n3K3L._AC_SL1200_.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/71657TiFeHL._AC_SL1500_.jpg"
+      "https://m.media-amazon.com/images/I/61S2k4n3K3L._AC_SL1200_.jpg"
     ],
-    "badge": "وفر 157€ 🔥",
+    "badge": "Douglas Original 👑",
     "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (692.29€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.607Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 692.29
+    "discountStatus": "verified_low"
   },
   {
-    "id": "shein-p101",
-    "asin": null,
-    "title": "SHEIN EZwear Damen Steppjacke mit Stehkragen und Reißverschluss - Warme Winter Puffer Jacke",
-    "titleAr": "جاكيت شتوي نسائي مبطن بياقة عالية وسحاب من SHEIN EZwear",
-    "category": "fashion_shoes",
-    "categoryAr": "الملابس والأحذية والأزياء",
-    "brand": "SHEIN EZwear",
-    "ean": null,
-    "sku": null,
+    "id": "kaufland-bmw-e46-radio",
+    "title": "HEXTINEX Für BMW E46 (1999-2004) Linux Autoradio, FM, Bluetooth, Touchscreen GPS",
+    "titleAr": "راديو سيارة بي إم دبليو الفئة الثالثة E46 شاشة لمس بلوتوث ونظام ملاحة",
+    "category": "auto_car",
+    "categoryAr": "مستلزمات وأجهزة السيارات",
+    "brand": "HEXTINEX",
     "rating": 4.8,
-    "reviewsCount": 1420,
-    "msrp": 39.99,
-    "image": "https://m.media-amazon.com/images/I/71MKKgKZbGL._AC_SL1000_.jpg",
+    "reviewsCount": 420,
+    "msrp": 299.98,
+    "price": 119.99,
+    "image": "https://m.media-amazon.com/images/I/71v6UJXdrNL._AC_SL1000_.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/71MKKgKZbGL._AC_SL1000_.jpg"
+      "https://m.media-amazon.com/images/I/71v6UJXdrNL._AC_SL1000_.jpg"
     ],
-    "badge": "وفر 27€ 🔥",
+    "badge": "Kaufland Tiefstpreis 🏆",
     "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Temu (13.29€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 13.29
+    "discountStatus": "verified_low"
   },
   {
-    "id": "shein-p102",
-    "asin": null,
-    "title": "DAZY Damen Zweireihiger Trenchcoat Mantel mit Gürtel - Herbst & Winter Eleganter Look",
-    "titleAr": "معطف ترنش أنيق بأزرار مزدوجة وحزام خصر من DAZY SHEIN",
-    "category": "fashion_shoes",
-    "categoryAr": "الملابس والأحذية والأزياء",
-    "brand": "DAZY",
-    "ean": null,
-    "sku": null,
+    "id": "mediamarkt-ps5-slim",
+    "title": "Sony PlayStation 5 Slim Konsole (Modellgruppe CFI-2000, 1TB SSD, D-Chassis)",
+    "titleAr": "جهاز سوني بلايستيشن 5 سليم سعة 1 تيرابايت النسخة الأصلية الأوروبية",
+    "category": "gaming",
+    "categoryAr": "الكمبيوترات والألعاب",
+    "brand": "Sony",
     "rating": 4.9,
-    "reviewsCount": 980,
-    "msrp": 49.99,
-    "image": "https://m.media-amazon.com/images/I/71uktkAC4xL._AC_SL1000_.jpg",
+    "reviewsCount": 5410,
+    "msrp": 549.99,
+    "price": 479,
+    "image": "https://m.media-amazon.com/images/I/61+nQkSgUWL._AC_SL1500_.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/71uktkAC4xL._AC_SL1000_.jpg"
+      "https://m.media-amazon.com/images/I/61+nQkSgUWL._AC_SL1500_.jpg"
     ],
-    "badge": "وفر 33€ 🔥",
-    "isFlashDeal": false,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Temu (16.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 16.92
-  },
-  {
-    "id": "shein-p103",
-    "asin": null,
-    "title": "SHEIN Clasi Damen Langarm A-Linien Strickkleid mit Gürtel - Weich & Wärmend",
-    "titleAr": "فستان تريكو نسائي طويل بأكمام طويلة وحزام أنيق من SHEIN Clasi",
-    "category": "fashion_shoes",
-    "categoryAr": "الملابس والأحذية والأزياء",
-    "brand": "SHEIN Clasi",
-    "ean": null,
-    "sku": null,
-    "rating": 4.7,
-    "reviewsCount": 2310,
-    "msrp": 32.99,
-    "image": "https://m.media-amazon.com/images/I/71zDIloqjTL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/71zDIloqjTL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 22€ 🔥",
+    "badge": "MediaMarkt Offiziell 🎮",
     "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Temu (10.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 10.53
-  },
-  {
-    "id": "shein-p104",
-    "asin": null,
-    "title": "SHEIN Privé Zweiteiliges Damen Set: Oversized Strickpullover & Plissierter Strickrock",
-    "titleAr": "طقم نسائي قطعتين بلوفر تريكو أوفرسايز وتنورة من SHEIN Privé",
-    "category": "fashion_shoes",
-    "categoryAr": "الملابس والأحذية والأزياء",
-    "brand": "SHEIN Privé",
-    "ean": null,
-    "sku": null,
-    "rating": 4.8,
-    "reviewsCount": 1650,
-    "msrp": 42,
-    "image": "https://m.media-amazon.com/images/I/7139bGK6fKL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/7139bGK6fKL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 28€ 🔥",
-    "isFlashDeal": false,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Temu (14.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 14.18
+    "discountStatus": "verified_low"
   },
   {
     "id": "shein-p105",
@@ -348,332 +117,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (21.49€) مع مقارنة شاملة لـ 4 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.608Z",
     "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 21.49
-  },
-  {
-    "id": "shein-p106",
-    "asin": null,
-    "title": "SHEIN Modely Damen Eleganter Zweireihiger Wollmantel mit Reverskragen - Winter Warm",
-    "titleAr": "معطف صوف نسائي أنيق ودافئ للشتاء بتصميم راقٍ من SHEIN Modely",
-    "category": "fashion_shoes",
-    "categoryAr": "الملابس والأحذية والأزياء",
-    "brand": "SHEIN Modely",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 1820,
-    "msrp": 52,
-    "image": "https://m.media-amazon.com/images/I/610jLcUlrRL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/610jLcUlrRL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 33€ 🔥",
-    "isFlashDeal": false,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Temu (18.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 18.92
-  },
-  {
-    "id": "shein-p107",
-    "asin": null,
-    "title": "SHEIN Essnce Damen Kapuzenpullover Hoodie Oversized mit Kängurutasche - Weiches Fleece",
-    "titleAr": "سويت شيرت هودي أوفرسايز ناعم ودافئ بجيوب كنغر من SHEIN Essnce",
-    "category": "fashion_shoes",
-    "categoryAr": "الملابس والأحذية والأزياء",
-    "brand": "SHEIN Essnce",
-    "ean": null,
-    "sku": null,
-    "rating": 4.8,
-    "reviewsCount": 4200,
-    "msrp": 26,
-    "image": "https://m.media-amazon.com/images/I/61NvPcJDhSL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/61NvPcJDhSL._AC_SL1000_.jpg"
-    ],
-    "badge": "أصلي (Temu) ✔️",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Temu (9.01€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 9.01
-  },
-  {
-    "id": "ikea-p201",
-    "asin": null,
-    "title": "IKEA BILLY Bücherregal, weiß, 80x28x202 cm - Der zeitlose Klassiker",
-    "titleAr": "مكتبة ورف كتب إيكيا الشهير BILLY باللون الأبيض أبعاد 80x28x202 سم",
-    "category": "furniture_decor",
-    "categoryAr": "الأثاث والديكور المنزلي",
-    "brand": "IKEA",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 15400,
-    "msrp": 69.99,
-    "image": "https://m.media-amazon.com/images/I/71flHJfgSwL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/71flHJfgSwL._AC_SL1000_.jpg"
-    ],
-    "badge": "أصلي (IKEA) ✔️",
-    "isFlashDeal": false,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (56.25€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 56.25
-  },
-  {
-    "id": "ikea-p202",
-    "asin": null,
-    "title": "IKEA KALLAX Regal, weiß, 77x147 cm - Flexibel als Raumteiler & Aufbewahrung",
-    "titleAr": "وحدة أرفف مكعبة KALLAX من إيكيا مقاس 77x147 سم باللون الأبيض",
-    "category": "furniture_decor",
-    "categoryAr": "الأثاث والديكور المنزلي",
-    "brand": "IKEA",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 12800,
-    "msrp": 79.99,
-    "image": "https://m.media-amazon.com/images/I/41D9ngUDLJL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/41D9ngUDLJL._AC_SL1000_.jpg"
-    ],
-    "badge": "أصلي (IKEA) ✔️",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (65.72€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 65.72
-  },
-  {
-    "id": "ikea-p203",
-    "asin": null,
-    "title": "IKEA MARKUS Drehstuhl ergonomisch, Vissle dunkelgrau - Bester Homeoffice Bürostuhl",
-    "titleAr": "كرسي مكتب مريح MARKUS عالي الجودة من إيكيا باللون الرمادي",
-    "category": "furniture_decor",
-    "categoryAr": "الأثاث والديكور المنزلي",
-    "brand": "IKEA",
-    "ean": null,
-    "sku": null,
-    "rating": 4.8,
-    "reviewsCount": 8900,
-    "msrp": 199,
-    "image": "https://m.media-amazon.com/images/I/813Dwz66qfL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/813Dwz66qfL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 31€ 🔥",
-    "isFlashDeal": false,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (168.28€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 168.28
-  },
-  {
-    "id": "ikea-p204",
-    "asin": null,
-    "title": "IKEA POÄNG Schwingsessel, Birke / Knisa hellbeige - Bequemster Relaxsessel",
-    "titleAr": "كرسي الاسترخاء الهزاز الشهير POÄNG من إيكيا خشب زان وقماش بيج",
-    "category": "furniture_decor",
-    "categoryAr": "الأثاث والديكور المنزلي",
-    "brand": "IKEA",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 18200,
-    "msrp": 149,
-    "image": "https://m.media-amazon.com/images/I/61bkLLTzvML._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/61bkLLTzvML._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 28€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (121.43€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 121.43
-  },
-  {
-    "id": "ikea-p205",
-    "asin": null,
-    "title": "IKEA MALM Kommode mit 4 Schubladen, weiß, 80x100 cm - Elegante Schlafzimmer-Aufbewahrung",
-    "titleAr": "كومودينو وخزانة أدراج MALM بأربعة أدراج من إيكيا مقاس 80x100 سم",
-    "category": "furniture_decor",
-    "categoryAr": "الأثاث والديكور المنزلي",
-    "brand": "IKEA",
-    "ean": null,
-    "sku": null,
-    "rating": 4.8,
-    "reviewsCount": 9600,
-    "msrp": 129,
-    "image": "https://m.media-amazon.com/images/I/61RvzsaaABL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/61RvzsaaABL._AC_SL1000_.jpg"
-    ],
-    "badge": "أصلي (IKEA) ✔️",
-    "isFlashDeal": false,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (112.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 112.16
-  },
-  {
-    "id": "douglas-p301",
-    "asin": null,
-    "title": "Dior Sauvage Eau de Parfum (100 ml) - Das maskuline Kultparfüm von Christian Dior",
-    "titleAr": "عطر ديور سوفاج أو دو بارفيوم 100 مل الأصلي للرجال - Dior Sauvage EDP",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور ومستحضرات التجميل",
-    "brand": "Dior",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 9400,
-    "msrp": 139,
-    "image": "https://m.media-amazon.com/images/I/712kbj96mHL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/712kbj96mHL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 27€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (111.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 111.99
-  },
-  {
-    "id": "douglas-p302",
-    "asin": null,
-    "title": "Yves Saint Laurent Libre Eau de Parfum (50 ml) - Der elegante Damenduft von YSL",
-    "titleAr": "عطر إيف سان لوران ليبر النسائي أو دو بارفيوم 50 مل الأصلي - YSL Libre",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور ومستحضرات التجميل",
-    "brand": "Yves Saint Laurent",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 7800,
-    "msrp": 110,
-    "image": "https://m.media-amazon.com/images/I/712kbj96mHL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/712kbj96mHL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 24€ 🔥",
-    "isFlashDeal": false,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (85.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 85.51
-  },
-  {
-    "id": "douglas-p303",
-    "asin": null,
-    "title": "Lancôme La Vie Est Belle Eau de Parfum (50 ml) - Das ikonische Glücks-Parfum",
-    "titleAr": "عطر لانكوم لافي إي بيل النسائي أو دو بارفيوم 50 مل الأصلي - La Vie Est Belle",
-    "category": "perfumes_beauty",
-    "categoryAr": "العطور ومستحضرات التجميل",
-    "brand": "Lancôme",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 11200,
-    "msrp": 99,
-    "image": "https://m.media-amazon.com/images/I/81I6xVbPwiL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/81I6xVbPwiL._AC_SL1000_.jpg"
-    ],
-    "badge": "أصلي (Zalando) ✔️",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (80.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 80.77
-  },
-  {
-    "id": "mm-p401",
-    "asin": null,
-    "title": "Sony PlayStation 5 Slim (PS5) Disc Edition 1TB SSD - Next-Gen Gaming Konsole",
-    "titleAr": "جهاز بلايستيشن 5 سليم بالقرص PS5 Slim 1TB النسخة الأحدث",
-    "category": "gaming",
-    "categoryAr": "أجهزة الألعاب واللابتوب",
-    "brand": "Sony",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 16500,
-    "msrp": 549.99,
-    "image": "https://m.media-amazon.com/images/I/51U1wHaw7yL._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/51U1wHaw7yL._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 39€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (510.73€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 510.73
-  },
-  {
-    "id": "mm-p402",
-    "asin": null,
-    "title": "Apple AirPods Pro (2. Generation) mit MagSafe Case (USB-C) - Aktive Geräuschunterdrückung",
-    "titleAr": "سماعات آبل ايربودز برو الجيل الثاني بمنفذ USB-C وعزل الضوضاء النشط",
-    "category": "tv_audio",
-    "categoryAr": "التلفزيونات والسماعات والصوتيات",
-    "brand": "Apple",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 28400,
-    "msrp": 279,
-    "image": "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg"
-    ],
-    "badge": "وفر 44€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (235.43€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.608Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 235.43
-  },
-  {
-    "id": "mm-p403",
-    "asin": null,
-    "title": "Nintendo Switch OLED-Modell - Weiß (inkl. 64 GB Speicher & Joy-Con)",
-    "titleAr": "جهاز نينتندو سويتش موديل شاشة أوليد OLED الأبيض سعة 64 جيجابايت",
-    "category": "tv_audio",
-    "categoryAr": "الشاشات والصوتيات",
-    "brand": "Nintendo",
-    "ean": null,
-    "sku": null,
-    "rating": 4.9,
-    "reviewsCount": 19800,
-    "msrp": 349.99,
-    "image": "https://m.media-amazon.com/images/I/71eVf1+jn6L._AC_SL1000_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/71eVf1+jn6L._AC_SL1000_.jpg"
-    ],
-    "badge": "وفر 25€ 🔥",
-    "isFlashDeal": true,
-    "discountStatus": "verified_low",
-    "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (325.39€) مع مقارنة شاملة لـ 5 متاجر عالمية",
-    "created_at": "2026-10-22T21:16:47.609Z",
-    "updated_at": "2026-10-22T21:44:35.320Z",
-    "price": 325.39
+    "price": 29.99
   },
   {
     "id": "real-B0DHYDVWKC",
@@ -709,7 +153,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (562.72€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 562.72
+    "price": 571.29
   },
   {
     "id": "real-B0CSZRYQP1",
@@ -745,7 +189,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (100.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 100.05
+    "price": 108.99
   },
   {
     "id": "real-B09Q2PNY5L",
@@ -781,7 +225,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (27.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 27.62
+    "price": 39.66
   },
   {
     "id": "real-B0CTCQXZ3G",
@@ -817,7 +261,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (506.37€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 506.37
+    "price": 522.89
   },
   {
     "id": "real-B0FVBKNSKL",
@@ -847,7 +291,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (68.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 68.07
+    "price": 68.52
   },
   {
     "id": "real-B096SBXHR7",
@@ -883,7 +327,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (14.41€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 14.41
+    "price": 21
   },
   {
     "id": "real-B0FN7ZG39D",
@@ -919,7 +363,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (587.46€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 587.46
+    "price": 593.69
   },
   {
     "id": "real-B0GYW2LC1X",
@@ -955,7 +399,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (278.15€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 278.15
+    "price": 288.27
   },
   {
     "id": "real-B0828KQKBM",
@@ -991,7 +435,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (62.25€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 62.25
+    "price": 63.81
   },
   {
     "id": "real-B0H7S1F5GN",
@@ -1027,7 +471,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (62.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 62.3
+    "price": 64.12
   },
   {
     "id": "real-B077P3Z288",
@@ -1063,7 +507,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (56.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 56.61
+    "price": 84.35
   },
   {
     "id": "real-B0FWRGPYT6",
@@ -1098,7 +542,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (154.90€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 154.9
+    "price": 169.48
   },
   {
     "id": "real-B0DHYFNJ5X",
@@ -1134,7 +578,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (549.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 549.09
+    "price": 564.33
   },
   {
     "id": "real-B0DBHZGDZM",
@@ -1170,7 +614,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (118.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 118.05
+    "price": 131.31
   },
   {
     "id": "real-B0CXDKDVLG",
@@ -1206,7 +650,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (27.17€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 27.17
+    "price": 36.28
   },
   {
     "id": "real-B08CBJ8W9W",
@@ -1239,7 +683,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (406.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 406.99
+    "price": 412.43
   },
   {
     "id": "real-B0FTTMCF2Z",
@@ -1273,7 +717,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (66.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 66.3
+    "price": 67.43
   },
   {
     "id": "real-B0CFHTFW33",
@@ -1309,7 +753,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (41.12€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 41.12
+    "price": 49.63
   },
   {
     "id": "real-B0CLT54ZNZ",
@@ -1338,7 +782,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (594.73€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.609Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 594.73
+    "price": 611.99
   },
   {
     "id": "real-B0FJF5X995",
@@ -1373,7 +817,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (96.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.321Z",
-    "price": 96.42
+    "price": 100.37
   },
   {
     "id": "real-B0828L97QF",
@@ -1409,7 +853,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (103.45€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 103.45
+    "price": 106.67
   },
   {
     "id": "real-B0HFT1S7NP",
@@ -1442,7 +886,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (53.86€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 53.86
+    "price": 54.91
   },
   {
     "id": "real-B0BKZV8MZM",
@@ -1478,7 +922,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (283.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 283.07
+    "price": 299.23
   },
   {
     "id": "real-B0G2LSB76P",
@@ -1514,7 +958,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (104.91€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 104.91
+    "price": 112.56
   },
   {
     "id": "real-B0DHYF5TVV",
@@ -1550,7 +994,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (559.98€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 559.98
+    "price": 569.9
   },
   {
     "id": "real-B0CT19QWWV",
@@ -1586,7 +1030,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (114.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 114.05
+    "price": 127.43
   },
   {
     "id": "real-B0H3BPPSTV",
@@ -1622,7 +1066,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (480.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 480.65
+    "price": 490.96
   },
   {
     "id": "real-B0H94ZSVN8",
@@ -1657,7 +1101,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (783.98€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 783.98
+    "price": 797.86
   },
   {
     "id": "real-B074L6R6BS",
@@ -1693,7 +1137,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (146.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 146.35
+    "price": 149.26
   },
   {
     "id": "real-B0CNTSQ9B1",
@@ -1729,7 +1173,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (43.97€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 43.97
+    "price": 63
   },
   {
     "id": "real-B08H98GVK8",
@@ -1756,7 +1200,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (530.59€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 530.59
+    "price": 539.22
   },
   {
     "id": "real-B0FC2ZBWP8",
@@ -1792,7 +1236,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (452.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 452.08
+    "price": 462.34
   },
   {
     "id": "real-B0F8BQW4TR",
@@ -1828,7 +1272,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (358.97€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 358.97
+    "price": 364.44
   },
   {
     "id": "real-B00C3HTOZU",
@@ -1859,7 +1303,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (150.01€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 150.01
+    "price": 152.48
   },
   {
     "id": "real-B0CX54K6ZX",
@@ -1895,7 +1339,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (136.26€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 136.26
+    "price": 152.08
   },
   {
     "id": "real-B0DG2YW4SN",
@@ -1931,7 +1375,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (94.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.322Z",
-    "price": 94.65
+    "price": 108.17
   },
   {
     "id": "real-B0DGHN3YNR",
@@ -1967,7 +1411,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (830.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.610Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 830.04
+    "price": 854.65
   },
   {
     "id": "real-B0FTMR15W8",
@@ -2003,7 +1447,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (69.74€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 69.74
+    "price": 81.57
   },
   {
     "id": "real-B0DCGCWZZF",
@@ -2039,7 +1483,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (817.12€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 817.12
+    "price": 830.58
   },
   {
     "id": "real-B0CDCFH17J",
@@ -2074,7 +1518,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (361.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 361.79
+    "price": 375.15
   },
   {
     "id": "real-B0G2284CJK",
@@ -2110,7 +1554,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (64.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 64.53
+    "price": 65.51
   },
   {
     "id": "real-B0CNH9JDFX",
@@ -2146,7 +1590,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (13.82€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 13.82
+    "price": 19.42
   },
   {
     "id": "real-B0BKX48NZ9",
@@ -2174,7 +1618,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (790.88€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 790.88
+    "price": 818.46
   },
   {
     "id": "real-B0CQWT6V1H",
@@ -2210,7 +1654,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (288.91€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 288.91
+    "price": 298.77
   },
   {
     "id": "real-B0C6PGXG7L",
@@ -2246,7 +1690,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (262.58€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 262.58
+    "price": 269.2
   },
   {
     "id": "real-B00CJ33QEI",
@@ -2276,7 +1720,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (390.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 390.04
+    "price": 407.14
   },
   {
     "id": "real-B0D17JHD2P",
@@ -2312,7 +1756,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (181.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 181.22
+    "price": 191.77
   },
   {
     "id": "real-B0CFW29DZX",
@@ -2348,7 +1792,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (53.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 53.07
+    "price": 54.33
   },
   {
     "id": "real-B0DGHQW185",
@@ -2384,7 +1828,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (907.80€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 907.8
+    "price": 918.83
   },
   {
     "id": "real-B0C4YB24FT",
@@ -2418,7 +1862,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (96.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 96.35
+    "price": 103.94
   },
   {
     "id": "real-B0CDTVTFFS",
@@ -2454,7 +1898,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (625.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 625.79
+    "price": 635.32
   },
   {
     "id": "real-B07MMSHC4R",
@@ -2490,7 +1934,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (244.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 244.63
+    "price": 250.34
   },
   {
     "id": "real-B08ZXY1B7H",
@@ -2526,7 +1970,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (44.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 44.21
+    "price": 45.24
   },
   {
     "id": "real-B07GZYWX4B",
@@ -2562,7 +2006,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (64.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 64.05
+    "price": 71.56
   },
   {
     "id": "real-B0BRQCBK2W",
@@ -2591,7 +2035,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (804.67€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 804.67
+    "price": 825.56
   },
   {
     "id": "real-B0CTT7Q8WQ",
@@ -2627,7 +2071,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (55.27€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.323Z",
-    "price": 55.27
+    "price": 56.54
   },
   {
     "id": "real-B0CVXDGNWP",
@@ -2663,7 +2107,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (106.55€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 106.55
+    "price": 110.21
   },
   {
     "id": "real-B010TL9PT6",
@@ -2696,7 +2140,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (566.39€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 566.39
+    "price": 582.47
   },
   {
     "id": "real-B00VFQUS82",
@@ -2732,7 +2176,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (251.33€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 251.33
+    "price": 283.03
   },
   {
     "id": "real-B0BV7DR4B6",
@@ -2768,7 +2212,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (152.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.611Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 152.35
+    "price": 164.53
   },
   {
     "id": "real-B0DGHY5KG8",
@@ -2804,7 +2248,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (788.26€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 788.26
+    "price": 819.91
   },
   {
     "id": "real-B0G5P8BLFL",
@@ -2840,7 +2284,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (93.73€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 93.73
+    "price": 99.18
   },
   {
     "id": "real-B0DF8L6PDK",
@@ -2876,7 +2320,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (655.73€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 655.73
+    "price": 660.35
   },
   {
     "id": "real-B0CTCQKJ1B",
@@ -2912,7 +2356,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (531.76€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 531.76
+    "price": 544.84
   },
   {
     "id": "real-B0CS6ZZ3MY",
@@ -2948,7 +2392,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (46.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 46.09
+    "price": 46.62
   },
   {
     "id": "real-B08P7JTLDB",
@@ -2984,7 +2428,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 17.56
+    "price": 25.49
   },
   {
     "id": "real-B0CLTBHXWQ",
@@ -3011,7 +2455,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (596.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 596.77
+    "price": 608.95
   },
   {
     "id": "real-B0CWNYX31T",
@@ -3047,7 +2491,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (109.01€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 109.01
+    "price": 111.97
   },
   {
     "id": "real-B0HDSX1XVW",
@@ -3083,7 +2527,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (102.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 102.13
+    "price": 105.99
   },
   {
     "id": "real-B0DQ93HX2L",
@@ -3119,7 +2563,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (240.68€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 240.68
+    "price": 245.29
   },
   {
     "id": "real-B0CX58XZL6",
@@ -3155,7 +2599,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (191.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 191.56
+    "price": 212.61
   },
   {
     "id": "real-B0CWH3FX31",
@@ -3191,7 +2635,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (115.89€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 115.89
+    "price": 124.35
   },
   {
     "id": "real-B0CNH5NN31",
@@ -3227,7 +2671,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (428.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 428.66
+    "price": 436.3
   },
   {
     "id": "real-B0CT16KJLS",
@@ -3263,7 +2707,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (123.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 123.99
+    "price": 144.34
   },
   {
     "id": "real-B0CVXQ59YY",
@@ -3299,7 +2743,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (676.54€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.324Z",
-    "price": 676.54
+    "price": 687.68
   },
   {
     "id": "real-B0H34G7VB2",
@@ -3335,7 +2779,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (146.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 146.09
+    "price": 149.13
   },
   {
     "id": "real-B0B8TQ7YRW",
@@ -3367,7 +2811,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (20.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 20.35
+    "price": 20.6
   },
   {
     "id": "real-B0D1R7PSMS",
@@ -3403,7 +2847,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.32€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 17.32
+    "price": 24.19
   },
   {
     "id": "real-B0DZ46NFCJ",
@@ -3439,7 +2883,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (491.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 491.21
+    "price": 511.68
   },
   {
     "id": "real-B0GWQWWJDX",
@@ -3475,7 +2919,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (98.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 98.65
+    "price": 99.55
   },
   {
     "id": "real-B015TKUPIC",
@@ -3511,7 +2955,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (92.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 92.42
+    "price": 94.52
   },
   {
     "id": "real-B086XYFJ3J",
@@ -3547,7 +2991,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (92.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 92.62
+    "price": 95.31
   },
   {
     "id": "real-B0G719PNZD",
@@ -3583,7 +3027,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (101.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.612Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 101.08
+    "price": 115.26
   },
   {
     "id": "real-B09BNY3PTN",
@@ -3619,7 +3063,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (62.01€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 62.01
+    "price": 70.47
   },
   {
     "id": "real-B0GGCDV1Q1",
@@ -3655,7 +3099,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (400.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 400.18
+    "price": 404.02
   },
   {
     "id": "real-B0FLYL3QM1",
@@ -3687,7 +3131,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (102.68€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 102.68
+    "price": 118.57
   },
   {
     "id": "real-B0F9LDNNQP",
@@ -3723,7 +3167,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (621.76€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 621.76
+    "price": 640.59
   },
   {
     "id": "real-B0H2F597GG",
@@ -3759,7 +3203,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (143.23€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 143.23
+    "price": 146.57
   },
   {
     "id": "real-B0DB4H2L74",
@@ -3791,7 +3235,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (50.55€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 50.55
+    "price": 51.45
   },
   {
     "id": "real-B0H4G5MLK6",
@@ -3827,7 +3271,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.75€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 22.75
+    "price": 28.6
   },
   {
     "id": "real-B0DDKDSBSN",
@@ -3859,7 +3303,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (421.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.325Z",
-    "price": 421.63
+    "price": 434.13
   },
   {
     "id": "real-B0F9XDH7HK",
@@ -3894,7 +3338,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (60.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 60.44
+    "price": 62.16
   },
   {
     "id": "real-B08ZSNYN8N",
@@ -3928,7 +3372,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (170.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 170.77
+    "price": 179.15
   },
   {
     "id": "real-B0DQ19D94K",
@@ -3964,7 +3408,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (211.29€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 211.29
+    "price": 225.74
   },
   {
     "id": "real-B0FPXFZXCN",
@@ -4000,7 +3444,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (24.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 24.61
+    "price": 30.88
   },
   {
     "id": "real-B0CNH77WY4",
@@ -4036,7 +3480,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (506.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 506.5
+    "price": 526.84
   },
   {
     "id": "real-B0DBJ29GJH",
@@ -4072,7 +3516,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (101.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 101.6
+    "price": 109.37
   },
   {
     "id": "real-B0H2YK2DQS",
@@ -4108,7 +3552,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (874.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 874.99
+    "price": 901.59
   },
   {
     "id": "real-B0H2FG3VBN",
@@ -4144,7 +3588,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (150.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 150.96
+    "price": 152.25
   },
   {
     "id": "real-B0DF85K4N5",
@@ -4178,7 +3622,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (23.46€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 23.46
+    "price": 23.67
   },
   {
     "id": "real-B0H4RH1HLH",
@@ -4214,7 +3658,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (13.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 13.42
+    "price": 16.34
   },
   {
     "id": "real-B0F5Z4GKZ8",
@@ -4250,7 +3694,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (1279.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 1279.22
+    "price": 1328.65
   },
   {
     "id": "real-B0FB3N1S6W",
@@ -4283,7 +3727,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (220.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 220.92
+    "price": 227.71
   },
   {
     "id": "real-B0CNH6RHV6",
@@ -4319,7 +3763,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (555.23€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 555.23
+    "price": 573.35
   },
   {
     "id": "real-B0B6HZMVJX",
@@ -4355,7 +3799,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (32.90€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.613Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 32.9
+    "price": 43.23
   },
   {
     "id": "real-B0H2YNKM7X",
@@ -4391,7 +3835,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (1078.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 1078.42
+    "price": 1098.52
   },
   {
     "id": "real-B0DPQ55RVS",
@@ -4427,7 +3871,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (212.85€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 212.85
+    "price": 241.05
   },
   {
     "id": "real-B0B92Y18GT",
@@ -4461,7 +3905,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (27.82€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.326Z",
-    "price": 27.82
+    "price": 28.37
   },
   {
     "id": "real-B0BVGQSLJZ",
@@ -4497,7 +3941,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (38.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.327Z",
-    "price": 38.61
+    "price": 48.81
   },
   {
     "id": "real-B0B8QL8P2C",
@@ -4533,7 +3977,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (1261.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.327Z",
-    "price": 1261.6
+    "price": 1280.16
   },
   {
     "id": "real-B0H5XFW88V",
@@ -4567,7 +4011,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (311.03€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.327Z",
-    "price": 311.03
+    "price": 317.7
   },
   {
     "id": "real-B0GMWJXS4M",
@@ -4603,7 +4047,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (394.41€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.327Z",
-    "price": 394.41
+    "price": 401.15
   },
   {
     "id": "real-B09HWTJ8NY",
@@ -4639,7 +4083,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (75.11€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 75.11
+    "price": 84.02
   },
   {
     "id": "real-B0H2YG5JJF",
@@ -4675,7 +4119,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (1842.28€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 1842.28
+    "price": 1919.04
   },
   {
     "id": "real-B0DJ71KZXF",
@@ -4709,7 +4153,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (81.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 81.3
+    "price": 93.88
   },
   {
     "id": "real-B0CN9PWGGL",
@@ -4739,7 +4183,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (26.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 26.13
+    "price": 26.66
   },
   {
     "id": "real-B0D1R5P9XB",
@@ -4775,7 +4219,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 22.78
+    "price": 27.95
   },
   {
     "id": "real-B0F6CV56MN",
@@ -4811,7 +4255,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (1515.11€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 1515.11
+    "price": 1531.96
   },
   {
     "id": "real-B095WXTL7R",
@@ -4844,7 +4288,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (196.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 196.92
+    "price": 203.35
   },
   {
     "id": "real-B0DPN98BDQ",
@@ -4880,7 +4324,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (525.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 525.16
+    "price": 546.64
   },
   {
     "id": "real-B0DDSYKMKM",
@@ -4916,7 +4360,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (75.43€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 75.43
+    "price": 82.98
   },
   {
     "id": "real-B0H4QWJRHV",
@@ -4952,7 +4396,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (365.98€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 365.98
+    "price": 372.92
   },
   {
     "id": "real-B09ZYLM43B",
@@ -4988,7 +4432,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (135.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 135.65
+    "price": 158.65
   },
   {
     "id": "real-B0DGLN29DQ",
@@ -5021,7 +4465,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (30.03€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 30.03
+    "price": 30.21
   },
   {
     "id": "real-B0DHRDVWGN",
@@ -5057,7 +4501,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (20.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 20.07
+    "price": 26.12
   },
   {
     "id": "real-B0F3DHMM39",
@@ -5093,7 +4537,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (1875.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.614Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 1875.64
+    "price": 1911.97
   },
   {
     "id": "real-B01ENFAEJE",
@@ -5129,7 +4573,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى IKEA (227.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 227.77
+    "price": 234.04
   },
   {
     "id": "real-B0GXBGC7MG",
@@ -5165,7 +4609,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (206.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 206.6
+    "price": 213.19
   },
   {
     "id": "real-B08VR9CW3S",
@@ -5201,7 +4645,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (21.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 21.56
+    "price": 30.62
   },
   {
     "id": "real-B0GSGX6FF1",
@@ -5237,7 +4681,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (924.71€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 924.71
+    "price": 961.14
   },
   {
     "id": "real-B0FS16B394",
@@ -5272,7 +4716,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (421.93€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 421.93
+    "price": 480.01
   },
   {
     "id": "real-B0DGLKQ4HT",
@@ -5303,7 +4747,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (30.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.328Z",
-    "price": 30.08
+    "price": 30.84
   },
   {
     "id": "real-B0H6B1MSD1",
@@ -5339,7 +4783,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (172.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 172.5
+    "price": 188.52
   },
   {
     "id": "real-B0H5XBKYYM",
@@ -5372,7 +4816,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (608.25€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 608.25
+    "price": 616.07
   },
   {
     "id": "real-B0HJ9ZZ8VY",
@@ -5408,7 +4852,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (1409.28€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 1409.28
+    "price": 1429
   },
   {
     "id": "real-B0DPX7XQTN",
@@ -5444,7 +4888,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (110.72€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 110.72
+    "price": 120.48
   },
   {
     "id": "real-B0GSH2NHSZ",
@@ -5480,7 +4924,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (907.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 907.16
+    "price": 928.33
   },
   {
     "id": "real-B0FFGQ7L2T",
@@ -5515,7 +4959,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (470.82€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 470.82
+    "price": 551.31
   },
   {
     "id": "real-B0F443WD8W",
@@ -5543,7 +4987,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (19.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 19.5
+    "price": 19.88
   },
   {
     "id": "real-B0F4XNTNXN",
@@ -5579,7 +5023,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (154.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 154.07
+    "price": 168.75
   },
   {
     "id": "real-B0HJ9S75M5",
@@ -5615,7 +5059,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (1540.39€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 1540.39
+    "price": 1569.42
   },
   {
     "id": "real-B0DBJ472CT",
@@ -5651,7 +5095,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (77.84€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 77.84
+    "price": 85.26
   },
   {
     "id": "real-B09Y2LL45F",
@@ -5687,7 +5131,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (199.25€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 199.25
+    "price": 203.11
   },
   {
     "id": "real-B0GMH56TRH",
@@ -5723,7 +5167,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (412.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 412.6
+    "price": 478.65
   },
   {
     "id": "real-B0GTWNZQXW",
@@ -5759,7 +5203,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (381.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 381.62
+    "price": 390.28
   },
   {
     "id": "real-B0GXZK5YPP",
@@ -5795,7 +5239,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (89.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 89.51
+    "price": 96.98
   },
   {
     "id": "real-B0FQG92W6D",
@@ -5831,7 +5275,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (976.15€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 976.15
+    "price": 987.51
   },
   {
     "id": "real-B0952CRK3R",
@@ -5867,7 +5311,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (107.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 107.08
+    "price": 117.16
   },
   {
     "id": "real-B0BXM22X99",
@@ -5903,7 +5347,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (220.87€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 220.87
+    "price": 224.01
   },
   {
     "id": "real-B0GHMV8ML5",
@@ -5939,7 +5383,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (297.70€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 297.7
+    "price": 344.16
   },
   {
     "id": "real-B0G4CPCFT9",
@@ -5975,7 +5419,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (305.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.615Z",
     "updated_at": "2026-10-22T21:44:35.329Z",
-    "price": 305.96
+    "price": 307.96
   },
   {
     "id": "real-B0GX2CG369",
@@ -6011,7 +5455,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (164.89€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 164.89
+    "price": 182
   },
   {
     "id": "real-B0FQGG53WL",
@@ -6047,7 +5491,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (1074.81€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 1074.81
+    "price": 1113.91
   },
   {
     "id": "real-B09LQBR5PJ",
@@ -6083,7 +5527,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (33.67€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 33.67
+    "price": 47.82
   },
   {
     "id": "real-B0DBLP647C",
@@ -6119,7 +5563,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (228.81€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 228.81
+    "price": 231.45
   },
   {
     "id": "real-B0DWKBMSWG",
@@ -6154,7 +5598,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (201.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 201.53
+    "price": 210.37
   },
   {
     "id": "real-B0G4CR25T1",
@@ -6190,7 +5634,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (351.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 351.64
+    "price": 354.19
   },
   {
     "id": "real-B0DNR4H57P",
@@ -6226,7 +5670,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (297.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 297.63
+    "price": 317.64
   },
   {
     "id": "real-B0FQG8ZNH2",
@@ -6262,7 +5706,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (856.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 856.16
+    "price": 882.18
   },
   {
     "id": "real-B0G5YXLWHH",
@@ -6298,7 +5742,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (85.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 85.96
+    "price": 94.98
   },
   {
     "id": "real-B0F2TT8Q7M",
@@ -6334,7 +5778,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (321.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 321.66
+    "price": 334.09
   },
   {
     "id": "real-B0GHN9DR1C",
@@ -6370,7 +5814,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (527.45€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 527.45
+    "price": 560.52
   },
   {
     "id": "real-B0F32JZPTS",
@@ -6406,7 +5850,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (186.34€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.616Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 186.34
+    "price": 190.69
   },
   {
     "id": "real-B0GWR3S5B7",
@@ -6442,7 +5886,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (101.80€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 101.8
+    "price": 107.72
   },
   {
     "id": "real-B0GQVG8S7V",
@@ -6478,7 +5922,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (772.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 772.5
+    "price": 795.41
   },
   {
     "id": "real-B0G52VCZG1",
@@ -6514,7 +5958,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (94.86€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 94.86
+    "price": 101.56
   },
   {
     "id": "real-B0C4TLFZSZ",
@@ -6550,7 +5994,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (183.37€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 183.37
+    "price": 186.16
   },
   {
     "id": "real-B0C5LPVCQ5",
@@ -6586,7 +6030,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (64.38€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 64.38
+    "price": 74.86
   },
   {
     "id": "real-B08F7SY665",
@@ -6622,7 +6066,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (363.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 363.64
+    "price": 364.95
   },
   {
     "id": "real-B0H7WHTMCP",
@@ -6658,7 +6102,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (128.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 128.92
+    "price": 144.69
   },
   {
     "id": "real-B084MFS8P9",
@@ -6694,7 +6138,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (72.45€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.330Z",
-    "price": 72.45
+    "price": 78.07
   },
   {
     "id": "real-B0CX1VYYQL",
@@ -6730,7 +6174,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (106.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 106.07
+    "price": 108.01
   },
   {
     "id": "real-B0BQMG8862",
@@ -6765,7 +6209,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (87.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 87.96
+    "price": 96.87
   },
   {
     "id": "real-B08RB6C5GP",
@@ -6801,7 +6245,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Douglas (340.33€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 340.33
+    "price": 345.86
   },
   {
     "id": "real-B0CMR4WTT9",
@@ -6837,7 +6281,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (1458.43€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 1458.43
+    "price": 1500.75
   },
   {
     "id": "real-B0CT19MSKC",
@@ -6873,7 +6317,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (98.35€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 98.35
+    "price": 114.9
   },
   {
     "id": "real-B0BQMJR58X",
@@ -6906,7 +6350,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (66.83€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 66.83
+    "price": 76.47
   },
   {
     "id": "real-B07HX2KMXK",
@@ -6942,7 +6386,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (318.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 318.63
+    "price": 326.47
   },
   {
     "id": "real-B0FL84SPYC",
@@ -6978,7 +6422,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (921.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 921.13
+    "price": 1058.77
   },
   {
     "id": "real-B0F9Z1NLGY",
@@ -7014,7 +6458,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (34.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 34.22
+    "price": 47.49
   },
   {
     "id": "real-B0FPCJ3NX8",
@@ -7050,7 +6494,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (26.52€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 26.52
+    "price": 38.07
   },
   {
     "id": "real-B0H834LSCF",
@@ -7086,7 +6530,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (767.55€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 767.55
+    "price": 830.68
   },
   {
     "id": "real-B0BYYVCBLF",
@@ -7122,7 +6566,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (21.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 21.63
+    "price": 28.31
   },
   {
     "id": "real-B0H1JD7NDZ",
@@ -7156,7 +6600,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.97€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 22.97
+    "price": 33.71
   },
   {
     "id": "real-B0GBXCW6BR",
@@ -7192,7 +6636,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (256.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.617Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 256.42
+    "price": 292.05
   },
   {
     "id": "real-B0CW22RHSL",
@@ -7228,7 +6672,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (24.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 24.78
+    "price": 35.35
   },
   {
     "id": "real-B0H5VZGYNH",
@@ -7262,7 +6706,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (80.38€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 80.38
+    "price": 88.52
   },
   {
     "id": "real-B0GTYRM3KH",
@@ -7298,7 +6742,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (149.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 149.53
+    "price": 166.51
   },
   {
     "id": "real-B0DGQB76T9",
@@ -7334,7 +6778,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (149.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 149.6
+    "price": 160.34
   },
   {
     "id": "real-B0B2JVCT5S",
@@ -7370,7 +6814,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.40€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 17.4
+    "price": 25.03
   },
   {
     "id": "real-B07QJ6CSVQ",
@@ -7406,7 +6850,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 23.78
+    "price": 32.93
   },
   {
     "id": "real-B0FDWZV1Z4",
@@ -7442,7 +6886,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (24.75€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.331Z",
-    "price": 24.75
+    "price": 33.52
   },
   {
     "id": "real-B09R1YD7HN",
@@ -7478,7 +6922,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 31.09
+    "price": 37.66
   },
   {
     "id": "real-B08YYPZ1K7",
@@ -7514,7 +6958,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.03€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 23.03
+    "price": 31.77
   },
   {
     "id": "real-B08YYQLFMR",
@@ -7550,7 +6994,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (26.83€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 26.83
+    "price": 34.37
   },
   {
     "id": "real-B0GX7H22ZX",
@@ -7586,7 +7030,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.14€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 22.14
+    "price": 31.79
   },
   {
     "id": "real-B0GX71Z79N",
@@ -7622,7 +7066,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.15€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 30.15
+    "price": 36.99
   },
   {
     "id": "real-B0B5TDQ7Y7",
@@ -7658,7 +7102,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.20€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 31.2
+    "price": 37.73
   },
   {
     "id": "real-B0C3C6F7KC",
@@ -7694,7 +7138,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (26.32€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 26.32
+    "price": 34.66
   },
   {
     "id": "real-B09CM6W1Z7",
@@ -7730,7 +7174,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (28.36€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 28.36
+    "price": 35.25
   },
   {
     "id": "real-B0F2MSTCZ3",
@@ -7766,7 +7210,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (22.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 22.44
+    "price": 31.67
   },
   {
     "id": "real-B0FJ19Y98F",
@@ -7802,7 +7246,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (37.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 37.61
+    "price": 48
   },
   {
     "id": "real-B0FJ1YQXGQ",
@@ -7838,7 +7282,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (36.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 36.16
+    "price": 47.9
   },
   {
     "id": "real-B0F4QPV257",
@@ -7874,7 +7318,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (70.92€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 70.92
+    "price": 76.75
   },
   {
     "id": "real-B0GFG91HQN",
@@ -7910,7 +7354,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (98.91€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.618Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 98.91
+    "price": 104.56
   },
   {
     "id": "real-B0HBQ47W53",
@@ -7946,7 +7390,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (123.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 123.04
+    "price": 128.11
   },
   {
     "id": "real-B0DMVDQQG9",
@@ -7982,7 +7426,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (141.40€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 141.4
+    "price": 147.08
   },
   {
     "id": "real-B0GXKF7J1Y",
@@ -8018,7 +7462,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (229.90€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 229.9
+    "price": 234.4
   },
   {
     "id": "real-B0FJF842KV",
@@ -8054,7 +7498,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (165.74€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 165.74
+    "price": 170.3
   },
   {
     "id": "real-B0DDBSMF34",
@@ -8090,7 +7534,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (142.43€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 142.43
+    "price": 146.11
   },
   {
     "id": "real-B0D24YBPWC",
@@ -8126,7 +7570,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (142.17€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 142.17
+    "price": 146.03
   },
   {
     "id": "real-B0FHHQ3NRM",
@@ -8162,7 +7606,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (58.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 58.56
+    "price": 59.27
   },
   {
     "id": "real-B0GMFDTRQP",
@@ -8198,7 +7642,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (52.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.332Z",
-    "price": 52.64
+    "price": 54.99
   },
   {
     "id": "real-B0GKLRV2PW",
@@ -8234,7 +7678,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (61.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 61.65
+    "price": 64.73
   },
   {
     "id": "real-B0DPQ67432",
@@ -8270,7 +7714,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (101.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 101.96
+    "price": 105.9
   },
   {
     "id": "real-B0GSTJNBL3",
@@ -8306,7 +7750,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (74.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 74.18
+    "price": 75.08
   },
   {
     "id": "real-B0C3KPV6HF",
@@ -8342,7 +7786,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (75.45€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 75.45
+    "price": 77.69
   },
   {
     "id": "real-B0DM25JNBJ",
@@ -8378,7 +7822,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (102.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.620Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 102.5
+    "price": 104.72
   },
   {
     "id": "real-B09Z5XCT8W",
@@ -8414,7 +7858,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (38.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 38.99
+    "price": 39.49
   },
   {
     "id": "real-B0HF7Y73YG",
@@ -8450,7 +7894,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (74.24€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 74.24
+    "price": 75.11
   },
   {
     "id": "real-B0HGM3KFPZ",
@@ -8486,7 +7930,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (68.08€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 68.08
+    "price": 68.78
   },
   {
     "id": "real-B0HCXWC9SV",
@@ -8522,7 +7966,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (140.58€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 140.58
+    "price": 147.61
   },
   {
     "id": "real-B0G6DRLF65",
@@ -8558,7 +8002,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (159.29€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 159.29
+    "price": 164.35
   },
   {
     "id": "real-B0HDJB2Y2N",
@@ -8594,7 +8038,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (68.11€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 68.11
+    "price": 69.19
   },
   {
     "id": "real-B0GT8V6N4B",
@@ -8630,7 +8074,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (66.85€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 66.85
+    "price": 67.91
   },
   {
     "id": "real-B0FFG3BVQG",
@@ -8662,7 +8106,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (272.48€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 272.48
+    "price": 278.67
   },
   {
     "id": "real-B0FFF5KWQ3",
@@ -8698,7 +8142,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (207.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 207.51
+    "price": 213.4
   },
   {
     "id": "real-B0HJCPFT7J",
@@ -8732,7 +8176,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (180.02€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.333Z",
-    "price": 180.02
+    "price": 182.98
   },
   {
     "id": "real-B0BN5LTD22",
@@ -8768,7 +8212,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (186.84€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 186.84
+    "price": 193.26
   },
   {
     "id": "real-B0CJ9H3CS6",
@@ -8804,7 +8248,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (177.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 177.5
+    "price": 183.6
   },
   {
     "id": "real-B0GRVJVRK3",
@@ -8837,7 +8281,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (258.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 258.65
+    "price": 271.58
   },
   {
     "id": "real-B0DDTLV4P4",
@@ -8873,7 +8317,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (57.36€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 57.36
+    "price": 58.66
   },
   {
     "id": "real-B0GCYC9XTS",
@@ -8909,7 +8353,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (62.48€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 62.48
+    "price": 65.66
   },
   {
     "id": "real-B06XXJQK52",
@@ -8945,7 +8389,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (18.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 18.09
+    "price": 18.53
   },
   {
     "id": "real-B0HLF3CFM6",
@@ -8978,7 +8422,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (409.93€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 409.93
+    "price": 419.84
   },
   {
     "id": "real-B0HJLWS5QK",
@@ -9008,7 +8452,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (282.14€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 282.14
+    "price": 290.93
   },
   {
     "id": "real-B0GSSQ71JN",
@@ -9044,7 +8488,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (247.03€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 247.03
+    "price": 251.4
   },
   {
     "id": "real-B0DKNYY53D",
@@ -9078,7 +8522,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (498.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.334Z",
-    "price": 498.21
+    "price": 507.96
   },
   {
     "id": "real-B0BN5B4FNS",
@@ -9114,7 +8558,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (127.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 127.61
+    "price": 129.74
   },
   {
     "id": "real-B0FX4HK2L9",
@@ -9147,7 +8591,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (210.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 210.77
+    "price": 215.33
   },
   {
     "id": "real-B0FGW1HW4M",
@@ -9183,7 +8627,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (20.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 20.04
+    "price": 20.51
   },
   {
     "id": "real-B0FGXJ2F62",
@@ -9219,7 +8663,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (15.93€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.621Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 15.93
+    "price": 16.45
   },
   {
     "id": "real-B07WHWBCP9",
@@ -9253,7 +8697,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (16.33€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 16.33
+    "price": 16.65
   },
   {
     "id": "real-B0H1BQP4NG",
@@ -9289,7 +8733,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (16.52€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 16.52
+    "price": 16.75
   },
   {
     "id": "real-B0GRV2X8LW",
@@ -9323,7 +8767,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (326.80€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 326.8
+    "price": 338.2
   },
   {
     "id": "real-B0DPB2NGMQ",
@@ -9348,7 +8792,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (16.23€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 16.23
+    "price": 22.95
   },
   {
     "id": "real-B0DP9ZGVZ3",
@@ -9373,7 +8817,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 17.96
+    "price": 24.27
   },
   {
     "id": "real-B0DP9YYZ91",
@@ -9398,7 +8842,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (16.95€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.622Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 16.95
+    "price": 23.58
   },
   {
     "id": "real-B0952CS43L",
@@ -9423,7 +8867,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (88.06€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 88.06
+    "price": 99.39
   },
   {
     "id": "real-B09SLSPV7B",
@@ -9448,7 +8892,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 23.21
+    "price": 31.81
   },
   {
     "id": "real-B0H6DNX1XW",
@@ -9473,7 +8917,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (28.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 28.22
+    "price": 38.85
   },
   {
     "id": "real-B0H1N1SMPY",
@@ -9498,7 +8942,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (46.36€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 46.36
+    "price": 64.75
   },
   {
     "id": "real-B0952C547S",
@@ -9523,7 +8967,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (43.48€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 43.48
+    "price": 61.63
   },
   {
     "id": "real-B0CT1HGLKT",
@@ -9548,7 +8992,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (87.39€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 87.39
+    "price": 99.87
   },
   {
     "id": "real-B0CSZXZD18",
@@ -9573,7 +9017,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (111.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 111.79
+    "price": 125.89
   },
   {
     "id": "real-B0952CTY3B",
@@ -9598,7 +9042,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (83.81€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 83.81
+    "price": 91.7
   },
   {
     "id": "real-B0952BV4KR",
@@ -9623,7 +9067,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (81.24€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 81.24
+    "price": 88.5
   },
   {
     "id": "real-B0FN4FFPPH",
@@ -9648,7 +9092,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (25.24€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 25.24
+    "price": 35.63
   },
   {
     "id": "real-B0FXB7XMBT",
@@ -9673,7 +9117,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (50.47€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 50.47
+    "price": 68.06
   },
   {
     "id": "real-B09LCX1696",
@@ -9698,7 +9142,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (29.46€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 29.46
+    "price": 39.1
   },
   {
     "id": "real-B0CW24CW69",
@@ -9723,7 +9167,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.335Z",
-    "price": 30.09
+    "price": 38.48
   },
   {
     "id": "real-B0952CG1Y4",
@@ -9748,7 +9192,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (98.54€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 98.54
+    "price": 131.79
   },
   {
     "id": "real-B0CT11QL88",
@@ -9773,7 +9217,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (71.65€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 71.65
+    "price": 78.31
   },
   {
     "id": "real-B0DPWS1VF5",
@@ -9798,7 +9242,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (28.32€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 28.32
+    "price": 39.64
   },
   {
     "id": "real-B0DT49BL33",
@@ -9823,7 +9267,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (178.28€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 178.28
+    "price": 187.5
   },
   {
     "id": "real-B0BTPG3VCS",
@@ -9848,7 +9292,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (53.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 53.66
+    "price": 55.85
   },
   {
     "id": "real-B0CZ7VYZL6",
@@ -9873,7 +9317,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (10.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 10.5
+    "price": 13.8
   },
   {
     "id": "real-B01B640WTC",
@@ -9898,7 +9342,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (10.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 10.62
+    "price": 13.95
   },
   {
     "id": "real-B0CVW3HZ2Z",
@@ -9923,7 +9367,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (43.82€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 43.82
+    "price": 45.45
   },
   {
     "id": "real-B09V33TQG1",
@@ -9948,7 +9392,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (49.98€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 49.98
+    "price": 51.48
   },
   {
     "id": "real-B0843GV3WS",
@@ -9973,7 +9417,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (25.83€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 25.83
+    "price": 32.05
   },
   {
     "id": "real-B08P4Q62MN",
@@ -9998,7 +9442,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (16.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.623Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 16.53
+    "price": 20.86
   },
   {
     "id": "real-B07F8WT5PC",
@@ -10023,7 +9467,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (114.15€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 114.15
+    "price": 120.28
   },
   {
     "id": "real-B08YRQ2JYD",
@@ -10048,7 +9492,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (8.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 8.51
+    "price": 11.6
   },
   {
     "id": "real-B002FUNGMM",
@@ -10073,7 +9517,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (16.71€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 16.71
+    "price": 17.19
   },
   {
     "id": "real-B0DP746JPR",
@@ -10098,7 +9542,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (138.99€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 138.99
+    "price": 141.42
   },
   {
     "id": "real-B09WDPMLLT",
@@ -10123,7 +9567,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (143.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 143.18
+    "price": 158.74
   },
   {
     "id": "real-B085QK65LQ",
@@ -10148,7 +9592,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.95€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 23.95
+    "price": 30.16
   },
   {
     "id": "real-B08HN9STRX",
@@ -10173,7 +9617,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (21.91€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 21.91
+    "price": 29.19
   },
   {
     "id": "real-B00A699PZ6",
@@ -10198,7 +9642,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (6.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 6.66
+    "price": 8.79
   },
   {
     "id": "real-B0CM958PXP",
@@ -10223,7 +9667,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (21.66€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 21.66
+    "price": 22.26
   },
   {
     "id": "real-B0GJSWPLG4",
@@ -10248,7 +9692,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (11.55€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 11.55
+    "price": 15.57
   },
   {
     "id": "real-B0DSZPP1SR",
@@ -10273,7 +9717,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (85.87€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.336Z",
-    "price": 85.87
+    "price": 94.16
   },
   {
     "id": "real-B0CZQ112DP",
@@ -10298,7 +9742,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (14.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 14.22
+    "price": 14.6
   },
   {
     "id": "real-B0F5HP24Y8",
@@ -10323,7 +9767,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (278.70€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 278.7
+    "price": 303.26
   },
   {
     "id": "real-B0GCYNJZFN",
@@ -10348,7 +9792,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (83.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 83.53
+    "price": 91.39
   },
   {
     "id": "real-B0GMQ4CSNW",
@@ -10373,7 +9817,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (38.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 38.78
+    "price": 52.09
   },
   {
     "id": "real-B0GSFP4WXW",
@@ -10398,7 +9842,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (83.71€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 83.71
+    "price": 91.49
   },
   {
     "id": "real-B0CQRTKXWS",
@@ -10423,7 +9867,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (396.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 396.56
+    "price": 420.08
   },
   {
     "id": "real-B098P52S8V",
@@ -10448,7 +9892,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (233.94€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 233.94
+    "price": 254.84
   },
   {
     "id": "real-B0GQT7MYDG",
@@ -10473,7 +9917,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (27.71€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 27.71
+    "price": 37.22
   },
   {
     "id": "real-B0G8185RQZ",
@@ -10498,7 +9942,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (37.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 37.61
+    "price": 46.58
   },
   {
     "id": "real-B0HHMP8H5T",
@@ -10523,7 +9967,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (48.29€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 48.29
+    "price": 69.03
   },
   {
     "id": "real-B0DJD29WKV",
@@ -10548,7 +9992,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (260.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 260.07
+    "price": 301.7
   },
   {
     "id": "real-B07F1SLX32",
@@ -10573,7 +10017,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (184.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 184.96
+    "price": 201.26
   },
   {
     "id": "real-B0G4CP7R39",
@@ -10598,7 +10042,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (432.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 432.51
+    "price": 474.24
   },
   {
     "id": "real-B0CW9YPRSH",
@@ -10623,7 +10067,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (417.69€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 417.69
+    "price": 456.99
   },
   {
     "id": "real-B0GQ38J2L2",
@@ -10648,7 +10092,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (73.87€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 73.87
+    "price": 81.53
   },
   {
     "id": "real-B0CQMPN7DY",
@@ -10673,7 +10117,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (798.19€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 798.19
+    "price": 818.82
   },
   {
     "id": "real-B0CQPMYTVM",
@@ -10698,7 +10142,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (634.11€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.624Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 634.11
+    "price": 640.52
   },
   {
     "id": "real-B08H93ZRK9",
@@ -10723,7 +10167,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (612.90€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 612.9
+    "price": 619.4
   },
   {
     "id": "real-B0HBPPVPDH",
@@ -10748,7 +10192,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (35.54€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 35.54
+    "price": 36.26
   },
   {
     "id": "real-B0H3PRZN2X",
@@ -10773,7 +10217,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (110.76€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 110.76
+    "price": 113.9
   },
   {
     "id": "real-B07HNR4ZZD",
@@ -10798,7 +10242,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (375.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 375.42
+    "price": 387.03
   },
   {
     "id": "real-B07HGBNWTY",
@@ -10823,7 +10267,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (756.31€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 756.31
+    "price": 772.53
   },
   {
     "id": "real-B0DJDF4XKN",
@@ -10848,7 +10292,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (996.06€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.337Z",
-    "price": 996.06
+    "price": 1022.65
   },
   {
     "id": "real-B0F2459QMN",
@@ -10873,7 +10317,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (27.50€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 27.5
+    "price": 27.82
   },
   {
     "id": "real-B0GPWLWT5C",
@@ -10898,7 +10342,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (27.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 27.3
+    "price": 27.83
   },
   {
     "id": "real-B0GPVT9ZX9",
@@ -10923,7 +10367,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (29.00€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 29
+    "price": 29.42
   },
   {
     "id": "real-B0GPWHSNYJ",
@@ -10948,7 +10392,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (32.10€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 32.1
+    "price": 32.54
   },
   {
     "id": "real-B0GPW7SCM1",
@@ -10973,7 +10417,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (31.12€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 31.12
+    "price": 32.04
   },
   {
     "id": "real-B07HHPX4N1",
@@ -10998,7 +10442,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى MediaMarkt (177.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 177.3
+    "price": 178.64
   },
   {
     "id": "real-B0H4FCRCKX",
@@ -11023,7 +10467,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (47.42€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 47.42
+    "price": 48.69
   },
   {
     "id": "real-B0D22P4HBH",
@@ -11048,7 +10492,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (22.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 22.18
+    "price": 22.55
   },
   {
     "id": "real-B0CL5HJNLM",
@@ -11073,7 +10517,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (106.24€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 106.24
+    "price": 109.08
   },
   {
     "id": "real-B0BWSFGQ49",
@@ -11098,7 +10542,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (287.17€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 287.17
+    "price": 293.51
   },
   {
     "id": "real-B0CCF5KCBQ",
@@ -11123,7 +10567,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (377.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 377.3
+    "price": 383.59
   },
   {
     "id": "real-B09CGRQ965",
@@ -11148,7 +10592,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (446.34€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 446.34
+    "price": 462.82
   },
   {
     "id": "real-B0D4ZNSQ6L",
@@ -11173,7 +10617,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (555.72€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 555.72
+    "price": 562.81
   },
   {
     "id": "real-B0H2ND6MJ4",
@@ -11198,7 +10642,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (587.93€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 587.93
+    "price": 608.12
   },
   {
     "id": "real-B0DFCSXC1S",
@@ -11223,7 +10667,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (430.12€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 430.12
+    "price": 437.47
   },
   {
     "id": "real-B00400OMU0",
@@ -11248,7 +10692,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (291.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 291.05
+    "price": 294.23
   },
   {
     "id": "real-B0D1VRV1YW",
@@ -11273,7 +10717,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (326.80€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 326.8
+    "price": 338.2
   },
   {
     "id": "real-B0DG6VY1GY",
@@ -11298,7 +10742,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (484.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 484.51
+    "price": 492.19
   },
   {
     "id": "real-B0FRGPPLYR",
@@ -11323,7 +10767,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (461.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 461.79
+    "price": 475.68
   },
   {
     "id": "real-B09CGSCBK5",
@@ -11348,7 +10792,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (382.58€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.625Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 382.58
+    "price": 391.19
   },
   {
     "id": "real-B09TKRNWJX",
@@ -11373,7 +10817,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (747.75€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 747.75
+    "price": 773.43
   },
   {
     "id": "real-B0CDCM3J5G",
@@ -11398,7 +10842,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (559.84€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 559.84
+    "price": 577.63
   },
   {
     "id": "real-B0HFNKKTL6",
@@ -11423,7 +10867,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (977.23€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.338Z",
-    "price": 977.23
+    "price": 988.5
   },
   {
     "id": "real-B08CBJCQ39",
@@ -11448,7 +10892,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى eBay (414.59€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 414.59
+    "price": 430.97
   },
   {
     "id": "real-B06XSGLJTR",
@@ -11473,7 +10917,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.96€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 30.96
+    "price": 40.29
   },
   {
     "id": "real-B0BWFBB1QZ",
@@ -11498,7 +10942,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (20.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 20.56
+    "price": 28.83
   },
   {
     "id": "real-B06XSK83ZM",
@@ -11523,7 +10967,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (24.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 24.13
+    "price": 33.92
   },
   {
     "id": "real-B0BHDYR2ZG",
@@ -11548,7 +10992,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (40.21€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 40.21
+    "price": 54.9
   },
   {
     "id": "real-B0BHJJJ22N",
@@ -11573,7 +11017,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (87.76€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 87.76
+    "price": 93.86
   },
   {
     "id": "real-B07TF6LDYK",
@@ -11598,7 +11042,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (56.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 56.61
+    "price": 84.35
   },
   {
     "id": "real-B084C38QQP",
@@ -11623,7 +11067,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (86.04€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 86.04
+    "price": 93.42
   },
   {
     "id": "real-B08D954LLW",
@@ -11648,7 +11092,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (39.32€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 39.32
+    "price": 49.9
   },
   {
     "id": "real-B09FFRV8WT",
@@ -11673,7 +11117,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (25.77€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 25.77
+    "price": 34.9
   },
   {
     "id": "real-B08FDM3X9F",
@@ -11698,7 +11142,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (56.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 56.61
+    "price": 84.35
   },
   {
     "id": "real-B00G47HM2C",
@@ -11723,7 +11167,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (83.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 83.44
+    "price": 93.86
   },
   {
     "id": "real-B07KGCW3L9",
@@ -11748,7 +11192,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (27.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 27.44
+    "price": 33.92
   },
   {
     "id": "real-B09MZ32949",
@@ -11773,7 +11217,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (36.78€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 36.78
+    "price": 49.9
   },
   {
     "id": "real-B0BMB15952",
@@ -11798,7 +11242,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.74€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 31.74
+    "price": 44.9
   },
   {
     "id": "real-B083QHCDLW",
@@ -11823,7 +11267,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (41.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 41.18
+    "price": 59.9
   },
   {
     "id": "real-B08LQHSVVG",
@@ -11848,7 +11292,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (29.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 29.07
+    "price": 37.9
   },
   {
     "id": "real-B081NKV3Z3",
@@ -11873,7 +11317,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (103.02€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 103.02
+    "price": 110.42
   },
   {
     "id": "real-B0GH77LW6P",
@@ -11898,7 +11342,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (47.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 47.05
+    "price": 56.99
   },
   {
     "id": "real-B0G654DTFY",
@@ -11923,7 +11367,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (44.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 44.79
+    "price": 55.16
   },
   {
     "id": "real-B0D49NK11B",
@@ -11948,7 +11392,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (34.10€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 34.1
+    "price": 45.99
   },
   {
     "id": "real-B0C9M5V2XF",
@@ -11973,7 +11417,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (37.83€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.339Z",
-    "price": 37.83
+    "price": 45.99
   },
   {
     "id": "real-B0FHTLRK67",
@@ -11998,7 +11442,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (23.88€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.626Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 23.88
+    "price": 33.99
   },
   {
     "id": "real-B0HKXMWJKQ",
@@ -12023,7 +11467,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (39.69€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 39.69
+    "price": 49.99
   },
   {
     "id": "real-B0BCQ2WMZY",
@@ -12048,7 +11492,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (34.13€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 34.13
+    "price": 44.85
   },
   {
     "id": "real-B0C6PZNGNK",
@@ -12073,7 +11517,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.81€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 31.81
+    "price": 42.99
   },
   {
     "id": "real-B07V69LW6F",
@@ -12098,7 +11542,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (43.60€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 43.6
+    "price": 53.89
   },
   {
     "id": "real-B0B7RW2CP2",
@@ -12123,7 +11567,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (38.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 38.44
+    "price": 47.69
   },
   {
     "id": "real-B0HJ5TMV4H",
@@ -12148,7 +11592,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.62€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 17.62
+    "price": 24.98
   },
   {
     "id": "real-B0B5CCPYRR",
@@ -12173,7 +11617,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (31.00€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 31
+    "price": 42.49
   },
   {
     "id": "real-B0B5CHHLGH",
@@ -12198,7 +11642,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (35.01€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 35.01
+    "price": 42.49
   },
   {
     "id": "real-B0F9NTNMN8",
@@ -12223,7 +11667,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.84€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 30.84
+    "price": 42.98
   },
   {
     "id": "real-B0H1MC29N5",
@@ -12248,7 +11692,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (37.73€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 37.73
+    "price": 49.98
   },
   {
     "id": "real-B0GF7SSTDH",
@@ -12273,7 +11717,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (50.33€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 50.33
+    "price": 68.99
   },
   {
     "id": "real-B0F9Y1Y7X1",
@@ -12298,7 +11742,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (45.88€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 45.88
+    "price": 55.98
   },
   {
     "id": "real-B0B5D997K1",
@@ -12323,7 +11767,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (30.61€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 30.61
+    "price": 42.49
   },
   {
     "id": "real-B0H8WL27HM",
@@ -12348,7 +11792,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (70.64€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 70.64
+    "price": 74.99
   },
   {
     "id": "real-B0DFFXS426",
@@ -12373,7 +11817,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (54.40€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 54.4
+    "price": 67.75
   },
   {
     "id": "real-B0HN7RV5KT",
@@ -12398,7 +11842,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (17.46€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 17.46
+    "price": 23.99
   },
   {
     "id": "real-B07PN69HF7",
@@ -12423,7 +11867,7 @@
     "aiVerdictAr": "أفضل سعر متوفر لدى Temu (10.56€) مع مقارنة شاملة لـ 5 متاجر عالمية",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 10.56
+    "price": 13.5
   },
   {
     "id": "real-B08DJ4XRP5",
@@ -12448,7 +11892,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (38.24€) • ASIN: B08DJ4XRP5",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 37.19
+    "price": 38.24
   },
   {
     "id": "real-B08MZHLCSB",
@@ -12473,7 +11917,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (38.24€) • ASIN: B08MZHLCSB",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 37.51
+    "price": 38.24
   },
   {
     "id": "real-B08DJ5FYBN",
@@ -12498,7 +11942,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (44.99€) • ASIN: B08DJ5FYBN",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 43.79
+    "price": 44.99
   },
   {
     "id": "real-B0HKXPVX4H",
@@ -12523,7 +11967,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (49.99€) • ASIN: B0HKXPVX4H",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 49.81
+    "price": 49.99
   },
   {
     "id": "real-B09G2S4GFW",
@@ -12548,7 +11992,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (37.05€) • ASIN: B09G2S4GFW",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 35.72
+    "price": 37.05
   },
   {
     "id": "real-B0BCQ48L97",
@@ -12573,7 +12017,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (44.85€) • ASIN: B0BCQ48L97",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.340Z",
-    "price": 44.61
+    "price": 44.85
   },
   {
     "id": "real-B07V7DS8LQ",
@@ -12598,7 +12042,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (56.69€) • ASIN: B07V7DS8LQ",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.341Z",
-    "price": 55.41
+    "price": 56.69
   },
   {
     "id": "real-B098B1P5F1",
@@ -12623,7 +12067,7 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (69.99€) • ASIN: B098B1P5F1",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.341Z",
-    "price": 68.35
+    "price": 69.99
   },
   {
     "id": "real-B0F9YLN4RV",
@@ -12648,6 +12092,6 @@
     "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (49.99€) • ASIN: B0F9YLN4RV",
     "created_at": "2026-10-22T21:16:47.627Z",
     "updated_at": "2026-10-22T21:44:35.341Z",
-    "price": 49.12
+    "price": 49.99
   }
 ]

@@ -453,12 +453,28 @@ function toggleFlashDealsFilter(e) {
   }
 }
 
+function hideAppSplash() {
+  const s = document.getElementById('appSplash');
+  if (s && !s.classList.contains('hide')) {
+    s.classList.add('hide');
+    setTimeout(() => s.remove(), 500);
+  }
+}
+setTimeout(hideAppSplash, 9000);
+
+function setSheetBackdrop(on) {
+  const bd = document.getElementById('sheetBackdrop');
+  if (bd) bd.classList.toggle('show', !!on);
+  document.documentElement.classList.toggle('sheet-open', !!on);
+}
+
 function toggleFilterDrawer() {
   const filterDrawer = document.getElementById('filterDrawer');
   const btn = document.getElementById('filterToggleBtn');
   const bottomFilterBtn = document.getElementById('bottomNavFilterBtn');
   if (!filterDrawer) return;
   const isOpen = filterDrawer.classList.toggle('open');
+  if (window.matchMedia('(max-width: 768px)').matches) setSheetBackdrop(isOpen);
   if (btn) btn.classList.toggle('active', isOpen);
   if (bottomFilterBtn) bottomFilterBtn.classList.toggle('active', isOpen);
   if (isOpen) {
@@ -473,6 +489,7 @@ function closeFilterDrawer() {
   const btn = document.getElementById('filterToggleBtn');
   const bottomFilterBtn = document.getElementById('bottomNavFilterBtn');
   if (filterDrawer) filterDrawer.classList.remove('open');
+  setSheetBackdrop(false);
   if (btn) btn.classList.remove('active');
   if (bottomFilterBtn) bottomFilterBtn.classList.remove('active');
   setActiveBottomNav('bottomNavHomeBtn');
@@ -577,6 +594,8 @@ async function loadProducts() {
     renderProductsGrid(allProducts, 'productsGrid');
   } catch (err) {
     console.error('Failed to load products:', err);
+  } finally {
+    hideAppSplash();
   }
 }
 
@@ -909,24 +928,28 @@ async function openProductModal(productId) {
     const outUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}&query=${encodeURIComponent(o.query || product.title)}${directParam}`;
     const variantTag = o.variantColor ? `<span style="font-size:0.73rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:4px; padding:2px 6px; color:#94a3b8; margin-inline-start:4px;">${escapeHtml(o.variantColor)}</span>` : '';
     return `
-      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable ${idx === 0 ? 'offer-row-active-preview' : ''}" onclick="selectStorePreview('${product.id}', '${o.store}')" style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border-radius:9px; background:${idx === 0 ? 'rgba(16,185,129,0.12)' : 'rgba(255,255,255,0.03)'}; border:1px solid ${idx === 0 ? 'rgba(16,185,129,0.45)' : 'var(--border-color)'}; margin-bottom:7px; flex-wrap:wrap; gap:10px;">
-        <div style="display:flex; align-items:center; gap:8px;">
-          <span class="store-tag store-${o.store}" style="font-size:0.82rem;">${o.store}</span>
-          ${variantTag}
-          <strong style="margin:0 4px; font-size:0.84rem;">${idx === 0 ? dict.modalBestGuaranteed : ''}</strong>
-          <div style="font-size:0.75rem; color:var(--text-secondary);">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating)}</div>
-        </div>
-        <div style="display:flex; align-items:center; gap:8px;">
-          <div style="text-align:right;">
-            <div style="font-size:1.15rem; font-weight:800; color:${idx === 0 ? '#34d399' : '#fff'};">${o.price.toFixed(2)} €</div>
-            <div style="font-size:0.7rem; color:var(--text-secondary);">${dict.modalFreeShipping}</div>
+      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable modal-offer ${idx === 0 ? 'offer-row-active-preview' : ''}" onclick="selectStorePreview('${product.id}', '${o.store}')" style="background:${idx === 0 ? 'rgba(16,185,129,0.12)' : 'rgba(255,255,255,0.03)'}; border:1px solid ${idx === 0 ? 'rgba(16,185,129,0.45)' : 'var(--border-color)'};">
+        <div class="mo-main">
+          <div class="mo-tags">
+            <span class="store-tag store-${o.store}" style="font-size:0.82rem;">${o.store}</span>
+            ${variantTag}
+            ${idx === 0 ? `<strong class="mo-best">${dict.modalBestGuaranteed}</strong>` : ''}
           </div>
-          <button type="button" class="btn-action btn-sm" onclick="event.stopPropagation(); selectStorePreview('${product.id}', '${o.store}')" style="padding:6px 11px; font-size:0.78rem;" title="${dict.previewBtn}">
-            ${dict.previewBtn}
-          </button>
-          <a href="${outUrl}" target="_blank" rel="noopener" class="btn-search-main" style="text-decoration:none; padding:7px 14px; font-size:0.8rem;" onclick="event.stopPropagation();">
-            ${dict.modalGoToOffer(o.store)}
-          </a>
+          <div class="mo-meta">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating)}</div>
+        </div>
+        <div class="mo-side">
+          <div class="mo-price-box">
+            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#fff'};">${o.price.toFixed(2)} €</div>
+            <div class="mo-ship">${dict.modalFreeShipping}</div>
+          </div>
+          <div class="mo-actions">
+            <button type="button" class="btn-action btn-sm mo-preview" onclick="event.stopPropagation(); selectStorePreview('${product.id}', '${o.store}')" title="${dict.previewBtn}">
+              ${dict.previewBtn}
+            </button>
+            <a href="${outUrl}" target="_blank" rel="noopener" class="btn-search-main mo-go" onclick="event.stopPropagation();">
+              ${dict.modalGoToOffer(o.store)}
+            </a>
+          </div>
         </div>
       </div>
     `;
@@ -973,6 +996,7 @@ async function openProductModal(productId) {
   `;
 
   modal.classList.add('open');
+  document.documentElement.classList.add('modal-open');
   currentModalProductId = productId;
   currentSelectedStore = product.offers && product.offers.length > 0 ? product.offers[0].store : null;
 
@@ -1014,6 +1038,7 @@ async function openProductModal(productId) {
 
 function closeProductModal() {
   document.getElementById('productModal').classList.remove('open');
+  document.documentElement.classList.remove('modal-open');
   closeStorePreview();
   currentModalProductId = null;
   currentSelectedStore = null;

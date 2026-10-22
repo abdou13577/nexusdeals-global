@@ -815,6 +815,11 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
 }
 
     // 1. GET /api/products
+    if (pathname === '/api/health') {
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+      return res.end('{"ok":true}');
+    }
+
     if (pathname === '/api/products' && req.method === 'GET') {
       const catalog = loadJson(CATALOG_PATH, { products: [] });
       let list = catalog.products || [];
@@ -1121,9 +1126,18 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
         '.json': 'application/json; charset=utf-8',
         '.svg': 'image/svg+xml',
         '.png': 'image/png',
-        '.jpg': 'image/jpeg'
+        '.jpg': 'image/jpeg',
+        '.webmanifest': 'application/manifest+json; charset=utf-8',
+        '.ico': 'image/x-icon'
       };
-      res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'text/plain' });
+      const headers = { 'Content-Type': mimeTypes[ext] || 'text/plain' };
+      if (pathname === '/sw.js') {
+        headers['Cache-Control'] = 'no-cache';
+        headers['Service-Worker-Allowed'] = '/';
+      } else if (pathname.startsWith('/icons/')) {
+        headers['Cache-Control'] = 'public, max-age=604800';
+      }
+      res.writeHead(200, headers);
       return fs.createReadStream(resolvedPath).pipe(res);
     }
 
@@ -1136,6 +1150,15 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
     console.log(`🚀 NexusDeals Global Marketplace (12 Platforms & 12 Categories)`);
     console.log(`🌐 URL: http://localhost:${PORT}`);
     console.log(`=============================================================\n`);
+
+    // Keep-alive: prevent Render free tier from sleeping (no more "Welcome to Render" loading screen)
+    const publicUrl = process.env.RENDER_EXTERNAL_URL || process.env.PUBLIC_URL;
+    if (publicUrl) {
+      const lib = publicUrl.startsWith('https') ? require('https') : require('http');
+      setInterval(() => {
+        lib.get(`${publicUrl}/api/health`, (r) => r.resume()).on('error', () => {});
+      }, 9 * 60 * 1000);
+    }
   });
 }
 

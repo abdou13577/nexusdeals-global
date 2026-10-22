@@ -689,8 +689,10 @@ function renderProductsGrid(products, containerId) {
   const priceTxt = (o) => (o.store === 'Amazon' ? '' : `<small class="est-word">${estWord}</small> `) + o.price.toFixed(2);
 
   container.innerHTML = products.map(p => {
-    const focusOffer = focusStore ? p.offers.find(o => o.store.toLowerCase() === focusStore.toLowerCase()) : null;
-    const bestOffer = focusOffer || p.offers[0];
+    // Strictly ORDER BY price ASC across all platforms
+    const sortedOffers = Array.isArray(p.offers) ? [...p.offers].sort((a, b) => a.price - b.price) : [];
+    const focusOffer = focusStore ? sortedOffers.find(o => o.store.toLowerCase() === focusStore.toLowerCase()) : null;
+    const bestOffer = focusOffer || (sortedOffers.length > 0 ? sortedOffers[0] : { store: 'Amazon', price: p.price || 0 });
     const savingEur = Math.max(0, Math.round(p.msrp - bestOffer.price));
     const savingPct = Math.max(5, Math.round(((p.msrp - bestOffer.price) / p.msrp) * 100));
     const displayTitle = p.title;
@@ -698,9 +700,10 @@ function renderProductsGrid(products, containerId) {
     const badgeLeft = savingEur > 25 ? dict.badgeHotDeal(savingEur) : dict.badgeVerified(p.asin || 'DE');
     const badgeRight = dict.badgeSave(savingEur, savingPct);
 
-    const shownOffers = focusOffer ? [focusOffer] : p.offers.slice(0, 4);
+    const shownOffers = focusOffer ? [focusOffer] : sortedOffers.slice(0, 4);
     const topOffersHtml = shownOffers.map((o, idx) => {
-      const directParam = o.directUrl ? `&directUrl=${encodeURIComponent(o.directUrl)}` : '';
+      const targetDirect = o.direct_affiliate_url || o.directUrl || '';
+      const directParam = targetDirect ? `&directUrl=${encodeURIComponent(targetDirect)}` : '';
       const outUrl = `/api/out?productId=${encodeURIComponent(p.id)}&asin=${encodeURIComponent(p.asin || '')}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}&query=${encodeURIComponent(o.query || p.title)}${directParam}`;
       return `
         <a href="${outUrl}" target="_blank" rel="noopener" class="offer-row ${idx === 0 ? 'cheapest' : ''}">
@@ -715,9 +718,10 @@ function renderProductsGrid(products, containerId) {
       `;
     }).join('');
 
-    const bestDirectParam = bestOffer.directUrl ? `&directUrl=${encodeURIComponent(bestOffer.directUrl)}` : '';
+    const bestTargetDirect = bestOffer.direct_affiliate_url || bestOffer.directUrl || '';
+    const bestDirectParam = bestTargetDirect ? `&directUrl=${encodeURIComponent(bestTargetDirect)}` : '';
     const bestOutUrl = `/api/out?productId=${encodeURIComponent(p.id)}&asin=${encodeURIComponent(p.asin || '')}&store=${encodeURIComponent(bestOffer.store)}&price=${encodeURIComponent(bestOffer.price)}&query=${encodeURIComponent(bestOffer.query || p.title)}${bestDirectParam}`;
-    const cardImg = (focusOffer && focusOffer.image) ? focusOffer.image : p.image;
+    const cardImg = (focusOffer && focusOffer.image) ? focusOffer.image : (sortedOffers.length > 0 && sortedOffers[0].image ? sortedOffers[0].image : p.image);
 
     return `
       <article class="product-card" onclick="handleCardClick(event, '${p.id}')">
@@ -726,7 +730,7 @@ function renderProductsGrid(products, containerId) {
         </div>
 
         <div class="card-image-wrap" onclick="openProductModal('${p.id}')">
-          <img src="${cardImg}" alt="${escapeHtml(displayTitle)}" loading="lazy" onerror="this.onerror=null;this.style.opacity='0.6';" />
+          <img src="${cardImg}" alt="${escapeHtml(displayTitle)}" loading="lazy" onerror="this.onerror=null;this.src='/api/image-proxy?url=' + encodeURIComponent(this.src) + '&title=' + encodeURIComponent('${escapeHtml(displayTitle.slice(0, 30))}');" />
         </div>
 
         <div class="card-body">
@@ -997,17 +1001,24 @@ async function openProductModal(productId) {
     </div>
   `).join('');
 
+  // Ensure strict price hierarchy: ORDER BY price ASC
+  if (Array.isArray(product.offers)) {
+    product.offers.sort((a, b) => a.price - b.price);
+  }
+
   const initialStore = (currentStore && currentStore !== 'all') ? currentStore : null;
   let initialOffer = initialStore ? (product.offers || []).find(o => o.store.toLowerCase() === initialStore.toLowerCase()) : null;
   if (!initialOffer) {
     initialOffer = (product.offers && product.offers.length > 0) ? product.offers[0] : { store: 'Amazon', price: product.price || 0, rating: 4.8 };
   }
 
-  const initialDirectParam = initialOffer.directUrl ? `&directUrl=${encodeURIComponent(initialOffer.directUrl)}` : '';
+  const initialTargetDirect = initialOffer.direct_affiliate_url || initialOffer.directUrl || '';
+  const initialDirectParam = initialTargetDirect ? `&directUrl=${encodeURIComponent(initialTargetDirect)}` : '';
   const initialOutUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(initialOffer.store)}&price=${encodeURIComponent(initialOffer.price)}&query=${encodeURIComponent(initialOffer.query || product.title)}${initialDirectParam}`;
 
   const allOffersRows = (product.offers || []).map((o, idx) => {
-    const directParam = o.directUrl ? `&directUrl=${encodeURIComponent(o.directUrl)}` : '';
+    const targetDirect = o.direct_affiliate_url || o.directUrl || '';
+    const directParam = targetDirect ? `&directUrl=${encodeURIComponent(targetDirect)}` : '';
     const outUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}&query=${encodeURIComponent(o.query || product.title)}${directParam}`;
     const variantTag = o.variantColor ? `<span class="mo-variant-pill">${escapeHtml(o.variantColor)}</span>` : '';
     const isSelected = o.store.toLowerCase() === initialOffer.store.toLowerCase();
@@ -1233,8 +1244,9 @@ function selectStorePreview(productId, storeName, updateGallery = false) {
     stageShippingBadge.innerHTML = `🚚 ${dict.deliveryStore(offer.store)} • ${dict.modalFreeShipping}`;
   }
 
-  // 4. Morph Direct Buy CTA Button
-  const directParam = offer.directUrl ? `&directUrl=${encodeURIComponent(offer.directUrl)}` : '';
+  // 4. Morph Direct Buy CTA Button with strict direct affiliate deep link
+  const targetDirect = offer.direct_affiliate_url || offer.directUrl || '';
+  const directParam = targetDirect ? `&directUrl=${encodeURIComponent(targetDirect)}` : '';
   const outUrl = `/api/out?productId=${encodeURIComponent(product.id)}&asin=${encodeURIComponent(product.asin || '')}&store=${encodeURIComponent(offer.store)}&price=${encodeURIComponent(offer.price)}&query=${encodeURIComponent(offer.query || product.title)}${directParam}`;
 
   const stageDirectBuyLink = document.getElementById('stageDirectBuyLink');

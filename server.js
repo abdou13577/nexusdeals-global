@@ -1,8 +1,12 @@
 const http = require('http');
+const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
 const { generateInitialCatalog, scrapeRealAmazonProducts, scrapeProductGalleryByAsin, detectCategoryFromText, extractSmartModelQuery } = require('./seedCatalog');
+const { db, buildDirectAffiliateUrl: dbBuildAffiliateUrl } = require('./data/db');
+const { dynamicSearchAndAggregate } = require('./services/dynamicProductScraper');
+const { resolveBestProductImage, generateSvgPlaceholder } = require('./services/imageResolver');
 
 const PORT = process.env.PORT || 3080;
 const DATA_DIR = path.join(__dirname, 'data');
@@ -214,6 +218,15 @@ function buildAffiliateRedirectUrl(store, query, asin, settings, price, directUr
     if (isDirectMode) {
       return directUrl;
     }
+    // Prevent double-wrapping if already an official affiliate tracked deep link
+    if (
+      directUrl.includes('awin1.com/cread.php') ||
+      (directUrl.includes('campid=') && directUrl.includes('ebay.de/itm/')) ||
+      (directUrl.includes('tag=') && directUrl.includes('amazon.de/dp/')) ||
+      (directUrl.includes('aff_id=') && directUrl.includes('temu.com/de/'))
+    ) {
+      return directUrl;
+    }
     if (store === 'Amazon') {
       const tag = tags.Amazon || 'nexusdeals08-21';
       return directUrl.includes('tag=') ? directUrl : (directUrl.includes('?') ? `${directUrl}&tag=${encodeURIComponent(tag)}` : `${directUrl}?tag=${encodeURIComponent(tag)}`);
@@ -390,8 +403,9 @@ async function startServer() {
   if (!fs.existsSync(CATALOG_PATH)) {
     await generateInitialCatalog(CATALOG_PATH);
   }
-  loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
+  const initialSettings = loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
   loadJson(ANALYTICS_PATH, DEFAULT_ANALYTICS);
+  db.init(initialSettings);
 
   const server = http.createServer(async (req, res) => {
     const parsedUrl = url.parse(req.url, true);
@@ -827,8 +841,9 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
     }
 
     if (pathname === '/api/products' && req.method === 'GET') {
-      const catalog = loadJson(CATALOG_PATH, { products: [] });
-      let list = catalog.products || [];
+      const settings = loadJson(SETTINGS_PATH, DEFAULT_SETTINGS);
+      // Query normalized relational database with Product_Offers pivot table
+      let list = db.getProducts();
 
       const rawQ = (parsedUrl.query.q || '').trim();
       const category = parsedUrl.query.category || 'all';
@@ -872,36 +887,26 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
         // Sort scored products by relevance descending
         scored.sort((a, b) => b.score - a.score);
 
-        // If fewer than 16 relevant products found locally, enrich with live scrape (up to 20 products)
-        if (scored.length < 16 && rawQ.length >= 2) {
-          const liveScrapeQuery = extractSmartKeywords(rawQ);
-          console.log(`[Search Engine] Only ${scored.length} local matches for "${rawQ}". Live scraping for: "${liveScrapeQuery}"`);
-          const liveScraped = await scrapeRealAmazonProducts(liveScrapeQuery, detectedCat.id, detectedCat.ar, 20, 8);
-          if (liveScraped.length > 0) {
-            const existingAsins = new Set(catalog.products.map(x => x.asin));
-            const scoredAsins = new Set(scored.map(s => s.product.asin));
-            let addedNew = false;
-            for (const item of liveScraped) {
-              if (!existingAsins.has(item.asin)) {
-                catalog.products.push(item);
-                existingAsins.add(item.asin);
-                addedNew = true;
-              }
-              if (!scoredAsins.has(item.asin)) {
-                let score = scoreProductRelevance(item, queryInfo, detectedCat.id);
-                if (score <= 0) {
-                  score = 75; // Guarantee visibility for freshly searched matching items
+        // Dynamic Search-Driven Product Scraping (On-Demand Caching across 12 platforms)
+        // If fewer than 4 relevant products found locally, dynamically scrape and aggregate in real-time
+        if (scored.length < 4 && rawQ.length >= 2) {
+          console.log(`[Search Engine] Only ${scored.length} local matches for "${rawQ}". Triggering real-time multi-platform scraper across 12 stores...`);
+          try {
+            const dynamicItems = await dynamicSearchAndAggregate(rawQ, settings, 12);
+            if (dynamicItems && dynamicItems.length > 0) {
+              const scoredIds = new Set(scored.map(s => s.product.id));
+              for (const item of dynamicItems) {
+                if (!scoredIds.has(item.id)) {
+                  let sScore = scoreProductRelevance(item, queryInfo, detectedCat.id);
+                  if (sScore <= 0) sScore = 180; // High priority for live requested search
+                  scored.push({ product: item, score: sScore });
+                  scoredIds.add(item.id);
                 }
-                scored.push({ product: item, score });
-                scoredAsins.add(item.asin);
               }
+              scored.sort((a, b) => b.score - a.score);
             }
-            if (addedNew) {
-              catalog.totalProducts = catalog.products.length;
-              catalog.lastSyncedAt = new Date().toISOString();
-              saveJson(CATALOG_PATH, catalog);
-            }
-            scored.sort((a, b) => b.score - a.score);
+          } catch (err) {
+            console.error('[Dynamic Scraper Error]', err.message);
           }
         }
 
@@ -913,6 +918,15 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
         }
         list = filteredScored.map(s => s.product);
       }
+
+      // Guarantee strict ORDER BY price ASC on every product's offers and best image selection
+      list.forEach(p => {
+        if (Array.isArray(p.offers) && p.offers.length > 0) {
+          p.offers.sort((a, b) => a.price - b.price);
+          p.price = p.offers[0].price;
+          p.image = resolveBestProductImage(p, p.offers);
+        }
+      });
 
       const priceFor = (p) => {
         if (store !== 'all') {
@@ -942,8 +956,8 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       });
       return res.end(JSON.stringify({
         total: list.length,
-        lastSyncedAt: catalog.lastSyncedAt,
-        sources: catalog.sources,
+        lastSyncedAt: new Date().toISOString(),
+        sources: require('./data/db').PLATFORMS.map(p => p.name),
         products: list
       }));
     }
@@ -1037,8 +1051,8 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
             if (!effectiveQuery) effectiveQuery = foundProd.title;
             if (!effectiveDirectUrl && Array.isArray(foundProd.offers)) {
               const foundOffer = foundProd.offers.find(o => o.store.toLowerCase() === cleanStore.toLowerCase());
-              if (foundOffer && foundOffer.directUrl) {
-                effectiveDirectUrl = foundOffer.directUrl;
+              if (foundOffer && (foundOffer.direct_affiliate_url || foundOffer.directUrl)) {
+                effectiveDirectUrl = foundOffer.direct_affiliate_url || foundOffer.directUrl;
               }
             }
           }
@@ -1049,6 +1063,62 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       const targetUrl = buildAffiliateRedirectUrl(cleanStore, effectiveQuery || 'Deal', cleanAsin, settings, itemPrice, effectiveDirectUrl);
       res.writeHead(302, { Location: targetUrl });
       return res.end();
+    }
+
+    // 3b. GET /api/image-proxy?url=...
+    if (pathname === '/api/image-proxy' && req.method === 'GET') {
+      const targetUrl = parsedUrl.query.url;
+      const title = parsedUrl.query.title || 'Product';
+      const brand = parsedUrl.query.brand || 'NexusDeals';
+      const price = parsedUrl.query.price || '';
+
+      if (!targetUrl || !targetUrl.startsWith('http')) {
+        const svg = generateSvgPlaceholder(title, brand, price);
+        res.writeHead(200, { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=86400' });
+        return res.end(svg);
+      }
+
+      try {
+        const u = new URL(targetUrl);
+        const client = u.protocol === 'https:' ? https : http;
+        const proxyReq = client.get(targetUrl, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)',
+            'Accept': 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8',
+            'Referer': `${u.protocol}//${u.hostname}/`
+          },
+          timeout: 4000
+        }, (proxyRes) => {
+          if (proxyRes.statusCode >= 200 && proxyRes.statusCode < 300) {
+            res.writeHead(200, {
+              'Content-Type': proxyRes.headers['content-type'] || 'image/jpeg',
+              'Cache-Control': 'public, max-age=86400'
+            });
+            return proxyRes.pipe(res);
+          }
+          const svg = generateSvgPlaceholder(title, brand, price);
+          res.writeHead(200, { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=86400' });
+          res.end(svg);
+        });
+
+        proxyReq.on('error', () => {
+          const svg = generateSvgPlaceholder(title, brand, price);
+          res.writeHead(200, { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=86400' });
+          res.end(svg);
+        });
+
+        proxyReq.on('timeout', () => {
+          proxyReq.destroy();
+          const svg = generateSvgPlaceholder(title, brand, price);
+          res.writeHead(200, { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=86400' });
+          res.end(svg);
+        });
+      } catch (err) {
+        const svg = generateSvgPlaceholder(title, brand, price);
+        res.writeHead(200, { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=86400' });
+        res.end(svg);
+      }
+      return;
     }
 
     // 4. GET & POST /api/admin/settings

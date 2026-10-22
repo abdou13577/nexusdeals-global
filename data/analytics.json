@@ -1,14 +1,14 @@
 {
-  "totalClicks": 15,
-  "estimatedCommissionEur": 46.3,
+  "totalClicks": 16,
+  "estimatedCommissionEur": 52.3,
   "storeBreakdown": {
     "Amazon": {
       "clicks": 3,
       "estRevenue": 11.4
     },
     "OTTO": {
-      "clicks": 0,
-      "estRevenue": 0
+      "clicks": 1,
+      "estRevenue": 6
     },
     "Kaufland": {
       "clicks": 0,
@@ -52,6 +52,14 @@
     }
   },
   "recentClicks": [
+    {
+      "timestamp": "2026-10-22T21:17:55.551Z",
+      "productId": "otto-prod-delonghi-magnifica",
+      "query": "Product",
+      "store": "OTTO",
+      "price": 100,
+      "estCommission": 6
+    },
     {
       "timestamp": "2026-10-22T16:27:55.145Z",
       "productId": "mm-prod-ps5-slim",

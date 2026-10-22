@@ -1,6 +1,6 @@
 {
-  "lastSyncedAt": "2026-10-21T23:22:39.173Z",
-  "totalProducts": 285,
+  "lastSyncedAt": "2026-10-22T13:58:59.755Z",
+  "totalProducts": 303,
   "sources": [
     "Amazon.de",
     "OTTO.de",
@@ -16,6 +16,903 @@
     "SHEIN"
   ],
   "products": [
+    {
+      "id": "shein-p101",
+      "title": "SHEIN EZwear Damen Steppjacke mit Stehkragen und Reißverschluss - Warme Winter Puffer Jacke",
+      "titleAr": "جاكيت شتوي نسائي مبطن بياقة عالية وسحاب من SHEIN EZwear",
+      "category": "fashion_shoes",
+      "categoryAr": "الملابس والأحذية والأزياء",
+      "brand": "SHEIN EZwear",
+      "rating": 4.8,
+      "reviewsCount": 1420,
+      "badge": "الأكثر مبيعاً 🔥",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "الأكثر طلباً على متجر SHEIN • خامة شتوية دافئة وتصميم عصري مريح",
+      "image": "https://img.ltwebstatic.com/images3_pi/2023/09/18/88/1695022832cb5e98544c4fae0e0f316aa475eb3fe0_thumbnail_600x.jpg",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2023/09/18/88/1695022832cb5e98544c4fae0e0f316aa475eb3fe0_thumbnail_600x.jpg"
+      ],
+      "msrp": 39.99,
+      "price": 27.99,
+      "priceHistory90d": [
+        39.99,
+        36,
+        32.5,
+        29.99,
+        27.99
+      ],
+      "offers": [
+        {
+          "store": "SHEIN",
+          "storeLogo": "shein",
+          "price": 27.99,
+          "shipping": 0,
+          "deliveryAr": "متوفر رسمي في SHEIN ألمانيا",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "SHEIN EZwear Steppjacke Reissverschluss",
+          "variantColor": "Schwarz",
+          "variantTitle": "SHEIN EZwear Steppjacke - Schwarz",
+          "image": "https://img.ltwebstatic.com/images3_pi/2023/09/18/88/1695022832cb5e98544c4fae0e0f316aa475eb3fe0_thumbnail_600x.jpg",
+          "directUrl": "https://de.shein.com/pdsearch/SHEIN%20EZwear%20Steppjacke%20Reissverschluss/"
+        }
+      ]
+    },
+    {
+      "id": "shein-p102",
+      "title": "DAZY Damen Zweireihiger Trenchcoat Mantel mit Gürtel - Herbst & Winter Eleganter Look",
+      "titleAr": "معطف ترنش أنيق بأزرار مزدوجة وحزام خصر من DAZY SHEIN",
+      "category": "fashion_shoes",
+      "categoryAr": "الملابس والأحذية والأزياء",
+      "brand": "DAZY",
+      "rating": 4.9,
+      "reviewsCount": 980,
+      "badge": "ترند الموضة 👗",
+      "isFlashDeal": false,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "تصميم كوري أنيق من ماركة DAZY الأكثر شهرة في شي إن",
+      "image": "https://img.ltwebstatic.com/images3_pi/2023/08/21/51/1692584166297ce6f488e0f11a884faef98696ec09_thumbnail_600x.jpg",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2023/08/21/51/1692584166297ce6f488e0f11a884faef98696ec09_thumbnail_600x.jpg"
+      ],
+      "msrp": 49.99,
+      "price": 35.49,
+      "priceHistory90d": [
+        49.99,
+        44,
+        39.99,
+        35.49
+      ],
+      "offers": [
+        {
+          "store": "SHEIN",
+          "storeLogo": "shein",
+          "price": 35.49,
+          "shipping": 0,
+          "deliveryAr": "متوفر رسمي في SHEIN ألمانيا",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "DAZY Zweireihiger Trenchcoat Mantel",
+          "variantColor": "Beige / Khaki",
+          "variantTitle": "DAZY Trenchcoat - Khaki",
+          "image": "https://img.ltwebstatic.com/images3_pi/2023/08/21/51/1692584166297ce6f488e0f11a884faef98696ec09_thumbnail_600x.jpg",
+          "directUrl": "https://de.shein.com/pdsearch/DAZY%20Zweireihiger%20Trenchcoat%20Mantel/"
+        }
+      ]
+    },
+    {
+      "id": "shein-p103",
+      "title": "SHEIN Clasi Damen Langarm A-Linien Strickkleid mit Gürtel - Weich & Wärmend",
+      "titleAr": "فستان تريكو نسائي طويل بأكمام طويلة وحزام أنيق من SHEIN Clasi",
+      "category": "fashion_shoes",
+      "categoryAr": "الملابس والأحذية والأزياء",
+      "brand": "SHEIN Clasi",
+      "rating": 4.7,
+      "reviewsCount": 2310,
+      "badge": "توفير ممتاز 🏷️",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "قماش تريكو دافئ وناعم ومثالي للإطلالات اليومية الشتوية",
+      "image": "https://img.ltwebstatic.com/images3_pi/2023/10/11/47/1697014460a54e9bcba0238548981f337fbe457f07_thumbnail_600x.jpg",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2023/10/11/47/1697014460a54e9bcba0238548981f337fbe457f07_thumbnail_600x.jpg"
+      ],
+      "msrp": 32.99,
+      "price": 21.99,
+      "priceHistory90d": [
+        32.99,
+        28.5,
+        24.99,
+        21.99
+      ],
+      "offers": [
+        {
+          "store": "SHEIN",
+          "storeLogo": "shein",
+          "price": 21.99,
+          "shipping": 0,
+          "deliveryAr": "متوفر رسمي في SHEIN ألمانيا",
+          "inStock": true,
+          "rating": 4.7,
+          "query": "SHEIN Clasi Damen Strickkleid Guertel",
+          "variantColor": "Dunkelbraun",
+          "variantTitle": "SHEIN Clasi Strickkleid - Dunkelbraun",
+          "image": "https://img.ltwebstatic.com/images3_pi/2023/10/11/47/1697014460a54e9bcba0238548981f337fbe457f07_thumbnail_600x.jpg",
+          "directUrl": "https://de.shein.com/pdsearch/SHEIN%20Clasi%20Damen%20Strickkleid%20Guertel/"
+        }
+      ]
+    },
+    {
+      "id": "shein-p104",
+      "title": "SHEIN Privé Zweiteiliges Damen Set: Oversized Strickpullover & Plissierter Strickrock",
+      "titleAr": "طقم نسائي قطعتين بلوفر تريكو أوفرسايز وتنورة من SHEIN Privé",
+      "category": "fashion_shoes",
+      "categoryAr": "الملابس والأحذية والأزياء",
+      "brand": "SHEIN Privé",
+      "rating": 4.8,
+      "reviewsCount": 1650,
+      "badge": "طقم شتوي كامل ✨",
+      "isFlashDeal": false,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "طقم متكامل فاخر للإطلالات الراقية بسعر منافس جداً",
+      "image": "https://img.ltwebstatic.com/images3_pi/2023/09/25/74/169562724921473950b719c2980fa540026e6d1cfa_thumbnail_600x.jpg",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2023/09/25/74/169562724921473950b719c2980fa540026e6d1cfa_thumbnail_600x.jpg"
+      ],
+      "msrp": 42,
+      "price": 29.49,
+      "priceHistory90d": [
+        42,
+        36.99,
+        32,
+        29.49
+      ],
+      "offers": [
+        {
+          "store": "SHEIN",
+          "storeLogo": "shein",
+          "price": 29.49,
+          "shipping": 0,
+          "deliveryAr": "متوفر رسمي في SHEIN ألمانيا",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "SHEIN Prive Zweiteiliges Damen Set Strickpullover",
+          "variantColor": "Cremeweiß",
+          "variantTitle": "SHEIN Privé Set - Cremeweiß",
+          "image": "https://img.ltwebstatic.com/images3_pi/2023/09/25/74/169562724921473950b719c2980fa540026e6d1cfa_thumbnail_600x.jpg",
+          "directUrl": "https://de.shein.com/pdsearch/SHEIN%20Prive%20Zweiteiliges%20Damen%20Set/"
+        }
+      ]
+    },
+    {
+      "id": "shein-p105",
+      "title": "SHEIN Coolane Damen Schnürstiefel Stiefeletten mit dicker Profilsohle & Reißverschluss",
+      "titleAr": "بوت شتوي نسائي برباط ونعل سميك مريح وعصري من SHEIN Coolane",
+      "category": "fashion_shoes",
+      "categoryAr": "الملابس والأحذية والأزياء",
+      "brand": "SHEIN Coolane",
+      "rating": 4.7,
+      "reviewsCount": 3100,
+      "badge": "حذاء شتوي مريح 👢",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "تصميم عسكري تريند مريح للمشي اليومي ومقاوم للمطر",
+      "image": "https://img.ltwebstatic.com/images3_pi/2023/08/29/42/169327599026410260c6d5951a89c464bf214d0251_thumbnail_600x.jpg",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2023/08/29/42/169327599026410260c6d5951a89c464bf214d0251_thumbnail_600x.jpg"
+      ],
+      "msrp": 38,
+      "price": 26.99,
+      "priceHistory90d": [
+        38,
+        33.5,
+        29.99,
+        26.99
+      ],
+      "offers": [
+        {
+          "store": "SHEIN",
+          "storeLogo": "shein",
+          "price": 26.99,
+          "shipping": 0,
+          "deliveryAr": "متوفر رسمي في SHEIN ألمانيا",
+          "inStock": true,
+          "rating": 4.7,
+          "query": "SHEIN Coolane Damen Schnuerstiefel Stiefeletten",
+          "variantColor": "Mattschwarz",
+          "variantTitle": "SHEIN Coolane Boots - Schwarz",
+          "image": "https://img.ltwebstatic.com/images3_pi/2023/08/29/42/169327599026410260c6d5951a89c464bf214d0251_thumbnail_600x.jpg",
+          "directUrl": "https://de.shein.com/pdsearch/SHEIN%20Coolane%20Damen%20Schnuerstiefel/"
+        }
+      ]
+    },
+    {
+      "id": "shein-p106",
+      "title": "SHEIN Modely Damen Eleganter Zweireihiger Wollmantel mit Reverskragen - Winter Warm",
+      "titleAr": "معطف صوف نسائي أنيق ودافئ للشتاء بتصميم راقٍ من SHEIN Modely",
+      "category": "fashion_shoes",
+      "categoryAr": "الملابس والأحذية والأزياء",
+      "brand": "SHEIN Modely",
+      "rating": 4.9,
+      "reviewsCount": 1820,
+      "badge": "فخامة وأناقة 🧥",
+      "isFlashDeal": false,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "خامة صوفية أنيقة مناسبة للمناسبات والعمل والطقس البارد",
+      "image": "https://img.ltwebstatic.com/images3_pi/2023/10/24/27/1698118944521877997a66fbc66423c7f99be4f107_thumbnail_600x.jpg",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2023/10/24/27/1698118944521877997a66fbc66423c7f99be4f107_thumbnail_600x.jpg"
+      ],
+      "msrp": 52,
+      "price": 38.99,
+      "priceHistory90d": [
+        52,
+        46,
+        41.5,
+        38.99
+      ],
+      "offers": [
+        {
+          "store": "SHEIN",
+          "storeLogo": "shein",
+          "price": 38.99,
+          "shipping": 0,
+          "deliveryAr": "متوفر رسمي في SHEIN ألمانيا",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "SHEIN Modely Zweireihiger Wollmantel Reverskragen",
+          "variantColor": "Kamelbraun",
+          "variantTitle": "SHEIN Modely Mantel - Kamel",
+          "image": "https://img.ltwebstatic.com/images3_pi/2023/10/24/27/1698118944521877997a66fbc66423c7f99be4f107_thumbnail_600x.jpg",
+          "directUrl": "https://de.shein.com/pdsearch/SHEIN%20Modely%20Zweireihiger%20Wollmantel/"
+        }
+      ]
+    },
+    {
+      "id": "shein-p107",
+      "title": "SHEIN Essnce Damen Kapuzenpullover Hoodie Oversized mit Kängurutasche - Weiches Fleece",
+      "titleAr": "سويت شيرت هودي أوفرسايز ناعم ودافئ بجيوب كنغر من SHEIN Essnce",
+      "category": "fashion_shoes",
+      "categoryAr": "الملابس والأحذية والأزياء",
+      "brand": "SHEIN Essnce",
+      "rating": 4.8,
+      "reviewsCount": 4200,
+      "badge": "الأكثر راحة ☁️",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "هودي يومي مريح ببطانة صوف ناعمة وألوان جذابة",
+      "image": "https://img.ltwebstatic.com/images3_pi/2023/09/06/66/16939886737279313b3eefc665cf5723b7a5ee2e69_thumbnail_600x.jpg",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2023/09/06/66/16939886737279313b3eefc665cf5723b7a5ee2e69_thumbnail_600x.jpg"
+      ],
+      "msrp": 26,
+      "price": 18.49,
+      "priceHistory90d": [
+        26,
+        22.99,
+        19.99,
+        18.49
+      ],
+      "offers": [
+        {
+          "store": "SHEIN",
+          "storeLogo": "shein",
+          "price": 18.49,
+          "shipping": 0,
+          "deliveryAr": "متوفر رسمي في SHEIN ألمانيا",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "SHEIN Essnce Damen Kapuzenpullover Hoodie Oversized",
+          "variantColor": "Graumeliert",
+          "variantTitle": "SHEIN Hoodie - Grau",
+          "image": "https://img.ltwebstatic.com/images3_pi/2023/09/06/66/16939886737279313b3eefc665cf5723b7a5ee2e69_thumbnail_600x.jpg",
+          "directUrl": "https://de.shein.com/pdsearch/SHEIN%20Essnce%20Damen%20Kapuzenpullover/"
+        }
+      ]
+    },
+    {
+      "id": "ikea-p201",
+      "title": "IKEA BILLY Bücherregal, weiß, 80x28x202 cm - Der zeitlose Klassiker",
+      "titleAr": "مكتبة ورف كتب إيكيا الشهير BILLY باللون الأبيض أبعاد 80x28x202 سم",
+      "category": "furniture_decor",
+      "categoryAr": "الأثاث والديكور المنزلي",
+      "brand": "IKEA",
+      "rating": 4.9,
+      "reviewsCount": 15400,
+      "badge": "أيقونة إيكيا 📚",
+      "isFlashDeal": false,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "الرف الأكثر مبيعاً في العالم، تصميم متين وأرفف قابلة للتعديل",
+      "image": "https://www.ikea.com/de/de/images/products/billy-buecherregal-weiss__0625599_pe692385_s5.jpg",
+      "images": [
+        "https://www.ikea.com/de/de/images/products/billy-buecherregal-weiss__0625599_pe692385_s5.jpg"
+      ],
+      "msrp": 69.99,
+      "price": 59.99,
+      "priceHistory90d": [
+        69.99,
+        64.99,
+        59.99
+      ],
+      "offers": [
+        {
+          "store": "IKEA",
+          "storeLogo": "ikea",
+          "price": 59.99,
+          "shipping": 0,
+          "deliveryAr": "شراء مباشر من ايكيا ألمانيا",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "IKEA BILLY Bücherregal weiß",
+          "variantColor": "Weiß",
+          "variantTitle": "BILLY Regal 80x28x202 cm - Weiß",
+          "image": "https://www.ikea.com/de/de/images/products/billy-buecherregal-weiss__0625599_pe692385_s5.jpg",
+          "directUrl": "https://www.ikea.com/de/de/search/?q=BILLY%20B%C3%BCcherregal%20wei%C3%9F"
+        },
+        {
+          "store": "OTTO",
+          "storeLogo": "otto",
+          "price": 69.99,
+          "shipping": 0,
+          "deliveryAr": "متوفر عبر منصة OTTO",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "IKEA BILLY Bücherregal weiß",
+          "image": "https://www.ikea.com/de/de/images/products/billy-buecherregal-weiss__0625599_pe692385_s5.jpg",
+          "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FIKEA%2520BILLY%2F"
+        }
+      ]
+    },
+    {
+      "id": "ikea-p202",
+      "title": "IKEA KALLAX Regal, weiß, 77x147 cm - Flexibel als Raumteiler & Aufbewahrung",
+      "titleAr": "وحدة أرفف مكعبة KALLAX من إيكيا مقاس 77x147 سم باللون الأبيض",
+      "category": "furniture_decor",
+      "categoryAr": "الأثاث والديكور المنزلي",
+      "brand": "IKEA",
+      "rating": 4.9,
+      "reviewsCount": 12800,
+      "badge": "الأكثر شعبية 🛋️",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "وحدة تنظيم عملية تناسب الصالونات، المكاتب وغرف النوم كقاطع للغرف",
+      "image": "https://www.ikea.com/de/de/images/products/kallax-regal-weiss__0644757_pe702939_s5.jpg",
+      "images": [
+        "https://www.ikea.com/de/de/images/products/kallax-regal-weiss__0644757_pe702939_s5.jpg"
+      ],
+      "msrp": 79.99,
+      "price": 69.99,
+      "priceHistory90d": [
+        79.99,
+        74.99,
+        69.99
+      ],
+      "offers": [
+        {
+          "store": "IKEA",
+          "storeLogo": "ikea",
+          "price": 69.99,
+          "shipping": 0,
+          "deliveryAr": "شراء مباشر من ايكيا ألمانيا",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "IKEA KALLAX Regal weiß 77x147",
+          "variantColor": "Weiß matt",
+          "variantTitle": "KALLAX Regal 77x147 cm - Weiß",
+          "image": "https://www.ikea.com/de/de/images/products/kallax-regal-weiss__0644757_pe702939_s5.jpg",
+          "directUrl": "https://www.ikea.com/de/de/search/?q=KALLAX%20Regal%20wei%C3%9F"
+        }
+      ]
+    },
+    {
+      "id": "ikea-p203",
+      "title": "IKEA MARKUS Drehstuhl ergonomisch, Vissle dunkelgrau - Bester Homeoffice Bürostuhl",
+      "titleAr": "كرسي مكتب مريح MARKUS عالي الجودة من إيكيا باللون الرمادي",
+      "category": "furniture_decor",
+      "categoryAr": "الأثاث والديكور المنزلي",
+      "brand": "IKEA",
+      "rating": 4.8,
+      "reviewsCount": 8900,
+      "badge": "أفضل كرسي مكتب 🪑",
+      "isFlashDeal": false,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "دعم كامل للظهر ومسند رأس مريح، الكرسي المفضل للعمل والدراسة لساعات طويلة",
+      "image": "https://www.ikea.com/de/de/images/products/markus-drehstuhl-vissle-dunkelgrau__0724714_pe734597_s5.jpg",
+      "images": [
+        "https://www.ikea.com/de/de/images/products/markus-drehstuhl-vissle-dunkelgrau__0724714_pe734597_s5.jpg"
+      ],
+      "msrp": 199,
+      "price": 179,
+      "priceHistory90d": [
+        199,
+        189,
+        179
+      ],
+      "offers": [
+        {
+          "store": "IKEA",
+          "storeLogo": "ikea",
+          "price": 179,
+          "shipping": 0,
+          "deliveryAr": "شراء مباشر من ايكيا ألمانيا",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "IKEA MARKUS Drehstuhl dunkelgrau",
+          "variantColor": "Dunkelgrau",
+          "variantTitle": "MARKUS Bürostuhl - Vissle Dunkelgrau",
+          "image": "https://www.ikea.com/de/de/images/products/markus-drehstuhl-vissle-dunkelgrau__0724714_pe734597_s5.jpg",
+          "directUrl": "https://www.ikea.com/de/de/search/?q=MARKUS%20Drehstuhl"
+        }
+      ]
+    },
+    {
+      "id": "ikea-p204",
+      "title": "IKEA POÄNG Schwingsessel, Birke / Knisa hellbeige - Bequemster Relaxsessel",
+      "titleAr": "كرسي الاسترخاء الهزاز الشهير POÄNG من إيكيا خشب زان وقماش بيج",
+      "category": "furniture_decor",
+      "categoryAr": "الأثاث والديكور المنزلي",
+      "brand": "IKEA",
+      "rating": 4.9,
+      "reviewsCount": 18200,
+      "badge": "راحة مطلقة ✨",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "تصميم إسكندنافي أيقوني يوفر ارتداداً خفيفاً مريحاً للعمود الفقري",
+      "image": "https://www.ikea.com/de/de/images/products/poaeng-schwingsessel-birkenfurnier-knisa-hellbeige__0571501_pe666952_s5.jpg",
+      "images": [
+        "https://www.ikea.com/de/de/images/products/poaeng-schwingsessel-birkenfurnier-knisa-hellbeige__0571501_pe666952_s5.jpg"
+      ],
+      "msrp": 149,
+      "price": 129,
+      "priceHistory90d": [
+        149,
+        139,
+        129
+      ],
+      "offers": [
+        {
+          "store": "IKEA",
+          "storeLogo": "ikea",
+          "price": 129,
+          "shipping": 0,
+          "deliveryAr": "شراء مباشر من ايكيا ألمانيا",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "IKEA POANG Schwingsessel Knisa hellbeige",
+          "variantColor": "Birke / Hellbeige",
+          "variantTitle": "POÄNG Sessel - Hellbeige",
+          "image": "https://www.ikea.com/de/de/images/products/poaeng-schwingsessel-birkenfurnier-knisa-hellbeige__0571501_pe666952_s5.jpg",
+          "directUrl": "https://www.ikea.com/de/de/search/?q=PO%C3%84NG%20Schwingsessel"
+        }
+      ]
+    },
+    {
+      "id": "ikea-p205",
+      "title": "IKEA MALM Kommode mit 4 Schubladen, weiß, 80x100 cm - Elegante Schlafzimmer-Aufbewahrung",
+      "titleAr": "كومودينو وخزانة أدراج MALM بأربعة أدراج من إيكيا مقاس 80x100 سم",
+      "category": "furniture_decor",
+      "categoryAr": "الأثاث والديكور المنزلي",
+      "brand": "IKEA",
+      "rating": 4.8,
+      "reviewsCount": 9600,
+      "badge": "تنظيم أنيق 🗄️",
+      "isFlashDeal": false,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "أدراج واسعة وسلسة الفتح مع نظام غلق آمن لغرف النوم",
+      "image": "https://www.ikea.com/de/de/images/products/malm-kommode-mit-4-schubladen-weiss__0484880_pe621350_s5.jpg",
+      "images": [
+        "https://www.ikea.com/de/de/images/products/malm-kommode-mit-4-schubladen-weiss__0484880_pe621350_s5.jpg"
+      ],
+      "msrp": 129,
+      "price": 119,
+      "priceHistory90d": [
+        129,
+        124,
+        119
+      ],
+      "offers": [
+        {
+          "store": "IKEA",
+          "storeLogo": "ikea",
+          "price": 119,
+          "shipping": 0,
+          "deliveryAr": "شراء مباشر من ايكيا ألمانيا",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "IKEA MALM Kommode 4 Schubladen weiß",
+          "variantColor": "Weiß",
+          "variantTitle": "MALM Kommode 4 Schubladen",
+          "image": "https://www.ikea.com/de/de/images/products/malm-kommode-mit-4-schubladen-weiss__0484880_pe621350_s5.jpg",
+          "directUrl": "https://www.ikea.com/de/de/search/?q=MALM%20Kommode%204%20Schubladen"
+        }
+      ]
+    },
+    {
+      "id": "douglas-p301",
+      "title": "Dior Sauvage Eau de Parfum (100 ml) - Das maskuline Kultparfüm von Christian Dior",
+      "titleAr": "عطر ديور سوفاج أو دو بارفيوم 100 مل الأصلي للرجال - Dior Sauvage EDP",
+      "category": "perfumes_beauty",
+      "categoryAr": "العطور ومستحضرات التجميل",
+      "brand": "Dior",
+      "rating": 4.9,
+      "reviewsCount": 9400,
+      "badge": "عطر العام للرجال 🌟",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "العطر الرجالي الأكثر طلباً في العالم، ثبات وفوحان استثنائي مع نفحات البرغموت والفانيليا",
+      "image": "https://media.douglas.de/medias/d798606-0-1000Wx1000H.jpg?context=bWFzdGVyfGltYWdlc3w5NTQxNXxpbWFnZS9qcGVnfGFETmhMMmcyWWk4eE1qTTNORGN5T1RNM01ERTRMMlEzT1RnMk1EWW1NQzB4TURBWFhERTBNRGhJY0d4bk9ncHNiM1Z0WTJsa2F5NW5jR2N8ZDBmNDYxZjkyNWU1NGE3ZDU2ZDUxMGM0NTQxYjI1YzgzYTg0NjNmNjc5YWI1ZGI0MmY3OTJjODhhNmM3NTQ1Mg",
+      "images": [
+        "https://media.douglas.de/medias/d798606-0-1000Wx1000H.jpg?context=bWFzdGVyfGltYWdlc3w5NTQxNXxpbWFnZS9qcGVnfGFETmhMMmcyWWk4eE1qTTNORGN5T1RNM01ERTRMMlEzT1RnMk1EWW1NQzB4TURBWFhERTBNRGhJY0d4bk9ncHNiM1Z0WTJsa2F5NW5jR2N8ZDBmNDYxZjkyNWU1NGE3ZDU2ZDUxMGM0NTQxYjI1YzgzYTg0NjNmNjc5YWI1ZGI0MmY3OTJjODhhNmM3NTQ1Mg"
+      ],
+      "msrp": 139,
+      "price": 114.95,
+      "priceHistory90d": [
+        139,
+        129,
+        119,
+        114.95
+      ],
+      "offers": [
+        {
+          "store": "Douglas",
+          "storeLogo": "douglas",
+          "price": 114.95,
+          "shipping": 0,
+          "deliveryAr": "شراء مباشر معتمد من Douglas ألمانيا",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "Dior Sauvage Eau de Parfum 100 ml",
+          "variantColor": "100 ml EDP",
+          "variantTitle": "Dior Sauvage EDP 100ml",
+          "image": "https://media.douglas.de/medias/d798606-0-1000Wx1000H.jpg?context=bWFzdGVyfGltYWdlc3w5NTQxNXxpbWFnZS9qcGVnfGFETmhMMmcyWWk4eE1qTTNORGN5T1RNM01ERTRMMlEzT1RnMk1EWW1NQzB4TURBWFhERTBNRGhJY0d4bk9ncHNiM1Z0WTJsa2F5NW5jR2N8ZDBmNDYxZjkyNWU1NGE3ZDU2ZDUxMGM0NTQxYjI1YzgzYTg0NjNmNjc5YWI1ZGI0MmY3OTJjODhhNmM3NTQ1Mg",
+          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DDior%2BSauvage%2BEau%2Bde%2BParfum"
+        },
+        {
+          "store": "Amazon",
+          "storeLogo": "amazon",
+          "asin": "B0798VNZ7Q",
+          "price": 118,
+          "shipping": 0,
+          "deliveryAr": "شراء فوري مباشر - متوفر في أمازون",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "Dior Sauvage Eau de Parfum",
+          "directUrl": "https://www.amazon.de/dp/B0798VNZ7Q?tag=nexusdeals08-21"
+        },
+        {
+          "store": "OTTO",
+          "storeLogo": "otto",
+          "price": 119.99,
+          "shipping": 0,
+          "deliveryAr": "متوفر عبر منصة OTTO",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "Dior Sauvage Eau de Parfum 100 ml",
+          "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FDior%2520Sauvage%2F"
+        }
+      ]
+    },
+    {
+      "id": "douglas-p302",
+      "title": "Yves Saint Laurent Libre Eau de Parfum (50 ml) - Der elegante Damenduft von YSL",
+      "titleAr": "عطر إيف سان لوران ليبر النسائي أو دو بارفيوم 50 مل الأصلي - YSL Libre",
+      "category": "perfumes_beauty",
+      "categoryAr": "العطور ومستحضرات التجميل",
+      "brand": "Yves Saint Laurent",
+      "rating": 4.9,
+      "reviewsCount": 7800,
+      "badge": "الأعلى تقييماً للنساء 🌸",
+      "isFlashDeal": false,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "عطر زهري شرقي مفعم بالأنوثة والقوة مع اللافندر وزهر البرتقال الفرنسي",
+      "image": "https://media.douglas.de/medias/d972746-0-1000Wx1000H.jpg?context=bWFzdGVyfGltYWdlc3w5OTI5OHxpbWFnZS9qcGVnfGFESmxMMmcyWlM4eE1qTTNORGN5T1RnM01ERTRMMlE1TnpJM05EWW1NQzB4TURBWFhERTBNRGhJY0d4bk9ncHNiM1Z0WTJsa2F5NW5jR2N8YzFmMGVmODdhNTlhMTYyZTA2ZTRlOGUxNzk1MDc0OTg0NWVlZTE1Y2I4NWU3MjFiMjkyNDFhOGFkOWRhY2I5Mw",
+      "images": [
+        "https://media.douglas.de/medias/d972746-0-1000Wx1000H.jpg?context=bWFzdGVyfGltYWdlc3w5OTI5OHxpbWFnZS9qcGVnfGFESmxMMmcyWlM4eE1qTTNORGN5T1RnM01ERTRMMlE1TnpJM05EWW1NQzB4TURBWFhERTBNRGhJY0d4bk9ncHNiM1Z0WTJsa2F5NW5jR2N8YzFmMGVmODdhNTlhMTYyZTA2ZTRlOGUxNzk1MDc0OTg0NWVlZTE1Y2I4NWU3MjFiMjkyNDFhOGFkOWRhY2I5Mw"
+      ],
+      "msrp": 110,
+      "price": 89.99,
+      "priceHistory90d": [
+        110,
+        99,
+        89.99
+      ],
+      "offers": [
+        {
+          "store": "Douglas",
+          "storeLogo": "douglas",
+          "price": 89.99,
+          "shipping": 0,
+          "deliveryAr": "شراء مباشر معتمد من Douglas ألمانيا",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "YSL Libre Eau de Parfum 50 ml",
+          "variantColor": "50 ml EDP",
+          "variantTitle": "YSL Libre EDP 50ml",
+          "image": "https://media.douglas.de/medias/d972746-0-1000Wx1000H.jpg?context=bWFzdGVyfGltYWdlc3w5OTI5OHxpbWFnZS9qcGVnfGFESmxMMmcyWlM4eE1qTTNORGN5T1RnM01ERTRMMlE1TnpJM05EWW1NQzB4TURBWFhERTBNRGhJY0d4bk9ncHNiM1Z0WTJsa2F5NW5jR2N8YzFmMGVmODdhNTlhMTYyZTA2ZTRlOGUxNzk1MDc0OTg0NWVlZTE1Y2I4NWU3MjFiMjkyNDFhOGFkOWRhY2I5Mw",
+          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DYSL%2BLibre%2BEau%2Bde%2BParfum"
+        },
+        {
+          "store": "OTTO",
+          "storeLogo": "otto",
+          "price": 94.95,
+          "shipping": 0,
+          "deliveryAr": "متوفر عبر منصة OTTO",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "YSL Libre Eau de Parfum 50 ml",
+          "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FYSL%2520Libre%2F"
+        }
+      ]
+    },
+    {
+      "id": "douglas-p303",
+      "title": "Lancôme La Vie Est Belle Eau de Parfum (50 ml) - Das ikonische Glücks-Parfum",
+      "titleAr": "عطر لانكوم لافي إي بيل النسائي أو دو بارفيوم 50 مل الأصلي - La Vie Est Belle",
+      "category": "perfumes_beauty",
+      "categoryAr": "العطور ومستحضرات التجميل",
+      "brand": "Lancôme",
+      "rating": 4.9,
+      "reviewsCount": 11200,
+      "badge": "الأكثر مبيعاً للنساء 💖",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "توليفة زهرية ساحرة من السوسن والياسمين والباتشولي والكراميل الحلو",
+      "image": "https://media.douglas.de/medias/d258074-0-1000Wx1000H.jpg?context=bWFzdGVyfGltYWdlc3w5NjYwOXxpbWFnZS9qcGVnfGFEVmxMMmcxWlM4eE1qTTNORGN5T1RBMU1ERTRMMlEyTlRnd056UXRNQzB4TURBWFhERTBNRGhJY0d4bk9ncHNiM1Z0WTJsa2F5NW5jR2N8NDQ2MmM1ZTNlZTAwN2Y3YmM3ZjQ0MDVjZjFiODFiNTQwM2RlZThjODVmMzg2MjNmOTU4ZDUzY2NjYTU4Yzk1Yw",
+      "images": [
+        "https://media.douglas.de/medias/d258074-0-1000Wx1000H.jpg?context=bWFzdGVyfGltYWdlc3w5NjYwOXxpbWFnZS9qcGVnfGFEVmxMMmcxWlM4eE1qTTNORGN5T1RBMU1ERTRMMlEyTlRnd056UXRNQzB4TURBWFhERTBNRGhJY0d4bk9ncHNiM1Z0WTJsa2F5NW5jR2N8NDQ2MmM1ZTNlZTAwN2Y3YmM3ZjQ0MDVjZjFiODFiNTQwM2RlZThjODVmMzg2MjNmOTU4ZDUzY2NjYTU4Yzk1Yw"
+      ],
+      "msrp": 99,
+      "price": 79.99,
+      "priceHistory90d": [
+        99,
+        89,
+        79.99
+      ],
+      "offers": [
+        {
+          "store": "Douglas",
+          "storeLogo": "douglas",
+          "price": 79.99,
+          "shipping": 0,
+          "deliveryAr": "شراء مباشر معتمد من Douglas ألمانيا",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "Lancome La Vie Est Belle 50 ml",
+          "variantColor": "50 ml EDP",
+          "variantTitle": "La Vie Est Belle EDP 50ml",
+          "image": "https://media.douglas.de/medias/d258074-0-1000Wx1000H.jpg?context=bWFzdGVyfGltYWdlc3w5NjYwOXxpbWFnZS9qcGVnfGFEVmxMMmcxWlM4eE1qTTNORGN5T1RBMU1ERTRMMlEyTlRnd056UXRNQzB4TURBWFhERTBNRGhJY0d4bk9ncHNiM1Z0WTJsa2F5NW5jR2N8NDQ2MmM1ZTNlZTAwN2Y3YmM3ZjQ0MDVjZjFiODFiNTQwM2RlZThjODVmMzg2MjNmOTU4ZDUzY2NjYTU4Yzk1Yw",
+          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DLa%2BVie%2BEst%2BBelle"
+        },
+        {
+          "store": "Amazon",
+          "storeLogo": "amazon",
+          "asin": "B008YS0G7G",
+          "price": 84.9,
+          "shipping": 0,
+          "deliveryAr": "شراء فوري مباشر - متوفر في أمازون",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "Lancome La Vie Est Belle 50 ml",
+          "directUrl": "https://www.amazon.de/dp/B008YS0G7G?tag=nexusdeals08-21"
+        }
+      ]
+    },
+    {
+      "id": "mm-p401",
+      "title": "Sony PlayStation 5 Slim (PS5) Disc Edition 1TB SSD - Next-Gen Gaming Konsole",
+      "titleAr": "جهاز بلايستيشن 5 سليم بالقرص PS5 Slim 1TB النسخة الأحدث",
+      "category": "gaming",
+      "categoryAr": "أجهزة الألعاب واللابتوب",
+      "brand": "Sony",
+      "rating": 4.9,
+      "reviewsCount": 16500,
+      "badge": "جهاز الألعاب #1 🎮",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "النسخة الأنحف والأخف بسعة 1 تيرابايت كاملة مع محرك أقراص Blu-ray 4K",
+      "image": "https://m.media-amazon.com/images/I/71V2+oR5v1L._AC_SL1500_.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/71V2+oR5v1L._AC_SL1500_.jpg"
+      ],
+      "msrp": 549.99,
+      "price": 499,
+      "priceHistory90d": [
+        549.99,
+        529,
+        499
+      ],
+      "offers": [
+        {
+          "store": "MediaMarkt",
+          "storeLogo": "mediamarkt",
+          "price": 499,
+          "shipping": 0,
+          "deliveryAr": "متوفر فوري في فروع MediaMarkt والتوصيل",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "Sony PlayStation 5 Slim Disc Edition",
+          "variantColor": "Weiß / 1TB",
+          "variantTitle": "PS5 Slim Disc Edition 1TB",
+          "image": "https://m.media-amazon.com/images/I/71V2+oR5v1L._AC_SL1500_.jpg",
+          "directUrl": "https://www.mediamarkt.de/de/search.html?query=PlayStation%205%20Slim%20Disc%20Edition"
+        },
+        {
+          "store": "Amazon",
+          "storeLogo": "amazon",
+          "asin": "B0CLT544NX",
+          "price": 519,
+          "shipping": 0,
+          "deliveryAr": "شراء فوري مباشر - متوفر في أمازون",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "PlayStation 5 Slim Disc Edition",
+          "directUrl": "https://www.amazon.de/dp/B0CLT544NX?tag=nexusdeals08-21"
+        },
+        {
+          "store": "OTTO",
+          "storeLogo": "otto",
+          "price": 529.99,
+          "shipping": 0,
+          "deliveryAr": "متوفر عبر منصة OTTO",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "PlayStation 5 Slim Disc Edition",
+          "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FPlayStation%25205%2520Slim%2F"
+        },
+        {
+          "store": "eBay",
+          "storeLogo": "ebay",
+          "price": 495,
+          "shipping": 0,
+          "deliveryAr": "متوفر في eBay Deutschland Neuware",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "PlayStation 5 Slim Disc Edition",
+          "directUrl": "https://www.ebay.de/sch/i.html?_nkw=PlayStation%205%20Slim%20Disc%20Edition&LH_BIN=1&_sop=12"
+        }
+      ]
+    },
+    {
+      "id": "mm-p402",
+      "title": "Apple AirPods Pro (2. Generation) mit MagSafe Case (USB-C) - Aktive Geräuschunterdrückung",
+      "titleAr": "سماعات آبل ايربودز برو الجيل الثاني بمنفذ USB-C وعزل الضوضاء النشط",
+      "category": "tv_audio",
+      "categoryAr": "التلفزيونات والسماعات والصوتيات",
+      "brand": "Apple",
+      "rating": 4.9,
+      "reviewsCount": 28400,
+      "badge": "أفضل سماعات عزل 🎧",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "عزل ضوضاء خارق مع منفذ الشحن الحديث USB-C وعمر بطارية ممتد حتى 30 ساعة",
+      "image": "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg"
+      ],
+      "msrp": 279,
+      "price": 235,
+      "priceHistory90d": [
+        279,
+        259,
+        245,
+        235
+      ],
+      "offers": [
+        {
+          "store": "MediaMarkt",
+          "storeLogo": "mediamarkt",
+          "price": 235,
+          "shipping": 0,
+          "deliveryAr": "متوفر فوري في فروع MediaMarkt والتوصيل",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "Apple AirPods Pro 2 USB C",
+          "variantColor": "Weiß",
+          "variantTitle": "AirPods Pro 2 USB-C",
+          "image": "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
+          "directUrl": "https://www.mediamarkt.de/de/search.html?query=Apple%20AirPods%20Pro%202%20USB-C"
+        },
+        {
+          "store": "Amazon",
+          "storeLogo": "amazon",
+          "asin": "B0CHWZ3VNJ",
+          "price": 239,
+          "shipping": 0,
+          "deliveryAr": "شراء فوري مباشر - متوفر في أمازون",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "Apple AirPods Pro 2 USB C",
+          "directUrl": "https://www.amazon.de/dp/B0CHWZ3VNJ?tag=nexusdeals08-21"
+        },
+        {
+          "store": "OTTO",
+          "storeLogo": "otto",
+          "price": 244.99,
+          "shipping": 0,
+          "deliveryAr": "متوفر عبر منصة OTTO",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "Apple AirPods Pro 2 USB C",
+          "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FAirPods%2520Pro%25202%2F"
+        },
+        {
+          "store": "Galaxus",
+          "storeLogo": "galaxus",
+          "price": 238.5,
+          "shipping": 0,
+          "deliveryAr": "متوفر عبر منصة Galaxus",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "Apple AirPods Pro 2 USB C",
+          "directUrl": "https://www.galaxus.de/de/search?q=AirPods%20Pro%202%20USB-C"
+        }
+      ]
+    },
+    {
+      "id": "mm-p403",
+      "title": "Nintendo Switch OLED-Modell - Weiß (inkl. 64 GB Speicher & Joy-Con)",
+      "titleAr": "جهاز نينتندو سويتش موديل شاشة أوليد OLED الأبيض سعة 64 جيجابايت",
+      "category": "gaming",
+      "categoryAr": "أجهزة الألعاب واللابتوب",
+      "brand": "Nintendo",
+      "rating": 4.9,
+      "reviewsCount": 19800,
+      "badge": "جهاز الألعاب العائلي 🌟",
+      "isFlashDeal": true,
+      "discountStatus": "verified_low",
+      "aiVerdictAr": "شاشة OLED مذهلة قياس 7 بوصات بألوان نابضة بالحياة وحامل عريض قابل للتعديل",
+      "image": "https://m.media-amazon.com/images/I/71Q54W22o+L._AC_SL1500_.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/71Q54W22o+L._AC_SL1500_.jpg"
+      ],
+      "msrp": 349.99,
+      "price": 319,
+      "priceHistory90d": [
+        349.99,
+        335,
+        319
+      ],
+      "offers": [
+        {
+          "store": "MediaMarkt",
+          "storeLogo": "mediamarkt",
+          "price": 319,
+          "shipping": 0,
+          "deliveryAr": "متوفر فوري في فروع MediaMarkt والتوصيل",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "Nintendo Switch OLED Modell Weiß",
+          "variantColor": "Weiß",
+          "variantTitle": "Switch OLED - Weiß",
+          "image": "https://m.media-amazon.com/images/I/71Q54W22o+L._AC_SL1500_.jpg",
+          "directUrl": "https://www.mediamarkt.de/de/search.html?query=Nintendo%20Switch%20OLED"
+        },
+        {
+          "store": "Amazon",
+          "storeLogo": "amazon",
+          "asin": "B098RJXBVR",
+          "price": 329.99,
+          "shipping": 0,
+          "deliveryAr": "شراء فوري مباشر - متوفر في أمازون",
+          "inStock": true,
+          "rating": 4.9,
+          "query": "Nintendo Switch OLED Modell Weiß",
+          "directUrl": "https://www.amazon.de/dp/B098RJXBVR?tag=nexusdeals08-21"
+        },
+        {
+          "store": "OTTO",
+          "storeLogo": "otto",
+          "price": 329.99,
+          "shipping": 0,
+          "deliveryAr": "متوفر عبر منصة OTTO",
+          "inStock": true,
+          "rating": 4.8,
+          "query": "Nintendo Switch OLED Modell Weiß",
+          "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FNintendo%2520Switch%2520OLED%2F"
+        }
+      ]
+    },
     {
       "id": "real-B0DHYDVWKC",
       "asin": "B0DHYDVWKC",
@@ -235,20 +1132,6 @@
           "variantTitle": "Killtec Damen Steppparka",
           "image": "https://m.media-amazon.com/images/I/71WF9qq3qVL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Killtec%20Damen%20Steppparka&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 119.34,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Killtec Damen Steppparka",
-          "variantColor": "",
-          "variantTitle": "Killtec Damen Steppparka",
-          "image": "https://m.media-amazon.com/images/I/71m8ki3cn7L._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Killtec%20Damen%20Steppparka/"
         },
         {
           "store": "AliExpress",
@@ -588,20 +1471,6 @@
           "directUrl": "https://www.amazon.de/dp/B0CTCQXZ3G?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 548.05,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "PHILIPS Kaffeevollautomat LatteGo",
-          "variantColor": "Silber",
-          "variantTitle": "PHILIPS Kaffeevollautomat LatteGo (Silber)",
-          "image": "https://m.media-amazon.com/images/I/61Z54cWwdQL._AC_SL1250_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=PHILIPS%20Kaffeevollautomat%20LatteGo"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 556.15,
@@ -721,20 +1590,6 @@
           "directUrl": "https://www.amazon.de/dp/B0FVBKNSKL?tag=nexusdeals08-21"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 70.36,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Mirage Paris Amber",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "Mirage Paris Amber - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/41cUEgf9M3L._SL1080_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DMirage%2520Paris%2520Amber"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 71.39,
@@ -747,20 +1602,6 @@
           "variantTitle": "Mirage Paris Amber - 50ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/618HCbjcv6L._SL1080_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FMirage%2520Paris%2520Amber%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 71.74,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Mirage Paris Amber",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "Mirage Paris Amber - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/61CXvgTPT3L._SL1080_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Mirage%20Paris%20Amber"
         },
         {
           "store": "Galaxus",
@@ -1169,20 +2010,6 @@
       ],
       "offers": [
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 286.98,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "WELAX S9 Ergonomischer",
-          "variantColor": "",
-          "variantTitle": "WELAX S9 Ergonomischer",
-          "image": "https://m.media-amazon.com/images/I/71HzFCbu2IL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=WELAX%20S9%20Ergonomischer"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 288.45,
@@ -1282,7 +2109,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=WELAX%20S9%20Ergonomischer&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 286.98,
+      "price": 288.45,
       "images": [
         "https://m.media-amazon.com/images/I/71HzFCbu2IL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/71HzFCbu2IL._AC_SL1500_.jpg",
@@ -1910,20 +2737,6 @@
           "variantTitle": "Mould King Technik",
           "image": "https://m.media-amazon.com/images/I/71leWS-u-1L._AC_SL1500_.jpg",
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Mould%20King%20Technik&LH_BIN=1&_sop=12"
-        },
-        {
-          "store": "MediaMarkt",
-          "storeLogo": "mediamarkt",
-          "price": 190,
-          "shipping": 0,
-          "deliveryAr": "متوفر في MediaMarkt",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Mould King Technik",
-          "variantColor": "",
-          "variantTitle": "Mould King Technik",
-          "image": "https://m.media-amazon.com/images/I/71Bb3WUflGL._AC_SL1500_.jpg",
-          "directUrl": "https://www.mediamarkt.de/de/search.html?query=Mould%20King%20Technik"
         }
       ],
       "price": 178.12,
@@ -2160,20 +2973,6 @@
           "variantTitle": "Killtec Damen Parka",
           "image": "https://m.media-amazon.com/images/I/61FGNPYyGcL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Killtec%20Damen%20Parka&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 146.81,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Killtec Damen Parka",
-          "variantColor": "",
-          "variantTitle": "Killtec Damen Parka",
-          "image": "https://m.media-amazon.com/images/I/71NXRY4UfYL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Killtec%20Damen%20Parka/"
         },
         {
           "store": "AliExpress",
@@ -2513,20 +3312,6 @@
           "directUrl": "https://www.amazon.de/dp/B08CBJ8W9W?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 424.22,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "PHILIPS Kaffeevollautomat LatteGo",
-          "variantColor": "",
-          "variantTitle": "PHILIPS Kaffeevollautomat LatteGo",
-          "image": "https://m.media-amazon.com/images/I/61651R8ucjL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=PHILIPS%20Kaffeevollautomat%20LatteGo"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 430.49,
@@ -2642,20 +3427,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Mirage%20Paris%20Sandal&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 67.91,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Mirage Paris Sandal",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Mirage Paris Sandal - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/61ElG2lZFsL._SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DMirage%2520Paris%2520Sandal"
-        },
-        {
           "store": "Amazon",
           "storeLogo": "amazon",
           "asin": "B0FTTMCF2Z",
@@ -2669,20 +3440,6 @@
           "variantTitle": "Mirage Paris Sandal - 100ml Eau de Toilette",
           "image": "https://m.media-amazon.com/images/I/61ElG2lZFsL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0FTTMCF2Z?tag=nexusdeals08-21"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 69.59,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Mirage Paris Sandal",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Mirage Paris Sandal - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/61fhuHXdzVL._SL1080_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Mirage%20Paris%20Sandal"
         },
         {
           "store": "Galaxus",
@@ -3129,20 +3886,6 @@
           "variantTitle": "Fizzin Ergonomischer Bürostuhl",
           "image": "https://m.media-amazon.com/images/I/81TzqBrBweL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0FJF5X995?tag=nexusdeals08-21"
-        },
-        {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 106.58,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Fizzin Ergonomischer Bürostuhl",
-          "variantColor": "",
-          "variantTitle": "Fizzin Ergonomischer Bürostuhl",
-          "image": "https://m.media-amazon.com/images/I/81TzqBrBweL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Fizzin%20Ergonomischer%20B%C3%BCrostuhl"
         },
         {
           "store": "OTTO",
@@ -3813,20 +4556,6 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Mould%20King%2012007&LH_BIN=1&_sop=12"
         },
         {
-          "store": "MediaMarkt",
-          "storeLogo": "mediamarkt",
-          "price": 125.6,
-          "shipping": 0,
-          "deliveryAr": "متوفر في MediaMarkt",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Mould King 12007",
-          "variantColor": "",
-          "variantTitle": "Mould King 12007",
-          "image": "https://m.media-amazon.com/images/I/71m6VDSPV4L._AC_SL1500_.jpg",
-          "directUrl": "https://www.mediamarkt.de/de/search.html?query=Mould%20King%2012007"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 126.2,
@@ -4076,20 +4805,6 @@
           "variantTitle": "killtec Damen Funktionsparka",
           "image": "https://m.media-amazon.com/images/I/71uPNvINb4L._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=killtec%20Damen%20Funktionsparka&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 143.11,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "killtec Damen Funktionsparka",
-          "variantColor": "",
-          "variantTitle": "killtec Damen Funktionsparka",
-          "image": "https://m.media-amazon.com/images/I/81rdXTVdxuL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/killtec%20Damen%20Funktionsparka/"
         },
         {
           "store": "AliExpress",
@@ -4429,20 +5144,6 @@
           "directUrl": "https://www.amazon.de/dp/B0H94ZSVN8?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 824.17,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "PHILIPS Kaffeevollautomat LatteGo",
-          "variantColor": "Schwarz",
-          "variantTitle": "PHILIPS Kaffeevollautomat LatteGo (Schwarz)",
-          "image": "https://m.media-amazon.com/images/I/71XLRqpSMWL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=PHILIPS%20Kaffeevollautomat%20LatteGo"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 836.35,
@@ -4561,20 +5262,6 @@
           "directUrl": "https://www.amazon.de/dp/B074L6R6BS?tag=nexusdeals08-21"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 155.27,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Christian Dior -",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Christian Dior - - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/51Bnl3yVw2L._SL1000_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DChristian%2520Dior%2520-"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 157.56,
@@ -4587,20 +5274,6 @@
           "variantTitle": "Christian Dior - - 100ml Eau de Toilette",
           "image": "https://m.media-amazon.com/images/I/41kOXXvMr9L._SL1000_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FChristian%2520Dior%2520-%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 158.32,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Christian Dior -",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Christian Dior - - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/51glL7mrbuL._SL1024_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Christian%20Dior%20-"
         },
         {
           "store": "Galaxus",
@@ -5006,20 +5679,6 @@
       ],
       "offers": [
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 454.2,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "ASSMANN Höhenverstellbarer Schreibtisch",
-          "variantColor": "",
-          "variantTitle": "ASSMANN Höhenverstellbarer Schreibtisch",
-          "image": "https://m.media-amazon.com/images/I/91irbPjSNNL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=ASSMANN%20H%C3%B6henverstellbarer%20Schreibtisch"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 456.53,
@@ -5119,7 +5778,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=ASSMANN%20H%C3%B6henverstellbarer%20Schreibtisch&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 454.2,
+      "price": 456.53,
       "images": [
         "https://m.media-amazon.com/images/I/91irbPjSNNL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/91irbPjSNNL._AC_SL1500_.jpg",
@@ -5742,20 +6401,6 @@
           "variantTitle": "Mould King 12012",
           "image": "https://m.media-amazon.com/images/I/816Zb-3mN9L._AC_SL1500_.jpg",
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Mould%20King%2012012&LH_BIN=1&_sop=12"
-        },
-        {
-          "store": "MediaMarkt",
-          "storeLogo": "mediamarkt",
-          "price": 126.66,
-          "shipping": 0,
-          "deliveryAr": "متوفر في MediaMarkt",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Mould King 12012",
-          "variantColor": "",
-          "variantTitle": "Mould King 12012",
-          "image": "https://m.media-amazon.com/images/I/81rPhBaK9WL._AC_SL1500_.jpg",
-          "directUrl": "https://www.mediamarkt.de/de/search.html?query=Mould%20King%2012012"
         }
       ],
       "price": 119.35,
@@ -5951,20 +6596,6 @@
           "variantTitle": "Rock H-400",
           "image": "https://m.media-amazon.com/images/I/61nEUbNTdPL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Rock%20H-400&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 95.9,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Rock H-400",
-          "variantColor": "",
-          "variantTitle": "Rock H-400",
-          "image": "https://m.media-amazon.com/images/I/61PSGTpbI5L._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Rock%20H-400/"
         },
         {
           "store": "AliExpress",
@@ -6304,20 +6935,6 @@
           "directUrl": "https://www.amazon.de/dp/B0CDCFH17J?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 396.78,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "PHILIPS Kaffeevollautomat LatteGo",
-          "variantColor": "",
-          "variantTitle": "PHILIPS Kaffeevollautomat LatteGo",
-          "image": "https://m.media-amazon.com/images/I/714Ht3qkKtL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=PHILIPS%20Kaffeevollautomat%20LatteGo"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 400.67,
@@ -6449,20 +7066,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Mugler%20Alien%20Pulp&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 65.86,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Mugler Alien Pulp",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "Mugler Alien Pulp - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/71+S+ZcjZlL._SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DMugler%2520Alien%2520Pulp"
-        },
-        {
           "store": "Amazon",
           "storeLogo": "amazon",
           "asin": "B0G2284CJK",
@@ -6476,20 +7079,6 @@
           "variantTitle": "Mugler Alien Pulp - 50ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/71+S+ZcjZlL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0G2284CJK?tag=nexusdeals08-21"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 67.49,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Mugler Alien Pulp",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "Mugler Alien Pulp - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/81AnMsICb6L._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Mugler%20Alien%20Pulp"
         },
         {
           "store": "Galaxus",
@@ -6965,20 +7554,6 @@
           "variantTitle": "ErgoPrime PRO -",
           "image": "https://m.media-amazon.com/images/I/81PTQN1NywL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0CQWT6V1H?tag=nexusdeals08-21"
-        },
-        {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 310.49,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "ErgoPrime PRO -",
-          "variantColor": "",
-          "variantTitle": "ErgoPrime PRO -",
-          "image": "https://m.media-amazon.com/images/I/81PTQN1NywL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=ErgoPrime%20PRO%20-"
         },
         {
           "store": "Galaxus",
@@ -7631,20 +8206,6 @@
           "variantTitle": "LEGO Star Wars",
           "image": "https://m.media-amazon.com/images/I/91+9jMm5-lL._AC_SL1500_.jpg",
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=LEGO%20Star%20Wars&LH_BIN=1&_sop=12"
-        },
-        {
-          "store": "MediaMarkt",
-          "storeLogo": "mediamarkt",
-          "price": 56.99,
-          "shipping": 0,
-          "deliveryAr": "متوفر في MediaMarkt",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "LEGO Star Wars",
-          "variantColor": "",
-          "variantTitle": "LEGO Star Wars",
-          "image": "https://m.media-amazon.com/images/I/81zg5HKnmnL._AC_SL1500_.jpg",
-          "directUrl": "https://www.mediamarkt.de/de/search.html?query=LEGO%20Star%20Wars"
         }
       ],
       "price": 53.7,
@@ -7882,20 +8443,6 @@
           "variantTitle": "Winterjacke Herren Parka",
           "image": "https://m.media-amazon.com/images/I/31cVUlLe3oL._AC_SL1000_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Winterjacke%20Herren%20Parka&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 112.69,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Winterjacke Herren Parka",
-          "variantColor": "",
-          "variantTitle": "Winterjacke Herren Parka",
-          "image": "https://m.media-amazon.com/images/I/51TabeASXLL._AC_SL1000_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Winterjacke%20Herren%20Parka/"
         },
         {
           "store": "AliExpress",
@@ -8176,20 +8723,6 @@
       ],
       "offers": [
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 246.08,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "PHILIPS Kaffeevollautomat Panarello",
-          "variantColor": "Schwarz",
-          "variantTitle": "PHILIPS Kaffeevollautomat Panarello (Schwarz)",
-          "image": "https://m.media-amazon.com/images/I/51JWaHgqWbL._AC_SL1080_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=PHILIPS%20Kaffeevollautomat%20Panarello"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 247.34,
@@ -8289,7 +8822,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=PHILIPS%20Kaffeevollautomat%20Panarello&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 246.08,
+      "price": 247.34,
       "images": [
         "https://m.media-amazon.com/images/I/51JWaHgqWbL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/51JWaHgqWbL._AC_SL1080_.jpg",
@@ -8337,20 +8870,6 @@
       ],
       "offers": [
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 44.02,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "MUGLER Alien Eau",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "MUGLER Alien Eau - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/61YukQ5vkgL._SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DMUGLER%2520Alien%2520Eau"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 44.48,
@@ -8392,20 +8911,6 @@
           "variantTitle": "MUGLER Alien Eau - 50ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/81PsJrZVV5L._SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FMUGLER%2520Alien%2520Eau%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 47.44,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "MUGLER Alien Eau",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "MUGLER Alien Eau - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/71y6SCr973L._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=MUGLER%20Alien%20Eau"
         },
         {
           "store": "Galaxus",
@@ -8450,7 +8955,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=MUGLER%20Alien%20Eau&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 44.02,
+      "price": 44.48,
       "images": [
         "https://m.media-amazon.com/images/I/61YukQ5vkgL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61YukQ5vkgL._SL1500_.jpg",
@@ -8854,20 +9359,6 @@
           "variantTitle": "naspaluro Bürostuhl Verstellbaren",
           "image": "https://m.media-amazon.com/images/I/71QkeDzUZCL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0CTT7Q8WQ?tag=nexusdeals08-21"
-        },
-        {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 59,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "naspaluro Bürostuhl Verstellbaren",
-          "variantColor": "",
-          "variantTitle": "naspaluro Bürostuhl Verstellbaren",
-          "image": "https://m.media-amazon.com/images/I/71QkeDzUZCL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=naspaluro%20B%C3%BCrostuhl%20Verstellbaren"
         },
         {
           "store": "OTTO",
@@ -9551,20 +10042,6 @@
           "variantTitle": "LEGO 75371 Star",
           "image": "https://m.media-amazon.com/images/I/91sTGjeWuTL._AC_SL1500_.jpg",
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=LEGO%2075371%20Star&LH_BIN=1&_sop=12"
-        },
-        {
-          "store": "MediaMarkt",
-          "storeLogo": "mediamarkt",
-          "price": 182.05,
-          "shipping": 0,
-          "deliveryAr": "متوفر في MediaMarkt",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "LEGO 75371 Star",
-          "variantColor": "",
-          "variantTitle": "LEGO 75371 Star",
-          "image": "https://m.media-amazon.com/images/I/91rHh0-6DDL._AC_SL1500_.jpg",
-          "directUrl": "https://www.mediamarkt.de/de/search.html?query=LEGO%2075371%20Star"
         }
       ],
       "price": 171.55,
@@ -9788,20 +10265,6 @@
           "variantTitle": "Redbridge Steppmantel Lang",
           "image": "https://m.media-amazon.com/images/I/716RutM8n7L._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Redbridge%20Steppmantel%20Lang&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 105.5,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Redbridge Steppmantel Lang",
-          "variantColor": "",
-          "variantTitle": "Redbridge Steppmantel Lang",
-          "image": "https://m.media-amazon.com/images/I/81d2Mik8vpL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Redbridge%20Steppmantel%20Lang/"
         },
         {
           "store": "AliExpress",
@@ -10155,20 +10618,6 @@
           "directUrl": "https://www.amazon.de/dp/B0CTCQKJ1B?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 566.61,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "PHILIPS Kaffeevollautomat LatteGo",
-          "variantColor": "Schwarz",
-          "variantTitle": "PHILIPS Kaffeevollautomat LatteGo (Schwarz)",
-          "image": "https://m.media-amazon.com/images/I/716ZicZ4CjL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=PHILIPS%20Kaffeevollautomat%20LatteGo"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 574.99,
@@ -10259,20 +10708,6 @@
       ],
       "offers": [
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 44.83,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "MUGLER Alien Hypersense",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "MUGLER Alien Hypersense - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/51SDYEvqNBL._SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DMUGLER%2520Alien%2520Hypersense"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 45.3,
@@ -10314,20 +10749,6 @@
           "variantTitle": "MUGLER Alien Hypersense - 50ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/81i02aU2l4L._SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FMUGLER%2520Alien%2520Hypersense%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 48.32,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "MUGLER Alien Hypersense",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "MUGLER Alien Hypersense - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/81zMtHZDoBL._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=MUGLER%20Alien%20Hypersense"
         },
         {
           "store": "Galaxus",
@@ -10372,7 +10793,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=MUGLER%20Alien%20Hypersense&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 44.83,
+      "price": 45.3,
       "images": [
         "https://m.media-amazon.com/images/I/51SDYEvqNBL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/51SDYEvqNBL._SL1500_.jpg",
@@ -10802,20 +11223,6 @@
           "variantTitle": "GTPLAYER Gaming Stuhl",
           "image": "https://m.media-amazon.com/images/I/71TLZLOi2mL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0CWNYX31T?tag=nexusdeals08-21"
-        },
-        {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 115.58,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "GTPLAYER Gaming Stuhl",
-          "variantColor": "",
-          "variantTitle": "GTPLAYER Gaming Stuhl",
-          "image": "https://m.media-amazon.com/images/I/71TLZLOi2mL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=GTPLAYER%20Gaming%20Stuhl"
         },
         {
           "store": "Galaxus",
@@ -11462,20 +11869,6 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=LEGO%20Star%20Wars&LH_BIN=1&_sop=12"
         },
         {
-          "store": "MediaMarkt",
-          "storeLogo": "mediamarkt",
-          "price": 138.76,
-          "shipping": 0,
-          "deliveryAr": "متوفر في MediaMarkt",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "LEGO Star Wars",
-          "variantColor": "",
-          "variantTitle": "LEGO Star Wars",
-          "image": "https://m.media-amazon.com/images/I/91esRtthX0L._AC_SL1500_.jpg",
-          "directUrl": "https://www.mediamarkt.de/de/search.html?query=LEGO%20Star%20Wars"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 139.42,
@@ -11725,20 +12118,6 @@
           "variantTitle": "Killtec Herren Kow",
           "image": "https://m.media-amazon.com/images/I/61SAfpwdZ5L._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Killtec%20Herren%20Kow&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 168.9,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Killtec Herren Kow",
-          "variantColor": "",
-          "variantTitle": "Killtec Herren Kow",
-          "image": "https://m.media-amazon.com/images/I/718cePQrHzL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Killtec%20Herren%20Kow/"
         },
         {
           "store": "AliExpress",
@@ -12078,20 +12457,6 @@
           "directUrl": "https://www.amazon.de/dp/B0H34G7VB2?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 154.52,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "GOURMETmaxx FryUp3 Vertikale",
-          "variantColor": "",
-          "variantTitle": "GOURMETmaxx FryUp3 Vertikale",
-          "image": "https://m.media-amazon.com/images/I/61oQagholqL._AC_SL1417_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=GOURMETmaxx%20FryUp3%20Vertikale"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 156.81,
@@ -12182,20 +12547,6 @@
       ],
       "offers": [
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 19.82,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Asad Eau",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Lattafa Asad Eau - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/61gxV0Gl6hL._SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DLattafa%2520Asad%2520Eau"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 20.03,
@@ -12237,20 +12588,6 @@
           "variantTitle": "Lattafa Asad Eau - 100ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/710W8AMXoYL._SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FLattafa%2520Asad%2520Eau%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 21.36,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Asad Eau",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Lattafa Asad Eau - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/71i8UFqzeKL._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Lattafa%20Asad%20Eau"
         },
         {
           "store": "Galaxus",
@@ -12295,7 +12632,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Lattafa%20Asad%20Eau&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 19.82,
+      "price": 20.03,
       "images": [
         "https://m.media-amazon.com/images/I/61gxV0Gl6hL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61gxV0Gl6hL._SL1500_.jpg",
@@ -12702,20 +13039,6 @@
           "variantTitle": "minnouat Gaming Stuhl",
           "image": "https://m.media-amazon.com/images/I/61oOj8CLJOL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0GWQWWJDX?tag=nexusdeals08-21"
-        },
-        {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 102.46,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "minnouat Gaming Stuhl",
-          "variantColor": "",
-          "variantTitle": "minnouat Gaming Stuhl",
-          "image": "https://m.media-amazon.com/images/I/61oOj8CLJOL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=minnouat%20Gaming%20Stuhl"
         },
         {
           "store": "OTTO",
@@ -13390,20 +13713,6 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=LEGO%2075327%20Star&LH_BIN=1&_sop=12"
         },
         {
-          "store": "MediaMarkt",
-          "storeLogo": "mediamarkt",
-          "price": 83.28,
-          "shipping": 0,
-          "deliveryAr": "متوفر في MediaMarkt",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "LEGO 75327 Star",
-          "variantColor": "Rot",
-          "variantTitle": "LEGO 75327 Star (Rot)",
-          "image": "https://m.media-amazon.com/images/I/81mCG8dRaCL._AC_SL1500_.jpg",
-          "directUrl": "https://www.mediamarkt.de/de/search.html?query=LEGO%2075327%20Star"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 83.68,
@@ -13627,20 +13936,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 134.8,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Killtec KOW 18",
-          "variantColor": "",
-          "variantTitle": "Killtec KOW 18",
-          "image": "https://m.media-amazon.com/images/I/61nDkTOXzZL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Killtec%20KOW%2018/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 136.92,
@@ -13740,7 +14035,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=Killtec%20KOW%2018"
         }
       ],
-      "price": 134.8,
+      "price": 136.92,
       "images": [
         "https://m.media-amazon.com/images/I/61ZFvk8e1fL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61ZFvk8e1fL._AC_SL1500_.jpg",
@@ -13988,20 +14283,6 @@
           "directUrl": "https://www.amazon.de/dp/B0H2F597GG?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 152.99,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "GOURMETmaxx FryUp3 Vertikale",
-          "variantColor": "",
-          "variantTitle": "GOURMETmaxx FryUp3 Vertikale",
-          "image": "https://m.media-amazon.com/images/I/71GpRBnl3xL._AC_SL1417_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=GOURMETmaxx%20FryUp3%20Vertikale"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 154.49,
@@ -14106,20 +14387,6 @@
       ],
       "offers": [
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 49.78,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Boss Bottled Absolu",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "Boss Bottled Absolu - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/618C65kAZcL._SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DBoss%2520Bottled%2520Absolu"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 50.3,
@@ -14161,20 +14428,6 @@
           "variantTitle": "Boss Bottled Absolu - 50ml Intense",
           "image": "https://m.media-amazon.com/images/I/81rr-BPgc+L._SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FBoss%2520Bottled%2520Absolu%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 53.65,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Boss Bottled Absolu",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "Boss Bottled Absolu - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/81YsIGbdvDL._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Boss%20Bottled%20Absolu"
         },
         {
           "store": "Galaxus",
@@ -14219,7 +14472,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Boss%20Bottled%20Absolu&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 49.78,
+      "price": 50.3,
       "images": [
         "https://m.media-amazon.com/images/I/618C65kAZcL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/618C65kAZcL._SL1500_.jpg",
@@ -14650,20 +14903,6 @@
           "variantTitle": "Emma Stützkissen 80x40",
           "image": "https://m.media-amazon.com/images/I/71fH99ZcnzL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0F9XDH7HK?tag=nexusdeals08-21"
-        },
-        {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 64.24,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Emma Stützkissen 80x40",
-          "variantColor": "",
-          "variantTitle": "Emma Stützkissen 80x40",
-          "image": "https://m.media-amazon.com/images/I/71fH99ZcnzL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Emma%20St%C3%BCtzkissen%2080x40"
         },
         {
           "store": "Galaxus",
@@ -15146,20 +15385,6 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=LEGO%20Star%20Wars&LH_BIN=1&_sop=12"
         },
         {
-          "store": "MediaMarkt",
-          "storeLogo": "mediamarkt",
-          "price": 40.29,
-          "shipping": 0,
-          "deliveryAr": "متوفر في MediaMarkt",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "LEGO Star Wars",
-          "variantColor": "",
-          "variantTitle": "LEGO Star Wars",
-          "image": "https://m.media-amazon.com/images/I/71BqT0HOpNL._AC_SL1500_.jpg",
-          "directUrl": "https://www.mediamarkt.de/de/search.html?query=LEGO%20Star%20Wars"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 40.48,
@@ -15383,20 +15608,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 115.9,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Killtec Damen Parka",
-          "variantColor": "",
-          "variantTitle": "Killtec Damen Parka",
-          "image": "https://m.media-amazon.com/images/I/71rYGMcrnLL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Killtec%20Damen%20Parka/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 117.73,
@@ -15496,7 +15707,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=Killtec%20Damen%20Parka"
         }
       ],
-      "price": 115.9,
+      "price": 117.73,
       "images": [
         "https://m.media-amazon.com/images/I/618ih8Kz-VL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/618ih8Kz-VL._AC_SL1500_.jpg",
@@ -15776,20 +15987,6 @@
           "directUrl": "https://www.amazon.de/dp/B0H2FG3VBN?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 154.32,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "GOURMETmaxx FryUp3 Vertikale",
-          "variantColor": "",
-          "variantTitle": "GOURMETmaxx FryUp3 Vertikale",
-          "image": "https://m.media-amazon.com/images/I/61-bjBZsynL._AC_SL1417_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=GOURMETmaxx%20FryUp3%20Vertikale"
-        },
-        {
           "store": "Galaxus",
           "storeLogo": "galaxus",
           "price": 155.83,
@@ -15866,20 +16063,6 @@
       ],
       "offers": [
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 22.71,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Angham Eau",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "Lattafa Angham Eau - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/41KLl8IF6sL._SL1000_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DLattafa%2520Angham%2520Eau"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 22.94,
@@ -15921,20 +16104,6 @@
           "variantTitle": "Lattafa Angham Eau - 50ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/81RDRroz8gL._SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FLattafa%2520Angham%2520Eau%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 24.47,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Angham Eau",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "Lattafa Angham Eau - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/71fhDeMMJFL._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Lattafa%20Angham%20Eau"
         },
         {
           "store": "Galaxus",
@@ -15979,7 +16148,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Lattafa%20Angham%20Eau&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 22.71,
+      "price": 22.94,
       "images": [
         "https://m.media-amazon.com/images/I/41KLl8IF6sL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/41KLl8IF6sL._SL1000_.jpg",
@@ -16404,20 +16573,6 @@
           "directUrl": "https://www.amazon.de/dp/B0FB3N1S6W?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 238.22,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Emma One Matratze",
-          "variantColor": "",
-          "variantTitle": "Emma One Matratze",
-          "image": "https://m.media-amazon.com/images/I/61A5NVaT8EL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Emma%20One%20Matratze"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 241.74,
@@ -16678,20 +16833,6 @@
           "variantTitle": "Outdoor Ventures Damen",
           "image": "https://m.media-amazon.com/images/I/81r+-auhj7L._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Outdoor%20Ventures%20Damen&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 57.11,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Outdoor Ventures Damen",
-          "variantColor": "",
-          "variantTitle": "Outdoor Ventures Damen",
-          "image": "https://m.media-amazon.com/images/I/71lguA0GZCL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Outdoor%20Ventures%20Damen/"
         },
         {
           "store": "AliExpress",
@@ -17045,20 +17186,6 @@
           "directUrl": "https://www.amazon.de/dp/B0DPQ55RVS?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 284.19,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Cosori Airfryer Testsieger",
-          "variantColor": "",
-          "variantTitle": "Cosori Airfryer Testsieger",
-          "image": "https://m.media-amazon.com/images/I/61bnc6t015L._AC_SL1254_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Cosori%20Airfryer%20Testsieger"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 288.39,
@@ -17178,20 +17305,6 @@
           "directUrl": "https://www.amazon.de/dp/B0B92Y18GT?tag=nexusdeals08-21"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 29.51,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Khamrah Eau",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Lattafa Khamrah Eau - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/61lIaaNDDqL._SL1000_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DLattafa%2520Khamrah%2520Eau"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 29.94,
@@ -17204,20 +17317,6 @@
           "variantTitle": "Lattafa Khamrah Eau - 100ml Eau de Toilette",
           "image": "https://m.media-amazon.com/images/I/812VtJAFfHL._SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FLattafa%2520Khamrah%2520Eau%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 30.09,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Khamrah Eau",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Lattafa Khamrah Eau - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/710CwatteaL._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Lattafa%20Khamrah%20Eau"
         },
         {
           "store": "Galaxus",
@@ -17701,20 +17800,6 @@
           "directUrl": "https://www.amazon.de/dp/B0H5XFW88V?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 326.1,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Emma Auffrischung Matratze",
-          "variantColor": "",
-          "variantTitle": "Emma Auffrischung Matratze",
-          "image": "https://m.media-amazon.com/images/I/51JEj7DH81L._AC_SL1080_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Emma%20Auffrischung%20Matratze"
-        },
-        {
           "store": "Galaxus",
           "storeLogo": "galaxus",
           "price": 329.3,
@@ -17976,20 +18061,6 @@
           "variantTitle": "Höhenhorn Achalm Herren",
           "image": "https://m.media-amazon.com/images/I/81xlQquMxTL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=H%C3%B6henhorn%20Achalm%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 94.47,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Höhenhorn Achalm Herren",
-          "variantColor": "",
-          "variantTitle": "Höhenhorn Achalm Herren",
-          "image": "https://m.media-amazon.com/images/I/916fCWtchRL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/H%C3%B6henhorn%20Achalm%20Herren/"
         },
         {
           "store": "AliExpress",
@@ -18343,20 +18414,6 @@
           "directUrl": "https://www.amazon.de/dp/B0DJ71KZXF?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 112.83,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Cosori Airfryer Testsieger",
-          "variantColor": "",
-          "variantTitle": "Cosori Airfryer Testsieger",
-          "image": "https://m.media-amazon.com/images/I/619iWKgninL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Cosori%20Airfryer%20Testsieger"
-        },
-        {
           "store": "Galaxus",
           "storeLogo": "galaxus",
           "price": 113.94,
@@ -18431,20 +18488,6 @@
       ],
       "offers": [
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 25.86,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Khamrah Qahwa",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "Lattafa Khamrah Qahwa - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/61C6X6fLv4L._SL1000_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DLattafa%2520Khamrah%2520Qahwa"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 26.13,
@@ -18486,20 +18529,6 @@
           "variantTitle": "Lattafa Khamrah Qahwa - 50ml Intense",
           "image": "https://m.media-amazon.com/images/I/71aFt+QSFPL._SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FLattafa%2520Khamrah%2520Qahwa%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 27.87,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Khamrah Qahwa",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "Lattafa Khamrah Qahwa - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/617Syhn4qhL._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Lattafa%20Khamrah%20Qahwa"
         },
         {
           "store": "Galaxus",
@@ -18544,7 +18573,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Lattafa%20Khamrah%20Qahwa&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 25.86,
+      "price": 26.13,
       "images": [
         "https://m.media-amazon.com/images/I/61C6X6fLv4L._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61C6X6fLv4L._SL1000_.jpg",
@@ -18951,20 +18980,6 @@
           "directUrl": "https://www.amazon.de/dp/B095WXTL7R?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 214.19,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "BMM Kaltschaummatratze Komfort",
-          "variantColor": "",
-          "variantTitle": "BMM Kaltschaummatratze Komfort",
-          "image": "https://m.media-amazon.com/images/I/81kXHSFzdaL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=BMM%20Kaltschaummatratze%20Komfort"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 216.29,
@@ -19253,20 +19268,6 @@
           "variantTitle": "Höhenhorn Starsgard Herren",
           "image": "https://m.media-amazon.com/images/I/81VKfPQWz7L._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=H%C3%B6henhorn%20Starsgard%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 91.76,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Höhenhorn Starsgard Herren",
-          "variantColor": "",
-          "variantTitle": "Höhenhorn Starsgard Herren",
-          "image": "https://m.media-amazon.com/images/I/813+vY-Y20L._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/H%C3%B6henhorn%20Starsgard%20Herren/"
         },
         {
           "store": "AliExpress",
@@ -19592,20 +19593,6 @@
           "directUrl": "https://www.amazon.de/dp/B09ZYLM43B?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 195.13,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Ninja Foodi MAX",
-          "variantColor": "Schwarz",
-          "variantTitle": "Ninja Foodi MAX (Schwarz)",
-          "image": "https://m.media-amazon.com/images/I/61FZ31g+LeL._AC_SL1400_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Ninja%20Foodi%20MAX"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 197.04,
@@ -19739,20 +19726,6 @@
           "directUrl": "https://www.amazon.de/dp/B0DGLN29DQ?tag=nexusdeals08-21"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 31,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa His Confession",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "Lattafa His Confession - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/51ACigFYKRL._SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DLattafa%2520His%2520Confession"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 31.45,
@@ -19765,20 +19738,6 @@
           "variantTitle": "Lattafa His Confession - 50ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/912ViVIdfAL._SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FLattafa%2520His%2520Confession%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 31.61,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa His Confession",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "Lattafa His Confession - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/71zrd+bJyuL._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Lattafa%20His%20Confession"
         },
         {
           "store": "Galaxus",
@@ -20261,20 +20220,6 @@
           "directUrl": "https://www.amazon.de/dp/B01ENFAEJE?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 241.68,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Matratzen Perfekt Köln",
-          "variantColor": "",
-          "variantTitle": "Matratzen Perfekt Köln",
-          "image": "https://m.media-amazon.com/images/I/71CbSHWFiSL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Matratzen%20Perfekt%20K%C3%B6ln"
-        },
-        {
           "store": "Galaxus",
           "storeLogo": "galaxus",
           "price": 244.05,
@@ -20512,20 +20457,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 42.82,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Safetytex Winter Warnschutz",
-          "variantColor": "",
-          "variantTitle": "Safetytex Winter Warnschutz",
-          "image": "https://m.media-amazon.com/images/I/81HCP8BRilL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Safetytex%20Winter%20Warnschutz/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 43.49,
@@ -20639,7 +20570,7 @@
         "https://m.media-amazon.com/images/I/51aWatUryXL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/51rJaOse11L._AC_SL1000_.jpg"
       ],
-      "price": 42.82
+      "price": 43.49
     },
     {
       "id": "real-B0GSGX6FF1",
@@ -20834,20 +20765,6 @@
       ],
       "offers": [
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 543.3,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "roborock Qrevo Curv",
-          "variantColor": "",
-          "variantTitle": "roborock Qrevo Curv",
-          "image": "https://m.media-amazon.com/images/I/61j4hvcglNL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=roborock%20Qrevo%20Curv"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 546.09,
@@ -20947,7 +20864,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=roborock%20Qrevo%20Curv&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 543.3,
+      "price": 546.09,
       "images": [
         "https://m.media-amazon.com/images/I/61j4hvcglNL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61j4hvcglNL._AC_SL1500_.jpg",
@@ -21022,20 +20939,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Lattafa%20Her%20Confession&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 31.31,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Her Confession",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "Lattafa Her Confession - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/61oX8j0uC6L._SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DLattafa%2520Her%2520Confession"
-        },
-        {
           "store": "Amazon",
           "storeLogo": "amazon",
           "asin": "B0DGLKQ4HT",
@@ -21049,20 +20952,6 @@
           "variantTitle": "Lattafa Her Confession - 50ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/61oX8j0uC6L._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0DGLKQ4HT?tag=nexusdeals08-21"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 32.09,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Her Confession",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "Lattafa Her Confession - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/81fZfN5k+HL._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Lattafa%20Her%20Confession"
         },
         {
           "store": "Galaxus",
@@ -21354,20 +21243,6 @@
           "directUrl": "https://www.amazon.de/dp/B0H5XBKYYM?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 636.47,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Emma Pro Auffrischung",
-          "variantColor": "",
-          "variantTitle": "Emma Pro Auffrischung",
-          "image": "https://m.media-amazon.com/images/I/51ooBFYspZL._AC_SL1080_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Emma%20Pro%20Auffrischung"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 642.71,
@@ -21656,20 +21531,6 @@
           "variantTitle": "killtec KOW 85 (Grau / Titan)",
           "image": "https://m.media-amazon.com/images/I/71lsIfOmqXL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=killtec%20KOW%2085&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 131.77,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "killtec KOW 85",
-          "variantColor": "Grau / Titan",
-          "variantTitle": "killtec KOW 85 (Grau / Titan)",
-          "image": "https://m.media-amazon.com/images/I/71JAd9nQOKL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/killtec%20KOW%2085/"
         },
         {
           "store": "AliExpress",
@@ -22023,20 +21884,6 @@
           "directUrl": "https://www.amazon.de/dp/B0FFGQ7L2T?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 671.9,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "roborock Qrevo Curv",
-          "variantColor": "",
-          "variantTitle": "roborock Qrevo Curv",
-          "image": "https://m.media-amazon.com/images/I/61DxbufNWRL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=roborock%20Qrevo%20Curv"
-        },
-        {
           "store": "Galaxus",
           "storeLogo": "galaxus",
           "price": 678.49,
@@ -22141,20 +21988,6 @@
           "directUrl": "https://www.amazon.de/dp/B0F443WD8W?tag=nexusdeals08-21"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 20.68,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Opulent Dubai",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "Lattafa Opulent Dubai - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/71C-fT7p56L._SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DLattafa%2520Opulent%2520Dubai"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 20.98,
@@ -22167,20 +22000,6 @@
           "variantTitle": "Lattafa Opulent Dubai - 50ml Intense",
           "image": "https://m.media-amazon.com/images/I/81um4vm8mOL._SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FLattafa%2520Opulent%2520Dubai%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 21.08,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Lattafa Opulent Dubai",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "Lattafa Opulent Dubai - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/81A178e1oNL._SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Lattafa%20Opulent%20Dubai"
         },
         {
           "store": "Galaxus",
@@ -22615,20 +22434,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Killtec%20Damen%20Parka&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 93.85,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Killtec Damen Parka",
-          "variantColor": "",
-          "variantTitle": "Killtec Damen Parka",
-          "image": "https://m.media-amazon.com/images/I/71lSQnHVP4L._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Killtec%20Damen%20Parka/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 94.33,
@@ -22909,20 +22714,6 @@
       ],
       "offers": [
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 552.44,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "roborock Qrevo Edge",
-          "variantColor": "",
-          "variantTitle": "roborock Qrevo Edge",
-          "image": "https://m.media-amazon.com/images/I/61f-wnv9jUL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=roborock%20Qrevo%20Edge"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 555.28,
@@ -23022,7 +22813,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=roborock%20Qrevo%20Edge&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 552.44,
+      "price": 555.28,
       "images": [
         "https://m.media-amazon.com/images/I/61f-wnv9jUL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61f-wnv9jUL._AC_SL1500_.jpg",
@@ -23099,20 +22890,6 @@
           "directUrl": "https://www.amazon.de/dp/B0GTWNZQXW?tag=nexusdeals08-21"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 407.12,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun Smart IPL",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Braun Smart IPL - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/81cqk83JVML._AC_SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DBraun%2520Smart%2520IPL"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 413.11,
@@ -23125,20 +22902,6 @@
           "variantTitle": "Braun Smart IPL - 100ml Eau de Toilette",
           "image": "https://m.media-amazon.com/images/I/81fytGyRd5L._AC_SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FBraun%2520Smart%2520IPL%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 415.11,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun Smart IPL",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Braun Smart IPL - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/717E0kuW1NL._AC_SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Braun%20Smart%20IPL"
         },
         {
           "store": "Galaxus",
@@ -23581,20 +23344,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=killtec%20Damen%20Funktionsparka&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 128.84,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "killtec Damen Funktionsparka",
-          "variantColor": "",
-          "variantTitle": "killtec Damen Funktionsparka",
-          "image": "https://m.media-amazon.com/images/I/71UDFJnz07L._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/killtec%20Damen%20Funktionsparka/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 129.5,
@@ -23946,20 +23695,6 @@
           "directUrl": "https://www.amazon.de/dp/B0GHMV8ML5?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 414.11,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "roborock Qrevo S",
-          "variantColor": "",
-          "variantTitle": "roborock Qrevo S",
-          "image": "https://m.media-amazon.com/images/I/61sfo8AJ2gL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=roborock%20Qrevo%20S"
-        },
-        {
           "store": "Galaxus",
           "storeLogo": "galaxus",
           "price": 418.17,
@@ -24065,20 +23800,6 @@
           "directUrl": "https://www.amazon.de/dp/B0G4CPCFT9?tag=nexusdeals08-21"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 316.17,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun IPL Geräte",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Braun IPL Geräte - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/81moere8QYL._AC_SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DBraun%2520IPL%2520Ger%25C3%25A4te"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 320.82,
@@ -24091,20 +23812,6 @@
           "variantTitle": "Braun IPL Geräte - 100ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/811WcaOKoQL._AC_SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FBraun%2520IPL%2520Ger%25C3%25A4te%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 322.37,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun IPL Geräte",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Braun IPL Geräte - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/81dbQ3hXjJL._AC_SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Braun%20IPL%20Ger%C3%A4te"
         },
         {
           "store": "Galaxus",
@@ -24519,20 +24226,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 66.86,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "MAGCOMSEN Herren Winterjacke",
-          "variantColor": "",
-          "variantTitle": "MAGCOMSEN Herren Winterjacke",
-          "image": "https://m.media-amazon.com/images/I/81g8jr2KeFL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/MAGCOMSEN%20Herren%20Winterjacke/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 67.92,
@@ -24632,7 +24325,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=MAGCOMSEN%20Herren%20Winterjacke"
         }
       ],
-      "price": 66.86,
+      "price": 67.92,
       "images": [
         "https://m.media-amazon.com/images/I/81BCG8yvfcL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/81BCG8yvfcL._AC_SL1500_.jpg",
@@ -24841,20 +24534,6 @@
       ],
       "offers": [
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 210.93,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "roborock Q10 S5",
-          "variantColor": "",
-          "variantTitle": "roborock Q10 S5",
-          "image": "https://m.media-amazon.com/images/I/6166RYqGJwL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=roborock%20Q10%20S5"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 212.01,
@@ -24954,7 +24633,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=roborock%20Q10%20S5&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 210.93,
+      "price": 212.01,
       "images": [
         "https://m.media-amazon.com/images/I/6166RYqGJwL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/6166RYqGJwL._AC_SL1500_.jpg",
@@ -25029,20 +24708,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Braun%20IPL%20Ger%C3%A4te&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 353.26,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun IPL Geräte",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Braun IPL Geräte - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/81j5qyJ5FiL._AC_SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DBraun%2520IPL%2520Ger%25C3%25A4te"
-        },
-        {
           "store": "Amazon",
           "storeLogo": "amazon",
           "asin": "B0G4CR25T1",
@@ -25056,20 +24721,6 @@
           "variantTitle": "Braun IPL Geräte - 100ml Eau de Toilette",
           "image": "https://m.media-amazon.com/images/I/81j5qyJ5FiL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0G4CR25T1?tag=nexusdeals08-21"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 362,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun IPL Geräte",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Braun IPL Geräte - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/71F7j19YmDL._AC_SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Braun%20IPL%20Ger%C3%A4te"
         },
         {
           "store": "Galaxus",
@@ -25498,20 +25149,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Redbridge%20Langer%20Pufferparka&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 105.5,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Redbridge Langer Pufferparka",
-          "variantColor": "",
-          "variantTitle": "Redbridge Langer Pufferparka",
-          "image": "https://m.media-amazon.com/images/I/81VzxuXk-CL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Redbridge%20Langer%20Pufferparka/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 106.6,
@@ -25877,20 +25514,6 @@
           "directUrl": "https://www.amazon.de/dp/B0GHN9DR1C?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 619.98,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "roborock Qrevo S",
-          "variantColor": "",
-          "variantTitle": "roborock Qrevo S",
-          "image": "https://m.media-amazon.com/images/I/61rielRLLxL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=roborock%20Qrevo%20S"
-        },
-        {
           "store": "Galaxus",
           "storeLogo": "galaxus",
           "price": 626.05,
@@ -25996,20 +25619,6 @@
           "directUrl": "https://www.amazon.de/dp/B0F32JZPTS?tag=nexusdeals08-21"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 199.04,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun IPL Geräte",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Braun IPL Geräte - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/81YBrUfCaIL._AC_SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DBraun%2520IPL%2520Ger%25C3%25A4te"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 201.97,
@@ -26022,20 +25631,6 @@
           "variantTitle": "Braun IPL Geräte - 100ml Eau de Toilette",
           "image": "https://m.media-amazon.com/images/I/81HMrolGsVL._AC_SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FBraun%2520IPL%2520Ger%25C3%25A4te%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 202.95,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun IPL Geräte",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Braun IPL Geräte - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/81l5eYHdQaL._AC_SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Braun%20IPL%20Ger%C3%A4te"
         },
         {
           "store": "Galaxus",
@@ -26478,20 +26073,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Redbridge%20Herren%20Winterparka&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 109.3,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Redbridge Herren Winterparka",
-          "variantColor": "",
-          "variantTitle": "Redbridge Herren Winterparka",
-          "image": "https://m.media-amazon.com/images/I/811+YFhhUbL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Redbridge%20Herren%20Winterparka/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 109.86,
@@ -26829,20 +26410,6 @@
           "directUrl": "https://www.amazon.de/dp/B0C5LPVCQ5?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 90.62,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Kitchen Academy Induktion",
-          "variantColor": "",
-          "variantTitle": "Kitchen Academy Induktion",
-          "image": "https://m.media-amazon.com/images/I/81m6xBLXpQL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Kitchen%20Academy%20Induktion"
-        },
-        {
           "store": "Kaufland",
           "storeLogo": "kaufland",
           "price": 91.96,
@@ -26933,20 +26500,6 @@
       ],
       "offers": [
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 348.23,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun Rasierer Herren",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Braun Rasierer Herren - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/81EMG7lKcVL._AC_SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DBraun%2520Rasierer%2520Herren"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 351.84,
@@ -26988,20 +26541,6 @@
           "variantTitle": "Braun Rasierer Herren - 100ml Eau de Toilette",
           "image": "https://m.media-amazon.com/images/I/81OQ8cqhwCL._AC_SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FBraun%2520Rasierer%2520Herren%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 375.29,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Braun Rasierer Herren",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Braun Rasierer Herren - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/91c53+f+o9L._AC_SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Braun%20Rasierer%20Herren"
         },
         {
           "store": "Galaxus",
@@ -27046,7 +26585,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Braun%20Rasierer%20Herren&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 348.23,
+      "price": 351.84,
       "images": [
         "https://m.media-amazon.com/images/I/81EMG7lKcVL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/81EMG7lKcVL._AC_SL1500_.jpg",
@@ -27255,20 +26794,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 82.82,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "MAGCOMSEN Herren Winter",
-          "variantColor": "",
-          "variantTitle": "MAGCOMSEN Herren Winter",
-          "image": "https://m.media-amazon.com/images/I/81+wVdYMBFL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/MAGCOMSEN%20Herren%20Winter/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 84.13,
@@ -27368,7 +26893,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=MAGCOMSEN%20Herren%20Winter"
         }
       ],
-      "price": 82.82,
+      "price": 84.13,
       "images": [
         "https://m.media-amazon.com/images/I/71znPX7cmpL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/71znPX7cmpL._AC_SL1500_.jpg",
@@ -27620,20 +27145,6 @@
           "directUrl": "https://www.amazon.de/dp/B0BQMG8862?tag=nexusdeals08-21"
         },
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 112.19,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Kitchen Academy Pfannenset",
-          "variantColor": "Grau / Titan",
-          "variantTitle": "Kitchen Academy Pfannenset (Grau / Titan)",
-          "image": "https://m.media-amazon.com/images/I/716+Sbp2MpL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Kitchen%20Academy%20Pfannenset"
-        },
-        {
           "store": "OTTO",
           "storeLogo": "otto",
           "price": 113.29,
@@ -27737,20 +27248,6 @@
       ],
       "offers": [
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 334.17,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Philips Lumea IPL",
-          "variantColor": "100ml Eau de Parfum",
-          "variantTitle": "Philips Lumea IPL - 100ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/71IZTXV2ypL._AC_SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DPhilips%2520Lumea%2520IPL"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 337.63,
@@ -27792,20 +27289,6 @@
           "variantTitle": "Philips Lumea IPL - 50ml Eau de Parfum",
           "image": "https://m.media-amazon.com/images/I/81vQ2VT4BuL._AC_SL1500_.jpg",
           "directUrl": "https://www.awin1.com/cread.php?awinmid=14336&awinaffid=3130490&ued=https%3A%2F%2Fwww.otto.de%2Fsuche%2FPhilips%2520Lumea%2520IPL%2F"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 360.14,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Philips Lumea IPL",
-          "variantColor": "100ml Eau de Toilette",
-          "variantTitle": "Philips Lumea IPL - 100ml Eau de Toilette",
-          "image": "https://m.media-amazon.com/images/I/71ClRmeia4L._AC_SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Philips%20Lumea%20IPL"
         },
         {
           "store": "Galaxus",
@@ -27850,7 +27333,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Philips%20Lumea%20IPL&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 334.17,
+      "price": 337.63,
       "images": [
         "https://m.media-amazon.com/images/I/71IZTXV2ypL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/71IZTXV2ypL._AC_SL1500_.jpg",
@@ -28073,20 +27556,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=killtec%20Damen%20Funktionsparka&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 134.93,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "killtec Damen Funktionsparka",
-          "variantColor": "",
-          "variantTitle": "killtec Damen Funktionsparka",
-          "image": "https://m.media-amazon.com/images/I/71OvSaZ55jL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/killtec%20Damen%20Funktionsparka/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 136.33,
@@ -28220,20 +27689,6 @@
       ],
       "offers": [
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 87.05,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Kitchen Academy Induktion",
-          "variantColor": "",
-          "variantTitle": "Kitchen Academy Induktion",
-          "image": "https://m.media-amazon.com/images/I/71UTx+-B8nL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Kitchen%20Academy%20Induktion"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 87.49,
@@ -28333,7 +27788,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Kitchen%20Academy%20Induktion&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 87.05,
+      "price": 87.49,
       "images": [
         "https://m.media-amazon.com/images/I/71UTx+-B8nL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/71UTx+-B8nL._AC_SL1500_.jpg",
@@ -28406,20 +27861,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Philips%20Lumea%20IPL&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "Douglas",
-          "storeLogo": "douglas",
-          "price": 331.22,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Douglas",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Philips Lumea IPL",
-          "variantColor": "50ml Intense",
-          "variantTitle": "Philips Lumea IPL - 50ml Intense",
-          "image": "https://m.media-amazon.com/images/I/714maqA1S7L._AC_SL1500_.jpg",
-          "directUrl": "https://www.awin1.com/cread.php?awinmid=10046&awinaffid=3130490&ued=https%3A%2F%2Fwww.douglas.de%2Fde%2Fsearch%3Fq%3DPhilips%2520Lumea%2520IPL"
-        },
-        {
           "store": "Amazon",
           "storeLogo": "amazon",
           "asin": "B07HX2KMXK",
@@ -28433,20 +27874,6 @@
           "variantTitle": "Philips Lumea IPL - 100ml Eau de Toilette",
           "image": "https://m.media-amazon.com/images/I/714maqA1S7L._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B07HX2KMXK?tag=nexusdeals08-21"
-        },
-        {
-          "store": "Zalando",
-          "storeLogo": "zalando",
-          "price": 339.42,
-          "shipping": 0,
-          "deliveryAr": "متوفر في Zalando",
-          "inStock": true,
-          "rating": 4.9,
-          "query": "Philips Lumea IPL",
-          "variantColor": "50ml Eau de Parfum",
-          "variantTitle": "Philips Lumea IPL - 50ml Eau de Parfum",
-          "image": "https://m.media-amazon.com/images/I/81QpLBjcH9L._AC_SL1500_.jpg",
-          "directUrl": "https://www.zalando.de/katalog/?q=Philips%20Lumea%20IPL"
         },
         {
           "store": "Galaxus",
@@ -28700,20 +28127,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 64.88,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Didriksons - AVON",
-          "variantColor": "",
-          "variantTitle": "Didriksons - AVON",
-          "image": "https://m.media-amazon.com/images/I/61o0h4u3BpL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Didriksons%20-%20AVON/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 65.91,
@@ -28813,7 +28226,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=Didriksons%20-%20AVON"
         }
       ],
-      "price": 64.88,
+      "price": 65.91,
       "images": [
         "https://m.media-amazon.com/images/I/71oRGftSacL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/71oRGftSacL._AC_SL1500_.jpg",
@@ -28916,20 +28329,6 @@
           "variantTitle": "Redchef Topfset Abnehmbarer (Blau)",
           "image": "https://m.media-amazon.com/images/I/61p+3JbFiRL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0FPCJ3NX8?tag=nexusdeals08-21"
-        },
-        {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 56.9,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Redchef Topfset Abnehmbarer",
-          "variantColor": "Blau",
-          "variantTitle": "Redchef Topfset Abnehmbarer (Blau)",
-          "image": "https://m.media-amazon.com/images/I/61p+3JbFiRL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Redchef%20Topfset%20Abnehmbarer"
         },
         {
           "store": "Kaufland",
@@ -29211,20 +28610,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=33000ft%2033%20000ft&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 37.25,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "33000ft 33 000ft",
-          "variantColor": "",
-          "variantTitle": "33000ft 33 000ft",
-          "image": "https://m.media-amazon.com/images/I/81I4BqmtJIL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/33000ft%2033%20000ft/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 37.44,
@@ -29344,20 +28729,6 @@
       ],
       "offers": [
         {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 49.22,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Amefa Quick Clack",
-          "variantColor": "",
-          "variantTitle": "Amefa Quick Clack",
-          "image": "https://m.media-amazon.com/images/I/61LA5dYEL+L._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Amefa%20Quick%20Clack"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 49.47,
@@ -29457,7 +28828,7 @@
           "directUrl": "https://www.ebay.de/sch/i.html?_nkw=Amefa%20Quick%20Clack&LH_BIN=1&_sop=12"
         }
       ],
-      "price": 49.22,
+      "price": 49.47,
       "images": [
         "https://m.media-amazon.com/images/I/61LA5dYEL+L._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61LA5dYEL+L._AC_SL1500_.jpg",
@@ -29664,20 +29035,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 49.65,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Outdoor Ventures Jacke",
-          "variantColor": "",
-          "variantTitle": "Outdoor Ventures Jacke",
-          "image": "https://m.media-amazon.com/images/I/71QxS4+4DTL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Outdoor%20Ventures%20Jacke/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 50.43,
@@ -29777,7 +29134,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=Outdoor%20Ventures%20Jacke"
         }
       ],
-      "price": 49.65,
+      "price": 50.43,
       "images": [
         "https://m.media-amazon.com/images/I/61NWovRxIOL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61NWovRxIOL._AC_SL1500_.jpg",
@@ -29880,20 +29237,6 @@
           "variantTitle": "Redchef 5-Teiliges Töpfe",
           "image": "https://m.media-amazon.com/images/I/516YVhi9BpL._AC_SL1000_.jpg",
           "directUrl": "https://www.amazon.de/dp/B0H5VZGYNH?tag=nexusdeals08-21"
-        },
-        {
-          "store": "IKEA",
-          "storeLogo": "ikea",
-          "price": 101.49,
-          "shipping": 0,
-          "deliveryAr": "متوفر في IKEA",
-          "inStock": true,
-          "rating": 4.8,
-          "query": "Redchef 5-Teiliges Töpfe",
-          "variantColor": "",
-          "variantTitle": "Redchef 5-Teiliges Töpfe",
-          "image": "https://m.media-amazon.com/images/I/516YVhi9BpL._AC_SL1500_.jpg",
-          "directUrl": "https://www.ikea.com/de/de/search/?q=Redchef%205-Teiliges%20T%C3%B6pfe"
         },
         {
           "store": "Kaufland",
@@ -30159,20 +29502,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Blue%20Wave%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 172.75,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Blue Wave Herren",
-          "variantColor": "Blau",
-          "variantTitle": "Blue Wave Herren (Blau)",
-          "image": "https://m.media-amazon.com/images/I/71OJ67IjYaL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Blue%20Wave%20Herren/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 174.55,
@@ -30334,20 +29663,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Outdoor%20Ventures%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 36.2,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Outdoor Ventures Herren",
-          "variantColor": "",
-          "variantTitle": "Outdoor Ventures Herren",
-          "image": "https://m.media-amazon.com/images/I/71HxRagBCmL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Outdoor%20Ventures%20Herren/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 36.39,
@@ -30467,20 +29782,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 44.9,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Fusskleidung Damen Herren",
-          "variantColor": "",
-          "variantTitle": "Fusskleidung Damen Herren",
-          "image": "https://m.media-amazon.com/images/I/71PzMi+53jL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Fusskleidung%20Damen%20Herren/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 45.61,
@@ -30580,7 +29881,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=Fusskleidung%20Damen%20Herren"
         }
       ],
-      "price": 44.9,
+      "price": 45.61,
       "images": [
         "https://m.media-amazon.com/images/I/713Af8yUHSL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/713Af8yUHSL._AC_SL1500_.jpg",
@@ -30627,20 +29928,6 @@
         41
       ],
       "offers": [
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 44.69,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Fusskleidung Damen Herren",
-          "variantColor": "",
-          "variantTitle": "Fusskleidung Damen Herren",
-          "image": "https://m.media-amazon.com/images/I/71F+9pfhoPL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Fusskleidung%20Damen%20Herren/"
-        },
         {
           "store": "Temu",
           "storeLogo": "temu",
@@ -30741,7 +30028,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=Fusskleidung%20Damen%20Herren"
         }
       ],
-      "price": 44.69,
+      "price": 45.39,
       "images": [
         "https://m.media-amazon.com/images/I/61IINoTZreL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61IINoTZreL._AC_SL1500_.jpg",
@@ -30815,20 +30102,6 @@
           "variantTitle": "Fusskleidung Damen Herren",
           "image": "https://m.media-amazon.com/images/I/811iBXRn0UL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Fusskleidung%20Damen%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 45.85,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Fusskleidung Damen Herren",
-          "variantColor": "",
-          "variantTitle": "Fusskleidung Damen Herren",
-          "image": "https://m.media-amazon.com/images/I/71WQSA3EYKL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Fusskleidung%20Damen%20Herren/"
         },
         {
           "store": "AliExpress",
@@ -30962,20 +30235,6 @@
           "variantTitle": "Fusskleidung Damen Herren",
           "image": "https://m.media-amazon.com/images/I/811iBXRn0UL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Fusskleidung%20Damen%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 44.05,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Fusskleidung Damen Herren",
-          "variantColor": "",
-          "variantTitle": "Fusskleidung Damen Herren",
-          "image": "https://m.media-amazon.com/images/I/61cgIjhcQ1L._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Fusskleidung%20Damen%20Herren/"
         },
         {
           "store": "AliExpress",
@@ -31123,20 +30382,6 @@
           "variantTitle": "Fusskleidung Damen Herren",
           "image": "https://m.media-amazon.com/images/I/811iBXRn0UL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Fusskleidung%20Damen%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 44.27,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Fusskleidung Damen Herren",
-          "variantColor": "",
-          "variantTitle": "Fusskleidung Damen Herren",
-          "image": "https://m.media-amazon.com/images/I/71mEFLxKOyL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Fusskleidung%20Damen%20Herren/"
         },
         {
           "store": "AliExpress",
@@ -31300,20 +30545,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Fusskleidung%20Damen%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 45.87,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Fusskleidung Damen Herren",
-          "variantColor": "",
-          "variantTitle": "Fusskleidung Damen Herren",
-          "image": "https://m.media-amazon.com/images/I/61jxNmhOqmL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Fusskleidung%20Damen%20Herren/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 46.11,
@@ -31433,20 +30664,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 44.69,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Fusskleidung Damen Herren",
-          "variantColor": "",
-          "variantTitle": "Fusskleidung Damen Herren",
-          "image": "https://m.media-amazon.com/images/I/61APfriiwPL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Fusskleidung%20Damen%20Herren/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 45.39,
@@ -31546,7 +30763,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=Fusskleidung%20Damen%20Herren"
         }
       ],
-      "price": 44.69,
+      "price": 45.39,
       "images": [
         "https://m.media-amazon.com/images/I/613+LKmeRTL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/613+LKmeRTL._AC_SL1500_.jpg",
@@ -31620,20 +30837,6 @@
           "variantTitle": "Fusskleidung Damen Herren",
           "image": "https://m.media-amazon.com/images/I/811iBXRn0UL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Fusskleidung%20Damen%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 45.85,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Fusskleidung Damen Herren",
-          "variantColor": "",
-          "variantTitle": "Fusskleidung Damen Herren",
-          "image": "https://m.media-amazon.com/images/I/71yTtraf4zL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Fusskleidung%20Damen%20Herren/"
         },
         {
           "store": "AliExpress",
@@ -31783,20 +30986,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Outdoor%20Ventures%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 45.87,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Outdoor Ventures Herren",
-          "variantColor": "",
-          "variantTitle": "Outdoor Ventures Herren",
-          "image": "https://m.media-amazon.com/images/I/719soeirFEL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Outdoor%20Ventures%20Herren/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 46.11,
@@ -31928,20 +31117,6 @@
           "variantTitle": "Outdoor Ventures Herren",
           "image": "https://m.media-amazon.com/images/I/71kVkFgu8ZL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Outdoor%20Ventures%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 44.05,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Outdoor Ventures Herren",
-          "variantColor": "",
-          "variantTitle": "Outdoor Ventures Herren",
-          "image": "https://m.media-amazon.com/images/I/71AWXiswbPL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Outdoor%20Ventures%20Herren/"
         },
         {
           "store": "AliExpress",
@@ -32091,20 +31266,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Outdoor%20Ventures%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 44.94,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Outdoor Ventures Herren",
-          "variantColor": "",
-          "variantTitle": "Outdoor Ventures Herren",
-          "image": "https://m.media-amazon.com/images/I/71rCL3gCWAL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Outdoor%20Ventures%20Herren/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 45.41,
@@ -32252,20 +31413,6 @@
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Outdoor%20Ventures%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
         },
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 61.58,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Outdoor Ventures Herren",
-          "variantColor": "",
-          "variantTitle": "Outdoor Ventures Herren",
-          "image": "https://m.media-amazon.com/images/I/71II6gCehgL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Outdoor%20Ventures%20Herren/"
-        },
-        {
           "store": "AliExpress",
           "storeLogo": "aliexpress",
           "price": 62.23,
@@ -32399,20 +31546,6 @@
       ],
       "offers": [
         {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 62.46,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Outdoor Ventures Herren",
-          "variantColor": "",
-          "variantTitle": "Outdoor Ventures Herren",
-          "image": "https://m.media-amazon.com/images/I/710cZLEG7cL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Outdoor%20Ventures%20Herren/"
-        },
-        {
           "store": "Temu",
           "storeLogo": "temu",
           "price": 63.45,
@@ -32512,7 +31645,7 @@
           "directUrl": "https://www.kaufland.de/item/search/?search_value=Outdoor%20Ventures%20Herren"
         }
       ],
-      "price": 62.46,
+      "price": 63.45,
       "images": [
         "https://m.media-amazon.com/images/I/61gWMVmw+zL._AC_SL1000_.jpg",
         "https://m.media-amazon.com/images/I/61gWMVmw+zL._AC_SL1500_.jpg",
@@ -32586,20 +31719,6 @@
           "variantTitle": "Tommy Jeans Herren",
           "image": "https://m.media-amazon.com/images/I/61FPSAYB0jL._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Tommy%20Jeans%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 83.49,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Tommy Jeans Herren",
-          "variantColor": "",
-          "variantTitle": "Tommy Jeans Herren",
-          "image": "https://m.media-amazon.com/images/I/61irtxJlTiL._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Tommy%20Jeans%20Herren/"
         },
         {
           "store": "AliExpress",
@@ -32747,20 +31866,6 @@
           "variantTitle": "Tommy Jeans Herren",
           "image": "https://m.media-amazon.com/images/I/817XYdyFc4L._AC_SL1500_.jpg",
           "directUrl": "https://www.temu.com/de/search_result.html?search_key=Tommy%20Jeans%20Herren&_x_ads_channel=affiliate&aff_id=aph89702"
-        },
-        {
-          "store": "SHEIN",
-          "storeLogo": "shein",
-          "price": 111.1,
-          "shipping": 0,
-          "deliveryAr": "متوفر في SHEIN",
-          "inStock": true,
-          "rating": 4.6,
-          "query": "Tommy Jeans Herren",
-          "variantColor": "",
-          "variantTitle": "Tommy Jeans Herren",
-          "image": "https://m.media-amazon.com/images/I/71n0SYXOt6L._AC_SL1500_.jpg",
-          "directUrl": "https://de.shein.com/pdsearch/Tommy%20Jeans%20Herren/"
         },
         {
           "store": "AliExpress",

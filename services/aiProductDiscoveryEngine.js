@@ -1,6 +1,7 @@
 const https = require('https');
 const { db, buildDirectAffiliateUrl, getPlatformByStoreName } = require('../data/db');
 const { syncProductLivePrices } = require('./livePriceSyncService');
+const { storeUrlResolver, isDirectProductUrl } = require('./storeUrlResolver');
 
 /**
  * AI Product Discovery & Multi-Store Matching Engine
@@ -40,11 +41,26 @@ class AiProductDiscoveryEngine {
 
       // Inspect catalog products: ensure every product has strictly verified direct offers
       let updatedCount = 0;
-      for (const p of products.slice(0, 15)) {
+      for (const p of products.slice(0, 10)) {
         // Run live price synchronization and stock verification
         if (p.asin && (!p.lastLiveSyncedAt || (Date.now() - new Date(p.lastLiveSyncedAt).getTime() > 60 * 60 * 1000))) {
           await syncProductLivePrices(p);
           updatedCount++;
+        }
+
+        // Pre-resolve direct product URLs for non-Amazon stores
+        if (Array.isArray(p.offers)) {
+          for (const o of p.offers) {
+            if (o.store !== 'Amazon' && !isDirectProductUrl(o.direct_affiliate_url || o.directUrl, o.store)) {
+              try {
+                const direct = await storeUrlResolver.resolveDirectProductUrl(o.store, p.title, p.asin, p.id, p.brand, {});
+                if (direct) {
+                  o.direct_affiliate_url = direct;
+                  o.directUrl = direct;
+                }
+              } catch (e) {}
+            }
+          }
         }
       }
 
@@ -56,19 +72,26 @@ class AiProductDiscoveryEngine {
 
   /**
    * AI-powered on-demand multi-store matcher for a specific product
-   * Verifies if another store genuinely sells the exact same item.
+   * Resolves exact direct product pages across all eligible platforms.
    */
   async matchProductAcrossStores(productId, settings = {}) {
     const product = db.getProductById(productId);
     if (!product) return null;
 
-    // Filter to only genuine direct offers with verified stock
-    const validOffers = (product.offers || []).filter(o => {
-      const isSearch = !o.direct_affiliate_url || /search|suche|katalog\/\?q|\/s\?|_nkw=|pdsearch|wholesale|search_result/.test(o.direct_affiliate_url);
-      return !isSearch && (o.in_stock !== false && o.inStock !== false);
-    });
+    if (Array.isArray(product.offers)) {
+      for (const o of product.offers) {
+        if (!isDirectProductUrl(o.direct_affiliate_url || o.directUrl, o.store)) {
+          try {
+            const direct = await storeUrlResolver.resolveDirectProductUrl(o.store, product.title, product.asin, product.id, product.brand, settings);
+            if (direct) {
+              o.direct_affiliate_url = direct;
+              o.directUrl = direct;
+            }
+          } catch (e) {}
+        }
+      }
+    }
 
-    product.offers = validOffers;
     return product;
   }
 }

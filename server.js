@@ -9,6 +9,7 @@ const { dynamicSearchAndAggregate } = require('./services/dynamicProductScraper'
 const { resolveBestProductImage, generateSvgPlaceholder } = require('./services/imageResolver');
 const { syncProductLivePrices } = require('./services/livePriceSyncService');
 const { aiDiscoveryEngine } = require('./services/aiProductDiscoveryEngine');
+const { storeUrlResolver, isDirectProductUrl } = require('./services/storeUrlResolver');
 
 const PORT = process.env.PORT || 3080;
 const DATA_DIR = path.join(__dirname, 'data');
@@ -1094,7 +1095,31 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       }
 
       const cleanAsin = asin || (productId && productId.startsWith('real-') ? productId.replace('real-', '') : '');
-      const targetUrl = buildAffiliateRedirectUrl(cleanStore, effectiveQuery || 'Deal', cleanAsin, settings, itemPrice, effectiveDirectUrl);
+
+      // Smart Deep Link Resolution: if not already a 100% direct product page URL, resolve it on demand!
+      if (!isDirectProductUrl(effectiveDirectUrl, cleanStore) && effectiveQuery) {
+        let cachedResolved = storeUrlResolver.getCachedUrl(productId, cleanStore);
+        if (cachedResolved) {
+          effectiveDirectUrl = cachedResolved;
+        } else {
+          // Attempt fast live resolution with a 2.5s budget
+          try {
+            const timeoutPromise = new Promise(r => setTimeout(() => r(null), 2500));
+            const liveResolved = await Promise.race([
+              storeUrlResolver.resolveDirectProductUrl(cleanStore, effectiveQuery, cleanAsin, productId, '', settings),
+              timeoutPromise
+            ]);
+            if (liveResolved) {
+              effectiveDirectUrl = liveResolved;
+            }
+          } catch (e) {}
+        }
+      }
+
+      const targetUrl = effectiveDirectUrl && isDirectProductUrl(effectiveDirectUrl, cleanStore)
+        ? effectiveDirectUrl
+        : buildAffiliateRedirectUrl(cleanStore, effectiveQuery || 'Deal', cleanAsin, settings, itemPrice, effectiveDirectUrl);
+
       res.writeHead(302, { Location: targetUrl });
       return res.end();
     }

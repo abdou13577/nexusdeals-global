@@ -1,17 +1,17 @@
 {
-  "totalClicks": 18,
-  "estimatedCommissionEur": 58.23,
+  "totalClicks": 25,
+  "estimatedCommissionEur": 68.73,
   "storeBreakdown": {
     "Amazon": {
-      "clicks": 4,
-      "estRevenue": 17.33
+      "clicks": 5,
+      "estRevenue": 21.83
     },
     "OTTO": {
-      "clicks": 1,
-      "estRevenue": 6
+      "clicks": 2,
+      "estRevenue": 12
     },
     "Kaufland": {
-      "clicks": 0,
+      "clicks": 3,
       "estRevenue": 0
     },
     "eBay": {
@@ -23,11 +23,11 @@
       "estRevenue": 0
     },
     "MediaMarkt": {
-      "clicks": 1,
+      "clicks": 2,
       "estRevenue": 0
     },
     "Galaxus": {
-      "clicks": 1,
+      "clicks": 2,
       "estRevenue": 0
     },
     "Douglas": {
@@ -52,6 +52,62 @@
     }
   },
   "recentClicks": [
+    {
+      "timestamp": "2026-10-23T00:07:03.496Z",
+      "productId": "otto-delonghi-magnifica",
+      "query": "Product",
+      "store": "Galaxus",
+      "price": 100,
+      "estCommission": 0
+    },
+    {
+      "timestamp": "2026-10-23T00:07:03.467Z",
+      "productId": "otto-delonghi-magnifica",
+      "query": "Product",
+      "store": "MediaMarkt",
+      "price": 100,
+      "estCommission": 0
+    },
+    {
+      "timestamp": "2026-10-23T00:07:03.439Z",
+      "productId": "otto-delonghi-magnifica",
+      "query": "Product",
+      "store": "Kaufland",
+      "price": 100,
+      "estCommission": 0
+    },
+    {
+      "timestamp": "2026-10-23T00:07:03.412Z",
+      "productId": "otto-delonghi-magnifica",
+      "query": "Product",
+      "store": "OTTO",
+      "price": 100,
+      "estCommission": 6
+    },
+    {
+      "timestamp": "2026-10-23T00:07:03.386Z",
+      "productId": "otto-delonghi-magnifica",
+      "query": "Product",
+      "store": "Amazon",
+      "price": 100,
+      "estCommission": 4.5
+    },
+    {
+      "timestamp": "2026-10-23T00:06:54.663Z",
+      "productId": "otto-delonghi-magnifica",
+      "query": "Product",
+      "store": "Kaufland",
+      "price": 100,
+      "estCommission": 0
+    },
+    {
+      "timestamp": "2026-10-23T00:06:41.090Z",
+      "productId": "otto-prod-delonghi-magnifica",
+      "query": "Product",
+      "store": "Kaufland",
+      "price": 278.39,
+      "estCommission": 0
+    },
     {
       "timestamp": "2026-10-22T21:28:30.251Z",
       "productId": "real-B07HGBNWTY",

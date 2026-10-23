@@ -668,10 +668,22 @@ async function loadProducts() {
 }
 
 function handleCardClick(e, productId) {
-  if (e.target.closest('.btn-buy-best') || e.target.closest('.offer-row')) {
+  if (e.target.closest('.btn-compare-modal')) {
+    openProductModal(productId);
     return;
   }
-  openProductModal(productId);
+  if (e.target.closest('.btn-buy-best') || e.target.closest('.offer-row')) {
+    return; // Let native <a> link execute
+  }
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) return;
+  const focusStore = (typeof currentStore === 'string' && currentStore !== 'all') ? currentStore : null;
+  const sortedOffers = Array.isArray(product.offers) ? product.offers : [];
+  const bestOffer = (focusStore ? sortedOffers.find(o => o.store.toLowerCase() === focusStore.toLowerCase()) : null) || sortedOffers[0] || { store: product.store || 'Amazon', price: product.price || 0 };
+  const target = bestOffer.direct_affiliate_url || bestOffer.directUrl || product.direct_affiliate_url || product.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(bestOffer.store)}&price=${encodeURIComponent(bestOffer.price)}`;
+  
+  trackAffiliateClick(product.id, bestOffer.store, bestOffer.price);
+  window.open(target, '_blank', 'noopener,noreferrer');
 }
 
 function trackAffiliateClick(productId, store, price) {
@@ -746,19 +758,21 @@ function renderProductsGrid(products, containerId) {
       <article class="product-card" onclick="handleCardClick(event, '${p.id}')">
         <div class="card-badges">
           ${savingPct > 0 ? `<span class="badge-discount">-${savingPct}%</span>` : ''}
+          <span class="store-tag store-${bestOffer.store}">${bestOffer.store}</span>
         </div>
 
-        <div class="card-image-wrap" onclick="openProductModal('${p.id}')">
+        <div class="card-image-wrap">
           <img src="${cardImg}" alt="${escapeHtml(displayTitle)}" loading="lazy" onerror="this.onerror=null;this.src='/api/image-proxy?url=' + encodeURIComponent(this.src) + '&title=' + encodeURIComponent('${escapeHtml(displayTitle.slice(0, 30))}');" />
         </div>
 
         <div class="card-body">
           <div class="card-meta">
+            <span class="store-tag store-${bestOffer.store}" style="font-size:0.7rem; padding:2px 8px;">🏬 ${bestOffer.store}</span>
             <span>${escapeHtml(p.brand)} • ${escapeHtml(catLocalized)}</span>
             <span class="rating-stars">⭐ ${p.rating} <span style="color:var(--text-muted); font-weight:400;">(${p.reviewsCount})</span></span>
           </div>
 
-          <h3 class="card-title" onclick="openProductModal('${p.id}')">${escapeHtml(displayTitle)}</h3>
+          <h3 class="card-title">${escapeHtml(displayTitle)}</h3>
 
           <div class="best-price-box">
             <div>
@@ -773,17 +787,25 @@ function renderProductsGrid(products, containerId) {
             </div>
           </div>
 
-          <div class="offers-mini-list">
-            ${topOffersHtml}
-          </div>
+          ${sortedOffers.length > 1 ? `
+            <div class="offers-mini-list">
+              ${topOffersHtml}
+            </div>
+          ` : `
+            <div style="font-size:0.74rem; color:#38bdf8; font-weight:600; padding:6px 0; display:flex; align-items:center; gap:5px;">
+              <span>✔️</span> <span>شراء مباشر وموثق 100% من ${bestOffer.store}</span>
+            </div>
+          `}
 
           <div class="card-footer-btns">
-            <a href="${bestTargetDirect}" target="_blank" rel="noopener" class="btn-buy-best" onclick="event.stopPropagation(); trackAffiliateClick('${p.id}', '${bestOffer.store}', ${bestOffer.price});">
+            <a href="${bestTargetDirect}" target="_blank" rel="noopener noreferrer" class="btn-buy-best" style="flex:1; width:100%; text-align:center; justify-content:center;" onclick="event.stopPropagation(); trackAffiliateClick('${p.id}', '${bestOffer.store}', ${bestOffer.price});">
               ${dict.buyFromBtn(bestOffer.store, bestOffer.price.toFixed(0))}
             </a>
-            <button class="btn-compare-modal" onclick="openProductModal('${p.id}')">
-              ${dict.compareHistoryBtn(p.offers.length)}
-            </button>
+            ${sortedOffers.length > 1 ? `
+              <button class="btn-compare-modal" onclick="event.stopPropagation(); openProductModal('${p.id}')">
+                ${dict.compareHistoryBtn(p.offers.length)}
+              </button>
+            ` : ''}
           </div>
         </div>
       </article>

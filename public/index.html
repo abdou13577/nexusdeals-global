@@ -196,6 +196,25 @@
     </div>
   </div>
 
+  
+
+  <!-- Dedicated Platform Popup Modal (Sheet for Mobile & Floating Card for Desktop) -->
+  <div class="modal-overlay dedicated-store-overlay" id="dedicatedStoreModal" onclick="handleDedicatedModalBackdropClick(event)">
+    <div class="dedicated-store-sheet" id="dedicatedStoreSheet">
+      <div class="dedicated-sheet-drag-handle"></div>
+      <div class="dedicated-sheet-header">
+        <div class="dedicated-header-meta">
+          <span id="dedicatedStoreBadge" class="store-tag"></span>
+          <span class="dedicated-verified-pill" id="dedicatedVerifiedText">✔️ إعلان موثق ورسمي</span>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeDedicatedStoreModal()" title="إغلاق">✕</button>
+      </div>
+      <div class="dedicated-store-body" id="dedicatedStoreBody">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
   <!-- High-Resolution Full-Screen Image Lightbox Modal -->
   <div class="lightbox-overlay" id="imageLightboxModal" onclick="handleLightboxBackdropClick(event)">
     <div class="lightbox-topbar">

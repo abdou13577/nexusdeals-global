@@ -973,36 +973,43 @@ function renderModalOffersList(product, selectedStore) {
     .sort((a, b) => a.price - b.price);
 
   if (validOffers.length === 0) return '';
+  const cheapestOffer = validOffers[0];
 
   return validOffers.map((o, idx) => {
     const targetDirect = o.direct_affiliate_url || o.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}`;
     const variantTag = o.variantColor ? `<span class="mo-variant-pill">${escapeHtml(o.variantColor)}</span>` : '';
-    const isSelected = selectedStore ? (o.store.toLowerCase() === selectedStore.toLowerCase()) : (idx === 0);
+    const diff = o.price - cheapestOffer.price;
+    const diffTag = (idx > 0 && diff > 0.01) ? `<span class="mo-variant-pill" style="background:rgba(245,158,11,0.15);color:#fbbf24;border-color:rgba(245,158,11,0.3);">+${diff.toFixed(2)} €</span>` : '';
+
     return `
-      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable modal-offer ${isSelected ? 'offer-row-active-preview' : ''}" onclick="selectStorePreview('${product.id}', '${o.store}')">
+      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable modal-offer ${idx === 0 ? 'offer-row-cheapest' : ''}" onclick="${idx === 0 ? `selectStorePreview('${product.id}', '${o.store}')` : `openDedicatedStoreModal('${product.id}', '${o.store}')`}">
         <div class="mo-main">
           <div class="mo-tags">
             <span class="store-tag store-${o.store}">${o.store}</span>
             ${variantTag}
-            ${idx === 0 ? `<strong class="mo-best">${dict.modalBestGuaranteed}</strong>` : ''}
-            <span id="rowIndicator-${product.id}-${o.store}" class="row-stage-indicator ${isSelected ? 'live-active' : ''}">
-              ${isSelected ? dict.stageDisplayingNow : dict.stageSwitchToBtn}
-            </span>
+            ${diffTag}
+            ${idx === 0 ? `<strong class="mo-best">🔥 ${dict.modalBestGuaranteed}</strong>` : ''}
           </div>
           <div class="mo-meta">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating || 4.8)}</div>
         </div>
         <div class="mo-side">
           <div class="mo-price-box">
-            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#fff'};">${o.price.toFixed(2)} €</div>
+            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#f1f5f9'};">${o.price.toFixed(2)} €</div>
             <div class="mo-ship">${dict.modalFreeShipping}</div>
           </div>
           <div class="mo-actions">
-            <button type="button" class="btn-action btn-sm mo-preview" onclick="event.stopPropagation(); selectStorePreview('${product.id}', '${o.store}')" title="${dict.previewBtn}">
-              ${dict.previewBtn}
-            </button>
-            <a href="${targetDirect}" target="_blank" rel="noopener" class="btn-search-main mo-go" onclick="event.stopPropagation(); trackAffiliateClick('${product.id}', '${o.store}', ${o.price});">
-              ${dict.modalGoToOffer(o.store)}
-            </a>
+            ${idx === 0 ? `
+              <a href="${targetDirect}" target="_blank" rel="noopener" class="btn-search-main mo-go" style="background:linear-gradient(135deg, #10b981, #059669);" onclick="event.stopPropagation(); trackAffiliateClick('${product.id}', '${o.store}', ${o.price});">
+                ${dict.modalGoToOffer(o.store)}
+              </a>
+            ` : `
+              <button type="button" class="btn-action btn-sm mo-preview" style="background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);font-weight:700;" onclick="event.stopPropagation(); openDedicatedStoreModal('${product.id}', '${o.store}')">
+                🔍 إعلان ${o.store}
+              </button>
+              <a href="${targetDirect}" target="_blank" rel="noopener" class="btn-search-main mo-go" onclick="event.stopPropagation(); trackAffiliateClick('${product.id}', '${o.store}', ${o.price});">
+                ${dict.modalGoToOffer(o.store)}
+              </a>
+            `}
           </div>
         </div>
       </div>
@@ -1506,4 +1513,107 @@ if (typeof document !== 'undefined') {
       e.preventDefault();
     }
   }, { passive: false });
+}
+
+// ==========================================================================
+// Dedicated Store Offer Popup Modal (Sheet for Mobile & Floating Card for Desktop)
+// ==========================================================================
+function openDedicatedStoreModal(productId, storeName) {
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) return;
+  const storeIdx = (product.offers || []).findIndex(o => o.store.toLowerCase() === (storeName || '').toLowerCase());
+  const offer = storeIdx !== -1 ? product.offers[storeIdx] : product.offers[0];
+  if (!offer) return;
+  const dict = t();
+
+  const sorted = [...product.offers].sort((a, b) => a.price - b.price);
+  const cheapest = sorted[0];
+  const diff = offer.price - cheapest.price;
+
+  const modal = document.getElementById('dedicatedStoreModal');
+  const badgeEl = document.getElementById('dedicatedStoreBadge');
+  const verifiedEl = document.getElementById('dedicatedVerifiedText');
+  const bodyEl = document.getElementById('dedicatedStoreBody');
+
+  if (badgeEl) {
+    badgeEl.className = `store-tag store-${offer.store}`;
+    badgeEl.textContent = offer.store;
+  }
+  if (verifiedEl) {
+    verifiedEl.textContent = `✔️ ${dict.previewStoreVerified(offer.store)}`;
+  }
+
+  const targetDirect = offer.direct_affiliate_url || offer.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(offer.store)}&price=${encodeURIComponent(offer.price)}`;
+  const offerImg = offer.image || product.image;
+
+  if (bodyEl) {
+    bodyEl.innerHTML = `
+      <div class="dedicated-product-card">
+        <div class="dedicated-img-box">
+          <img src="${escapeHtml(offerImg)}" alt="${escapeHtml(offer.variantTitle || product.title)}" onerror="this.src='${escapeHtml(product.image)}'" />
+        </div>
+        <div class="dedicated-title-col">
+          <div class="dedicated-prod-brand">${escapeHtml(product.brand || offer.store)}</div>
+          <h4 class="dedicated-prod-title">${escapeHtml(offer.variantTitle || product.title)}</h4>
+          <div style="font-size:0.75rem; color:#38bdf8; font-weight:700;">🌟 تقييم البائع والمتجر: ${offer.rating || 4.8} / 5</div>
+        </div>
+      </div>
+
+      <div class="dedicated-pricing-card">
+        <div style="font-size:0.8rem; color:#94a3b8; font-weight:600; margin-bottom:4px;">السعر الفعلي المباشر لدى ${offer.store}</div>
+        <div class="dedicated-price-val">${offer.price.toFixed(2)} €</div>
+        ${diff > 0.05 ? `
+          <div class="dedicated-diff-badge">فارق +${diff.toFixed(2)} € عن السعر الأقل في المقارنة</div>
+        ` : `
+          <div class="dedicated-diff-badge" style="background:rgba(16,185,129,0.15);color:#34d399;border-color:rgba(16,185,129,0.3);">🔥 هذا هو أفضل وأرخص سعر متاح للمنتج</div>
+        `}
+        <div class="dedicated-shipping-text">🚚 ${dict.deliveryStore(offer.store)} • شحن وإرجاع مضمون</div>
+      </div>
+
+      <div class="dedicated-guarantees">
+        <div class="dedicated-guarantee-item">
+          <span>✔️</span>
+          <div><strong>أصلي 100%</strong><br>مباشرة من ${offer.store}</div>
+        </div>
+        <div class="dedicated-guarantee-item">
+          <span>🛡️</span>
+          <div><strong>حماية المشتري</strong><br>دفع آمن ومعتمد</div>
+        </div>
+        <div class="dedicated-guarantee-item">
+          <span>⚡</span>
+          <div><strong>توجيه مباشر</strong><br>لصفحة المنتج الفردية</div>
+        </div>
+        <div class="dedicated-guarantee-item">
+          <span>↩️</span>
+          <div><strong>إرجاع مضمون</strong><br>حسب سياسة المتجر الرسمية</div>
+        </div>
+      </div>
+
+      <div class="dedicated-actions-row">
+        <a href="${targetDirect}" target="_blank" rel="noopener" class="dedicated-btn-buy" onclick="trackAffiliateClick('${product.id}', '${offer.store}', ${offer.price});">
+          🛒 شراء فوري من ${offer.store} بـ ${offer.price.toFixed(2)} €
+        </a>
+        <button type="button" class="dedicated-btn-close" onclick="closeDedicatedStoreModal()">
+          العودة لقائمة المقارنة
+        </button>
+      </div>
+    `;
+  }
+
+  if (modal) {
+    modal.classList.add('open');
+  }
+}
+
+function closeDedicatedStoreModal() {
+  const modal = document.getElementById('dedicatedStoreModal');
+  if (modal) {
+    modal.classList.remove('open');
+  }
+}
+
+function handleDedicatedModalBackdropClick(event) {
+  if (event.target && event.target.id === 'dedicatedStoreModal') {
+    closeDedicatedStoreModal();
+  }
 }

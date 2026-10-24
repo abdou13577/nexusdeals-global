@@ -10,6 +10,7 @@ const { resolveBestProductImage, generateSvgPlaceholder } = require('./services/
 const { syncProductLivePrices } = require('./services/livePriceSyncService');
 const { aiDiscoveryEngine } = require('./services/aiProductDiscoveryEngine');
 const { storeUrlResolver, isDirectProductUrl } = require('./services/storeUrlResolver');
+const ebayBrowseService = require('./services/ebayBrowseService');
 
 const PORT = process.env.PORT || 3080;
 const DATA_DIR = path.join(__dirname, 'data');
@@ -1023,6 +1024,24 @@ function scoreProductRelevance(p, queryInfo, detectedCatId) {
       const matched = await aiDiscoveryEngine.matchProductAcrossStores(prodId, settings);
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
       return res.end(JSON.stringify({ ok: true, product: matched }));
+    }
+
+    // 1e. GET /api/ebay/search?q=...&limit=...
+    if (pathname === '/api/ebay/search' && req.method === 'GET') {
+      const q = (parsedUrl.query.q || '').trim();
+      const limit = parseInt(parsedUrl.query.limit, 10) || 12;
+      if (!q) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ ok: false, error: 'Query parameter q is required' }));
+      }
+      try {
+        const results = await ebayBrowseService.searchProducts(q, { limit });
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        return res.end(JSON.stringify({ ok: true, count: results.length, products: results }));
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ ok: false, error: err.message }));
+      }
     }
 
     // 2. POST /api/ai-assistant

@@ -401,6 +401,22 @@ class MarketplaceDatabase {
         .filter(o => o.product_id === p.id && (o.in_stock !== false && o.inStock !== false) && Boolean(o.direct_affiliate_url || o.directUrl))
         .sort((a, b) => a.price - b.price); // Strictly ORDER BY price ASC
 
+      if (offers.length === 0 && (p.direct_affiliate_url || p.directUrl || p.store)) {
+        offers.push({
+          id: `off-${p.id}`,
+          product_id: p.id,
+          platform_id: (p.store || 'Amazon').toLowerCase(),
+          store: p.store || 'Amazon',
+          storeLogo: (p.store || 'Amazon').toLowerCase(),
+          price: p.price || 0,
+          directUrl: p.direct_affiliate_url || p.directUrl || '',
+          direct_affiliate_url: p.direct_affiliate_url || p.directUrl || '',
+          inStock: true,
+          in_stock: true,
+          shipping: 0
+        });
+      }
+
       const bestPrice = offers.length > 0 ? offers[0].price : p.price;
       const primaryImage = (offers.length > 0 && offers[0].image) ? offers[0].image : p.image;
 

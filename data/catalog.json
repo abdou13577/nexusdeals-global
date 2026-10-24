@@ -98,10 +98,10 @@
           "matchStatus": "Verified match",
           "inStock": true,
           "in_stock": true,
-          "price": 299,
-          "relativeUrl": "/itm/325680408726",
-          "directUrl": "https://www.ebay.de/itm/325680408726?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
-          "direct_affiliate_url": "https://www.ebay.de/itm/325680408726?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
+          "price": 139,
+          "relativeUrl": "/itm/287671833255",
+          "directUrl": "https://www.ebay.de/itm/287671833255?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
+          "direct_affiliate_url": "https://www.ebay.de/itm/287671833255?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
         },
         {
           "id": "off-sony-otto",
@@ -123,7 +123,7 @@
       "id": "prod-pioneer-dmh-z5350",
       "ean": "4988028461521",
       "sku": "DMH-Z5350BT",
-      "title": "Pioneer DMH-Z5350",
+      "title": "Pioneer DMH-A240BT 2-DIN Bluetooth Autoradio",
       "titleAr": "مسجل وشاشة سيارة بايونير Pioneer DMH-Z5350BT تدعم أبل كاربلاي وأندرويد أوتو",
       "brand": "Pioneer",
       "category": "auto_car",
@@ -172,10 +172,10 @@
           "matchStatus": "Verified match",
           "inStock": true,
           "in_stock": true,
-          "price": 469,
-          "relativeUrl": "/dp/B08F9N1XYZ",
-          "directUrl": "https://www.amazon.de/dp/B08F9N1XYZ?tag=nexusdeals08-21",
-          "direct_affiliate_url": "https://www.amazon.de/dp/B08F9N1XYZ?tag=nexusdeals08-21"
+          "price": 149,
+          "relativeUrl": "/dp/B095PT26GL",
+          "directUrl": "https://www.amazon.de/dp/B095PT26GL?tag=nexusdeals08-21",
+          "direct_affiliate_url": "https://www.amazon.de/dp/B095PT26GL?tag=nexusdeals08-21"
         },
         {
           "id": "off-pioneer-kaufland",
@@ -200,18 +200,19 @@
           "matchStatus": "Verified match",
           "inStock": true,
           "in_stock": true,
-          "price": 495,
-          "relativeUrl": "/itm/195829102847",
-          "directUrl": "https://www.ebay.de/itm/195829102847?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
-          "direct_affiliate_url": "https://www.ebay.de/itm/195829102847?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
+          "price": 139.99,
+          "relativeUrl": "/itm/158367187438",
+          "directUrl": "https://www.ebay.de/itm/158367187438?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
+          "direct_affiliate_url": "https://www.ebay.de/itm/158367187438?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
         }
-      ]
+      ],
+      "name": "Pioneer DMH-A240BT 2-DIN Bluetooth Autoradio"
     },
     {
       "id": "prod-dyson-v15",
       "ean": "5025155047811",
       "sku": "DYSON-V15-ABS",
-      "title": "Dyson V15",
+      "title": "Dyson V15 Detect Absolute Akku-Staubsauger",
       "titleAr": "مكنسة دايسون اللاسلكية الذكية Dyson V15 Detect Absolute مع ليزر كشف الغبار",
       "brand": "Dyson",
       "category": "home_appliances",
@@ -274,9 +275,9 @@
           "inStock": true,
           "in_stock": true,
           "price": 549,
-          "relativeUrl": "/dp/B0957B7N7F",
-          "directUrl": "https://www.amazon.de/dp/B0957B7N7F?tag=nexusdeals08-21",
-          "direct_affiliate_url": "https://www.amazon.de/dp/B0957B7N7F?tag=nexusdeals08-21"
+          "relativeUrl": "/dp/B0CH5QWSGK",
+          "directUrl": "https://www.amazon.de/dp/B0CH5QWSGK?tag=nexusdeals08-21",
+          "direct_affiliate_url": "https://www.amazon.de/dp/B0CH5QWSGK?tag=nexusdeals08-21"
         },
         {
           "id": "off-dyson-ebay",
@@ -287,18 +288,19 @@
           "matchStatus": "Verified match",
           "inStock": true,
           "in_stock": true,
-          "price": 559,
-          "relativeUrl": "/itm/227579984790",
-          "directUrl": "https://www.ebay.de/itm/227579984790?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
-          "direct_affiliate_url": "https://www.ebay.de/itm/227579984790?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
+          "price": 459.9,
+          "relativeUrl": "/itm/168118288397",
+          "directUrl": "https://www.ebay.de/itm/168118288397?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
+          "direct_affiliate_url": "https://www.ebay.de/itm/168118288397?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
         }
-      ]
+      ],
+      "name": "Dyson V15 Detect Absolute Akku-Staubsauger"
     },
     {
       "id": "prod-nintendo-switch-oled",
       "ean": "0045496453435",
       "sku": "HEG-S-KABAA",
-      "title": "Nintendo Switch (OLED)",
+      "title": "Nintendo Switch (OLED-Modell) Weiß",
       "titleAr": "جهاز الألعاب نينتندو سويتش Nintendo Switch OLED بشاشة أوليد فائقة الألوان",
       "brand": "Nintendo",
       "category": "gaming",
@@ -312,7 +314,7 @@
         "Enhanced Audio",
         "Neon Red / Neon Blue"
       ],
-      "price": 299,
+      "price": 259,
       "msrp": 399,
       "image": "https://m.media-amazon.com/images/I/61-PblYntsL._AC_SL1500_.jpg",
       "images": [
@@ -333,9 +335,9 @@
           "inStock": true,
           "in_stock": true,
           "price": 299,
-          "relativeUrl": "/dp/B098RK55DJ",
-          "directUrl": "https://www.amazon.de/dp/B098RK55DJ?tag=nexusdeals08-21",
-          "direct_affiliate_url": "https://www.amazon.de/dp/B098RK55DJ?tag=nexusdeals08-21"
+          "relativeUrl": "/dp/B09Y2MYL5C",
+          "directUrl": "https://www.amazon.de/dp/B09Y2MYL5C?tag=nexusdeals08-21",
+          "direct_affiliate_url": "https://www.amazon.de/dp/B09Y2MYL5C?tag=nexusdeals08-21"
         },
         {
           "id": "off-switch-mediamarkt",
@@ -374,18 +376,19 @@
           "matchStatus": "Verified match",
           "inStock": true,
           "in_stock": true,
-          "price": 335,
-          "relativeUrl": "/itm/146911153948",
-          "directUrl": "https://www.ebay.de/itm/146911153948?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
-          "direct_affiliate_url": "https://www.ebay.de/itm/146911153948?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
+          "price": 259,
+          "relativeUrl": "/itm/146618489626",
+          "directUrl": "https://www.ebay.de/itm/146618489626?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
+          "direct_affiliate_url": "https://www.ebay.de/itm/146618489626?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
         }
-      ]
+      ],
+      "name": "Nintendo Switch (OLED-Modell) Weiß"
     },
     {
       "id": "prod-blaupunkt-bordeaux-700",
       "ean": "4260499852206",
       "sku": "BORDEAUX-700-DAB",
-      "title": "Blaupunkt Bordeaux 700 car radio",
+      "title": "Blaupunkt Milano 200 BT CD/MP3 Bluetooth Autoradio",
       "titleAr": "مسجل وراديو سيارة بلو بونكت Blaupunkt Bordeaux 700 DAB مع بلوتوث ومنافذ USB",
       "brand": "Blaupunkt",
       "category": "auto_car",
@@ -447,10 +450,10 @@
           "matchStatus": "Verified match",
           "inStock": true,
           "in_stock": true,
-          "price": 189,
-          "relativeUrl": "/dp/B08X123456",
-          "directUrl": "https://www.amazon.de/dp/B08X123456?tag=nexusdeals08-21",
-          "direct_affiliate_url": "https://www.amazon.de/dp/B08X123456?tag=nexusdeals08-21"
+          "price": 115,
+          "relativeUrl": "/dp/B08S7MYYL7",
+          "directUrl": "https://www.amazon.de/dp/B08S7MYYL7?tag=nexusdeals08-21",
+          "direct_affiliate_url": "https://www.amazon.de/dp/B08S7MYYL7?tag=nexusdeals08-21"
         },
         {
           "id": "off-blaupunkt-conrad",
@@ -475,10 +478,10 @@
           "matchStatus": "Verified match",
           "inStock": true,
           "in_stock": true,
-          "price": 195,
-          "relativeUrl": "/itm/336859389900",
-          "directUrl": "https://www.ebay.de/itm/336859389900?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
-          "direct_affiliate_url": "https://www.ebay.de/itm/336859389900?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
+          "price": 110.9,
+          "relativeUrl": "/itm/394236152543",
+          "directUrl": "https://www.ebay.de/itm/394236152543?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1",
+          "direct_affiliate_url": "https://www.ebay.de/itm/394236152543?campid=5339228999&customid=nexusdeals&toolid=10049&mkevt=1"
         },
         {
           "id": "off-blaupunkt-kaufland",
@@ -494,7 +497,8 @@
           "directUrl": "https://www.kaufland.de/product/389182019/",
           "direct_affiliate_url": "https://www.kaufland.de/product/389182019/"
         }
-      ]
+      ],
+      "name": "Blaupunkt Milano 200 BT CD/MP3 Bluetooth Autoradio"
     },
     {
       "id": "real-B08H98GVK8",

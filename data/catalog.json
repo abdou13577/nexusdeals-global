@@ -59,13 +59,14 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 499,
+          "price": 630.94,
           "directUrl": "https://www.amazon.de/dp/B08H98GVK8?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B08H98GVK8?tag=nexusdeals08-21",
           "inStock": true,
           "in_stock": true,
           "shipping": 0,
-          "isCheapest": false
+          "isCheapest": false,
+          "last_updated": "2026-10-24T20:58:40.693Z"
         }
       ],
       "created_at": "2026-10-24T01:09:18.187Z",
@@ -114,13 +115,14 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 559.53,
+          "price": 749,
           "directUrl": "https://www.amazon.de/dp/B0DHYFNJ5X?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B0DHYFNJ5X?tag=nexusdeals08-21",
           "inStock": true,
           "in_stock": true,
           "shipping": 0,
-          "isCheapest": false
+          "isCheapest": false,
+          "last_updated": "2026-10-24T20:58:43.202Z"
         },
         {
           "id": "off-unified-iphone-16-128gb-galaxus",
@@ -266,13 +268,14 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 49.5,
+          "price": 79.99,
           "directUrl": "https://www.amazon.de/dp/B0GMFDTRQP?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B0GMFDTRQP?tag=nexusdeals08-21",
           "inStock": true,
           "in_stock": true,
           "shipping": 0,
-          "isCheapest": false
+          "isCheapest": false,
+          "last_updated": "2026-10-24T20:58:47.532Z"
         },
         {
           "id": "off-unified-autoradio-carplay-kaufland",
@@ -404,13 +407,14 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 549,
+          "price": 589.35,
           "directUrl": "https://www.amazon.de/dp/B0CH5QWSGK?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B0CH5QWSGK?tag=nexusdeals08-21",
           "inStock": true,
           "in_stock": true,
           "shipping": 0,
-          "isCheapest": false
+          "isCheapest": false,
+          "last_updated": "2026-10-24T20:58:50.539Z"
         },
         {
           "id": "off-unified-dyson-v15-otto",
@@ -473,13 +477,14 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 566.24,
+          "price": 560,
           "directUrl": "https://www.amazon.de/dp/B0CNH6RHV6?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B0CNH6RHV6?tag=nexusdeals08-21",
           "inStock": true,
           "in_stock": true,
           "shipping": 0,
-          "isCheapest": false
+          "isCheapest": false,
+          "last_updated": "2026-10-24T20:58:52.979Z"
         },
         {
           "id": "off-unified-galaxy-s24-ultra-mediamarkt",
@@ -611,13 +616,14 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 200.44,
+          "price": 249.99,
           "directUrl": "https://www.amazon.de/dp/B0DQ93HX2L?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B0DQ93HX2L?tag=nexusdeals08-21",
           "inStock": true,
           "in_stock": true,
           "shipping": 0,
-          "isCheapest": false
+          "isCheapest": false,
+          "last_updated": "2026-10-24T20:58:56.384Z"
         },
         {
           "id": "off-unified-karcher-reiniger-kaufland",
@@ -680,13 +686,14 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 147.13,
+          "price": 154.99,
           "directUrl": "https://www.amazon.de/dp/B00C3HTOZU?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B00C3HTOZU?tag=nexusdeals08-21",
           "inStock": true,
           "in_stock": true,
           "shipping": 0,
-          "isCheapest": false
+          "isCheapest": false,
+          "last_updated": "2026-10-24T20:58:58.923Z"
         },
         {
           "id": "off-unified-bosch-18v-otto",
@@ -720,7 +727,7 @@
       "images": [
         "https://i.ebayimg.com/images/g/ZgwAAeSwfEhqsaw9/s-l225.jpg"
       ],
-      "price": 95.26,
+      "price": 113.99,
       "store": "Amazon",
       "storeLogo": "amazon",
       "directUrl": "https://www.amazon.de/dp/B0CVXDGNWP?tag=nexusdeals08-21",
@@ -735,13 +742,14 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 95.26,
+          "price": 113.99,
           "directUrl": "https://www.amazon.de/dp/B0CVXDGNWP?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B0CVXDGNWP?tag=nexusdeals08-21",
           "inStock": true,
           "in_stock": true,
           "shipping": 0,
-          "isCheapest": true
+          "isCheapest": true,
+          "last_updated": "2026-10-24T20:59:01.283Z"
         },
         {
           "id": "off-unified-dashcam-4k-aliexpress",
@@ -818,13 +826,14 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 299,
+          "price": 227.89,
           "directUrl": "https://www.amazon.de/dp/B09Y2MYL5C?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B09Y2MYL5C?tag=nexusdeals08-21",
           "inStock": true,
           "in_stock": true,
           "shipping": 0,
-          "isCheapest": false
+          "isCheapest": false,
+          "last_updated": "2026-10-24T20:59:03.765Z"
         },
         {
           "id": "off-unified-nintendo-switch-oled-mediamarkt",
@@ -954,7 +963,7 @@
       "images": [
         "https://m.media-amazon.com/images/I/816q7qh8naL._AC_SL1000_.jpg"
       ],
-      "price": 23.62,
+      "price": 28.37,
       "store": "Amazon",
       "storeLogo": "amazon",
       "directUrl": "https://www.amazon.de/dp/B0GPWLWT5C?tag=nexusdeals08-21",
@@ -969,7 +978,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 23.62,
+          "price": 28.37,
           "directUrl": "https://www.amazon.de/dp/B0GPWLWT5C?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B0GPWLWT5C?tag=nexusdeals08-21",
           "inStock": true,
@@ -995,7 +1004,7 @@
       "images": [
         "https://m.media-amazon.com/images/I/71fH99ZcnzL._AC_SL1000_.jpg"
       ],
-      "price": 59.89,
+      "price": 62.05,
       "store": "Amazon",
       "storeLogo": "amazon",
       "directUrl": "https://www.amazon.de/dp/B0F9XDH7HK?tag=nexusdeals08-21",
@@ -1010,7 +1019,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 59.89,
+          "price": 62.05,
           "directUrl": "https://www.amazon.de/dp/B0F9XDH7HK?tag=nexusdeals08-21",
           "direct_affiliate_url": "https://www.amazon.de/dp/B0F9XDH7HK?tag=nexusdeals08-21",
           "inStock": true,
@@ -1056,7 +1065,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى eBay (62.30€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.609Z",
       "updated_at": "2026-10-22T21:44:35.321Z",
-      "price": 62.7,
+      "price": 65.99,
       "offers": [
         {
           "id": "off-real-B0H7S1F5GN-amazon",
@@ -1064,7 +1073,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 62.7,
+          "price": 65.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0H7S1F5GN?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0H7S1F5GN?tag=nexusdeals08-21",
           "variantTitle": "Akku Hochdruckreiniger, 120Bar Akku Druckreiniger 21V Mobiler Hochdruckreiniger Pistole mit 2 Akku&6-in-1 Düse, 5M Schlauch, 10-Gang Druckregelung Tragbarer Akku-Druckreinigerpistole für Auto Rasen",
@@ -1120,7 +1129,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (27.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.626Z",
       "updated_at": "2026-10-22T21:44:35.339Z",
-      "price": 28.68,
+      "price": 33.92,
       "offers": [
         {
           "id": "off-real-B07KGCW3L9-amazon",
@@ -1128,7 +1137,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 28.68,
+          "price": 33.92,
           "direct_affiliate_url": "https://www.amazon.de/dp/B07KGCW3L9?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B07KGCW3L9?tag=nexusdeals08-21",
           "variantTitle": "BEIBYE Zwillingsrollen Hardcase Reisekoffer Koffer Trolleys Hartschale in XL-L-M in 14 Farben (Rosag...",
@@ -1173,7 +1182,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (28.22€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.623Z",
       "updated_at": "2026-10-22T21:44:35.335Z",
-      "price": 28.66,
+      "price": 55.99,
       "offers": [
         {
           "id": "off-real-B0H6DNX1XW-amazon",
@@ -1181,7 +1190,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 28.66,
+          "price": 55.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0H6DNX1XW?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0H6DNX1XW?tag=nexusdeals08-21",
           "variantTitle": "33,000ft Herren Wasserdichte Softshelljacke Fleece Gefütterte Outdoorjacke | Warm, 5 Taschen, Atmung...",
@@ -1237,7 +1246,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (149.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.618Z",
       "updated_at": "2026-10-22T21:44:35.331Z",
-      "price": 154.47,
+      "price": 179.98,
       "offers": [
         {
           "id": "off-real-B0GTYRM3KH-amazon",
@@ -1245,7 +1254,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 154.47,
+          "price": 179.98,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0GTYRM3KH?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0GTYRM3KH?tag=nexusdeals08-21",
           "variantTitle": "E Scooter mit Straßenzulassung (ABE), 8,5 Zoll Wabenreifen | 350W Motor | 30km Reichweite, 10 Zoll Wabenreifen | 500W Moto...",
@@ -1312,7 +1321,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (101.80€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.617Z",
       "updated_at": "2026-10-22T21:44:35.330Z",
-      "price": 87.67,
+      "price": 113.99,
       "offers": [
         {
           "id": "off-real-B0GWR3S5B7-amazon",
@@ -1320,7 +1329,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 87.67,
+          "price": 113.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0GWR3S5B7?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0GWR3S5B7?tag=nexusdeals08-21",
           "variantTitle": "Laufband für Zuhause, Elektrisches Laufbänder mit Griff, Klappbares bis 10Km/H, Treadmill Walking Pad for Home, Leise Klei...",
@@ -1387,7 +1396,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (212.85€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.614Z",
       "updated_at": "2026-10-22T21:44:35.326Z",
-      "price": 191.6,
+      "price": 279.99,
       "offers": [
         {
           "id": "off-real-B0DPQ55RVS-amazon",
@@ -1395,7 +1404,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 191.6,
+          "price": 279.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0DPQ55RVS?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0DPQ55RVS?tag=nexusdeals08-21",
           "variantTitle": "Cosori Airfryer, Testsieger, 10,8L Turbo Tower Pro Smart | Stiftung Warentest Testsieger, Dual Blaze...",
@@ -1451,7 +1460,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (44.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.626Z",
       "updated_at": "2026-10-22T21:44:35.339Z",
-      "price": 37,
+      "price": 55.16,
       "offers": [
         {
           "id": "off-real-B0G654DTFY-amazon",
@@ -1459,7 +1468,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 37,
+          "price": 55.16,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0G654DTFY?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0G654DTFY?tag=nexusdeals08-21",
           "variantTitle": "Münicase Reisekoffer L 66 cm, TSA, Hartschalenkoffer, Schwarz | Dehnfalte, Innenfächer, Kreuzgurt, S...",
@@ -1504,7 +1513,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (287.17€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.625Z",
       "updated_at": "2026-10-22T21:44:35.338Z",
-      "price": 220.79,
+      "price": 299.99,
       "offers": [
         {
           "id": "off-real-B0BWSFGQ49-amazon",
@@ -1512,7 +1521,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 220.79,
+          "price": 299.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0BWSFGQ49?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0BWSFGQ49?tag=nexusdeals08-21",
           "variantTitle": "De&#x27;Longhi Magnifica S - Kaffeevollautomat 2 Getränke Schwarz | Kaffeemaschine mit Manuellem Milchaufschäumer, Espresso und Cappuccino, 2-Tassen-Funktion, Tastenbedienfeld, ECAM11.112.B",
@@ -1562,7 +1571,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Kaufland (282.14€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.621Z",
       "updated_at": "2026-10-22T21:44:35.334Z",
-      "price": 283.83,
+      "price": 299.99,
       "offers": [
         {
           "id": "off-real-B0HJLWS5QK-amazon",
@@ -1570,7 +1579,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 283.83,
+          "price": 299.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0HJLWS5QK?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0HJLWS5QK?tag=nexusdeals08-21",
           "variantTitle": "Ausbeulspotter 3800A, Punktschweißgerät für Karosserie, Mikroprozessor-Steuerung, 7 Schweißmodi, 11 ...",
@@ -1620,7 +1629,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (143.18€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.624Z",
       "updated_at": "2026-10-22T21:44:35.336Z",
-      "price": 144.19,
+      "price": 182.37,
       "offers": [
         {
           "id": "off-real-B09WDPMLLT-amazon",
@@ -1628,7 +1637,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 144.19,
+          "price": 182.37,
           "direct_affiliate_url": "https://www.amazon.de/dp/B09WDPMLLT?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B09WDPMLLT?tag=nexusdeals08-21",
           "variantTitle": "Johns, Scheinwerfer Halogen passend für BMW 3er E46 ab 1998-2001 schw. Leu. Set Li. Re.",
@@ -1684,7 +1693,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (1458.43€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.617Z",
       "updated_at": "2026-10-22T21:44:35.331Z",
-      "price": 1448.88,
+      "price": 1499,
       "offers": [
         {
           "id": "off-real-B0CMR4WTT9-amazon",
@@ -1692,7 +1701,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 1448.88,
+          "price": 1499,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0CMR4WTT9?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0CMR4WTT9?tag=nexusdeals08-21",
           "variantTitle": "VMAX E-Scooter VX4 GT 100 km Reichweite mit Straßenzulassung DE | E-Roller mit Straßenzulassung in D, Blinker, Integrierte Federung, LCD-Display, App Funktion",
@@ -1748,7 +1757,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (260.07€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.624Z",
       "updated_at": "2026-10-22T21:44:35.337Z",
-      "price": 265.49,
+      "price": 380.9,
       "offers": [
         {
           "id": "off-real-B0DJD29WKV-amazon",
@@ -1756,7 +1765,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 265.49,
+          "price": 380.9,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0DJD29WKV?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0DJD29WKV?tag=nexusdeals08-21",
           "variantTitle": "Philips Lumea IPL 9900 Series - IPL Geräte Haarentfernung für jahrelang seidig-glatte Haut* mit 3 Aufsätzen für Körper & G...",
@@ -1849,7 +1858,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (531.76€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.612Z",
       "updated_at": "2026-10-22T21:44:35.324Z",
-      "price": 424.85,
+      "price": 549.99,
       "offers": [
         {
           "id": "off-real-B0CTCQKJ1B-amazon",
@@ -1857,7 +1866,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 424.85,
+          "price": 549.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0CTCQKJ1B?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0CTCQKJ1B?tag=nexusdeals08-21",
           "variantTitle": "PHILIPS Kaffeevollautomat LatteGo 5500 Serie, Schwarz, 20 Spezialitäten | Espressomaschine Hot & Cold, LatteGo Milchsystem, 4 Profile, Farb-Touch-Display, SilentBrew, Keramikmahlwerk (EP5544/50)",
@@ -1959,7 +1968,7 @@
       "aiVerdictAr": "سعر حقيقي مباشر في Amazon.de (56.69€) • ASIN: B07V7DS8LQ",
       "created_at": "2026-10-22T21:16:47.627Z",
       "updated_at": "2026-10-22T21:44:35.341Z",
-      "price": 39.76,
+      "price": 56.69,
       "offers": [
         {
           "id": "off-real-B07V7DS8LQ-amazon",
@@ -1967,7 +1976,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 39.76,
+          "price": 56.69,
           "direct_affiliate_url": "https://www.amazon.de/dp/B07V7DS8LQ?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B07V7DS8LQ?tag=nexusdeals08-21",
           "variantTitle": "NORTIV 8 Herren Militärstiefel Einsatzstiefel Boot | Herausnehmbare stoßdämpfende Einlegesohle Reißv...",
@@ -2023,7 +2032,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (625.79€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.611Z",
       "updated_at": "2026-10-22T21:44:35.323Z",
-      "price": 635.32,
+      "price": 649.99,
       "offers": [
         {
           "id": "off-real-B0CDTVTFFS-amazon",
@@ -2031,7 +2040,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 635.32,
+          "price": 649.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0CDTVTFFS?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0CDTVTFFS?tag=nexusdeals08-21",
           "variantTitle": "Samsung Odyssey G95C Curved Gaming Monitor, 49 Zoll, VA-Panel, 5.120 x 1.440 Pixel, VESA DisplayHDR 1.000, HDR10+ Gaming, ...",
@@ -2087,7 +2096,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (38.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.627Z",
       "updated_at": "2026-10-22T21:44:35.340Z",
-      "price": 37.02,
+      "price": 47.69,
       "offers": [
         {
           "id": "off-real-B0B7RW2CP2-amazon",
@@ -2095,7 +2104,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 37.02,
+          "price": 47.69,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0B7RW2CP2?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0B7RW2CP2?tag=nexusdeals08-21",
           "variantTitle": "DREAM PAIRS Kniehohe Schnürstiefel Damen Langschaft Stiefel | Plateau & Rutschfeste Sohle, Warmes Futter, Elastischer Scha...",
@@ -2150,7 +2159,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى eBay (201.53€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.616Z",
       "updated_at": "2026-10-22T21:44:35.330Z",
-      "price": 185.52,
+      "price": 209.99,
       "offers": [
         {
           "id": "off-real-B0DWKBMSWG-amazon",
@@ -2158,7 +2167,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 185.52,
+          "price": 209.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0DWKBMSWG?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0DWKBMSWG?tag=nexusdeals08-21",
           "variantTitle": "roborock Q10 S5+ Set Saugroboter mit Wischfunktion, 10.000 Pa Saugkraft | Dual Anti-Tangle System, Auto Lifting Mopping, R...",
@@ -2224,7 +2233,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (26.52€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.617Z",
       "updated_at": "2026-10-22T21:44:35.331Z",
-      "price": 36.87,
+      "price": 55.23,
       "offers": [
         {
           "id": "off-real-B0FPCJ3NX8-amazon",
@@ -2232,7 +2241,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 36.87,
+          "price": 55.23,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0FPCJ3NX8?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0FPCJ3NX8?tag=nexusdeals08-21",
           "variantTitle": "Redchef Topfset Abnehmbarer Griff 5-teilig Keramik Antihaft Induktion, Blau | Kochtöpfe Induktions f...",
@@ -2299,7 +2308,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (318.63€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.617Z",
       "updated_at": "2026-10-22T21:44:35.331Z",
-      "price": 268.7,
+      "price": 312.6,
       "offers": [
         {
           "id": "off-real-B07HX2KMXK-amazon",
@@ -2307,7 +2316,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 268.7,
+          "price": 312.6,
           "direct_affiliate_url": "https://www.amazon.de/dp/B07HX2KMXK?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B07HX2KMXK?tag=nexusdeals08-21",
           "variantTitle": "Philips Lumea IPL 7000 Series - IPL Geräte Haarentfernung für jahrelang seidig-glatte Haut* mit 3 Aufsätzen für Körper & G...",
@@ -2363,7 +2372,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (83.44€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.626Z",
       "updated_at": "2026-10-22T21:44:35.339Z",
-      "price": 83.92,
+      "price": 93.86,
       "offers": [
         {
           "id": "off-real-B00G47HM2C-amazon",
@@ -2371,7 +2380,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 83.92,
+          "price": 93.86,
           "direct_affiliate_url": "https://www.amazon.de/dp/B00G47HM2C?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B00G47HM2C?tag=nexusdeals08-21",
           "variantTitle": "BEIBYE- 3er Kofferset Hartschalen-Koffer Reisekoffer Trolley Rollkoffer Set Reisekofferset (Green)",
@@ -2427,7 +2436,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (907.16€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.615Z",
       "updated_at": "2026-10-22T21:44:35.329Z",
-      "price": 917.13,
+      "price": 949.99,
       "offers": [
         {
           "id": "off-real-B0GSH2NHSZ-amazon",
@@ -2435,7 +2444,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 917.13,
+          "price": 949.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0GSH2NHSZ?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0GSH2NHSZ?tag=nexusdeals08-21",
           "variantTitle": "LG OLED42C6ELB 4K OLED Evo AI TV, 42 Zoll, α11 Gen3 Prozessor, webOS 26, 120Hz, VRR bis zu 165Hz, Modelljahr 2026, Energie...",
@@ -2502,7 +2511,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (26.83€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.618Z",
       "updated_at": "2026-10-22T21:44:35.332Z",
-      "price": 26.41,
+      "price": 44.99,
       "offers": [
         {
           "id": "off-real-B08YYQLFMR-amazon",
@@ -2510,7 +2519,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 26.41,
+          "price": 44.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B08YYQLFMR?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B08YYQLFMR?tag=nexusdeals08-21",
           "variantTitle": "Fusskleidung® Damen Herren Sportschuhe Dämpfung Sneaker leichte Laufschuhe",
@@ -2577,7 +2586,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (100.05€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.609Z",
       "updated_at": "2026-10-22T21:44:35.321Z",
-      "price": 95.39,
+      "price": 117.07,
       "offers": [
         {
           "id": "off-real-B0CSZRYQP1-amazon",
@@ -2585,7 +2594,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 95.39,
+          "price": 117.07,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0CSZRYQP1?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0CSZRYQP1?tag=nexusdeals08-21",
           "variantTitle": "Killtec Damen Steppparka/Parka mit Kapuze KOW 55 Wmn Qltd Prk",
@@ -2641,7 +2650,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (484.51€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.625Z",
       "updated_at": "2026-10-22T21:44:35.338Z",
-      "price": 419.33,
+      "price": 499.99,
       "offers": [
         {
           "id": "off-real-B0DG6VY1GY-amazon",
@@ -2649,7 +2658,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 419.33,
+          "price": 499.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0DG6VY1GY?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0DG6VY1GY?tag=nexusdeals08-21",
           "variantTitle": "KRUPS Sensation Milk Kaffeevollautomat, 6 Kaffee & Milchgetränke, perfekter Geschmack, Milch Maestro...",
@@ -2748,7 +2757,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Galaxus (53.86€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.610Z",
       "updated_at": "2026-10-22T21:44:35.322Z",
-      "price": 52.25,
+      "price": 55.99,
       "offers": [
         {
           "id": "off-real-B0HFT1S7NP-amazon",
@@ -2756,7 +2765,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 52.25,
+          "price": 55.99,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0HFT1S7NP?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0HFT1S7NP?tag=nexusdeals08-21",
           "variantTitle": "Akku Hochdruckreiniger, 85 Bar/1200PSI, 21V, 2X 4,0 Ah Akku | Bürstenloser Motor, Schnellladegerät, ...",
@@ -2809,7 +2818,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى eBay (587.93€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.625Z",
       "updated_at": "2026-10-22T21:44:35.338Z",
-      "price": 494.06,
+      "price": 629,
       "offers": [
         {
           "id": "off-real-B0H2ND6MJ4-amazon",
@@ -2817,7 +2826,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 494.06,
+          "price": 629,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0H2ND6MJ4?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0H2ND6MJ4?tag=nexusdeals08-21",
           "variantTitle": "De&#x27;Longhi Magnifica Duo – Kaffeevollautomat 20 Getränke Silber | Kaffeemaschine mit LatteCrema Hot & Cool-Milchaufschäumer, Heiße & Kalte Getränke, Cold Brew, Farbdisplay, ECAM332.80.SXB",
@@ -2873,7 +2882,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Zalando (46.09€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.612Z",
       "updated_at": "2026-10-22T21:44:35.324Z",
-      "price": 46.04,
+      "price": 45.09,
       "offers": [
         {
           "id": "off-real-B0CS6ZZ3MY-amazon",
@@ -2881,7 +2890,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 46.04,
+          "price": 45.09,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0CS6ZZ3MY?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0CS6ZZ3MY?tag=nexusdeals08-21",
           "variantTitle": "MUGLER Alien Hypersense Eau de Parfum, Damen-Parfum, Fruchtiger, holziger und blumiger Duft, Hypermodern und hyperfeminin, Nachfüllbar",
@@ -2937,7 +2946,7 @@
       "aiVerdictAr": "أفضل سعر متوفر لدى Temu (98.54€) مع مقارنة شاملة لـ 5 متاجر عالمية",
       "created_at": "2026-10-22T21:16:47.623Z",
       "updated_at": "2026-10-22T21:44:35.336Z",
-      "price": 116.79,
+      "price": 131.75,
       "offers": [
         {
           "id": "off-real-B0952CG1Y4-amazon",
@@ -2945,7 +2954,7 @@
           "platform_id": "amazon",
           "store": "Amazon",
           "storeLogo": "amazon",
-          "price": 116.79,
+          "price": 131.75,
           "direct_affiliate_url": "https://www.amazon.de/dp/B0952CG1Y4?tag=nexusdeals08-21",
           "directUrl": "https://www.amazon.de/dp/B0952CG1Y4?tag=nexusdeals08-21",
           "variantTitle": "killtec Damen Funktionsparka/Parka mit Kapuze KOW 165 WMN PRK | Winterjacke, wasserdicht, atmungsaktiv, winddicht, Teddy-F...",

@@ -2,73 +2,133 @@
   {
     "id": "amazon",
     "name": "Amazon",
+    "domain": "amazon.de",
+    "network": "Amazon Associates",
+    "defaultTrackingId": "nexusdeals08-21",
+    "awinMid": null,
+    "commissionRate": 0.045,
     "logo": "amazon",
     "color": "#ff9900"
   },
   {
-    "id": "galaxus",
-    "name": "Galaxus",
-    "logo": "galaxus",
-    "color": "#005a70"
-  },
-  {
-    "id": "ebay",
-    "name": "eBay",
-    "logo": "ebay",
-    "color": "#e53238"
-  },
-  {
-    "id": "kaufland",
-    "name": "Kaufland",
-    "logo": "kaufland",
-    "color": "#d10000"
-  },
-  {
-    "id": "temu",
-    "name": "Temu",
-    "logo": "temu",
-    "color": "#fb7701"
-  },
-  {
     "id": "otto",
     "name": "OTTO",
+    "domain": "otto.de",
+    "network": "Awin",
+    "defaultTrackingId": "3130490",
+    "awinMid": 14336,
+    "commissionRate": 0.06,
     "logo": "otto",
     "color": "#d6132c"
   },
   {
+    "id": "kaufland",
+    "name": "Kaufland",
+    "domain": "kaufland.de",
+    "network": "Awin",
+    "defaultTrackingId": "3130490",
+    "awinMid": 13809,
+    "commissionRate": 0.055,
+    "logo": "kaufland",
+    "color": "#e30613"
+  },
+  {
+    "id": "ebay",
+    "name": "eBay",
+    "domain": "ebay.de",
+    "network": "eBay Partner Network",
+    "defaultTrackingId": "5339000000",
+    "awinMid": null,
+    "commissionRate": 0.04,
+    "logo": "ebay",
+    "color": "#0064d2"
+  },
+  {
+    "id": "temu",
+    "name": "Temu",
+    "domain": "temu.com",
+    "network": "Temu Affiliate",
+    "defaultTrackingId": "aph89702",
+    "awinMid": null,
+    "commissionRate": 0.12,
+    "logo": "temu",
+    "color": "#fb7701"
+  },
+  {
+    "id": "zalando",
+    "name": "Zalando",
+    "domain": "zalando.de",
+    "network": "Direct / Partner",
+    "defaultTrackingId": "",
+    "awinMid": null,
+    "commissionRate": 0.08,
+    "logo": "zalando",
+    "color": "#ff6900"
+  },
+  {
     "id": "mediamarkt",
     "name": "MediaMarkt",
+    "domain": "mediamarkt.de",
+    "network": "Awin",
+    "defaultTrackingId": "3130490",
+    "awinMid": 16273,
+    "commissionRate": 0.035,
     "logo": "mediamarkt",
     "color": "#df0000"
   },
   {
-    "id": "conrad",
-    "name": "Conrad",
-    "logo": "conrad",
-    "color": "#0066b2"
+    "id": "galaxus",
+    "name": "Galaxus",
+    "domain": "galaxus.de",
+    "network": "Direct / Partner",
+    "defaultTrackingId": "",
+    "awinMid": null,
+    "commissionRate": 0.04,
+    "logo": "galaxus",
+    "color": "#005a70"
   },
   {
-    "id": "alternate",
-    "name": "alternate",
-    "logo": "alternate",
-    "color": "#e30613"
+    "id": "douglas",
+    "name": "Douglas",
+    "domain": "douglas.de",
+    "network": "Awin",
+    "defaultTrackingId": "3130490",
+    "awinMid": 10046,
+    "commissionRate": 0.09,
+    "logo": "douglas",
+    "color": "#00332a"
   },
   {
-    "id": "notebooksbilliger",
-    "name": "notebooksbilliger",
-    "logo": "notebooksbilliger",
-    "color": "#ff6600"
+    "id": "ikea",
+    "name": "IKEA",
+    "domain": "ikea.com",
+    "network": "Direct / Partner",
+    "defaultTrackingId": "",
+    "awinMid": null,
+    "commissionRate": 0.04,
+    "logo": "ikea",
+    "color": "#0058a3"
   },
   {
-    "id": "cyberport",
-    "name": "Cyberport",
-    "logo": "cyberport",
-    "color": "#003366"
+    "id": "aliexpress",
+    "name": "AliExpress",
+    "domain": "aliexpress.com",
+    "network": "Awin",
+    "defaultTrackingId": "3130490",
+    "awinMid": 10748,
+    "commissionRate": 0.07,
+    "logo": "aliexpress",
+    "color": "#ff4747"
   },
   {
-    "id": "expert",
-    "name": "expert",
-    "logo": "expert",
-    "color": "#f39200"
+    "id": "shein",
+    "name": "SHEIN",
+    "domain": "shein.com",
+    "network": "Direct / Affiliate",
+    "defaultTrackingId": "nexusdeals",
+    "awinMid": null,
+    "commissionRate": 0.1,
+    "logo": "shein",
+    "color": "#222222"
   }
 ]

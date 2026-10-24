@@ -3,285 +3,287 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <meta name="theme-color" content="#FAF8F5" />
+  <meta name="theme-color" content="#0a0e17" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="NexusDeals" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <title id="pageTitle">NexusDeals — Find the cheapest price. Everywhere.</title>
+  <meta name="impact-site-verification" value="109f8417-9e03-4f3c-8d5a-df3d2eb05f23" />
+  <title id="pageTitle">NexusDeals Global | Preisvergleich auf europäischen Plattformen (Amazon • OTTO • Kaufland • Zalando • MediaMarkt • eBay)</title>
+  <script>
+    (function() {
+      try {
+        localStorage.removeItem('nexus_deals_lang');
+        sessionStorage.removeItem('nexus_deals_lang_manual');
+        var manual = sessionStorage.getItem('nexus_deals_user_clicked_lang');
+        var lang = manual;
+        if (!lang) {
+          var primary = (navigator.language || navigator.userLanguage || '').toLowerCase();
+          if (primary.indexOf('de') === 0) {
+            lang = 'de';
+          } else if (primary.indexOf('ar') === 0) {
+            lang = 'ar';
+          } else if (primary.indexOf('en') === 0) {
+            lang = 'en';
+          } else if (window.__DETECTED_DEVICE_LANG__) {
+            lang = window.__DETECTED_DEVICE_LANG__;
+          } else {
+            var navLangs = navigator.languages || [];
+            for (var i = 0; i < navLangs.length; i++) {
+              var code = (navLangs[i] || '').toLowerCase();
+              if (code.indexOf('de') === 0) { lang = 'de'; break; }
+              if (code.indexOf('ar') === 0) { lang = 'ar'; break; }
+              if (code.indexOf('en') === 0) { lang = 'en'; break; }
+            }
+          }
+        }
+        if (!lang) lang = 'de';
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+      } catch (e) {}
+    })();
+  </script>
   <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="icon" href="/icons/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  <style>
+    #appSplash{position:fixed;inset:0;z-index:100000;background:radial-gradient(circle at 50% 35%,#10213d 0%,#0a0e17 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .35s ease,visibility .35s ease}
+    #appSplash.hide{opacity:0;visibility:hidden;pointer-events:none}
+    #appSplash img{width:92px;height:92px;border-radius:22px;box-shadow:0 10px 40px rgba(14,165,233,.35);animation:splashPulse 1.6s ease-in-out infinite}
+    #appSplash b{color:#f8fafc;font:800 1.25rem system-ui,sans-serif;letter-spacing:.3px}
+    #appSplash span{color:#38bdf8}
+    #appSplash i{width:38px;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,#38bdf8,transparent);background-size:200% 100%;animation:splashBar 1.1s linear infinite}
+    @keyframes splashPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+    @keyframes splashBar{from{background-position:200% 0}to{background-position:-200% 0}}
+  </style>
+  <link rel="stylesheet" href="/styles.css?v=4.1" />
 </head>
 <body>
+  <div id="appSplash"><img src="/icons/icon-192.png" alt="" /><b>Nexus<span>Deals</span></b><i></i></div>
+  <div class="sheet-backdrop" id="sheetBackdrop" onclick="closeFilterDrawer()"></div>
 
-  <!-- ==========================================================================
-       Top Site Header (Matching Prototype Header)
-       ========================================================================== -->
-  <header class="site-header">
-    <div class="header-container">
-      
-      <!-- Brand Logo -->
-      <a href="/" class="brand-logo-wrap" onclick="navigateHome(event)">
-        <div class="brand-icon">🦊</div>
-        <span class="brand-name">Nexus<span>Deals</span></span>
-      </a>
+  <!-- Sleek Compact Header -->
+  <header class="main-header">
+    <div class="header-inner">
+      <div class="header-top-row">
+        <div class="brand-logo" onclick="resetAllFilters()">
+          <div class="logo-icon">N</div>
+          <div class="brand-text">
+            <h1>NexusDeals</h1>
+            <span class="brand-subtitle" data-i18n="subBrandText">Amazon • OTTO • MediaMarkt • Kaufland • Zalando • Galaxus • eBay • Douglas • IKEA • AliExpress • Temu • SHEIN</span>
+          </div>
+        </div>
 
-      <!-- Center Nav Links -->
-      <nav class="center-nav">
-        <a href="/" class="nav-link active" onclick="navigateHome(event)" data-i18n="navHome">Home</a>
-        <a href="#deals" class="nav-link" onclick="scrollToDeals(event)" data-i18n="navDeals">Deals</a>
-        <a href="#kategorien" class="nav-link" onclick="openCategoriesMenu(event)" data-i18n="navCategories">Kategorien</a>
-      </nav>
-
-      <!-- Right Nav Controls -->
-      <div class="right-nav">
-        <button type="button" class="nav-action-btn" onclick="openWatchlistModal()">
-          <span>❤️</span>
-          <span data-i18n="navWatchlist">Merkliste</span>
-          <span id="watchlistCountBadge" style="display:none; background:var(--accent-primary); color:#FFF; font-size:0.7rem; padding:1px 6px; border-radius:10px;">0</span>
-        </button>
-
-        <!-- Multilingual Switcher -->
-        <button type="button" class="lang-switch-btn" onclick="cycleAppLanguage()" id="appLangBtn">
-          🇩🇪 DE
-        </button>
+        <!-- 3-Language Switcher -->
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn active" id="langBtn-de" onclick="setLanguage('de', true)">DE</button>
+          <button type="button" class="lang-btn" id="langBtn-en" onclick="setLanguage('en', true)">EN</button>
+          <button type="button" class="lang-btn" id="langBtn-ar" onclick="setLanguage('ar', true)">AR</button>
+        </div>
       </div>
 
+      <form class="header-search" onsubmit="handleMainSearch(event)">
+        <input type="text" id="mainSearchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Beliebiges Produkt suchen (Smartphones, Kleidung, Parfüm, Möbel, Werkzeug, Gaming...)" />
+        <button type="button" id="clearSearchBtn" class="btn-clear-search" onclick="clearSearch()" style="display:none;" title="Löschen">✕</button>
+        <button type="submit" class="btn-search-main">
+          <span data-i18n="searchBtn">🔍 Suchen</span>
+        </button>
+      </form>
+
+      <div class="header-actions">
+        <!-- Collapsible Filter & Sort Dropdown Trigger -->
+        <button type="button" class="btn-action" id="filterToggleBtn" onclick="toggleFilterDrawer()">
+          <span data-i18n="filterMenuBtn">🎛️ Filter & Sortierung ▾</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sticky Horizontal Category Strip (12 Comprehensive Life Categories) -->
+    <div class="categories-strip-wrap">
+      <nav class="categories-bar" id="categoriesBar">
+        <button class="cat-btn active" data-cat="all" onclick="selectCategory('all', this)" data-i18n="cat_all">🌐 Alle</button>
+        <button class="cat-btn" data-cat="smartphones" onclick="selectCategory('smartphones', this)" data-i18n="cat_smartphones">📱 Smartphones & Tablets</button>
+        <button class="cat-btn" data-cat="gaming" onclick="selectCategory('gaming', this)" data-i18n="cat_gaming">💻 Laptops & Gaming</button>
+        <button class="cat-btn" data-cat="tv_audio" onclick="selectCategory('tv_audio', this)" data-i18n="cat_tv_audio">📺 TV & Audio</button>
+        <button class="cat-btn" data-cat="home_kitchen" onclick="selectCategory('home_kitchen', this)" data-i18n="cat_home_kitchen">☕ Küche & Haushalt</button>
+        <button class="cat-btn" data-cat="fashion_shoes" onclick="selectCategory('fashion_shoes', this)" data-i18n="cat_fashion_shoes">👟 Mode & Schuhe</button>
+        <button class="cat-btn" data-cat="perfumes_beauty" onclick="selectCategory('perfumes_beauty', this)" data-i18n="cat_perfumes_beauty">💄 Parfüm & Beauty</button>
+        <button class="cat-btn" data-cat="furniture_decor" onclick="selectCategory('furniture_decor', this)" data-i18n="cat_furniture_decor">🛋️ Möbel & Wohnen</button>
+        <button class="cat-btn" data-cat="sports_fitness" onclick="selectCategory('sports_fitness', this)" data-i18n="cat_sports_fitness">🏋️ Sport & Fitness</button>
+        <button class="cat-btn" data-cat="kids_toys" onclick="selectCategory('kids_toys', this)" data-i18n="cat_kids_toys">🧸 Kinder & Spielzeug</button>
+        <button class="cat-btn" data-cat="tools_garden" onclick="selectCategory('tools_garden', this)" data-i18n="cat_tools_garden">🛠️ Werkzeug & Garten</button>
+        <button class="cat-btn" data-cat="auto_car" onclick="selectCategory('auto_car', this)" data-i18n="cat_auto_car">🚗 Autozubehör & Elektronik</button>
+        <button class="cat-btn" data-cat="travel_luggage" onclick="selectCategory('travel_luggage', this)" data-i18n="cat_travel_luggage">🧳 Reise & Smartwatches</button>
+      </nav>
+    </div>
+
+    <!-- Collapsible Filter & Sort Popover Drawer -->
+    <div class="dropdown-drawer" id="filterDrawer">
+      <div class="drawer-card">
+        <div class="filter-drawer-header">
+          <strong style="color:#38bdf8; font-size:0.92rem;" data-i18n="filterDrawerTitle">🎛️ Filter & Sortierung</strong>
+          <div class="filter-drawer-actions">
+            <button type="button" class="btn-action btn-sm" onclick="resetAllFilters()" data-i18n="resetFiltersBtn">Zurücksetzen ↺</button>
+            <button type="button" class="btn-action btn-sm" onclick="closeFilterDrawer()" data-i18n="closeBtn">✕</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <label style="display:block; font-size:0.8rem; color:var(--text-secondary); font-weight:600; margin-bottom:6px;" data-i18n="filterStoreLabel">Shop / Globale Plattform:</label>
+          <div class="store-filter-pills">
+            <button type="button" class="store-filter-btn active" data-store="all" onclick="selectStoreFilter('all', this)" data-i18n="storeAll">Alle (12 Plattformen)</button>
+            <button type="button" class="store-filter-btn" data-store="Amazon" onclick="selectStoreFilter('Amazon', this)">Amazon</button>
+            <button type="button" class="store-filter-btn" data-store="OTTO" onclick="selectStoreFilter('OTTO', this)">OTTO</button>
+            <button type="button" class="store-filter-btn" data-store="MediaMarkt" onclick="selectStoreFilter('MediaMarkt', this)">MediaMarkt</button>
+            <button type="button" class="store-filter-btn" data-store="Kaufland" onclick="selectStoreFilter('Kaufland', this)">Kaufland</button>
+            <button type="button" class="store-filter-btn" data-store="eBay" onclick="selectStoreFilter('eBay', this)">eBay</button>
+            <button type="button" class="store-filter-btn" data-store="Zalando" onclick="selectStoreFilter('Zalando', this)">Zalando</button>
+            <button type="button" class="store-filter-btn" data-store="Galaxus" onclick="selectStoreFilter('Galaxus', this)">Galaxus</button>
+            <button type="button" class="store-filter-btn" data-store="Douglas" onclick="selectStoreFilter('Douglas', this)">Douglas</button>
+            <button type="button" class="store-filter-btn" data-store="IKEA" onclick="selectStoreFilter('IKEA', this)">IKEA</button>
+            <button type="button" class="store-filter-btn" data-store="AliExpress" onclick="selectStoreFilter('AliExpress', this)">AliExpress</button>
+            <button type="button" class="store-filter-btn" data-store="Temu" onclick="selectStoreFilter('Temu', this)">Temu</button>
+            <button type="button" class="store-filter-btn" data-store="SHEIN" onclick="selectStoreFilter('SHEIN', this)">SHEIN</button>
+          </div>
+        </div>
+
+        <div class="filter-grid-popover">
+          <div class="filter-col">
+            <label><span data-i18n="maxPriceTitle">Maximalpreis:</span> <strong id="maxPriceLabel" style="color:#38bdf8;"></strong></label>
+            <input type="range" id="maxPriceSlider" min="20" max="2500" step="20" value="2500" oninput="handlePriceSlider(this.value)" style="width:100%; accent-color:#38bdf8; cursor:pointer;" />
+          </div>
+
+          <div class="filter-col">
+            <label data-i18n="sortLabelTitle">Sortierung nach:</label>
+            <select id="sortSelect" class="filter-select" onchange="applyFilters()">
+              <option value="popular" data-i18n="sortPopular">Beliebteste Angebote</option>
+              <option value="discount" data-i18n="sortDiscount">Höchster Rabatt & Ersparnis %</option>
+              <option value="price_asc" data-i18n="sortPriceAsc">Preis: Niedrigster zuerst</option>
+              <option value="price_desc" data-i18n="sortPriceDesc">Preis: Höchster zuerst</option>
+              <option value="rating" data-i18n="sortRating">Beste Kundenbewertung ⭐</option>
+            </select>
+          </div>
+
+          <div class="filter-col">
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer; background:var(--bg-elevated); padding:9px 12px; border-radius:8px; border:1px solid var(--border-color); margin:0;">
+              <input type="checkbox" id="flashOnlyCheckbox" onchange="applyFilters()" style="accent-color:#10b981; width:16px; height:16px;" />
+              <span data-i18n="flashDealsOnly" style="color:#fff;">🔥 Nur Blitz-Deals & Top-Ersparnis</span>
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main style="flex:1;">
-
-    <!-- ==========================================================================
-         VIEW 1: HOME VIEW (Default)
-         ========================================================================== -->
-    <div id="homeView">
-
-      <!-- Hero Section (Matching Prototype Image 1) -->
-      <section class="hero-wrapper">
-        <div class="hero-card">
-          <div class="hero-art-side"></div>
-          <div class="hero-art-poster">
-            <span class="poster-badge">🦊</span>
-            <h4 data-i18n="posterTitle">Good Products Lower Prices</h4>
-            <p data-i18n="posterSubtitle">Better prices • A brighter tomorrow</p>
-          </div>
-
-          <div class="hero-content">
-            <h1 class="hero-title" data-i18n="heroTitle">
-              Find the cheapest price.<br/>Everywhere.
-            </h1>
-
-            <form class="hero-search-box" onsubmit="handleMainSearch(event)">
-              <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              <input 
-                type="text" 
-                id="mainSearchInput" 
-                class="hero-search-input" 
-                placeholder="Search product, EAN or brand" 
-                data-i18n-placeholder="searchPlaceholder"
-                autocomplete="off"
-              />
-              <button type="submit" class="hero-search-btn" data-i18n="searchBtn">Search</button>
-            </form>
-
-            <div class="hero-search-sub">
-              <span>Compare <strong id="heroStoresCount">12</strong> stores</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Store Strip (12 Supported Stores - Matching Prototype) -->
-      <section class="stores-strip-section">
-        <div class="stores-grid-row" id="storesStripRow">
-          <!-- Dynamically populated 12 store cards -->
-        </div>
-      </section>
-
-      <!-- Trending Price Drops Section (Matching Prototype Image 1) -->
-      <section class="trending-section" id="deals">
-        <div class="trending-header-row">
-          <div class="th-title-col">
-            <h2 data-i18n="trendingTitle">Trending price drops</h2>
-            <p data-i18n="trendingSub">Popular products. Lower prices. Right now.</p>
-          </div>
-          <a href="#all" class="view-all-deals-link" onclick="showAllDeals(event)">
-            <span data-i18n="viewAllDeals">View all deals</span> →
-          </a>
-        </div>
-
-        <!-- Clean Product Cards Grid (Matching Image 1) -->
-        <div class="products-clean-grid" id="trendingProductsGrid">
-          <!-- Dynamically populated cards with discount badge, high-res image, price, and compare link -->
-        </div>
-      </section>
-
+  <!-- Main Products Catalog Grid -->
+  <main class="catalog-container">
+    <div class="catalog-status-bar">
+      <div id="resultsCounterText"></div>
+      <div data-i18n="catalogTip" style="font-size:0.8rem; color:#94a3b8;"></div>
     </div>
 
-
-    <!-- ==========================================================================
-         VIEW 2: REAL-TIME SEARCH VIEW (Matching Prototype Image 2)
-         ========================================================================== -->
-    <div id="searchView" class="search-state-wrapper">
-      <div class="search-progress-box">
-        
-        <div class="progress-header-row">
-          <div class="progress-title-col">
-            <h2 id="searchQueryTitle">Searching across 12 stores ...</h2>
-            <p data-i18n="searchingHangTight">Hang tight — we're checking prices and availability in real time.</p>
-          </div>
-          <div class="progress-counter-col">
-            <div class="progress-count-text" id="progressStatusText">0 of 12 complete</div>
-            <div class="progress-track">
-              <div class="progress-fill" id="searchProgressFill"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 12 Stores Progress Status Grid -->
-        <div class="stores-progress-grid" id="storesProgressGrid">
-          <!-- 12 store progress cards rendered dynamically -->
-        </div>
-
-        <!-- Saved for instant results notice -->
-        <div class="saved-instant-notice">
-          <h4 data-i18n="savedInstantTitle">Saved for instant results next time</h4>
-          <p data-i18n="savedInstantSub">We'll remember this product so you can see the latest prices instantly.</p>
-          
-          <div id="searchResultsGrid" class="products-clean-grid" style="margin-top:20px;">
-            <!-- Populated once search completes -->
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- ==========================================================================
-         VIEW 3: PRODUCT DETAIL & PRICE MATRIX (Matching Prototype Image 3)
-         ========================================================================== -->
-    <div id="pdpView" class="pdp-view-wrapper">
-      
-      <!-- Breadcrumb -->
-      <div class="pdp-breadcrumb-row">
-        <button type="button" class="pdp-back-btn" onclick="navigateBackFromPdp()">
-          ← <span data-i18n="breadcrumbBack">Zurück</span>
-        </button>
-        <span>/</span>
-        <span id="pdpCatBreadcrumb">Audio & HiFi</span>
-        <span>/</span>
-        <span id="pdpTitleBreadcrumb">Sony WH-1000XM5</span>
-      </div>
-
-      <!-- Top Showcase Box -->
-      <div class="pdp-showcase-box">
-        
-        <!-- Left: Image -->
-        <div class="pdp-image-col">
-          <img id="pdpMainImage" class="pdp-main-image" src="" alt="" />
-          <div class="pdp-image-source" id="pdpImageSource">Image from official retailer</div>
-        </div>
-
-        <!-- Right: Info -->
-        <div class="pdp-info-col">
-          <div class="pdp-brand-tag" id="pdpBrandTag">SONY</div>
-          <h1 class="pdp-title-main" id="pdpTitleMain">Sony WH-1000XM5</h1>
-          
-          <div class="pdp-ean-row">
-            <span>EAN</span>
-            <strong id="pdpEanCode">4548736134539</strong>
-            <button type="button" class="pdp-copy-btn" onclick="copyEanToClipboard()" title="EAN kopieren">📋</button>
-          </div>
-
-          <p class="pdp-desc-text" id="pdpDescription">
-            Industry-leading noise cancellation, exceptional sound and all-day comfort. The Sony WH-1000XM5 sets the standard for wireless over-ear headphones.
-          </p>
-
-          <div class="pdp-spec-tags-row" id="pdpSpecsRow">
-            <span class="pdp-spec-pill">Wireless</span>
-            <span class="pdp-spec-pill">Noise Cancelling</span>
-            <span class="pdp-spec-pill">Over-Ear</span>
-            <span class="pdp-spec-pill">Bluetooth 5.2</span>
-            <span class="pdp-spec-pill">Up to 30 h battery</span>
-          </div>
-
-          <!-- Highlighted Best Price Banner (Green Trophy) -->
-          <div class="best-price-highlight-banner" id="pdpBestPriceBanner">
-            <div class="bph-left">
-              <div class="bph-trophy-circle">🏆</div>
-              <div class="bph-labels">
-                <span class="bph-tag" data-i18n="bestPriceTag">BEST PRICE</span>
-                <div class="bph-val-store" id="pdpBestPriceText">
-                  €279.00 <span id="pdpBestStoreText">at Galaxus</span>
-                </div>
-              </div>
-            </div>
-            <a href="#compareTable" class="bph-view-all">
-              <span data-i18n="viewAllOffers">View all offers</span> →
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Compare Prices Matrix Table Box (Matching Prototype Image 3) -->
-      <div class="compare-table-box" id="compareTable">
-        
-        <div class="ct-header-row">
-          <h3 data-i18n="comparePricesTitle">Compare prices</h3>
-          <span class="ct-sort-note" data-i18n="compareSortNote">Sorted by price (lowest first)</span>
-        </div>
-
-        <table class="prototype-matrix-table">
-          <thead>
-            <tr>
-              <th data-i18n="colStore">Store</th>
-              <th data-i18n="colMatch">Match</th>
-              <th data-i18n="colPrice">Price</th>
-              <th data-i18n="colStock">Stock</th>
-              <th data-i18n="colLink">Link</th>
-              <th style="text-align:right;" data-i18n="colAction">Action</th>
-            </tr>
-          </thead>
-          <tbody id="pdpOffersTableBody">
-            <!-- Dynamically populated sorted offers ORDER BY price ASC -->
-          </tbody>
-        </table>
-
-        <!-- Verification Banner Footer -->
-        <div class="matrix-verify-footer">
-          <span class="mv-icon">✔️</span>
-          <span id="pdpCarrySummaryText">5 of 12 stores carry this exact item. Links go straight to the product page, never to search results.</span>
-        </div>
-
-      </div>
-
-    </div>
-
+    <div class="products-grid" id="productsGrid"></div>
   </main>
 
-  <!-- Clean Minimalist Footer -->
-  <footer style="background:#FFFFFF; border-top:1px solid var(--border-light); padding:32px 24px; margin-top:60px;">
-    <div style="max-width:1260px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
-      <div style="display:flex; align-items:center; gap:8px;">
-        <span style="font-size:1.2rem;">🦊</span>
-        <span style="font-weight:800; font-size:1.1rem;">Nexus<span style="color:var(--accent-primary);">Deals</span></span>
-        <span style="font-size:0.85rem; color:var(--text-muted); margin-left:8px;">© 2026 NexusDeals Global. Official EU Price Comparison & Affiliate Engine.</span>
+  <!-- Product Detail, Price History & Alternatives Modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalProductTitle" style="font-size:1.05rem;"></h3>
+        <button class="btn-close-modal" onclick="closeProductModal()">✕</button>
       </div>
-      <div style="display:flex; align-items:center; gap:20px; font-size:0.85rem; color:var(--text-secondary);">
-        <a href="/admin">Admin Portal</a>
-        <a href="#privacy">Datenschutz</a>
-        <a href="#impressum">Impressum</a>
+      <div id="modalProductBody"></div>
+    </div>
+  </div>
+
+  
+
+  <!-- Dedicated Platform Popup Modal (Sheet for Mobile & Floating Card for Desktop) -->
+  <div class="modal-overlay dedicated-store-overlay" id="dedicatedStoreModal" onclick="handleDedicatedModalBackdropClick(event)">
+    <div class="dedicated-store-sheet" id="dedicatedStoreSheet">
+      <div class="dedicated-sheet-drag-handle"></div>
+      <div class="dedicated-sheet-header">
+        <div class="dedicated-header-meta">
+          <span id="dedicatedStoreBadge" class="store-tag"></span>
+          <span class="dedicated-verified-pill" id="dedicatedVerifiedText">✔️ إعلان موثق ورسمي</span>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeDedicatedStoreModal()" title="إغلاق">✕</button>
+      </div>
+      <div class="dedicated-store-body" id="dedicatedStoreBody">
+        <!-- Rendered dynamically -->
       </div>
     </div>
-  </footer>
+  </div>
 
-  <script src="/app.js"></script>
+  <!-- High-Resolution Full-Screen Image Lightbox Modal -->
+  <div class="lightbox-overlay" id="imageLightboxModal" onclick="handleLightboxBackdropClick(event)">
+    <div class="lightbox-topbar">
+      <div class="lightbox-counter" id="lightboxCounter">1 / 1</div>
+      <div class="lightbox-tools">
+        <button type="button" class="lightbox-tool-btn" onclick="zoomLightboxImage(0.25)" title="Zoom In">➕</button>
+        <button type="button" class="lightbox-tool-btn" onclick="zoomLightboxImage(-0.25)" title="Zoom Out">➖</button>
+        <button type="button" class="lightbox-tool-btn" onclick="resetLightboxZoom()" title="Reset Zoom">1:1</button>
+        <button type="button" class="lightbox-close-btn" onclick="closeImageLightbox()" title="Close">✕</button>
+      </div>
+    </div>
+
+    <div class="lightbox-viewport" id="lightboxViewport" onclick="toggleLightboxZoom(event)">
+      <button type="button" class="lightbox-nav-btn lightbox-prev" onclick="navigateLightbox(-1, event)">‹</button>
+      <div class="lightbox-img-wrapper" id="lightboxImgWrapper">
+        <img id="lightboxMainImg" src="" alt="High-Resolution Preview" />
+      </div>
+      <button type="button" class="lightbox-nav-btn lightbox-next" onclick="navigateLightbox(1, event)">›</button>
+    </div>
+
+    <div class="lightbox-thumbs-bar" id="lightboxThumbsBar"></div>
+  </div>
+
+  <!-- Native Mobile App Bottom Navigation Bar (Customer Only) -->
+  <nav class="mobile-bottom-nav">
+    <button type="button" class="bottom-nav-item active" id="bottomNavHomeBtn" onclick="handleBottomNavHome(event)">
+      <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span class="nav-label" data-i18n="navHome">Start</span>
+    </button>
+    <button type="button" class="bottom-nav-item" id="bottomNavSearchBtn" onclick="handleBottomNavSearch(event)">
+      <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <span class="nav-label" data-i18n="navSearch">Suche</span>
+    </button>
+    <button type="button" class="bottom-nav-item" id="bottomNavFilterBtn" onclick="handleBottomNavFilter(event)">
+      <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="21" x2="4" y2="14"/>
+        <line x1="4" y1="10" x2="4" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="12"/>
+        <line x1="12" y1="8" x2="12" y2="3"/>
+        <line x1="20" y1="21" x2="20" y2="16"/>
+        <line x1="20" y1="12" x2="20" y2="3"/>
+        <line x1="1" y1="14" x2="7" y2="14"/>
+        <line x1="9" y1="8" x2="15" y2="8"/>
+        <line x1="17" y1="16" x2="23" y2="16"/>
+      </svg>
+      <span class="nav-label" data-i18n="navFilter">Filter</span>
+    </button>
+    <button type="button" class="bottom-nav-item deals-btn" id="bottomNavDealsBtn" onclick="toggleFlashDealsFilter(event)">
+      <svg class="nav-svg nav-svg-deal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+      </svg>
+      <span class="nav-label" data-i18n="navDeals">Deals 🔥</span>
+    </button>
+  </nav>
+
+  <script src="/app.js?v=4.5"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+    }
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+      document.documentElement.classList.add('is-standalone');
+    }
+  </script>
 </body>
 </html>

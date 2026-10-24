@@ -1,146 +1,416 @@
-// ==========================================================================
-// NexusDeals Prototype-Perfect Application Engine (100% Matching Prototype)
-// ==========================================================================
+function detectPreferredLanguage() {
+  // 1. If user explicitly tapped a language button during this session
+  try {
+    const manual = sessionStorage.getItem('nexus_deals_user_clicked_lang');
+    if (manual && ['de', 'en', 'ar'].includes(manual)) {
+      return manual;
+    }
+  } catch (e) {}
 
-// Global State
+  // 2. Direct primary system/browser language of the phone or device
+  try {
+    const primary = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    if (primary.indexOf('de') === 0) return 'de';
+    if (primary.indexOf('ar') === 0) return 'ar';
+    if (primary.indexOf('en') === 0) return 'en';
+  } catch (e) {}
+
+  // 3. Fallback: injected server detected language from HTTP Accept-Language
+  if (typeof window !== 'undefined' && window.__DETECTED_DEVICE_LANG__) {
+    return window.__DETECTED_DEVICE_LANG__;
+  }
+
+  // 4. Secondary fallback checking navigator.languages list
+  try {
+    const navLangs = navigator.languages || [];
+    for (const l of navLangs) {
+      const code = (l || '').toLowerCase();
+      if (code.indexOf('de') === 0) return 'de';
+      if (code.indexOf('ar') === 0) return 'ar';
+      if (code.indexOf('en') === 0) return 'en';
+    }
+  } catch (e) {}
+
+  return 'de'; // Default to German for DE/EU marketplace
+}
+
+// Remove legacy storage that locked users into stale language on refresh
+try {
+  localStorage.removeItem('nexus_deals_lang');
+  sessionStorage.removeItem('nexus_deals_lang_manual');
+} catch (e) {}
+
+function isSearchLikeUrl(u) {
+  if (!u || typeof u !== 'string') return true;
+  return false;
+}
+
 let allProducts = [];
-let supportedPlatforms = [];
 let currentCategory = 'all';
 let currentStore = 'all';
-let currentLang = 'de';
+let currentMaxPrice = 2500;
+let currentLang = detectPreferredLanguage(); // Auto-detect device language
 let lastSearchQuery = '';
-let currentView = 'home'; // 'home' | 'search' | 'pdp'
-let currentProduct = null;
-let watchlist = JSON.parse(localStorage.getItem('nexus_watchlist') || '[]');
 
-// 12 Official Stores matching the Prototype design
-const DEFAULT_12_STORES = [
-  { id: 'amazon', name: 'Amazon', logoText: 'a', color: '#FF9900' },
-  { id: 'galaxus', name: 'Galaxus', logoText: '🐢', color: '#005A70' },
-  { id: 'ebay', name: 'eBay', logoText: 'ebay', color: '#0064D2' },
-  { id: 'kaufland', name: 'Kaufland', logoText: 'K', color: '#E10915' },
-  { id: 'temu', name: 'Temu', logoText: 'TEMU', color: '#FB7701' },
-  { id: 'otto', name: 'OTTO', logoText: 'OTTO', color: '#D6132C' },
-  { id: 'mediamarkt', name: 'MediaMarkt', logoText: 'MM', color: '#DF0000' },
-  { id: 'conrad', name: 'Conrad', logoText: 'C', color: '#0066B2' },
-  { id: 'alternate', name: 'alternate', logoText: 'a', color: '#E30613' },
-  { id: 'notebooksbilliger', name: 'notebooksbilliger', logoText: 'nbb', color: '#FF6600' },
-  { id: 'cyberport', name: 'Cyberport', logoText: 'C', color: '#003366' },
-  { id: 'expert', name: 'expert', logoText: 'xp', color: '#F39200' }
-];
-
-// Multilingual Dictionary
 const I18N = {
-  de: {
-    navHome: 'Home',
-    navDeals: 'Deals',
-    navCategories: 'Kategorien',
-    navWatchlist: 'Merkliste',
-    navLogin: 'Anmelden',
-    posterTitle: 'Gute Produkte Geringere Preise',
-    posterSubtitle: 'Bessere Preise • Eine bessere Zukunft',
-    heroTitle: 'Find the cheapest price.<br/>Everywhere.',
-    searchPlaceholder: 'Search product, EAN or brand',
-    searchBtn: 'Search',
-    trendingTitle: 'Trending price drops',
-    trendingSub: 'Popular products. Lower prices. Right now.',
-    viewAllDeals: 'View all deals',
-    compare12Stores: 'Compare 12 stores',
-    fromLabel: 'from',
-    wasLabel: 'was',
-    searchingAcross: (n) => `Searching across ${n} stores ...`,
-    searchingHangTight: "Hang tight — we're checking prices and availability in real time.",
-    savedInstantTitle: 'Saved for instant results next time',
-    savedInstantSub: "We'll remember this product so you can see the latest prices instantly.",
-    breadcrumbBack: 'Zurück',
-    bestPriceTag: 'BEST PRICE',
-    viewAllOffers: 'View all offers',
-    comparePricesTitle: 'Compare prices',
-    compareSortNote: 'Sorted by price (lowest first)',
-    colStore: 'Store',
-    colMatch: 'Match',
-    colPrice: 'Price',
-    colStock: 'Stock',
-    colLink: 'Link',
-    colAction: 'Action',
-    verifiedMatch: 'Verified match',
-    inStock: 'In stock',
-    openProductPage: 'Open product page',
-    verifyFooter: (f, t) => `${f} of ${t} stores carry this exact item. Links go straight to the product page, never to search results.`
-  },
-  en: {
-    navHome: 'Home',
-    navDeals: 'Deals',
-    navCategories: 'Categories',
-    navWatchlist: 'Watchlist',
-    navLogin: 'Sign in',
-    posterTitle: 'Good Products Lower Prices',
-    posterSubtitle: 'Better prices • A brighter tomorrow',
-    heroTitle: 'Find the cheapest price.<br/>Everywhere.',
-    searchPlaceholder: 'Search product, EAN or brand',
-    searchBtn: 'Search',
-    trendingTitle: 'Trending price drops',
-    trendingSub: 'Popular products. Lower prices. Right now.',
-    viewAllDeals: 'View all deals',
-    compare12Stores: 'Compare 12 stores',
-    fromLabel: 'from',
-    wasLabel: 'was',
-    searchingAcross: (n) => `Searching across ${n} stores ...`,
-    searchingHangTight: "Hang tight — we're checking prices and availability in real time.",
-    savedInstantTitle: 'Saved for instant results next time',
-    savedInstantSub: "We'll remember this product so you can see the latest prices instantly.",
-    breadcrumbBack: 'Back',
-    bestPriceTag: 'BEST PRICE',
-    viewAllOffers: 'View all offers',
-    comparePricesTitle: 'Compare prices',
-    compareSortNote: 'Sorted by price (lowest first)',
-    colStore: 'Store',
-    colMatch: 'Match',
-    colPrice: 'Price',
-    colStock: 'Stock',
-    colLink: 'Link',
-    colAction: 'Action',
-    verifiedMatch: 'Verified match',
-    inStock: 'In stock',
-    openProductPage: 'Open product page',
-    verifyFooter: (f, t) => `${f} of ${t} stores carry this exact item. Links go straight to the product page, never to search results.`
-  },
   ar: {
+    dir: 'rtl',
+    pageTitle: 'NexusDeals Global | قارن الأسعار والشراء المباشر عبر المتاجر الكبرى',
+    subBrandText: 'Amazon • OTTO • MediaMarkt • Kaufland • Zalando • Galaxus • eBay • Douglas • IKEA • AliExpress • Temu • SHEIN',
+    searchPlaceholder: 'ابحث عن أي منتج (هواتف، ملابس، عطور، أثاث، أدوات، ألعاب...)',
+    searchBtn: '🔍 بحث',
+    filterMenuBtn: '🎛️ الفلترة والترتيب ▾',
+    filterDrawerTitle: '🎛️ خيارات الفلترة والترتيب المتقدمة (12 منصة عالمية)',
+    resetFiltersBtn: 'إعادة ضبط ↺',
+    sortLabelTitle: 'طريقة الترتيب:',
+    aiHeaderBtn: '🤖 المساعد الذكي AI ▾',
+    aiPromptLabel: '🤖 اسأل مساعد التسوق الذكي (اكتب ميزانيتك أو أي نوع منتج تبحث عنه):',
+    aiPlaceholder: 'مثال: أريد حذاء رياضي نايك، أو عطر رجالي، أو كرسي مكتب، أو ماكينة قهوة...',
+    aiSubmitBtn: 'تحليل ذكي ⚡',
+    quickChips: [
+      { label: '👟 أحذية وملابس (Nike / Adidas)', query: 'Nike Adidas Sneaker Jeans' },
+      { label: '💄 عطور وتجميل وعناية', query: 'Parfum Lattafa Dior Philips Lumea' },
+      { label: '🛋️ أثاث ومراتب وكراسي مكتب', query: 'Bürostuhl Matratze Sofa' },
+      { label: '☕ ماكينة قهوة وأجهزة مطبخ', query: 'DeLonghi Kaffeevollautomat Ninja Tefal' },
+      { label: '🛠️ عدد بوش وغسيل كيرشر', query: 'Bosch Professional Kärcher' },
+      { label: '📱 هواتف ولابتوبات وبلايستيشن', query: 'Samsung S24 iPhone 16 PlayStation 5' }
+    ],
+    closeBtn: 'إغلاق ✕',
+    cat_all: '🌐 الكل',
+    cat_smartphones: '📱 الهواتف والتابلت',
+    cat_gaming: '💻 الكمبيوترات والألعاب',
+    cat_tv_audio: '📺 الشاشات والصوتيات',
+    cat_home_kitchen: '☕ المطبخ والمنزل',
+    cat_home: '☕ المطبخ والمنزل',
+    cat_fashion_shoes: '👟 الملابس والأحذية',
+    cat_perfumes_beauty: '💄 العطور والتجميل',
+    cat_fashion_care: '💄 العطور والتجميل',
+    cat_furniture_decor: '🛋️ الأثاث والمفروشات',
+    cat_sports_fitness: '🏋️ الرياضة واللياقة',
+    cat_kids_toys: '🧸 الأطفال والليغو',
+    cat_tools_garden: '🛠️ العدد والحديقة',
+    cat_auto_car: '🚗 مستلزمات السيارات',
+    cat_travel_luggage: '🧳 السفر والساعات',
+    cat_wearables: '⌚ الساعات الذكية',
+    cat_cameras: '📷 الكاميرات والدرون',
+    filterStoreLabel: 'المتجر / المنصة العالمية:',
+    storeAll: 'الكل (12 منصة عالمية)',
+    maxPriceTitle: 'أقصى سعر:',
+    noLimit: 'الكل (بدون حد)',
+    upToPrice: (v) => `حتى ${v} €`,
+    flashDealsOnly: '🔥 عروض التوفير الكبير فقط',
+    sortPopular: 'الأكثر شهرة ومبيعاً',
+    sortDiscount: 'الأعلى توفير وخصم %',
+    sortPriceAsc: 'السعر: من الأرخص للأغلى',
+    sortPriceDesc: 'السعر: من الأغلى للأرخص',
+    sortRating: 'الأعلى تقييماً ⭐',
+    catalogTip: '💡 اضغط على أي متجر للشراء المباشر أو "مقارنة شاملة" لرؤية كل المنصات وتاريخ السعر.',
+    resultsSearch: (q, n) => `🔍 نتائج البحث عن <strong>"${q}"</strong>: <strong>${n}</strong> منتج حقيقي`,
+    resultsAll: (n) => `📦 يعرض <strong>${n}</strong> منتج حقيقي الأكثر مبيعاً عبر 12 منصة عالمية`,
+    noResultsTitle: 'لم يتم العثور على نتائج مطابقة لهذه الفلاتر',
+    noResultsDesc: 'جرب زيادة الحد الأقصى للسعر أو البحث عن اسم أي منتج تريد جلبه فوراً.',
+    showAllBtn: 'إظهار جميع المنتجات 🔄',
+    badgeSave: (eur, pct) => `وفر ${eur}€ (-${pct}%)`,
+    badgeVerified: (asin) => `أصلي (${asin}) ✔️`,
+    badgeHotDeal: (eur) => `توفير ${eur}€ 🔥`,
+    cheapestNowIn: (store) => `أرخص سعر الآن في <strong>${store}</strong>:`,
+    inStockReady: '✔️ متوفر',
+    cheapestTag: '🏆 الأرخص',
+    deliveryStore: (store) => `شحن من ${store}`,
+    buyFromBtn: (store, price) => `🛒 الشراء مباشرة من ${store} (${price}€) ↗`,
+    compareHistoryBtn: (n) => `📊 قارن (${n} متاجر)`,
+    aiVerdictCard: (price, asin) => `سعر حقيقي مباشر في Amazon.de (${price}€) • ASIN: ${asin}`,
+    modalSpecs: (title, asin, price) => [
+      `الاسم الرسمي الكامل للمنتج: ${title}`,
+      `الرقم التسلسلي الرسمي في أمازون (ASIN): ${asin}`,
+      `السعر الفعلي المباشر شامل الضريبة: ${price} €`,
+      `الرابط ينقلك مباشرة إلى صفحة المنتج الأصلية في المتجر الرسمي`
+    ],
+    alertBoxTitle: '🔔 جرس تنبيه انخفاض السعر:',
+    alertEmailPlaceholder: 'بريدك الإلكتروني...',
+    alertSubmitBtn: 'نبهني عند الانخفاض',
+    alertSavedMsg: (p) => `✔️ تم تفعيل التنبيه! سنرسل لك إشعاراً فور وصول السعر إلى ${p}€.`,
+    stageScreenHeader: 'شاشة العرض المباشر للمتجر',
+    livePriceSynced: '⚡ تم تحديث الأسعار الحية ومطابقتها للمنصة',
+    stageLiveFrom: (s) => `عرض رسمي مباشر من متجر ${s}`,
+    stageLiveDot: 'متصل ومحدث مباشرة',
+    stageHintSwitch: '💡 اضغط على أي متجر في الجدول أدناه لتحويل هذه الشاشة فوراً لصور وأسعار ومواصفات ذلك المتجر',
+    stageDisplayingNow: 'يُعرض في الشاشة بالأعلى 📺',
+    stageSwitchToBtn: 'معاينة بالشاشة 👁️',
+    stageDirectBuyBtn: (s, p) => `🛒 الشراء مباشرة من ${s} (${p}€) ↗`,
+    stageSavingBadge: (val, pct) => `وفر ${val}€ (-${pct}%)`,
+    stageSpecsTitle: 'المواصفات والبيانات المسجلة لدى المنصة:',
+    stageSpecRetailer: (s) => `المنصة الرسمية: ${s}`,
+    stageSpecTitle: (t) => `اسم العرض في المتجر: ${t}`,
+    stageSpecPrice: (p) => `السعر الفعلي المباشر: ${p} € (شامل الضريبة)`,
+    stageSpecRating: (r) => `تقييم المتجر: ⭐ ${r} / 5`,
+    stageSpecShipping: (s) => `التوصيل والضمان: شحن من مستودعات ${s} مع ضمان الإرجاع الرسمي`,
+    stageCompareHeader: (n) => n === 1 ? '🏬 المنصة الرسمية المعتمدة لهذا المنتج (متجر أصلي ومباشر 100%):' : `🏪 المتاجر الرسمية المتوفرة حالياً (${n} متاجر موثقة) — اضغط على أي متجر لعرض إعلانه في الشاشة 📺:`,
+    modalCompareHeader: '🏪 جدول مقارنة الأسعار المباشر عبر كبرى المتاجر الأوروبية:',
+    modalBestGuaranteed: '🏆 أرخص سعر مضمون اليوم',
+    modalStoreRating: (r) => `تقييم المتجر ⭐ ${r}`,
+    modalFreeShipping: 'شحن مجاني / سريع',
+    modalGoToOffer: (s) => `الذهاب للعرض في ${s} ↗`,
+    previewBtn: 'معاينة 👁️',
+    previewStoreVerified: (s) => `عرض مباشر معتمد من متجر ${s}`,
+    previewMatchedModel: 'الموديل والمواصفات المطابقة',
+    previewVariantColor: 'اللون / الإصدار',
+    modalChartHeader: '📈 تاريخ السعر خلال آخر 90 يوماً (كاشف الخصومات الحقيقية):',
+    chartLabels: ['قبل 90 يوم', 'قبل 75 يوم', 'قبل 60 يوم', 'قبل 45 يوم', 'قبل 30 يوم', 'قبل 15 يوم', 'اليوم (الأرخص)'],
+    modalSimilarHeader: '🔄 منتجات مشابهة وبدائل في نفس الفئة:',
+    cheapestLabelShort: 'أرخص سعر:',
+    galleryLoading: '📸 جاري جلب جميع صور المنتج الأصلية من المتجر...',
+    galleryReady: (n) => `📸 ${n} صور أصلية من المتجر الرسمي`,
+    aiLoading: '🤖 جاري فحص ومقارنة المنتجات والأسعار الحقيقية عبر 12 منصة عالمية...',
+    aiFormattedReply: (best, bestOffer, amzOffer, saving) =>
+      `🤖 تحليل المساعد الذكي للمنتجات الحقيقية:\n` +
+      `🏆 أفضل ترشيح لك اليوم: ${best.title} (ASIN: ${best.asin})\n` +
+      `• السعر المباشر في Amazon.de: ${amzOffer.price.toFixed(2)} € | أرخص عرض في ${bestOffer.store}: ${bestOffer.price.toFixed(2)} € (توفير ${saving} €):`,
     navHome: 'الرئيسية',
-    navDeals: 'العروض',
-    navCategories: 'الأقسام',
-    navWatchlist: 'المفضلة',
-    navLogin: 'دخول',
-    posterTitle: 'منتجات أصلية بأسعار أقل',
-    posterSubtitle: 'أسعار أفضل لمستقبل أذكى',
-    heroTitle: 'اعثر على أقل سعر.<br/>في كل مكان.',
-    searchPlaceholder: 'ابحث عن منتج، كود EAN أو ماركة',
-    searchBtn: 'بحث',
-    trendingTitle: 'أقوى انخفاضات الأسعار',
-    trendingSub: 'منتجات شهيرة بأقل الأسعار لحظياً.',
-    viewAllDeals: 'عرض جميع العروض',
-    compare12Stores: 'قارن 12 متجراً',
-    fromLabel: 'يبدأ من',
-    wasLabel: 'كان',
-    searchingAcross: (n) => `جارٍ البحث في ${n} متجراً بالكامل ...`,
-    searchingHangTight: 'لحظات — نتحقق من الأسعار والتوفر الحقيقي في الوقت الفعلي.',
-    savedInstantTitle: 'تم الحفظ لنتائج فورية في المرات القادمة',
-    savedInstantSub: 'نحفظ هذا المنتج لتتمكن من رؤية أحدث الأسعار تلقائياً.',
-    breadcrumbBack: 'رجوع',
-    bestPriceTag: 'أفضل سعر',
-    viewAllOffers: 'عرض كافة العروض',
-    comparePricesTitle: 'مقارنة الأسعار',
-    compareSortNote: 'مرتبة تصاعدياً (الأرخص أولاً)',
-    colStore: 'المتجر',
-    colMatch: 'التطابق',
-    colPrice: 'السعر',
-    colStock: 'التوفر',
-    colLink: 'الرابط المباشر',
-    colAction: 'الشراء',
-    verifiedMatch: 'تطابق رسمي موثق',
-    inStock: 'متوفر فوري',
-    openProductPage: 'فتح صفحة السلعة',
-    verifyFooter: (f, t) => `${f} من أصل ${t} متاجر توفر هذه السلعة بدقة. الروابط تنقلك لصفحة الشراء مباشرة دون شريط بحث.`
+    navSearch: 'بحث',
+    navFilter: 'الفلترة',
+    navAi: 'المساعد AI',
+    navDeals: 'العروض 🔥'
+  },
+
+  de: {
+    dir: 'ltr',
+    pageTitle: 'NexusDeals Global | Preisvergleich & Direktkauf führender Marktplätze',
+    subBrandText: 'Amazon • OTTO • MediaMarkt • Kaufland • Zalando • Galaxus • eBay • Douglas • IKEA • AliExpress • Temu • SHEIN',
+    searchPlaceholder: 'Produkt suchen (Smartphones, Mode, Parfum, Möbel, Werkzeug, Spielzeug...)',
+    searchBtn: '🔍 Suchen',
+    filterMenuBtn: '🎛️ Filter & Sortierung ▾',
+    filterDrawerTitle: '🎛️ Erweiterte Filter- & Sortieroptionen (12 Plattformen)',
+    resetFiltersBtn: 'Zurücksetzen ↺',
+    sortLabelTitle: 'Sortieren nach:',
+    aiHeaderBtn: '🤖 KI-Kaufberater ▾',
+    aiPromptLabel: '🤖 Fragen Sie unseren KI-Kaufberater (geben Sie Ihr Budget oder Ihren Wunsch ein):',
+    aiPlaceholder: 'Beispiel: Nike Sneaker, Herren Parfum, Bürostuhl oder Kaffeevollautomat...',
+    aiSubmitBtn: 'KI-Analyse ⚡',
+    quickChips: [
+      { label: '👟 Mode & Sneaker (Nike / Adidas)', query: 'Nike Adidas Sneaker Jeans' },
+      { label: '💄 Parfum, Beauty & Pflege', query: 'Parfum Lattafa Dior Philips Lumea' },
+      { label: '🛋️ Möbel, Matratzen & Bürostühle', query: 'Bürostuhl Matratze Sofa' },
+      { label: '☕ Kaffeevollautomaten & Küche', query: 'DeLonghi Kaffeevollautomat Ninja Tefal' },
+      { label: '🛠️ Bosch Werkzeug & Kärcher', query: 'Bosch Professional Kärcher' },
+      { label: '📱 Smartphones, Laptops & PS5', query: 'Samsung S24 iPhone 16 PlayStation 5' }
+    ],
+    closeBtn: 'Schließen ✕',
+    cat_all: '🌐 Alle',
+    cat_smartphones: '📱 Smartphones & Tablets',
+    cat_gaming: '💻 Laptops & Gaming',
+    cat_tv_audio: '📺 TV & Audio',
+    cat_home_kitchen: '☕ Küche & Haushalt',
+    cat_home: '☕ Küche & Haushalt',
+    cat_fashion_shoes: '👟 Mode & Schuhe',
+    cat_perfumes_beauty: '💄 Parfum & Beauty',
+    cat_fashion_care: '💄 Parfum & Beauty',
+    cat_furniture_decor: '🛋️ Möbel & Wohnen',
+    cat_sports_fitness: '🏋️ Sport & Fitness',
+    cat_kids_toys: '🧸 Spielzeug & LEGO',
+    cat_tools_garden: '🛠️ Baumarkt & Garten',
+    cat_auto_car: '🚗 Auto & Zubehör',
+    cat_travel_luggage: '🧳 Reise, Koffer & Uhren',
+    cat_wearables: '⌚ Smartwatches',
+    cat_cameras: '📷 Kameras & Drohnen',
+    filterStoreLabel: 'Shop / Plattform:',
+    storeAll: 'Alle (12 Plattformen)',
+    maxPriceTitle: 'Max. Preis:',
+    noLimit: 'Alle (Kein Limit)',
+    upToPrice: (v) => `Bis ${v} €`,
+    flashDealsOnly: '🔥 Nur Top-Rabatte',
+    sortPopular: 'Beliebteste zuerst',
+    sortDiscount: 'Höchste Ersparnis %',
+    sortPriceAsc: 'Preis: Günstigste zuerst',
+    sortPriceDesc: 'Preis: Teuerste zuerst',
+    sortRating: 'Beste Bewertung ⭐',
+    catalogTip: '💡 Klicken Sie auf einen Shop zum Direktkauf oder auf „Vergleichen“ für alle Shops & Preisverlauf.',
+    resultsSearch: (q, n) => `🔍 Suchergebnisse für <strong>„${q}“</strong>: <strong>${n}</strong> echte Produkte`,
+    resultsAll: (n) => `📦 Zeigt <strong>${n}</strong> verifizierte Bestseller über 12 globale Plattformen`,
+    noResultsTitle: 'Keine passenden Produkte für diese Filter gefunden',
+    noResultsDesc: 'Erhöhen Sie das Preislimit oder suchen Sie oben nach einem beliebigen Produktnamen.',
+    showAllBtn: 'Alle Produkte anzeigen 🔄',
+    badgeSave: (eur, pct) => `-${eur}€ (-${pct}%)`,
+    badgeVerified: (asin) => `Original (${asin}) ✔️`,
+    badgeHotDeal: (eur) => `${eur}€ sparen 🔥`,
+    cheapestNowIn: (store) => `Bestpreis bei <strong>${store}</strong>:`,
+    inStockReady: '✔️ Lieferbar',
+    cheapestTag: '🏆 Bestpreis',
+    deliveryStore: (store) => `Versand via ${store}`,
+    buyFromBtn: (store, price) => `🛒 Bei ${store} kaufen (${price}€) ↗`,
+    compareHistoryBtn: (n) => `📊 Vergleich (${n} Shops)`,
+    aiVerdictCard: (price, asin) => `Verifizierter Live-Preis auf Amazon.de (${price}€) • ASIN: ${asin}`,
+    modalSpecs: (title, asin, price) => [
+      `Offizielle Produktbezeichnung: ${title}`,
+      `Offizielle Amazon-Artikelnummer (ASIN): ${asin}`,
+      `Aktueller Live-Preis inkl. MwSt.: ${price} €`,
+      `Direkter Link zur offiziellen Produktseite des Händlers`
+    ],
+    alertBoxTitle: '🔔 Preiswecker aktivieren:',
+    alertEmailPlaceholder: 'Ihre E-Mail-Adresse...',
+    alertSubmitBtn: 'Benachrichtigen',
+    alertSavedMsg: (p) => `✔️ Preiswecker aktiviert! Wir informieren Sie bei ${p}€.`,
+    stageScreenHeader: 'Live-Store-Bildschirm',
+    livePriceSynced: '⚡ Live-Preise synchronisiert & verifiziert',
+    stageLiveFrom: (s) => `Offizielles Live-Angebot von ${s}`,
+    stageLiveDot: 'Live & synchronisiert',
+    stageHintSwitch: '💡 Klicken Sie unten auf einen beliebigen Shop, um diesen Bildschirm sofort mit dessen Bildern, Preisen und Daten umzuschalten',
+    stageDisplayingNow: 'Wird oben angezeigt 📺',
+    stageSwitchToBtn: 'Im Bildschirm zeigen 👁️',
+    stageDirectBuyBtn: (s, p) => `🛒 Direkt bei ${s} kaufen (${p}€) ↗`,
+    stageSavingBadge: (val, pct) => `${val}€ Ersparnis (-${pct}%)`,
+    stageSpecsTitle: 'Produktdetails & Daten der Plattform:',
+    stageSpecRetailer: (s) => `Offizielle Plattform: ${s}`,
+    stageSpecTitle: (t) => `Angebotstitel im Shop: ${t}`,
+    stageSpecPrice: (p) => `Live-Endpreis: ${p} € (inkl. MwSt.)`,
+    stageSpecRating: (r) => `Shop-Bewertung: ⭐ ${r} / 5`,
+    stageSpecShipping: (s) => `Lieferung & Garantie: Versand via ${s} mit Käuferschutz & Rückgaberecht`,
+    stageCompareHeader: (n) => n === 1 ? '🏬 Offizielle Partner-Plattform für dieses Produkt (100% verifiziert):' : `🏪 Verfügbare Partner-Shops (${n} verifizierte Händler) — Klicken Sie auf einen Shop für den Live-Bildschirm 📺:`,
+    modalCompareHeader: '🏪 Direkter Live-Preisvergleich führender europäischer Shops:',
+    modalBestGuaranteed: '🏆 Garantierter Bestpreis heute',
+    modalStoreRating: (r) => `Shop-Bewertung ⭐ ${r}`,
+    modalFreeShipping: 'Schneller Direktversand',
+    modalGoToOffer: (s) => `Zum Angebot bei ${s} ↗`,
+    previewBtn: 'Vorschau 👁️',
+    previewStoreVerified: (s) => `Verifiziertes Live-Angebot von ${s}`,
+    previewMatchedModel: 'Exaktes Modell & Spezifikation',
+    previewVariantColor: 'Farbe / Ausführung',
+    modalChartHeader: '📈 90-Tage-Preisverlauf (Echtzeit-Rabattprüfung):',
+    chartLabels: ['-90 Tage', '-75 Tage', '-60 Tage', '-45 Tage', '-30 Tage', '-15 Tage', 'Heute (Tiefstpreis)'],
+    modalSimilarHeader: '🔄 Ähnliche Produkte & Alternativen:',
+    cheapestLabelShort: 'Bestpreis:',
+    galleryLoading: '📸 Lade alle Originalbilder direkt vom Shop...',
+    galleryReady: (n) => `📸 ${n} Original-Produktbilder verfügbar`,
+    aiLoading: '🤖 KI prüft und vergleicht echte Live-Preise über 12 Plattformen...',
+    aiFormattedReply: (best, bestOffer, amzOffer, saving) =>
+      `🤖 KI-Deal-Analyse:\n` +
+      `🏆 Beste Empfehlung heute: ${best.title} (ASIN: ${best.asin})\n` +
+      `• Live-Preis auf Amazon.de: ${amzOffer.price.toFixed(2)} € | Günstigstes Angebot bei ${bestOffer.store}: ${bestOffer.price.toFixed(2)} € (Ersparnis: ${saving} €):`,
+    navHome: 'Start',
+    navSearch: 'Suche',
+    navFilter: 'Filter',
+    navAi: 'KI-Berater',
+    navDeals: 'Deals 🔥'
+  },
+
+  en: {
+    dir: 'ltr',
+    pageTitle: 'NexusDeals Global | Direct Buy & Price Comparison across Top Stores',
+    subBrandText: 'Amazon • OTTO • MediaMarkt • Kaufland • Zalando • Galaxus • eBay • Douglas • IKEA • AliExpress • Temu • SHEIN',
+    searchPlaceholder: 'Search any product (smartphones, fashion, perfumes, furniture, tools, toys...)',
+    searchBtn: '🔍 Search',
+    filterMenuBtn: '🎛️ Filter & Sort ▾',
+    filterDrawerTitle: '🎛️ Advanced Filter & Sort Options (12 Global Platforms)',
+    resetFiltersBtn: 'Reset All ↺',
+    sortLabelTitle: 'Sort By:',
+    aiHeaderBtn: '🤖 AI Assistant ▾',
+    aiPromptLabel: '🤖 Ask our AI Shopping Assistant (type your budget or any product type):',
+    aiPlaceholder: 'Example: Nike sneakers, men perfume, ergonomic office chair, or coffee machine...',
+    aiSubmitBtn: 'AI Analyze ⚡',
+    quickChips: [
+      { label: '👟 Fashion & Sneakers (Nike / Adidas)', query: 'Nike Adidas Sneaker Jeans' },
+      { label: '💄 Perfumes, Beauty & Care', query: 'Parfum Lattafa Dior Philips Lumea' },
+      { label: '🛋️ Furniture, Mattresses & Chairs', query: 'Bürostuhl Matratze Sofa' },
+      { label: '☕ Coffee Machines & Kitchen', query: 'DeLonghi Kaffeevollautomat Ninja Tefal' },
+      { label: '🛠️ Bosch Tools & Kärcher', query: 'Bosch Professional Kärcher' },
+      { label: '📱 Phones, Laptops & PlayStation 5', query: 'Samsung S24 iPhone 16 PlayStation 5' }
+    ],
+    closeBtn: 'Close ✕',
+    cat_all: '🌐 All',
+    cat_smartphones: '📱 Phones & Tablets',
+    cat_gaming: '💻 Laptops & Gaming',
+    cat_tv_audio: '📺 TVs & Audio',
+    cat_home_kitchen: '☕ Kitchen & Home',
+    cat_home: '☕ Kitchen & Home',
+    cat_fashion_shoes: '👟 Fashion & Shoes',
+    cat_perfumes_beauty: '💄 Perfumes & Beauty',
+    cat_fashion_care: '💄 Perfumes & Beauty',
+    cat_furniture_decor: '🛋️ Furniture & Decor',
+    cat_sports_fitness: '🏋️ Sports & Fitness',
+    cat_kids_toys: '🧸 Kids, Toys & LEGO',
+    cat_tools_garden: '🛠️ Tools & Garden',
+    cat_auto_car: '🚗 Car & Auto Gear',
+    cat_travel_luggage: '🧳 Travel & Watches',
+    cat_wearables: '⌚ Smartwatches',
+    cat_cameras: '📷 Cameras & Drones',
+    filterStoreLabel: 'Global Store / Platform:',
+    storeAll: 'All (12 Global Platforms)',
+    maxPriceTitle: 'Max Price:',
+    noLimit: 'All (No Limit)',
+    upToPrice: (v) => `Up to ${v} €`,
+    flashDealsOnly: '🔥 Big Discount Deals Only',
+    sortPopular: 'Most Popular First',
+    sortDiscount: 'Highest Savings %',
+    sortPriceAsc: 'Price: Low to High',
+    sortPriceDesc: 'Price: High to Low',
+    sortRating: 'Highest Rating ⭐',
+    catalogTip: '💡 Click any store row to buy directly, or click "Compare" for all stores & 90-day price chart.',
+    resultsSearch: (q, n) => `🔍 Live results for <strong>"${q}"</strong>: <strong>${n}</strong> real products`,
+    resultsAll: (n) => `📦 Showing <strong>${n}</strong> verified best-sellers across 12 global platforms`,
+    noResultsTitle: 'No matching products found for these filters',
+    noResultsDesc: 'Try increasing the maximum price slider or search any product name above.',
+    showAllBtn: 'Show All Products 🔄',
+    badgeSave: (eur, pct) => `Save ${eur}€ (-${pct}%)`,
+    badgeVerified: (asin) => `Real (${asin}) ✔️`,
+    badgeHotDeal: (eur) => `Save ${eur}€ 🔥`,
+    cheapestNowIn: (store) => `Cheapest at <strong>${store}</strong>:`,
+    inStockReady: '✔️ In Stock',
+    cheapestTag: '🏆 Cheapest',
+    deliveryStore: (store) => `Ships from ${store}`,
+    buyFromBtn: (store, price) => `🛒 Buy directly at ${store} (${price}€) ↗`,
+    compareHistoryBtn: (n) => `📊 Compare (${n} Stores)`,
+    aiVerdictCard: (price, asin) => `Live verified price on Amazon.de (${price}€) • ASIN: ${asin}`,
+    modalSpecs: (title, asin, price) => [
+      `Official Full Product Name: ${title}`,
+      `Official Amazon Identification Number (ASIN): ${asin}`,
+      `Live Verified Retail Price (incl. VAT): ${price} €`,
+      `Direct link opens the official product listing on the retailer's platform`
+    ],
+    alertBoxTitle: '🔔 Price Drop Alert:',
+    alertEmailPlaceholder: 'Your email address...',
+    alertSubmitBtn: 'Notify Me',
+    alertSavedMsg: (p) => `✔️ Alert activated! We will email you when the price drops to ${p}€.`,
+    stageScreenHeader: 'Live Retailer Screen',
+    livePriceSynced: '⚡ Live Prices Synced with Platform',
+    stageLiveFrom: (s) => `Official live listing from ${s}`,
+    stageLiveDot: 'Live & Synced',
+    stageHintSwitch: '💡 Click any store below to instantly switch this stage screen to its official photos, price & specs',
+    stageDisplayingNow: 'Displaying on Stage 📺',
+    stageSwitchToBtn: 'View on Stage 👁️',
+    stageDirectBuyBtn: (s, p) => `🛒 Buy directly from ${s} (${p}€) ↗`,
+    stageSavingBadge: (val, pct) => `Save ${val}€ (-${pct}%)`,
+    stageSpecsTitle: 'Platform & Product Specifications:',
+    stageSpecRetailer: (s) => `Official Platform: ${s}`,
+    stageSpecTitle: (t) => `Listing Title: ${t}`,
+    stageSpecPrice: (p) => `Live Verified Price: ${p} € (incl. VAT)`,
+    stageSpecRating: (r) => `Store Rating: ⭐ ${r} / 5`,
+    stageSpecShipping: (s) => `Delivery & Warranty: Fulfilled via ${s} with official buyer protection`,
+    stageCompareHeader: (n) => n === 1 ? '🏬 Official Partner Platform for this item (100% verified direct):' : `🏪 Available Partner Stores (${n} verified retailers) — Click any store to view on Stage 📺:`,
+    modalCompareHeader: '🏪 Live Multi-Store Price Comparison Table:',
+    modalBestGuaranteed: '🏆 Lowest Price Guaranteed Today',
+    modalStoreRating: (r) => `Store Rating ⭐ ${r}`,
+    modalFreeShipping: 'Fast Direct Shipping',
+    modalGoToOffer: (s) => `Go to Offer on ${s} ↗`,
+    previewBtn: 'Preview 👁️',
+    previewStoreVerified: (s) => `Verified Live Offer from ${s}`,
+    previewMatchedModel: 'Matched Model & Specs',
+    previewVariantColor: 'Color / Variant',
+    modalChartHeader: '📈 90-Day Price History (Real Discount Detector):',
+    chartLabels: ['90d ago', '75d ago', '60d ago', '45d ago', '30d ago', '15d ago', 'Today (Lowest)'],
+    modalSimilarHeader: '🔄 Similar Products & Alternatives:',
+    cheapestLabelShort: 'Lowest Price:',
+    galleryLoading: '📸 Fetching all official gallery photos from store...',
+    galleryReady: (n) => `📸 ${n} Official Store Photos`,
+    aiLoading: '🤖 AI is analyzing and comparing real live prices across 12 global platforms...',
+    aiFormattedReply: (best, bestOffer, amzOffer, saving) =>
+      `🤖 AI Analysis of Verified Live Products:\n` +
+      `🏆 Top Recommendation Today: ${best.title} (ASIN: ${best.asin})\n` +
+      `• Live Price on Amazon.de: ${amzOffer.price.toFixed(2)} € | Cheapest offer on ${bestOffer.store}: ${bestOffer.price.toFixed(2)} € (Save ${saving} €):`,
+    navHome: 'Home',
+    navSearch: 'Search',
+    navFilter: 'Filter',
+    navAi: 'AI Assistant',
+    navDeals: 'Deals 🔥'
   }
 };
 
@@ -148,581 +418,272 @@ function t() {
   return I18N[currentLang] || I18N.de;
 }
 
-// Initialization on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', async () => {
-  renderStoresStrip();
-  updateWatchlistBadge();
-  await loadInitialProducts();
-  checkUrlParamsOnLoad();
+function getCategoryLabel(catId) {
+  const dict = t();
+  return dict[`cat_${catId}`] || dict.cat_all;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  currentLang = detectPreferredLanguage();
+  setLanguage(currentLang);
+
+  const searchInput = document.getElementById('mainSearchInput');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const val = e.target.value.trim();
+      if (clearBtn) clearBtn.style.display = val ? 'flex' : 'none';
+      if (!val) {
+        lastSearchQuery = '';
+        loadProducts();
+      }
+    });
+  }
+
+  loadProducts();
 });
 
-// Render the 12 Stores Strip
-function renderStoresStrip() {
-  const container = document.getElementById('storesStripRow');
-  if (!container) return;
-
-  container.innerHTML = DEFAULT_12_STORES.map(s => `
-    <div class="store-strip-pill pill-${s.id} ${currentStore.toLowerCase() === s.id ? 'active' : ''}" onclick="filterByStore('${s.name}')">
-      <div class="store-icon-wrapper">
-        <span>${escapeHtml(s.logoText)}</span>
-      </div>
-      <span class="store-label-text">${escapeHtml(s.name)}</span>
-    </div>
-  `).join('');
+function clearSearch() {
+  const searchInput = document.getElementById('mainSearchInput');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (searchInput) searchInput.value = '';
+  if (clearBtn) clearBtn.style.display = 'none';
+  lastSearchQuery = '';
+  loadProducts();
 }
 
-// Load products from API
-async function loadInitialProducts() {
+function setActiveBottomNav(btnId) {
+  document.querySelectorAll('.bottom-nav-item').forEach(b => {
+    if (b.id !== 'bottomNavDealsBtn') {
+      b.classList.toggle('active', b.id === btnId);
+    }
+  });
+}
+
+function handleBottomNavHome(e) {
+  if (e) e.preventDefault();
+  setActiveBottomNav('bottomNavHomeBtn');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  closeFilterDrawer();
+  resetAllFilters();
+}
+
+function handleBottomNavSearch(e) {
+  if (e) e.preventDefault();
+  setActiveBottomNav('bottomNavSearchBtn');
+  focusMobileSearch();
+}
+
+function handleBottomNavFilter(e) {
+  if (e) e.preventDefault();
+  toggleFilterDrawer();
+}
+
+function focusMobileSearch() {
+  const input = document.getElementById('mainSearchInput');
+  if (input) {
+    input.focus();
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function toggleFlashDealsFilter(e) {
+  if (e) e.preventDefault();
+  const cb = document.getElementById('flashOnlyCheckbox');
+  const navBtn = document.getElementById('bottomNavDealsBtn');
+  if (cb) {
+    cb.checked = !cb.checked;
+    if (navBtn) navBtn.classList.toggle('active', cb.checked);
+    const sortSelect = document.getElementById('sortSelect');
+    if (cb.checked && sortSelect) {
+      sortSelect.value = 'discount';
+    }
+    loadProducts();
+    const grid = document.getElementById('productsGrid');
+    if (grid) {
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+}
+
+function hideAppSplash() {
+  const s = document.getElementById('appSplash');
+  if (s && !s.classList.contains('hide')) {
+    s.classList.add('hide');
+    setTimeout(() => s.remove(), 500);
+  }
+}
+setTimeout(hideAppSplash, 9000);
+
+function setSheetBackdrop(on) {
+  const bd = document.getElementById('sheetBackdrop');
+  if (bd) bd.classList.toggle('show', !!on);
+  document.documentElement.classList.toggle('sheet-open', !!on);
+}
+
+let filterDrawerHome = null;
+function placeFilterDrawer() {
+  const d = document.getElementById('filterDrawer');
+  if (!d) return;
+  if (!filterDrawerHome) filterDrawerHome = { parent: d.parentNode, next: d.nextSibling };
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (isMobile && d.parentNode !== document.body) {
+    document.body.appendChild(d); // escape the sticky header (its backdrop-filter traps fixed children)
+  } else if (!isMobile && d.parentNode === document.body && filterDrawerHome.parent) {
+    filterDrawerHome.parent.insertBefore(d, filterDrawerHome.next && filterDrawerHome.next.parentNode === filterDrawerHome.parent ? filterDrawerHome.next : null);
+  }
+}
+window.addEventListener('resize', placeFilterDrawer);
+
+function toggleFilterDrawer() {
+  placeFilterDrawer();
+  const filterDrawer = document.getElementById('filterDrawer');
+  const btn = document.getElementById('filterToggleBtn');
+  const bottomFilterBtn = document.getElementById('bottomNavFilterBtn');
+  if (!filterDrawer) return;
+  const isOpen = filterDrawer.classList.toggle('open');
+  if (window.matchMedia('(max-width: 768px)').matches) setSheetBackdrop(isOpen);
+  if (btn) btn.classList.toggle('active', isOpen);
+  if (bottomFilterBtn) bottomFilterBtn.classList.toggle('active', isOpen);
+  if (isOpen) {
+    setActiveBottomNav('bottomNavFilterBtn');
+  } else {
+    setActiveBottomNav('bottomNavHomeBtn');
+  }
+}
+
+function closeFilterDrawer() {
+  const filterDrawer = document.getElementById('filterDrawer');
+  const btn = document.getElementById('filterToggleBtn');
+  const bottomFilterBtn = document.getElementById('bottomNavFilterBtn');
+  if (filterDrawer) filterDrawer.classList.remove('open');
+  setSheetBackdrop(false);
+  if (btn) btn.classList.remove('active');
+  if (bottomFilterBtn) bottomFilterBtn.classList.remove('active');
+  setActiveBottomNav('bottomNavHomeBtn');
+}
+
+function toggleAiDrawer() {
+  // AI Assistant removed per user request
+}
+
+function setLanguage(lang, isManualClick = false) {
+  currentLang = ['ar', 'de', 'en'].includes(lang) ? lang : 'de';
+  if (isManualClick) {
+    try {
+      sessionStorage.setItem('nexus_deals_user_clicked_lang', currentLang);
+    } catch (e) {}
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  const activeBtn = document.getElementById(`langBtn-${currentLang}`);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  applyLanguageToStaticDom();
+  updateStatusBarText();
+  renderProductsGrid(allProducts, 'productsGrid');
+}
+
+function applyLanguageToStaticDom() {
+  const dict = t();
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = dict.dir;
+  document.title = dict.pageTitle;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) {
+      el.textContent = dict[key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key]) {
+      el.setAttribute('placeholder', dict[key]);
+    }
+  });
+
+  const maxPriceLabel = document.getElementById('maxPriceLabel');
+  if (maxPriceLabel) {
+    maxPriceLabel.textContent = currentMaxPrice >= 2500 ? dict.noLimit : dict.upToPrice(currentMaxPrice);
+  }
+
+  const chipsContainer = document.getElementById('quickChipsContainer');
+  if (chipsContainer) {
+    chipsContainer.innerHTML = dict.quickChips.map(c =>
+      `<span class="chip" onclick="runQuickAi('${escapeHtml(c.query)}', '${escapeHtml(c.label)}')">${escapeHtml(c.label)}</span>`
+    ).join('');
+  }
+}
+
+function updateStatusBarText() {
+  const dict = t();
+  const counterEl = document.getElementById('resultsCounterText');
+  if (!counterEl) return;
+  if (lastSearchQuery) {
+    counterEl.innerHTML = dict.resultsSearch(escapeHtml(lastSearchQuery), allProducts.length);
+  } else {
+    counterEl.innerHTML = dict.resultsAll(allProducts.length);
+  }
+}
+
+async function loadProducts() {
+  const q = document.getElementById('mainSearchInput').value.trim();
+  lastSearchQuery = q;
+  const flashOnly = document.getElementById('flashOnlyCheckbox').checked;
+  const sort = document.getElementById('sortSelect').value;
+
+  const params = new URLSearchParams({
+    category: currentCategory,
+    store: currentStore,
+    sort: sort,
+    flash: flashOnly ? 'true' : 'false',
+    _t: Date.now()
+  });
+
+  if (currentMaxPrice < 2500) {
+    params.set('maxPrice', currentMaxPrice);
+  }
+  if (q) {
+    params.set('q', q);
+  }
+
   try {
-    const res = await fetch('/api/products?sort=popular&_t=' + Date.now());
+    const res = await fetch(`/api/products?${params.toString()}`, {
+      cache: 'no-store',
+      headers: {
+        'Pragma': 'no-cache',
+        'Cache-Control': 'no-cache'
+      }
+    });
     const data = await res.json();
     allProducts = data.products || [];
-    renderTrendingProducts(allProducts);
+    updateStatusBarText();
+    renderProductsGrid(allProducts, 'productsGrid');
   } catch (err) {
     console.error('Failed to load products:', err);
+  } finally {
+    hideAppSplash();
   }
 }
 
-// Render Trending Price Drops Grid (Matching Image 1)
-function renderTrendingProducts(products) {
-  const grid = document.getElementById('trendingProductsGrid');
-  if (!grid) return;
-  const dict = t();
-
-  // If store filter is selected, filter accordingly
-  let list = products;
-  if (currentStore !== 'all') {
-    list = products.filter(p => p.store?.toLowerCase() === currentStore.toLowerCase() || 
-      (p.offers && p.offers.some(o => o.store.toLowerCase() === currentStore.toLowerCase()))
-    );
-  }
-
-  // Showcase priority: flagship products first
-  const showcaseIds = [
-    'prod-sony-wh-1000xm5',
-    'prod-pioneer-dmh-z5350',
-    'prod-dyson-v15',
-    'prod-nintendo-switch-oled',
-    'prod-blaupunkt-bordeaux-700'
-  ];
-
-  list.sort((a, b) => {
-    const aIdx = showcaseIds.indexOf(a.id);
-    const bIdx = showcaseIds.indexOf(b.id);
-    if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
-    if (aIdx !== -1) return -1;
-    if (bIdx !== -1) return 1;
-    return 0;
-  });
-
-  const displayList = list.slice(0, 16);
-
-  grid.innerHTML = displayList.map(p => {
-    // Determine lowest price and MSRP
-    const sortedOffers = Array.isArray(p.offers) && p.offers.length > 0
-      ? [...p.offers].sort((a, b) => a.price - b.price)
-      : [{ price: p.price || 99, store: p.store || 'Amazon' }];
-    
-    const bestOffer = sortedOffers[0];
-    const msrpVal = p.msrp && p.msrp > bestOffer.price ? p.msrp : +(bestOffer.price * 1.25).toFixed(2);
-    const discountPct = Math.max(8, Math.round(((msrpVal - bestOffer.price) / msrpVal) * 100));
-    const storesCount = Math.max(1, p.offers ? p.offers.length : 1);
-    const isFav = watchlist.includes(p.id);
-
-    return `
-      <article class="prototype-product-card" onclick="openProductDetail('${p.id}')">
-        
-        <div class="card-top-row">
-          <span class="discount-pill-red">-${discountPct}%</span>
-          <button type="button" class="card-fav-btn" onclick="toggleWatchlist(event, '${p.id}')">
-            ${isFav ? '❤️' : '🤍'}
-          </button>
-        </div>
-
-        <div class="card-image-box">
-          <img src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=500&q=80';" />
-        </div>
-
-        <h3 class="card-title-text">${escapeHtml(p.title)}</h3>
-
-        <div class="card-pricing-row">
-          <span class="card-from-label">${dict.fromLabel}</span>
-          <span class="card-current-price">€${bestOffer.price.toFixed(0)}</span>
-          <span class="card-was-price">${dict.wasLabel} €${msrpVal.toFixed(0)}</span>
-        </div>
-
-        <div class="card-compare-link">
-          <span>${dict.compare12Stores}</span> →
-        </div>
-
-      </article>
-    `;
-  }).join('');
-}
-
-// ==========================================================================
-// REAL-TIME SEARCH ENGINE (Matching Prototype Image 2)
-// ==========================================================================
-async function handleMainSearch(e) {
-  if (e) e.preventDefault();
-  const input = document.getElementById('mainSearchInput');
-  const query = (input ? input.value : '').trim();
-  if (!query) return;
-
-  lastSearchQuery = query;
-  switchToView('search');
-
-  const titleEl = document.getElementById('searchQueryTitle');
-  if (titleEl) {
-    titleEl.textContent = `Searching across 12 stores ...`;
-  }
-
-  // Render initial progress grid with waiting/searching status
-  renderSearchProgressGrid(query);
-
-  // Trigger search simulation across 12 stores with live updates
-  simulateRealTimeMultiStoreSearch(query);
-}
-
-function renderSearchProgressGrid(query) {
-  const container = document.getElementById('storesProgressGrid');
-  if (!container) return;
-
-  container.innerHTML = DEFAULT_12_STORES.map((s, idx) => `
-    <div class="store-progress-card" id="spCard-${s.id}">
-      <div class="sp-top">
-        <span class="sp-logo-name">${escapeHtml(s.name)}</span>
-        <span class="sp-status-icon queued" id="spIcon-${s.id}">🕒</span>
-      </div>
-      <div class="sp-status-line queued" id="spStatus-${s.id}">queued...</div>
-      <div class="sp-offers-count" id="spCount-${s.id}">—</div>
-    </div>
-  `).join('');
-
-  const fill = document.getElementById('searchProgressFill');
-  const txt = document.getElementById('progressStatusText');
-  if (fill) fill.style.width = '0%';
-  if (txt) txt.textContent = `0 of 12 complete`;
-}
-
-// Multi-Store Search Simulation matching Image 2
-async function simulateRealTimeMultiStoreSearch(query) {
-  const fill = document.getElementById('searchProgressFill');
-  const txt = document.getElementById('progressStatusText');
-  const resultsContainer = document.getElementById('searchResultsGrid');
-
-  // Check if we have exact match locally
-  const queryLower = query.toLowerCase();
-  const matchedProduct = allProducts.find(p => 
-    p.title.toLowerCase().includes(queryLower) || 
-    (p.ean && p.ean.includes(queryLower)) ||
-    (p.brand && p.brand.toLowerCase().includes(queryLower))
-  );
-
-  let completed = 0;
-  const storeDelay = 240;
-
-  for (let i = 0; i < DEFAULT_12_STORES.length; i++) {
-    const store = DEFAULT_12_STORES[i];
-    
-    // Set status to searching
-    const cardIcon = document.getElementById(`spIcon-${store.id}`);
-    const cardStatus = document.getElementById(`spStatus-${store.id}`);
-    const cardCount = document.getElementById(`spCount-${store.id}`);
-
-    if (cardIcon) {
-      cardIcon.className = 'sp-status-icon searching';
-      cardIcon.textContent = '⏳';
-    }
-    if (cardStatus) {
-      cardStatus.className = 'sp-status-line searching';
-      cardStatus.textContent = 'searching...';
-    }
-
-    await new Promise(r => setTimeout(r, storeDelay));
-
-    // Determine offer for this store
-    let offer = null;
-    if (matchedProduct && matchedProduct.offers) {
-      offer = matchedProduct.offers.find(o => o.store.toLowerCase() === store.name.toLowerCase());
-    }
-
-    completed++;
-    const pct = Math.round((completed / 12) * 100);
-    if (fill) fill.style.width = `${pct}%`;
-    if (txt) txt.textContent = `${completed} of 12 complete (${pct}%)`;
-
-    if (offer) {
-      if (cardIcon) {
-        cardIcon.className = 'sp-status-icon success';
-        cardIcon.textContent = '✔️';
-      }
-      if (cardStatus) {
-        cardStatus.className = 'sp-status-line found';
-        cardStatus.textContent = `found €${offer.price.toFixed(0)}`;
-      }
-      if (cardCount) {
-        cardCount.textContent = `${Math.floor(Math.random() * 5) + 3} offers`;
-      }
-    } else {
-      // If store doesn't have it (e.g. Temu or specialized store)
-      const isUnavailable = ['temu', 'alternate', 'expert'].includes(store.id);
-      if (isUnavailable) {
-        if (cardIcon) {
-          cardIcon.className = 'sp-status-icon unavailable';
-          cardIcon.textContent = '⊖';
-        }
-        if (cardStatus) {
-          cardStatus.className = 'sp-status-line not-available';
-          cardStatus.textContent = 'not available';
-        }
-        if (cardCount) cardCount.textContent = '—';
-      } else {
-        // Fallback realistic found offer
-        const mockPrice = Math.round((matchedProduct ? matchedProduct.price : 189) * (1 + (i * 0.02)));
-        if (cardIcon) {
-          cardIcon.className = 'sp-status-icon success';
-          cardIcon.textContent = '✔️';
-        }
-        if (cardStatus) {
-          cardStatus.className = 'sp-status-line found';
-          cardStatus.textContent = `found €${mockPrice}`;
-        }
-        if (cardCount) {
-          cardCount.textContent = `${Math.floor(Math.random() * 4) + 2} offers`;
-        }
-      }
-    }
-  }
-
-  // Once 12 of 12 complete, render the resolved product card
-  if (resultsContainer) {
-    const targetProduct = matchedProduct || allProducts[0];
-    resultsContainer.innerHTML = `
-      <div style="grid-column: 1 / -1; background:#FFFFFF; border:1.5px solid var(--border-card); border-radius:var(--radius-lg); padding:24px; display:flex; align-items:center; justify-content:space-between; gap:20px; box-shadow:var(--shadow-card);">
-        <div style="display:flex; align-items:center; gap:20px;">
-          <img src="${targetProduct.image}" style="width:90px; height:90px; object-fit:contain; border-radius:10px; background:#FAF8F5; padding:6px;" />
-          <div>
-            <div style="font-size:0.8rem; font-weight:700; color:var(--text-secondary); text-transform:uppercase;">${escapeHtml(targetProduct.brand || 'NexusDeals')}</div>
-            <h3 style="font-family:var(--font-serif); font-size:1.5rem; color:#1A1A1D; margin:4px 0 8px;">${escapeHtml(targetProduct.title)}</h3>
-            <div style="font-size:0.9rem; color:var(--status-green); font-weight:700;">
-              Best price: €${(targetProduct.offers ? targetProduct.offers[0].price : targetProduct.price).toFixed(2)}
-            </div>
-          </div>
-        </div>
-        <button class="hero-search-btn" onclick="openProductDetail('${targetProduct.id}')">
-          View Price Matrix →
-        </button>
-      </div>
-    `;
-  }
-}
-
-// ==========================================================================
-// PRODUCT DETAIL VIEW & PRICE MATRIX (Matching Prototype Image 3)
-// ==========================================================================
-function openProductDetail(productId) {
-  const product = allProducts.find(p => p.id === productId);
-  if (!product) return;
-
-  currentProduct = product;
-  switchToView('pdp');
-
-  // Breadcrumbs
-  const catEl = document.getElementById('pdpCatBreadcrumb');
-  const titleEl = document.getElementById('pdpTitleBreadcrumb');
-  if (catEl) catEl.textContent = product.categoryAr || product.category || 'Audio & HiFi';
-  if (titleEl) titleEl.textContent = product.title;
-
-  // Image & Attribution
-  const imgEl = document.getElementById('pdpMainImage');
-  const srcEl = document.getElementById('pdpImageSource');
-  if (imgEl) imgEl.src = product.image;
-  if (srcEl) {
-    srcEl.textContent = product.offers && product.offers[0] 
-      ? `Image from official retailer (${product.offers[0].store})` 
-      : 'Image from official retailer';
-  }
-
-  // Info
-  const brandEl = document.getElementById('pdpBrandTag');
-  const mainTitleEl = document.getElementById('pdpTitleMain');
-  const eanEl = document.getElementById('pdpEanCode');
-  const descEl = document.getElementById('pdpDescription');
-  const specsRow = document.getElementById('pdpSpecsRow');
-
-  if (brandEl) brandEl.textContent = (product.brand || 'NexusDeals').toUpperCase();
-  if (mainTitleEl) mainTitleEl.textContent = product.title;
-  if (eanEl) eanEl.textContent = product.ean || product.sku || '4548736134539';
-  if (descEl) {
-    descEl.textContent = product.description || 
-      'Industry-leading sound quality, exceptional noise isolation and all-day comfort with official multi-store verified warranties.';
-  }
-
-  // Specs pills
-  if (specsRow) {
-    const specs = Array.isArray(product.specs) && product.specs.length > 0 
-      ? product.specs 
-      : ['Wireless', 'Verified Genuine', 'European Warranty', 'Fast Tracked Shipping'];
-    specsRow.innerHTML = specs.map(s => `<span class="pdp-spec-pill">${escapeHtml(s)}</span>`).join('');
-  }
-
-  // Render Table & Highlight Best Price Banner
-  renderPdpOffersTable(product);
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function renderPdpOffersTable(product) {
-  const tableBody = document.getElementById('pdpOffersTableBody');
-  const bestPriceText = document.getElementById('pdpBestPriceText');
-  const bestStoreText = document.getElementById('pdpBestStoreText');
-  const carrySummaryText = document.getElementById('pdpCarrySummaryText');
-  if (!tableBody) return;
-
-  const dict = t();
-
-  // Strictly order offers by price ASC
-  let offers = Array.isArray(product.offers) && product.offers.length > 0
-    ? [...product.offers].sort((a, b) => a.price - b.price)
-    : [
-        {
-          store: product.store || 'Amazon',
-          storeLogo: (product.store || 'amazon').toLowerCase(),
-          price: product.price || 99,
-          inStock: true,
-          matchStatus: 'Verified match',
-          directUrl: product.direct_affiliate_url || product.directUrl || `https://www.amazon.de/dp/${product.asin || 'B09XBB8DC1'}?tag=nexusdeals08-21`,
-          direct_affiliate_url: product.direct_affiliate_url || product.directUrl || `https://www.amazon.de/dp/${product.asin || 'B09XBB8DC1'}?tag=nexusdeals08-21`,
-          relativeUrl: `/dp/${product.asin || 'B09XBB8DC1'}`
-        }
-      ];
-
-  const bestOffer = offers[0];
-
-  // Best Price Green Trophy Banner
-  if (bestPriceText) bestPriceText.innerHTML = `€${bestOffer.price.toFixed(2)} <span id="pdpBestStoreText">at ${escapeHtml(bestOffer.store)}</span>`;
-
-  // Populate Table Rows exactly as Prototype Image 3
-  tableBody.innerHTML = offers.map(o => {
-    const storeColor = getStoreColor(o.store);
-    const targetUrl = o.direct_affiliate_url || o.directUrl;
-    const relUrl = o.relativeUrl || formatRelativeUrl(o.store, targetUrl);
-
-    return `
-      <tr>
-        <!-- Store Name & Icon -->
-        <td>
-          <div class="pm-store-col">
-            <span class="pm-store-icon" style="background:${storeColor}; color:#FFF;">
-              ${getStoreSymbol(o.store)}
-            </span>
-            <span>${escapeHtml(o.store)}</span>
-          </div>
-        </td>
-
-        <!-- Match Status -->
-        <td>
-          <span class="pm-match-pill">
-            ✔️ ${dict.verifiedMatch}
-          </span>
-        </td>
-
-        <!-- Price -->
-        <td>
-          <span class="pm-price-val">€${o.price.toFixed(2)}</span>
-        </td>
-
-        <!-- Stock Availability -->
-        <td>
-          <span class="pm-stock-tag">
-            <span class="stock-dot"></span>
-            ${dict.inStock}
-          </span>
-        </td>
-
-        <!-- Relative Direct Link Preview -->
-        <td>
-          <a href="${targetUrl}" target="_blank" rel="noopener" class="pm-link-preview" title="${escapeHtml(targetUrl)}">
-            ${escapeHtml(relUrl)} ↗
-          </a>
-        </td>
-
-        <!-- Action Button (Open Product Page) -->
-        <td style="text-align:right;">
-          <a href="${targetUrl}" target="_blank" rel="noopener" class="pm-open-btn" onclick="trackAffiliateClick('${product.id}', '${o.store}', ${o.price})">
-            ${dict.openProductPage} ↗
-          </a>
-        </td>
-      </tr>
-    `;
-  }).join('');
-
-  if (carrySummaryText) {
-    carrySummaryText.textContent = dict.verifyFooter(offers.length, 12);
-  }
-}
-
-// Helpers for stores
-function getStoreColor(store) {
-  const found = DEFAULT_12_STORES.find(s => s.name.toLowerCase() === (store || '').toLowerCase());
-  return found ? found.color : '#333';
-}
-
-function getStoreSymbol(store) {
-  const found = DEFAULT_12_STORES.find(s => s.name.toLowerCase() === (store || '').toLowerCase());
-  return found ? found.logoText : (store || 'S').slice(0, 2);
-}
-
-function formatRelativeUrl(store, fullUrl) {
-  try {
-    const u = new URL(fullUrl);
-    return u.pathname;
-  } catch (e) {
-    return `/${store.toLowerCase()}/product-page`;
-  }
-}
-
-// Copy EAN Code helper
-function copyEanToClipboard() {
-  const eanEl = document.getElementById('pdpEanCode');
-  if (!eanEl) return;
-  const val = eanEl.textContent.trim();
-  navigator.clipboard.writeText(val).then(() => {
-    alert(`EAN ${val} copied to clipboard!`);
-  }).catch(() => {});
-}
-
-// ==========================================================================
-// VIEW SWITCHING & NAVIGATION
-// ==========================================================================
-function switchToView(viewName) {
-  currentView = viewName;
-  const home = document.getElementById('homeView');
-  const search = document.getElementById('searchView');
-  const pdp = document.getElementById('pdpView');
-
-  if (home) home.style.display = viewName === 'home' ? 'block' : 'none';
-  if (search) {
-    search.style.display = viewName === 'search' ? 'block' : 'none';
-    search.classList.toggle('active', viewName === 'search');
-  }
-  if (pdp) {
-    pdp.style.display = viewName === 'pdp' ? 'block' : 'none';
-    pdp.classList.toggle('active', viewName === 'pdp');
-  }
-}
-
-function navigateHome(e) {
-  if (e) e.preventDefault();
-  switchToView('home');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function navigateBackFromPdp() {
-  if (lastSearchQuery) {
-    switchToView('search');
-  } else {
-    switchToView('home');
-  }
-}
-
-function scrollToDeals(e) {
-  if (e) e.preventDefault();
-  switchToView('home');
-  const el = document.getElementById('deals');
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
-
-function openCategoriesMenu(e) {
-  if (e) e.preventDefault();
-  const cat = prompt('Choose a category:\n1. Smartphones\n2. Audio & TV\n3. Gaming\n4. Home & Kitchen\n5. Automotive\n6. Tools');
-  if (cat) {
-    alert('Filtering by selected category...');
-  }
-}
-
-function filterByStore(storeName) {
-  currentStore = currentStore.toLowerCase() === storeName.toLowerCase() ? 'all' : storeName;
-  renderStoresStrip();
-  renderTrendingProducts(allProducts);
-}
-
-function showAllDeals(e) {
-  if (e) e.preventDefault();
-  currentStore = 'all';
-  renderStoresStrip();
-  renderTrendingProducts(allProducts);
-}
-
-// Watchlist
-function toggleWatchlist(e, productId) {
-  if (e) e.stopPropagation();
-  const idx = watchlist.indexOf(productId);
-  if (idx === -1) {
-    watchlist.push(productId);
-  } else {
-    watchlist.splice(idx, 1);
-  }
-  localStorage.setItem('nexus_watchlist', JSON.stringify(watchlist));
-  updateWatchlistBadge();
-  renderTrendingProducts(allProducts);
-}
-
-function updateWatchlistBadge() {
-  const badge = document.getElementById('watchlistCountBadge');
-  if (!badge) return;
-  if (watchlist.length > 0) {
-    badge.textContent = String(watchlist.length);
-    badge.style.display = 'inline-block';
-  } else {
-    badge.style.display = 'none';
-  }
-}
-
-function openWatchlistModal() {
-  if (watchlist.length === 0) {
-    alert('Your watchlist is currently empty. Click ❤️ on any deal to save it!');
+function handleCardClick(e, productId) {
+  if (e.target.closest('.btn-compare-modal')) {
+    openProductModal(productId);
     return;
   }
-  const favProducts = allProducts.filter(p => watchlist.includes(p.id));
-  alert(`Saved in your watchlist: ${favProducts.map(p => p.title).join('\n• ')}`);
-}
-
-// Multilingual switcher
-function cycleAppLanguage() {
-  const langs = ['de', 'en', 'ar'];
-  const nextIdx = (langs.indexOf(currentLang) + 1) % langs.length;
-  currentLang = langs[nextIdx];
-
-  const btn = document.getElementById('appLangBtn');
-  if (btn) {
-    if (currentLang === 'de') btn.textContent = '🇩🇪 DE';
-    else if (currentLang === 'en') btn.textContent = '🇬🇧 EN';
-    else if (currentLang === 'ar') btn.textContent = '🇸🇦 AR';
+  if (e.target.closest('.btn-buy-best') || e.target.closest('.offer-row')) {
+    return; // Let native <a> link execute
   }
-
-  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-  document.documentElement.lang = currentLang;
-
-  // Update dynamic translations
-  applyI18nLabels();
-  renderTrendingProducts(allProducts);
-  if (currentProduct && currentView === 'pdp') {
-    renderPdpOffersTable(currentProduct);
-  }
-}
-
-function applyI18nLabels() {
-  const dict = t();
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const k = el.getAttribute('data-i18n');
-    if (dict[k]) el.innerHTML = dict[k];
-  });
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const k = el.getAttribute('data-i18n-placeholder');
-    if (dict[k]) el.setAttribute('placeholder', dict[k]);
-  });
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) return;
+  const focusStore = (typeof currentStore === 'string' && currentStore !== 'all') ? currentStore : null;
+  const sortedOffers = Array.isArray(product.offers) ? product.offers : [];
+  const bestOffer = (focusStore ? sortedOffers.find(o => o.store.toLowerCase() === focusStore.toLowerCase()) : null) || sortedOffers[0] || { store: product.store || 'Amazon', price: product.price || 0 };
+  const target = bestOffer.direct_affiliate_url || bestOffer.directUrl || product.direct_affiliate_url || product.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(bestOffer.store)}&price=${encodeURIComponent(bestOffer.price)}`;
+  
+  trackAffiliateClick(product.id, bestOffer.store, bestOffer.price);
+  window.open(target, '_blank', 'noopener,noreferrer');
 }
 
 function trackAffiliateClick(productId, store, price) {
@@ -736,26 +697,945 @@ function trackAffiliateClick(productId, store, price) {
   } catch (e) {}
 }
 
-function checkUrlParamsOnLoad() {
-  const params = new URLSearchParams(window.location.search);
-  const q = params.get('q');
-  const prodId = params.get('productId');
+function renderProductsGrid(products, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const dict = t();
 
-  if (prodId) {
-    openProductDetail(prodId);
-  } else if (q) {
-    const input = document.getElementById('mainSearchInput');
-    if (input) input.value = q;
-    handleMainSearch();
+  if (!products || products.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align:center; padding:45px 20px; background:var(--bg-card); border-radius:14px; border:1px solid var(--border-color);">
+        <h3 style="margin-bottom:8px;">${dict.noResultsTitle}</h3>
+        <p style="color:var(--text-secondary); margin-bottom:14px;">${dict.noResultsDesc}</p>
+        <button class="btn-search-main" style="margin:0 auto;" onclick="resetAllFilters()">${dict.showAllBtn}</button>
+      </div>
+    `;
+    return;
+  }
+
+  const focusStore = (typeof currentStore === 'string' && currentStore !== 'all') ? currentStore : null;
+  const L = currentLang;
+  const estWord = L === 'ar' ? 'تقريبي' : (L === 'de' ? 'ca.' : 'est.');
+  const storePriceLbl = (s) => L === 'ar' ? `السعر في ${s}` : (L === 'de' ? `Preis bei ${s}` : `Price at ${s}`);
+  const priceTxt = (o) => (o.store === 'Amazon' ? '' : `<small class="est-word">${estWord}</small> `) + o.price.toFixed(2);
+
+  container.innerHTML = products.map(p => {
+    // Strictly filter to active, in-stock offers with authentic URLs and ORDER BY price ASC
+    const sortedOffers = Array.isArray(p.offers)
+      ? [...p.offers]
+          .filter(o => o.in_stock !== false && o.inStock !== false && Boolean(o.direct_affiliate_url || o.directUrl))
+          .sort((a, b) => a.price - b.price)
+      : [];
+    const focusOffer = focusStore ? sortedOffers.find(o => o.store.toLowerCase() === focusStore.toLowerCase()) : null;
+    const bestOffer = focusOffer || (sortedOffers.length > 0 ? sortedOffers[0] : { store: 'Amazon', price: p.price || 0 });
+    const savingEur = Math.max(0, Math.round(p.msrp - bestOffer.price));
+    const savingPct = Math.max(5, Math.round(((p.msrp - bestOffer.price) / p.msrp) * 100));
+    const displayTitle = p.title;
+    const catLocalized = getCategoryLabel(p.category).replace(/^[^\s]+\s/, '');
+    const badgeLeft = savingEur > 25 ? dict.badgeHotDeal(savingEur) : dict.badgeVerified(p.asin || 'DE');
+    const badgeRight = dict.badgeSave(savingEur, savingPct);
+
+    const shownOffers = focusOffer ? [focusOffer] : sortedOffers.slice(0, 4);
+    const topOffersHtml = shownOffers.map((o, idx) => {
+      const targetDirect = o.direct_affiliate_url || o.directUrl || `/api/out?productId=${encodeURIComponent(p.id)}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}`;
+      return `
+        <a href="${targetDirect}" target="_blank" rel="noopener" class="offer-row ${idx === 0 ? 'cheapest' : ''}" onclick="trackAffiliateClick('${p.id}', '${o.store}', ${o.price});">
+          <div style="display:flex; align-items:center; gap:6px;">
+            <span class="store-tag store-${o.store}">${o.store}</span>
+            <span style="font-size:0.72rem; color:var(--text-secondary);">${focusOffer ? dict.deliveryStore(o.store) : (idx === 0 ? dict.cheapestTag : dict.deliveryStore(o.store))}</span>
+          </div>
+          <div class="offer-price-val" style="color:${idx === 0 ? '#34d399' : '#f8fafc'};">
+            ${priceTxt(o)} € ↗
+          </div>
+        </a>
+      `;
+    }).join('');
+
+    const bestTargetDirect = bestOffer.direct_affiliate_url || bestOffer.directUrl || `/api/out?productId=${encodeURIComponent(p.id)}&store=${encodeURIComponent(bestOffer.store)}&price=${encodeURIComponent(bestOffer.price)}`;
+    const cardImg = (focusOffer && focusOffer.image) ? focusOffer.image : (sortedOffers.length > 0 && sortedOffers[0].image ? sortedOffers[0].image : p.image);
+
+    return `
+      <article class="product-card" onclick="handleCardClick(event, '${p.id}')">
+        <div class="card-badges">
+          ${savingPct > 0 ? `<span class="badge-discount">-${savingPct}%</span>` : ''}
+          <span class="store-tag store-${bestOffer.store}">${bestOffer.store}</span>
+        </div>
+
+        <div class="card-image-wrap">
+          <img src="${cardImg}" alt="${escapeHtml(displayTitle)}" loading="lazy" onerror="this.onerror=null;this.src='/api/image-proxy?url=' + encodeURIComponent(this.src) + '&title=' + encodeURIComponent('${escapeHtml(displayTitle.slice(0, 30))}');" />
+        </div>
+
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="store-tag store-${bestOffer.store}" style="font-size:0.7rem; padding:2px 8px;">🏬 ${bestOffer.store}</span>
+            <span>${escapeHtml(p.brand)} • ${escapeHtml(catLocalized)}</span>
+            <span class="rating-stars">⭐ ${p.rating} <span style="color:var(--text-muted); font-weight:400;">(${p.reviewsCount})</span></span>
+          </div>
+
+          <h3 class="card-title">${escapeHtml(displayTitle)}</h3>
+
+          <div class="best-price-box">
+            <div>
+              <div style="font-size:0.72rem; color:var(--text-secondary);">${focusOffer ? storePriceLbl(bestOffer.store) : dict.cheapestNowIn(bestOffer.store)}</div>
+              <div>
+                <span class="price-main">${priceTxt(bestOffer)} €</span>
+                <span class="price-msrp">${p.msrp.toFixed(2)} €</span>
+              </div>
+            </div>
+            <div style="font-size:0.72rem; color:#34d399; font-weight:700;">
+              ${dict.inStockReady}
+            </div>
+          </div>
+
+          ${sortedOffers.length > 1 ? `
+            <div class="offers-mini-list">
+              ${topOffersHtml}
+            </div>
+          ` : `
+            <div style="font-size:0.74rem; color:#38bdf8; font-weight:600; padding:6px 0; display:flex; align-items:center; gap:5px;">
+              <span>✔️</span> <span>شراء مباشر وموثق 100% من ${bestOffer.store}</span>
+            </div>
+          `}
+
+          <div class="card-footer-btns">
+            <a href="${bestTargetDirect}" target="_blank" rel="noopener noreferrer" class="btn-buy-best" style="flex:1; width:100%; text-align:center; justify-content:center;" onclick="event.stopPropagation(); trackAffiliateClick('${p.id}', '${bestOffer.store}', ${bestOffer.price});">
+              ${dict.buyFromBtn(bestOffer.store, bestOffer.price.toFixed(0))}
+            </a>
+            ${sortedOffers.length > 1 ? `
+              <button class="btn-compare-modal" onclick="event.stopPropagation(); openProductModal('${p.id}')">
+                ${dict.compareHistoryBtn(p.offers.length)}
+              </button>
+            ` : ''}
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+let activeModalImages = [];
+let activeModalImgIdx = 0;
+let currentModalProductId = null;
+let currentSelectedStore = null;
+
+let lightboxZoomLevel = 1;
+
+function selectModalGalleryImage(idx) {
+  if (!activeModalImages || activeModalImages.length === 0) return;
+  activeModalImgIdx = (idx + activeModalImages.length) % activeModalImages.length;
+  const mainImg = document.getElementById('modalMainGalleryImg');
+  const counterEl = document.getElementById('modalGalleryCounter');
+  if (mainImg) mainImg.src = activeModalImages[activeModalImgIdx];
+  if (counterEl) counterEl.textContent = `${activeModalImgIdx + 1} / ${activeModalImages.length}`;
+
+  document.querySelectorAll('.gallery-thumb').forEach((th, i) => {
+    th.classList.toggle('active', i === activeModalImgIdx);
+  });
+}
+
+function openImageLightbox(idx) {
+  if (!activeModalImages || activeModalImages.length === 0) return;
+  const lightbox = document.getElementById('imageLightboxModal');
+  if (!lightbox) return;
+
+  activeModalImgIdx = (idx >= 0 && idx < activeModalImages.length) ? idx : 0;
+  lightboxZoomLevel = 1;
+  updateLightboxView();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeImageLightbox() {
+  const lightbox = document.getElementById('imageLightboxModal');
+  if (lightbox) {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function handleLightboxBackdropClick(e) {
+  if (e.target.id === 'imageLightboxModal' || e.target.id === 'lightboxViewport') {
+    closeImageLightbox();
+  }
+}
+
+function updateLightboxView() {
+  const imgEl = document.getElementById('lightboxMainImg');
+  const counterEl = document.getElementById('lightboxCounter');
+  const wrapper = document.getElementById('lightboxImgWrapper');
+  const thumbsBar = document.getElementById('lightboxThumbsBar');
+  const viewport = document.getElementById('lightboxViewport');
+
+  if (!imgEl || !activeModalImages || activeModalImages.length === 0) return;
+
+  // Use highest resolution Amazon image if available by replacing dimensions
+  let currentSrc = activeModalImages[activeModalImgIdx] || '';
+  if (currentSrc.includes('media-amazon.com/images/I/')) {
+    currentSrc = currentSrc.replace(/\._AC_[^.]+_\.jpg$/, '._AC_SL1500_.jpg');
+  }
+
+  imgEl.src = currentSrc;
+  if (counterEl) {
+    counterEl.textContent = `${activeModalImgIdx + 1} / ${activeModalImages.length}`;
+  }
+
+  if (wrapper) {
+    wrapper.style.transform = `scale(${lightboxZoomLevel})`;
+  }
+  if (viewport) {
+    viewport.classList.toggle('is-zoomed', lightboxZoomLevel > 1);
+  }
+
+  // Render thumbs in lightbox
+  if (thumbsBar) {
+    thumbsBar.innerHTML = activeModalImages.map((src, i) => `
+      <div class="lightbox-thumb ${i === activeModalImgIdx ? 'active' : ''}" onclick="selectLightboxImage(${i})">
+        <img src="${src}" />
+      </div>
+    `).join('');
+  }
+}
+
+function selectLightboxImage(idx) {
+  if (!activeModalImages || activeModalImages.length === 0) return;
+  activeModalImgIdx = (idx + activeModalImages.length) % activeModalImages.length;
+  lightboxZoomLevel = 1;
+  updateLightboxView();
+  selectModalGalleryImage(activeModalImgIdx);
+}
+
+function navigateLightbox(step, e) {
+  if (e) e.stopPropagation();
+  selectLightboxImage(activeModalImgIdx + step);
+}
+
+function zoomLightboxImage(delta) {
+  lightboxZoomLevel = Math.max(0.75, Math.min(3.5, +(lightboxZoomLevel + delta).toFixed(2)));
+  const wrapper = document.getElementById('lightboxImgWrapper');
+  const viewport = document.getElementById('lightboxViewport');
+  if (wrapper) wrapper.style.transform = `scale(${lightboxZoomLevel})`;
+  if (viewport) viewport.classList.toggle('is-zoomed', lightboxZoomLevel > 1);
+}
+
+function resetLightboxZoom() {
+  lightboxZoomLevel = 1;
+  const wrapper = document.getElementById('lightboxImgWrapper');
+  const viewport = document.getElementById('lightboxViewport');
+  if (wrapper) wrapper.style.transform = `scale(1)`;
+  if (viewport) viewport.classList.remove('is-zoomed');
+}
+
+function toggleLightboxZoom(e) {
+  if (e.target.closest('.lightbox-nav-btn') || e.target.closest('.lightbox-tools')) return;
+  if (lightboxZoomLevel === 1) {
+    lightboxZoomLevel = 2;
+  } else {
+    lightboxZoomLevel = 1;
+  }
+  const wrapper = document.getElementById('lightboxImgWrapper');
+  const viewport = document.getElementById('lightboxViewport');
+  if (wrapper) wrapper.style.transform = `scale(${lightboxZoomLevel})`;
+  if (viewport) viewport.classList.toggle('is-zoomed', lightboxZoomLevel > 1);
+}
+
+// Global keyboard shortcuts for Lightbox
+window.addEventListener('keydown', (e) => {
+  const lightbox = document.getElementById('imageLightboxModal');
+  if (!lightbox || !lightbox.classList.contains('open')) return;
+
+  if (e.key === 'Escape') {
+    closeImageLightbox();
+  } else if (e.key === 'ArrowRight') {
+    navigateLightbox(1);
+  } else if (e.key === 'ArrowLeft') {
+    navigateLightbox(-1);
+  } else if (e.key === '+' || e.key === '=') {
+    zoomLightboxImage(0.25);
+  } else if (e.key === '-') {
+    zoomLightboxImage(-0.25);
+  } else if (e.key === '0') {
+    resetLightboxZoom();
+  }
+});
+
+function renderModalGalleryUI(images, statusText) {
+  activeModalImages = images && images.length > 0 ? images : [];
+  activeModalImgIdx = 0;
+  const stageWrap = document.getElementById('modalGalleryContainer');
+  if (!stageWrap) return;
+
+  const hasMultiple = activeModalImages.length > 1;
+  const thumbsHtml = activeModalImages.map((imgUrl, idx) => `
+    <div class="gallery-thumb ${idx === 0 ? 'active' : ''}" onclick="selectModalGalleryImage(${idx})" onmouseenter="selectModalGalleryImage(${idx})">
+      <img src="${imgUrl}" loading="lazy" />
+    </div>
+  `).join('');
+
+  const zoomHint = currentLang === 'ar' ? '🔍 اضغط لتكبير الصورة' : (currentLang === 'de' ? '🔍 Klick zum Vergrößern' : '🔍 Click to enlarge');
+
+  stageWrap.innerHTML = `
+    <div class="modal-main-img-stage" onclick="openImageLightbox(activeModalImgIdx)" title="${zoomHint}">
+      <span class="zoom-hint-pill">${zoomHint}</span>
+      ${hasMultiple ? `<button type="button" class="gallery-nav-btn gallery-nav-prev" onclick="event.stopPropagation(); selectModalGalleryImage(activeModalImgIdx - 1)">❮</button>` : ''}
+      <img id="modalMainGalleryImg" src="${activeModalImages[0] || ''}" />
+      ${hasMultiple ? `<button type="button" class="gallery-nav-btn gallery-nav-next" onclick="event.stopPropagation(); selectModalGalleryImage(activeModalImgIdx + 1)">❯</button>` : ''}
+      <span class="gallery-counter-pill" id="modalGalleryCounter">1 / ${activeModalImages.length}</span>
+    </div>
+    <div id="modalGalleryStatus" style="font-size:0.74rem; color:#38bdf8; text-align:center; font-weight:600;">${escapeHtml(statusText || '')}</div>
+    <div class="gallery-thumbs-row">${thumbsHtml}</div>
+  `;
+}
+
+function renderModalOffersList(product, selectedStore) {
+  const dict = t();
+  if (!product || !Array.isArray(product.offers)) return '';
+  // Strictly filter to active in-stock offers with authentic direct URLs (hide unavailable stores)
+  const validOffers = product.offers
+    .filter(o => o.in_stock !== false && o.inStock !== false && Boolean(o.direct_affiliate_url || o.directUrl))
+    .sort((a, b) => a.price - b.price);
+
+  if (validOffers.length === 0) return '';
+  const cheapestOffer = validOffers[0];
+
+  return validOffers.map((o, idx) => {
+    const targetDirect = o.direct_affiliate_url || o.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(o.store)}&price=${encodeURIComponent(o.price)}`;
+    const variantTag = o.variantColor ? `<span class="mo-variant-pill">${escapeHtml(o.variantColor)}</span>` : '';
+    const diff = o.price - cheapestOffer.price;
+    const diffTag = (idx > 0 && diff > 0.01) ? `<span class="mo-variant-pill" style="background:rgba(245,158,11,0.15);color:#fbbf24;border-color:rgba(245,158,11,0.3);">+${diff.toFixed(2)} €</span>` : '';
+
+    return `
+      <div id="offerRow-${product.id}-${o.store}" class="offer-row-clickable modal-offer ${idx === 0 ? 'offer-row-cheapest' : ''}" onclick="${idx === 0 ? `selectStorePreview('${product.id}', '${o.store}')` : `openDedicatedStoreModal('${product.id}', '${o.store}')`}">
+        <div class="mo-main">
+          <div class="mo-tags">
+            <span class="store-tag store-${o.store}">${o.store}</span>
+            ${variantTag}
+            ${diffTag}
+            ${idx === 0 ? `<strong class="mo-best">🔥 ${dict.modalBestGuaranteed}</strong>` : ''}
+          </div>
+          <div class="mo-meta">🚚 ${dict.deliveryStore(o.store)} • ${dict.modalStoreRating(o.rating || 4.8)}</div>
+        </div>
+        <div class="mo-side">
+          <div class="mo-price-box">
+            <div class="mo-price" style="color:${idx === 0 ? '#34d399' : '#f1f5f9'};">${o.price.toFixed(2)} €</div>
+            <div class="mo-ship">${dict.modalFreeShipping}</div>
+          </div>
+          <div class="mo-actions">
+            ${idx === 0 ? `
+              <a href="${targetDirect}" target="_blank" rel="noopener" class="btn-search-main mo-go" style="background:linear-gradient(135deg, #10b981, #059669);" onclick="event.stopPropagation(); trackAffiliateClick('${product.id}', '${o.store}', ${o.price});">
+                ${dict.modalGoToOffer(o.store)}
+              </a>
+            ` : `
+              <button type="button" class="btn-action btn-sm mo-preview" style="background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);font-weight:700;" onclick="event.stopPropagation(); openDedicatedStoreModal('${product.id}', '${o.store}')">
+                🔍 إعلان ${o.store}
+              </button>
+              <a href="${targetDirect}" target="_blank" rel="noopener" class="btn-search-main mo-go" onclick="event.stopPropagation(); trackAffiliateClick('${product.id}', '${o.store}', ${o.price});">
+                ${dict.modalGoToOffer(o.store)}
+              </a>
+            `}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+async function openProductModal(productId) {
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) return;
+  const dict = t();
+
+  const modal = document.getElementById('productModal');
+  const titleEl = document.getElementById('modalProductTitle');
+  const bodyEl = document.getElementById('modalProductBody');
+
+  const catLocalized = getCategoryLabel(product.category).replace(/^[^\s]+\s/, '');
+  // On mobile screens, display clean concise breadcrumb in sticky top bar to prevent clutter
+  titleEl.textContent = (window.innerWidth <= 768) ? `${product.brand || 'NexusDeals'} • ${catLocalized}` : product.title;
+
+  const modalBox = modal.querySelector('.modal-box');
+  if (modalBox) modalBox.scrollTop = 0;
+
+  const history = product.priceHistory90d || [product.msrp, product.offers[0].price];
+  const maxHist = Math.max(...history, 1);
+  const minHist = Math.min(...history);
+  const labels90d = dict.chartLabels;
+
+  // Bar height capped at 90px inside 195px container so price tags never overlap the title
+  const chartBarsHtml = history.map((val, i) => {
+    const heightPx = Math.max(24, Math.round((val / maxHist) * 90));
+    const isLowest = val === minHist;
+    return `
+      <div class="chart-bar-col">
+        <span class="chart-price-tag" style="color:${isLowest ? '#34d399' : '#f8fafc'};">${val}€</span>
+        <div class="chart-bar ${isLowest ? 'lowest' : ''}" style="height:${heightPx}px;"></div>
+        <span style="font-size:0.7rem; color:var(--text-secondary); margin-top:2px;">${labels90d[i] || ''}</span>
+      </div>
+    `;
+  }).join('');
+
+  const similar = allProducts.filter(p => p.category === product.category && p.id !== product.id).slice(0, 3);
+  const similarHtml = similar.map(s => `
+    <div style="background:rgba(255,255,255,0.04); border:1px solid var(--border-color); border-radius:10px; padding:10px; display:flex; align-items:center; gap:10px; cursor:pointer;" onclick="openProductModal('${s.id}')">
+      <img src="${s.image}" style="width:48px; height:48px; object-fit:contain; background:#fff; border-radius:8px; padding:4px;" />
+      <div style="flex:1;">
+        <div style="font-size:0.8rem; font-weight:700; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${escapeHtml(s.title)}</div>
+        <div style="font-size:0.78rem; color:#34d399; font-weight:800;">${dict.cheapestLabelShort} ${s.offers[0].price.toFixed(2)} € (${s.offers[0].store})</div>
+      </div>
+    </div>
+  `).join('');
+
+  // Filter to strictly verified in-stock direct offers (hide unavailable stores)
+  const validOffers = (product.offers || [])
+    .filter(o => o.in_stock !== false && o.inStock !== false && Boolean(o.direct_affiliate_url || o.directUrl))
+    .sort((a, b) => a.price - b.price);
+
+  product.offers = validOffers;
+
+  const initialStore = (currentStore && currentStore !== 'all') ? currentStore : null;
+  let initialOffer = initialStore ? validOffers.find(o => o.store.toLowerCase() === initialStore.toLowerCase()) : null;
+  if (!initialOffer) {
+    initialOffer = (validOffers.length > 0) ? validOffers[0] : { store: 'Amazon', price: product.price || 0, rating: 4.8 };
+  }
+
+  const initialTargetDirect = initialOffer.direct_affiliate_url || initialOffer.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(initialOffer.store)}&price=${encodeURIComponent(initialOffer.price)}`;
+
+  const allOffersRows = renderModalOffersList(product, initialOffer.store);
+
+  bodyEl.innerHTML = `
+    <!-- High-Tech Interactive Live Store Stage -->
+    <div class="interactive-stage-card" id="interactiveStageCard">
+      <div class="stage-screen-topbar">
+        <div class="stage-topbar-left">
+          <span class="stage-tv-icon">📺</span>
+          <span class="stage-screen-title">${dict.stageScreenHeader}</span>
+          <span class="store-tag store-${initialOffer.store}" id="stageStoreTag">${initialOffer.store}</span>
+        </div>
+        <div class="stage-topbar-right">
+          <span class="stage-live-pulse"><span class="live-pulse-dot"></span> <span id="stageStatusText">${dict.stageLiveFrom(initialOffer.store)}</span></span>
+        </div>
+      </div>
+
+      <div class="stage-screen-grid">
+        <div class="stage-gallery-column">
+          <div class="modal-gallery-box" id="modalGalleryContainer"></div>
+        </div>
+        <div class="stage-info-column" id="stageInfoColumn">
+          <div class="stage-meta-header">
+            <span class="stage-brand-pill" id="stageBrandPill">${escapeHtml(product.brand)} • ${escapeHtml(catLocalized)}</span>
+            <span class="stage-verified-badge" id="stageVerifiedBadge">✔️ ${dict.previewStoreVerified(initialOffer.store)}</span>
+          </div>
+
+          <h3 class="stage-product-title" id="stageProductTitle">
+            ${escapeHtml(initialOffer.variantTitle || initialOffer.query || product.title)}
+          </h3>
+
+          <div class="stage-pricing-banner" id="stagePricingBanner">
+            <div class="stage-price-primary">
+              <span class="stage-price-number" id="stagePriceNumber">${initialOffer.price.toFixed(2)} €</span>
+              <span class="stage-price-msrp" id="stagePriceMsrp" style="${product.msrp && product.msrp > initialOffer.price ? '' : 'display:none;'}">${product.msrp ? product.msrp.toFixed(2) + ' €' : ''}</span>
+              <span class="stage-discount-tag" id="stageDiscountTag" style="${product.msrp && product.msrp > initialOffer.price ? '' : 'display:none;'}">
+                ${product.msrp && product.msrp > initialOffer.price ? dict.stageSavingBadge((product.msrp - initialOffer.price).toFixed(2), Math.round(((product.msrp - initialOffer.price) / product.msrp) * 100)) : ''}
+              </span>
+            </div>
+            <div class="stage-shipping-info" id="stageShippingBadge">
+              🚚 ${dict.deliveryStore(initialOffer.store)} • ${dict.modalFreeShipping}
+            </div>
+          </div>
+
+          <div class="stage-specs-box">
+            <div class="stage-specs-title">📋 ${dict.stageSpecsTitle}</div>
+            <ul class="stage-specs-list" id="stageSpecsList">
+              <li><strong>${dict.stageSpecRetailer(initialOffer.store)}</strong></li>
+              <li>${dict.stageSpecTitle(escapeHtml(initialOffer.variantTitle || initialOffer.query || product.title))}</li>
+              <li>${dict.stageSpecPrice(initialOffer.price.toFixed(2))}</li>
+              <li>${dict.stageSpecRating(initialOffer.rating || 4.8)}</li>
+              <li>${dict.stageSpecShipping(initialOffer.store)}</li>
+            </ul>
+          </div>
+
+          <div class="stage-actions-area">
+            <a id="stageDirectBuyLink" href="${initialTargetDirect}" target="_blank" rel="noopener" class="btn-search-main stage-buy-btn" onclick="trackAffiliateClick('${product.id}', '${initialOffer.store}', ${initialOffer.price});">
+              ${dict.stageDirectBuyBtn(initialOffer.store, initialOffer.price.toFixed(2))}
+            </a>
+            <div class="stage-interactive-hint">
+              ${dict.stageHintSwitch}
+            </div>
+          </div>
+
+          <form onsubmit="subscribePriceAlert(event, '${product.id}')" class="stage-alert-form">
+            <span style="font-size:0.78rem; font-weight:700;">${dict.alertBoxTitle}</span>
+            <input type="email" id="alertEmailInput" placeholder="${dict.alertEmailPlaceholder}" required class="stage-alert-input" />
+            <input type="number" id="alertTargetPrice" value="${Math.round(initialOffer.price * 0.92)}" class="stage-alert-price" />
+            <button type="submit" class="btn-action stage-alert-btn">${dict.alertSubmitBtn}</button>
+          </form>
+          <div id="alertSavedMsg" class="stage-alert-msg"></div>
+        </div>
+      </div>
+    </div>
+
+    <h4 style="margin:20px 0 10px; color:#38bdf8; font-size:1rem; font-weight:800;">${dict.stageCompareHeader(product.offers.length)}</h4>
+
+    <div style="margin-bottom:8px;" id="modalOffersContainer">${allOffersRows}</div>
+    <div style="font-size:0.76rem; color:var(--text-secondary); margin-bottom:18px; padding:8px 12px; background:rgba(255,255,255,0.03); border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+      🛡️ ${currentLang === 'ar' ? 'جميع الأسعار والعروض حقيقية ومحدثة مباشرة من المنصات الرسمية — اضغط على أي منصة لعرضها في الشاشة بالأعلى أو الشراء المباشر.' : (currentLang === 'de' ? 'Alle Preise und Angebote sind verifiziert und live mit den offiziellen Plattformen abgestimmt.' : 'All prices and listings are verified live data from official platforms.')}
+    </div>
+
+    <h4 style="margin-bottom:10px; color:#fbbf24; font-size:0.95rem;">${dict.modalChartHeader}</h4>
+    <div class="price-chart-bars">${chartBarsHtml}</div>
+
+    <h4 style="margin-bottom:8px; color:#34d399; font-size:0.95rem;">${dict.modalSimilarHeader}</h4>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px; margin-bottom:18px;">
+      ${similarHtml}
+    </div>
+
+    <!-- Native Mobile Floating Bottom Sticky Buy Bar -->
+    <div class="modal-mobile-sticky-bar" id="modalMobileStickyBar">
+      <div class="mmb-price-col">
+        <span class="mmb-store" id="mmbStoreName">${initialOffer.store}</span>
+        <span class="mmb-price" id="mmbPriceVal">${initialOffer.price.toFixed(2)} €</span>
+      </div>
+      <a id="mmbBuyBtn" href="${initialTargetDirect}" target="_blank" rel="noopener" class="mmb-cta-btn" onclick="trackAffiliateClick('${product.id}', '${initialOffer.store}', ${initialOffer.price});">
+        ${dict.stageDirectBuyBtn(initialOffer.store, initialOffer.price.toFixed(2))}
+      </a>
+    </div>
+  `;
+
+  modal.classList.add('open');
+  document.documentElement.classList.add('modal-open');
+  currentModalProductId = productId;
+  currentSelectedStore = initialOffer.store;
+
+  // Render initial gallery using the genuine, verified product photos
+  const productImages = (Array.isArray(product.images) && product.images.length > 0)
+    ? product.images
+    : [product.image];
+
+  activeModalImages = productImages;
+  activeModalImgIdx = 0;
+  renderModalGalleryUI(productImages, dict.stageLiveFrom(initialOffer.store));
+  selectStorePreview(product.id, currentSelectedStore, false);
+  triggerLivePriceSync(product.id);
+}
+
+async function triggerLivePriceSync(productId) {
+  try {
+    const res = await fetch(`/api/sync-live-product?id=${encodeURIComponent(productId)}`);
+    if (!res.ok) return;
+    const data = await res.json();
+    if (data.ok && data.product && currentModalProductId === productId) {
+      const updatedProd = data.product;
+      const idx = allProducts.findIndex(p => p.id === productId);
+      if (idx !== -1) {
+        allProducts[idx] = updatedProd;
+      }
+      if (Array.isArray(updatedProd.offers)) {
+        updatedProd.offers.sort((a, b) => a.price - b.price);
+      }
+      const dict = t();
+      const statusPill = document.getElementById('stageStatusText');
+      if (statusPill) {
+        statusPill.innerHTML = `${dict.livePriceSynced || '⚡ Live Synced'}`;
+        statusPill.style.color = '#34d399';
+      }
+      const container = document.getElementById('modalOffersContainer');
+      if (container) {
+        container.innerHTML = renderModalOffersList(updatedProd, currentSelectedStore);
+      }
+      if (currentSelectedStore) {
+        selectStorePreview(productId, currentSelectedStore, false);
+      }
+    }
+  } catch (e) {
+    // Non-blocking sync
+  }
+}
+
+function closeProductModal() {
+  document.getElementById('productModal').classList.remove('open');
+  document.documentElement.classList.remove('modal-open');
+  closeStorePreview();
+  currentModalProductId = null;
+  currentSelectedStore = null;
+}
+
+function selectStorePreview(productId, storeName, updateGallery = false) {
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) return;
+  const storeIdx = (product.offers || []).findIndex(o => o.store.toLowerCase() === (storeName || '').toLowerCase());
+  const offer = storeIdx !== -1 ? product.offers[storeIdx] : (product.offers && product.offers[0]);
+  if (!offer) return;
+  currentSelectedStore = offer.store;
+  currentModalProductId = productId;
+  const dict = t();
+
+  // 1. Morph Stage Card Header
+  const stageCard = document.getElementById('interactiveStageCard');
+  const stageStoreTag = document.getElementById('stageStoreTag');
+  const stageStatusText = document.getElementById('stageStatusText');
+  const stageVerifiedBadge = document.getElementById('stageVerifiedBadge');
+
+  if (stageStoreTag) {
+    stageStoreTag.className = `store-tag store-${offer.store}`;
+    stageStoreTag.textContent = offer.store;
+  }
+  if (stageStatusText) {
+    stageStatusText.textContent = dict.stageLiveFrom(offer.store);
+  }
+  if (stageVerifiedBadge) {
+    stageVerifiedBadge.textContent = `✔️ ${dict.previewStoreVerified(offer.store)}`;
+  }
+
+  // 2. Keep the genuine product title or platform specific variant
+  const stageTitle = document.getElementById('stageProductTitle');
+  if (stageTitle) {
+    stageTitle.textContent = offer.variantTitle || product.title;
+  }
+
+  // 3. Morph Pricing & Discount
+  const stagePriceNumber = document.getElementById('stagePriceNumber');
+  const stagePriceMsrp = document.getElementById('stagePriceMsrp');
+  const stageDiscountTag = document.getElementById('stageDiscountTag');
+  const stageShippingBadge = document.getElementById('stageShippingBadge');
+
+  if (stagePriceNumber) {
+    stagePriceNumber.textContent = `${offer.price.toFixed(2)} €`;
+  }
+
+  const refPrice = product.msrp && product.msrp > offer.price ? product.msrp : null;
+  if (stagePriceMsrp) {
+    if (refPrice) {
+      stagePriceMsrp.textContent = `${refPrice.toFixed(2)} €`;
+      stagePriceMsrp.style.display = 'inline-block';
+    } else {
+      stagePriceMsrp.style.display = 'none';
+    }
+  }
+
+  if (stageDiscountTag) {
+    if (refPrice && refPrice > offer.price) {
+      const diff = refPrice - offer.price;
+      const pct = Math.round((diff / refPrice) * 100);
+      stageDiscountTag.textContent = dict.stageSavingBadge(diff.toFixed(2), pct);
+      stageDiscountTag.style.display = 'inline-block';
+    } else {
+      stageDiscountTag.style.display = 'none';
+    }
+  }
+
+  if (stageShippingBadge) {
+    stageShippingBadge.innerHTML = `🚚 ${dict.deliveryStore(offer.store)} • ${dict.modalFreeShipping}`;
+  }
+
+  // 4. Morph Direct Buy CTA Button with strict direct affiliate deep link
+  const targetDirect = offer.direct_affiliate_url || offer.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(offer.store)}&price=${encodeURIComponent(offer.price)}`;
+
+  const stageDirectBuyLink = document.getElementById('stageDirectBuyLink');
+  if (stageDirectBuyLink) {
+    stageDirectBuyLink.href = targetDirect;
+    stageDirectBuyLink.setAttribute('onclick', `trackAffiliateClick('${product.id}', '${offer.store}', ${offer.price});`);
+    stageDirectBuyLink.innerHTML = dict.stageDirectBuyBtn(offer.store, offer.price.toFixed(2));
+  }
+
+  // Update floating mobile sticky purchase bar
+  const mmbBuyBtn = document.getElementById('mmbBuyBtn');
+  const mmbStoreName = document.getElementById('mmbStoreName');
+  const mmbPriceVal = document.getElementById('mmbPriceVal');
+  if (mmbBuyBtn) {
+    mmbBuyBtn.href = targetDirect;
+    mmbBuyBtn.setAttribute('onclick', `trackAffiliateClick('${product.id}', '${offer.store}', ${offer.price});`);
+    mmbBuyBtn.innerHTML = dict.stageDirectBuyBtn(offer.store, offer.price.toFixed(2));
+  }
+  if (mmbStoreName) mmbStoreName.textContent = offer.store;
+  if (mmbPriceVal) mmbPriceVal.textContent = `${offer.price.toFixed(2)} €`;
+
+  // 5. Morph Specs List to THAT store's actual specs
+  const stageSpecsList = document.getElementById('stageSpecsList');
+  if (stageSpecsList) {
+    const specsItems = [
+      `<strong>${dict.stageSpecRetailer(offer.store)}</strong>`,
+      dict.stageSpecTitle(escapeHtml(offer.variantTitle || product.title)),
+      dict.stageSpecPrice(offer.price.toFixed(2)),
+      dict.stageSpecRating(offer.rating || 4.8),
+      dict.stageSpecShipping(offer.store)
+    ];
+    stageSpecsList.innerHTML = specsItems.map(s => `<li>${s}</li>`).join('');
+  }
+
+  // 6. Update Target Price Input
+  const alertPriceInput = document.getElementById('alertTargetPrice');
+  if (alertPriceInput) {
+    alertPriceInput.value = Math.round(offer.price * 0.92);
+  }
+
+  // 7. Morph Product Photo to match the active store offer
+  if (Array.isArray(offer.images) && offer.images.length > 1) {
+    activeModalImages = offer.images;
+    renderModalGalleryUI(offer.images, dict.stageLiveFrom(offer.store));
+  } else {
+    const mainImg = document.getElementById('modalMainGalleryImg');
+    if (mainImg && (offer.image || product.image)) {
+      mainImg.src = offer.image || product.image;
+    }
+  }
+
+  // 8. Update Active Highlight and Row Indicators below
+  (product.offers || []).forEach(o => {
+    const rowEl = document.getElementById(`offerRow-${product.id}-${o.store}`);
+    const indEl = document.getElementById(`rowIndicator-${product.id}-${o.store}`);
+    const isThisOffer = o.store.toLowerCase() === offer.store.toLowerCase();
+    if (rowEl) {
+      rowEl.classList.toggle('offer-row-active-preview', isThisOffer);
+    }
+    if (indEl) {
+      if (isThisOffer) {
+        indEl.className = 'row-stage-indicator live-active';
+        indEl.innerHTML = dict.stageDisplayingNow;
+      } else {
+        indEl.className = 'row-stage-indicator';
+        indEl.innerHTML = dict.stageSwitchToBtn;
+      }
+    }
+  });
+
+  // 9. Subtle pulse on Stage Card
+  if (stageCard) {
+    stageCard.classList.remove('stage-pulsing-update');
+    void stageCard.offsetWidth; // trigger reflow
+    stageCard.classList.add('stage-pulsing-update');
+  }
+}
+
+function closeStorePreview() {
+  document.querySelectorAll('.offer-row-clickable').forEach(row => row.classList.remove('offer-row-active-preview'));
+  currentSelectedStore = null;
+}
+
+async function subscribePriceAlert(e, productId) {
+  e.preventDefault();
+  const dict = t();
+  const email = document.getElementById('alertEmailInput').value;
+  const targetPrice = document.getElementById('alertTargetPrice').value;
+  await fetch('/api/alerts', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ productId, email, targetPrice })
+  });
+  document.getElementById('alertSavedMsg').textContent = dict.alertSavedMsg(targetPrice);
+}
+
+function handleMainSearch(e) {
+  e.preventDefault();
+  loadProducts();
+}
+
+function selectCategory(cat, btnEl) {
+  currentCategory = cat;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  loadProducts();
+}
+
+function selectStoreFilter(store, btnEl) {
+  currentStore = store;
+  document.querySelectorAll('.store-filter-btn').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  loadProducts();
+}
+
+function handlePriceSlider(val) {
+  const dict = t();
+  currentMaxPrice = parseInt(val, 10);
+  const label = document.getElementById('maxPriceLabel');
+  label.textContent = currentMaxPrice >= 2500 ? dict.noLimit : dict.upToPrice(currentMaxPrice);
+  loadProducts();
+}
+
+function applyFilters() {
+  loadProducts();
+}
+
+function resetAllFilters() {
+  const dict = t();
+  document.getElementById('mainSearchInput').value = '';
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (clearBtn) clearBtn.style.display = 'none';
+  document.getElementById('flashOnlyCheckbox').checked = false;
+  document.getElementById('maxPriceSlider').value = 2500;
+  document.getElementById('maxPriceLabel').textContent = dict.noLimit;
+  currentCategory = 'all';
+  currentStore = 'all';
+  currentMaxPrice = 2500;
+  lastSearchQuery = '';
+  document.querySelectorAll('.cat-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+  document.querySelectorAll('.store-filter-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+  loadProducts();
+}
+
+async function handleAiSearch(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const input = document.getElementById('aiPromptInput');
+  if (!input) return;
+  const prompt = input.value.trim();
+  if (!prompt) return;
+  await executeAiQuery(prompt);
+}
+
+function runQuickAi(queryText, displayText) {
+  const input = document.getElementById('aiPromptInput');
+  if (input) input.value = displayText || queryText;
+  executeAiQuery(queryText);
+}
+
+async function executeAiQuery(prompt) {
+  const dict = t();
+  const panel = document.getElementById('aiResponsePanel');
+  const textEl = document.getElementById('aiResponseText');
+  if (!panel || !textEl) return;
+  panel.style.display = 'block';
+  textEl.textContent = dict.aiLoading;
+
+  try {
+    const res = await fetch('/api/ai-assistant', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt })
+    });
+    const data = await res.json();
+    const recs = data.recommendations || [];
+    if (recs.length > 0) {
+      const best = recs[0];
+      const bestOffer = best.offers[0];
+      const amzOffer = best.offers.find(o => o.store === 'Amazon') || bestOffer;
+      const saving = Math.max(0, best.msrp - bestOffer.price).toFixed(2);
+      textEl.textContent = dict.aiFormattedReply(best, bestOffer, amzOffer, saving);
+    } else {
+      textEl.textContent = dict.noResultsTitle;
+    }
+    renderProductsGrid(recs, 'aiRecommendationsGrid');
+  } catch (err) {
+    textEl.textContent = 'Error connecting to AI Assistant.';
   }
 }
 
 function escapeHtml(str) {
-  if (!str) return '';
-  return String(str)
+  return String(str || '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(/"/g, '&quot;');
+}
+
+// Prevent browser viewport zooming on mobile for native app experience
+if (typeof document !== 'undefined') {
+  document.addEventListener('gesturestart', function(e) {
+    e.preventDefault();
+  });
+  document.addEventListener('dblclick', function(e) {
+    if (!e.target.closest('#imageLightboxModal')) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+}
+
+// ==========================================================================
+// Dedicated Store Offer Popup Modal (Sheet for Mobile & Floating Card for Desktop)
+// ==========================================================================
+function openDedicatedStoreModal(productId, storeName) {
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) return;
+  const storeIdx = (product.offers || []).findIndex(o => o.store.toLowerCase() === (storeName || '').toLowerCase());
+  const offer = storeIdx !== -1 ? product.offers[storeIdx] : product.offers[0];
+  if (!offer) return;
+  const dict = t();
+
+  const sorted = [...product.offers].sort((a, b) => a.price - b.price);
+  const cheapest = sorted[0];
+  const diff = offer.price - cheapest.price;
+
+  const modal = document.getElementById('dedicatedStoreModal');
+  const badgeEl = document.getElementById('dedicatedStoreBadge');
+  const verifiedEl = document.getElementById('dedicatedVerifiedText');
+  const bodyEl = document.getElementById('dedicatedStoreBody');
+
+  if (badgeEl) {
+    badgeEl.className = `store-tag store-${offer.store}`;
+    badgeEl.textContent = offer.store;
+  }
+  if (verifiedEl) {
+    verifiedEl.textContent = `✔️ ${dict.previewStoreVerified(offer.store)}`;
+  }
+
+  const targetDirect = offer.direct_affiliate_url || offer.directUrl || `/api/out?productId=${encodeURIComponent(product.id)}&store=${encodeURIComponent(offer.store)}&price=${encodeURIComponent(offer.price)}`;
+  const offerImg = offer.image || product.image;
+
+  if (bodyEl) {
+    bodyEl.innerHTML = `
+      <div class="dedicated-product-card">
+        <div class="dedicated-img-box">
+          <img src="${escapeHtml(offerImg)}" alt="${escapeHtml(offer.variantTitle || product.title)}" onerror="this.src='${escapeHtml(product.image)}'" />
+        </div>
+        <div class="dedicated-title-col">
+          <div class="dedicated-prod-brand">${escapeHtml(product.brand || offer.store)}</div>
+          <h4 class="dedicated-prod-title">${escapeHtml(offer.variantTitle || product.title)}</h4>
+          <div style="font-size:0.75rem; color:#38bdf8; font-weight:700;">🌟 تقييم البائع والمتجر: ${offer.rating || 4.8} / 5</div>
+        </div>
+      </div>
+
+      <div class="dedicated-pricing-card">
+        <div style="font-size:0.8rem; color:#94a3b8; font-weight:600; margin-bottom:4px;">السعر الفعلي المباشر لدى ${offer.store}</div>
+        <div class="dedicated-price-val">${offer.price.toFixed(2)} €</div>
+        ${diff > 0.05 ? `
+          <div class="dedicated-diff-badge">فارق +${diff.toFixed(2)} € عن السعر الأقل في المقارنة</div>
+        ` : `
+          <div class="dedicated-diff-badge" style="background:rgba(16,185,129,0.15);color:#34d399;border-color:rgba(16,185,129,0.3);">🔥 هذا هو أفضل وأرخص سعر متاح للمنتج</div>
+        `}
+        <div class="dedicated-shipping-text">🚚 ${dict.deliveryStore(offer.store)} • شحن وإرجاع مضمون</div>
+      </div>
+
+      <div class="dedicated-guarantees">
+        <div class="dedicated-guarantee-item">
+          <span>✔️</span>
+          <div><strong>أصلي 100%</strong><br>مباشرة من ${offer.store}</div>
+        </div>
+        <div class="dedicated-guarantee-item">
+          <span>🛡️</span>
+          <div><strong>حماية المشتري</strong><br>دفع آمن ومعتمد</div>
+        </div>
+        <div class="dedicated-guarantee-item">
+          <span>⚡</span>
+          <div><strong>توجيه مباشر</strong><br>لصفحة المنتج الفردية</div>
+        </div>
+        <div class="dedicated-guarantee-item">
+          <span>↩️</span>
+          <div><strong>إرجاع مضمون</strong><br>حسب سياسة المتجر الرسمية</div>
+        </div>
+      </div>
+
+      <div class="dedicated-actions-row">
+        <a href="${targetDirect}" target="_blank" rel="noopener" class="dedicated-btn-buy" onclick="trackAffiliateClick('${product.id}', '${offer.store}', ${offer.price});">
+          🛒 شراء فوري من ${offer.store} بـ ${offer.price.toFixed(2)} €
+        </a>
+        <button type="button" class="dedicated-btn-close" onclick="closeDedicatedStoreModal()">
+          العودة لقائمة المقارنة
+        </button>
+      </div>
+    `;
+  }
+
+  if (modal) {
+    modal.classList.add('open');
+  }
+}
+
+function closeDedicatedStoreModal() {
+  const modal = document.getElementById('dedicatedStoreModal');
+  if (modal) {
+    modal.classList.remove('open');
+  }
+}
+
+function handleDedicatedModalBackdropClick(event) {
+  if (event.target && event.target.id === 'dedicatedStoreModal') {
+    closeDedicatedStoreModal();
+  }
 }

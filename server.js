@@ -12,6 +12,14 @@ const { aiDiscoveryEngine } = require('./services/aiProductDiscoveryEngine');
 const { storeUrlResolver, isDirectProductUrl } = require('./services/storeUrlResolver');
 const ebayBrowseService = require('./services/ebayBrowseService');
 
+// Global Crash Prevention to eliminate Render 502 Bad Gateway errors
+process.on('uncaughtException', (err) => {
+  console.error('[CRITICAL] Caught uncaughtException to prevent 502 server crash:', err.message, err.stack);
+});
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('[CRITICAL] Caught unhandledRejection to prevent 502 server crash:', reason);
+});
+
 const PORT = process.env.PORT || 3080;
 const DATA_DIR = path.join(__dirname, 'data');
 const CATALOG_PATH = path.join(DATA_DIR, 'catalog.json');
@@ -156,33 +164,34 @@ function interleaveDiverseProducts(products) {
     groups[p.category].push(p);
   }
 
-  // Shuffle products within each category so every refresh/visit reveals fresh items
+  // Sort products within each category so comparison products (multiple stores e.g. Amazon + eBay) are displayed first!
   for (const cat in groups) {
-    for (let i = groups[cat].length - 1; i > 0; i--) {
+    const multi = groups[cat].filter(p => p.offers && p.offers.length > 1);
+    const single = groups[cat].filter(p => !p.offers || p.offers.length <= 1);
+    // Shuffle within single items for diversity
+    for (let i = single.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [groups[cat][i], groups[cat][j]] = [groups[cat][j], groups[cat][i]];
+      [single[i], single[j]] = [single[j], single[i]];
     }
+    groups[cat] = [...multi, ...single];
   }
 
   const preferredOrder = [
-    'smartphones',
-    'fashion_shoes',
-    'tv_audio',
-    'home_kitchen',
-    'perfumes_beauty',
-    'sports_fitness',
     'gaming',
-    'furniture_decor',
+    'smartphones',
+    'tv_audio',
     'auto_car',
+    'home_kitchen',
     'tools_garden',
+    'sports_fitness',
+    'fashion_shoes',
+    'perfumes_beauty',
+    'furniture_decor',
     'travel_luggage',
     'kids_toys'
   ];
 
-  // Rotate starting category randomly so the very first product isn't always from the exact same category
-  const offset = Math.floor(Math.random() * preferredOrder.length);
-  const rotatedOrder = [...preferredOrder.slice(offset), ...preferredOrder.slice(0, offset)];
-  const allCatKeys = Array.from(new Set([...rotatedOrder, ...Object.keys(groups)]));
+  const allCatKeys = Array.from(new Set([...preferredOrder, ...Object.keys(groups)]));
 
   const interleaved = [];
   let hasMore = true;
